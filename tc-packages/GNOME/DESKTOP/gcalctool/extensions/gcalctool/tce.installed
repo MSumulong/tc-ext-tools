@@ -1,2 +1,0 @@
-#!/bin/sh
-[ -x $(which update-gconf-database) ] && update-gconf-database register gcalctool > /dev/null 2>&1

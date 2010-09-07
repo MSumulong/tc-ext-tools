@@ -1,9 +1,0 @@
-#!/bin/sh
-
-[ -x $(which update-gconf-database) ] && sudo update-gconf-database register-extension epiphany > /dev/null 2>&1
-[ -x $(which gtk-update-icon-cache) ] && sudo gtk-update-icon-cache -q -f -t /usr/local/share/icons/hicolor > /dev/null 2>&1
-
-if [ ! -e /usr/local/lib/mozilla/plugins/libflashplayer.so ]; then
-     [ -d /usr/local/lib/mozilla/plugins ] || sudo mkdir -p /usr/local/lib/mozilla/plugins > /dev/null 2>&1
-     [ -e /usr/local/share/flash10/libflashplayer.so ] && sudo ln -s /usr/local/share/flash10/libflashplayer.so /usr/local/lib/mozilla/plugins/libflashplayer.so
-fi
