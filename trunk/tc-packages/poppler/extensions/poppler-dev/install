@@ -1,0 +1,8 @@
+usr/local/include
+x-usr/local/include/poppler/qt4
+usr/local/lib/pkgconfig
+x-usr/local/lib/pkgconfig/poppler-qt4.pc
+usr/local/lib/*.la
+usr/local/lib/*.a
+x-usr/local/lib/libpoppler-qt4*.la
+x-usr/local/lib/libpoppler-qt4*.a

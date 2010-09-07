@@ -1,0 +1,6 @@
+COMMENTS="RabbitVCS is a set of graphical tools written to provide
+		simple and straightforward access to the version control
+		systems you use. Currently, it is integrated into the 
+		Nautilus file manager and only supports Subversion.
+
+		This extension is PPI compatible."

@@ -1,0 +1,22 @@
+PACKAGE="conkeror"
+VERSION="git100824"
+SOURCE="${PACKAGE}-${VERSION}.tar.xz"
+SOURCE_URL="git://repo.or.cz/conkeror.git"
+SOURCE_GIT="true"
+TOP_SRC="${PACKAGE}-${VERSION}"
+BUILD_DEPENDS=""
+
+EXTENSIONS="conkeror"
+DESCRIPTION="Conkeror is a free, keyboard-driven, Mozilla-based web browser."
+AUTHOR="various"
+SITE="http://conkeror.org/"
+COPYING="GPL-2"
+MAINTAINERS="Arslan S."
+COMMENTS="Conkeror is a keyboard-oriented, highly-customizable,
+		highly-extensible web browser based on Mozilla XULRunner,
+		written mainly in JavaScript, and inspired by exceptional
+		software such as Emacs and vi.
+
+		This extension is PPI compatible."
+CHANGELOG="2010/06/09 First Version git100609"
+CURRENT="Updated to $VERSION"

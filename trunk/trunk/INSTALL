@@ -1,0 +1,7 @@
+# There is nothing to build here but you need make to install tc-ext-tools
+
+# by default tc-ext-tools will be installed to ~/.local
+make install
+
+# if you want to install to a different location
+make DESTDIR=/path/to/install_root PREFIX=/usr/local install

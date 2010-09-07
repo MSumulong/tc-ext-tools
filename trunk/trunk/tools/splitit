@@ -1,0 +1,102 @@
+#!/bin/sh
+#
+#  splitit: Splits the package into extensions
+#
+#  This program is free software; you can redistribute it and/or modify
+#  it under the terms of the GNU General Public License as published by
+#  the Free Software Foundation; either version 2 of the License, or
+#  (at your option) any later version.
+#
+#  This program is distributed in the hope that it will be useful,
+#  but WITHOUT ANY WARRANTY; without even the implied warranty of
+#  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+#  GNU General Public License for more details.
+#
+#  You should have received a copy of the GNU General Public License along
+#  with this program; if not, write to the Free Software Foundation, Inc.,
+#  51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
+#
+#  (C) Copyright 2010 Sercan Arslan
+#
+
+. /etc/init.d/tc-functions
+
+TCEXTTOOLS_ROOT=$(dirname $0)/..
+
+if [ -f "${TCEXTTOOLS_ROOT}/etc/tc-ext-tools/functions" ]; then
+     . ${TCEXTTOOLS_ROOT}/etc/tc-ext-tools/functions
+else
+     echo "${RED}$(basename ${0}):${BLUE} tc-ext-tools functions file not found!${NORMAL}"
+     exit 1
+fi
+
+EXTENSION="${1}"
+
+print_usage() {
+  echo -e "${TCEXTTOOLS_ERROR_COLOR}Usage:${TCEXTTOOLS_MESSAGE_COLOR}\n$(basename $0) extension${NORMAL}"
+}
+
+if [ ! -d "${TCEXTTOOLS_INSTALL_ROOT}" ]; then
+     print_it error "You must install it first!"
+     exit 1
+fi
+
+if [ ! -f "${PACKAGE_EXTENSIONS}/${EXTENSION}/install" ]; then
+      print_usage
+      exit 1
+fi
+
+TMP_DIR=$(busybox mktemp -d)
+if [ $? -gt 0 ]; then
+     print_it error "Creating temp directory failed!"
+     exit 1
+fi
+
+this_main() {
+
+  CONTENTS=$(cat ${PACKAGE_EXTENSIONS}/${EXTENSION}/install)
+  [ -z "${CONTENTS}" ] && return 1
+
+  LIST="${TMP_DIR}/install.list"
+  X_LIST="${TMP_DIR}/x-install.list"
+
+  touch ${LIST} || return 1
+  touch ${X_LIST} || return 1
+
+  cd ${TCEXTTOOLS_INSTALL_ROOT}
+
+  for i in ${CONTENTS}
+  do
+      if [ "${i#"#"}" = "${i}" ]; then
+           if [ "${i#x-}" = "${i}" ]; then
+                sudo find ${i} -not -type d >> ${LIST} || return 1
+           else
+                sudo find ${i#x-} -not -type d >> ${X_LIST} || return 1
+           fi
+      fi
+  done
+
+  sudo tar -T ${LIST} -X ${X_LIST} -cpzf ${TMP_DIR}/pkg.tar.gz || return 1
+  sudo mkdir ${TMP_DIR}/root
+  sudo tar -C ${TMP_DIR}/root -pxzf ${TMP_DIR}/pkg.tar.gz || return 1
+
+  if [ -d "${TCEXTTOOLS_BIN}/${EXTENSION}" ]; then
+       sudo rm -rf ${TCEXTTOOLS_BIN}/${EXTENSION} || return 1
+  fi
+
+  sudo mv ${TMP_DIR}/root ${TCEXTTOOLS_BIN}/${EXTENSION} || return 1
+  sudo rm -rf ${TMP_DIR}
+
+  return 0
+}
+
+print_it "Splitting the extension ${EXTENSION} out of the package ${PACKAGE} ... \c"
+this_main > ${TCEXTTOOLS_ERROR_LOG_2} 2>&1
+if [ $? -gt 0 ]; then
+     print_it error "failed!"
+     sudo rm -rf ${TMP_DIR} > /dev/null 2>&1
+     exit 1
+fi
+print_it hilight "successful!"
+
+exit 0

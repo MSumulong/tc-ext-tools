@@ -1,0 +1,21 @@
+PACKAGE="gcalctool"
+VERSION="5.30.2"
+SOURCE="${PACKAGE}-${VERSION}.tar.bz2"
+TOP_SRC="${PACKAGE}-${VERSION}"
+SOURCE_URL="http://ftp.gnome.org/pub/GNOME/sources/gcalctool/5.30/gcalctool-${VERSION}.tar.bz2"
+BUILD_DEPENDS="gnome-doc-utils
+rarian
+gtk2
+gtk2-dev
+GConf
+GConf-dev"
+
+EXTENSIONS="gcalctool gcalctool-locale"
+DESCRIPTION="A calculator application for GNOME."
+AUTHOR="Rich Burridge"
+SITE="http://live.gnome.org/Gcalctool"
+COPYING="GPL-2"
+MAINTAINERS="Arslan S."
+COMMENTS="This extension is PPI compatible."
+CHANGELOG="2010/06/15 Original 5.28.2"
+CURRENT="Updated to 5.30.2"

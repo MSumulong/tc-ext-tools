@@ -1,0 +1,3 @@
+#!/bin/sh
+[ -x $(which gtk-update-icon-cache) ] && sudo gtk-update-icon-cache -q -f -t /usr/local/share/icons/hicolor > /dev/null 2>&1
+[ -x $(which update-gconf-database) ] && sudo update-gconf-database register gnote > /dev/null 2>&1

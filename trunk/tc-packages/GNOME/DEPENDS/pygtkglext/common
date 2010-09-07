@@ -1,0 +1,24 @@
+PACKAGE="pygtkglext"
+VERSION="1.1.0"
+SOURCE="${PACKAGE}-${VERSION}.tar.bz2"
+TOP_SRC="${PACKAGE}-${VERSION}"
+SOURCE_URL="http://downloads.sourceforge.net/gtkglext/pygtkglext-${VERSION}.tar.bz2"
+BUILD_DEPENDS="gtk2
+gtk2-dev
+pygtk-2.7
+pygtk-2.7-dev
+gtkglext
+gtkglext-dev
+pyopengl
+Xorg-7.5
+Xorg-7.5-dev"
+
+EXTENSIONS="python-gtkglext"
+DESCRIPTION="GtkGLExt is an OpenGL extension to GTK+."
+AUTHOR="Naofumi Yasufuku, Alif Wahid"
+SITE="http://projects.gnome.org/gtkglext"
+COPYING="LGPL"
+MAINTAINERS="Arslan S."
+COMMENTS="This extension is PPI compatible."
+CHANGELOG="2010/03/22 Original 1.1.0"
+CURRENT="Rebuilt against python 2.7"

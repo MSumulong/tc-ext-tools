@@ -1,0 +1,15 @@
+#!/bin/sh
+
+CHROMIUM=$(basename $0)
+CHROMIUM_ADDONS=/usr/local/${CHROMIUM}-addons
+FLASHPLAYER=/usr/local/share/flash10/libflashplayer.so
+
+[ -d ${CHROMIUM_ADDONS}/plugins ] || sudo mkdir -p ${CHROMIUM_ADDONS}/plugins
+
+if [ -e ${FLASHPLAYER} ]; then
+     [ -e ${CHROMIUM_ADDONS}/plugins/libflashplayer.so ] || sudo ln -s ${FLASHPLAYER} ${CHROMIUM_ADDONS}/plugins/libflashplayer.so
+elif [ -e /usr/local/lib/mozilla/plugins/libflashplayer.so ]; then
+     [ -e ${CHROMIUM_ADDONS}/plugins/libflashplayer.so ] || sudo ln -s /usr/local/lib/mozilla/plugins/libflashplayer.so ${CHROMIUM_ADDONS}/plugins/libflashplayer.so
+fi
+
+[ -x $(which gtk-update-icon-cache) ] && sudo gtk-update-icon-cache -q -f -t /usr/local/share/icons/hicolor

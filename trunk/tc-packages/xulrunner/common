@@ -1,0 +1,45 @@
+PACKAGE="xulrunner"
+VERSION="1.9.2.8"
+SOURCE="${PACKAGE}-${VERSION}.tar.bz2"
+TOP_SRC="mozilla-1.9.2"
+SOURCE_URL="http://releases.mozilla.org/pub/mozilla.org/xulrunner/releases/${VERSION}/source/xulrunner-${VERSION}.source.tar.bz2"
+BUILD_DEPENDS="gtk2
+gtk2-dev
+Xorg-7.5-lib
+Xorg-7.5-dev
+libasound
+alsa-dev
+python-2.7
+python-2.7-dev
+zip-unzip
+sqlite3
+sqlite3-dev
+dbus-glib
+gnome-vfs
+gnome-vfs-dev
+libgnomeui
+libgnomeui-dev
+libstartup-notification
+libstartup-notification-dev
+nspr
+nspr-dev
+nss
+nss-dev
+bzip2-lib
+bzip2-dev
+libIDL
+libnotify
+wireless_tools
+hunspell
+hunspell-dev"
+
+EXTENSIONS="xulrunner xulrunner-dev"
+DESCRIPTION="XULRunner is a Mozilla runtime package."
+AUTHOR="Mozilla Foundation"
+SITE="https://developer.mozilla.org/en/XULRunner"
+COPYING="MPL/GPL/LGPL"
+MAINTAINERS="Arslan S."
+COMMENTS="This extension is PPI compatible."
+CHANGELOG="2010/01/30 Original 1.9.1.7
+		2010/06/09 Updated to 1.9.2"
+CURRENT="Updated to 1.9.2.8"

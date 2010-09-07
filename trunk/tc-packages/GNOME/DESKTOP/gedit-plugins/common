@@ -1,0 +1,37 @@
+PACKAGE="gedit-plugins"
+VERSION="2.30.0"
+SOURCE="${PACKAGE}-${VERSION}.tar.bz2"
+TOP_SRC="${PACKAGE}-${VERSION}"
+SOURCE_URL="http://ftp.gnome.org/pub/GNOME/sources/gedit-plugins/2.30/gedit-plugins-${VERSION}.tar.bz2"
+BUILD_DEPENDS="gnome-doc-utils
+rarian
+gtk2
+gtk2-dev
+GConf
+GConf-dev
+gtksourceview
+gtksourceview-dev
+python-2.7
+python-2.7-dev
+pygtk-2.7
+pygtk-2.7-dev
+pygtksourceview
+gucharmap
+gucharmap-dev
+gedit
+gedit-dev
+vte
+vte-dev
+vtemodule-2.7
+gnome-python
+gnome-python-dev"
+
+EXTENSIONS="gedit-plugins gedit-plugins-locale"
+DESCRIPTION="A set of plugins for gedit."
+AUTHOR="Steve Frecinaux, Jesse van den Kieboom"
+SITE="http://live.gnome.org/Gedit/Plugins"
+COPYING="GPL-2"
+MAINTAINERS="Arslan S."
+COMMENTS="This extension is PPI compatible."
+CHANGELOG="---"
+CURRENT="First Version"

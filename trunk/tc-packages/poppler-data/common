@@ -1,0 +1,17 @@
+PACKAGE="poppler-data"
+VERSION="0.4.3"
+SOURCE="${PACKAGE}-${VERSION}.tar.gz"
+TOP_SRC="${PACKAGE}-${VERSION}"
+SOURCE_URL="http://poppler.freedesktop.org/poppler-data-${VERSION}.tar.gz"
+BUILD_DEPENDS=""
+
+EXTENSIONS="poppler-data"
+DESCRIPTION="Encoding data for the poppler PDF rendering library."
+AUTHOR="Kristian Hogsberg, Derek Noonburg, Albert Astals Cid"
+SITE="poppler.freedesktop.org/"
+COPYING="GPL/Adobe"
+MAINTAINERS="Jason W, Arslan S."
+COMMENTS="This extension is PPI compatible."
+CHANGELOG="2008/10/22 First version 0.2.1 by Jason W
+		2010/02/21 Updated to 0.4.0 by Arslan S."
+CURRENT="Updated to 0.4.3 by Arslan S."
