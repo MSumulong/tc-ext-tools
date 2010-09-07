@@ -1,0 +1,62 @@
+#
+# Note: This file is sourced by buildit
+#
+# Defines mandatory build functions: configure, compile, install
+#
+
+build_configure() {
+
+  return 0
+
+}
+
+build_compile() {
+
+  make || return 1
+
+}
+
+build_install() {
+
+  sudo install -m 755 -d ${INSTALL_ROOT}/usr/local/bin
+  sudo install -m 755 -d ${INSTALL_ROOT}/usr/local/conkeror/contrib
+  sudo install -m 755 -d ${INSTALL_ROOT}/usr/local/share/man/man1
+  sudo install -m 755 -d ${INSTALL_ROOT}/usr/local/share/pixmaps
+  sudo install -m 755 -d ${INSTALL_ROOT}/usr/local/share/applications
+  sudo install -m 644 ${PACKAGE_ROOT}/src/conkeror.png ${INSTALL_ROOT}/usr/local/share/pixmaps
+  sudo install -m 644 ${PACKAGE_ROOT}/src/conkeror.desktop ${INSTALL_ROOT}/usr/local/share/applications
+  sudo cp -r branding chrome components content defaults locale modules search-engines help style ${INSTALL_ROOT}/usr/local/conkeror/ || return 1
+  sudo cp -r contrib/xrev contrib/config contrib/modules ${INSTALL_ROOT}/usr/local/conkeror/contrib/ || return 1
+  sudo cp -p conkeror-spawn-helper ${INSTALL_ROOT}/usr/local/conkeror/
+  sudo cp -p application.ini ${INSTALL_ROOT}/usr/local/conkeror/application.ini
+  sudo cp -p contrib/man/conkeror.1 ${INSTALL_ROOT}/usr/local/share/man/man1
+  sudo cp -p contrib/list-xulrunner-versions ${INSTALL_ROOT}/usr/local/conkeror/contrib
+  sudo cp -p contrib/run-conkeror ${INSTALL_ROOT}/usr/local/conkeror/contrib
+  sudo ln -s /usr/local/conkeror/contrib/run-conkeror ${INSTALL_ROOT}/usr/local/bin/conkeror
+  sudo ln -s /usr/local/conkeror/conkeror-spawn-helper ${INSTALL_ROOT}/usr/local/bin/conkeror-spawn-helper
+  sudo ln -s /usr/local/lib/xulrunner-addons/plugins ${INSTALL_ROOT}/usr/local/conkeror/plugins
+  sudo ln -s /usr/local/lib/xulrunner-addons/extensions ${INSTALL_ROOT}/usr/local/conkeror/extensions
+
+}
+
+build_rules() {
+
+  buildit download || exit 1
+  buildit convert || exit 1
+  buildit unpack || exit 1
+  buildit patch || exit 1
+  buildit load || exit 1
+  buildit configure || exit 1
+  buildit compile || exit 1
+  buildit install || exit 1
+  buildit modify || exit 1
+  buildit strip || exit 1
+  buildit split || exit 1
+  buildit create || exit 1
+  buildit generate || exit 1
+  buildit check || exit 1
+  buildit package || exit 1
+  buildit compress || exit 1
+  buildit encrypt || exit 1
+
+}

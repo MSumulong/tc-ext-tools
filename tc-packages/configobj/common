@@ -1,0 +1,26 @@
+PACKAGE="configobj"
+VERSION="4.7.2"
+SOURCE="${PACKAGE}-${VERSION}.tar.gz"
+TOP_SRC="${PACKAGE}-${VERSION}"
+SOURCE_URL="http://pypi.python.org/packages/source/c/configobj/configobj-${VERSION}.tar.gz"
+BUILD_DEPENDS="python-2.7
+python-2.7-dev"
+
+EXTENSIONS="python_configobj-2.7"
+DESCRIPTION="config file read/write for python"
+AUTHOR="see list of sites below"
+SITE="see list of sites below"
+COPYING="see list of sites below"
+MAINTAINERS="juanito, Arslan S."
+COMMENTS="a simple but powerful config file reader and writer:
+                an ini file round tripper.
+                ----------
+                requires the python extension
+                ----------
+                This extension contains:
+                configobj-4.7.2 - BSD - http://pypi.python.org/packages/source/c/configobj/configobj-4.7.2.tar.gz
+
+		This extension is PPI compatible."
+CHANGELOG="2009/11/08 first version 4.6.0 by juanito
+		2010/06/19 updated to 4.7.2 by Arslan S."
+CURRENT="Rebuilt against python 2.7 by Arslan S."

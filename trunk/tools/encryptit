@@ -1,0 +1,53 @@
+#!/bin/sh
+#
+#  encryptit: Encrypts the file with the default encryption key
+#
+#  This program is free software; you can redistribute it and/or modify
+#  it under the terms of the GNU General Public License as published by
+#  the Free Software Foundation; either version 2 of the License, or
+#  (at your option) any later version.
+#
+#  This program is distributed in the hope that it will be useful,
+#  but WITHOUT ANY WARRANTY; without even the implied warranty of
+#  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+#  GNU General Public License for more details.
+#
+#  You should have received a copy of the GNU General Public License along
+#  with this program; if not, write to the Free Software Foundation, Inc.,
+#  51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
+#
+#  (C) Copyright 2010 Sercan Arslan
+#
+
+. /etc/init.d/tc-functions
+
+TCEXTTOOLS_ROOT=$(dirname $0)/..
+
+if [ -f "${TCEXTTOOLS_ROOT}/etc/tc-ext-tools/functions" ]; then
+     . ${TCEXTTOOLS_ROOT}/etc/tc-ext-tools/functions
+else
+     echo "${RED}$(basename ${0}):${BLUE} tc-ext-tools functions file not found!${NORMAL}"
+     exit 1
+fi
+
+FILE="${1}"
+
+print_usage(){
+  echo -e "${TCEXTTOOLS_ERROR_COLOR}Usage:${TCEXTTOOLS_MESSAGE_COLOR}\n$(basename $0) /path/to/file${NORMAL}"
+}
+
+if [ -z "${FILE}" -o ! -e "${FILE}" ]; then
+      print_usage
+      exit 1
+fi
+
+print_it "Please enter the encryption key: \c"
+print_it hilight "${TCEXTTOOLS_ENCRYPTION_KEY}"
+
+bcrypt ${FILE}
+
+if [ $? -gt 0 ]; then
+     exit 1
+fi
+
+exit 0

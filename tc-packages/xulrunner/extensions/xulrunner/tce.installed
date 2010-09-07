@@ -1,0 +1,3 @@
+#!/bin/sh
+[ -e /usr/local/share/flash10/libflashplayer.so ] && sudo ln -s /usr/local/share/flash10/libflashplayer.so /usr/local/lib/xulrunner-addons/plugins/libflashplayer.so > /dev/null 2>&1
+[ -d /usr/local/lib/xulrunner-addons/extensions ] || sudo mkdir -p /usr/local/lib/xulrunner-addons/extensions > /dev/null 2>&1

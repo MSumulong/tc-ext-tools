@@ -1,0 +1,21 @@
+PACKAGE="postr"
+VERSION="0.12.4"
+SOURCE="${PACKAGE}-${VERSION}.tar.bz2"
+TOP_SRC="${PACKAGE}-${VERSION}"
+SOURCE_URL="http://ftp.gnome.org/pub/GNOME/sources/postr/0.12/postr-${VERSION}.tar.bz2"
+ICON="/usr/local/share/icons/hicolor/32x32/apps/postr.png"
+DESKTOP_ENTRY="/usr/local/share/applications/postr.desktop"
+BUILD_DEPENDS="python-2.7
+python-2.7-dev"
+
+EXTENSIONS="postr"
+DESCRIPTION="GNOME Flickr Uploader."
+AUTHOR="Ross Burton"
+SITE="http://projects.gnome.org/postr/"
+COPYING="GPL-2"
+MAINTAINERS="Arslan S."
+COMMENTS="Nautilus plugin depends on nautilus-python.
+
+		This extension is PPI compatible."
+CHANGELOG="2010/05/15 Original 0.12.4"
+CURRENT="Rebuilt against python 2.7"

@@ -1,0 +1,69 @@
+#
+# tc-ext-tools build functions: configure, compile, install, rules
+#
+
+export CFLAGS="$CFLAGS -fPIC"
+
+### Configure
+build_configure() {
+
+./configure --prefix=/usr/local --enable-glx --enable-opengl \
+--disable-dbus --disable-dbus-control --enable-fribidi --enable-nls --enable-x264 \
+--enable-ncurses --enable-libtar --enable-skins2 --enable-mkv --enable-pulse --enable-oss --enable-alsa \
+--enable-xvideo --enable-theora --disable-caca --enable-xcb \
+--enable-avformat --enable-avcodec --enable-postproc --enable-swscale \
+--enable-a52 --enable-dca --enable-faad --enable-libmpeg2 --enable-live555 --with-live555-tree=/usr/local/lib/live \
+--enable-mad --enable-v4l --enable-v4l2 --enable-libcddb --disable-vcdx --enable-vcd --disable-zvbi --enable-taglib \
+--disable-hd1000v --disable-hd1000a --enable-lua --disable-telx \
+--enable-dvb --enable-dvbpsi --enable-libxml2 --enable-ogg --enable-vorbis --enable-speex \
+--enable-dvdread --enable-dvdnav --enable-shout --enable-notify --enable-screen \
+--enable-mpc --disable-gme --enable-twolame --enable-flac --enable-schroedinger \
+--enable-mozilla --enable-mtp --enable-png --enable-sdl --enable-realrtsp \
+--enable-visual --enable-snapshot --disable-gnutls --disable-projectm --enable-svg || return 1
+
+}
+##
+
+### Compile
+build_compile() {
+
+  make || return 1
+
+}
+##
+
+### Install
+build_install() {
+
+  sudo make DESTDIR=${INSTALL_ROOT} install || return 1
+
+  for res in 16 32 48 128; do
+    sudo install -D -m644 ${TCEXTTOOLS_TEMP_SRC}/${TOP_SRC}/share/icons/${res}x${res}/vlc.png ${TCEXTTOOLS_INSTALL_ROOT}/usr/local/share/icons/hicolor/${res}x${res}/apps/vlc.png || return 1
+  done
+
+}
+##
+
+### Rules
+build_rules() {
+
+  buildit download || exit 1
+  buildit convert || exit 1
+  buildit unpack || exit 1
+  buildit patch || exit 1
+  buildit load || exit 1
+  buildit configure || exit 1
+  buildit compile || exit 1
+  buildit install || exit 1
+  buildit modify || exit 1
+  buildit strip || exit 1
+  buildit split || exit 1
+  buildit create || exit 1
+  buildit generate || exit 1
+  buildit check || exit 1
+  buildit package || exit 1
+  buildit compress || exit 1
+  buildit encrypt || exit 1
+
+}
+##

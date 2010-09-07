@@ -1,0 +1,9 @@
+tc-ext-tools: An extension build system for Tiny Core Linux
+
+This project consists of a set of tools and an extension build system developed based on these tools.
+The aim of the project is to reduce command line usage as much as possible and provide a high level, easy extension maintenance system.
+
+The available packages provided within the project show basics of usage. By examining these packages 
+you should be able to understand how to use the build system.
+
+Sercan Arslan <arslanserc@gmail.com>

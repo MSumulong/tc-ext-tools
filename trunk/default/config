@@ -1,0 +1,38 @@
+### tc-ext-tools configuration
+
+## package maintainer
+PACKAGE_MAINTAINER="Arslan S."
+#
+
+## tc-ext-tools storage directory where the package files that shall not be committed to svn server are stored
+TCEXTTOOLS_STORAGE="/mnt/sda10/tc-ext-tools"
+#
+
+## message colors
+TCEXTTOOLS_MESSAGE_COLOR="${BLUE}"
+TCEXTTOOLS_WARNING_COLOR="${YELLOW}"
+TCEXTTOOLS_ERROR_COLOR="${RED}"
+TCEXTTOOLS_HILIGHT_COLOR="${CYAN}"
+#
+
+## please do not edit this section unless you know what you are doing!
+TCEXTTOOLS_COMMON="common"
+TCEXTTOOLS_BUILD="build"
+TCEXTTOOLS_SRC="src"
+TCEXTTOOLS_BIN="bin"
+TCEXTTOOLS_PKG="pkg"
+TCEXTTOOLS_LOG="log"
+TCEXTTOOLS_EXTENSIONS="extensions"
+TCEXTTOOLS_PATCHES="patches"
+TCEXTTOOLS_DEPENDS="compiletc squashfs-tools-4.0 wget tar git svn xz zip-unzip bzip2 gzip intltool perl5 perl_xml_parser gettext libtool libtool-dev autoconf automake"
+TCEXTTOOLS_ENCRYPTION_KEY="tinycore"
+#
+
+## compiler and linker flags
+CFLAGS="-march=i486 -mtune=i686 -Os -pipe"
+CXXFLAGS="-march=i486 -mtune=i686 -Os -pipe"
+LDFLAGS="-Wl,-O1"
+export CFLAGS CXXFLAGS LDFLAGS
+#
+
+##

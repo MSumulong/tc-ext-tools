@@ -1,0 +1,24 @@
+PACKAGE="sqlite3"
+VERSION="3.7.2"
+SOURCE="sqlite-amalgamation-${VERSION}.tar.gz"
+SOURCE_URL="http://www.sqlite.org/sqlite-amalgamation-${VERSION}.tar.gz"
+TOP_SRC="sqlite-${VERSION}"
+BUILD_DEPENDS="readline
+readline-dev"
+
+EXTENSIONS="sqlite3 sqlite3-dev sqlite3-bin"
+DESCRIPTION="SQLite is a in-process library that implements a self-contained, serverless, zero-configuration, transactional SQL database engine."
+AUTHOR="Richard Hipp, Dan Kennedy, Shane Harrelson, Christian Werner"
+SITE="http://www.sqlite.org"
+COPYING="Public Domain"
+MAINTAINERS="Arslan S."
+COMMENTS="This extension is PPI compatible."
+CHANGELOG="2008/12/24 First version 3.6.7 by stevens
+		2009/04/28 Dramatic size reduction and newer version 3.6.13 by Roberto A. Foglietta
+		2010/01/30 Updated to 3.6.22
+		2010/06/07 Updated to 3.6.23.1
+		2010/07/24 Updated to 3.7.0"
+CURRENT="Updated to 3.7.2
+			-removed sqlite3-doc extension, and added sqlite3-bin extension
+			-moved sqlite3 shell tool to sqlite3-bin
+			-sqlite3 shell tool compiled with readline support"

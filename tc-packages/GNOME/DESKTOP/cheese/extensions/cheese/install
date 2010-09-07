@@ -1,0 +1,10 @@
+usr/local/bin
+usr/local/etc
+usr/local/libexec
+usr/local/lib/*.so*
+usr/local/share/applications
+usr/local/share/cheese
+usr/local/share/dbus-1
+usr/local/share/icons
+usr/local/share/gnome/help/*/C
+usr/local/share/omf/*/*-C.omf

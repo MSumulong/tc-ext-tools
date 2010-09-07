@@ -1,0 +1,69 @@
+PACKAGE="qmmp"
+VERSION="0.4.2"
+SOURCE="${PACKAGE}-${VERSION}.tar.bz2"
+TOP_SRC="${PACKAGE}-${VERSION}"
+SOURCE_URL="http://qmmp.ylsoftware.com/files/qmmp-${VERSION}.tar.bz2"
+ICON="/usr/local/share/icons/hicolor/48x48/apps/qmmp.png"
+DESKTOP_ENTRY="/usr/local/share/applications/qmmp.desktop"
+BUILD_DEPENDS="cmake
+libmpcdec
+libmpcdec-dev
+libasound
+alsa-dev
+jack
+libmad
+libmad-dev
+qt-4.x-base
+qt-4.x-dbus
+qt-4.x-xml
+qt-4.x-opengl
+qt-4.x-dev
+Xorg-7.5-lib
+Xorg-7.5-dev
+libogg
+libogg-dev
+libvorbis
+libvorbis-dev
+taglib
+taglib-dev
+curl
+curl-dev
+flac
+flac-dev
+libsamplerate
+libsamplerate-dev
+libsndfile
+libsndfile-dev
+faad
+faad-dev
+libcdio
+libcdio-dev
+libavcodec
+libavformat
+wavpack
+wavpack-dev
+projectM
+projectM-dev
+pulseaudio
+pulseaudio-dev
+libcddb
+libcddb-dev
+libmms
+libmms-dev
+libmodplug
+libmodplug-dev
+ffmpeg-ffserver
+ffmpeg-ffserver-dev"
+
+EXTENSIONS="qmmp qmmp-dev"
+DESCRIPTION="Qt-based Multimedia Player."
+AUTHOR="Ilya Kotov, Vladimir Kuznetsov, Yuriy Zhuravlev, Andrey Adreev"
+SITE="http://qmmp.ylsoftware.com/"
+COPYING="GPL-2"
+MAINTAINERS="Arslan S."
+COMMENTS="This extension is PPI compatible."
+CHANGELOG="2010/02/07 Original 0.3.2
+		2010/04/06 Updated to 0.3.4-svn-r1660
+		2010/05/31 Updated to 0.4.0
+		2010/08/26 Updated to 0.4.1"
+CURRENT="Updated to 0.4.2"

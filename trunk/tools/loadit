@@ -1,0 +1,93 @@
+#!/bin/sh
+#
+#  loadit: Loads required dependencies to build the package
+#
+#  This program is free software; you can redistribute it and/or modify
+#  it under the terms of the GNU General Public License as published by
+#  the Free Software Foundation; either version 2 of the License, or
+#  (at your option) any later version.
+#
+#  This program is distributed in the hope that it will be useful,
+#  but WITHOUT ANY WARRANTY; without even the implied warranty of
+#  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+#  GNU General Public License for more details.
+#
+#  You should have received a copy of the GNU General Public License along
+#  with this program; if not, write to the Free Software Foundation, Inc.,
+#  51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
+#
+#  (C) Copyright 2010 Sercan Arslan
+#
+
+. /etc/init.d/tc-functions
+
+TCEXTTOOLS_ROOT=$(dirname $0)/..
+
+if [ -f "${TCEXTTOOLS_ROOT}/etc/tc-ext-tools/functions" ]; then
+     . ${TCEXTTOOLS_ROOT}/etc/tc-ext-tools/functions
+else
+     echo "${RED}$(basename ${0}):${BLUE} tc-ext-tools functions file not found!${NORMAL}"
+     exit 1
+fi
+
+DEP_LIST="${1}"
+
+TCE_DIR=$(cat /opt/.tce_dir)
+if [ $? -gt 0 ]; then
+     print_it error "Getting system tce directory failed!"
+     exit 1
+fi
+
+print_usage(){
+  echo -e "${TCEXTTOOLS_ERROR_COLOR}Usage:${TCEXTTOOLS_MESSAGE_COLOR}\n$(basename $0) \"dep1 dep2 dep3\" | /path/to/deplist${NORMAL}"
+}
+
+if [ -z "${DEP_LIST}" ]; then
+     print_usage
+     exit 1
+fi
+
+tcz_load() {
+
+  extension="${1}"
+  if [ -n "${extension}" ]; then
+       if [ "${extension#"#"}" = ${extension} ]; then
+            if [ ! -e "${TCE_DIR}/optional/${extension%.tcz}.tcz" ]; then
+                 tce-load -w ${extension%.tcz}.tcz || return 1
+            fi
+            if [ ! -e "/usr/local/tce.installed/${extension%.tcz}" ]; then
+                 tce-load -i ${extension%.tcz}.tcz || return 1
+            fi
+        fi
+  fi
+
+  return 0
+}
+
+this_main() {
+
+  if [ -f "${DEP_LIST}" ]; then
+       DEP_LIST=$(cat ${DEP_LIST})
+       if [ -z "${DEP_LIST}" ]; then
+            print_it error "Dependency list file is empty!"
+            return 1
+       fi
+  fi
+
+  for DEP in ${DEP_LIST}
+  do
+      tcz_load ${DEP} || return 1
+  done
+
+  return 0
+}
+
+print_it "Loading the dependencies in the list ... \c"
+this_main > ${TCEXTTOOLS_ERROR_LOG_2} 2>&1
+if [ $? -gt 0 ]; then
+     print_it error "failed!"
+     exit 1
+fi
+print_it hilight "successful!"
+
+exit 0

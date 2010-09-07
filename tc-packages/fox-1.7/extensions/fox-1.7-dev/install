@@ -1,0 +1,8 @@
+usr/local/bin/fox-config
+usr/local/bin/reswrap
+usr/local/include
+usr/local/lib/pkgconfig
+usr/local/lib/*.la
+usr/local/lib/*.a
+usr/local/share/doc
+usr/local/share/man/man1/reswrap.1

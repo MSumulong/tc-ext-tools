@@ -1,0 +1,12 @@
+#!/bin/sh
+[ -x $(which gtk-update-icon-cache) ] && sudo gtk-update-icon-cache -q -f -t /usr/local/share/icons/hicolor > /dev/null 2>&1
+[ -x $(which update-desktop-database) ] && sudo update-desktop-database -q > /dev/null 2>&1
+
+if [ -e /usr/local/share/flash10/libflashplayer.so ]
+then
+     if [ ! -e /usr/local/lib/mozilla/plugins/libflashplayer.so ]
+     then
+          [ -d /usr/local/lib/mozilla/plugins ] || sudo mkdir -p /usr/local/lib/mozilla/plugins > /dev/null 2>&1
+          sudo ln -sf /usr/local/share/flash10/libflashplayer.so /usr/local/lib/mozilla/plugins/libflashplayer.so > /dev/null 2>&1
+     fi
+fi
