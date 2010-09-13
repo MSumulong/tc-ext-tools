@@ -1,12 +1,4 @@
-### tc-ext-tools configuration
-
-## package maintainer
-PACKAGE_MAINTAINER="Arslan S."
-#
-
-## tc-ext-tools storage directory where the package files that shall not be committed to svn server are stored
-TCEXTTOOLS_STORAGE="/mnt/sda10/tc-ext-tools"
-#
+### tc-ext-tools default configuration
 
 ## message colors
 TCEXTTOOLS_MESSAGE_COLOR="${BLUE}"
@@ -24,7 +16,25 @@ TCEXTTOOLS_PKG="pkg"
 TCEXTTOOLS_LOG="log"
 TCEXTTOOLS_EXTENSIONS="extensions"
 TCEXTTOOLS_PATCHES="patches"
-TCEXTTOOLS_DEPENDS="compiletc squashfs-tools-4.0 wget tar git svn xz zip-unzip bzip2 gzip intltool perl5 perl_xml_parser gettext libtool libtool-dev autoconf automake"
+TCEXTTOOLS_DEPENDS="compiletc
+                    squashfs-tools-4.0
+                    wget
+                    tar
+                    git
+                    svn
+                    xz
+                    zip-unzip
+                    bzip2
+                    gzip
+                    intltool
+                    perl5
+                    perl_xml_parser
+                    gettext
+                    libtool
+                    libtool-dev
+                    autoconf
+                    automake"
+
 TCEXTTOOLS_ENCRYPTION_KEY="tinycore"
 #
 

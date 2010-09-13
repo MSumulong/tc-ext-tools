@@ -1,0 +1,9 @@
+### tc-ext-tools user configuration
+
+## package maintainer
+PACKAGE_MAINTAINER="User"
+#
+
+## tc-ext-tools storage directory where the package files that shall not be committed to svn server are stored
+TCEXTTOOLS_STORAGE="${HOME}/tc-ext-tools"
+#

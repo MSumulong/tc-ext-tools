@@ -1,7 +1,8 @@
-# There is nothing to build here but you need make to install tc-ext-tools
+# Before installing tc-ext-tools you need to create a .config file defining a few user variables.
+cp -f config.sample .config
 
-# by default tc-ext-tools will be installed to ~/.local
-make install
+# Run installit to install tc-ext-tools to your system
+./installit
 
-# if you want to install to a different location
-make DESTDIR=/path/to/install_root PREFIX=/usr/local install
+# By default tc-ext-tools will be installed to ~/.local (make sure ~/.local/bin is in your PATH). If you want to install to a different location
+DESTDIR=/path/to/destination ./installit
