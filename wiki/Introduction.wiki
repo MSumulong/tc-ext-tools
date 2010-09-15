@@ -27,7 +27,7 @@ _Note: version can be a number, "svn" or "git"._
 {{{
 mytexteditor {common, build etc.}
 }}}
-  * Most important ones you need to specify in the common file are SOURCE_URL, BUILD_DEPENDS, and in the build file configure, compile, install functions
+  * Most important ones you need to specify in the common file are SOURCE_URL, BUILD_DEPENDS, and in the build file the most important ones are configure, compile, install functions, rules function has been put here to give complete control to the user to define the build rules.
 
 * See available packages for more
 {{{
