@@ -16,6 +16,8 @@ svn checkout http://tc-ext-tools.googlecode.com/svn/trunk/
 
 * Adding a new package
 {{{
+mkdir package
+cd package
 boostit package version "extension1 extension2 ..."
 }}}
 
