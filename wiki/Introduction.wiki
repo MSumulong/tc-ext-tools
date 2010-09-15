@@ -14,6 +14,6 @@ All you need to do is to extract the tarball and follow instructions in INSTALL 
 boostit package version "package_extension1 package_extension2 ..."
 }}}
 
-# version can be a number or svn, git if using developer's repository.
+_version can be a number or svn, git if using developer's repository._
 
 svn checkout http://tc-ext-tools.googlecode.com/svn/tc-packages/
