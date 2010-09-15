@@ -62,7 +62,3 @@ buildit show error
 {{{
 svn checkout http://tc-ext-tools.googlecode.com/svn/tc-packages/
 }}}
-
-WikiWordLink
-[http://domain/page label]
-http://domain/page
