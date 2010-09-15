@@ -2,7 +2,7 @@
 
 = Introduction =
 
-TC-EXT-TOOLS is an extension build system developed to run under Tiny Core Linux. The main aim aim of the project is to provide a high-level, easy extension maintenance system for TCL package (tcz) maintainers.
+TC-EXT-TOOLS is an extension build system developed to run under Tiny Core Linux. The main aim aim of the project is to provide a high-level, easy extension maintenance system for package maintainers from Tiny Core Linux.
 
 = Design Concepts =
 
