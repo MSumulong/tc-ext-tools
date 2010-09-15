@@ -45,7 +45,22 @@ _Hint: Make sure you entered SOURCE and TOP_SRC correctly._
 buildit
 }}}
   * When creating a package for the first time you better advance step by step.
-
+{{{
+buildit download
+buildit unpack
+buildit load
+buildit configure
+buildit compile
+buildit install
+buildit strip
+buildit split
+buildit create
+buildit check
+buildit generate
+buildit package
+buildit compress
+buildit encrypt
+}}}
 * See available packages for more
 {{{
 svn checkout http://tc-ext-tools.googlecode.com/svn/tc-packages/
