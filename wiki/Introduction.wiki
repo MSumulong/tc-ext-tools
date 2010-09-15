@@ -50,7 +50,7 @@ buildit
 {{{
 buildit {download,unpack,load,configure,compile,install,strip,split,create,check,generate,convert,package,compress,encrypt}
 }}}
-  * If you want to see configure, compile and install standart output.
+  * If you want to see configure, compile or install standart output.
 {{{
 buildit show {configure,compile,install}
 }}}
