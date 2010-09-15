@@ -7,7 +7,10 @@ TC-EXT-TOOLS is an extension build system developed to run under Tiny Core Linux
 = Design Concepts =
 
  * Divide and conquer
- * 
+ * Ease of useness
+ * Minimal initial packaging time
+ * Each package has a source to download, a tarball or vcs repository.
+ * Extensions are created from packages.
 
 = Installation =
 
