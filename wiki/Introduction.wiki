@@ -46,21 +46,7 @@ buildit
 }}}
   * When creating a package for the first time you better advance step by step.
 {{{
-buildit download
-buildit unpack
-buildit load
-buildit configure
-buildit compile
-buildit install
-buildit strip
-buildit split
-buildit create
-buildit check
-buildit generate
-buildit convert
-buildit package
-buildit compress
-buildit encrypt
+buildit {download,unpack,load,configure,compile,install,strip,split,create,check,generate,convert,package,compress,encrypt}
 }}}
 * See available packages for more
 {{{
