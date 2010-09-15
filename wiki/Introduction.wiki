@@ -27,7 +27,14 @@ _Note: version can be a number, "svn" or "git"._
 {{{
 mytexteditor {common, build etc.}
 }}}
-  * Most important ones you need to specify in the common file are SOURCE_URL, BUILD_DEPENDS, and in the build file the most important ones are configure, compile, install functions, rules function has been put here to give complete control to the user to define the build rules.
+  * Most important ones you need to specify in the common file are SOURCE,SOURCE_URL, TOP_SRC, BUILD_DEPENDS, and in the build file configure, compile, install functions. Rules function is placed in the build file to give complete control to the user for defining the build rules.
+_Note:SOURCE_URL can be a direct address to download the tarball or url of an svn, git repository._
+_Note: _
+  * Then you can execute buildit in the package root directory to build the package with the rules defined in the build file.
+{{{
+buildit
+}}}
+  * When creating a package for the first time you better advance step by step.
 
 * See available packages for more
 {{{
