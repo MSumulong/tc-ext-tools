@@ -23,6 +23,9 @@ boostit package version "extension1 extension2 ..."
 }}}
 
   * Then edit the files generated under package root directory using your favorite file manager and text editor.
+{{{
+mytexteditor common 
+}}}
 
 _Note: version can be a number, "svn" or "git"._
 
