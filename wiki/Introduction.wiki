@@ -21,16 +21,16 @@ mkdir package
 cd package
 boostit package version "extension1 extension2 ..."
 }}}
-_Note: version can be a number, "svn" or "git"._
+_Hint: version can be a number, "svn" or "git"._
 
   * Then edit the files generated under package root directory using your favorite file manager and text editor.
 {{{
 mytexteditor {common, build etc.}
 }}}
   * Most important ones you need to specify in the common file are SOURCE,SOURCE_URL, TOP_SRC, BUILD_DEPENDS, and in the build file configure, compile, install functions. Rules function is placed in the build file to give complete control to the user for defining the build rules.
-_Note: SOURCE_URL can be the direct link for a tarball or the url of an svn or git repository._
+_Hint: SOURCE_URL can be the direct link for a tarball or the url of an svn or git repository._
 
-_Note: Make sure you entered SOURCE and TOP_SRC correctly._
+_Hint: Make sure you entered SOURCE and TOP_SRC correctly._
   * Then you can execute buildit in the package root directory to build the package with the rules defined in the build file.
 {{{
 buildit
