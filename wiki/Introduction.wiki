@@ -6,7 +6,7 @@ tc-ext-tools is an extension build system developed to run under Tiny Core Linux
 
 = Installation =
 
-All you need to do is to extract the tarball or check out from svn repository and follow instructions in INSTALL file.
+Download and extract the tarball or check out from svn repository and follow instructions in INSTALL file.
 
 {{{
 svn checkout http://tc-ext-tools.googlecode.com/svn/trunk/
