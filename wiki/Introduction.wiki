@@ -57,6 +57,7 @@ buildit split
 buildit create
 buildit check
 buildit generate
+buildit convert
 buildit package
 buildit compress
 buildit encrypt
