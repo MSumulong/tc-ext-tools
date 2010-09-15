@@ -16,7 +16,7 @@ Add your content here.  Format your content with:
 All you need to do is to extract the tarball and follow instructions in INSTALL file.
 
 = Usage =
-Adding a new package
+* Adding a new package
 
 {{{
 boostit new_package package_version "package_extension1 package_extension2 ..."
