@@ -15,6 +15,7 @@ svn checkout http://tc-ext-tools.googlecode.com/svn/trunk/
 = Usage =
 
 * Adding a new package
+  * First boost the package with boostit
 {{{
 mkdir package
 cd package
