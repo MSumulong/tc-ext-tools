@@ -50,6 +50,14 @@ buildit
 {{{
 buildit {download,unpack,load,configure,compile,install,strip,split,create,check,generate,convert,package,compress,encrypt}
 }}}
+  * If you want to see configure, compile and install standart output.
+{{{
+buildit show {configure,compile,install}
+}}}
+  * If an error occured you can see details about the error.
+{{{
+buildit show error
+}}}
 * See available packages for more
 {{{
 svn checkout http://tc-ext-tools.googlecode.com/svn/tc-packages/
