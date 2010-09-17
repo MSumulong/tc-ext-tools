@@ -1,8 +1,10 @@
-COMMENTS="Optional dependencies: mplayer, jack, projectM
+COMMENTS="Optional :
+			- projectM plugin depends on projectM, and qt-4.x-opengl
+			- mplayer plugin depends on any mplayer extension available
+			- jack plugin depends on jack
+			- sound output plugins depend on alsa, oss or pulseaudio
 
-		You need PULSEAUDIO, ALSA or OSS for sound
-
-		Supports Winamp and Xmms skins:
+		Qmmp supports Winamp and Xmms skins:
 			winamp 5: http://gnome-look.org/content/show.php?content=14870
 			xmms seamaster: http://www.kde-look.org/content/show.php?content=31224
 		To change skin settings->appearance->add and choose skin file (you don't need to extract compressed files)

@@ -1,5 +1,5 @@
 PACKAGE="chromium-browser"
-VERSION="6.0.472.53"
+VERSION="6.0.472.59"
 SOURCE="chromium-${VERSION}.tar.bz2"
 TOP_SRC="chromium-${VERSION}"
 SOURCE_URL="http://build.chromium.org/buildbot/official/chromium-${VERSION}.tar.bz2"
@@ -46,5 +46,6 @@ CHANGELOG="2009/12/17 First Version
 		2010/04/13 Updated to 5.0.376.0 (44267)
 		2010/06/05 Updated to 6.0.424.0 (48744)
 		2010/07/09 Updated to 6.0.462.0 (51950)
-		2010/08/29 Switched to stable channel & Updated to 5.0.375.127"
-CURRENT="Updated to 6.0.472.53"
+		2010/08/29 Switched to stable channel & Updated to 5.0.375.127
+		2010/09/04 Updated to 6.0.472.53"
+CURRENT="Updated to 6.0.472.59"

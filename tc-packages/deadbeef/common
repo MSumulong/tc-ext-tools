@@ -1,0 +1,51 @@
+PACKAGE="deadbeef"
+VERSION="0.4.1"
+SOURCE="${PACKAGE}-${VERSION}.tar.bz2"
+TOP_SRC="${PACKAGE}-${VERSION}"
+SOURCE_URL="http://downloads.sourceforge.net/project/deadbeef/deadbeef-${VERSION}.tar.bz2"
+ICON="/usr/local/share/icons/hicolor/48x48/apps/deadbeef.png"
+DESKTOP_ENTRY="/usr/local/share/applications/deadbeef.desktop"
+BUILD_DEPENDS="libasound
+alsa-dev
+pulseaudio
+pulseaudio-dev
+gtk2
+gtk2-dev
+libmad
+libmad-dev
+libsamplerate
+libsamplerate-dev
+libvorbis
+libvorbis-dev
+flac
+flac-dev
+libsndfile
+libsndfile-dev
+libcdio
+libcdio-dev
+libcddb
+libcddb-dev
+wavpack
+wavpack-dev
+ffmpeg-ffserver
+ffmpeg-ffserver-dev
+curl
+openssl-0.9.8-dev
+curl-dev
+libnotify
+dbus
+Xorg-7.5-lib
+Xorg-7.5-dev
+glibc_gconv"
+
+EXTENSIONS="deadbeef"
+DESCRIPTION="DeaDBeeF - ultimate music player for GNU/Linux systems with X11."
+AUTHOR="Alexey Yakovenko, Viktor Semykin, Stas Akimushkin"
+SITE="http://deadbeef.sourceforge.net/"
+COPYING="GPL-2"
+MAINTAINERS="Arslan S."
+COMMENTS="Optional dependencies: pulseaudio, alsa or OSS for sound output plugins.
+
+		This extension is PPI compatible." 
+CHANGELOG="---"
+CURRENT="First Version"
