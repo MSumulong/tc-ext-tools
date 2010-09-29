@@ -1,7 +1,7 @@
-# Before installing tc-ext-tools you need to create a .config file defining a few user variables.
+# Before installing tc-ext-tools you need to create a .config file defining a few user specific variables.
 cp -f config.sample .config
 
-# Run installit to install tc-ext-tools to your system
+# Run installit for installing tc-ext-tools to your system
 ./installit
 
 # By default tc-ext-tools will be installed to ~/.local (make sure ~/.local/bin is in your PATH). If you want to install to a different location

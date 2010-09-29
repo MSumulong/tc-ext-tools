@@ -2,14 +2,14 @@
 # tc-ext-tools build functions: configure, compile, install, rules
 #
 
-### Configure
+# Configure
 build_configure() {
 
-  ## autotools
+  # autotools
   ./configure --prefix=/usr/local || return 1
   #
 
-  ## cmake
+  # cmake
   #[ -d build ] || mkdir build
   #cd build
   #cmake -DCMAKE_INSTALL_PREFIX=/usr/local -DCMAKE_BUILD_TYPE=Release .. || return 1
@@ -19,13 +19,11 @@ build_configure() {
   #python setup.py configure || return 1
 
 }
-##
 
-### Compile
+# Compile
 build_compile() {
 
-  ## cmake
-  #cd build
+  #cd build # cmake
   make || return 1
   #
 
@@ -36,42 +34,38 @@ build_compile() {
   #python setup.py build || return 1
 
 }
-##
 
-### Install
+# Install
 build_install() {
 
-  ## DESTDIR
-  # cmake
-  #cd build
-  sudo make DESTDIR=${INSTALL_ROOT} install || return 1
+  # DESTDIR
+  #cd build # cmake
+  sudo make DESTDIR=$INSTALL_ROOT install || return 1
   #
 
-  ## INSTALL_ROOT
-  # cmake
-  #cd build
-  #sudo make INSTALL_ROOT=${INSTALL_ROOT} install || return 1
+  # INSTALL_ROOT
+  #cd build # cmake
+  #sudo make INSTALL_ROOT=$INSTALL_ROOT install || return 1
   #
 
   # jam
-  #sudo DESTDIR=${INSTALL_ROOT} jam install || return 1
+  #sudo DESTDIR=$INSTALL_ROOT jam install || return 1
   #
 
-  ## python install
-  #sudo python setup.py install --prefix=/usr/local --root=${INSTALL_ROOT} || return 1
+  # python install
+  #sudo python setup.py install --prefix=/usr/local --root=$INSTALL_ROOT || return 1
   #
 
 }
-##
 
-### Rules
+# Rules
 build_rules() {
 
+  buildit load || exit 1
   buildit download || exit 1
   buildit convert || exit 1
   buildit unpack || exit 1
   buildit patch || exit 1
-  buildit load || exit 1
   buildit configure || exit 1
   buildit compile || exit 1
   buildit install || exit 1
@@ -86,4 +80,3 @@ build_rules() {
   buildit encrypt || exit 1
 
 }
-##

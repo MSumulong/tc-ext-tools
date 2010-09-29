@@ -23,45 +23,45 @@
 
 TCEXTTOOLS_ROOT=$(dirname $0)/..
 
-if [ -f "${TCEXTTOOLS_ROOT}/etc/tc-ext-tools/functions" ]; then
-     . ${TCEXTTOOLS_ROOT}/etc/tc-ext-tools/functions
+if [ -f "$TCEXTTOOLS_ROOT"/etc/tc-ext-tools/functions ]; then
+     . "$TCEXTTOOLS_ROOT"/etc/tc-ext-tools/functions
 else
-     echo "${RED}$(basename ${0}):${BLUE} tc-ext-tools functions file not found!${NORMAL}"
+     echo "${RED}$(basename $0):${BLUE} tc-ext-tools functions file not found!${NORMAL}"
      exit 1
 fi
 
-EXTENSION="${1}"
+EXTENSION="$1"
 
 print_usage(){
   echo -e "${TCEXTTOOLS_ERROR_COLOR}Usage:${TCEXTTOOLS_MESSAGE_COLOR}\n$(basename $0) extension${NORMAL}"
 }
 
-if [ -z "${EXTENSION}" ]; then
+if [ -z "$EXTENSION" ]; then
       print_usage
       exit 1
 fi
 
-if [ ! -e "${TCEXTTOOLS_EXTENSIONS}/${EXTENSION}/${EXTENSION}.tcz" ]; then
+if [ ! -e "$TCEXTTOOLS_EXTENSIONS"/"$EXTENSION"/"${EXTENSION}.tcz" ]; then
      print_it error "You must create it first!"
      exit 1
 fi
 
 this_main() {
 
-  CURRENT="${DATE} ${CURRENT}"
-  SIZE="$(du -h "${TCEXTTOOLS_EXTENSIONS}/${EXTENSION}/${EXTENSION}.tcz" | cut -f1)"
-  [ ! "${EXTENSION%-bin}" = "${EXTENSION}" ] && DESCRIPTION="${DESCRIPTION%.}, utilities."
-  [ ! "${EXTENSION%-lib}" = "${EXTENSION}" ] && DESCRIPTION="${DESCRIPTION%.}, shared libraries."
-  [ ! "${EXTENSION%-dev}" = "${EXTENSION}" ] && DESCRIPTION="${DESCRIPTION%.}, development files."
-  [ ! "${EXTENSION%-doc}" = "${EXTENSION}" ] && DESCRIPTION="${DESCRIPTION%.}, documentation files."
-  [ ! "${EXTENSION%-locale}" = "${EXTENSION}" ] && DESCRIPTION="${DESCRIPTION%.}, locale files."
-  [ ! "${EXTENSION%-gir}" = "${EXTENSION}" ] && DESCRIPTION="${DESCRIPTION%.}, gobject introspection data."
+  CURRENT="$DATE $CURRENT"
+  SIZE=$(du -h "$TCEXTTOOLS_EXTENSIONS"/"$EXTENSION"/"${EXTENSION}.tcz" | cut -f1)
+  [ ! "${EXTENSION%-bin}" = "$EXTENSION" ] && DESCRIPTION="${DESCRIPTION%.}, utilities."
+  [ ! "${EXTENSION%-lib}" = "$EXTENSION" ] && DESCRIPTION="${DESCRIPTION%.}, shared libraries."
+  [ ! "${EXTENSION%-dev}" = "$EXTENSION" ] && DESCRIPTION="${DESCRIPTION%.}, development files."
+  [ ! "${EXTENSION%-doc}" = "$EXTENSION" ] && DESCRIPTION="${DESCRIPTION%.}, documentation files."
+  [ ! "${EXTENSION%-locale}" = "$EXTENSION" ] && DESCRIPTION="${DESCRIPTION%.}, locale files."
+  [ ! "${EXTENSION%-gir}" = "$EXTENSION" ] && DESCRIPTION="${DESCRIPTION%.}, gobject introspection data."
 
-  if [ -e "${PACKAGE_EXTENSIONS}/${EXTENSION}/info" ]; then
-      . ${PACKAGE_EXTENSIONS}/${EXTENSION}/info
+  if [ -e "$PACKAGE_EXTENSIONS"/"$EXTENSION"/info ]; then
+      . "$PACKAGE_EXTENSIONS"/"$EXTENSION"/info
   fi
 
-  cat > ${TCEXTTOOLS_EXTENSIONS}/${EXTENSION}/${EXTENSION}.tcz.info << _EOF
+  cat > "$TCEXTTOOLS_EXTENSIONS"/"$EXTENSION"/"${EXTENSION}.tcz.info" << _EOF
 Title:		${EXTENSION}.tcz
 Description:	${DESCRIPTION}
 Version:	${VERSION}
@@ -75,7 +75,7 @@ Change-log:	${CHANGELOG}
 Current:	${CURRENT}
 _EOF
 
-  if [ $? -gt 0 ]; then
+  if [ "$?" -gt 0 ]; then
        print_it error "Failed to write ${EXTENSION}.tcz.info"
        return 1
   fi
@@ -83,9 +83,9 @@ _EOF
   return 0
 }
 
-print_it "Generating the extension ${EXTENSION} info ... \c"
-this_main > ${TCEXTTOOLS_ERROR_LOG_2} 2>&1
-if [ $? -gt 0 ]; then
+print_it "Generating the extension $EXTENSION info ... \c"
+this_main > $TCEXTTOOLS_ERROR_LOG_2 2>&1
+if [ "$?" -gt 0 ]; then
      print_it error "failed!"
      exit 1
 fi
