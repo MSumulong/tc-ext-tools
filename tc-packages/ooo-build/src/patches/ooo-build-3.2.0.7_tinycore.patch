@@ -1,0 +1,107 @@
+diff -rupN ooo-build-3.2.0.7_orig/configure.in ooo-build-3.2.0.7_tinycore/configure.in
+--- ooo-build-3.2.0.7_orig/configure.in	2010-02-24 15:31:25.000000000 +0000
++++ ooo-build-3.2.0.7_tinycore/configure.in	2010-05-02 09:02:36.000000000 +0000
+@@ -664,6 +664,7 @@ case $DISTRO in
+         SUSE*|Novell*|NLD*) VENDORNAME="Novell" ;;
+         GoOo*) VENDORNAME="Go-oo Project" ;;
+         Slackware*) VENDORNAME="Slackware" ;;
++        TinyCore*) VENDORNAME="Tiny Core" ;;
+         PLD*) VENDORNAME="PLD" ;;
+         OxygenOffice*) VENDORNAME="OxygenOffice" ;;
+         FSFhu*) VENDORNAME="FSFhu" ;;
+@@ -1611,6 +1612,7 @@ distro-configs/SUSE-11.0.conf
+ distro-configs/SUSE-11.1.conf
+ distro-configs/SUSE-11.2.conf
+ distro-configs/Slackware.conf
++distro-configs/TinyCore.conf
+ distro-configs/Mandriva.conf
+ distro-configs/Mandriva64.conf
+ distro-configs/NovellWin32.conf
+diff -rupN ooo-build-3.2.0.7_orig/distro-configs/Makefile.in ooo-build-3.2.0.7_tinycore/distro-configs/Makefile.in
+--- ooo-build-3.2.0.7_orig/distro-configs/Makefile.in	2010-02-24 15:31:29.000000000 +0000
++++ ooo-build-3.2.0.7_tinycore/distro-configs/Makefile.in	2010-05-02 09:02:36.000000000 +0000
+@@ -55,6 +55,7 @@ DIST_COMMON = $(srcdir)/ArchLinux.conf.i
+ 	$(srcdir)/SUSE-9.1.conf.in $(srcdir)/SUSE-9.2.conf.in \
+ 	$(srcdir)/SUSE-9.3.conf.in $(srcdir)/SUSE-reduced.conf.in \
+ 	$(srcdir)/SUSE.conf.in $(srcdir)/Slackware.conf.in \
++	$(srcdir)/TinyCore.conf.in \
+ 	$(srcdir)/Solaris.conf.in $(srcdir)/UbuntuHardy.conf.in \
+ 	$(srcdir)/UbuntuIntrepid.conf.in \
+ 	$(srcdir)/UbuntuJaunty.conf.in $(srcdir)/UbuntuKarmic.conf.in \
+@@ -79,7 +80,7 @@ CONFIG_CLEAN_FILES = ArchLinux.conf Ark.
+ 	UbuntuLucid.conf SUSE.conf SUSE-reduced.conf SUSE-9.1.conf \
+ 	SUSE-9.2.conf SUSE-9.3.conf SUSE-10.0.conf SUSE-10.1.conf \
+ 	SUSE-10.2.conf SUSE-10.3.conf SUSE-11.0.conf SUSE-11.1.conf \
+-	SUSE-11.2.conf Slackware.conf Mandriva.conf Mandriva64.conf \
++	SUSE-11.2.conf Slackware.conf TinyCore.conf Mandriva.conf Mandriva64.conf \
+ 	NovellWin32.conf NovellWin32Eval.conf NovellWin32ISO.conf \
+ 	Gentoo.conf Frugalware.conf openmamba.conf \
+ 	translate-org-za-linux.conf translate-org-za-win32.conf \
+@@ -393,6 +394,8 @@ SUSE-11.2.conf: $(top_builddir)/config.s
+ 	cd $(top_builddir) && $(SHELL) ./config.status $(subdir)/$@
+ Slackware.conf: $(top_builddir)/config.status $(srcdir)/Slackware.conf.in
+ 	cd $(top_builddir) && $(SHELL) ./config.status $(subdir)/$@
++TinyCore.conf: $(top_builddir)/config.status $(srcdir)/TinyCore.conf.in
++	cd $(top_builddir) && $(SHELL) ./config.status $(subdir)/$@
+ Mandriva.conf: $(top_builddir)/config.status $(srcdir)/Mandriva.conf.in
+ 	cd $(top_builddir) && $(SHELL) ./config.status $(subdir)/$@
+ Mandriva64.conf: $(top_builddir)/config.status $(srcdir)/Mandriva64.conf.in
+diff -rupN ooo-build-3.2.0.7_orig/distro-configs/TinyCore.conf.in ooo-build-3.2.0.7_tinycore/distro-configs/TinyCore.conf.in
+--- ooo-build-3.2.0.7_orig/distro-configs/TinyCore.conf.in	1970-01-01 00:00:00.000000000 +0000
++++ ooo-build-3.2.0.7_tinycore/distro-configs/TinyCore.conf.in	2010-05-04 17:40:55.000000000 +0000
+@@ -0,0 +1,31 @@
++--with-vendor=\"Tiny Core Linux\"
++--disable-fontooo
++--disable-binfilter
++--disable-gnome-vfs
++--disable-odk
++--disable-qadevooo
++--disable-pam
++--enable-cups
++--enable-pdfimport
++--enable-presenter-console
++--enable-minimizer
++--enable-graphite
++--with-system-expat
++--with-system-curl
++--with-system-xrender-headers
++--with-system-freetype
++--with-system-icu
++--with-system-libxml
++--with-system-libxslt
++--with-system-mozilla=xulrunner
++--with-system-cairo
++--with-system-graphite
++--with-system-hunspell
++--with-system-db
++--without-stlport
++--without-myspell-dicts
++--with-system-dicts
++--with-external-dict-dir=/usr/local/share/myspell
++--with-external-hyph-dir=/usr/local/share/myspell
++--with-external-thes-dir=/usr/local/share/myspell
++--without-java
+diff -rupN ooo-build-3.2.0.7_orig/download.in ooo-build-3.2.0.7_tinycore/download.in
+--- ooo-build-3.2.0.7_orig/download.in	2010-01-18 10:19:14.000000000 +0000
++++ ooo-build-3.2.0.7_tinycore/download.in	2010-05-02 09:02:36.000000000 +0000
+@@ -519,7 +519,7 @@ if ($distro eq 'ArchLinux' ||
+     $distro eq 'Gentoo.conf' ||
+     $distro eq 'openmamba' ||
+     $distro eq 'SUSE-9.1' || $distro eq 'SUSE-9.2' || $distro eq 'SUSE-9.3' ||
+-    $distro eq 'Slackware' ||
++    $distro eq 'Slackware' || $distro eq 'TinyCore' ||
+     $distro eq 'NovellWin32' || $distro eq 'GoOoWin32' ||
+     $distro eq 'OxygenOfficeLinux' || $distro eq 'OxygenOfficeWindows' || 
+     $distro eq 'FSFhuLinux' || $distro eq 'FSFhuWindows' || 
+diff -rupN ooo-build-3.2.0.7_orig/patches/dev300/apply ooo-build-3.2.0.7_tinycore/patches/dev300/apply
+--- ooo-build-3.2.0.7_orig/patches/dev300/apply	2010-02-23 14:39:24.000000000 +0000
++++ ooo-build-3.2.0.7_tinycore/patches/dev300/apply	2010-05-02 09:02:36.000000000 +0000
+@@ -75,6 +75,8 @@ SUSE      : NovellBase, BerkeleyDB43, EM
+ SUSE-reduced:NovellBase,BerkeleyDB43, ReducedDefaults
+ # Slackware
+ Slackware : LinuxCommon, SlackwareOnly, NotDebian, Mono, msaccess, CairoFonts
++# Tiny Core
++TinyCore : LinuxCommon, NotDebian, CairoFonts
+ # Debian
+ DebianBase : LinuxCommon, DebianBaseOnly, GCCSTL, BerkeleyDB43, Split, PostgreSQL, MySQL
+ Debian : DebianBase, DebianOnly, DebianSidOnly, Debian32Only, CairoFonts, HPPA

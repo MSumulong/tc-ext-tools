@@ -23,36 +23,36 @@
 
 TCEXTTOOLS_ROOT=$(dirname $0)/..
 
-if [ -f "${TCEXTTOOLS_ROOT}/etc/tc-ext-tools/functions" ]; then
-     . ${TCEXTTOOLS_ROOT}/etc/tc-ext-tools/functions
+if [ -f "$TCEXTTOOLS_ROOT"/etc/tc-ext-tools/functions ]; then
+     . "$TCEXTTOOLS_ROOT"/etc/tc-ext-tools/functions
 else
-     echo "${RED}$(basename ${0}):${BLUE} tc-ext-tools functions file not found!${NORMAL}"
+     echo "${RED}$(basename $0):${BLUE} tc-ext-tools functions file not found!${NORMAL}"
      exit 1
 fi
 
-if [ ! -d "${TCEXTTOOLS_BIN_TEMP}/${TOP_SRC}" ]; then
+if [ ! -d "$TCEXTTOOLS_BIN_TEMP"/"$TOP_SRC" ]; then
      print_it error "You must unpack it first!"
      exit 1
 fi
 
 this_main() {
-  if [ -f "${PACKAGE_PATCHES}/series" ]; then
-       PATCHES=$(cat ${PACKAGE_PATCHES}/series)
-       for PATCH in ${PATCHES}
+  if [ -f "$PACKAGE_PATCHES"/series ]; then
+       PATCHES=$(cat "$PACKAGE_PATCHES"/series)
+       for PATCH in $PATCHES
        do
-           if [ "${PATCH#"#"}" = "${PATCH}" ]; then
-                if [ -f ${PACKAGE_PATCHES}/${PATCH} ]; then
-                     patch --directory="${TCEXTTOOLS_BIN_TEMP}/${TOP_SRC}" -Np1 -i ${PACKAGE_PATCHES}/${PATCH} || return 1
+           if [ "${PATCH#"#"}" = "$PATCH" ]; then
+                if [ -f "$PACKAGE_PATCHES"/"$PATCH" ]; then
+                     patch --directory="$TCEXTTOOLS_BIN_TEMP"/"$TOP_SRC" -Np1 -i "$PACKAGE_PATCHES"/"$PATCH" || return 1
                 fi
            fi
        done
-  elif [ -d "${PACKAGE_PATCHES}" ]; then
-       PATCHES=$(ls ${PACKAGE_PATCHES})
-       if [ -n "${PATCHES}" ]; then
-            for PATCH in ${PATCHES}
+  elif [ -d "$PACKAGE_PATCHES" ]; then
+       PATCHES=$(ls $PACKAGE_PATCHES)
+       if [ -n "$PATCHES" ]; then
+            for PATCH in $PATCHES
             do
-                if [ -f "${PACKAGE_PATCHES}/${PATCH}" ]; then
-                     patch --directory="${TCEXTTOOLS_BIN_TEMP}/${TOP_SRC}" -Np1 -i ${PACKAGE_PATCHES}/${PATCH} || return 1
+                if [ -f "$PACKAGE_PATCHES"/"$PATCH" ]; then
+                     patch --directory="$TCEXTTOOLS_BIN_TEMP"/"$TOP_SRC" -Np1 -i "$PACKAGE_PATCHES"/"$PATCH" || return 1
                 fi
             done
        fi
@@ -61,9 +61,9 @@ this_main() {
   return 0
 }
 
-print_it "Patching the package ${PACKAGE} source ... \c"
-this_main > ${TCEXTTOOLS_ERROR_LOG_2} 2>&1
-if [ $? -gt 0 ]; then
+print_it "Patching the package $PACKAGE source ... \c"
+this_main > $TCEXTTOOLS_ERROR_LOG_2 2>&1
+if [ "$?" -gt 0 ]; then
      print_it error "failed!"
      exit 1
 fi

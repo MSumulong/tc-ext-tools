@@ -1,0 +1,73 @@
+PACKAGE="ooo-build"
+VERSION="3.2.1.4"
+SOURCE="${PACKAGE}-${VERSION}.tar.gz"
+TOP_SRC="${PACKAGE}-${VERSION}"
+SOURCE_URL="http://download.go-oo.org/OOO320/ooo-build-${VERSION}.tar.gz"
+ICON="/usr/local/share/icons/hicolor/48x48/apps/ooo-base.png"
+DESKTOP_ENTRY="/usr/local/share/applications/openoffice3.desktop"
+BUILD_DEPENDS="zip-unzip
+bash
+tar
+perl_archive_zip
+libcups
+cups
+nss
+nss-dev
+xulrunner
+xulrunner-dev
+gtk2
+gtk2-dev
+glibc_apps
+glibc_add_libs
+openldap
+openldap-dev
+GConf
+GConf-dev
+python-2.7
+python-2.7-dev
+libxslt
+curl
+curl-dev
+dbus-glib
+poppler
+poppler-dev
+gstreamer
+gstreamer-dev
+gst-plugins-base
+gst-plugins-base-dev
+glibc_gconv
+libasound
+alsa-dev
+Linux-PAM
+Linux-PAM-dev
+autoconf
+automake
+ccache
+rsync
+git
+evolution
+evolution-dev
+icu
+icu-dev
+silgraphite
+silgraphite-dev
+hunspell
+hunspell-dev
+bsddb
+bsddb-dev
+openclipart-png
+libxml2
+libxml2-dev
+libxml2-bin
+#boost
+#boost-dev"
+
+EXTENSIONS="openoffice3"
+DESCRIPTION="This is Go-oo for Tiny Core, a variant of the original OpenOffice.org."
+AUTHOR="Go-oo.org and OpenOffice.org Community"
+SITE="http://go-oo.org/"
+COPYING="GNU Lesser GPL-3"
+MAINTAINERS="Arslan S."
+COMMENTS="This extension is PPI compatible."
+CHANGELOG="2010/05/06 First Version 3.2.0.7"
+CURRENT="Updated to 3.2.1.4"

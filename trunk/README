@@ -4,7 +4,9 @@ This project consists of a set of tools and an extension build system developed 
 The aim of the project is to reduce the command line usage as much as possible and provide a high level,
 easy extension maintenance system.
 
-The available packages provided within the project show basic usage of tc-ext-tools.
-You should be able to understand how to use the build system by examining these packages.
+The available packages provided within the project show basic usage of tc-ext-tools. You should
+be able to understand how to use the build system by examining these packages.
 
 Sercan Arslan <arslanserc@gmail.com>
+
+The project is hosted at http://code.google.com/p/tc-ext-tools/

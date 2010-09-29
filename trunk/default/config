@@ -1,13 +1,13 @@
-### tc-ext-tools default configuration
+# tc-ext-tools default configuration
 
-## message colors
+# Message colors
 TCEXTTOOLS_MESSAGE_COLOR="${BLUE}"
 TCEXTTOOLS_WARNING_COLOR="${YELLOW}"
 TCEXTTOOLS_ERROR_COLOR="${RED}"
 TCEXTTOOLS_HILIGHT_COLOR="${CYAN}"
 #
 
-## please do not edit this section unless you know what you are doing!
+# Please do not edit this section!
 TCEXTTOOLS_COMMON="common"
 TCEXTTOOLS_BUILD="build"
 TCEXTTOOLS_SRC="src"
@@ -38,11 +38,9 @@ TCEXTTOOLS_DEPENDS="compiletc
 TCEXTTOOLS_ENCRYPTION_KEY="tinycore"
 #
 
-## compiler and linker flags
+# Compiler and linker flags
 CFLAGS="-march=i486 -mtune=i686 -Os -pipe"
 CXXFLAGS="-march=i486 -mtune=i686 -Os -pipe"
 LDFLAGS="-Wl,-O1"
 export CFLAGS CXXFLAGS LDFLAGS
 #
-
-##

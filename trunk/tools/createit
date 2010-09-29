@@ -23,16 +23,16 @@
 
 TCEXTTOOLS_ROOT=$(dirname $0)/..
 
-if [ -f "${TCEXTTOOLS_ROOT}/etc/tc-ext-tools/functions" ]; then
-     . ${TCEXTTOOLS_ROOT}/etc/tc-ext-tools/functions
+if [ -f "$TCEXTTOOLS_ROOT"/etc/tc-ext-tools/functions ]; then
+     . "$TCEXTTOOLS_ROOT"/etc/tc-ext-tools/functions
 else
-     echo "${RED}$(basename ${0}):${BLUE} tc-ext-tools functions file not found!${NORMAL}"
+     echo "${RED}$(basename $0):${BLUE} tc-ext-tools functions file not found!${NORMAL}"
      exit 1
 fi
 
-EXTENSION="${1}"
+EXTENSION="$1"
 
-if [ ! -d "${TCEXTTOOLS_BIN}/${EXTENSION}" ]; then
+if [ ! -d "$TCEXTTOOLS_BIN"/"$EXTENSION" ]; then
      print_it error "You must split it first!"
      exit 1
 fi
@@ -41,55 +41,55 @@ print_usage() {
   echo -e "${TCEXTTOOLS_ERROR_COLOR}Usage:${TCEXTTOOLS_MESSAGE_COLOR}\n$(basename $0) extension${NORMAL}"
 }
 
-if [ -z "${EXTENSION}" ]; then
-      print_usage
-      exit 1
+if [ -z "$EXTENSION" ]; then
+     print_usage
+     exit 1
 fi
 
 this_main() {
 
-  cd ${PACKAGE_ROOT}
+  cd $PACKAGE_ROOT
 
-  if [ -e "${PACKAGE_EXTENSIONS}/${EXTENSION}/tce.installed" ]; then
-       sudo install -m 775 -D ${PACKAGE_EXTENSIONS}/${EXTENSION}/tce.installed ${TCEXTTOOLS_BIN}/${EXTENSION}/usr/local/tce.installed/${EXTENSION} || return 1
-       sudo chown -R root:staff ${TCEXTTOOLS_BIN}/${EXTENSION}/usr/local/tce.installed || return 1
-       sudo chmod -R 775 ${TCEXTTOOLS_BIN}/${EXTENSION}/usr/local/tce.installed || return 1
+  if [ -e "$PACKAGE_EXTENSIONS"/"$EXTENSION"/tce.installed ]; then
+       sudo install -m 775 -D "$PACKAGE_EXTENSIONS"/"$EXTENSION"/tce.installed "$TCEXTTOOLS_BIN"/"$EXTENSION"/usr/local/tce.installed/"$EXTENSION" || return 1
+       sudo chown -R root:staff "$TCEXTTOOLS_BIN"/"$EXTENSION"/usr/local/tce.installed || return 1
+       sudo chmod -R 775 "$TCEXTTOOLS_BIN"/"$EXTENSION"/usr/local/tce.installed || return 1
   fi
 
-  cd ${TCEXTTOOLS_BIN}
+  cd $TCEXTTOOLS_BIN
 
-  [ -e ${EXTENSION}.tcz ] && sudo rm -f ${EXTENSION}.tcz
-  [ -e ${EXTENSION}.tcz.list ] && sudo rm -f ${EXTENSION}.tcz.list
-  [ -e ${EXTENSION}.tcz.md5.txt ] && sudo rm -f ${EXTENSION}.tcz.md5.txt
+  [ -e "${EXTENSION}.tcz" ] && sudo rm -f "${EXTENSION}.tcz"
+  [ -e "${EXTENSION}.tcz.list" ] && sudo rm -f "${EXTENSION}.tcz.list"
+  [ -e "${EXTENSION}.tcz.md5.txt" ] && sudo rm -f "${EXTENSION}.tcz.md5.txt"
 
-  sudo mksquashfs ${EXTENSION} ${EXTENSION}.tcz || return 1
+  sudo mksquashfs $EXTENSION "${EXTENSION}.tcz" || return 1
 
-  md5sum ${EXTENSION}.tcz > ${EXTENSION}.tcz.md5.txt || return 1
+  md5sum "${EXTENSION}.tcz" > "${EXTENSION}.tcz.md5.txt" || return 1
 
-  cd ${TCEXTTOOLS_BIN}/${EXTENSION}
+  cd "$TCEXTTOOLS_BIN"/"$EXTENSION"
   for i in $(ls)
   do
-      sudo find ${i} -not -type d >> ${TCEXTTOOLS_BIN}/${EXTENSION}.tcz.list
+      sudo find "$i" -not -type d >> "$TCEXTTOOLS_BIN"/"${EXTENSION}.tcz.list"
   done
 
-  cd ${PACKAGE_ROOT}
+  cd $PACKAGE_ROOT
 
-  [ -d "${TCEXTTOOLS_EXTENSIONS}/${EXTENSION}" ] || mkdir -p ${TCEXTTOOLS_EXTENSIONS}/${EXTENSION}
+  [ -d "$TCEXTTOOLS_EXTENSIONS"/"$EXTENSION" ] || mkdir -p "$TCEXTTOOLS_EXTENSIONS"/"$EXTENSION"
 
-  busybox cp -f ${TCEXTTOOLS_BIN}/${EXTENSION}.tcz* ${TCEXTTOOLS_EXTENSIONS}/${EXTENSION} || return 1
+  busybox cp -f "$TCEXTTOOLS_BIN"/"${EXTENSION}.tcz"* "$TCEXTTOOLS_EXTENSIONS"/"$EXTENSION" || return 1
 
-  if [ -e "${PACKAGE_EXTENSIONS}/${EXTENSION}/dep" ]; then
-       install -m 644 ${PACKAGE_EXTENSIONS}/${EXTENSION}/dep ${TCEXTTOOLS_EXTENSIONS}/${EXTENSION}/${EXTENSION}.tcz.dep || return 1
+  if [ -e "$PACKAGE_EXTENSIONS"/"$EXTENSION"/dep ]; then
+       install -m 644 "$PACKAGE_EXTENSIONS"/"$EXTENSION"/dep "$TCEXTTOOLS_EXTENSIONS"/"$EXTENSION"/"${EXTENSION}.tcz.dep" || return 1
   fi
 
-  sudo rm -f ${TCEXTTOOLS_BIN}/${EXTENSION}.tcz*
+  sudo rm -f "$TCEXTTOOLS_BIN"/"${EXTENSION}.tcz"*
 
   return 0
 }
 
-print_it "Creating the extension ${EXTENSION} ... \c"
-this_main > ${TCEXTTOOLS_ERROR_LOG_2} 2>&1
-if [ $? -gt 0 ]; then
+print_it "Creating the extension $EXTENSION ... \c"
+this_main > $TCEXTTOOLS_ERROR_LOG_2 2>&1
+if [ "$?" -gt 0 ]; then
      print_it error "failed!"
      exit 1
 fi

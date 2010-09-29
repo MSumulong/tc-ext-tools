@@ -1,0 +1,13 @@
+xulrunner.tcz
+GConf.tcz
+python-2.7.tcz
+libxslt.tcz
+gst-plugins-base.tcz
+icu.tcz
+poppler.tcz
+bsddb.tcz
+silgraphite.tcz
+dejavu-fonts-ttf.tcz
+openclipart-png.tcz
+shared-mime-info.tcz
+hicolor-icon-theme.tcz

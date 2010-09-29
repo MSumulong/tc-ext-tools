@@ -23,14 +23,14 @@
 
 TCEXTTOOLS_ROOT=$(dirname $0)/..
 
-if [ -f "${TCEXTTOOLS_ROOT}/etc/tc-ext-tools/functions" ]; then
-     . ${TCEXTTOOLS_ROOT}/etc/tc-ext-tools/functions
+if [ -f "$TCEXTTOOLS_ROOT"/etc/tc-ext-tools/functions ]; then
+     . "$TCEXTTOOLS_ROOT"/etc/tc-ext-tools/functions
 else
-     echo "${RED}$(basename ${0}):${BLUE} tc-ext-tools functions file not found!{NORMAL}"
+     echo "${RED}$(basename $0):${BLUE} tc-ext-tools functions file not found!${NORMAL}"
      exit 1
 fi
 
-if [ ! -d "${TCEXTTOOLS_INSTALL_ROOT}" ]; then
+if [ ! -d "$TCEXTTOOLS_INSTALL_ROOT" ]; then
      print_it error "You must install it first!"
      exit 1
 fi
@@ -38,45 +38,45 @@ fi
 this_main() {
 
   # We need to convert symlinks to full path for gnome help browser files
-  if [ -d "${TCEXTTOOLS_INSTALL_ROOT}/usr/local/share/gnome/help" ]; then
-       for l in $(sudo find ${TCEXTTOOLS_INSTALL_ROOT}/usr/local/share/gnome/help -type l)
+  if [ -d "$TCEXTTOOLS_INSTALL_ROOT"/usr/local/share/gnome/help ]; then
+       for l in $(sudo find "$TCEXTTOOLS_INSTALL_ROOT"/usr/local/share/gnome/help -type l)
        do
-           FILE=$(sudo busybox readlink -f ${l})
-           LINK=${FILE#${TCEXTTOOLS_INSTALL_ROOT}}
-           sudo busybox ln -sf ${LINK} ${l} || return 1
+           FILE=$(sudo busybox readlink -f "$l")
+           LINK="${FILE#${TCEXTTOOLS_INSTALL_ROOT}}"
+           sudo busybox ln -sf "$LINK" "$l" || return 1
        done
   fi
   #
 
   # Add wbar icon if ICON variable is set
-  if [ -n "${ICON}" ]; then
-       if [ ! -e "${TCEXTTOOLS_INSTALL_ROOT}/${ICON}" ]; then
-            print_it error "The icon: ${TCEXTTOOLS_INSTALL_ROOT}/${ICON} does not exist!"
+  if [ -n "$ICON" ]; then
+       if [ ! -e "$TCEXTTOOLS_INSTALL_ROOT"/"$ICON" ]; then
+            print_it error "The icon: $TCEXTTOOLS_INSTALL_ROOT/$ICON does not exist!"
             return 1
-       elif [ ! -e "${TCEXTTOOLS_INSTALL_ROOT}/${DESKTOP_ENTRY}" ]; then
-            print_it error "The desktop entry: ${TCEXTTOOLS_INSTALL_ROOT}/${DESKTOP_ENTRY} does not exist!"
+       elif [ ! -e "$TCEXTTOOLS_INSTALL_ROOT"/"$DESKTOP_ENTRY" ]; then
+            print_it error "The desktop entry: $TCEXTTOOLS_INSTALL_ROOT/$DESKTOP_ENTRY does not exist!"
             return 1
        else
-            sudo sh -c "echo 'X-FullPathIcon=${ICON}' >> ${TCEXTTOOLS_INSTALL_ROOT}/${DESKTOP_ENTRY}" || return 1
+            sudo sh -c "echo 'X-FullPathIcon=${ICON}' >> $TCEXTTOOLS_INSTALL_ROOT/$DESKTOP_ENTRY" || return 1
        fi
   fi
   #
 
   # Create a list of package contents so that user can choose where to put files
-  [ -e "${PACKAGE_EXTENSIONS}/${PACKAGE}.list" ] && sudo rm -f ${PACKAGE_EXTENSIONS}/${PACKAGE}.list
+  [ -e "$PACKAGE_EXTENSIONS"/"${PACKAGE}.list" ] && sudo rm -f "$PACKAGE_EXTENSIONS"/"${PACKAGE}.list"
 
-  cd ${TCEXTTOOLS_INSTALL_ROOT}
+  cd $TCEXTTOOLS_INSTALL_ROOT
   for i in $(ls)
   do
-      sudo find ${i} -not -type d >> ${PACKAGE_EXTENSIONS}/${PACKAGE}.list || return 1
+      sudo find "$i" -not -type d >> "$PACKAGE_EXTENSIONS"/"${PACKAGE}.list" || return 1
   done
 
   return 0
 }
 
-print_it "Modifying the package ${PACKAGE} ... \c"
-this_main > ${TCEXTTOOLS_ERROR_LOG_2} 2>&1
-if [ $? -gt 0 ]; then
+print_it "Modifying the package $PACKAGE ... \c"
+this_main > $TCEXTTOOLS_ERROR_LOG_2 2>&1
+if [ "$?" -gt 0 ]; then
      print_it error "failed!"
      exit 1
 fi

@@ -23,32 +23,32 @@
 
 TCEXTTOOLS_ROOT=$(dirname $0)/..
 
-if [ -f "${TCEXTTOOLS_ROOT}/etc/tc-ext-tools/functions" ]; then
-     . ${TCEXTTOOLS_ROOT}/etc/tc-ext-tools/functions
+if [ -f "$TCEXTTOOLS_ROOT"/etc/tc-ext-tools/functions ]; then
+     . "$TCEXTTOOLS_ROOT"/etc/tc-ext-tools/functions
 else
-     echo "${RED}$(basename ${0}):${BLUE} tc-ext-tools functions file not found!${NORMAL}"
+     echo "${RED}$(basename $0):${BLUE} tc-ext-tools functions file not found!${NORMAL}"
      exit 1
 fi
 
-PACKAGE="${1}"
-VERSION="${2}"
-EXTENSIONS="${3}"
+PACKAGE="$1"
+VERSION="$2"
+EXTENSIONS="$3"
 
 print_usage(){
-  echo -e "${TCEXTTOOLS_ERROR_COLOR}Usage:${TCEXTTOOLS_MESSAGE_COLOR}\n$(basename $0) package version \"extensions\"${NORMAL}"
+  echo -e "${TCEXTTOOLS_ERROR_COLOR}Usage:${TCEXTTOOLS_MESSAGE_COLOR}\n$(basename $0) package version \"extension1 extension2 ...\"${NORMAL}"
 }
 
-if [ -z "${PACKAGE}" ] || [ -z "${VERSION}" ] || [ -z "${EXTENSIONS}" ]; then
-      print_usage
-      exit 1
+if [ -z "$PACKAGE" ] || [ -z "$VERSION" ] || [ -z "$EXTENSIONS" ]; then
+     print_usage
+     exit 1
 fi
 
-print_it "You entered:\n\n\tPACKAGE=${PACKAGE}\n\tVERSION=${VERSION}\n\tEXTENSIONS=${EXTENSIONS}\n"
+print_it "You entered:\n\n\tPACKAGE=$PACKAGE\n\tVERSION=$VERSION\n\tEXTENSIONS=$EXTENSIONS\n"
 
-if [ -e "${PACKAGE_COMMON}" ]; then
+if [ -e "$PACKAGE_COMMON" ]; then
      print_it warning "Warning! This package looks to be boosted before.\nIf you continue existing files will be overwritten.\nWould you like you continue ? [y or n]"
      read ans
-     case ${ans} in
+     case "$ans" in
           y)
             print_it "You agreed to continue. The files will be overwritten."
             ;;
@@ -65,14 +65,14 @@ fi
 
 this_main() {
 
-  if [ ! -d "${PACKAGE_EXTENSIONS}" ]; then
-      install -m 755 -d ${PACKAGE_EXTENSIONS} || return 1
+  if [ ! -d "$PACKAGE_EXTENSIONS" ]; then
+       install -m 755 -d $PACKAGE_EXTENSIONS || return 1
   fi
 
-  if [ "X${VERSION}" = "Xsvn" ]; then
+  if [ "$VERSION" = "svn" ]; then
 
-  cat > ${PACKAGE_COMMON} << _EOF
-PACKAGE="${PACKAGE}"
+       cat > $PACKAGE_COMMON << _EOF
+PACKAGE="$PACKAGE"
 VERSION="svn\${YEAR}\${MONTH}\${DAY}"
 TOP_SRC="\${PACKAGE}-\${VERSION}"
 SOURCE="\${TOP_SRC}.tar.xz"
@@ -82,22 +82,22 @@ ICON=""
 DESKTOP_ENTRY=""
 BUILD_DEPENDS=""
 
-EXTENSIONS="${EXTENSIONS}"
+EXTENSIONS="$EXTENSIONS"
 DESCRIPTION="A brief description of package."
 AUTHOR="authors of package"
 SITE="http://www.package.com"
 COPYING="GPL-2"
-MAINTAINERS="${PACKAGE_MAINTAINER}"
+MAINTAINERS="$PACKAGE_MAINTAINER"
 COMMENTS="This extension is PPI compatible."
 CHANGELOG="---"
 CURRENT="First Version"
 _EOF
 
-  [ $? -gt 0 ] && return 1
+       [ "$?" -gt 0 ] && return 1
 
-  elif [ "X${VERSION}" = "Xgit" ]; then
+  elif [ "$VERSION" = "git" ]; then
 
-  cat > ${PACKAGE_COMMON} << _EOF
+       cat > $PACKAGE_COMMON << _EOF
 PACKAGE="${PACKAGE}"
 VERSION="git\${YEAR}\${MONTH}\${DAY}"
 TOP_SRC="\${PACKAGE}-\${VERSION}"
@@ -108,24 +108,24 @@ ICON=""
 DESKTOP_ENTRY=""
 BUILD_DEPENDS=""
 
-EXTENSIONS="${EXTENSIONS}"
+EXTENSIONS="$EXTENSIONS"
 DESCRIPTION="A brief description of package."
 AUTHOR="authors of package"
 SITE="http://www.package.com"
 COPYING="GPL-2"
-MAINTAINERS="${PACKAGE_MAINTAINER}"
+MAINTAINERS="$PACKAGE_MAINTAINER"
 COMMENTS="This extension is PPI compatible."
 CHANGELOG="---"
 CURRENT="First Version"
 _EOF
 
-  [ $? -gt 0 ] && return 1
+       [ "$?" -gt 0 ] && return 1
 
   else
 
-  cat > ${PACKAGE_COMMON} << _EOF
-PACKAGE="${PACKAGE}"
-VERSION="${VERSION}"
+       cat > $PACKAGE_COMMON << _EOF
+PACKAGE="$PACKAGE"
+VERSION="$VERSION"
 SOURCE="\${PACKAGE}-\${VERSION}.tar.bz2"
 TOP_SRC="\${PACKAGE}-\${VERSION}"
 SOURCE_URL=""
@@ -133,34 +133,34 @@ ICON=""
 DESKTOP_ENTRY=""
 BUILD_DEPENDS=""
 
-EXTENSIONS="${EXTENSIONS}"
+EXTENSIONS="$EXTENSIONS"
 DESCRIPTION="A brief description of package."
 AUTHOR="authors of package"
 SITE="http://www.package.com"
 COPYING="GPL-2"
-MAINTAINERS="${PACKAGE_MAINTAINER}"
+MAINTAINERS="$PACKAGE_MAINTAINER"
 COMMENTS="This extension is PPI compatible."
 CHANGELOG="---"
 CURRENT="First Version"
 _EOF
 
-  [ $? -gt 0 ] && return 1
+       [ "$?" -gt 0 ] && return 1
 
   fi
 
-  install -m 644 ${TCEXTTOOLS_ROOT}/share/tc-ext-tools/build ${PACKAGE_BUILD} || return 1
+  install -m 644 "$TCEXTTOOLS_ROOT"/share/tc-ext-tools/build $PACKAGE_BUILD || return 1
 
-  for EXTENSION in ${EXTENSIONS}
+  for EXTENSION in $EXTENSIONS
   do
-      mkdir -p ${PACKAGE_EXTENSIONS}/${EXTENSION} || return 1
-      touch ${PACKAGE_EXTENSIONS}/${EXTENSION}/install || return 1
-      if [ "${EXTENSION%-doc}" = "${EXTENSION}" ]; then
-           touch ${PACKAGE_EXTENSIONS}/${EXTENSION}/dep || return 1
+      mkdir -p "$PACKAGE_EXTENSIONS"/"$EXTENSION" || return 1
+      touch "$PACKAGE_EXTENSIONS"/"$EXTENSION"/install || return 1
+      if [ "${EXTENSION%-doc}" = "$EXTENSION" ]; then
+           touch "$PACKAGE_EXTENSIONS"/"$EXTENSION"/dep || return 1
       fi
-      if [ ! "${EXTENSION%-locale}" = "${EXTENSION}" ]; then
-           echo "${EXTENSION%-locale}.tcz" > ${PACKAGE_EXTENSIONS}/${EXTENSION}/dep || return 1
-      elif [ ! "${EXTENSION%-dev}" = "${EXTENSION}" ]; then
-           echo "${EXTENSION%-dev}.tcz" > ${PACKAGE_EXTENSIONS}/${EXTENSION}/dep || return 1
+      if [ ! "${EXTENSION%-locale}" = "$EXTENSION" ]; then
+           echo "${EXTENSION%-locale}.tcz" > "$PACKAGE_EXTENSIONS"/"$EXTENSION"/dep || return 1
+      elif [ ! "${EXTENSION%-dev}" = "$EXTENSION" ]; then
+           echo "${EXTENSION%-dev}.tcz" > "$PACKAGE_EXTENSIONS"/"$EXTENSION"/dep || return 1
       fi
 
   done
@@ -168,9 +168,9 @@ _EOF
   return 0
 }
 
-print_it "Boosting the package ${PACKAGE} ... \c"
+print_it "Boosting the package $PACKAGE ... \c"
 this_main > /dev/null 2>&1
-if [ $? -gt 0 ]; then
+if [ "$?" -gt 0 ]; then
      print_it error "failed!"
      exit 1
 fi

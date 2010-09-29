@@ -1,103 +1,92 @@
-### tc-ext-tools functions
+# tc-ext-tools functions
 
-THIS=$(basename ${0})
+THIS=$(basename $0)
 
 if [ $(id -u) = 0 ] ; then
-     if [ ! "${THIS}" = "buildit" -o ! "${1}" = "install" ]; then
+     if [ ! "$THIS" = "buildit" -o ! "$1" = "install" ]; then
           echo "${RED}Do not run me as root!${NORMAL}"
           exit 1
      fi
 fi
 
-if [ -f "${TCEXTTOOLS_ROOT}/etc/tc-ext-tools/config" ]; then
-     . ${TCEXTTOOLS_ROOT}/etc/tc-ext-tools/config
+if [ -f "$TCEXTTOOLS_ROOT"/etc/tc-ext-tools/config ]; then
+     . "$TCEXTTOOLS_ROOT"/etc/tc-ext-tools/config
 else
-     echo "${RED}$(basename ${0}):${BLUE} tc-ext-tools default configuration file not found!${NORMAL}"
+     echo "${RED}$(basename $0):${BLUE} tc-ext-tools default configuration file not found!${NORMAL}"
      exit 1
 fi
 
 if [ -f "$HOME"/.tc-ext-tools/config ]; then
      . "$HOME"/.tc-ext-tools/config
 else
-     echo "${RED}$(basename ${0}):${BLUE} tc-ext-tools user configuration file not found!${NORMAL}"
-     exit 1
+    echo "${RED}$(basename $0):${BLUE} tc-ext-tools user configuration file not found!${NORMAL}"
+    exit 1
 fi
 
 print_it() {
-  case  ${1} in
+  case  "$1" in
         error)
-                [ -z "${2}" ] && echo -e "${TCEXTTOOLS_MESSAGE_COLOR}${1}${NORMAL}"
-                echo -e "${TCEXTTOOLS_ERROR_COLOR}${2}${NORMAL}"
+                [ -z "$2" ] && echo -e "${TCEXTTOOLS_MESSAGE_COLOR}$1${NORMAL}"
+                echo -e "${TCEXTTOOLS_ERROR_COLOR}$2${NORMAL}"
                 ;;
         warning)   
-                [ -z "${2}" ] && echo -e "${TCEXTTOOLS_MESSAGE_COLOR}${1}${NORMAL}"
-                echo -e "${TCEXTTOOLS_WARNING_COLOR}${2}${NORMAL}"
+                [ -z "$2" ] && echo -e "${TCEXTTOOLS_MESSAGE_COLOR}$1${NORMAL}"
+                echo -e "${TCEXTTOOLS_WARNING_COLOR}$2${NORMAL}"
                 ;;
         hilight)   
-                [ -z "${2}" ] && echo -e "${TCEXTTOOLS_MESSAGE_COLOR}${1}${NORMAL}"
-                echo -e "${TCEXTTOOLS_HILIGHT_COLOR}${2}${NORMAL}"
+                [ -z "$2" ] && echo -e "${TCEXTTOOLS_MESSAGE_COLOR}$1${NORMAL}"
+                echo -e "${TCEXTTOOLS_HILIGHT_COLOR}$2${NORMAL}"
                 ;;
         *)
-                echo -e "${TCEXTTOOLS_MESSAGE_COLOR}${1}${NORMAL}"
+                echo -e "${TCEXTTOOLS_MESSAGE_COLOR}$1${NORMAL}"
                 ;;
   esac
 }
 
-PACKAGE_ROOT=${PWD}
-PACKAGE_COMMON="${PACKAGE_ROOT}/${TCEXTTOOLS_COMMON}"
-PACKAGE_BUILD="${PACKAGE_ROOT}/${TCEXTTOOLS_BUILD}"
-PACKAGE_SRC="${PACKAGE_ROOT}/${TCEXTTOOLS_SRC}"
-PACKAGE_EXTENSIONS="${PACKAGE_ROOT}/${TCEXTTOOLS_EXTENSIONS}"
-PACKAGE_PATCHES="${PACKAGE_SRC}/${TCEXTTOOLS_PATCHES}"
+PACKAGE_ROOT="$PWD"
+PACKAGE_COMMON="$PACKAGE_ROOT"/"$TCEXTTOOLS_COMMON"
+PACKAGE_BUILD="$PACKAGE_ROOT"/"$TCEXTTOOLS_BUILD"
+PACKAGE_SRC="$PACKAGE_ROOT"/"$TCEXTTOOLS_SRC"
+PACKAGE_EXTENSIONS="$PACKAGE_ROOT"/"$TCEXTTOOLS_EXTENSIONS"
+PACKAGE_PATCHES="$PACKAGE_SRC"/"$TCEXTTOOLS_PATCHES"
 
-if [ -e "${TCEXTTOOLS_COMMON}" ]; then
-     . ${TCEXTTOOLS_COMMON}
+if [ -e "$TCEXTTOOLS_COMMON" ]; then
+     . $TCEXTTOOLS_COMMON
 
-     TCEXTTOOLS_BIN="${TCEXTTOOLS_STORAGE}/${PACKAGE}/${TCEXTTOOLS_BIN}"
-     TCEXTTOOLS_SRC="${TCEXTTOOLS_STORAGE}/${PACKAGE}/${TCEXTTOOLS_SRC}"
-     TCEXTTOOLS_PKG="${TCEXTTOOLS_STORAGE}/${PACKAGE}/${TCEXTTOOLS_PKG}/${PACKAGE}"
-     TCEXTTOOLS_LOG="${TCEXTTOOLS_STORAGE}/${PACKAGE}/${TCEXTTOOLS_LOG}"
-     TCEXTTOOLS_EXTENSIONS="${TCEXTTOOLS_STORAGE}/${PACKAGE}/${TCEXTTOOLS_EXTENSIONS}"
+     TCEXTTOOLS_BIN="$TCEXTTOOLS_STORAGE"/"$PACKAGE"/"$TCEXTTOOLS_BIN"
+     TCEXTTOOLS_SRC="$TCEXTTOOLS_STORAGE"/"$PACKAGE"/"$TCEXTTOOLS_SRC"
+     TCEXTTOOLS_PKG="$TCEXTTOOLS_STORAGE"/"$PACKAGE"/"$TCEXTTOOLS_PKG"/"$PACKAGE"
+     TCEXTTOOLS_LOG="$TCEXTTOOLS_STORAGE"/"$PACKAGE"/"$TCEXTTOOLS_LOG"
+     TCEXTTOOLS_EXTENSIONS="$TCEXTTOOLS_STORAGE"/"$PACKAGE"/"$TCEXTTOOLS_EXTENSIONS"
 
-     TCEXTTOOLS_INSTALL_ROOT="${TCEXTTOOLS_BIN}/root"
-     INSTALL_ROOT="${TCEXTTOOLS_INSTALL_ROOT}"
-     TCEXTTOOLS_BIN_TEMP="${TCEXTTOOLS_BIN}/temp"
-     TCEXTTOOLS_SRC_TEMP="${TCEXTTOOLS_SRC}/temp"
+     TCEXTTOOLS_INSTALL_ROOT="$TCEXTTOOLS_BIN"/root
+     INSTALL_ROOT="$TCEXTTOOLS_INSTALL_ROOT"
+     TCEXTTOOLS_BIN_TEMP="$TCEXTTOOLS_BIN"/temp
+     TCEXTTOOLS_SRC_TEMP="$TCEXTTOOLS_SRC"/temp
 
-     TCEXTTOOLS_CONFIGURE_LOG="${TCEXTTOOLS_LOG}/configure.txt"
-     TCEXTTOOLS_COMPILE_LOG="${TCEXTTOOLS_LOG}/compile.txt"
-     TCEXTTOOLS_INSTALL_LOG="${TCEXTTOOLS_LOG}/install.txt"
-     TCEXTTOOLS_BUILD_LOG="${TCEXTTOOLS_LOG}/build.txt"
-     TCEXTTOOLS_ERROR_LOG="${TCEXTTOOLS_LOG}/error.txt"
-     TCEXTTOOLS_ERROR_LOG_2="${TCEXTTOOLS_LOG}/error2.txt"
+     TCEXTTOOLS_CONFIGURE_LOG="$TCEXTTOOLS_LOG"/configure.txt
+     TCEXTTOOLS_COMPILE_LOG="$TCEXTTOOLS_LOG"/compile.txt
+     TCEXTTOOLS_INSTALL_LOG="$TCEXTTOOLS_LOG"/install.txt
+     TCEXTTOOLS_BUILD_LOG="$TCEXTTOOLS_LOG"/build.txt
+     TCEXTTOOLS_ERROR_LOG="$TCEXTTOOLS_LOG"/error.txt
+     TCEXTTOOLS_ERROR_LOG_2="$TCEXTTOOLS_LOG"/error2.txt
 
-     [ -d "${TCEXTTOOLS_BIN}" ] || install -m 755 -d ${TCEXTTOOLS_BIN}
-     [ -d "${TCEXTTOOLS_SRC}" ] || install -m 755 -d ${TCEXTTOOLS_SRC}
-     [ -d "${TCEXTTOOLS_PKG}" ] || install -m 755 -d ${TCEXTTOOLS_PKG}
-     [ -d "${TCEXTTOOLS_BIN_TEMP}" ] || install -m 755 -d ${TCEXTTOOLS_BIN_TEMP}
-     [ -d "${TCEXTTOOLS_SRC_TEMP}" ] || install -m 755 -d ${TCEXTTOOLS_SRC_TEMP}
-     [ -d "${TCEXTTOOLS_LOG}" ] || install -m 755 -d ${TCEXTTOOLS_LOG}
+     [ -d "$TCEXTTOOLS_BIN" ] || install -m 755 -d "$TCEXTTOOLS_BIN"
+     [ -d "$TCEXTTOOLS_SRC" ] || install -m 755 -d "$TCEXTTOOLS_SRC"
+     [ -d "$TCEXTTOOLS_PKG" ] || install -m 755 -d "$TCEXTTOOLS_PKG"
+     [ -d "$TCEXTTOOLS_BIN_TEMP" ] || install -m 755 -d "$TCEXTTOOLS_BIN_TEMP"
+     [ -d "$TCEXTTOOLS_SRC_TEMP" ] || install -m 755 -d "$TCEXTTOOLS_SRC_TEMP"
+     [ -d "$TCEXTTOOLS_LOG" ] || install -m 755 -d "$TCEXTTOOLS_LOG"
 
-elif [ ! "${THIS}" = "boostit" ]; then
-     print_it error "tc-ext-tools common file not found: ${TCEXTTOOLS_COMMON}"
+elif [ ! "$THIS" = "boostit" ]; then
+     print_it error "tc-ext-tools common file not found: $TCEXTTOOLS_COMMON"
      print_it warning "You must boost it first!"
      exit 1
 fi
 
-## date
+# date
 YEAR=$(date +%Y)
 MONTH=$(date +%m)
 DAY=$(date +%d)
-DATE="${YEAR}/${MONTH}/${DAY}"
+DATE="$YEAR"/"$MONTH"/"$DAY"
 #
-
-if [ ! "${THIS}" = "buildit" -o ! "${1}" = "cat" ] && [ ! "${THIS}" = "boostit" ] && [ ! "${THIS}" = "loadit" ]; then
-     loadit "${TCEXTTOOLS_DEPENDS}" > ${TCEXTTOOLS_ERROR_LOG} 2>&1
-     if [ $? -gt 0 ]; then
-          print_it error "Loading tc-ext-tools dependencies failed : ${TCEXTTOOLS_DEPENDS}"
-          print_it warning "See error logs in ${TCEXTTOOLS_LOG} for details."
-          exit 1
-     fi
-fi
-
-##
