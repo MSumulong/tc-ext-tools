@@ -1,0 +1,22 @@
+PACKAGE="Linux-PAM"
+VERSION="1.1.1"
+SOURCE="${PACKAGE}-${VERSION}.tar.bz2"
+SOURCE_URL="http://www.kernel.org/pub/linux/libs/pam/library/Linux-PAM-${VERSION}.tar.bz2"
+TOP_SRC="${PACKAGE}-${VERSION}"
+BUILD_DEPENDS="bsddb
+bsddb-dev
+cracklib
+cracklib-dev"
+
+EXTENSIONS="Linux-PAM Linux-PAM-dev Linux-PAM-doc"
+DESCRIPTION="Pluggable Authentication Modules for Linux."
+AUTHOR="Andrew G. Morgan ,Dmitry V. Levin, Thorsten Kukuk, Sebastien Tricaud, Tomas Mraz"
+SITE="http://www.kernel.org/pub/linux/libs/pam/"
+COPYING="BSD-like"
+MAINTAINERS="Arslan S."
+COMMENTS="This extension is PPI compatible."
+CHANGELOG="2010/02/12 Original
+		2010/02/15 Fixed permissions on unix_chkpwd & added system-auth file
+		2010/08/02 Changed default configuration to pam_unix & added cracklib module"
+CURRENT="Fixed location of pam headers"
+

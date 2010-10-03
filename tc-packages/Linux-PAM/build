@@ -1,0 +1,50 @@
+#
+# tc-ext-tools build functions: configure, compile, install, rules
+#
+
+build_configure() {
+
+   ./configure DESTDIR=$INSTALL_ROOT --prefix=/usr/local \
+       --includedir=/usr/local/include/security --localstatedir=/var || return 1
+
+}
+
+build_compile() {
+
+   make || return 1
+
+}
+
+build_install() {
+
+   sudo make DESTDIR=$INSTALL_ROOT install || return 1
+
+   sudo install -D -m 644 "$PACKAGE_SRC"/other "$INSTALL_ROOT"/usr/local/etc/pam.d/other || return 1
+   sudo install -D -m 644 "$PACKAGE_SRC"/system-auth "$INSTALL_ROOT"/usr/local/etc/pam.d/system-auth || return 1
+
+   sudo chmod 4755 "$INSTALL_ROOT"/usr/local/sbin/unix_chkpwd || return 1
+   sudo chmod 4755 "$INSTALL_ROOT"/usr/local/sbin/pam_timestamp_check || return 1
+
+}
+
+build_rules() {
+
+  buildit load || exit 1
+  buildit download || exit 1
+  buildit convert || exit 1
+  buildit unpack || exit 1
+  buildit patch || exit 1
+  buildit configure || exit 1
+  buildit compile || exit 1
+  buildit install || exit 1
+  buildit modify || exit 1
+  buildit strip || exit 1
+  buildit split || exit 1
+  buildit create || exit 1
+  buildit generate || exit 1
+  buildit check || exit 1
+  buildit package || exit 1
+  buildit compress || exit 1
+  buildit encrypt || exit 1
+
+}
