@@ -40,20 +40,20 @@ build_install() {
 
   # DESTDIR
   #cd build # cmake
-  sudo make DESTDIR=$INSTALL_ROOT install || return 1
+  make DESTDIR="$INSTALL_ROOT" install || return 1
   #
 
   # INSTALL_ROOT
   #cd build # cmake
-  #sudo make INSTALL_ROOT=$INSTALL_ROOT install || return 1
+  #make INSTALL_ROOT="$INSTALL_ROOT" install || return 1
   #
 
   # jam
-  #sudo DESTDIR=$INSTALL_ROOT jam install || return 1
+  #DESTDIR="$INSTALL_ROOT" jam install || return 1
   #
 
   # python install
-  #sudo python setup.py install --prefix=/usr/local --root=$INSTALL_ROOT || return 1
+  #python setup.py install --prefix=/usr/local --root="$INSTALL_ROOT" || return 1
   #
 
 }
@@ -69,7 +69,6 @@ build_rules() {
   buildit configure || exit 1
   buildit compile || exit 1
   buildit install || exit 1
-  buildit modify || exit 1
   buildit strip || exit 1
   buildit split || exit 1
   buildit create || exit 1

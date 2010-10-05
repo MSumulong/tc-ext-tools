@@ -1,0 +1,98 @@
+#!/bin/sh
+#
+#  installit: installs the package
+#
+#  This program is free software; you can redistribute it and/or modify
+#  it under the terms of the GNU General Public License as published by
+#  the Free Software Foundation; either version 2 of the License, or
+#  (at your option) any later version.
+#
+#  This program is distributed in the hope that it will be useful,
+#  but WITHOUT ANY WARRANTY; without even the implied warranty of
+#  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+#  GNU General Public License for more details.
+#
+#  You should have received a copy of the GNU General Public License along
+#  with this program; if not, write to the Free Software Foundation, Inc.,
+#  51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
+#
+#  (C) Copyright 2010 Sercan Arslan
+#
+
+. /etc/init.d/tc-functions
+
+TCEXTTOOLS_ROOT=$(dirname $0)/..
+
+if [ -f "$TCEXTTOOLS_ROOT"/etc/tc-ext-tools/functions ]; then
+     . "$TCEXTTOOLS_ROOT"/etc/tc-ext-tools/functions
+else
+     echo "${RED}$(basename $0):${BLUE} tc-ext-tools functions file not found!${NORMAL}"
+     exit 1
+fi
+
+if [ -e "$TCEXTTOOLS_BUILD" ]; then
+     . "$TCEXTTOOLS_BUILD"
+else
+     print_it error "tc-ext-tools build functions file not found: $TCEXTTOOLS_BUILD"
+     exit 1
+fi
+
+if [ ! -d "$TOP_SRC_DIR" ]; then
+     print_it error "You must compile it first!"
+     exit 1
+fi
+
+this_main() {
+
+  [ -d "$INSTALL_ROOT" ] && rm -rf "$INSTALL_ROOT"
+
+  # Install the package
+  cd "$TOP_SRC_DIR"
+  build_install > "$TCEXTTOOLS_INSTALL_LOG" 2>&1 || return 1
+
+  # Add wbar item if ICON variable is set
+  if [ -n "$ICON" ]; then
+       if [ ! -e "$INSTALL_ROOT"/"$ICON" ]; then
+            print_it error "The icon: $INSTALL_ROOT/$ICON does not exist!"
+            return 1
+       elif [ ! -e "$INSTALL_ROOT"/"$DESKTOP_ENTRY" ]; then
+            print_it error "The desktop entry: $INSTALL_ROOT/$DESKTOP_ENTRY does not exist!"
+            return 1
+       else
+            echo "X-FullPathIcon=${ICON}" >> "$INSTALL_ROOT"/"$DESKTOP_ENTRY" || return 1
+       fi
+  fi
+
+  # Convert symlinks to full path for gnome help browser files
+  if [ -d "$INSTALL_ROOT"/usr/local/share/gnome/help ]; then
+       for link in $(find "$INSTALL_ROOT"/usr/local/share/gnome/help -type l)
+       do
+           FILE=$(busybox readlink -f "$link")
+           LINK="${FILE#${INSTALL_ROOT}}"
+           busybox ln -sf "$LINK" "$link" || return 1
+       done
+  fi
+
+  # Create a list of package contents so that user can choose where to put files
+  [ -e "$PACKAGE_EXTENSIONS"/"${PACKAGE}.list" ] && rm -f "$PACKAGE_EXTENSIONS"/"${PACKAGE}.list"
+
+  [ -d "$INSTALL_ROOT" ] || { echo "Install root:$INSTALL_ROOT does not exist!";return 1; }
+  cd "$INSTALL_ROOT"
+  for i in $(ls)
+  do
+      su "$TCUSER" -c "cd $INSTALL_ROOT;find '$i' -not -type d >> $PACKAGE_EXTENSIONS/${PACKAGE}.list" || return 1
+  done
+
+  return 0
+}
+
+print_it "Installing the package $PACKAGE ... \c"
+this_main > $TCEXTTOOLS_ERROR_LOG_2 2>&1
+if [ "$?" -gt 0 ]; then
+     print_it error "failed!"
+     exit 1
+fi
+print_it hilight "successful!"
+
+exit 0
+

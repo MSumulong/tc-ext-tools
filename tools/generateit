@@ -53,6 +53,7 @@ this_main() {
   [ ! "${EXTENSION%-bin}" = "$EXTENSION" ] && DESCRIPTION="${DESCRIPTION%.}, utilities."
   [ ! "${EXTENSION%-lib}" = "$EXTENSION" ] && DESCRIPTION="${DESCRIPTION%.}, shared libraries."
   [ ! "${EXTENSION%-dev}" = "$EXTENSION" ] && DESCRIPTION="${DESCRIPTION%.}, development files."
+  [ ! "${EXTENSION%-dbg}" = "$EXTENSION" ] && DESCRIPTION="${DESCRIPTION%.}, debugging symbols."
   [ ! "${EXTENSION%-doc}" = "$EXTENSION" ] && DESCRIPTION="${DESCRIPTION%.}, documentation files."
   [ ! "${EXTENSION%-locale}" = "$EXTENSION" ] && DESCRIPTION="${DESCRIPTION%.}, locale files."
   [ ! "${EXTENSION%-gir}" = "$EXTENSION" ] && DESCRIPTION="${DESCRIPTION%.}, gobject introspection data."

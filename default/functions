@@ -3,8 +3,13 @@
 THIS=$(basename $0)
 
 if [ $(id -u) = 0 ] ; then
-     if [ ! "$THIS" = "buildit" -o ! "$1" = "install" ]; then
-          echo "${RED}Do not run me as root!${NORMAL}"
+     if [ "$THIS" != "installit" ]; then
+          echo "${RED}Do not run ${THIS} as root!${NORMAL}"
+          exit 1
+     fi
+else
+     if [ "$THIS" = "installit" ]; then
+          echo "${RED}You need to run ${THIS} as root!${NORMAL}"
           exit 1
      fi
 fi
@@ -60,7 +65,6 @@ if [ -e "$TCEXTTOOLS_COMMON" ]; then
      TCEXTTOOLS_EXTENSIONS="$TCEXTTOOLS_STORAGE"/"$PACKAGE"/"$TCEXTTOOLS_EXTENSIONS"
 
      TCEXTTOOLS_INSTALL_ROOT="$TCEXTTOOLS_BIN"/root
-     INSTALL_ROOT="$TCEXTTOOLS_INSTALL_ROOT"
      TCEXTTOOLS_BIN_TEMP="$TCEXTTOOLS_BIN"/temp
      TCEXTTOOLS_SRC_TEMP="$TCEXTTOOLS_SRC"/temp
 
@@ -71,6 +75,9 @@ if [ -e "$TCEXTTOOLS_COMMON" ]; then
      TCEXTTOOLS_ERROR_LOG="$TCEXTTOOLS_LOG"/error.txt
      TCEXTTOOLS_ERROR_LOG_2="$TCEXTTOOLS_LOG"/error2.txt
 
+     INSTALL_ROOT="$TCEXTTOOLS_INSTALL_ROOT"
+     TOP_SRC_DIR="$TCEXTTOOLS_BIN_TEMP"/"$TOP_SRC"
+
      [ -d "$TCEXTTOOLS_BIN" ] || install -m 755 -d "$TCEXTTOOLS_BIN"
      [ -d "$TCEXTTOOLS_SRC" ] || install -m 755 -d "$TCEXTTOOLS_SRC"
      [ -d "$TCEXTTOOLS_PKG" ] || install -m 755 -d "$TCEXTTOOLS_PKG"
@@ -78,15 +85,21 @@ if [ -e "$TCEXTTOOLS_COMMON" ]; then
      [ -d "$TCEXTTOOLS_SRC_TEMP" ] || install -m 755 -d "$TCEXTTOOLS_SRC_TEMP"
      [ -d "$TCEXTTOOLS_LOG" ] || install -m 755 -d "$TCEXTTOOLS_LOG"
 
-elif [ ! "$THIS" = "boostit" ]; then
+elif [ "$THIS" != "boostit" ]; then
      print_it error "tc-ext-tools common file not found: $TCEXTTOOLS_COMMON"
      print_it warning "You must boost it first!"
      exit 1
 fi
+
+# tc user
+TCUSER=$(cat /etc/sysconfig/tcuser)
 
 # date
 YEAR=$(date +%Y)
 MONTH=$(date +%m)
 DAY=$(date +%d)
 DATE="$YEAR"/"$MONTH"/"$DAY"
-#
+
+# kernel version
+KERNELVER=$(uname -r)
+
