@@ -1,0 +1,6 @@
+usr/local/lib/mono/1.0/*.mdb
+usr/local/lib/mono/2.0/*.mdb
+usr/local/lib/mono/3.5/*.mdb
+usr/local/lib/mono/4.0/*.mdb
+usr/local/lib/mono/gac/*/*/*.mdb
+

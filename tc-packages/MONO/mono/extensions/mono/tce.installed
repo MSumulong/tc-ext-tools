@@ -1,0 +1,6 @@
+#!/bin/sh
+
+if [ -d /tmp/tcloop/mono ]; then
+     sudo busybox cp -f /tmp/tcloop/mono/usr/local/bin/* /usr/local/bin
+fi
+

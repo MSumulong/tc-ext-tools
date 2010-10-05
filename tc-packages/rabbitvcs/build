@@ -51,7 +51,6 @@ build_rules() {
   buildit configure || exit 1
   buildit compile || exit 1
   buildit install || exit 1
-  buildit modify || exit 1
   buildit strip || exit 1
   buildit split || exit 1
   buildit create || exit 1

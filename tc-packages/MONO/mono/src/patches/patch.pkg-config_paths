@@ -1,0 +1,60 @@
+diff -rupN mono-2.6.3_orig/data/mint.pc.in mono-2.6.3/data/mint.pc.in
+--- mono-2.6.3_orig/data/mint.pc.in	2010-04-10 22:19:14.000000000 +0000
++++ mono-2.6.3/data/mint.pc.in	2010-04-10 22:20:21.000000000 +0000
+@@ -1,5 +1,5 @@
+-prefix=${pcfiledir}/../..
+-exec_prefix=${pcfiledir}/../..
++prefix=@prefix@
++exec_prefix=${prefix}
+ libdir=${prefix}/lib
+ includedir=${prefix}/include/mono-@API_VER@
+ 
+diff -rupN mono-2.6.3_orig/data/mono-cairo.pc.in mono-2.6.3/data/mono-cairo.pc.in
+--- mono-2.6.3_orig/data/mono-cairo.pc.in	2010-04-10 22:19:14.000000000 +0000
++++ mono-2.6.3/data/mono-cairo.pc.in	2010-04-10 22:20:43.000000000 +0000
+@@ -1,5 +1,5 @@
+-prefix=${pcfiledir}/../..
+-exec_prefix=${pcfiledir}/../..
++prefix=@prefix@
++exec_prefix=${prefix}
+ libdir=${prefix}/@reloc_libdir@
+ includedir=${prefix}/include
+ 
+diff -rupN mono-2.6.3_orig/data/mono-lineeditor.pc.in mono-2.6.3/data/mono-lineeditor.pc.in
+--- mono-2.6.3_orig/data/mono-lineeditor.pc.in	2010-04-10 22:19:14.000000000 +0000
++++ mono-2.6.3/data/mono-lineeditor.pc.in	2010-04-10 22:21:19.000000000 +0000
+@@ -1,4 +1,4 @@
+-prefix=${pcfiledir}/../..
++prefix=@prefix@
+ assemblies_dir=${prefix}/lib/mono-source-libs
+ Sources=${assemblies_dir}/getline.cs
+ 
+diff -rupN mono-2.6.3_orig/data/mono-nunit.pc.in mono-2.6.3/data/mono-nunit.pc.in
+--- mono-2.6.3_orig/data/mono-nunit.pc.in	2010-04-10 22:19:14.000000000 +0000
++++ mono-2.6.3/data/mono-nunit.pc.in	2010-04-10 22:21:32.000000000 +0000
+@@ -1,4 +1,4 @@
+-prefix=${pcfiledir}/../..
++prefix=@prefix@
+ exec_prefix=${prefix}
+ libdir=${exec_prefix}/lib
+ 
+diff -rupN mono-2.6.3_orig/data/mono-options.pc.in mono-2.6.3/data/mono-options.pc.in
+--- mono-2.6.3_orig/data/mono-options.pc.in	2010-04-10 22:19:14.000000000 +0000
++++ mono-2.6.3/data/mono-options.pc.in	2010-04-10 22:21:47.000000000 +0000
+@@ -1,4 +1,4 @@
+-prefix=${pcfiledir}/../..
++prefix=@prefix@
+ assemblies_dir=${prefix}/lib/mono-source-libs
+ Sources=${assemblies_dir}/Options.cs
+ 
+diff -rupN mono-2.6.3_orig/data/mono.pc.in mono-2.6.3/data/mono.pc.in
+--- mono-2.6.3_orig/data/mono.pc.in	2010-04-10 22:19:14.000000000 +0000
++++ mono-2.6.3/data/mono.pc.in	2010-04-10 22:22:15.000000000 +0000
+@@ -1,5 +1,5 @@
+-prefix=${pcfiledir}/../..
+-exec_prefix=${pcfiledir}/../..
++prefix=@prefix@
++exec_prefix=${prefix}
+ libdir=${prefix}/@reloc_libdir@
+ includedir=${prefix}/include/mono-@API_VER@
+ sysconfdir=@sysconfdir@

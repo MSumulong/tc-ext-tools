@@ -1,0 +1,20 @@
+PACKAGE="mono"
+VERSION="2.6.7"
+SOURCE="${PACKAGE}-${VERSION}.tar.bz2"
+TOP_SRC="${PACKAGE}-${VERSION}"
+SOURCE_URL="http://ftp.novell.com/pub/mono/sources/mono/mono-${VERSION}.tar.bz2"
+BUILD_DEPENDS="glib2
+glib2-dev
+libgdiplus"
+
+EXTENSIONS="mono mono-dev mono-doc mono-dbg mono-locale"
+DESCRIPTION="Cross platform, open source .NET framework."
+AUTHOR="Miguel de Icaza, Paolo Molaro, Dietmar Maurer"
+SITE="http://www.mono-project.com/"
+COPYING="GPL-2/LGPL-2/MIT"
+MAINTAINERS="Arslan S."
+COMMENTS="This extension is PPI compatible."
+CHANGELOG="2010/04/10 First Version 2.6.3
+		2010/04/18 Added init script to copy executables to file system"
+CURRENT="Updated to 2.6.7"
+

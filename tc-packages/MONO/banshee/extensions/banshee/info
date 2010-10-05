@@ -1,0 +1,2 @@
+COMMENTS="Optional dependencies: gnome-icon-theme or any compatible icon theme, gst-plugins-bad, gst-plugins-ugly, gst-ffmpeg
+		This extension is PPI compatible."

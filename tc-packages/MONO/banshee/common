@@ -1,0 +1,47 @@
+PACKAGE="banshee"
+VERSION="1.8.0"
+SOURCE="${PACKAGE}-1-${VERSION}.tar.bz2"
+TOP_SRC="${PACKAGE}-1-${VERSION}"
+SOURCE_URL="http://download.banshee-project.org/banshee/stable/$VERSION/banshee-1-${VERSION}.tar.bz2"
+ICON="/usr/local/share/icons/hicolor/48x48/apps/media-player-banshee.png"
+DESKTOP_ENTRY="/usr/local/share/applications/banshee.desktop"
+BUILD_DEPENDS="mono
+mono-dev
+gtk-sharp
+gtk-sharp-dev
+gnome-sharp
+gnome-sharp-dev
+gstreamer
+gstreamer-dev
+gst-plugins-base
+gst-plugins-base-dev
+glib2
+glib2-dev
+gtk2
+gtk2-dev
+Xorg-7.5-lib
+Xorg-7.5-dev
+sqlite3
+sqlite3-dev
+webkit-sharp
+mono-addins
+notify-sharp
+ndesk-dbus
+ndesk-dbus-glib
+taglib-sharp
+mono-zeroconf
+libmtp
+libmtp-dev
+libgoogle-data-mono
+boo"
+
+EXTENSIONS="banshee banshee-locale banshee-doc banshee-dbg"
+DESCRIPTION="A music management and playback application for GNOME."
+AUTHOR="various"
+SITE="http://banshee-project.org/"
+COPYING="MIT"
+MAINTAINERS="Arslan S."
+COMMENTS="This extension is PPI compatible."
+CHANGELOG="2010/04/20 Original 1.6.0"
+CURRENT="Updated to 1.8.0"
+
