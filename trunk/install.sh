@@ -29,33 +29,34 @@ fi
 
 USER=$(cat /etc/sysconfig/tcuser)
 
-[ -z "$DESTDIR" ] && DESTDIR="$HOME"/.local
+[ -z "$DESTDIR" ] && DESTDIR="$HOME/.local"
 
-BINDIR="$DESTDIR"/bin
-SYSCONFDIR="$DESTDIR"/etc
-DATADIR="$DESTDIR"/share
+BINDIR="$DESTDIR/bin"
+SYSCONFDIR="$DESTDIR/etc"
+DATADIR="$DESTDIR/share"
 
-[ -d "$BINDIR" ] || install -m 755 -d $BINDIR
+[ -d "$BINDIR" ] || install -m 755 -d "$BINDIR"
 
 for tool in tools/*
 do
-    install -m 755 $tool $BINDIR
+    install -m 755 "$tool" "$BINDIR"
 done
 
-[ -d "$SYSCONFDIR"/tc-ext-tools ] && sudo rm -rf "$SYSCONFDIR"/tc-ext-tools
-install -m 755 -d "$SYSCONFDIR"/tc-ext-tools
+[ -d "$SYSCONFDIR/tc-ext-tools" ] && sudo rm -rf "$SYSCONFDIR/tc-ext-tools"
+install -m 755 -d "$SYSCONFDIR/tc-ext-tools"
 
 for f in default/config default/functions
 do
-    install -m 644 $f "$SYSCONFDIR"/tc-ext-tools
+    install -m 644 $f "$SYSCONFDIR/tc-ext-tools"
 done
 
-[ -d "$DATADIR"/tc-ext-tools ] && sudo rm -rf "$DATADIR"/tc-ext-tools
-install -m 755 -d "$DATADIR"/tc-ext-tools
+[ -d "$DATADIR/tc-ext-tools" ] && sudo rm -rf "$DATADIR/tc-ext-tools"
+install -m 755 -d "$DATADIR/tc-ext-tools"
 
-install -m 644 default/build "$DATADIR"/tc-ext-tools
+install -m 644 default/build "$DATADIR/tc-ext-tools"
 
-[ -d "$HOME"/.tc-ext-tools ] || install -m 755 -d -o $USER -g staff "$HOME"/.tc-ext-tools
-install -m 644 -o $USER -g staff .config "$HOME"/.tc-ext-tools/config
+[ -d "$HOME/.tc-ext-tools" ] || install -m 755 -d -o "$USER" -g staff "$HOME/.tc-ext-tools"
+install -m 644 -o "$USER" -g staff .config "$HOME/.tc-ext-tools/config"
 
-[ -d "$TCEXTTOOLS_STORAGE" ] || sudo install -m 755 -d -o $USER -g staff "$TCEXTTOOLS_STORAGE"
+[ -d "$TCEXTTOOLS_STORAGE" ] || sudo install -m 755 -d -o "$USER" -g staff "$TCEXTTOOLS_STORAGE"
+

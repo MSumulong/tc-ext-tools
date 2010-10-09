@@ -21,10 +21,10 @@
 
 . /etc/init.d/tc-functions
 
-TCEXTTOOLS_ROOT=$(dirname $0)/..
+TCEXTTOOLS_ROOT="$(dirname $0)/.."
 
-if [ -f "$TCEXTTOOLS_ROOT"/etc/tc-ext-tools/functions ]; then
-     . "$TCEXTTOOLS_ROOT"/etc/tc-ext-tools/functions
+if [ -f "$TCEXTTOOLS_ROOT/etc/tc-ext-tools/functions" ]; then
+     . "$TCEXTTOOLS_ROOT/etc/tc-ext-tools/functions"
 else
      echo "${RED}$(basename $0):${BLUE} tc-ext-tools functions file not found!${NORMAL}"
      exit 1
@@ -52,20 +52,20 @@ this_main() {
 
   # Add wbar item if ICON variable is set
   if [ -n "$ICON" ]; then
-       if [ ! -e "$INSTALL_ROOT"/"$ICON" ]; then
+       if [ ! -e "$INSTALL_ROOT/$ICON" ]; then
             print_it error "The icon: $INSTALL_ROOT/$ICON does not exist!"
             return 1
-       elif [ ! -e "$INSTALL_ROOT"/"$DESKTOP_ENTRY" ]; then
+       elif [ ! -e "$INSTALL_ROOT/$DESKTOP_ENTRY" ]; then
             print_it error "The desktop entry: $INSTALL_ROOT/$DESKTOP_ENTRY does not exist!"
             return 1
        else
-            echo "X-FullPathIcon=${ICON}" >> "$INSTALL_ROOT"/"$DESKTOP_ENTRY" || return 1
+            echo "X-FullPathIcon=$ICON" >> "$INSTALL_ROOT/$DESKTOP_ENTRY" || return 1
        fi
   fi
 
   # Convert symlinks to full path for gnome help browser files
-  if [ -d "$INSTALL_ROOT"/usr/local/share/gnome/help ]; then
-       for link in $(find "$INSTALL_ROOT"/usr/local/share/gnome/help -type l)
+  if [ -d "$INSTALL_ROOT/usr/local/share/gnome/help" ]; then
+       for link in $(find "$INSTALL_ROOT/usr/local/share/gnome/help" -type l)
        do
            FILE=$(busybox readlink -f "$link")
            LINK="${FILE#${INSTALL_ROOT}}"
@@ -74,7 +74,7 @@ this_main() {
   fi
 
   # Create a list of package contents so that user can choose where to put files
-  [ -e "$PACKAGE_EXTENSIONS"/"${PACKAGE}.list" ] && rm -f "$PACKAGE_EXTENSIONS"/"${PACKAGE}.list"
+  [ -e "$PACKAGE_EXTENSIONS/${PACKAGE}.list" ] && rm -f "$PACKAGE_EXTENSIONS/${PACKAGE}.list"
 
   [ -d "$INSTALL_ROOT" ] || { echo "Install root:$INSTALL_ROOT does not exist!";return 1; }
   cd "$INSTALL_ROOT"
@@ -87,7 +87,7 @@ this_main() {
 }
 
 print_it "Installing the package $PACKAGE ... \c"
-this_main > $TCEXTTOOLS_ERROR_LOG_2 2>&1
+this_main > "$TCEXTTOOLS_ERROR_LOG_2" 2>&1
 if [ "$?" -gt 0 ]; then
      print_it error "failed!"
      exit 1

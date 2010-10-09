@@ -21,10 +21,10 @@
 
 . /etc/init.d/tc-functions
 
-TCEXTTOOLS_ROOT=$(dirname $0)/..
+TCEXTTOOLS_ROOT="$(dirname $0)/.."
 
-if [ -f "$TCEXTTOOLS_ROOT"/etc/tc-ext-tools/functions ]; then
-     . "$TCEXTTOOLS_ROOT"/etc/tc-ext-tools/functions
+if [ -f "$TCEXTTOOLS_ROOT/etc/tc-ext-tools/functions" ]; then
+     . "$TCEXTTOOLS_ROOT/etc/tc-ext-tools/functions"
 else
      echo "${RED}$(basename $0):${BLUE} tc-ext-tools functions file not found!${NORMAL}"
      exit 1
@@ -36,41 +36,41 @@ print_usage(){
 
 clean_it() {
 
-  cd $PACKAGE_ROOT
+  cd "$PACKAGE_ROOT"
 
   print_it "Cleaning the package $PACKAGE ... \c"
 
   RETURN_CODE=0
 
   if [ -d "$TCEXTTOOLS_BIN" ]; then
-       sudo rm -rf $TCEXTTOOLS_BIN > /dev/null 2>&1 || RETURN_CODE=1
+       sudo rm -rf "$TCEXTTOOLS_BIN" > /dev/null 2>&1 || RETURN_CODE=1
   fi
 
-  mkdir -p $TCEXTTOOLS_BIN > /dev/null 2>&1 || RETURN_CODE=1
+  mkdir -p "$TCEXTTOOLS_BIN" > /dev/null 2>&1 || RETURN_CODE=1
 
   if [ -d "$TCEXTTOOLS_PKG" ]; then
-       sudo rm -rf $TCEXTTOOLS_PKG > /dev/null 2>&1 || RETURN_CODE=1
+       sudo rm -rf "$TCEXTTOOLS_PKG" > /dev/null 2>&1 || RETURN_CODE=1
   fi
 
-  mkdir -p $TCEXTTOOLS_PKG > /dev/null 2>&1 || RETURN_CODE=1
+  mkdir -p "$TCEXTTOOLS_PKG" > /dev/null 2>&1 || RETURN_CODE=1
 
   if [ -d "$TCEXTTOOLS_BIN_TEMP" ]; then
-       sudo rm -rf $TCEXTTOOLS_BIN_TEMP > /dev/null 2>&1 || RETURN_CODE=1
+       sudo rm -rf "$TCEXTTOOLS_BIN_TEMP" > /dev/null 2>&1 || RETURN_CODE=1
   fi
 
-  mkdir -p $TCEXTTOOLS_BIN_TEMP > /dev/null 2>&1 || RETURN_CODE=1
+  mkdir -p "$TCEXTTOOLS_BIN_TEMP" > /dev/null 2>&1 || RETURN_CODE=1
 
   if [ -d "$TCEXTTOOLS_SRC_TEMP" ]; then
-       sudo rm -rf $TCEXTTOOLS_SRC_TEMP > /dev/null 2>&1 || RETURN_CODE=1
+       sudo rm -rf "$TCEXTTOOLS_SRC_TEMP" > /dev/null 2>&1 || RETURN_CODE=1
   fi
 
-  mkdir -p $TCEXTTOOLS_SRC_TEMP > /dev/null 2>&1 || RETURN_CODE=1
+  mkdir -p "$TCEXTTOOLS_SRC_TEMP" > /dev/null 2>&1 || RETURN_CODE=1
 
   if [ -d "$TCEXTTOOLS_LOG" ]; then
-       sudo rm -rf $TCEXTTOOLS_LOG > /dev/null 2>&1 || RETURN_CODE=1
+       sudo rm -rf "$TCEXTTOOLS_LOG" > /dev/null 2>&1 || RETURN_CODE=1
   fi
 
-  mkdir -p $TCEXTTOOLS_LOG > /dev/null 2>&1 || RETURN_CODE=1
+  mkdir -p "$TCEXTTOOLS_LOG" > /dev/null 2>&1 || RETURN_CODE=1
 
   if [ "$RETURN_CODE" -gt 0 ]; then
        print_it error "failed!"
@@ -81,15 +81,15 @@ clean_it() {
 
 download_it() {
 
-  cd $PACKAGE_ROOT
+  cd "$PACKAGE_ROOT"
 
-  if [ -f "$TCEXTTOOLS_SRC"/"$SOURCE" ]; then
+  if [ -f "$TCEXTTOOLS_SRC/$SOURCE" ]; then
        print_it warning "The package $PACKAGE source is already downloaded."
        exit 0
   fi
 
   print_it "Downloading the package $PACKAGE source ... \c"
-  downloadit > $TCEXTTOOLS_ERROR_LOG 2>&1
+  downloadit > "$TCEXTTOOLS_ERROR_LOG" 2>&1
   if [ "$?" -gt 0 ]; then
        print_it error "failed!"
        print_it warning "See error logs in $TCEXTTOOLS_LOG for details."
@@ -100,15 +100,15 @@ download_it() {
 
 convert_it() {
 
-  cd $PACKAGE_ROOT
+  cd "$PACKAGE_ROOT"
 
-  if [ ! -e "$TCEXTTOOLS_SRC"/"$SOURCE" ]; then
+  if [ ! -e "$TCEXTTOOLS_SRC/$SOURCE" ]; then
        print_it error "You must download it first!"
        exit 1
   fi
 
   print_it "Converting the package $PACKAGE source to xz compressed tarball ... \c"
-  convertit > $TCEXTTOOLS_ERROR_LOG 2>&1
+  convertit > "$TCEXTTOOLS_ERROR_LOG" 2>&1
   if [ "$?" -gt 0 ]; then
        print_it error "failed!"
        print_it warning "See error logs in $TCEXTTOOLS_LOG for details."
@@ -119,15 +119,15 @@ convert_it() {
 
 unpack_it() {
 
-  cd $PACKAGE_ROOT
+  cd "$PACKAGE_ROOT"
 
-  if [ ! -e "$TCEXTTOOLS_SRC"/"$SOURCE" ]; then
+  if [ ! -e "$TCEXTTOOLS_SRC/$SOURCE" ]; then
         print_it error "You must download it first!"
         exit 1
   fi
 
   print_it "Unpacking the package $PACKAGE source ... \c"
-  unpackit > $TCEXTTOOLS_ERROR_LOG 2>&1
+  unpackit > "$TCEXTTOOLS_ERROR_LOG" 2>&1
   if [ "$?" -gt 0 ]; then
        print_it error "failed!"
        print_it warning "See error logs in $TCEXTTOOLS_LOG for details."
@@ -138,11 +138,11 @@ unpack_it() {
 
 load_it() {
 
-  cd $PACKAGE_ROOT
+  cd "$PACKAGE_ROOT"
 
   print_it "Loading the package $PACKAGE build dependencies ... \c"
   if [ -n "$BUILD_DEPENDS" ]; then
-       loadit "$BUILD_DEPENDS" > $TCEXTTOOLS_ERROR_LOG 2>&1
+       loadit "$BUILD_DEPENDS" > "$TCEXTTOOLS_ERROR_LOG" 2>&1
   fi
 
   if [ "$?" -gt 0 ]; then
@@ -155,16 +155,16 @@ load_it() {
 
 patch_it() {
 
-  cd $PACKAGE_ROOT
+  cd "$PACKAGE_ROOT"
 
-  if [ ! -d "$TCEXTTOOLS_BIN_TEMP"/"$TOP_SRC" ]; then
+  if [ ! -d "$TCEXTTOOLS_BIN_TEMP/$TOP_SRC" ]; then
        print_it error "You must unpack it first!"
        exit 1
   fi
 
   if [ -d "$PACKAGE_PATCHES" ]; then
        print_it "Patching the package $PACKAGE source ... \c"
-       patchit > $TCEXTTOOLS_ERROR_LOG 2>&1
+       patchit > "$TCEXTTOOLS_ERROR_LOG" 2>&1
        if [ "$?" -gt 0 ]; then
             print_it error "failed!"
             print_it warning "See error logs in $TCEXTTOOLS_LOG for details."
@@ -178,23 +178,23 @@ patch_it() {
 
 configure_it() {
 
-  cd $PACKAGE_ROOT
+  cd "$PACKAGE_ROOT"
 
   if [ -e "$TCEXTTOOLS_BUILD" ]; then
-       . $TCEXTTOOLS_BUILD
+       . "$TCEXTTOOLS_BUILD"
   else
        print_it error "tc-ext-tools build functions file not found: $TCEXTTOOLS_BUILD"
        exit 1
   fi
 
-  if [ ! -d "$TCEXTTOOLS_BIN_TEMP"/"$TOP_SRC" ]; then
+  if [ ! -d "$TCEXTTOOLS_BIN_TEMP/$TOP_SRC" ]; then
        print_it error "You must unpack it first!"
        exit 1
   fi
 
   print_it "Configuring the package $PACKAGE ... \c"
-  cd "$TCEXTTOOLS_BIN_TEMP"/"$TOP_SRC"
-  build_configure > $TCEXTTOOLS_CONFIGURE_LOG 2>&1
+  cd "$TCEXTTOOLS_BIN_TEMP/$TOP_SRC"
+  build_configure > "$TCEXTTOOLS_CONFIGURE_LOG" 2>&1
   if [ "$?" -gt 0 ]; then
        print_it error "failed!"
        print_it warning "See $TCEXTTOOLS_CONFIGURE_LOG for details."
@@ -205,23 +205,23 @@ configure_it() {
 
 compile_it() {
 
-  cd $PACKAGE_ROOT
+  cd "$PACKAGE_ROOT"
 
   if [ -e "$TCEXTTOOLS_BUILD" ]; then
-       . $TCEXTTOOLS_BUILD
+       . "$TCEXTTOOLS_BUILD"
   else
        print_it error "tc-ext-tools build functions file not found: $TCEXTTOOLS_BUILD"
        exit 1
   fi
 
-  if [ ! -d "$TCEXTTOOLS_BIN_TEMP"/"$TOP_SRC" ]; then
+  if [ ! -d "$TCEXTTOOLS_BIN_TEMP/$TOP_SRC" ]; then
        print_it error "You must configure it first!"
        exit 1
   fi
 
   print_it "Compiling the package $PACKAGE ... \c"
-  cd "$TCEXTTOOLS_BIN_TEMP"/"$TOP_SRC"
-  build_compile > $TCEXTTOOLS_COMPILE_LOG 2>&1
+  cd "$TCEXTTOOLS_BIN_TEMP/$TOP_SRC"
+  build_compile > "$TCEXTTOOLS_COMPILE_LOG" 2>&1
   if [ "$?" -gt 0 ]; then
        print_it error "failed!"
        print_it warning "See $TCEXTTOOLS_COMPILE_LOG for details."
@@ -232,7 +232,7 @@ compile_it() {
 
 install_it() {
 
-  cd $PACKAGE_ROOT
+  cd "$PACKAGE_ROOT"
 
   if [ ! -d "$TOP_SRC_DIR" ]; then
        print_it error "You must compile it first!"
@@ -240,7 +240,7 @@ install_it() {
   fi
 
   print_it "Installing the package $PACKAGE ... \c"
-  sudo installit > $TCEXTTOOLS_INSTALL_LOG 2>&1
+  sudo installit > "$TCEXTTOOLS_INSTALL_LOG" 2>&1
   if [ "$?" -gt 0 ]; then
        print_it error "failed!"
        print_it warning "See $TCEXTTOOLS_INSTALL_LOG for details."
@@ -252,7 +252,7 @@ install_it() {
 
 modify_it() {
 
-  cd $PACKAGE_ROOT
+  cd "$PACKAGE_ROOT"
 
   if [ ! -d "$TCEXTTOOLS_INSTALL_ROOT" ]; then
        print_it error "You must install it first!"
@@ -260,7 +260,7 @@ modify_it() {
   fi
 
   print_it "Modifying the package $PACKAGE ... \c"
-  modifyit > $TCEXTTOOLS_ERROR_LOG 2>&1
+  modifyit > "$TCEXTTOOLS_ERROR_LOG" 2>&1
   if [ "$?" -gt 0 ]; then
        print_it error "failed!"
        print_it warning "See error logs in $TCEXTTOOLS_LOG for details."
@@ -272,7 +272,7 @@ modify_it() {
 
 strip_it() {
 
-  cd $PACKAGE_ROOT
+  cd "$PACKAGE_ROOT"
 
   if [ ! -d "$TCEXTTOOLS_INSTALL_ROOT" ]; then
        print_it error "You must install it first!"
@@ -280,7 +280,7 @@ strip_it() {
   fi
 
   print_it "Stripping the package $PACKAGE ... \c"
-  stripit $TCEXTTOOLS_INSTALL_ROOT > $TCEXTTOOLS_ERROR_LOG 2>&1
+  stripit "$TCEXTTOOLS_INSTALL_ROOT" > "$TCEXTTOOLS_ERROR_LOG" 2>&1
   if [ "$?" -gt 0 ]; then
        print_it error "failed!"
        print_it warning "See error logs in $TCEXTTOOLS_LOG for details."
@@ -291,7 +291,7 @@ strip_it() {
 
 split_it() {
 
-  cd $PACKAGE_ROOT
+  cd "$PACKAGE_ROOT"
 
   if [ ! -d "$TCEXTTOOLS_INSTALL_ROOT" ]; then
        print_it error "You must install it first!"
@@ -301,7 +301,7 @@ split_it() {
   for EXTENSION in $EXTENSIONS
   do
       print_it "Splitting the extension $EXTENSION out of the package $PACKAGE ... \c"
-      splitit $EXTENSION > $TCEXTTOOLS_ERROR_LOG 2>&1
+      splitit "$EXTENSION" > "$TCEXTTOOLS_ERROR_LOG" 2>&1
       if [ "$?" -gt 0 ]; then
            print_it error "failed!"
            print_it warning "See error logs in $TCEXTTOOLS_LOG for details."
@@ -313,20 +313,20 @@ split_it() {
 
 create_it() {
 
-  cd $PACKAGE_ROOT
+  cd "$PACKAGE_ROOT"
 
-  [ -d "$TCEXTTOOLS_EXTENSIONS" ] && sudo rm -rf $TCEXTTOOLS_EXTENSIONS > /dev/null 2>&1
-  mkdir -p $TCEXTTOOLS_EXTENSIONS > /dev/null 2>&1
+  [ -d "$TCEXTTOOLS_EXTENSIONS" ] && sudo rm -rf "$TCEXTTOOLS_EXTENSIONS" > /dev/null 2>&1
+  mkdir -p "$TCEXTTOOLS_EXTENSIONS" > /dev/null 2>&1
 
   for EXTENSION in $EXTENSIONS
   do
-      if [ ! -d "$TCEXTTOOLS_BIN"/"$EXTENSION" ]; then
+      if [ ! -d "$TCEXTTOOLS_BIN/$EXTENSION" ]; then
            print_it error "You must split it first!"
            exit 1
       fi
 
       print_it "Creating the extension $EXTENSION ... \c"
-      createit $EXTENSION > $TCEXTTOOLS_ERROR_LOG 2>&1
+      createit "$EXTENSION" > "$TCEXTTOOLS_ERROR_LOG" 2>&1
       if [ "$?" -gt 0 ]; then
            print_it error "failed!"
            print_it warning "See error logs in $TCEXTTOOLS_LOG for details."
@@ -338,17 +338,17 @@ create_it() {
 
 generate_it() {
 
-  cd $PACKAGE_ROOT
+  cd "$PACKAGE_ROOT"
 
   for EXTENSION in $EXTENSIONS
   do
-      if [ ! -e "$TCEXTTOOLS_EXTENSIONS"/"$EXTENSION"/"${EXTENSION}.tcz" ]; then
+      if [ ! -e "$TCEXTTOOLS_EXTENSIONS/$EXTENSION/${EXTENSION}.tcz" ]; then
            print_it error "You must create it first!"
            exit 1
       fi
 
       print_it "Generating the extension $EXTENSION info ... \c"
-      generateit $EXTENSION > $TCEXTTOOLS_ERROR_LOG 2>&1
+      generateit "$EXTENSION" > "$TCEXTTOOLS_ERROR_LOG" 2>&1
       if [ "$?" -gt 0 ]; then
            print_it error "failed!"
            print_it warning "See $TCEXTTOOLS_ERROR_LOG for details."
@@ -360,17 +360,17 @@ generate_it() {
 
 check_it() {
 
-  cd $PACKAGE_ROOT
+  cd "$PACKAGE_ROOT"
 
   for EXTENSION in $EXTENSIONS
   do
-      if [ ! -e "$TCEXTTOOLS_EXTENSIONS"/"$EXTENSION"/"${EXTENSION}.tcz" ]; then
+      if [ ! -e "$TCEXTTOOLS_EXTENSIONS/$EXTENSION/${EXTENSION}.tcz" ]; then
            print_it error "You must create it first!"
            exit 1
       fi
 
       print_it "Checking the extension $EXTENSION ... \c"
-      checkit $EXTENSION > $TCEXTTOOLS_ERROR_LOG 2>&1
+      checkit "$EXTENSION" > "$TCEXTTOOLS_ERROR_LOG" 2>&1
       if [ "$?" -gt 0 ]; then
            print_it error "failed!"
            print_it warning "See error logs in $TCEXTTOOLS_LOG for details."
@@ -382,13 +382,13 @@ check_it() {
 
 package_it() {
 
-  cd $PACKAGE_ROOT
+  cd "$PACKAGE_ROOT"
 
-  [ -d "$TCEXTTOOLS_PKG" ] && sudo rm -rf $TCEXTTOOLS_PKG > /dev/null 2>&1
-  mkdir -p $TCEXTTOOLS_PKG > /dev/null 2>&1
+  [ -d "$TCEXTTOOLS_PKG" ] && sudo rm -rf "$TCEXTTOOLS_PKG" > /dev/null 2>&1
+  mkdir -p "$TCEXTTOOLS_PKG" > /dev/null 2>&1
 
   print_it "Packaging the package $PACKAGE ... \c"
-  packageit > $TCEXTTOOLS_ERROR_LOG 2>&1
+  packageit > "$TCEXTTOOLS_ERROR_LOG" 2>&1
   if [ "$?" -gt 0 ]; then
        print_it error "failed!"
        print_it warning "See error logs in $TCEXTTOOLS_LOG for details."
@@ -399,7 +399,7 @@ package_it() {
 
 compress_it() {
 
-  cd $PACKAGE_ROOT
+  cd "$PACKAGE_ROOT"
 
   if [ ! -d "$TCEXTTOOLS_PKG" ]; then
        print_it error "You must package it first!"
@@ -407,7 +407,7 @@ compress_it() {
   fi
 
   print_it "Compressing the package $PACKAGE ... \c"
-  compressit bz2 $TCEXTTOOLS_PKG > $TCEXTTOOLS_ERROR_LOG 2>&1
+  compressit bz2 "$TCEXTTOOLS_PKG" > "$TCEXTTOOLS_ERROR_LOG" 2>&1
   if [ "$?" -gt 0 ]; then
        print_it error "failed!"
        print_it warning "See error logs in $TCEXTTOOLS_LOG for details."
@@ -418,7 +418,7 @@ compress_it() {
 
 encrypt_it() {
 
-  cd $PACKAGE_ROOT
+  cd "$PACKAGE_ROOT"
 
   if [ ! -e "${PACKAGE}.tar.bz2" ]; then
        print_it error "You must compress it first!"
@@ -431,10 +431,10 @@ encrypt_it() {
 
 build_it() {
 
-  cd $PACKAGE_ROOT
+  cd "$PACKAGE_ROOT"
 
   if [ -e "$TCEXTTOOLS_BUILD" ]; then
-       . $TCEXTTOOLS_BUILD
+       . "$TCEXTTOOLS_BUILD"
   else
        print_it error "tc-ext-tools build functions file not found: $TCEXTTOOLS_BUILD"
        exit 1
@@ -444,22 +444,22 @@ build_it() {
 }
 
 cat_it() {
-  cd $PACKAGE_ROOT
+  cd "$PACKAGE_ROOT"
 
   case "$1" in
        configure)
-                 [ -e "$TCEXTTOOLS_CONFIGURE_LOG" ] && cat $TCEXTTOOLS_CONFIGURE_LOG
+                 [ -e "$TCEXTTOOLS_CONFIGURE_LOG" ] && cat "$TCEXTTOOLS_CONFIGURE_LOG"
                  ;;
        compile)
-                 [ -e "$TCEXTTOOLS_COMPILE_LOG" ] && cat $TCEXTTOOLS_COMPILE_LOG
+                 [ -e "$TCEXTTOOLS_COMPILE_LOG" ] && cat "$TCEXTTOOLS_COMPILE_LOG"
                  ;;
        install)
-                 [ -e "$TCEXTTOOLS_INSTALL_LOG" ] && cat $TCEXTTOOLS_INSTALL_LOG
+                 [ -e "$TCEXTTOOLS_INSTALL_LOG" ] && cat "$TCEXTTOOLS_INSTALL_LOG"
                  ;;
        error)
                  if [ -e "$TCEXTTOOLS_ERROR_LOG" -a -e "$TCEXTTOOLS_ERROR_LOG_2" ]; then
-                      cat $TCEXTTOOLS_ERROR_LOG
-                      cat $TCEXTTOOLS_ERROR_LOG_2
+                      cat "$TCEXTTOOLS_ERROR_LOG"
+                      cat "$TCEXTTOOLS_ERROR_LOG_2"
                  fi
                  ;;
        *)
@@ -469,7 +469,7 @@ cat_it() {
 }
 
 if [ -z "$1" ]; then
-     $0 all
+     "$0" all
      exit 0
 fi
 
@@ -526,7 +526,7 @@ case "$1" in
 		  encrypt_it
 		  ;;
 	cat|show)
-		  cat_it ${2}
+		  cat_it "$2"
 		  ;;
 	all)
 		  clean_it
@@ -538,3 +538,4 @@ case "$1" in
 esac
 
 exit 0
+
