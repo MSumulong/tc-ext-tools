@@ -27,9 +27,9 @@ build_compile() {
 ### Install
 build_install() {
 
-  sudo make DESTDIR=${INSTALL_ROOT} install || return 1
+  make DESTDIR="$INSTALL_ROOT" install || return 1
 
-  sudo install -m 755 Programs/GtkLauncher ${INSTALL_ROOT}/usr/local/bin || return 1
+  install -m 755 Programs/GtkLauncher "$INSTALL_ROOT/usr/local/bin/GtkLauncher" || return 1
 
 }
 ##

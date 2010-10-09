@@ -1,5 +1,5 @@
 PACKAGE="webkit"
-VERSION="1.2.3"
+VERSION="1.2.5"
 SOURCE="${PACKAGE}-${VERSION}.tar.gz"
 TOP_SRC="${PACKAGE}-${VERSION}"
 SOURCE_URL="http://webkitgtk.org/webkit-${VERSION}.tar.gz"
@@ -37,5 +37,6 @@ CHANGELOG="2009/05/04 First Version by Roberto A. Foglietta
 		2009/12/23 Updated to 1.15.4
 		2010/04/12 Updated to 1.2.0
 		2010/05/01 Rebuilt against icu 4.4
-		2010/05/30 Updated to 1.2.1"
-CURRENT="Updated to 1.2.3"
+		2010/05/30 Updated to 1.2.1
+		2010/08/24 Updated to 1.2.3"
+CURRENT="Updated to 1.2.5"

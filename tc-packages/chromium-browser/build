@@ -42,22 +42,22 @@ build_compile() {
 ### Install
 build_install() {
 
-  sudo install -m 755 -D out/Release/chrome ${INSTALL_ROOT}/usr/local/chromium-browser/chromium-browser || return 1
-  sudo install -m 4555 -o root -g root -D out/Release/chrome_sandbox ${INSTALL_ROOT}/usr/local/chromium-browser/chromium-browser-sandbox || return 1
-  sudo install -m 644 -D out/Release/chrome.pak ${INSTALL_ROOT}/usr/local/chromium-browser/chrome.pak || return 1
-  sudo install -m 755 -D out/Release/libffmpegsumo.so ${INSTALL_ROOT}/usr/local/chromium-browser/libffmpegsumo.so || return 1
-  sudo install -m 644 -D out/Release/resources.pak ${INSTALL_ROOT}/usr/local/chromium-browser/resources.pak || return 1
-  sudo install -m 755 -D out/Release/xdg-settings ${INSTALL_ROOT}/usr/local/chromium-browser/xdg-settings || return 1
-  sudo cp -R out/Release/resources ${INSTALL_ROOT}/usr/local/chromium-browser || return 1
-  sudo install -m 644 -D out/Release/chrome.1 ${INSTALL_ROOT}/usr/local/share/man/man1/chromium-browser.1 || return 1
-  sudo install -m 644 -D ${PACKAGE_SRC}/chromium-browser.desktop ${INSTALL_ROOT}/usr/local/share/applications/chromium-browser.desktop || return 1
-  sudo install -m 755 -D ${PACKAGE_SRC}/chromium-browser.sh ${INSTALL_ROOT}/usr/local/bin/chromium-browser || return 1
-  sudo install -m 644 -D LICENSE ${INSTALL_ROOT}/usr/local/share/doc/chromium-browser/LICENSE || return 1
-  sudo install -m 644 -D AUTHORS ${INSTALL_ROOT}/usr/local/share/doc/chromium-browser/AUTHORS || return 1
-  sudo install -m 755 -d ${INSTALL_ROOT}/usr/local/chromium-browser-addons || return 1
-  sudo cp -a out/Release/locales ${INSTALL_ROOT}/usr/local/chromium-browser-addons || return 1
-  sudo ln -s /usr/local/chromium-browser-addons/plugins ${INSTALL_ROOT}/usr/local/chromium-browser/plugins || return 1
-  sudo ln -s /usr/local/chromium-browser-addons/locales ${INSTALL_ROOT}/usr/local/chromium-browser/locales || return 1
+  install -m 755 -D out/Release/chrome "$INSTALL_ROOT/usr/local/chromium-browser/chromium-browser" || return 1
+  install -m 4555 -o root -g root -D out/Release/chrome_sandbox "$INSTALL_ROOT/usr/local/chromium-browser/chromium-browser-sandbox" || return 1
+  install -m 644 -D out/Release/chrome.pak "$INSTALL_ROOT/usr/local/chromium-browser/chrome.pak" || return 1
+  install -m 755 -D out/Release/libffmpegsumo.so ${INSTALL_ROOT}/usr/local/chromium-browser/libffmpegsumo.so || return 1
+  install -m 644 -D out/Release/resources.pak ${INSTALL_ROOT}/usr/local/chromium-browser/resources.pak || return 1
+  install -m 755 -D out/Release/xdg-settings ${INSTALL_ROOT}/usr/local/chromium-browser/xdg-settings || return 1
+  cp -R out/Release/resources ${INSTALL_ROOT}/usr/local/chromium-browser || return 1
+  install -m 644 -D out/Release/chrome.1 ${INSTALL_ROOT}/usr/local/share/man/man1/chromium-browser.1 || return 1
+  install -m 644 -D ${PACKAGE_SRC}/chromium-browser.desktop ${INSTALL_ROOT}/usr/local/share/applications/chromium-browser.desktop || return 1
+  install -m 755 -D ${PACKAGE_SRC}/chromium-browser.sh ${INSTALL_ROOT}/usr/local/bin/chromium-browser || return 1
+  install -m 644 -D LICENSE ${INSTALL_ROOT}/usr/local/share/doc/chromium-browser/LICENSE || return 1
+  install -m 644 -D AUTHORS ${INSTALL_ROOT}/usr/local/share/doc/chromium-browser/AUTHORS || return 1
+  install -m 755 -d ${INSTALL_ROOT}/usr/local/chromium-browser-addons || return 1
+  cp -a out/Release/locales ${INSTALL_ROOT}/usr/local/chromium-browser-addons || return 1
+  ln -s /usr/local/chromium-browser-addons/plugins ${INSTALL_ROOT}/usr/local/chromium-browser/plugins || return 1
+  ln -s /usr/local/chromium-browser-addons/locales ${INSTALL_ROOT}/usr/local/chromium-browser/locales || return 1
 
   for size in 16 22 24 32 48 64 128 256; do
     sudo install -m 644 -D chrome/app/theme/chromium/product_logo_${size}.png ${INSTALL_ROOT}/usr/local/share/icons/hicolor/${size}x${size}/apps/chromium-browser.png || return 1
@@ -72,9 +72,9 @@ build_install() {
 build_rules() {
 
   buildit download || exit 1
-  #buildit convert || exit 1
+  buildit convert || exit 1
   buildit unpack || exit 1
-  #buildit patch || exit 1
+  buildit patch || exit 1
   buildit load || exit 1
   buildit configure || exit 1
   buildit compile || exit 1

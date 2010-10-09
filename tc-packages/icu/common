@@ -1,5 +1,5 @@
 PACKAGE="icu"
-VERSION="4.4.1"
+VERSION="4.4.2"
 SOURCE="${PACKAGE}4c-${VERSION//./_}-src.tgz"
 TOP_SRC="${PACKAGE}"
 SOURCE_URL="http://download.icu-project.org/files/${PACKAGE}4c/${VERSION}/${PACKAGE}4c-${VERSION//./_}-src.tgz"
@@ -13,5 +13,6 @@ COPYING="ICU License"
 MAINTAINERS="Arslan S."
 COMMENTS="This extension is PPI compatible."
 CHANGELOG="2009/04/28 First Version 4.0.1 by Roberto A. Foglietta
-		2010/04/29 Updated to 4.4 & splitted devs"
-CURRENT="Updated to 4.4.1"
+		2010/04/29 Updated to 4.4 & splitted devs
+		2010/08/21 Updated to 4.4.1"
+CURRENT="Updated to 4.4.2"

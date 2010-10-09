@@ -1,12 +1,15 @@
 PACKAGE="postgresql"
-VERSION="9.0.0"
+VERSION="9.0.1"
 SOURCE="${PACKAGE}-${VERSION}.tar.bz2"
 TOP_SRC="${PACKAGE}-${VERSION}"
 SOURCE_URL="ftp://ftp.postgresql.org/pub/source/v${VERSION}/postgresql-${VERSION}.tar.bz2"
 BUILD_DEPENDS="libxml2
 libxml2-dev
 libxslt
-tcl_tk
+tcl
+tcl-dev
+tk
+tk-dev
 readline
 readline-dev
 openssl-0.9.8
@@ -27,6 +30,7 @@ SITE="http://www.postgresql.org/"
 COPYING="PostgreSQL License"
 MAINTAINERS="Arslan S."
 COMMENTS="This extension is PPI compatible."
-CHANGELOG="2010/07/01 First Version 8.4.4"
-CURRENT="Updated to 9.0.0 & Splitted out libs"
+CHANGELOG="2010/07/01 First Version 8.4.4
+		2010/10/03 Updated to 9.0.0 & Splitted out libs"
+CURRENT="Updated to 9.0.1"
 

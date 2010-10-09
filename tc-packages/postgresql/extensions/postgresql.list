@@ -690,8 +690,10 @@ usr/local/share/doc/postgresql/html/release-6-4.html
 usr/local/share/doc/postgresql/html/sql-altertype.html
 usr/local/share/doc/postgresql/html/role-membership.html
 usr/local/share/doc/postgresql/html/monitoring-locks.html
+usr/local/share/doc/postgresql/html/install-windows.html
 usr/local/share/doc/postgresql/html/tutorial.html
 usr/local/share/doc/postgresql/html/app-pgresetxlog.html
+usr/local/share/doc/postgresql/html/release-8-1-22.html
 usr/local/share/doc/postgresql/html/release-7-4-15.html
 usr/local/share/doc/postgresql/html/maintenance.html
 usr/local/share/doc/postgresql/html/extend-cpp.html
@@ -709,6 +711,7 @@ usr/local/share/doc/postgresql/html/functions-comparison.html
 usr/local/share/doc/postgresql/html/release-6-0.html
 usr/local/share/doc/postgresql/html/datatype-money.html
 usr/local/share/doc/postgresql/html/release-8-2-9.html
+usr/local/share/doc/postgresql/html/install-windows-full.html
 usr/local/share/doc/postgresql/html/installation.html
 usr/local/share/doc/postgresql/html/ddl-partitioning.html
 usr/local/share/doc/postgresql/html/xfunc.html
@@ -755,6 +758,7 @@ usr/local/share/doc/postgresql/html/spi-spi-execute-with-args.html
 usr/local/share/doc/postgresql/html/release-8-4-2.html
 usr/local/share/doc/postgresql/html/infoschema-view-routine-usage.html
 usr/local/share/doc/postgresql/html/server-start.html
+usr/local/share/doc/postgresql/html/release-8-0-26.html
 usr/local/share/doc/postgresql/html/infoschema-domain-constraints.html
 usr/local/share/doc/postgresql/html/contrib-dblink-get-connections.html
 usr/local/share/doc/postgresql/html/catalog-pg-user-mapping.html
@@ -764,6 +768,7 @@ usr/local/share/doc/postgresql/html/catalog-pg-statistic.html
 usr/local/share/doc/postgresql/html/release-8-2-8.html
 usr/local/share/doc/postgresql/html/catalog-pg-conversion.html
 usr/local/share/doc/postgresql/html/release-7-3-16.html
+usr/local/share/doc/postgresql/html/release-9-0-1.html
 usr/local/share/doc/postgresql/html/contrib-dblink.html
 usr/local/share/doc/postgresql/html/index-functions.html
 usr/local/share/doc/postgresql/html/pgbench.html
@@ -796,6 +801,7 @@ usr/local/share/doc/postgresql/html/xaggr.html
 usr/local/share/doc/postgresql/html/sql-commands.html
 usr/local/share/doc/postgresql/html/infoschema-triggers.html
 usr/local/share/doc/postgresql/html/sql-start-transaction.html
+usr/local/share/doc/postgresql/html/install-windows-libpq.html
 usr/local/share/doc/postgresql/html/datatype-uuid.html
 usr/local/share/doc/postgresql/html/queries.html
 usr/local/share/doc/postgresql/html/app-pgdump.html
@@ -847,6 +853,7 @@ usr/local/share/doc/postgresql/html/sql-alterlargeobject.html
 usr/local/share/doc/postgresql/html/spi-spi-push.html
 usr/local/share/doc/postgresql/html/spi-spi-execute-plan-with-paramlist.html
 usr/local/share/doc/postgresql/html/xfunc-c.html
+usr/local/share/doc/postgresql/html/sourcerepo.html
 usr/local/share/doc/postgresql/html/row-estimation-examples.html
 usr/local/share/doc/postgresql/html/infoschema-view-table-usage.html
 usr/local/share/doc/postgresql/html/sql-cluster.html
@@ -948,6 +955,7 @@ usr/local/share/doc/postgresql/html/xfunc-sql.html
 usr/local/share/doc/postgresql/html/plperl-data.html
 usr/local/share/doc/postgresql/html/release-7-3-9.html
 usr/local/share/doc/postgresql/html/release-8-0-24.html
+usr/local/share/doc/postgresql/html/release-8-2-18.html
 usr/local/share/doc/postgresql/html/release-6-5-1.html
 usr/local/share/doc/postgresql/html/spi-spi-cursor-move.html
 usr/local/share/doc/postgresql/html/release-7-3-5.html
@@ -1043,10 +1051,10 @@ usr/local/share/doc/postgresql/html/features-sql-standard.html
 usr/local/share/doc/postgresql/html/pgtrgm.html
 usr/local/share/doc/postgresql/html/contrib.html
 usr/local/share/doc/postgresql/html/release-8-1-5.html
-usr/local/share/doc/postgresql/html/install-win32.html
 usr/local/share/doc/postgresql/html/auth-methods.html
 usr/local/share/doc/postgresql/html/xoper-optimization.html
 usr/local/share/doc/postgresql/html/tutorial-populate.html
+usr/local/share/doc/postgresql/html/release-8-3-12.html
 usr/local/share/doc/postgresql/html/warm-standby-failover.html
 usr/local/share/doc/postgresql/html/release-7-1-2.html
 usr/local/share/doc/postgresql/html/sql-dropaggregate.html
@@ -1236,7 +1244,6 @@ usr/local/share/doc/postgresql/html/spi-spi-modifytuple.html
 usr/local/share/doc/postgresql/html/transaction-iso.html
 usr/local/share/doc/postgresql/html/app-clusterdb.html
 usr/local/share/doc/postgresql/html/pltcl-procnames.html
-usr/local/share/doc/postgresql/html/install-win32-full.html
 usr/local/share/doc/postgresql/html/infoschema-role-column-grants.html
 usr/local/share/doc/postgresql/html/release-7-2-4.html
 usr/local/share/doc/postgresql/html/index-cost-estimation.html
@@ -1284,7 +1291,6 @@ usr/local/share/doc/postgresql/html/install-getsource.html
 usr/local/share/doc/postgresql/html/gin.html
 usr/local/share/doc/postgresql/html/sql-droptsconfig.html
 usr/local/share/doc/postgresql/html/xplang-install.html
-usr/local/share/doc/postgresql/html/anoncvs.html
 usr/local/share/doc/postgresql/html/protocol-error-fields.html
 usr/local/share/doc/postgresql/html/libpq-control.html
 usr/local/share/doc/postgresql/html/release-8-4-3.html
@@ -1347,7 +1353,6 @@ usr/local/share/doc/postgresql/html/storage-toast.html
 usr/local/share/doc/postgresql/html/mvcc.html
 usr/local/share/doc/postgresql/html/rules-triggers.html
 usr/local/share/doc/postgresql/html/release-8-0-16.html
-usr/local/share/doc/postgresql/html/install-win32-libpq.html
 usr/local/share/doc/postgresql/html/ltree.html
 usr/local/share/doc/postgresql/html/datatype-enum.html
 usr/local/share/doc/postgresql/html/runtime-config-file-locations.html
@@ -1502,7 +1507,6 @@ usr/local/share/doc/postgresql/html/spi-spi-execute-plan.html
 usr/local/share/doc/postgresql/html/release-8-0-18.html
 usr/local/share/doc/postgresql/html/error-style-guide.html
 usr/local/share/doc/postgresql/html/release-7-3-8.html
-usr/local/share/doc/postgresql/html/rsync.html
 usr/local/share/doc/postgresql/html/release-8-1-14.html
 usr/local/share/doc/postgresql/html/libpq.html
 usr/local/share/doc/postgresql/html/app-postgres.html
@@ -1513,6 +1517,7 @@ usr/local/share/doc/postgresql/html/spi-spi-getrelname.html
 usr/local/share/doc/postgresql/html/release-1-01.html
 usr/local/share/doc/postgresql/html/xfunc-internal.html
 usr/local/share/doc/postgresql/html/runtime-config.html
+usr/local/share/doc/postgresql/html/release-7-4-30.html
 usr/local/share/doc/postgresql/html/sql-droptsdictionary.html
 usr/local/share/doc/postgresql/html/spi-spi-prepare-params.html
 usr/local/share/doc/postgresql/html/typeconv-overview.html
@@ -1523,6 +1528,7 @@ usr/local/share/doc/postgresql/html/release-7-3-10.html
 usr/local/share/doc/postgresql/html/queries-limit.html
 usr/local/share/doc/postgresql/html/protocol-flow.html
 usr/local/share/doc/postgresql/html/functions-geometry.html
+usr/local/share/doc/postgresql/html/release-8-4-5.html
 usr/local/share/doc/postgresql/html/pltcl-functions.html
 usr/local/share/doc/postgresql/html/libpq-pgpass.html
 usr/local/share/doc/postgresql/html/sql-discard.html
@@ -1617,7 +1623,6 @@ usr/local/share/doc/postgresql/html/sql-alteraggregate.html
 usr/local/share/doc/postgresql/html/release-8-2-10.html
 usr/local/share/doc/postgresql/html/functions-string.html
 usr/local/share/doc/postgresql/html/datatype-textsearch.html
-usr/local/share/doc/postgresql/html/cvs.html
 usr/local/share/doc/postgresql/html/sql-begin.html
 usr/local/share/doc/postgresql/html/indexes-intro.html
 usr/local/share/doc/postgresql/html/acronyms.html
@@ -1896,6 +1901,9 @@ usr/local/share/locale/ro/LC_MESSAGES/pg_controldata-9.0.mo
 usr/local/share/locale/ro/LC_MESSAGES/pg_resetxlog-9.0.mo
 usr/local/share/locale/ro/LC_MESSAGES/pg_config-9.0.mo
 usr/local/share/locale/ro/LC_MESSAGES/plpgsql-9.0.mo
+usr/local/share/locale/ro/LC_MESSAGES/plpython-9.0.mo
+usr/local/share/locale/ro/LC_MESSAGES/initdb-9.0.mo
+usr/local/share/locale/ro/LC_MESSAGES/pltcl-9.0.mo
 usr/local/share/locale/ro/LC_MESSAGES/plperl-9.0.mo
 usr/local/share/locale/ro/LC_MESSAGES/pgscripts-9.0.mo
 usr/local/share/locale/ko/LC_MESSAGES/pg_controldata-9.0.mo

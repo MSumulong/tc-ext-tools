@@ -1,5 +1,5 @@
 PACKAGE="sqlite3"
-VERSION="3.7.2"
+VERSION="3.7.3"
 SOURCE="sqlite-amalgamation-${VERSION}.tar.gz"
 SOURCE_URL="http://www.sqlite.org/sqlite-amalgamation-${VERSION}.tar.gz"
 TOP_SRC="sqlite-${VERSION}"
@@ -17,8 +17,9 @@ CHANGELOG="2008/12/24 First version 3.6.7 by stevens
 		2009/04/28 Dramatic size reduction and newer version 3.6.13 by Roberto A. Foglietta
 		2010/01/30 Updated to 3.6.22
 		2010/06/07 Updated to 3.6.23.1
-		2010/07/24 Updated to 3.7.0"
-CURRENT="Updated to 3.7.2
+		2010/07/24 Updated to 3.7.0
+		2010/08/24 Updated to 3.7.2
 			-removed sqlite3-doc extension, and added sqlite3-bin extension
 			-moved sqlite3 shell tool to sqlite3-bin
 			-sqlite3 shell tool compiled with readline support"
+CURRENT="Updated to 3.7.3"

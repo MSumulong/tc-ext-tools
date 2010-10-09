@@ -2,7 +2,7 @@ PACKAGE="conkeror"
 VERSION="git100824"
 SOURCE="${PACKAGE}-${VERSION}.tar.xz"
 SOURCE_URL="git://repo.or.cz/conkeror.git"
-SOURCE_GIT="true"
+VCS_TYPE="git"
 TOP_SRC="${PACKAGE}-${VERSION}"
 BUILD_DEPENDS=""
 

@@ -26,11 +26,11 @@ build_compile() {
 # Install
 build_install() {
 
-  sudo make DESTDIR=$INSTALL_ROOT install || return 1
+  make DESTDIR=$INSTALL_ROOT install || return 1
 
-  sudo make -C doc DESTDIR=$INSTALL_ROOT install || return 1
+  make -C doc DESTDIR=$INSTALL_ROOT install || return 1
 
-  sudo make -C contrib DESTDIR=$INSTALL_ROOT install || return 1
+  make -C contrib DESTDIR=$INSTALL_ROOT install || return 1
 
 }
 

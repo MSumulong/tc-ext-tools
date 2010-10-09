@@ -26,6 +26,8 @@ libgnome-keyring
 libgnome-keyring-dev
 Xorg-7.5
 Xorg-7.5-dev
+libxft
+libxft-dev
 #libcups
 #cups"
 
