@@ -16,4 +16,4 @@ MAINTAINERS="Arslan S."
 COMMENTS="This extension is PPI compatible."
 CHANGELOG="2010/03/10 Original
 		2010/07/18 Rebuilt against python 2.7"
-CURRENT="Renamed notify-python-2.7 to notify-python"
+CURRENT="Renamed notify-python to notify-python"

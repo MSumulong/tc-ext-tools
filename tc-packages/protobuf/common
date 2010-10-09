@@ -3,8 +3,8 @@ VERSION="2.3.0"
 SOURCE="${PACKAGE}-${VERSION}.tar.bz2"
 TOP_SRC="${PACKAGE}-${VERSION}"
 SOURCE_URL="http://protobuf.googlecode.com/files/protobuf-${VERSION}.tar.bz2"
-BUILD_DEPENDS="python-2.7
-python-2.7-dev
+BUILD_DEPENDS="python
+python-dev
 setuptools
 #python_setuptools-2.7"
 

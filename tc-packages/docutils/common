@@ -3,8 +3,8 @@ VERSION="0.7"
 SOURCE="${PACKAGE}-${VERSION}.tar.gz"
 TOP_SRC="${PACKAGE}-${VERSION}"
 SOURCE_URL="http://downloads.sourceforge.net/docutils/docutils-${VERSION}.tar.gz"
-BUILD_DEPENDS="python-2.7
-python-2.7-dev"
+BUILD_DEPENDS="python
+python-dev"
 
 EXTENSIONS="python-docutils"
 DESCRIPTION="Docutils is an open-source text processing system written in python."

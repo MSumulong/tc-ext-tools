@@ -12,8 +12,8 @@ gst-plugins-base-dev
 webkit-dev
 epiphany
 epiphany-dev
-python-2.7
-python-2.7-dev"
+python
+python-dev"
 
 EXTENSIONS="epiphany-extensions epiphany-extensions-locale"
 DESCRIPTION="Epiphany Web Browser extensions."

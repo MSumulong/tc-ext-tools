@@ -5,8 +5,8 @@ TOP_SRC="${PACKAGE}-${VERSION}/Source"
 SOURCE_URL="http://pysvn.barrys-emacs.org/source_kits/pysvn-${VERSION}.tar.gz"
 BUILD_DEPENDS="svn
 svn-dev
-python-2.7
-python-2.7-dev
+python
+python-dev
 krb5"
 
 EXTENSIONS="pysvn"

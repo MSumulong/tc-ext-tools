@@ -21,21 +21,20 @@ build_compile() {
 ### Install
 build_install() {
 
+  python setup.py install --prefix=/usr/local --root="$INSTALL_ROOT" || return 1
 
-  sudo python setup.py install --prefix=/usr/local --root=${INSTALL_ROOT} || return 1
+  install -d "$INSTALL_ROOT/usr/local/bin"
+  install -d "$INSTALL_ROOT/usr/local/lib/gedit-2/plugins"
+  install -d "$INSTALL_ROOT/usr/local/lib/nautilus/extensions-2.0/python"
+  install -d "$INSTALL_ROOT/usr/local/lib/thunarx-1/python"
 
-  sudo install -d $INSTALL_ROOT/usr/local/bin
-  sudo install -d $INSTALL_ROOT/usr/local/lib/gedit-2/plugins
-  sudo install -d $INSTALL_ROOT/usr/local/lib/nautilus/extensions-2.0/python
-  sudo install -d $INSTALL_ROOT/usr/local/lib/thunarx-1/python
-
-  sudo mv $INSTALL_ROOT/usr/share $INSTALL_ROOT/usr/local
-
-  sudo install -m 755 clients/cli/rabbitvcs $INSTALL_ROOT/usr/local/bin/rabbitvcs
-  sudo install -m 644 clients/gedit/rabbitvcs-plugin.py $INSTALL_ROOT/usr/local/lib/gedit-2/plugins/rabbitvcs-plugin.py
-  sudo install -m 644 clients/gedit/rabbitvcs.gedit-plugin $INSTALL_ROOT/usr/local/lib/gedit-2/plugins/rabbitvcs.gedit-plugin
-  sudo install -m 644 clients/nautilus/RabbitVCS.py $INSTALL_ROOT/usr/local/lib/nautilus/extensions-2.0/python/RabbitVCS.py
-  sudo install -m 644 clients/thunar/RabbitVCS.py $INSTALL_ROOT/usr/local/lib/thunarx-1/python/RabbitVCS.py
+  mv "$INSTALL_ROOT/usr/share" "$INSTALL_ROOT/usr/local"
+ 
+  install -m 755 clients/cli/rabbitvcs "$INSTALL_ROOT/usr/local/bin/rabbitvcs" || return 1
+  install -m 644 clients/gedit/rabbitvcs-plugin.py "$INSTALL_ROOT/usr/local/lib/gedit-2/plugins/rabbitvcs-plugin.py" || return 1
+  install -m 644 clients/gedit/rabbitvcs.gedit-plugin "$INSTALL_ROOT/usr/local/lib/gedit-2/plugins/rabbitvcs.gedit-plugin" || return 1
+  install -m 644 clients/nautilus/RabbitVCS.py "$INSTALL_ROOT/usr/local/lib/nautilus/extensions-2.0/python/RabbitVCS.py" || return 1
+  install -m 644 clients/thunar/RabbitVCS.py "$INSTALL_ROOT/usr/local/lib/thunarx-1/python/RabbitVCS.py" || return 1
 
 }
 ##

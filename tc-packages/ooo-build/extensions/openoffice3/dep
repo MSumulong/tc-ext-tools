@@ -1,6 +1,6 @@
 xulrunner.tcz
 GConf.tcz
-python-2.7.tcz
+python.tcz
 libxslt.tcz
 gst-plugins-base.tcz
 icu.tcz

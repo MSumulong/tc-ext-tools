@@ -1,0 +1,23 @@
+PACKAGE="libtorrent-rasterbar"
+VERSION="0.15.4"
+SOURCE="${PACKAGE}-${VERSION}.tar.gz"
+TOP_SRC="${PACKAGE}-${VERSION}"
+SOURCE_URL="http://libtorrent.googlecode.com/files/${PACKAGE}-${VERSION}.tar.gz"
+BUILD_DEPENDS="python
+python-dev
+boost
+boost-dev
+openssl-0.9.8
+openssl-0.9.8-dev"
+
+EXTENSIONS="libtorrent-rasterbar libtorrent-rasterbar-dev libtorrent-rasterbar-python"
+DESCRIPTION="A C++ bittorrent library."
+AUTHOR="Arvid Norberg"
+SITE="http://code.google.com/p/libtorrent/"
+COPYING="New BSD License"
+MAINTAINERS="Arslan S."
+COMMENTS="This extension is PPI compatible."
+CHANGELOG="2009/12/08 Original 0.14.7
+		2010/01/28 Updated to 0.14.8
+		2010/07/09 Updated to 0.14.10"
+CURRENT="Updated to 0.15.4"

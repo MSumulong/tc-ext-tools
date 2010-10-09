@@ -12,8 +12,8 @@ compiz-dev
 libcompizconfig
 libcompizconfig-dev
 compizconfig-python
-python-2.7
-python-2.7-dev
+python
+python-dev
 pygtk-2.7
 pygtk-2.7-dev"
 

@@ -5,8 +5,8 @@ TOP_SRC="chromium-${VERSION}"
 SOURCE_URL="http://build.chromium.org/buildbot/official/chromium-${VERSION}.tar.bz2"
 ICON="/usr/local/share/icons/hicolor/64x64/apps/chromium-browser.png"
 DESKTOP_ENTRY="/usr/local/share/applications/chromium-browser.desktop"
-BUILD_DEPENDS="python-2.7
-python-2.7-dev
+BUILD_DEPENDS="python
+python-dev
 perl5
 gtk2
 gtk2-dev
