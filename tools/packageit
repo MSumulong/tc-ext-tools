@@ -21,10 +21,10 @@
 
 . /etc/init.d/tc-functions
 
-TCEXTTOOLS_ROOT=$(dirname $0)/..
+TCEXTTOOLS_ROOT="$(dirname $0)/.."
 
-if [ -f "$TCEXTTOOLS_ROOT"/etc/tc-ext-tools/functions ]; then
-     . "$TCEXTTOOLS_ROOT"/etc/tc-ext-tools/functions
+if [ -f "$TCEXTTOOLS_ROOT/etc/tc-ext-tools/functions" ]; then
+     . "$TCEXTTOOLS_ROOT/etc/tc-ext-tools/functions"
 else
      echo "${RED}$(basename $0):${BLUE} tc-ext-tools functions file not found!${NORMAL}"
      exit 1
@@ -32,24 +32,24 @@ fi
 
 this_main() {
 
-  cd $PACKAGE_ROOT
+  cd "$PACKAGE_ROOT"
 
   for EXTENSION in $EXTENSIONS
   do
-      if [ ! -d "$TCEXTTOOLS_EXTENSIONS"/"$EXTENSION" ]; then
+      if [ ! -d "$TCEXTTOOLS_EXTENSIONS/$EXTENSION" ]; then
            print_it error "You must create it first!"
            exit 1
       fi
 
-      [ -d "$TCEXTTOOLS_PKG"/"$EXTENSION" ] || mkdir -p "$TCEXTTOOLS_PKG"/"$EXTENSION"
+      [ -d "$TCEXTTOOLS_PKG/$EXTENSION" ] || mkdir -p "$TCEXTTOOLS_PKG/$EXTENSION"
 
-      busybox cp -f "$TCEXTTOOLS_EXTENSIONS"/"$EXTENSION"/*.tcz* "$TCEXTTOOLS_PKG"/"$EXTENSION" || return 1
+      busybox cp -f "$TCEXTTOOLS_EXTENSIONS/$EXTENSION"/*.tcz* "$TCEXTTOOLS_PKG/$EXTENSION" || return 1
   done
 
   if [ -d "$PACKAGE_SRC" ]; then
-       compressit xz $PACKAGE_SRC || return 1
-       SRC=$(basename $PACKAGE_SRC).tar.xz
-       busybox mv -f $SRC $TCEXTTOOLS_PKG || return 1
+       compressit xz "$PACKAGE_SRC" || return 1
+       SRC="$(basename $PACKAGE_SRC).tar.xz"
+       busybox mv -f "$SRC" "$TCEXTTOOLS_PKG" || return 1
   fi
 
   [ ! "${SOURCE%.bz2}" = "$SOURCE" ] && TYPE="bz2"
@@ -59,22 +59,22 @@ this_main() {
   [ ! "${SOURCE%.zip}" = "$SOURCE" ] && TYPE="zip"
 
   if [ "$TYPE" = "bz2" ]; then
-       if [ -e "$TCEXTTOOLS_SRC"/"${SOURCE%.bz2}.xz" ]; then
-            busybox cp -f "$TCEXTTOOLS_SRC"/"${SOURCE%.bz2}.xz" $TCEXTTOOLS_PKG || return 1
+       if [ -e "$TCEXTTOOLS_SRC/${SOURCE%.bz2}.xz" ]; then
+            busybox cp -f "$TCEXTTOOLS_SRC/${SOURCE%.bz2}.xz" "$TCEXTTOOLS_PKG" || return 1
        fi
   elif [ "$TYPE" = "gz" ]; then
-       if [ -e "$TCEXTTOOLS_SRC"/"${SOURCE%.gz}.xz" ]; then
-            busybox cp -f "$TCEXTTOOLS_SRC"/"${SOURCE%.gz}.xz" $TCEXTTOOLS_PKG || return 1
+       if [ -e "$TCEXTTOOLS_SRC/${SOURCE%.gz}.xz" ]; then
+            busybox cp -f "$TCEXTTOOLS_SRC/${SOURCE%.gz}.xz" "$TCEXTTOOLS_PKG" || return 1
        fi
   elif [ "$TYPE" = "tgz" ]; then
-       if [ -e "$TCEXTTOOLS_SRC"/"${SOURCE%.tgz}.tar.xz" ]; then
-            busybox cp -f "$TCEXTTOOLS_SRC"/"${SOURCE%.tgz}.tar.xz" $TCEXTTOOLS_PKG || return 1
+       if [ -e "$TCEXTTOOLS_SRC/${SOURCE%.tgz}.tar.xz" ]; then
+            busybox cp -f "$TCEXTTOOLS_SRC/${SOURCE%.tgz}.tar.xz" "$TCEXTTOOLS_PKG" || return 1
        fi
   elif [ "$TYPE" = "xz" ]; then
-       busybox cp -f "$TCEXTTOOLS_SRC"/"$SOURCE" $TCEXTTOOLS_PKG || return 1
+       busybox cp -f "$TCEXTTOOLS_SRC/$SOURCE" "$TCEXTTOOLS_PKG" || return 1
   elif [ "$TYPE" = "zip" ]; then
-       if [ -e "$TCEXTTOOLS_SRC"/"${SOURCE%.zip}.tar.xz" ]; then
-            busybox cp -f "$TCEXTTOOLS_SRC"/"${SOURCE%.zip}.tar.xz" $TCEXTTOOLS_PKG || return 1
+       if [ -e "$TCEXTTOOLS_SRC/${SOURCE%.zip}.tar.xz" ]; then
+            busybox cp -f "$TCEXTTOOLS_SRC/${SOURCE%.zip}.tar.xz" "$TCEXTTOOLS_PKG" || return 1
        fi
   fi
 
@@ -82,7 +82,7 @@ this_main() {
 }
 
 print_it "Packaging the package $PACKAGE ... \c"
-this_main > $TCEXTTOOLS_ERROR_LOG_2 2>&1
+this_main > "$TCEXTTOOLS_ERROR_LOG_2" 2>&1
 if [ "$?" -gt 0 ]; then
      print_it error "failed!"
      exit 1
@@ -90,3 +90,4 @@ fi
 print_it hilight "successful!"
 
 exit 0
+

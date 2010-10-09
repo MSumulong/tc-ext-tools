@@ -21,10 +21,10 @@
 
 . /etc/init.d/tc-functions
 
-TCEXTTOOLS_ROOT=$(dirname $0)/..
+TCEXTTOOLS_ROOT="$(dirname $0)/.."
 
-if [ -f "$TCEXTTOOLS_ROOT"/etc/tc-ext-tools/functions ]; then
-     . "$TCEXTTOOLS_ROOT"/etc/tc-ext-tools/functions
+if [ -f "$TCEXTTOOLS_ROOT/etc/tc-ext-tools/functions" ]; then
+     . "$TCEXTTOOLS_ROOT/etc/tc-ext-tools/functions"
 else
      echo "${RED}$(basename $0):${BLUE} tc-ext-tools functions file not found!${NORMAL}"
      exit 1
@@ -41,58 +41,59 @@ if [ ! -d "$TCEXTTOOLS_INSTALL_ROOT" ]; then
      exit 1
 fi
 
-if [ ! -f "$PACKAGE_EXTENSIONS"/"$EXTENSION"/install ]; then
+if [ ! -f "$PACKAGE_EXTENSIONS/$EXTENSION/install" ]; then
       print_usage
       exit 1
 fi
 
-TMP_DIR=$(busybox mktemp -d)
+TMP_DIR="$(busybox mktemp -d)"
 
 this_main() {
 
-  CONTENTS=$(cat "$PACKAGE_EXTENSIONS"/"$EXTENSION"/install)
+  CONTENTS="$(cat $PACKAGE_EXTENSIONS/$EXTENSION/install)"
   [ -z "$CONTENTS" ] && return 1
 
   LIST="${TMP_DIR}/install.list"
   X_LIST="${TMP_DIR}/x-install.list"
 
-  touch $LIST || return 1
-  touch $X_LIST || return 1
+  touch "$LIST" || return 1
+  touch "$X_LIST" || return 1
 
-  cd $TCEXTTOOLS_INSTALL_ROOT
+  cd "$TCEXTTOOLS_INSTALL_ROOT"
 
   for i in $CONTENTS
   do
       if [ "${i#\#}" = "$i" ]; then
            if [ "${i#x-}" = "$i" ]; then
-                sudo find $i -not -type d >> $LIST || return 1
+                sudo find "$i" -not -type d >> "$LIST" || return 1
            else
-                sudo find ${i#x-} -not -type d >> $X_LIST || return 1
+                sudo find "${i#x-}" -not -type d >> "$X_LIST" || return 1
            fi
       fi
   done
 
-  sudo tar -T $LIST -X $X_LIST -cpzf "$TMP_DIR"/pkg.tar.gz || return 1
-  sudo mkdir "$TMP_DIR"/root
-  sudo tar -C "$TMP_DIR"/root -pxzf "$TMP_DIR"/pkg.tar.gz || return 1
+  sudo tar -T "$LIST" -X "$X_LIST" -cpzf "$TMP_DIR/pkg.tar.gz" || return 1
+  sudo mkdir "$TMP_DIR/root"
+  sudo tar -C "$TMP_DIR/root" -pxzf "$TMP_DIR/pkg.tar.gz" || return 1
 
-  if [ -d "$TCEXTTOOLS_BIN"/"$EXTENSION" ]; then
-       sudo rm -rf "$TCEXTTOOLS_BIN"/"$EXTENSION" || return 1
+  if [ -d "$TCEXTTOOLS_BIN/$EXTENSION" ]; then
+       sudo rm -rf "$TCEXTTOOLS_BIN/$EXTENSION" || return 1
   fi
 
-  sudo mv "$TMP_DIR"/root "$TCEXTTOOLS_BIN"/"$EXTENSION" || return 1
-  sudo rm -rf $TMP_DIR
+  sudo mv "$TMP_DIR/root" "$TCEXTTOOLS_BIN/$EXTENSION" || return 1
+  sudo rm -rf "$TMP_DIR"
 
   return 0
 }
 
 print_it "Splitting the extension $EXTENSION out of the package $PACKAGE ... \c"
-this_main > $TCEXTTOOLS_ERROR_LOG_2 2>&1
+this_main > "$TCEXTTOOLS_ERROR_LOG_2" 2>&1
 if [ "$?" -gt 0 ]; then
      print_it error "failed!"
-     [ -d "$TMP_DIR" ] && sudo rm -rf $TMP_DIR > /dev/null 2>&1
+     [ -d "$TMP_DIR" ] && sudo rm -rf "$TMP_DIR" > /dev/null 2>&1
      exit 1
 fi
 print_it hilight "successful!"
 
 exit 0
+

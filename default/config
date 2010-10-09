@@ -42,5 +42,4 @@ TCEXTTOOLS_ENCRYPTION_KEY="tinycore"
 CFLAGS="-march=i486 -mtune=i686 -Os -pipe"
 CXXFLAGS="-march=i486 -mtune=i686 -Os -pipe"
 LDFLAGS="-Wl,-O1"
-export CFLAGS CXXFLAGS LDFLAGS
 #

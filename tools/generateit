@@ -21,10 +21,10 @@
 
 . /etc/init.d/tc-functions
 
-TCEXTTOOLS_ROOT=$(dirname $0)/..
+TCEXTTOOLS_ROOT="$(dirname $0)/.."
 
-if [ -f "$TCEXTTOOLS_ROOT"/etc/tc-ext-tools/functions ]; then
-     . "$TCEXTTOOLS_ROOT"/etc/tc-ext-tools/functions
+if [ -f "$TCEXTTOOLS_ROOT/etc/tc-ext-tools/functions" ]; then
+     . "$TCEXTTOOLS_ROOT/etc/tc-ext-tools/functions"
 else
      echo "${RED}$(basename $0):${BLUE} tc-ext-tools functions file not found!${NORMAL}"
      exit 1
@@ -41,7 +41,7 @@ if [ -z "$EXTENSION" ]; then
       exit 1
 fi
 
-if [ ! -e "$TCEXTTOOLS_EXTENSIONS"/"$EXTENSION"/"${EXTENSION}.tcz" ]; then
+if [ ! -e "$TCEXTTOOLS_EXTENSIONS/$EXTENSION/${EXTENSION}.tcz" ]; then
      print_it error "You must create it first!"
      exit 1
 fi
@@ -49,7 +49,7 @@ fi
 this_main() {
 
   CURRENT="$DATE $CURRENT"
-  SIZE=$(du -h "$TCEXTTOOLS_EXTENSIONS"/"$EXTENSION"/"${EXTENSION}.tcz" | cut -f1)
+  SIZE=$(du -h "$TCEXTTOOLS_EXTENSIONS/$EXTENSION/${EXTENSION}.tcz" | cut -f1)
   [ ! "${EXTENSION%-bin}" = "$EXTENSION" ] && DESCRIPTION="${DESCRIPTION%.}, utilities."
   [ ! "${EXTENSION%-lib}" = "$EXTENSION" ] && DESCRIPTION="${DESCRIPTION%.}, shared libraries."
   [ ! "${EXTENSION%-dev}" = "$EXTENSION" ] && DESCRIPTION="${DESCRIPTION%.}, development files."
@@ -58,11 +58,11 @@ this_main() {
   [ ! "${EXTENSION%-locale}" = "$EXTENSION" ] && DESCRIPTION="${DESCRIPTION%.}, locale files."
   [ ! "${EXTENSION%-gir}" = "$EXTENSION" ] && DESCRIPTION="${DESCRIPTION%.}, gobject introspection data."
 
-  if [ -e "$PACKAGE_EXTENSIONS"/"$EXTENSION"/info ]; then
-      . "$PACKAGE_EXTENSIONS"/"$EXTENSION"/info
+  if [ -e "$PACKAGE_EXTENSIONS/$EXTENSION/info" ]; then
+      . "$PACKAGE_EXTENSIONS/$EXTENSION/info"
   fi
 
-  cat > "$TCEXTTOOLS_EXTENSIONS"/"$EXTENSION"/"${EXTENSION}.tcz.info" << _EOF
+  cat > "$TCEXTTOOLS_EXTENSIONS/$EXTENSION/${EXTENSION}.tcz.info" << _EOF
 Title:		${EXTENSION}.tcz
 Description:	${DESCRIPTION}
 Version:	${VERSION}
@@ -85,7 +85,7 @@ _EOF
 }
 
 print_it "Generating the extension $EXTENSION info ... \c"
-this_main > $TCEXTTOOLS_ERROR_LOG_2 2>&1
+this_main > "$TCEXTTOOLS_ERROR_LOG_2" 2>&1
 if [ "$?" -gt 0 ]; then
      print_it error "failed!"
      exit 1
@@ -93,3 +93,4 @@ fi
 print_it hilight "successful!"
 
 exit 0
+

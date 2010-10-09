@@ -21,10 +21,10 @@
 
 . /etc/init.d/tc-functions
 
-TCEXTTOOLS_ROOT=$(dirname $0)/..
+TCEXTTOOLS_ROOT="$(dirname $0)/.."
 
-if [ -f "$TCEXTTOOLS_ROOT"/etc/tc-ext-tools/functions ]; then
-     . "$TCEXTTOOLS_ROOT"/etc/tc-ext-tools/functions
+if [ -f "$TCEXTTOOLS_ROOT/etc/tc-ext-tools/functions" ]; then
+     . "$TCEXTTOOLS_ROOT/etc/tc-ext-tools/functions"
 else
      echo "${RED}$(basename $0):${BLUE} tc-ext-tools functions file not found!${NORMAL}"
      exit 1
@@ -66,18 +66,18 @@ fi
 this_main() {
 
   if [ ! -d "$PACKAGE_EXTENSIONS" ]; then
-       install -m 755 -d $PACKAGE_EXTENSIONS || return 1
+       install -m 755 -d "$PACKAGE_EXTENSIONS" || return 1
   fi
 
   if [ "$VERSION" = "svn" ]; then
 
-       cat > $PACKAGE_COMMON << _EOF
+       cat > "$PACKAGE_COMMON" << _EOF
 PACKAGE="$PACKAGE"
 VERSION="svn\${YEAR}\${MONTH}\${DAY}"
 TOP_SRC="\${PACKAGE}-\${VERSION}"
 SOURCE="\${TOP_SRC}.tar.xz"
 SOURCE_URL=""
-SOURCE_SVN="true"
+VCS_TYPE="svn"
 ICON=""
 DESKTOP_ENTRY=""
 BUILD_DEPENDS=""
@@ -97,13 +97,13 @@ _EOF
 
   elif [ "$VERSION" = "git" ]; then
 
-       cat > $PACKAGE_COMMON << _EOF
+       cat > "$PACKAGE_COMMON" << _EOF
 PACKAGE="${PACKAGE}"
 VERSION="git\${YEAR}\${MONTH}\${DAY}"
 TOP_SRC="\${PACKAGE}-\${VERSION}"
 SOURCE="\${TOP_SRC}.tar.xz"
 SOURCE_URL=""
-SOURCE_GIT="true"
+VCS_TYPE="git"
 ICON=""
 DESKTOP_ENTRY=""
 BUILD_DEPENDS=""
@@ -123,7 +123,7 @@ _EOF
 
   else
 
-       cat > $PACKAGE_COMMON << _EOF
+       cat > "$PACKAGE_COMMON" << _EOF
 PACKAGE="$PACKAGE"
 VERSION="$VERSION"
 SOURCE="\${PACKAGE}-\${VERSION}.tar.bz2"
@@ -148,19 +148,19 @@ _EOF
 
   fi
 
-  install -m 644 "$TCEXTTOOLS_ROOT"/share/tc-ext-tools/build $PACKAGE_BUILD || return 1
+  install -m 644 "$TCEXTTOOLS_ROOT/share/tc-ext-tools/build" "$PACKAGE_BUILD" || return 1
 
   for EXTENSION in $EXTENSIONS
   do
-      mkdir -p "$PACKAGE_EXTENSIONS"/"$EXTENSION" || return 1
-      touch "$PACKAGE_EXTENSIONS"/"$EXTENSION"/install || return 1
+      mkdir -p "$PACKAGE_EXTENSIONS/$EXTENSION" || return 1
+      touch "$PACKAGE_EXTENSIONS/$EXTENSION/install" || return 1
       if [ "${EXTENSION%-doc}" = "$EXTENSION" ]; then
-           touch "$PACKAGE_EXTENSIONS"/"$EXTENSION"/dep || return 1
+           touch "$PACKAGE_EXTENSIONS/$EXTENSION/dep" || return 1
       fi
       if [ ! "${EXTENSION%-locale}" = "$EXTENSION" ]; then
-           echo "${EXTENSION%-locale}.tcz" > "$PACKAGE_EXTENSIONS"/"$EXTENSION"/dep || return 1
+           echo "${EXTENSION%-locale}.tcz" > "$PACKAGE_EXTENSIONS/$EXTENSION/dep" || return 1
       elif [ ! "${EXTENSION%-dev}" = "$EXTENSION" ]; then
-           echo "${EXTENSION%-dev}.tcz" > "$PACKAGE_EXTENSIONS"/"$EXTENSION"/dep || return 1
+           echo "${EXTENSION%-dev}.tcz" > "$PACKAGE_EXTENSIONS/$EXTENSION/dep" || return 1
       fi
 
   done
@@ -177,3 +177,4 @@ fi
 print_it hilight "successful!"
 
 exit 0
+

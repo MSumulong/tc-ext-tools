@@ -21,10 +21,10 @@
 
 . /etc/init.d/tc-functions
 
-TCEXTTOOLS_ROOT=$(dirname $0)/..
+TCEXTTOOLS_ROOT="$(dirname $0)/.."
 
-if [ -f "$TCEXTTOOLS_ROOT"/etc/tc-ext-tools/functions ]; then
-     . "$TCEXTTOOLS_ROOT"/etc/tc-ext-tools/functions
+if [ -f "$TCEXTTOOLS_ROOT/etc/tc-ext-tools/functions" ]; then
+     . "$TCEXTTOOLS_ROOT/etc/tc-ext-tools/functions"
 else
      echo "${RED}$(basename $0):${BLUE} tc-ext-tools functions file not found!${NORMAL}"
      exit 1
@@ -44,10 +44,11 @@ fi
 print_it "Please enter the encryption key: \c"
 print_it hilight "$TCEXTTOOLS_ENCRYPTION_KEY"
 
-bcrypt $FILE
+bcrypt "$FILE"
 
 if [ "$?" -gt 0 ]; then
      exit 1
 fi
 
 exit 0
+
