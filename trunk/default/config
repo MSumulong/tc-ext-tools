@@ -18,7 +18,6 @@ TCEXTTOOLS_EXTENSIONS="extensions"
 TCEXTTOOLS_PATCHES="patches"
 TCEXTTOOLS_DEPENDS="compiletc
                     squashfs-tools-4.0
-                    wget
                     tar
                     git
                     svn

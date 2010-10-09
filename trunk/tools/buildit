@@ -443,10 +443,13 @@ build_it() {
   build_rules || exit 1
 }
 
-cat_it() {
+show_it() {
   cd "$PACKAGE_ROOT"
 
   case "$1" in
+       download) 
+                 [ -e "$TCEXTTOOLS_DOWNLOAD_LOG" ] && cat "$TCEXTTOOLS_DOWNLOAD_LOG"
+                 ;;
        configure)
                  [ -e "$TCEXTTOOLS_CONFIGURE_LOG" ] && cat "$TCEXTTOOLS_CONFIGURE_LOG"
                  ;;
@@ -457,13 +460,11 @@ cat_it() {
                  [ -e "$TCEXTTOOLS_INSTALL_LOG" ] && cat "$TCEXTTOOLS_INSTALL_LOG"
                  ;;
        error)
-                 if [ -e "$TCEXTTOOLS_ERROR_LOG" -a -e "$TCEXTTOOLS_ERROR_LOG_2" ]; then
-                      cat "$TCEXTTOOLS_ERROR_LOG"
-                      cat "$TCEXTTOOLS_ERROR_LOG_2"
-                 fi
+                 [ -e "$TCEXTTOOLS_ERROR_LOG" ] && cat "$TCEXTTOOLS_ERROR_LOG"
+                 [ -e "$TCEXTTOOLS_ERROR_LOG_2" ] && cat "$TCEXTTOOLS_ERROR_LOG_2"
                  ;;
        *)
-                 print_it warning "Usage: buildit cat configure|compile|install|error"
+                 print_it warning "Usage: buildit show download|configure|compile|install|error"
                  ;;
   esac
 }
@@ -525,8 +526,8 @@ case "$1" in
 	encrypt)
 		  encrypt_it
 		  ;;
-	cat|show)
-		  cat_it "$2"
+	show)
+		  show_it "$2"
 		  ;;
 	all)
 		  clean_it
