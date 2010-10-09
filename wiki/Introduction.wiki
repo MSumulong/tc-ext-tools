@@ -60,6 +60,10 @@ buildit show {configure,compile,install}
 {{{
 buildit show error
 }}}
+  * If you want to see download status.
+{{{
+buildit show download
+}}}
 * See available packages for more
 {{{
 svn checkout http://tc-ext-tools.googlecode.com/svn/tc-packages/
