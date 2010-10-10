@@ -1,0 +1,14 @@
+qt-4.x-base.tcz
+qt-4.x-xml.tcz
+qt-4.x-dbus.tcz
+qt-4.x-script.tcz
+qt-4.x-extended.tcz
+qt-4.x-qt3support.tcz
+qt-4.x-sql.tcz
+qt-4.x-opengl.tcz
+libxslt.tcz
+strigi.tcz
+acl.tcz
+xz.tcz
+libxft.tcz
+

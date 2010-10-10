@@ -1,0 +1,87 @@
+PACKAGE="kdelibs"
+VERSION="4.5.2"
+SOURCE="${PACKAGE}-${VERSION}.tar.bz2"
+SOURCE_URL="ftp://ftp.kde.org/pub/kde/stable/${VERSION}/src/kdelibs-${VERSION}.tar.bz2"
+TOP_SRC="${PACKAGE}-${VERSION}"
+BUILD_DEPENDS="cmake
+attr
+attr-dev
+acl
+acl-dev
+shared-desktop-ontologies
+phonon
+phonon-dev
+shared-mime-info
+libcups
+cups
+qt-4.x-base
+qt-4.x-xml
+qt-4.x-dbus
+qt-4.x-sql
+qt-4.x-script
+qt-4.x-designer
+qt-4.x-qt3support
+qt-4.x-webkit
+qt-4.x-extended
+qt-4.x-opengl
+qt-4.x-dev
+Xorg-7.5
+Xorg-7.5-dev
+libasound
+alsa-dev
+openssl-0.9.8
+openssl-0.9.8-dev
+soprano
+soprano-dev
+libxml2
+libxml2-dev
+libxslt
+graphics-libs-1
+graphics-libs-1-dev
+libavahi
+avahi
+bzip2-lib
+bzip2-dev
+enchant
+enchant-dev
+jasper
+openexr
+openexr-dev
+pcre
+pcre-dev
+acl
+acl-dev
+automoc4
+sharutils
+qca
+qca-dev
+attica
+attica-dev
+xz
+xz-dev
+libdbusmenu-qt
+libdbusmenu-qt-dev
+polkit-qt-1
+polkit-qt-1-dev
+krb5
+strigi
+strigi-dev
+libxft
+libxft-dev
+gamin
+gamin-dev
+docbook_xml_dtd
+docbook_xsl
+libxml2-bin
+glibc_gconv"
+
+EXTENSIONS="kdelibs kdelibs-dev"
+DESCRIPTION="KDE core libraries."
+AUTHOR="KDE development team"
+SITE="http://www.kde.org"
+COPYING="GPL/LGPL/FDL"
+MAINTAINERS="Arslan S."
+COMMENTS="This extension is PPI compatible."
+CHANGELOG="2010/07/18 First Version 4.4.5
+		2010/07/27 Adjusted dep list"
+CURRENT="Updated to 4.5.2"

@@ -1,0 +1,52 @@
+PACKAGE="kdegraphics"
+VERSION="4.5.2"
+SOURCE="${PACKAGE}-${VERSION}.tar.bz2"
+SOURCE_URL="ftp://ftp.kde.org/pub/kde/stable/${VERSION}/src/${PACKAGE}-${VERSION}.tar.bz2"
+TOP_SRC="${PACKAGE}-${VERSION}"
+BUILD_DEPENDS="cmake
+kdelibs
+kdelibs-dev
+kdebase-runtime
+poppler-qt4
+poppler-qt4-dev
+phonon
+phonon-dev
+libspectre
+libspectre-dev
+djvulibre
+djvulibre-dev
+phonon
+phonon-dev
+qca
+qca-dev
+graphics-libs-1
+graphics-libs-1-dev
+libxml2-dev
+libxml2-bin
+libgphoto2
+qimageblitz
+qimageblitz-dev
+ebook-tools
+ebook-tools-dev
+exiv2
+exiv2-dev
+strigi
+strigi-dev
+shared-mime-info
+shared-desktop-ontologies
+sane-backends
+sane-backends-dev
+Xorg-7.5-lib
+Xorg-7.5-dev
+libxft
+libxft-dev"
+
+EXTENSIONS="kdegraphics kdegraphics-dev"
+DESCRIPTION="KDE graphics oriented applications."
+AUTHOR="KDE development team"
+SITE="http://www.kde.org"
+COPYING="GPL/LGPL/FDL"
+MAINTAINERS="Arslan S."
+COMMENTS="This extension is PPI compatible."
+CHANGELOG="2010/07/20 First Version 4.4.5"
+CURRENT="Updated to 4.5.2"
