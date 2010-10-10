@@ -1,0 +1,25 @@
+PACKAGE="polkit"
+VERSION="0.99"
+SOURCE="${PACKAGE}-${VERSION}.tar.gz"
+TOP_SRC="${PACKAGE}-${VERSION}"
+SOURCE_URL="http://hal.freedesktop.org/releases/polkit-${VERSION}.tar.gz"
+BUILD_DEPENDS="glib2
+glib2-dev
+expat2
+expat2-dev
+dbus-glib
+eggdbus
+Linux-PAM
+Linux-PAM-dev"
+
+EXTENSIONS="polkit polkit-dev"
+DESCRIPTION="An application-level toolkit for managing administrative policies and privileges."
+AUTHOR="various"
+SITE="http://www.freedesktop.org/wiki/Software/PolicyKit"
+COPYING="LGPL"
+MAINTAINERS="Arslan S."
+COMMENTS="This extension is PPI compatible."
+CHANGELOG="2010/02/12 Original 0.96
+		2010/02/15 Fixed permissions on pkexec & polkit-agent-helper-1
+		2010/07/01 Rebuilt"
+CURRENT="Updated to 0.99 & renamed policykit --> polkit"
