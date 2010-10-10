@@ -65,7 +65,7 @@ this_main() {
 
   # Convert symlinks to full path for gnome help browser files
   if [ -d "$INSTALL_ROOT/usr/local/share/gnome/help" ]; then
-       for link in $(find "$INSTALL_ROOT/usr/local/share/gnome/help" -type l)
+       for link in $(sudo find "$INSTALL_ROOT/usr/local/share/gnome/help" -type l)
        do
            FILE=$(busybox readlink -f "$link")
            LINK="${FILE#${INSTALL_ROOT}}"
@@ -80,7 +80,7 @@ this_main() {
   cd "$INSTALL_ROOT"
   for i in $(ls)
   do
-      su "$TCUSER" -c "cd $INSTALL_ROOT;find '$i' -not -type d >> $PACKAGE_EXTENSIONS/${PACKAGE}.list" || return 1
+      su "$TCUSER" -c "cd $INSTALL_ROOT;sudo find '$i' -not -type d >> $PACKAGE_EXTENSIONS/${PACKAGE}.list" || return 1
   done
 
   return 0
