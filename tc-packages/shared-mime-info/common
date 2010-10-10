@@ -1,0 +1,22 @@
+PACKAGE="shared-mime-info"
+VERSION="0.80"
+SOURCE="${PACKAGE}-${VERSION}.tar.bz2"
+SOURCE_URL="http://freedesktop.org/~hadess/shared-mime-info-${VERSION}.tar.bz2"
+TOP_SRC="${PACKAGE}-${VERSION}"
+BUILD_DEPENDS="glib2
+glib2-dev
+libxml2
+libxml2-dev"
+
+EXTENSIONS="shared-mime-info shared-mime-info-locale"
+DESCRIPTION="Database for common mime types."
+AUTHOR="freedesktop.org "
+SITE="http://www.freedesktop.org/wiki/Software/shared-mime-info"
+COPYING="GPL"
+MAINTAINERS="Jason W, Arslan S."
+COMMENTS="This extension is PPI compatible."
+CHANGELOG="2009/01/01 First version 0.51
+		2010/01/29 Updated to 0.70 (Arslan S.)
+		2010/03/02 Rebuilt & fixed updated mime database (Arslan S.)
+		2010/07/23 Updated to 0.71 by Arslan S."
+CURRENT="Updated to 0.80 by Arslan S."
