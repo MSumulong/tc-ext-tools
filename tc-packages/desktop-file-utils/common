@@ -1,0 +1,18 @@
+PACKAGE="desktop-file-utils"
+VERSION="0.17"
+SOURCE="${PACKAGE}-${VERSION}.tar.bz2"
+TOP_SRC="${PACKAGE}-${VERSION}"
+SOURCE_URL="http://www.freedesktop.org/software/desktop-file-utils/releases/desktop-file-utils-${VERSION}.tar.bz2"
+BUILD_DEPENDS="glib2
+glib2-dev"
+
+EXTENSIONS="desktop-file-utils"
+DESCRIPTION="Utilities for working with desktop entries."
+AUTHOR="Havoc Pennington, Alex Larsson, Vincent Untz"
+SITE="http://www.freedesktop.org/wiki/Software/desktop-file-utils"
+COPYING="GPL-2"
+MAINTAINERS="Arslan S."
+COMMENTS="This extension is PPI compatible."
+CHANGELOG="2010/02/25 Original 0.15
+		2010/07/08 Updated to 0.16"
+CURRENT="Updated to 0.17"
