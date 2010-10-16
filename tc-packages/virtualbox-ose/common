@@ -1,0 +1,47 @@
+PACKAGE="virtualbox-ose"
+VERSION="3.2.10"
+SOURCE="VirtualBox-${VERSION}-OSE.tar.bz2"
+TOP_SRC="VirtualBox-${VERSION}_OSE"
+SOURCE_URL="http://download.virtualbox.org/virtualbox/${VERSION}/VirtualBox-${VERSION}-OSE.tar.bz2"
+ICON="/usr/local/share/pixmaps/VBox.png"
+DESKTOP_ENTRY="/usr/local/share/applications/virtualbox.desktop"
+BUILD_DEPENDS="coreutils
+bzip2
+libxslt
+libxml2
+libxml2-dev
+iasl
+Dev86
+libcap
+libIDL
+openssl-0.9.8
+openssl-0.9.8-dev
+curl
+curl-dev
+python
+python-dev
+libasound
+alsa-dev
+pixman
+pixman-dev
+Xorg-7.5
+Xorg-7.5-dev
+SDL
+SDL-dev
+qt-4.x-base
+qt-4.x-xml
+qt-4.x-opengl
+qt-4.x-dev
+linux-headers-2.6.33.3-tinycore
+Linux-PAM
+Linux-PAM-dev"
+
+EXTENSIONS="virtualbox-ose virtualbox-ose-locale virtualbox-ose-modules-2.6.33.3-tinycore virtualbox-ose-additions virtualbox-ose-additions-modules-2.6.33.3-tinycore"
+DESCRIPTION="A Powerful x86 virtualization solution."
+AUTHOR="Sun Microsystems"
+SITE="http://www.virtualbox.org/"
+COPYING="GPL-2"
+MAINTAINERS="Arslan S."
+COMMENTS="This extension is PPI compatible."
+CHANGELOG="---"
+CURRENT="First Version"

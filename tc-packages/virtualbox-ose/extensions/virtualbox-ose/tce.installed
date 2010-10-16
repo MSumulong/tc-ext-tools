@@ -1,0 +1,9 @@
+#!/bin/sh
+
+TCUSER=$(cat /etc/sysconfig/tcuser)
+sudo addgroup vboxusers
+sudo addgroup ${TCUSER} vboxusers
+ln -s /usr/local/etc/init.d/vboxdrv /etc/init.d
+
+sudo /etc/init.d/vboxdrv start
+

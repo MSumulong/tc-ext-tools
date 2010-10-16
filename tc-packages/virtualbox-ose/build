@@ -1,0 +1,140 @@
+#
+# tc-ext-tools build functions: configure, compile, install, rules
+#
+
+# Configure
+build_configure() {
+
+  cp "$PACKAGE_SRC/LocalConfig.kmk" .
+
+  ./configure --disable-pulse || return 1
+
+}
+
+# Compile
+build_compile() {
+
+  source ./env.sh
+
+  kmk all || return 1
+
+  cd out/linux.x86/release/bin/src
+  make || return 1
+
+  cd ../additions/src
+  make || return 1
+
+  cd vboxvideo
+  make || return 1
+
+}
+
+# Install
+build_install() {
+
+  TOP_SRC=$PWD
+  KERNELV=$(uname -r)
+
+  source ./env.sh
+
+  mkdir -p "$INSTALL_ROOT/usr/local/bin"
+  mkdir -p "$INSTALL_ROOT/usr/local/sbin"
+  mkdir -p "$INSTALL_ROOT/usr/local/lib/virtualbox/components"
+  mkdir -p "$INSTALL_ROOT/usr/local/share/virtualbox/nls"
+  mkdir -p "$INSTALL_ROOT/usr/local/share/doc/virtualbox-ose"
+
+  install -m 0644 COPYING "$INSTALL_ROOT/usr/local/share/doc/virtualbox-ose/license"
+
+  # virtualbox-ose
+  cd out/linux.x86/release/bin
+  install -m 0755 VBox.sh "$INSTALL_ROOT/usr/local/bin/VBox"
+
+  ln -sf VBox "$INSTALL_ROOT/usr/local/bin/VBoxHeadless"
+  ln -sf VBox "$INSTALL_ROOT/usr/local/bin/VBoxManage"
+  ln -sf VBox "$INSTALL_ROOT/usr/local/bin/VBoxSDL"
+  ln -sf VBox "$INSTALL_ROOT/usr/local/bin/VirtualBox"
+
+  install -m 0755 VBoxTunctl "$INSTALL_ROOT/usr/local/bin"
+
+  install -m 0755 components/* -t "$INSTALL_ROOT/usr/local/lib/virtualbox/components"
+
+  install -m 0755 *.so "$INSTALL_ROOT/usr/local/lib/virtualbox"
+  install -m 0644 *.gc *.r0  VBoxEFI*.fd "$INSTALL_ROOT/usr/local/lib/virtualbox"
+
+  install -m 4755 VBoxHeadless VBoxSDL VBoxNetDHCP VBoxNetAdpCtl VirtualBox VBoxBFE -t "$INSTALL_ROOT/usr/local/lib/virtualbox"
+
+  install -m 0755 VBoxManage VBoxSVC VBoxXPCOMIPCD VBoxSysInfo.sh xpidl VBoxTestOGL EfiThunk -t "$INSTALL_ROOT/usr/local/lib/virtualbox"
+
+  install -m 0755 nls/*.qm -t "$INSTALL_ROOT/usr/local/share/virtualbox/nls"
+
+  install -D -m 0644 VBox.png "$INSTALL_ROOT/usr/local/share/pixmaps/VBox.png"
+
+  install -D -m 0644 virtualbox.desktop "$INSTALL_ROOT/usr/local/share/applications/virtualbox.desktop"
+
+  mkdir -p "$INSTALL_ROOT/usr/local/etc/vbox"
+  echo "INSTALL_DIR=/usr/local/lib/virtualbox" > "$INSTALL_ROOT/usr/local/etc/vbox/vbox.cfg"
+
+  install -D -m 0644 "$PACKAGE_SRC/60-virtualbox.rules" "$INSTALL_ROOT/lib/udev/rules.d/60-virtualbox.rules"
+
+  install -D -m 0744 "$PACKAGE_SRC/vboxdrv.sh" "$INSTALL_ROOT/usr/local/etc/init.d/vboxdrv"
+
+  # host kernel modules
+  cd "$TOP_SRC/out/linux.x86/release/bin/src"
+
+  install -d "$INSTALL_ROOT/usr/local/lib/modules/$KERNELV/kernel/misc"
+  install -D -m 0644 *.ko -t "$INSTALL_ROOT/usr/local/lib/modules/$KERNELV/kernel/misc"
+
+  # guest additions
+  cd "$TOP_SRC/out/linux.x86/release/bin/additions"
+
+  install -m755 VBoxClient VBoxControl VBoxService "$INSTALL_ROOT/usr/local/bin"
+  install -m755 mount.vboxsf "$INSTALL_ROOT/usr/local/sbin"
+  install -m755 -D "$TOP_SRC"/src/VBox/Additions/x11/Installer/98vboxadd-xclient "$INSTALL_ROOT"/usr/local/bin/VBoxClient-all
+  install -m755 -D "$TOP_SRC"/src/VBox/Additions/x11/Installer/vboxclient.desktop "$INSTALL_ROOT"/usr/local/etc/xdg/autostart/vboxclient.desktop
+  install -m755 -D pam_vbox.so "$INSTALL_ROOT/usr/local/lib/security/pam_vbox.so"
+  install -D -m644 "$PACKAGE_SRC/xorg.conf.sample" "$INSTALL_ROOT/usr/local/share/virtualbox-ose-additions/xorg.conf.sample"
+
+  install -D vboxmouse_drv_17.so "$INSTALL_ROOT/usr/local/lib/X11/modules/input/vboxmouse.so"
+  install -D vboxvideo_drv_17.so "$INSTALL_ROOT/usr/local/lib/X11/modules/drivers/vboxvideo.so"
+  install -m755 VBoxOGL*.so "$INSTALL_ROOT/usr/local/lib"
+  install -d "$INSTALL_ROOT/usr/local/lib/X11/modules/dri"
+  ln -s /usr/local/lib/VBoxOGL.so "$INSTALL_ROOT/usr/local/lib/X11/modules/dri/vboxvideo_dri.so"
+
+  # guest additions kernel modules
+  cd "$TOP_SRC/out/linux.x86/release/bin/additions/src"
+
+  cd vboxguest
+  install -D -m644 vboxguest.ko "$INSTALL_ROOT/usr/local/lib/modules/$KERNELV/kernel/misc/vboxguest.ko"
+
+  cd ../vboxsf
+  install -D -m644 vboxsf.ko "$INSTALL_ROOT/usr/local/lib/modules/$KERNELV/kernel/misc/vboxsf.ko"
+
+  cd ../vboxvideo
+  install -D -m644 vboxvideo.ko "$INSTALL_ROOT/usr/local/lib/modules/$KERNELV/kernel/misc/vboxvideo.ko"
+
+  install -D -m 0644 "$PACKAGE_SRC/60-vboxguest.rules" "$INSTALL_ROOT/lib/udev/rules.d/60-vboxguest.rules"
+
+}
+
+# Rules
+build_rules() {
+
+  buildit load || exit 1
+  buildit download || exit 1
+  buildit convert || exit 1
+  buildit unpack || exit 1
+  buildit patch || exit 1
+  buildit configure || exit 1
+  buildit compile || exit 1
+  buildit install || exit 1
+  buildit strip || exit 1
+  buildit split || exit 1
+  buildit create || exit 1
+  buildit generate || exit 1
+  buildit check || exit 1
+  buildit package || exit 1
+  buildit compress || exit 1
+  buildit encrypt || exit 1
+
+}
+

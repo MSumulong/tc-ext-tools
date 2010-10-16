@@ -1,0 +1,13 @@
+--- a/src/VBox/Installer/linux/VBox.sh
++++ b/src/VBox/Installer/linux/VBox.sh
+@@ -13,8 +13,8 @@
+ # hope that it will be useful, but WITHOUT ANY WARRANTY of any kind.
+ #
+ 
+-PATH="/usr/bin:/bin:/usr/sbin:/sbin"
+-CONFIG="/etc/vbox/vbox.cfg"
++PATH="/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin"
++CONFIG="/usr/local/etc/vbox/vbox.cfg"
+ 
+ if [ ! -r "$CONFIG" ]; then
+     echo "Could not find VirtualBox installation. Please reinstall."

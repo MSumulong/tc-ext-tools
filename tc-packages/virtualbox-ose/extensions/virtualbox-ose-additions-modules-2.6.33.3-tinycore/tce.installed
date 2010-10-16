@@ -1,0 +1,7 @@
+#!/bin/sh
+addgroup daemon
+adduser -SDH -G daemon -s /bin/sh vboxadd
+
+chown vboxadd:daemon /dev/vbox*
+chmod 666 /dev/vboxuser
+
