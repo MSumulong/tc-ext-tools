@@ -15,6 +15,7 @@ usr/local/chromium-browser/resources/inspector/popover.css
 usr/local/chromium-browser/resources/inspector/audits.css
 usr/local/chromium-browser/resources/inspector/textViewer.css
 usr/local/chromium-browser/resources/inspector/devtools.html
+usr/local/chromium-browser/resources/inspector/heapProfiler.css
 usr/local/chromium-browser/resources/inspector/inspector.html
 usr/local/chromium-browser/resources/inspector/Images/segmentSelectedEndChromium.png
 usr/local/chromium-browser/resources/inspector/Images/userInputIcon.png
@@ -199,6 +200,7 @@ usr/local/chromium-browser/plugins
 usr/local/chromium-browser-addons/locales/ml.pak
 usr/local/chromium-browser-addons/locales/cs.pak
 usr/local/chromium-browser-addons/locales/sk.pak
+usr/local/chromium-browser-addons/locales/fa.pak
 usr/local/chromium-browser-addons/locales/ja.pak
 usr/local/chromium-browser-addons/locales/th.pak
 usr/local/chromium-browser-addons/locales/id.pak

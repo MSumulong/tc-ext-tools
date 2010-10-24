@@ -13,3 +13,6 @@ elif [ -e /usr/local/lib/mozilla/plugins/libflashplayer.so ]; then
 fi
 
 [ -x $(which gtk-update-icon-cache) ] && sudo gtk-update-icon-cache -q -f -t /usr/local/share/icons/hicolor
+
+[ -d /tmp/tcloop/$CHROMIUM ] && sudo busybox cp -Lf /usr/local/$CHROMIUM/${CHROMIUM}-sandbox /usr/local/$CHROMIUM/${CHROMIUM}-sandbox
+
