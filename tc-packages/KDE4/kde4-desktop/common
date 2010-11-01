@@ -1,0 +1,66 @@
+PACKAGE="kde4-desktop"
+VERSION="4.5.2"
+SOURCE=""
+SOURCE_URL=""
+TOP_SRC=""
+BUILD_DEPENDS=""
+
+EXTENSIONS="kde4-desktop"
+DESCRIPTION="K Desktop Environment for Tiny Core Linux."
+AUTHOR="Sercan Arslan"
+SITE="<arslanserc@gmail.com>"
+COPYING="GPL"
+MAINTAINERS="Arslan S."
+COMMENTS="Minimum System Requirements
+			-Pentium 4 CPU
+			-512MB RAM + Swap
+
+		Total number of dependencies is ~ 180
+
+		Installation
+		-----------------------------------------
+		Step 1-) Set root and <user> passwords
+			 sudo passwd root
+			 sudo passwd <user>
+
+		Step 2-) Execute kde4-desktop-setup once
+			 kde4-desktop-setup
+
+		Step 4-) Add to kernel boot codes
+			 noicons noautologin (optional: user=<user>)
+		
+		Step 5-) Backup and reboot
+			 filetool.sh -b
+			 sudo reboot
+
+		Step 6-) If panel is missing then add an empty panel,
+			 then add panel widgets such as application launcher, task manager,
+			 system tray, pager etc
+
+		Step 7-) Create Tiny Core applications plasma widgets
+			 Drag and drop KDE start menu --> Applications --> System --> Appbrowser,Control Panel,Exit,Terminal
+			 to somewhere in desktop or panel
+
+		Step 8-) Backup
+			 filetool.sh -b
+		
+		By default, I have setup kdm (KDE Display Manager) to login user=tc automatically
+		If you want to change kdm settings you have to run "systemsettings" as root.
+		Kdm settings is located at the bottom of the advanced tab.
+		You can install kdm themes from web after running systemsettings as root.
+		The kdm themes downloaded from web is installed into /usr/local/share/apps/kdm/themes
+		So you need to add appropriate directory to your backup list for persistency.
+
+		If you wish to reboot or poweroff your pc with KDM "Restart" & "Shutdown" then you have to backup your data manually (filetool.sh backup) before exiting.
+		Use the Exit desktop widget If you want to exit with backup.
+
+		Optional KDE packages to extend KDE desktop: network-manager-kde, kdeartwork, kdemultimedia, kdepim, kdenetwork, kdeplasma-addons, kdegames, kdetoys, kdeedu, kdeaccessibility ...
+		KDE Applications: k3b, kdesvn, ktorrent, koffice, amarok ...
+		Other extensions that KDE can benefit from: samba3, avahi, gstreamer plugins, acpid, wicd, cpufreqd ...
+		
+		ALSA is recommended for sound.
+
+		This extension is PPI compatible."
+CHANGELOG="2010/07/21 First Version 4.4.5
+		2010/07/27 Updated"
+CURRENT="Updated to 4.5.2"

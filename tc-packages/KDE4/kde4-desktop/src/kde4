@@ -1,0 +1,5 @@
+# if set sleeps a few seconds before starting kde session
+# this is needed to make sure Xorg has started completely
+SLEEP=1
+SLEEP_TIME=5
+

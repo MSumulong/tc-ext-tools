@@ -1,0 +1,24 @@
+#!/bin/sh
+#
+# Start KDE4 Desktop Session
+# 10th July 2010
+#
+# Sercan Arslan <arslanserc@gmail.com>
+#
+STARTUP="startkde"
+CK_LAUNCH_SESSION=/usr/local/bin/ck-launch-session
+
+if [ -e /usr/local/etc/default/kde4 ] ; then
+     . /usr/local/etc/default/kde4
+fi
+
+if [ -x "$CK_LAUNCH_SESSION" -a -z "$XDG_SESSION_COOKIE" ]; then
+     STARTUP="$CK_LAUNCH_SESSION $STARTUP"
+fi
+
+if [ -n "$SLEEP" ] ; then
+     sleep $SLEEP_TIME
+fi
+
+exec $STARTUP
+
