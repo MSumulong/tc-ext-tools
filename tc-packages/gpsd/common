@@ -1,0 +1,40 @@
+PACKAGE="gpsd"
+VERSION="git"
+SOURCE="${PACKAGE}-${VERSION}.tar.xz"
+TOP_SRC="${PACKAGE}-${VERSION}"
+SOURCE_URL="git://git.berlios.de/gpsd"
+VCS_TYPE="git"
+#SOURCE_URL="http://download.berlios.de/gpsd/gpsd-${VERSION}.tar.gz"
+BUILD_DEPENDS="dbus-glib
+Xorg-7.5-lib
+Xorg-7.5-dev
+libusb
+libusb-dev
+glib2
+glib2-dev
+ncurses
+ncurses-dev
+pth
+pth-dev
+qt-4.x-base
+qt-4.x-dev
+python
+python-dev
+lesstif
+lesstif-dev
+dbus-glib"
+
+EXTENSIONS="gpsd gpsd-dev gpsd-clients gpsd-python"
+DESCRIPTION="GPS (Global Positioning System) services daemon."
+AUTHOR="various"
+SITE="http://gpsd.berlios.de/"
+COPYING="BSD"
+MAINTAINERS="Arslan S., T. Buctoo"
+COMMENTS="Service daemon can be controlled using the command:
+                sudo /usr/local/etc/init.d/gpsd start|stop|reload|restart
+                Configuration is set by the script /usr/local/etc/gpsd.rc"
+CHANGELOG="2010/03/14 First version by Arslan S.
+		2010/03/29 Stripped optional components by T. Buctoo
+		2010/07/10 Moved libgps.so from gpsd-dev to gpsd (mounted extension causes broken symlinks)
+			   Fixed init.d script now returns exit codes properly when status requested by Arslan S."
+CURRENT="Updated to the latest git revision by Arslan S."
