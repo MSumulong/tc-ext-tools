@@ -1,0 +1,24 @@
+PACKAGE="libqalculate"
+VERSION="0.9.7"
+SOURCE="${PACKAGE}-${VERSION}.tar.gz"
+TOP_SRC="${PACKAGE}-${VERSION}"
+SOURCE_URL="http://downloads.sourceforge.net/sourceforge/qalculate/${PACKAGE}-${VERSION}.tar.gz"
+BUILD_DEPENDS="cln
+cln-dev
+readline
+readline-dev
+libxml2
+libxml2-dev
+glib2
+glib2-dev"
+
+EXTENSIONS="libqalculate libqalculate-dev libqalculate-doc libqalculate-locale"
+DESCRIPTION="The Qalculate library."
+AUTHOR="Niklas Knutsson"
+SITE="qalculate.sourceforge.net"
+COPYING="GPL-2"
+MAINTAINERS="Arslan S."
+COMMENTS="This extension is PPI compatible."
+CHANGELOG="2010/03/07 Original 0.9.7"
+CURRENT="Rebuilt"
+
