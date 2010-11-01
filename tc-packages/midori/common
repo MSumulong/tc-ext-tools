@@ -1,5 +1,5 @@
 PACKAGE="midori"
-VERSION="0.2.8"
+VERSION="0.2.9"
 SOURCE="${PACKAGE}-${VERSION}.tar.bz2"
 TOP_SRC="${PACKAGE}-${VERSION}"
 SOURCE_URL="http://archive.xfce.org/src/apps/midori/0.2/midori-${VERSION}.tar.bz2"
@@ -34,5 +34,6 @@ COPYING="GPL"
 MAINTAINERS="Arslan S."
 COMMENTS="This extension is PPI compatible."
 CHANGELOG="2010/05/30 Original 0.2.6
-		2010/08/25 Updated to 0.2.7"
-CURRENT="Updated to 0.2.8"
+		2010/08/25 Updated to 0.2.7
+		2010/09/29 Updated to 0.2.8"
+CURRENT="Updated to 0.2.9"
