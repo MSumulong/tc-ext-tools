@@ -22,7 +22,7 @@ build_compile() {
 ### Install
 build_install() {
 
-  sudo make prefix="$INSTALL_ROOT/usr/local" install || return 1
+  make prefix="$INSTALL_ROOT/usr/local" install || return 1
 
 }
 ##

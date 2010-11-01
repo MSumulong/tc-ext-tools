@@ -18,8 +18,8 @@ kdegraphics
 kdegraphics-dev
 python
 python-dev
-sip-2.7
-pyqt-2.7
+sip
+pyqt
 mono
 mono-dev
 boost
