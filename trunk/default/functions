@@ -79,6 +79,12 @@ if [ -e "$TCEXTTOOLS_COMMON" ]; then
      INSTALL_ROOT="$TCEXTTOOLS_INSTALL_ROOT"
      TOP_SRC_DIR="$TCEXTTOOLS_BIN_TEMP/$TOP_SRC"
 
+     if [ -n "$BUILD_DEPENDS" ]; then
+          BUILD_DEPENDS="$TCEXTTOOLS_DEPENDS $BUILD_DEPENDS"
+     else
+          BUILD_DEPENDS="$TCEXTTOOLS_DEPENDS"
+     fi
+
      [ -d "$TCEXTTOOLS_BIN" ] || install -m 755 -d "$TCEXTTOOLS_BIN"
      [ -d "$TCEXTTOOLS_SRC" ] || install -m 755 -d "$TCEXTTOOLS_SRC"
      [ -d "$TCEXTTOOLS_PKG" ] || install -m 755 -d "$TCEXTTOOLS_PKG"
@@ -94,6 +100,10 @@ fi
 
 # tc user
 TCUSER=$(cat /etc/sysconfig/tcuser)
+
+if [ "$THIS" = "installit" ]; then
+     su "$TCUSER" -c "touch $TCEXTTOOLS_ERROR_LOG_2"
+fi
 
 # date
 YEAR=$(date +%Y)
