@@ -141,10 +141,7 @@ load_it() {
   cd "$PACKAGE_ROOT"
 
   print_it "Loading the package $PACKAGE build dependencies ... \c"
-  if [ -n "$BUILD_DEPENDS" ]; then
-       loadit "$BUILD_DEPENDS" > "$TCEXTTOOLS_ERROR_LOG" 2>&1
-  fi
-
+  loadit "$BUILD_DEPENDS" > "$TCEXTTOOLS_ERROR_LOG" 2>&1
   if [ "$?" -gt 0 ]; then
        print_it error "failed!"
        print_it warning "See error logs in $TCEXTTOOLS_LOG for details."

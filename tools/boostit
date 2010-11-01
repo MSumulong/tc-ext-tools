@@ -159,10 +159,10 @@ _EOF
       fi
       if [ ! "${EXTENSION%-locale}" = "$EXTENSION" ]; then
            echo "${EXTENSION%-locale}.tcz" > "$PACKAGE_EXTENSIONS/$EXTENSION/dep" || return 1
+           echo "usr/local/share/locale" > "$PACKAGE_EXTENSIONS/$EXTENSION/install" || return 1
       elif [ ! "${EXTENSION%-dev}" = "$EXTENSION" ]; then
            echo "${EXTENSION%-dev}.tcz" > "$PACKAGE_EXTENSIONS/$EXTENSION/dep" || return 1
       fi
-
   done
 
   return 0
