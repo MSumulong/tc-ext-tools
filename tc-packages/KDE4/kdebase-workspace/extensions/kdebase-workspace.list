@@ -1884,7 +1884,6 @@ usr/local/share/kde4/services/joystick.desktop
 usr/local/share/kde4/services/plasma-dataengine-dict.desktop
 usr/local/share/kde4/services/desktop.desktop
 usr/local/share/kde4/services/solid-actions.desktop
-usr/local/share/kde4/services/plasma-geolocation-gps.desktop
 usr/local/share/kde4/services/ion-wettercom.desktop
 usr/local/share/kde4/services/plasma-applet-quicklaunch.desktop
 usr/local/share/kde4/services/plasma-applet-webbrowser.desktop
@@ -2161,7 +2160,6 @@ usr/local/lib/kde4/plasma_appletscriptengine_webapplet.so
 usr/local/lib/kde4/plasma_applet_windowlist.so
 usr/local/lib/kde4/kcm_ksplashthemes.so
 usr/local/lib/kde4/plasma_applet_pager.so
-usr/local/lib/kde4/plasma-geolocation-gps.so
 usr/local/lib/kde4/plasma_applet_currentappcontrol.so
 usr/local/lib/kde4/plasma_containment_newspaper.so
 usr/local/lib/kde4/krunner_plasma-desktop.so

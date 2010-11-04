@@ -34,8 +34,8 @@ fontconfig
 fontconfig-dev
 qedje
 qedje-dev
-gpsd
-gpsd-dev
+#gpsd
+#gpsd-dev
 libxklavier
 libxklavier-dev
 google-gadgets
@@ -55,7 +55,8 @@ libraw1394-dev
 libqalculate
 libqalculate-dev
 libxft
-libxft-dev"
+libxft-dev
+docbook_xsl"
 
 EXTENSIONS="kdebase-workspace kdebase-workspace-dev"
 DESCRIPTION="KDE base workspace."

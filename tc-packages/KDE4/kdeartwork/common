@@ -1,0 +1,35 @@
+PACKAGE="kdeartwork"
+VERSION="4.5.2"
+SOURCE="${PACKAGE}-${VERSION}.tar.bz2"
+SOURCE_URL="ftp://ftp.kde.org/pub/kde/stable/${VERSION}/src/${PACKAGE}-${VERSION}.tar.bz2"
+TOP_SRC="${PACKAGE}-${VERSION}"
+BUILD_DEPENDS="cmake
+automoc4
+kdebase-workspace
+kdebase-workspace-dev
+eigen
+strigi
+strigi-dev
+qt-4.x-base
+qt-4.x-opengl
+qt-4.x-dev"
+
+EXTENSIONS="kdeartwork
+kdeartwork-colorschemes
+kdeartwork-desktopthemes
+kdeartwork-emoticons
+kdeartwork-iconthemes
+kdeartwork-kscreensaver
+kdeartwork-sounds
+kdeartwork-styles
+kdeartwork-wallpapers
+kdeartwork-weatherwallpapers"
+
+DESCRIPTION="KDE themes, screensavers, sounds, styles, and wallpapers."
+AUTHOR="KDE development team"
+SITE="http://www.kde.org"
+COPYING="GPL-2/LGPL-2.1"
+MAINTAINERS="Arslan S."
+COMMENTS="This extension is PPI compatible."
+CHANGELOG="2010/07/26 First Version 4.4.5"
+CURRENT="Updated to 4.5.2"

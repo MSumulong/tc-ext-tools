@@ -8,7 +8,7 @@ build_configure() {
    cd build
    cmake -DCMAKE_INSTALL_PREFIX=/usr/local \
      -DCMAKE_BUILD_TYPE=Release -DKDE_DISTRIBUTION_TEXT="Tiny Core Linux" \
-     -DWITH_Xmms=OFF -DWITH_PolkitQt=OFF .. || return 1
+     -DWITH_Xmms=OFF -DWITH_PolkitQt=OFF -DWITH_libgps=OFF .. || return 1
 
 }
 

@@ -1,0 +1,42 @@
+PACKAGE="kdesdk"
+VERSION="4.5.2"
+SOURCE="${PACKAGE}-${VERSION}.tar.bz2"
+SOURCE_URL="ftp://ftp.kde.org/pub/kde/stable/${VERSION}/src/${PACKAGE}-${VERSION}.tar.bz2"
+TOP_SRC="${PACKAGE}-${VERSION}"
+BUILD_DEPENDS="cmake
+automoc4
+kdelibs
+kdelibs-dev
+kdepimlibs
+kdepimlibs-dev
+kdebase-workspace
+kdebase-workspace-dev
+kdebase
+kdebase-dev
+qt-4.x-designer
+phonon
+phonon-dev
+hunspell
+hunspell-dev
+svn
+svn-dev
+strigi
+strigi-dev
+libxslt
+boost
+boost-dev
+binutils
+libxml2
+libxml2-dev
+libxml2-bin
+docbook_xsl"
+
+EXTENSIONS="kdesdk kdesdk-dev"
+DESCRIPTION="KDE software development kit."
+AUTHOR="KDE development team"
+SITE="http://www.kde.org"
+COPYING="GPL/LGPL/FDL"
+MAINTAINERS="Arslan S."
+COMMENTS="This extension is PPI compatible."
+CHANGELOG="---"
+CURRENT="First Version"

@@ -1,0 +1,10 @@
+kdelibs.tcz
+kdebase-runtime.tcz
+phonon.tcz
+gst-plugins-bad.tcz
+gst-plugins-good.tcz
+gst-plugins-ugly.tcz
+gst-ffmpeg.tcz
+shared-mime-info.tcz
+hicolor-icon-theme.tcz
+oxygen-icon-theme.tcz

@@ -1,0 +1,4 @@
+usr/local/bin
+usr/local/lib/kde4
+usr/local/lib/*.so*
+usr/local/share

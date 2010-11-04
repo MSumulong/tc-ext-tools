@@ -17,10 +17,12 @@ kdeutils
 kdetoys
 kdesdk
 kdepim
+kdenetwork
+kdeplasma-addons
+
+# kde exclude
 kdelibs-experimental
 kdeadmin
 kdeedu
-kdenetwork
-kdeplasma-addons
 kdewebdev
 kdeaccessibility
