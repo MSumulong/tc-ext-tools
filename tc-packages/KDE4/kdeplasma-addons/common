@@ -1,0 +1,38 @@
+PACKAGE="kdeplasma-addons"
+VERSION="4.5.2"
+SOURCE="${PACKAGE}-${VERSION}.tar.bz2"
+SOURCE_URL="ftp://ftp.kde.org/pub/kde/stable/${VERSION}/src/${PACKAGE}-${VERSION}.tar.bz2"
+TOP_SRC="${PACKAGE}-${VERSION}"
+BUILD_DEPENDS="cmake
+automoc4
+kdelibs
+kdelibs-dev
+kdepimlibs
+kdepimlibs-dev
+kdebase-workspace
+kdebase-workspace-dev
+kdegraphics
+kdegraphics-dev
+kdeedu
+kdeedu-dev
+Xorg-7.5
+Xorg-7.5-dev
+libxml2-bin
+docbook_xsl
+eigen
+qca
+qca-dev
+attica
+attica-dev
+qimageblitz
+qimageblitz-dev"
+
+EXTENSIONS="kdeplasma-addons kdeplasma-addons-dev"
+DESCRIPTION="KDE plasma addons."
+AUTHOR="KDE development team"
+SITE="http://www.kde.org"
+COPYING="GPL/LGPL/FDL"
+MAINTAINERS="Arslan S."
+COMMENTS="This extension is PPI compatible."
+CHANGELOG="---"
+CURRENT="First Version"
