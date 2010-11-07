@@ -63,8 +63,6 @@ build_install() {
     sudo install -m 644 -D chrome/app/theme/chromium/product_logo_${size}.png ${INSTALL_ROOT}/usr/local/share/icons/hicolor/${size}x${size}/apps/chromium-browser.png || return 1
   done
 
-  sudo find ${INSTALL_ROOT}/usr/local/chromium-browser -name '*.d' -type f -delete
-
 }
 ##
 

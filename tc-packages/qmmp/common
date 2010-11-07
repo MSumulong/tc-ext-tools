@@ -1,5 +1,5 @@
 PACKAGE="qmmp"
-VERSION="0.4.2"
+VERSION="0.4.3"
 SOURCE="${PACKAGE}-${VERSION}.tar.bz2"
 TOP_SRC="${PACKAGE}-${VERSION}"
 SOURCE_URL="http://qmmp.ylsoftware.com/files/qmmp-${VERSION}.tar.bz2"
@@ -65,5 +65,6 @@ COMMENTS="This extension is PPI compatible."
 CHANGELOG="2010/02/07 Original 0.3.2
 		2010/04/06 Updated to 0.3.4-svn-r1660
 		2010/05/31 Updated to 0.4.0
-		2010/08/26 Updated to 0.4.1"
-CURRENT="Updated to 0.4.2"
+		2010/08/26 Updated to 0.4.1
+		2010/09/05 Updated to 0.4.2"
+CURRENT="Updated to 0.4.3"

@@ -1,0 +1,25 @@
+COMMENTS="This is not a stand alone network manager for end users, you need a NetworkManager client.
+
+		There are three clients available :
+			-cnetworkmanager (command line interface, but doesn't support static ips yet)
+			-network-manager-gnome (GNOME client, This can also be used in LXDE or XFCE provided that the required daemons are running, dbus & gnome-keyring)
+			-network-manager-kde (KDE4 client, not intended to work outside KDE4)
+
+		Optional dependencies :
+			-modemmanager
+			-NetworkManager-openvpn,vpnc,openconnect,pptp
+
+		NetworkManager is controlled by dbus interface with the policies defined
+		in the dbus system configuration files (/usr/local/etc/dbus-1/system.d/NetworkManager.conf)
+		by default only user=root can own the service, but user=root, group=staff, and
+		the users active on console (ConsoleKit) have access for the NetworkManager services.
+
+		To run NetworkManager daemon, put these lines in your /opt/bootlocal.sh :
+			#We need to restart dbus daemon
+			/usr/local/etc/init.d/dbus restart
+			#NetworkManager daemon can be controlled by the init script:
+			/usr/local/etc/init.d/NetworkManager start
+		
+		Important Note: You need to restart dbus daemon If you loaded this extension after dbus daemon started.
+
+		This extension is PPI compatible, If you backup /etc/udev/rules.d/77-nm-olpc-mesh.rules"

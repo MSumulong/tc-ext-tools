@@ -1,0 +1,5 @@
+NetworkManager-0.8.x_tinycore_support.patch
+disable_set_hostname.patch
+tinycore_etc_hosts_path.patch
+tinycore_dbus_access.patch
+

@@ -3,17 +3,17 @@ COMMENTS="This is Chromium, the open source project behind Google Chrome. Chrome
 		http://code.google.com/p/chromium/wiki/ChromiumBrowserVsGoogleChrome
 
 		dejavu-fonts-ttf, msttcorefonts, fireflysung, sil-gentium or any font is recommended
-		to be able to see international text in Cryllic, Greek, Hebrew, Chinese, Japanese etc.
+		for international character support (Cryllic, Greek, Hebrew, Chinese, Japanese etc.)
 
-		For Freedesktop users :
-		xdg-utils is needed for Chromium to open files and directories in your desktop preferred applications.
+		For Freedesktop users xdg-utils is needed for Chromium to open files with your desktop preferred applications.
 
 		Chrome extensions can be installed from the main menu. Some extensions are 
 		not yet supported for linux or do not work as intended.
 
-		To install Chrome themes :
-		Options->Personal Stuff->Appearance click \"Get themes\"
-		To create Chrome themes see :
+		Chrome themes can be installed as follows :
+		Preferences->Personal Stuff->Appearance and click on \"Get themes\" link
+
+		You can even create your own theme for Chromium :
 		http://code.google.com/p/chromium/wiki/ThemeCreationGuide
 
 		This extension is PPI compatible."
