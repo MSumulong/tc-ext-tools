@@ -1,0 +1,2 @@
+COMMENTS="Add usr/local/etc/openldap/ldap.conf to your backup list (/opt/.filetool.lst) if you want changes to be persistent.
+		This extension is PPI compatible."

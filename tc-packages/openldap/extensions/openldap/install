@@ -1,0 +1,4 @@
+usr/local/bin
+usr/local/etc/openldap/ldap.conf*
+usr/local/lib/*.so*
+
