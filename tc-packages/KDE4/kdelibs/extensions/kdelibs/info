@@ -16,6 +16,7 @@ COMMENTS="I didn't put all the dependencies in the dep list intentionally. If yo
 		libdbusmenu-qt.tcz
 		soprano.tcz
 		attica.tcz
+                avahi-2.7
 		xdg-utils.tcz
 		shared-mime-info.tcz
 		shared-desktop-ontologies.tcz

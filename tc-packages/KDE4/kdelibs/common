@@ -39,7 +39,8 @@ libxslt
 graphics-libs-1
 graphics-libs-1-dev
 libavahi
-avahi
+avahi-2.7
+avahi-2.7-dev
 bzip2-lib
 bzip2-dev
 enchant

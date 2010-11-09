@@ -13,8 +13,8 @@ kdebase-workspace
 kdebase-workspace-dev
 kdegraphics
 kdegraphics-dev
-kdeedu
-kdeedu-dev
+#kdeedu
+#kdeedu-dev
 Xorg-7.5
 Xorg-7.5-dev
 libxml2-bin
