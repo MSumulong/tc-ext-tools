@@ -38,9 +38,13 @@ print_usage(){
   echo -e "${TCEXTTOOLS_ERROR_COLOR}Usage:${TCEXTTOOLS_MESSAGE_COLOR}\n$(basename $0) package version \"extension1 extension2 ...\"${NORMAL}"
 }
 
-if [ -z "$PACKAGE" ] || [ -z "$VERSION" ] || [ -z "$EXTENSIONS" ]; then
+if [ -z "$PACKAGE" ] || [ -z "$VERSION" ]; then
      print_usage
      exit 1
+fi
+
+if [ -z "$EXTENSIONS" ]; then
+     EXTENSIONS="$PACKAGE"
 fi
 
 print_it "You entered:\n\n\tPACKAGE=$PACKAGE\n\tVERSION=$VERSION\n\tEXTENSIONS=$EXTENSIONS\n"
