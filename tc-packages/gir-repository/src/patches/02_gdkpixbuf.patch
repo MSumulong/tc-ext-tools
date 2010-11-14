@@ -1,0 +1,29 @@
+Description: Update GDK pixbuf include directory
+Bug: https://bugzilla.gnome.org/show_bug.cgi?id=625997
+
+Index: gir-repository-0.6.5/gir/Makefile.am
+===================================================================
+--- gir-repository-0.6.5.orig/gir/Makefile.am	2010-08-04 15:20:45.419822777 +1000
++++ gir-repository-0.6.5/gir/Makefile.am	2010-08-04 15:21:53.150210073 +1000
+@@ -248,7 +248,7 @@
+ 
+ EXTRA_DIST += $(srcdir)/GdkPixbuf-custom.c
+ if BUILD_GTK
+-GDKPIXBUF_INCLUDEDIR=`pkg-config --variable=includedir gdk-pixbuf-2.0`/gtk-2.0
++GDKPIXBUF_INCLUDEDIR=`pkg-config --variable=includedir gdk-pixbuf-2.0`/gdk-pixbuf-2.0
+ GdkPixbuf-2.0.gir: $(INTROSPECTION_SCANNER) GdkPixbuf-custom.c
+ 	$(INTROSPECTION_SCANNER) -v --namespace GdkPixbuf --nsversion=2.0 --strip-prefix=Gdk\
+ 	    --add-include-path=$(srcdir) --add-include-path=. \
+Index: gir-repository-0.6.5/gir/Makefile.in
+===================================================================
+--- gir-repository-0.6.5.orig/gir/Makefile.in	2010-08-04 15:20:46.769830497 +1000
++++ gir-repository-0.6.5/gir/Makefile.in	2010-08-04 15:22:20.420365968 +1000
+@@ -443,7 +443,7 @@
+ 	$(srcdir)/Gtk-custom.c		\
+ 	$(srcdir)/Gtk-custom.h
+ 
+-@BUILD_GTK_TRUE@GDKPIXBUF_INCLUDEDIR = `pkg-config --variable=includedir gdk-pixbuf-2.0`/gtk-2.0
++@BUILD_GTK_TRUE@GDKPIXBUF_INCLUDEDIR = `pkg-config --variable=includedir gdk-pixbuf-2.0`/gdk-pixbuf-2.0
+ @BUILD_GTK_TRUE@GDK_INCLUDEDIR = `pkg-config --variable=includedir gdk-$(GDK_TARGET)-2.0`/gtk-2.0
+ @BUILD_GTK_TRUE@GTK_INCLUDEDIR = `pkg-config --variable=includedir gtk+-$(GDK_TARGET)-2.0`/gtk-2.0
+ 
