@@ -30,45 +30,39 @@ else
      exit 1
 fi
 
-if [ ! -e "$TCEXTTOOLS_SRC/$SOURCE" ]; then
+if [ ! -e "$TCEXTTOOLS_SOURCE" ]; then
      print_it error "You must download it first!"
      return 1
 fi
 
+COMMAND="$1"
+
 this_main() {
-
-  TYPE=""
-
-  [ ! "${SOURCE%.bz2}" = "$SOURCE" ] && TYPE="bz2"
-  [ ! "${SOURCE%.gz}" = "$SOURCE" ] && TYPE="gz"
-  [ ! "${SOURCE%.tgz}" = "$SOURCE" ] && TYPE="tgz"
-  [ ! "${SOURCE%.xz}" = "$SOURCE" ] && TYPE="xz"
-  [ ! "${SOURCE%.zip}" = "$SOURCE" ] && TYPE="zip"
-
-  if [ -z "$TYPE" ]; then
-       print_it error "The type of $SOURCE is not yet supported!"
-       exit 1
-  fi
 
   [ -d "$TCEXTTOOLS_SRC_TEMP" ] && sudo rm -rf "$TCEXTTOOLS_SRC_TEMP"
   mkdir -p "$TCEXTTOOLS_SRC_TEMP"
 
-  if [ "$TYPE" = "bz2" -a ! -e "$TCEXTTOOLS_SRC/${SOURCE%.bz2}.xz" ]; then
-       bzip2 -d -c "$TCEXTTOOLS_SRC/$SOURCE" > "$TCEXTTOOLS_SRC_TEMP/${SOURCE%.bz2}" || return 1
-       xz "$TCEXTTOOLS_SRC_TEMP/${SOURCE%.bz2}" || return 1
-       busybox mv -f "$TCEXTTOOLS_SRC_TEMP/${SOURCE%.bz2}.xz" "$TCEXTTOOLS_SRC" || return 1
-  elif [ "$TYPE" = "gz" -a ! -e "$TCEXTTOOLS_SRC/${SOURCE%.gz}.xz" ]; then
-       gzip -d -c "$TCEXTTOOLS_SRC/$SOURCE" > "$TCEXTTOOLS_SRC_TEMP/${SOURCE%.gz}" || return 1
-       xz "$TCEXTTOOLS_SRC_TEMP/${SOURCE%.gz}" || return 1
-       busybox mv -f "$TCEXTTOOLS_SRC_TEMP/${SOURCE%.gz}.xz" "$TCEXTTOOLS_SRC" || return 1
-  elif [ "$TYPE" = "tgz" -a ! -e "$TCEXTTOOLS_SRC/${SOURCE%.tgz}.tar.xz" ]; then
-       gzip -d -c "$TCEXTTOOLS_SRC/$SOURCE" > "$TCEXTTOOLS_SRC_TEMP/${SOURCE%.tgz}.tar" || return 1
-       xz "$TCEXTTOOLS_SRC_TEMP/${SOURCE%.tgz}.tar" || return 1
-       busybox mv -f "$TCEXTTOOLS_SRC_TEMP/${SOURCE%.tgz}.tar.xz" "$TCEXTTOOLS_SRC" || return 1
-  elif [ "$TYPE" = "zip" -a ! -e "$TCEXTTOOLS_SRC/${SOURCE%.zip}.tar.xz" ]; then
-       unzip "$TCEXTTOOLS_SRC/$SOURCE" -d "$TCEXTTOOLS_TEMP" || return 1
-       tar -C "$TCEXTTOOLS_SRC_TEMP" -cJf "$TCEXTTOOLS_SRC_TEMP/${SOURCE%.zip}.tar.xz" "$TOP_SRC" || return 1
-       busybox mv -f "$TCEXTTOOLS_SRC_TEMP/${SOURCE%.zip}.tar.xz" "$TCEXTTOOLS_SRC" || return 1
+  if [ ! -e "$TCEXTTOOLS_CONVERTED_SOURCE" ] || [ "$COMMAND" = "force" ]; then
+       if [ "$SOURCE_TYPE" = "bz2" ]; then
+            bzip2 -d -c "$TCEXTTOOLS_SOURCE" > "$TCEXTTOOLS_SRC_TEMP/${SOURCE%.bz2}" || return 1
+            xz "$TCEXTTOOLS_SRC_TEMP/${SOURCE%.bz2}" || return 1
+            busybox mv -f "$TCEXTTOOLS_SRC_TEMP/${SOURCE%.bz2}.xz" "$TCEXTTOOLS_SRC" || return 1
+       elif [ "$SOURCE_TYPE" = "gz" ]; then
+            gzip -d -c "$TCEXTTOOLS_SOURCE" > "$TCEXTTOOLS_SRC_TEMP/${SOURCE%.gz}" || return 1
+            xz "$TCEXTTOOLS_SRC_TEMP/${SOURCE%.gz}" || return 1
+            busybox mv -f "$TCEXTTOOLS_SRC_TEMP/${SOURCE%.gz}.xz" "$TCEXTTOOLS_SRC" || return 1
+       elif [ "$SOURCE_TYPE" = "tgz" ]; then
+            gzip -d -c "$TCEXTTOOLS_SOURCE" > "$TCEXTTOOLS_SRC_TEMP/${SOURCE%.tgz}.tar" || return 1
+            xz "$TCEXTTOOLS_SRC_TEMP/${SOURCE%.tgz}.tar" || return 1
+            busybox mv -f "$TCEXTTOOLS_SRC_TEMP/${SOURCE%.tgz}.tar.xz" "$TCEXTTOOLS_SRC" || return 1
+       elif [ "$SOURCE_TYPE" = "zip" ]; then
+            unzip "$TCEXTTOOLS_SOURCE" -d "$TCEXTTOOLS_TEMP" || return 1
+            tar -C "$TCEXTTOOLS_SRC_TEMP" -cJf "$TCEXTTOOLS_SRC_TEMP/${SOURCE%.zip}.tar.xz" "$TOP_SRC" || return 1
+            busybox mv -f "$TCEXTTOOLS_SRC_TEMP/${SOURCE%.zip}.tar.xz" "$TCEXTTOOLS_SRC" || return 1
+       elif [ "$SOURCE_TYPE" = "custom" ]; then
+            cd "$TCEXTTOOLS_SRC_TEMP"
+            build_convert || return 1
+       fi
   fi
 
   return 0

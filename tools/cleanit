@@ -1,6 +1,6 @@
 #!/bin/sh
 #
-#  encryptit: Encrypts the file with the default encryption key
+#  cleanit: Cleans the package
 #
 #  This program is free software; you can redistribute it and/or modify
 #  it under the terms of the GNU General Public License as published by
@@ -30,27 +30,34 @@ else
      exit 1
 fi
 
-FILE="$1"
+this_main() {
+  
+  [ -d "$TCEXTTOOLS_BIN" ] && sudo rm -rf "$TCEXTTOOLS_BIN"
+  mkdir -p "$TCEXTTOOLS_BIN" || return 1
 
-print_usage(){
-  echo -e "${TCEXTTOOLS_ERROR_COLOR}Usage:${TCEXTTOOLS_MESSAGE_COLOR}\n$(basename $0) /path/to/file${NORMAL}"
+  [ -d "$TCEXTTOOLS_PKG" ] && sudo rm -rf "$TCEXTTOOLS_PKG"
+  mkdir -p "$TCEXTTOOLS_PKG" || return 1
+
+  [ -d "$TCEXTTOOLS_BIN_TEMP" ] && sudo rm -rf "$TCEXTTOOLS_BIN_TEMP"
+  mkdir -p "$TCEXTTOOLS_BIN_TEMP" || return 1
+
+  [ -d "$TCEXTTOOLS_SRC_TEMP" ] && sudo rm -rf "$TCEXTTOOLS_SRC_TEMP"
+  mkdir -p "$TCEXTTOOLS_SRC_TEMP" || return 1
+
+  [ -d "$TCEXTTOOLS_LOG" ] && sudo rm -rf "$TCEXTTOOLS_LOG"
+  mkdir -p "$TCEXTTOOLS_LOG" || return 1
+
+  return 0
 }
 
-if [ -z "$FILE" -o ! -e "$FILE" ]; then
-      print_usage
-      exit 1
-fi
-
-[ -e "${PACKAGE}.tar.bz2.bfe" ] && sudo rm -f "${PACKAGE}.tar.bz2.bfe"
-
-print_it "Please enter the encryption key: \c"
-print_it hilight "$TCEXTTOOLS_ENCRYPTION_KEY"
-
-bcrypt "$FILE"
-
+print_it "Cleaning the package $PACKAGE ... \c"
+this_main > "$TCEXTTOOLS_ERROR_LOG_2" 2>&1
 if [ "$?" -gt 0 ]; then
+     print_it error "failed!"
      exit 1
 fi
+
+print_it hilight "successful!"
 
 exit 0
 

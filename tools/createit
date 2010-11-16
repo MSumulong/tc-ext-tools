@@ -1,6 +1,6 @@
 #!/bin/sh
 #
-#  createit: Creates the extension
+#  createit: Creates the package extensions
 #
 #  This program is free software; you can redistribute it and/or modify
 #  it under the terms of the GNU General Public License as published by
@@ -30,23 +30,7 @@ else
      exit 1
 fi
 
-EXTENSION="$1"
-
-if [ ! -d "$TCEXTTOOLS_BIN/$EXTENSION" ]; then
-     print_it error "You must split it first!"
-     exit 1
-fi
-
-print_usage() {
-  echo -e "${TCEXTTOOLS_ERROR_COLOR}Usage:${TCEXTTOOLS_MESSAGE_COLOR}\n$(basename $0) extension${NORMAL}"
-}
-
-if [ -z "$EXTENSION" ]; then
-     print_usage
-     exit 1
-fi
-
-this_main() {
+this_create() {
 
   cd $PACKAGE_ROOT
 
@@ -87,7 +71,31 @@ this_main() {
   return 0
 }
 
-print_it "Creating the extension $EXTENSION ... \c"
+this_main() {
+
+  [ -d "$TCEXTTOOLS_EXTENSIONS" ] && sudo rm -rf "$TCEXTTOOLS_EXTENSIONS"
+  mkdir -p "$TCEXTTOOLS_EXTENSIONS"
+
+  for EXTENSION in $EXTENSIONS
+  do
+      if [ ! -d "$TCEXTTOOLS_BIN/$EXTENSION" ]; then
+           print_it error "You must split it first!"
+           exit 1
+      fi
+
+      this_create
+      if [ "$?" -gt 0 ]; then
+           print_it error "Creating the extension $EXTENSION failed!"
+           return 1
+      else
+           print_it "Creating the extension $EXTENSION successful!"
+      fi
+  done
+
+  return 0
+}
+
+print_it "Creating the package $PACKAGE extensions ... \c"
 this_main > "$TCEXTTOOLS_ERROR_LOG_2" 2>&1
 if [ "$?" -gt 0 ]; then
      print_it error "failed!"
