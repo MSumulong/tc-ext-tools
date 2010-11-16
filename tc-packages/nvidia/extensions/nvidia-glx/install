@@ -1,0 +1,12 @@
+usr/local/bin/nvidia-smi
+usr/local/bin/nvidia-bug-report.sh
+usr/local/bin/nvidia-xconfig
+usr/local/share/man/man1/nvidia-xconfig.1.gz
+usr/local/share/man/man1/nvidia-smi.1.gz
+usr/local/lib/*.so*
+usr/local/lib/vdpau
+usr/local/lib/X11
+usr/local/etc/OpenCL
+usr/local/share/doc/nvidia-glx
+x-usr/local/share/doc/nvidia-glx/html
+

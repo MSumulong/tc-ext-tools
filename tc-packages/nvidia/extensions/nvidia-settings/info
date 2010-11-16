@@ -1,0 +1,3 @@
+DESCRIPTION="NVIDIA Linux Drivers, GUI tool for configuring X server settings."
+COMMENTS="If you want to save X server settings you need to run nvidia-settings with sudo.
+		This extension is PPI compatible."

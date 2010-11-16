@@ -69,11 +69,11 @@ build_install() {
 ### Rules
 build_rules() {
 
+  buildit load || exit 1
   buildit download || exit 1
   buildit convert || exit 1
   buildit unpack || exit 1
   buildit patch || exit 1
-  buildit load || exit 1
   buildit configure || exit 1
   buildit compile || exit 1
   buildit install || exit 1

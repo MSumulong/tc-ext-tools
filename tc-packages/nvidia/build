@@ -1,0 +1,134 @@
+#
+# tc-ext-tools build functions: configure, compile, install, rules
+#
+
+build_convert() {
+
+   sh $TCEXTTOOLS_SRC/$SOURCE --extract-only || return 1
+
+   tar -cJvf $CONVERTED_SOURCE $TOP_SRC || return 1
+
+   busybox mv -f $CONVERTED_SOURCE $TCEXTTOOLS_SRC || return 1
+
+}
+
+build_unpack() {
+
+   sh $TCEXTTOOLS_SRC/$SOURCE --extract-only || return 1
+
+}
+
+# Configure
+build_configure() {
+
+   sed -e "s/^.*XYZ=.*$/XYZ=$VERSION/" -i $PACKAGE_EXTENSIONS/nvidia-glx/tce.installed || return 1
+
+}
+
+# Compile
+build_compile() {
+
+   cd kernel
+   make SYSSRC=/lib/modules/$KERNELVER/build module || return 1
+
+}
+
+# Install
+build_install() {
+
+   cd kernel
+   # kernel module
+   install -d -m 755 $INSTALL_ROOT/usr/local/lib/modules/$KERNELVER/kernel/drivers/video
+   install -m 644 nvidia.ko $INSTALL_ROOT/usr/local/lib/modules/$KERNELVER/kernel/drivers/video/nvidia.ko || return 1
+
+   cd ..
+   install -d -m 755 $INSTALL_ROOT/usr/local/bin
+   install -d -m 755 $INSTALL_ROOT/usr/local/lib/X11/modules/drivers
+   install -d -m 755 $INSTALL_ROOT/usr/local/lib/X11/modules/extensions
+   install -d -m 755 $INSTALL_ROOT/usr/local/etc/OpenCL/vendors
+   install -d -m 755 $INSTALL_ROOT/usr/local/share/man/man1
+   install -d -m 755 $INSTALL_ROOT/usr/local/share/applications
+   install -d -m 755 $INSTALL_ROOT/usr/local/share/pixmaps
+   install -d -m 755 $INSTALL_ROOT/usr/local/share/doc/nvidia-glx/html
+   install -d -m 755 $INSTALL_ROOT/usr/local/lib/vdpau
+   install -d -m 755 $INSTALL_ROOT/usr/local/include/GL
+
+   # Xorg driver
+   install -m 755 nvidia_drv.so $INSTALL_ROOT/usr/local/lib/X11/modules/drivers || return 1
+   # GLX extension module for Xorg
+   install -m 755 libglx.so.${VERSION} $INSTALL_ROOT/usr/local/lib/X11/modules/extensions || return 1
+   ln -s libglx.so.${VERSION} $INSTALL_ROOT/usr/local/lib/X11/modules/extensions/libglx.so
+   # OpenGL library
+   install -m 755 libGL.so.${VERSION} $INSTALL_ROOT/usr/local/lib || return 1
+   install -m 755 libGL.la $INSTALL_ROOT/usr/local/lib || return 1
+   install -m 644 *.h $INSTALL_ROOT/usr/local/include/GL
+   sed -e 's:__LIBGL_PATH__:/usr/local/lib:' -i $INSTALL_ROOT/usr/local/lib/libGL.la
+   sed -e 's:/X11R6/:/:' -i $INSTALL_ROOT/usr/local/lib/libGL.la
+   # OpenGL core library
+   install -m 755 libnvidia-glcore.so.${VERSION} $INSTALL_ROOT/usr/local/lib || return 1
+   # XvMC
+   install -m 644 libXvMCNVIDIA.a $INSTALL_ROOT/usr/local/lib || return 1
+   install -m 755 libXvMCNVIDIA.so.${VERSION} $INSTALL_ROOT/usr/local/lib || return 1
+   # VDPAU
+   install -m 755 libvdpau_nvidia.so.${VERSION} $INSTALL_ROOT/usr/local/lib/vdpau || return 1
+   # CUDA
+   install -m 755 libcuda.so.${VERSION} $INSTALL_ROOT/usr/local/lib || return 1
+   # nvidia-tls library
+   install -m 755 tls/libnvidia-tls.so.${VERSION} $INSTALL_ROOT/usr/local/lib || return 1
+   # OpenCL
+   install -m 755 libnvidia-compiler.so.${VERSION} $INSTALL_ROOT/usr/local/lib || return 1
+   install -m 755 libOpenCL.so.1.0.0 $INSTALL_ROOT/usr/local/lib || return 1
+   install -m 644 nvidia.icd $INSTALL_ROOT/usr/local/etc/OpenCL/vendors/nvidia.icd || return 1
+
+   install -m 755 libnvidia-cfg.so.${VERSION} $INSTALL_ROOT/usr/local/lib || return 1
+
+   # create soname links
+   for _lib in $(find $INSTALL_ROOT -name '*.so*'); do
+         _soname="$(dirname ${_lib})/$(readelf -d "$_lib" | sed -nr 's/.*Library soname: \[(.*)\].*/\1/p')"
+         if [ ! -e "${_soname}" ]; then
+                ln -s "$(basename ${_lib})" "${_soname}"
+                ln -s "$(basename ${_soname})" "${_soname/.[0-9]*/}"
+         fi
+   done
+
+   # nvidia-xconfig
+   install -m 755 nvidia-xconfig $INSTALL_ROOT/usr/local/bin || return 1
+   install -m 644 nvidia-xconfig.1.gz $INSTALL_ROOT/usr/local/share/man/man1 || return 1
+   # nvidia-settings
+   install -m 755 nvidia-settings $INSTALL_ROOT/usr/local/bin || return 1
+   install -m 644 nvidia-settings.1.gz $INSTALL_ROOT/usr/local/share/man/man1 || return 1
+   install -m 644 nvidia-settings.desktop $INSTALL_ROOT/usr/local/share/applications || return 1
+   install -m 644 nvidia-settings.png $INSTALL_ROOT/usr/local/share/pixmaps || return 1
+   sed -e 's:__UTILS_PATH__:/usr/local/bin:' -e 's:__PIXMAP_PATH__:/usr/local/share/pixmaps:' -i $INSTALL_ROOT/usr/local/share/applications/nvidia-settings.desktop
+   # nvidia-bug-report
+   install -m 755 nvidia-bug-report.sh $INSTALL_ROOT/usr/local/bin || return 1
+   # nvidia-smi
+   install -m 755 nvidia-smi $INSTALL_ROOT/usr/local/bin || return 1
+   install -m 644 nvidia-smi.1.gz $INSTALL_ROOT/usr/local/share/man/man1 || return 1
+
+   install -m 644 LICENSE $INSTALL_ROOT/usr/local/share/doc/nvidia-glx || return 1
+   install -m 644 README.txt $INSTALL_ROOT/usr/local/share/doc/nvidia-glx || return 1
+   install -m 644 NVIDIA_Changelog $INSTALL_ROOT/usr/local/share/doc/nvidia-glx || return 1
+   install -m 644 html/* $INSTALL_ROOT/usr/local/share/doc/nvidia-glx/html
+
+}
+
+# Rules
+build_rules() {
+
+   buildit load || exit 1
+   buildit download || exit 1
+   buildit convert || exit 1
+   buildit unpack || exit 1
+   buildit configure || exit 1
+   buildit compile || exit 1
+   buildit install || exit 1
+   buildit split || exit 1
+   buildit create || exit 1
+   buildit generate || exit 1
+   buildit check || exit 1
+   buildit package || exit 1
+   buildit compress || exit 1
+   buildit encrypt || exit 1
+
+}
