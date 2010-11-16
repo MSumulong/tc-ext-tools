@@ -30,37 +30,26 @@ else
      exit 1
 fi
 
-if [ ! -e "$TCEXTTOOLS_SRC/$SOURCE" ]; then
+if [ ! -e "$TCEXTTOOLS_SOURCE" ]; then
      print_it error "You must download it first!"
      return 1
 fi
 
 this_main() {
 
-  TYPE=""
-
-  [ ! "${SOURCE%.bz2}" = "$SOURCE" ] && TYPE="bz2"
-  [ ! "${SOURCE%.gz}" = "$SOURCE" ] && TYPE="gz"
-  [ ! "${SOURCE%.tgz}" = "$SOURCE" ] && TYPE="tgz"
-  [ ! "${SOURCE%.xz}" = "$SOURCE" ] && TYPE="xz"
-  [ ! "${SOURCE%.zip}" = "$SOURCE" ] && TYPE="zip"
-
-  if [ -z "$TYPE" ]; then
-       print_it error "The type of $SOURCE is not yet supported!"
-       exit 1
-  fi
-
   [ -d "$TCEXTTOOLS_BIN_TEMP" ] && sudo rm -rf "$TCEXTTOOLS_BIN_TEMP"
   mkdir -p "$TCEXTTOOLS_BIN_TEMP"
 
-  if [ "$TYPE" = "bz2" ]; then
-       busybox tar -C "$TCEXTTOOLS_BIN_TEMP" -xf "$TCEXTTOOLS_SRC/$SOURCE" || return 1
-  elif [ "$TYPE" = "gz" -o "$TYPE" = "tgz" ]; then
-       busybox tar -C "$TCEXTTOOLS_BIN_TEMP" -xf "$TCEXTTOOLS_SRC/$SOURCE" || return 1
-  elif [ "$TYPE" = "xz" ]; then
-       busybox tar -C "$TCEXTTOOLS_BIN_TEMP" -xf "$TCEXTTOOLS_SRC/$SOURCE" || return 1
-  elif [ "$TYPE" = "zip" ]; then
-       unzip "$TCEXTTOOLS_SRC/$SOURCE" -d "$TCEXTTOOLS_BIN_TEMP" || return 1
+  if [ "$SOURCE_TYPE" = "bz2" ] || [ "$SOURCE_TYPE" = "gz" ] || [ "$SOURCE_TYPE" = "tgz" ] || [ "$SOURCE_TYPE" = "xz" ]; then
+       busybox tar -C "$TCEXTTOOLS_BIN_TEMP" -xf "$TCEXTTOOLS_SOURCE" || return 1
+  elif [ "$SOURCE_TYPE" = "zip" ]; then
+       unzip "$TCEXTTOOLS_SOURCE" -d "$TCEXTTOOLS_BIN_TEMP" || return 1
+  elif [ "$SOURCE_TYPE" = "custom" ]; then
+       cd "$TCEXTTOOLS_BIN_TEMP"
+       build_unpack || return 1
+  else
+       print_it error "Unsupported source type!"
+       return 1
   fi
 
   return 0

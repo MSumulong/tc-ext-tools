@@ -30,7 +30,7 @@ else
      exit 1
 fi
 
-if [ ! -d "$TCEXTTOOLS_BIN_TEMP/$TOP_SRC" ]; then
+if [ ! -d "$TCEXTTOOLS_TOP_SRC" ]; then
      print_it error "You must unpack it first!"
      exit 1
 fi
@@ -42,7 +42,7 @@ this_main() {
        do
            if [ "${PATCH#"#"}" = "$PATCH" ]; then
                 if [ -f "$PACKAGE_PATCHES/$PATCH" ]; then
-                     patch --directory="$TCEXTTOOLS_BIN_TEMP/$TOP_SRC" -Np1 -i "$PACKAGE_PATCHES/$PATCH" || return 1
+                     patch --directory="$TCEXTTOOLS_TOP_SRC" -Np1 -i "$PACKAGE_PATCHES/$PATCH" || return 1
                 fi
            fi
        done
@@ -52,7 +52,7 @@ this_main() {
             for PATCH in $PATCHES
             do
                 if [ -f "$PACKAGE_PATCHES/$PATCH" ]; then
-                     patch --directory="$TCEXTTOOLS_BIN_TEMP/$TOP_SRC" -Np1 -i "$PACKAGE_PATCHES/$PATCH" || return 1
+                     patch --directory="$TCEXTTOOLS_TOP_SRC" -Np1 -i "$PACKAGE_PATCHES/$PATCH" || return 1
                 fi
             done
        fi

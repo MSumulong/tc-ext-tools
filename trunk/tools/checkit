@@ -30,25 +30,7 @@ else
      exit 1
 fi
 
-EXTENSION="$1"
-
-print_usage(){
-  echo -e "${TCEXTTOOLS_ERROR_COLOR}Usage:${TCEXTTOOLS_MESSAGE_COLOR}\n$(basename $0) extension${NORMAL}"
-}
-
-if [ -z "$EXTENSION" ]; then
-     print_usage
-     exit 1
-fi
-
-if [ ! -e "$TCEXTTOOLS_EXTENSIONS/$EXTENSION/${EXTENSION}.tcz" ]; then
-     print_it error "You must create it first!"
-     exit 1
-fi
-
-TMPDIR=$(busybox mktemp -d)
-
-this_main() {
+this_check() {
 
   sudo busybox mount -o loop "$TCEXTTOOLS_EXTENSIONS/$EXTENSION/${EXTENSION}.tcz" "$TMPDIR" || return 1
 
@@ -99,15 +81,39 @@ this_main() {
 
   sudo busybox umount "$TMPDIR"
   sudo rm -rf "$TMPDIR"
+
   return 0
 }
 
-print_it "Checking the extension $EXTENSION ... \c"
+this_main() {
+
+  for EXTENSION in $EXTENSIONS
+  do
+      if [ ! -e "$TCEXTTOOLS_EXTENSIONS/$EXTENSION/${EXTENSION}.tcz" ]; then
+             print_it error "You must create it first!"
+             exit 1
+      fi
+
+      TMPDIR=$(busybox mktemp -d)
+
+      this_check
+      if [ "$?" -gt 0 ]; then
+           print_it error "Checking the extension $EXTENSION failed!"
+           sudo busybox umount "$TMPDIR"
+           sudo rm -rf "$TMPDIR"
+           return 1
+      else
+           print_it "Checking the extension $EXTENSION successful!"
+      fi
+  done
+
+  return 0
+}
+
+print_it "Checking the package $PACKAGE extensions ... \c"
 this_main > "$TCEXTTOOLS_ERROR_LOG_2" 2>&1
 if [ "$?" -gt 0 ]; then
      print_it error "failed!"
-     sudo busybox umount "$TMPDIR" > /dev/null 2>&1
-     sudo rm -rf "$TMPDIR" > /dev/null 2>&1
      exit 1
 fi
 

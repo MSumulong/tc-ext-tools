@@ -32,6 +32,9 @@ fi
 
 this_main() {
 
+  [ -d "$TCEXTTOOLS_PKG" ] && sudo rm -rf "$TCEXTTOOLS_PKG"
+  mkdir -p "$TCEXTTOOLS_PKG"
+
   cd "$PACKAGE_ROOT"
 
   for EXTENSION in $EXTENSIONS
@@ -46,36 +49,13 @@ this_main() {
       busybox cp -f "$TCEXTTOOLS_EXTENSIONS/$EXTENSION"/*.tcz* "$TCEXTTOOLS_PKG/$EXTENSION" || return 1
   done
 
-  if [ -d "$PACKAGE_SRC" ]; then
-       compressit xz "$PACKAGE_SRC" || return 1
-       SRC="$(basename $PACKAGE_SRC).tar.xz"
-       busybox mv -f "$SRC" "$TCEXTTOOLS_PKG" || return 1
-  fi
+  #if [ -d "$PACKAGE_SRC" ]; then
+  #     compressit xz "$PACKAGE_SRC" "${PACKAGE}-src" || return 1
+  #     busybox mv -f "${PACKAGE}-src.tar.xz" "$TCEXTTOOLS_PKG" || return 1
+  #fi
 
-  [ ! "${SOURCE%.bz2}" = "$SOURCE" ] && TYPE="bz2"
-  [ ! "${SOURCE%.gz}" = "$SOURCE" ] && TYPE="gz"
-  [ ! "${SOURCE%.tgz}" = "$SOURCE" ] && TYPE="tgz"
-  [ ! "${SOURCE%.xz}" = "$SOURCE" ] && TYPE="xz"
-  [ ! "${SOURCE%.zip}" = "$SOURCE" ] && TYPE="zip"
-
-  if [ "$TYPE" = "bz2" ]; then
-       if [ -e "$TCEXTTOOLS_SRC/${SOURCE%.bz2}.xz" ]; then
-            busybox cp -f "$TCEXTTOOLS_SRC/${SOURCE%.bz2}.xz" "$TCEXTTOOLS_PKG" || return 1
-       fi
-  elif [ "$TYPE" = "gz" ]; then
-       if [ -e "$TCEXTTOOLS_SRC/${SOURCE%.gz}.xz" ]; then
-            busybox cp -f "$TCEXTTOOLS_SRC/${SOURCE%.gz}.xz" "$TCEXTTOOLS_PKG" || return 1
-       fi
-  elif [ "$TYPE" = "tgz" ]; then
-       if [ -e "$TCEXTTOOLS_SRC/${SOURCE%.tgz}.tar.xz" ]; then
-            busybox cp -f "$TCEXTTOOLS_SRC/${SOURCE%.tgz}.tar.xz" "$TCEXTTOOLS_PKG" || return 1
-       fi
-  elif [ "$TYPE" = "xz" ]; then
-       busybox cp -f "$TCEXTTOOLS_SRC/$SOURCE" "$TCEXTTOOLS_PKG" || return 1
-  elif [ "$TYPE" = "zip" ]; then
-       if [ -e "$TCEXTTOOLS_SRC/${SOURCE%.zip}.tar.xz" ]; then
-            busybox cp -f "$TCEXTTOOLS_SRC/${SOURCE%.zip}.tar.xz" "$TCEXTTOOLS_PKG" || return 1
-       fi
+  if [ -f "$TCEXTTOOLS_CONVERTED_SOURCE" ]; then
+       busybox cp -f "$TCEXTTOOLS_CONVERTED_SOURCE" "$TCEXTTOOLS_PKG" || return 1
   fi
 
   return 0

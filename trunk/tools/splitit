@@ -30,25 +30,12 @@ else
      exit 1
 fi
 
-EXTENSION="$1"
-
-print_usage() {
-  echo -e "${TCEXTTOOLS_ERROR_COLOR}Usage:${TCEXTTOOLS_MESSAGE_COLOR}\n$(basename $0) extension${NORMAL}"
-}
-
 if [ ! -d "$TCEXTTOOLS_INSTALL_ROOT" ]; then
      print_it error "You must install it first!"
      exit 1
 fi
 
-if [ ! -f "$PACKAGE_EXTENSIONS/$EXTENSION/install" ]; then
-      print_usage
-      exit 1
-fi
-
-TMP_DIR="$(busybox mktemp -d)"
-
-this_main() {
+this_split() {
 
   CONTENTS="$(cat $PACKAGE_EXTENSIONS/$EXTENSION/install)"
   [ -z "$CONTENTS" ] && return 1
@@ -92,16 +79,35 @@ this_main() {
   fi
 
   sudo mv "$TMP_DIR/root" "$TCEXTTOOLS_BIN/$EXTENSION" || return 1
+
   sudo rm -rf "$TMP_DIR"
 
   return 0
 }
 
-print_it "Splitting the extension $EXTENSION out of the package $PACKAGE ... \c"
+this_main() {
+
+  for EXTENSION in $EXTENSIONS
+  do
+      TMP_DIR=$(busybox mktemp -d)
+
+      this_split
+      if [ "$?" -gt 0 ]; then
+           print_it error "Splitting the extension $EXTENSION failed!"
+           sudo rm -rf "$TMP_DIR"
+           return 1
+      else
+           print_it "Splitting the extension $EXTENSION successful!"
+      fi
+  done
+
+  return 0
+}
+
+print_it "Splitting the package $PACKAGE extensions ... \c"
 this_main > "$TCEXTTOOLS_ERROR_LOG_2" 2>&1
 if [ "$?" -gt 0 ]; then
      print_it error "failed!"
-     [ -d "$TMP_DIR" ] && sudo rm -rf "$TMP_DIR" > /dev/null 2>&1
      exit 1
 fi
 print_it hilight "successful!"

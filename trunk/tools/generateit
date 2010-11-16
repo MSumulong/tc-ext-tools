@@ -30,26 +30,8 @@ else
      exit 1
 fi
 
-EXTENSION="$1"
+this_generate() {
 
-print_usage(){
-  echo -e "${TCEXTTOOLS_ERROR_COLOR}Usage:${TCEXTTOOLS_MESSAGE_COLOR}\n$(basename $0) extension${NORMAL}"
-}
-
-if [ -z "$EXTENSION" ]; then
-      print_usage
-      exit 1
-fi
-
-if [ ! -e "$TCEXTTOOLS_EXTENSIONS/$EXTENSION/${EXTENSION}.tcz" ]; then
-     print_it error "You must create it first!"
-     exit 1
-fi
-
-this_main() {
-
-  CURRENT="$DATE $CURRENT"
-  SIZE=$(du -h "$TCEXTTOOLS_EXTENSIONS/$EXTENSION/${EXTENSION}.tcz" | cut -f1)
   [ ! "${EXTENSION%-bin}" = "$EXTENSION" ] && DESCRIPTION="${DESCRIPTION%.}, utilities."
   [ ! "${EXTENSION%-lib}" = "$EXTENSION" ] && DESCRIPTION="${DESCRIPTION%.}, shared libraries."
   [ ! "${EXTENSION%-dev}" = "$EXTENSION" ] && DESCRIPTION="${DESCRIPTION%.}, development files."
@@ -61,6 +43,9 @@ this_main() {
   if [ -e "$PACKAGE_EXTENSIONS/$EXTENSION/info" ]; then
       . "$PACKAGE_EXTENSIONS/$EXTENSION/info"
   fi
+
+  CURRENT="$DATE $CURRENT"
+  SIZE=$(du -h "$TCEXTTOOLS_EXTENSIONS/$EXTENSION/${EXTENSION}.tcz" | cut -f1)
 
   cat > "$TCEXTTOOLS_EXTENSIONS/$EXTENSION/${EXTENSION}.tcz.info" << _EOF
 Title:		${EXTENSION}.tcz
@@ -84,7 +69,30 @@ _EOF
   return 0
 }
 
-print_it "Generating the extension $EXTENSION info ... \c"
+this_main() {
+
+  for EXTENSION in $EXTENSIONS
+  do
+      . "$PACKAGE_COMMON"
+
+      if [ ! -e "$TCEXTTOOLS_EXTENSIONS/$EXTENSION/${EXTENSION}.tcz" ]; then
+             print_it error "You must create it first!"
+             exit 1
+      fi
+
+      this_generate
+      if [ "$?" -gt 0 ]; then
+           print_it error "Generating the extension $EXTENSION info failed!"
+           return 1
+      else
+           print_it "Generating the extension $EXTENSION info successful!"
+      fi
+  done  
+
+  return 0
+}
+
+print_it "Generating the package $PACKAGE extensions info files ... \c"
 this_main > "$TCEXTTOOLS_ERROR_LOG_2" 2>&1
 if [ "$?" -gt 0 ]; then
      print_it error "failed!"

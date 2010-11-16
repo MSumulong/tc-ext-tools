@@ -37,17 +37,17 @@ else
      exit 1
 fi
 
-if [ ! -d "$TOP_SRC_DIR" ]; then
+if [ ! -d "$TCEXTTOOLS_TOP_SRC" ]; then
      print_it error "You must compile it first!"
      exit 1
 fi
 
 this_main() {
 
-  [ -d "$INSTALL_ROOT" ] && rm -rf "$INSTALL_ROOT"
+  [ -d "$TCEXTTOOLS_INSTALL_ROOT" ] && sudo rm -rf "$TCEXTTOOLS_INSTALL_ROOT"
 
   # Install the package
-  cd "$TOP_SRC_DIR"
+  cd "$TCEXTTOOLS_TOP_SRC"
   build_install > "$TCEXTTOOLS_INSTALL_LOG" 2>&1 || return 1
 
   # Add wbar item if ICON variable is set
@@ -77,11 +77,11 @@ this_main() {
   [ -e "$PACKAGE_EXTENSIONS/${PACKAGE}.list" ] && rm -f "$PACKAGE_EXTENSIONS/${PACKAGE}.list"
 
   if [ -d "$INSTALL_ROOT" ]; then
-       cd "$INSTALL_ROOT"
-       for i in $(ls)
-       do
-           su "$TCUSER" -c "cd $INSTALL_ROOT;sudo find '$i' -not -type d >> $PACKAGE_EXTENSIONS/${PACKAGE}.list" || return 1
-       done
+          cd "$INSTALL_ROOT"
+          for i in $(ls)
+          do
+              su "$TCUSER" -c "cd $INSTALL_ROOT;sudo find '$i' -not -type d >> $PACKAGE_EXTENSIONS/${PACKAGE}.list" || return 1
+          done
   fi
 
   return 0

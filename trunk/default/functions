@@ -1,4 +1,22 @@
-# tc-ext-tools functions
+#
+#  functions: common tc-ext-tools functions and definitions
+#
+#  This program is free software; you can redistribute it and/or modify
+#  it under the terms of the GNU General Public License as published by
+#  the Free Software Foundation; either version 2 of the License, or
+#  (at your option) any later version.
+#
+#  This program is distributed in the hope that it will be useful,
+#  but WITHOUT ANY WARRANTY; without even the implied warranty of
+#  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+#  GNU General Public License for more details.
+#
+#  You should have received a copy of the GNU General Public License along
+#  with this program; if not, write to the Free Software Foundation, Inc.,
+#  51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
+#
+#  (C) Copyright 2010 Sercan Arslan
+#
 
 THIS=$(basename $0)
 
@@ -55,8 +73,8 @@ PACKAGE_SRC="$PACKAGE_ROOT/$TCEXTTOOLS_SRC"
 PACKAGE_EXTENSIONS="$PACKAGE_ROOT/$TCEXTTOOLS_EXTENSIONS"
 PACKAGE_PATCHES="$PACKAGE_SRC/$TCEXTTOOLS_PATCHES"
 
-if [ -e "$TCEXTTOOLS_COMMON" ]; then
-     . "$TCEXTTOOLS_COMMON"
+if [ -e "$PACKAGE_COMMON" ]; then
+     . "$PACKAGE_COMMON"
 
      TCEXTTOOLS_BIN="$TCEXTTOOLS_STORAGE/$PACKAGE/$TCEXTTOOLS_BIN"
      TCEXTTOOLS_SRC="$TCEXTTOOLS_STORAGE/$PACKAGE/$TCEXTTOOLS_SRC"
@@ -64,7 +82,6 @@ if [ -e "$TCEXTTOOLS_COMMON" ]; then
      TCEXTTOOLS_LOG="$TCEXTTOOLS_STORAGE/$PACKAGE/$TCEXTTOOLS_LOG"
      TCEXTTOOLS_EXTENSIONS="$TCEXTTOOLS_STORAGE/$PACKAGE/$TCEXTTOOLS_EXTENSIONS"
 
-     TCEXTTOOLS_INSTALL_ROOT="$TCEXTTOOLS_BIN/root"
      TCEXTTOOLS_BIN_TEMP="$TCEXTTOOLS_BIN/temp"
      TCEXTTOOLS_SRC_TEMP="$TCEXTTOOLS_SRC/temp"
 
@@ -75,9 +92,6 @@ if [ -e "$TCEXTTOOLS_COMMON" ]; then
      TCEXTTOOLS_BUILD_LOG="$TCEXTTOOLS_LOG/build.txt"
      TCEXTTOOLS_ERROR_LOG="$TCEXTTOOLS_LOG/error.txt"
      TCEXTTOOLS_ERROR_LOG_2="$TCEXTTOOLS_LOG/error2.txt"
-
-     INSTALL_ROOT="$TCEXTTOOLS_INSTALL_ROOT"
-     TOP_SRC_DIR="$TCEXTTOOLS_BIN_TEMP/$TOP_SRC"
 
      if [ -n "$BUILD_DEPENDS" ]; then
           BUILD_DEPENDS="$TCEXTTOOLS_DEPENDS $BUILD_DEPENDS"
@@ -92,9 +106,52 @@ if [ -e "$TCEXTTOOLS_COMMON" ]; then
      [ -d "$TCEXTTOOLS_SRC_TEMP" ] || install -m 755 -d "$TCEXTTOOLS_SRC_TEMP"
      [ -d "$TCEXTTOOLS_LOG" ] || install -m 755 -d "$TCEXTTOOLS_LOG"
 
+     # determine the type of package source from the supported generic types
+     if [ ! "${SOURCE%.bz2}" = "$SOURCE" ]; then
+            SOURCE_TYPE="bz2"
+            CONVERTED_SOURCE="${SOURCE%.bz2}.xz"
+     elif [ ! "${SOURCE%.gz}" = "$SOURCE" ]; then
+            SOURCE_TYPE="gz"
+            CONVERTED_SOURCE="${SOURCE%.gz}.xz"
+     elif [ ! "${SOURCE%.tgz}" = "$SOURCE" ]; then
+            CONVERTED_SOURCE="${SOURCE%.tgz}.tar.xz"
+            SOURCE_TYPE="tgz"
+     elif [ ! "${SOURCE%.zip}" = "$SOURCE" ]; then
+            SOURCE_TYPE="zip"
+            CONVERTED_SOURCE="${SOURCE%.zip}.tar.xz"
+     elif [ ! "${SOURCE%.xz}" = "$SOURCE" ]; then
+            SOURCE_TYPE="xz"
+            CONVERTED_SOURCE="$SOURCE"
+     else
+            # the user have to define custom build_unpack, and build_convert functions in the build file for custom package sources
+            [ -z "$SOURCE_TYPE" ] && SOURCE_TYPE="custom"
+            [ -z "$CONVERTED_SOURCE" ] && CONVERTED_SOURCE="${SOURCE%.*}.tar.xz"
+     fi
+
+     TCEXTTOOLS_SOURCE="$TCEXTTOOLS_SRC/$SOURCE"
+     TCEXTTOOLS_TOP_SRC="$TCEXTTOOLS_BIN_TEMP/$TOP_SRC"
+     TCEXTTOOLS_CONVERTED_SOURCE="$TCEXTTOOLS_SRC/$CONVERTED_SOURCE"
+     TCEXTTOOLS_INSTALL_ROOT="$TCEXTTOOLS_BIN/root"
+
+     PACKAGE_SOURCE="$TCEXTTOOLS_SOURCE"
+     PACKAGE_TOP_SRC="$TCEXTTOOLS_TOP_SRC"
+     PACKAGE_CONVERTED_SOURCE="$TCEXTTOOLS_CONVERTED_SOURCE"
+     PACKAGE_INSTALL_ROOT="$TCEXTTOOLS_INSTALL_ROOT"
+
+     INSTALL_ROOT="$PACKAGE_INSTALL_ROOT"
+
+     #EXTENSIONS=$(echo $EXTENSIONS | sed -e "s/KERNEL/$(uname -r)/g")
+
 elif [ "$THIS" != "boostit" ]; then
-     print_it error "tc-ext-tools common file not found: $TCEXTTOOLS_COMMON"
+     print_it error "the package $PACKAGE common file not found!"
      print_it warning "You must boost it first!"
+     exit 1
+fi
+
+if [ -e "$PACKAGE_BUILD" ]; then
+     . "$PACKAGE_BUILD"
+elif [ "$THIS" != "boostit" ]; then
+     print_it error "the package $PACKAGE build file not found!"
      exit 1
 fi
 

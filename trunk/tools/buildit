@@ -36,44 +36,11 @@ print_usage(){
 
 clean_it() {
 
-  cd "$PACKAGE_ROOT"
-
   print_it "Cleaning the package $PACKAGE ... \c"
-
-  RETURN_CODE=0
-
-  if [ -d "$TCEXTTOOLS_BIN" ]; then
-       sudo rm -rf "$TCEXTTOOLS_BIN" > /dev/null 2>&1 || RETURN_CODE=1
-  fi
-
-  mkdir -p "$TCEXTTOOLS_BIN" > /dev/null 2>&1 || RETURN_CODE=1
-
-  if [ -d "$TCEXTTOOLS_PKG" ]; then
-       sudo rm -rf "$TCEXTTOOLS_PKG" > /dev/null 2>&1 || RETURN_CODE=1
-  fi
-
-  mkdir -p "$TCEXTTOOLS_PKG" > /dev/null 2>&1 || RETURN_CODE=1
-
-  if [ -d "$TCEXTTOOLS_BIN_TEMP" ]; then
-       sudo rm -rf "$TCEXTTOOLS_BIN_TEMP" > /dev/null 2>&1 || RETURN_CODE=1
-  fi
-
-  mkdir -p "$TCEXTTOOLS_BIN_TEMP" > /dev/null 2>&1 || RETURN_CODE=1
-
-  if [ -d "$TCEXTTOOLS_SRC_TEMP" ]; then
-       sudo rm -rf "$TCEXTTOOLS_SRC_TEMP" > /dev/null 2>&1 || RETURN_CODE=1
-  fi
-
-  mkdir -p "$TCEXTTOOLS_SRC_TEMP" > /dev/null 2>&1 || RETURN_CODE=1
-
-  if [ -d "$TCEXTTOOLS_LOG" ]; then
-       sudo rm -rf "$TCEXTTOOLS_LOG" > /dev/null 2>&1 || RETURN_CODE=1
-  fi
-
-  mkdir -p "$TCEXTTOOLS_LOG" > /dev/null 2>&1 || RETURN_CODE=1
-
-  if [ "$RETURN_CODE" -gt 0 ]; then
+  cleanit > "$TCEXTTOOLS_ERROR_LOG" 2>&1
+  if [ "$?" -gt 0 ]; then
        print_it error "failed!"
+       print_it warning "For details: buildit show error"
        exit 1
   fi
   print_it hilight "successful!"
@@ -81,9 +48,7 @@ clean_it() {
 
 download_it() {
 
-  cd "$PACKAGE_ROOT"
-
-  if [ -f "$TCEXTTOOLS_SRC/$SOURCE" ]; then
+  if [ -f "$PACKAGE_SOURCE" ]; then
        print_it warning "The package $PACKAGE source is already downloaded."
        exit 0
   fi
@@ -92,7 +57,7 @@ download_it() {
   downloadit > "$TCEXTTOOLS_ERROR_LOG" 2>&1
   if [ "$?" -gt 0 ]; then
        print_it error "failed!"
-       print_it warning "See error logs in $TCEXTTOOLS_LOG for details."
+       print_it warning "For details: buildit show download"
        exit 1
   fi
   print_it hilight "successful!"
@@ -100,18 +65,21 @@ download_it() {
 
 convert_it() {
 
-  cd "$PACKAGE_ROOT"
-
-  if [ ! -e "$TCEXTTOOLS_SRC/$SOURCE" ]; then
+  if [ ! -e "$PACKAGE_SOURCE" ]; then
        print_it error "You must download it first!"
        exit 1
+  fi
+
+  if [ -e "$PACKAGE_CONVERTED_SOURCE" ]; then
+       print_it warning "The package $PACKAGE source is already converted."
+       exit 0
   fi
 
   print_it "Converting the package $PACKAGE source to xz compressed tarball ... \c"
   convertit > "$TCEXTTOOLS_ERROR_LOG" 2>&1
   if [ "$?" -gt 0 ]; then
        print_it error "failed!"
-       print_it warning "See error logs in $TCEXTTOOLS_LOG for details."
+       print_it warning "For details: buildit show error"
        exit 1
   fi
   print_it hilight "successful!"
@@ -119,9 +87,7 @@ convert_it() {
 
 unpack_it() {
 
-  cd "$PACKAGE_ROOT"
-
-  if [ ! -e "$TCEXTTOOLS_SRC/$SOURCE" ]; then
+  if [ ! -e "$PACKAGE_SOURCE" ]; then
         print_it error "You must download it first!"
         exit 1
   fi
@@ -130,7 +96,7 @@ unpack_it() {
   unpackit > "$TCEXTTOOLS_ERROR_LOG" 2>&1
   if [ "$?" -gt 0 ]; then
        print_it error "failed!"
-       print_it warning "See error logs in $TCEXTTOOLS_LOG for details."
+       print_it warning "For details: buildit show error"
        exit 1
   fi
   print_it hilight "successful!"
@@ -138,13 +104,11 @@ unpack_it() {
 
 load_it() {
 
-  cd "$PACKAGE_ROOT"
-
   print_it "Loading the package $PACKAGE build dependencies ... \c"
   loadit "$BUILD_DEPENDS" > "$TCEXTTOOLS_ERROR_LOG" 2>&1
   if [ "$?" -gt 0 ]; then
        print_it error "failed!"
-       print_it warning "See error logs in $TCEXTTOOLS_LOG for details."
+       print_it warning "For details: buildit show error"
        exit 1
   fi
   print_it hilight  "successful!"
@@ -152,49 +116,34 @@ load_it() {
 
 patch_it() {
 
-  cd "$PACKAGE_ROOT"
-
-  if [ ! -d "$TCEXTTOOLS_BIN_TEMP/$TOP_SRC" ]; then
+  if [ ! -d "$PACKAGE_TOP_SRC" ]; then
        print_it error "You must unpack it first!"
        exit 1
   fi
 
-  if [ -d "$PACKAGE_PATCHES" ]; then
-       print_it "Patching the package $PACKAGE source ... \c"
-       patchit > "$TCEXTTOOLS_ERROR_LOG" 2>&1
-       if [ "$?" -gt 0 ]; then
-            print_it error "failed!"
-            print_it warning "See error logs in $TCEXTTOOLS_LOG for details."
-            exit 1
-       fi
-       print_it hilight "successful!"
-  else
-       print_it warning "There is no patch for the package $PACKAGE."
+  print_it "Patching the package $PACKAGE source ... \c"
+  patchit > "$TCEXTTOOLS_ERROR_LOG" 2>&1
+  if [ "$?" -gt 0 ]; then
+       print_it error "failed!"
+       print_it warning "For details: buildit show error"
+       exit 1
   fi
+  print_it hilight "successful!"
 }
 
 configure_it() {
 
-  cd "$PACKAGE_ROOT"
-
-  if [ -e "$TCEXTTOOLS_BUILD" ]; then
-       . "$TCEXTTOOLS_BUILD"
-  else
-       print_it error "tc-ext-tools build functions file not found: $TCEXTTOOLS_BUILD"
-       exit 1
-  fi
-
-  if [ ! -d "$TCEXTTOOLS_BIN_TEMP/$TOP_SRC" ]; then
+  if [ ! -d "$PACKAGE_TOP_SRC" ]; then
        print_it error "You must unpack it first!"
        exit 1
   fi
 
   print_it "Configuring the package $PACKAGE ... \c"
-  cd "$TCEXTTOOLS_BIN_TEMP/$TOP_SRC"
+  cd "$PACKAGE_TOP_SRC"
   build_configure > "$TCEXTTOOLS_CONFIGURE_LOG" 2>&1
   if [ "$?" -gt 0 ]; then
        print_it error "failed!"
-       print_it warning "See $TCEXTTOOLS_CONFIGURE_LOG for details."
+       print_it warning "For details: buildit show configure"
        exit 1
   fi
   print_it hilight "successful!"
@@ -202,26 +151,17 @@ configure_it() {
 
 compile_it() {
 
-  cd "$PACKAGE_ROOT"
-
-  if [ -e "$TCEXTTOOLS_BUILD" ]; then
-       . "$TCEXTTOOLS_BUILD"
-  else
-       print_it error "tc-ext-tools build functions file not found: $TCEXTTOOLS_BUILD"
-       exit 1
-  fi
-
-  if [ ! -d "$TCEXTTOOLS_BIN_TEMP/$TOP_SRC" ]; then
+  if [ ! -d "$PACKAGE_TOP_SRC" ]; then
        print_it error "You must configure it first!"
        exit 1
   fi
 
   print_it "Compiling the package $PACKAGE ... \c"
-  cd "$TCEXTTOOLS_BIN_TEMP/$TOP_SRC"
+  cd "$PACKAGE_TOP_SRC"
   build_compile > "$TCEXTTOOLS_COMPILE_LOG" 2>&1
   if [ "$?" -gt 0 ]; then
        print_it error "failed!"
-       print_it warning "See $TCEXTTOOLS_COMPILE_LOG for details."
+       print_it warning "For details: buildit show compile"
        exit 1
   fi
   print_it hilight "successful!"
@@ -229,9 +169,7 @@ compile_it() {
 
 install_it() {
 
-  cd "$PACKAGE_ROOT"
-
-  if [ ! -d "$TOP_SRC_DIR" ]; then
+  if [ ! -d "$PACKAGE_TOP_SRC" ]; then
        print_it error "You must compile it first!"
        exit 1
   fi
@@ -240,27 +178,7 @@ install_it() {
   sudo installit > "$TCEXTTOOLS_INSTALL_LOG" 2>&1
   if [ "$?" -gt 0 ]; then
        print_it error "failed!"
-       print_it warning "See $TCEXTTOOLS_INSTALL_LOG for details."
-       exit 1
-  fi
-  print_it hilight "successful!"
-
-}
-
-modify_it() {
-
-  cd "$PACKAGE_ROOT"
-
-  if [ ! -d "$TCEXTTOOLS_INSTALL_ROOT" ]; then
-       print_it error "You must install it first!"
-       exit 1
-  fi
-
-  print_it "Modifying the package $PACKAGE ... \c"
-  modifyit > "$TCEXTTOOLS_ERROR_LOG" 2>&1
-  if [ "$?" -gt 0 ]; then
-       print_it error "failed!"
-       print_it warning "See error logs in $TCEXTTOOLS_LOG for details."
+       print_it warning "For details: buildit show install"
        exit 1
   fi
   print_it hilight "successful!"
@@ -269,18 +187,16 @@ modify_it() {
 
 strip_it() {
 
-  cd "$PACKAGE_ROOT"
-
-  if [ ! -d "$TCEXTTOOLS_INSTALL_ROOT" ]; then
+  if [ ! -d "$PACKAGE_INSTALL_ROOT" ]; then
        print_it error "You must install it first!"
        exit 1
   fi
 
   print_it "Stripping the package $PACKAGE ... \c"
-  stripit "$TCEXTTOOLS_INSTALL_ROOT" > "$TCEXTTOOLS_ERROR_LOG" 2>&1
+  stripit "$PACKAGE_INSTALL_ROOT" > "$TCEXTTOOLS_ERROR_LOG" 2>&1
   if [ "$?" -gt 0 ]; then
        print_it error "failed!"
-       print_it warning "See error logs in $TCEXTTOOLS_LOG for details."
+       print_it warning "For details: buildit show error"
        exit 1
   fi
   print_it hilight "successful!"
@@ -288,115 +204,70 @@ strip_it() {
 
 split_it() {
 
-  cd "$PACKAGE_ROOT"
-
-  if [ ! -d "$TCEXTTOOLS_INSTALL_ROOT" ]; then
+  if [ ! -d "$PACKAGE_INSTALL_ROOT" ]; then
        print_it error "You must install it first!"
        exit 1
   fi
 
-  for EXTENSION in $EXTENSIONS
-  do
-      print_it "Splitting the extension $EXTENSION out of the package $PACKAGE ... \c"
-      splitit "$EXTENSION" > "$TCEXTTOOLS_ERROR_LOG" 2>&1
-      if [ "$?" -gt 0 ]; then
-           print_it error "failed!"
-           print_it warning "See error logs in $TCEXTTOOLS_LOG for details."
-           exit 1
-      fi
-      print_it hilight "successful!"
-  done
+  print_it "Splitting the package $PACKAGE extensions ... \c"
+  splitit > "$TCEXTTOOLS_ERROR_LOG" 2>&1
+  if [ "$?" -gt 0 ]; then
+       print_it error "failed!"
+       print_it warning "For details: buildit show error"
+       exit 1
+  fi
+  print_it hilight "successful!"
 }
 
 create_it() {
 
-  cd "$PACKAGE_ROOT"
-
-  [ -d "$TCEXTTOOLS_EXTENSIONS" ] && sudo rm -rf "$TCEXTTOOLS_EXTENSIONS" > /dev/null 2>&1
-  mkdir -p "$TCEXTTOOLS_EXTENSIONS" > /dev/null 2>&1
-
-  for EXTENSION in $EXTENSIONS
-  do
-      if [ ! -d "$TCEXTTOOLS_BIN/$EXTENSION" ]; then
-           print_it error "You must split it first!"
-           exit 1
-      fi
-
-      print_it "Creating the extension $EXTENSION ... \c"
-      createit "$EXTENSION" > "$TCEXTTOOLS_ERROR_LOG" 2>&1
-      if [ "$?" -gt 0 ]; then
-           print_it error "failed!"
-           print_it warning "See error logs in $TCEXTTOOLS_LOG for details."
-           exit 1
-      fi
-      print_it hilight "successful!"
-  done
+  print_it "Creating the package $PACKAGE extensions ... \c"
+  createit > "$TCEXTTOOLS_ERROR_LOG" 2>&1
+  if [ "$?" -gt 0 ]; then
+       print_it error "failed!"
+       print_it warning "For details: buildit show error"
+       exit 1
+  fi
+  print_it hilight "successful!"
 }
 
 generate_it() {
 
-  cd "$PACKAGE_ROOT"
-
-  for EXTENSION in $EXTENSIONS
-  do
-      if [ ! -e "$TCEXTTOOLS_EXTENSIONS/$EXTENSION/${EXTENSION}.tcz" ]; then
-           print_it error "You must create it first!"
-           exit 1
-      fi
-
-      print_it "Generating the extension $EXTENSION info ... \c"
-      generateit "$EXTENSION" > "$TCEXTTOOLS_ERROR_LOG" 2>&1
-      if [ "$?" -gt 0 ]; then
-           print_it error "failed!"
-           print_it warning "See $TCEXTTOOLS_ERROR_LOG for details."
-           exit 1
-      fi
-      print_it hilight "successful!"
-  done
+  print_it "Generating the package $PACKAGE extensions info files ... \c"
+  generateit > "$TCEXTTOOLS_ERROR_LOG" 2>&1
+  if [ "$?" -gt 0 ]; then
+       print_it error "failed!"
+       print_it warning "For details: buildit show error"
+       exit 1
+  fi
+  print_it hilight "successful!"
 }
 
 check_it() {
 
-  cd "$PACKAGE_ROOT"
-
-  for EXTENSION in $EXTENSIONS
-  do
-      if [ ! -e "$TCEXTTOOLS_EXTENSIONS/$EXTENSION/${EXTENSION}.tcz" ]; then
-           print_it error "You must create it first!"
-           exit 1
-      fi
-
-      print_it "Checking the extension $EXTENSION ... \c"
-      checkit "$EXTENSION" > "$TCEXTTOOLS_ERROR_LOG" 2>&1
-      if [ "$?" -gt 0 ]; then
-           print_it error "failed!"
-           print_it warning "See error logs in $TCEXTTOOLS_LOG for details."
-           exit 1
-      fi
-      print_it hilight "successful!"
-  done
+  print_it "Checking the package $PACKAGE extensions ... \c"
+  checkit > "$TCEXTTOOLS_ERROR_LOG" 2>&1
+  if [ "$?" -gt 0 ]; then
+       print_it error "failed!"
+       print_it warning "For details: buildit show error"
+       exit 1
+  fi
+  print_it hilight "successful!"
 }
 
 package_it() {
-
-  cd "$PACKAGE_ROOT"
-
-  [ -d "$TCEXTTOOLS_PKG" ] && sudo rm -rf "$TCEXTTOOLS_PKG" > /dev/null 2>&1
-  mkdir -p "$TCEXTTOOLS_PKG" > /dev/null 2>&1
 
   print_it "Packaging the package $PACKAGE ... \c"
   packageit > "$TCEXTTOOLS_ERROR_LOG" 2>&1
   if [ "$?" -gt 0 ]; then
        print_it error "failed!"
-       print_it warning "See error logs in $TCEXTTOOLS_LOG for details."
+       print_it warning "For details: buildit show error"
        exit 1
   fi
   print_it hilight "successful!"
 }
 
 compress_it() {
-
-  cd "$PACKAGE_ROOT"
 
   if [ ! -d "$TCEXTTOOLS_PKG" ]; then
        print_it error "You must package it first!"
@@ -407,7 +278,7 @@ compress_it() {
   compressit bz2 "$TCEXTTOOLS_PKG" > "$TCEXTTOOLS_ERROR_LOG" 2>&1
   if [ "$?" -gt 0 ]; then
        print_it error "failed!"
-       print_it warning "See error logs in $TCEXTTOOLS_LOG for details."
+       print_it warning "For details: buildit show error"
        exit 1
   fi
   print_it hilight "successful!"
@@ -415,33 +286,20 @@ compress_it() {
 
 encrypt_it() {
 
-  cd "$PACKAGE_ROOT"
-
   if [ ! -e "${PACKAGE}.tar.bz2" ]; then
        print_it error "You must compress it first!"
        exit 1
   fi
 
-  [ -e "${PACKAGE}.tar.bz2.bfe" ] && sudo rm -f "${PACKAGE}.tar.bz2.bfe"
   encryptit "${PACKAGE}.tar.bz2" || exit 1
 }
 
 build_it() {
 
-  cd "$PACKAGE_ROOT"
-
-  if [ -e "$TCEXTTOOLS_BUILD" ]; then
-       . "$TCEXTTOOLS_BUILD"
-  else
-       print_it error "tc-ext-tools build functions file not found: $TCEXTTOOLS_BUILD"
-       exit 1
-  fi
-
   build_rules || exit 1
 }
 
 show_it() {
-  cd "$PACKAGE_ROOT"
 
   case "$1" in
        download) 
