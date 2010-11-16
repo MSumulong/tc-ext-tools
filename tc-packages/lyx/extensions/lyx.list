@@ -394,6 +394,7 @@ usr/local/share/lyx/images/math/vartriangleright.png
 usr/local/share/lyx/images/math/measuredangle.png
 usr/local/share/lyx/images/math/backslash.png
 usr/local/share/lyx/images/math/mathrm_T.png
+usr/local/share/lyx/images/math/ddddot.png
 usr/local/share/lyx/images/math/vphantom.png
 usr/local/share/lyx/images/math/preceq.png
 usr/local/share/lyx/images/math/neq.png
@@ -466,6 +467,7 @@ usr/local/share/lyx/images/math/ddagger.png
 usr/local/share/lyx/images/math/downarrow2.png
 usr/local/share/lyx/images/math/bigcap.png
 usr/local/share/lyx/images/math/sqsupset.png
+usr/local/share/lyx/images/math/dddot.png
 usr/local/share/lyx/images/math/otimes.png
 usr/local/share/lyx/images/math/vdash3.png
 usr/local/share/lyx/images/math/gnapprox.png
@@ -908,6 +910,8 @@ usr/local/share/lyx/templates/es_beamer-conference-ornate-20min.lyx
 usr/local/share/lyx/templates/slides.lyx
 usr/local/share/lyx/templates/svmono_book.lyx
 usr/local/share/lyx/templates/ACM-siggraph.lyx
+usr/local/share/lyx/templates/lettre.lyx
+usr/local/share/lyx/templates/agutex.lyx
 usr/local/share/lyx/templates/revtex.lyx
 usr/local/share/lyx/templates/agu_article.lyx
 usr/local/share/lyx/templates/aastex.lyx
@@ -919,6 +923,7 @@ usr/local/share/lyx/templates/latex8.lyx
 usr/local/share/lyx/templates/README.new_templates
 usr/local/share/lyx/templates/JSS-article.lyx
 usr/local/share/lyx/templates/dinbrief.lyx
+usr/local/share/lyx/templates/ectaart.lyx
 usr/local/share/lyx/templates/svmult_author.lyx
 usr/local/share/lyx/templates/IEEEtran.lyx
 usr/local/share/lyx/templates/ijmpd.lyx
@@ -926,6 +931,7 @@ usr/local/share/lyx/templates/apa.lyx
 usr/local/share/lyx/templates/g-brief-de.lyx
 usr/local/share/lyx/templates/revtex4.lyx
 usr/local/share/lyx/templates/hollywood.lyx
+usr/local/share/lyx/templates/frletter.lyx
 usr/local/share/lyx/templates/de_beamer-conference-ornate-20min.lyx
 usr/local/share/lyx/templates/fr_beamer-conference-ornate-20min.lyx
 usr/local/share/lyx/templates/svmult_editor.lyx
@@ -942,6 +948,7 @@ usr/local/share/lyx/layouts/stdclass.inc
 usr/local/share/lyx/layouts/singlecol.layout
 usr/local/share/lyx/layouts/ijmpd.layout
 usr/local/share/lyx/layouts/stdfloats.inc
+usr/local/share/lyx/layouts/frletter.layout
 usr/local/share/lyx/layouts/theorems-chap.module
 usr/local/share/lyx/layouts/egs.layout
 usr/local/share/lyx/layouts/stdstruct.inc
@@ -972,6 +979,7 @@ usr/local/share/lyx/layouts/scrartcl.layout
 usr/local/share/lyx/layouts/stdstarsections.inc
 usr/local/share/lyx/layouts/doublecol-new.layout
 usr/local/share/lyx/layouts/aastex.layout
+usr/local/share/lyx/layouts/lettre.layout
 usr/local/share/lyx/layouts/theorems-ams.inc
 usr/local/share/lyx/layouts/db_stdclass.inc
 usr/local/share/lyx/layouts/svglobal3.layout
@@ -1012,6 +1020,7 @@ usr/local/share/lyx/layouts/theorems-std.module
 usr/local/share/lyx/layouts/elsart.layout
 usr/local/share/lyx/layouts/amsdefs.inc
 usr/local/share/lyx/layouts/simplecv.layout
+usr/local/share/lyx/layouts/ectaart.layout
 usr/local/share/lyx/layouts/theorems-ams-extended.module
 usr/local/share/lyx/layouts/extarticle.layout
 usr/local/share/lyx/layouts/docbook-section.layout
@@ -1076,6 +1085,7 @@ usr/local/share/lyx/layouts/recipebook.layout
 usr/local/share/lyx/layouts/stdletter.inc
 usr/local/share/lyx/layouts/theorems-ams-bytype.inc
 usr/local/share/lyx/layouts/theorems-ams-extended-bytype.module
+usr/local/share/lyx/layouts/agutex.layout
 usr/local/share/lyx/layouts/broadway.layout
 usr/local/share/lyx/layouts/scrreprt.layout
 usr/local/share/lyx/layouts/minimalistic.module
@@ -1269,6 +1279,7 @@ usr/local/share/lyx/examples/serial_letter3.lyx
 usr/local/share/lyx/examples/aas_sample.lyx
 usr/local/share/lyx/examples/pt/splash.lyx
 usr/local/share/lyx/examples/linguistics.lyx
+usr/local/share/lyx/examples/sr/splash.lyx
 usr/local/share/lyx/examples/beamer-knight4.png
 usr/local/share/lyx/examples/noweb2lyx.lyx
 usr/local/share/lyx/examples/amsbook-test.lyx
@@ -1390,6 +1401,7 @@ usr/local/share/locale/de/LC_MESSAGES/lyx.mo
 usr/local/share/locale/zh_CN/LC_MESSAGES/lyx.mo
 usr/local/share/locale/gl/LC_MESSAGES/lyx.mo
 usr/local/share/locale/pt/LC_MESSAGES/lyx.mo
+usr/local/share/locale/sr/LC_MESSAGES/lyx.mo
 usr/local/share/locale/uk/LC_MESSAGES/lyx.mo
 usr/local/share/locale/id/LC_MESSAGES/lyx.mo
 usr/local/share/locale/he/LC_MESSAGES/lyx.mo
