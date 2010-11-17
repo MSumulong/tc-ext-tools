@@ -29,8 +29,11 @@ usr/local/share/deadbeef/pixmaps/pause_16.png
 usr/local/share/applications/deadbeef.desktop
 usr/local/share/locale/el/LC_MESSAGES/deadbeef.mo
 usr/local/share/locale/nl/LC_MESSAGES/deadbeef.mo
+usr/local/share/locale/ca/LC_MESSAGES/deadbeef.mo
+usr/local/share/locale/lg/LC_MESSAGES/deadbeef.mo
 usr/local/share/locale/vi/LC_MESSAGES/deadbeef.mo
 usr/local/share/locale/fa/LC_MESSAGES/deadbeef.mo
+usr/local/share/locale/bg/LC_MESSAGES/deadbeef.mo
 usr/local/share/locale/pl/LC_MESSAGES/deadbeef.mo
 usr/local/share/locale/sv/LC_MESSAGES/deadbeef.mo
 usr/local/share/locale/es/LC_MESSAGES/deadbeef.mo
@@ -44,8 +47,10 @@ usr/local/share/locale/bn/LC_MESSAGES/deadbeef.mo
 usr/local/share/locale/kk/LC_MESSAGES/deadbeef.mo
 usr/local/share/locale/km/LC_MESSAGES/deadbeef.mo
 usr/local/share/locale/da/LC_MESSAGES/deadbeef.mo
+usr/local/share/locale/hu/LC_MESSAGES/deadbeef.mo
 usr/local/share/locale/sr@latin/LC_MESSAGES/deadbeef.mo
 usr/local/share/locale/de/LC_MESSAGES/deadbeef.mo
+usr/local/share/locale/zh_CN/LC_MESSAGES/deadbeef.mo
 usr/local/share/locale/gl/LC_MESSAGES/deadbeef.mo
 usr/local/share/locale/pt/LC_MESSAGES/deadbeef.mo
 usr/local/share/locale/sr/LC_MESSAGES/deadbeef.mo

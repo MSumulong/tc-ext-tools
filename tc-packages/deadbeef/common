@@ -1,5 +1,5 @@
 PACKAGE="deadbeef"
-VERSION="0.4.3"
+VERSION="0.4.4"
 SOURCE="${PACKAGE}-${VERSION}.tar.bz2"
 TOP_SRC="${PACKAGE}-${VERSION}"
 SOURCE_URL="http://downloads.sourceforge.net/project/deadbeef/deadbeef-${VERSION}.tar.bz2"
@@ -51,5 +51,6 @@ COPYING="GPL-2"
 MAINTAINERS="Arslan S."
 COMMENTS="This extension is PPI compatible." 
 CHANGELOG="2010/09/17 First Version 0.4.1
-		2010/10/17 Updated to 0.4.2"
-CURRENT="Updated to 0.4.3"
+		2010/10/17 Updated to 0.4.2
+		2010/11/01 Updated to 0.4.3"
+CURRENT="Updated to 0.4.4"
