@@ -13,8 +13,6 @@ COMMENTS="I didn't put all the dependencies in the dep list intentionally. If yo
 		phonon.tcz
 		qca.tcz
 		polkit-qt-1.tcz
-		libdbusmenu-qt.tcz
-		soprano.tcz
 		attica.tcz
                 avahi-2.7
 		xdg-utils.tcz
