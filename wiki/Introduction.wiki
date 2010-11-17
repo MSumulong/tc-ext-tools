@@ -1,15 +1,15 @@
-#summary This wiki page will give you the basics about tc-ext-tools.
+#summary This wiki page will teach you the basics about tc-ext-tools.
 
 = Introduction =
 
-TC-EXT-TOOLS is an extension build system developed to run under Tiny Core Linux. The main aim of the project is to provide a high level, easy extension maintenance system for package maintainers from Tiny Core Linux.
+TC-EXT-TOOLS is an extension build system developed for Tiny Core Linux. The main aim of the project is to provide a high level, easy extension maintenance system for package maintainers from Tiny Core Linux.
 
 = Design Concepts =
 
  * Divide and conquer.
  * Easy maintenance of packages.
  * Minimize initial packaging time.
- * Each package has a source, and source is a tarball or vcs repository (support for git and svn currently).
+ * Each package has a source, and source is a tarball or vcs repository (currently git and svn supported only).
  * Extensions are created from packages.
  * All the information to build the packages is hosted under an svn repository and it is available to everyone publicly.
  * Support for Tiny Core Linux specific features (tce.installed, wbar icon etc.).
@@ -23,7 +23,7 @@ Download and extract the latest stable tarball or check out the latest source co
 svn checkout http://tc-ext-tools.googlecode.com/svn/trunk/
 }}}
 
-_Note: There will be stable and preview tarball releases starting soon._
+_Note: There will be stable and preview tarball releases in the future._
 
 = Usage =
 
@@ -50,7 +50,7 @@ buildit
 }}}
   * When creating a package for the first time you better advance step by step.
 {{{
-buildit {load,download,unpack,configure,compile,install,strip,split,create,check,generate,convert,package,compress,encrypt}
+buildit {load,download,convert,unpack,configure,compile,install,strip,split,create,check,generate,package,compress,encrypt}
 }}}
   * If you want to see configure, compile or install standart output.
 {{{
@@ -70,3 +70,4 @@ svn checkout http://tc-ext-tools.googlecode.com/svn/tc-packages/
 }}}
 
 *Note: This project is still under development and is in alpha stage. So any suggestion or critiques welcome.*
+Sercan Arslan <arslanserc@gmail.com>
