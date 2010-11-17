@@ -70,4 +70,5 @@ svn checkout http://tc-ext-tools.googlecode.com/svn/tc-packages/
 }}}
 
 *Note: This project is still under development and is in alpha stage. So any suggestion or critiques welcome.*
-Sercan Arslan <arslanserc@gmail.com>
+
+*Sercan Arslan <arslanserc@gmail.com>*
