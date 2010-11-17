@@ -171,6 +171,8 @@ DATE="$YEAR/$MONTH/$DAY"
 # kernel version
 KERNELVER=$(uname -r)
 
-# export environment variables
-export CFLAGS CXXFLAGS LDFLAGS
+# export tc-ext-tools environment variables by respecting environment variables
+[ -z "$CFLAGS" ] && export CFLAGS="$TCEXTTOOLS_CFLAGS"
+[ -z "$CXXFLAGS" ] && export CXXFLAGS="$TCEXTTOOLS_CXXFLAGS"
+[ -z "$LDFLAGS" ] && export LDFLAGS="$TCEXTTOOLS_LDFLAGS"
 
