@@ -1,0 +1,17 @@
+PACKAGE="nvidia-x86_64"
+VERSION="260.19.21"
+SOURCE="NVIDIA-Linux-x86_64-${VERSION}.run"
+TOP_SRC="NVIDIA-Linux-x86_64-${VERSION}"
+SOURCE_URL="ftp://download.nvidia.com/XFree86/Linux-x86_64/${VERSION}/NVIDIA-Linux-x86_64-${VERSION}.run"
+BUILD_DEPENDS="toolchain64
+#linux-headers-2.6.33.3-tinycore64"
+
+EXTENSIONS="nvidia-module-2.6.33.3-tinycore64"
+DESCRIPTION="NVIDIA Linux Drivers."
+AUTHOR="NVIDIA"
+SITE="http://www.nvidia.com"
+COPYING="Proprietary"
+MAINTAINERS="Arslan S."
+COMMENTS="This extension is PPI compatible."
+CHANGELOG="2010/05/24 Original 195.36.24"
+CURRENT="Updated to 260.19.21"

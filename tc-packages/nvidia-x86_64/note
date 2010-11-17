@@ -1,0 +1,5 @@
+This package can only be built with microcore64 and you need to setup kernel sources.
+
+You also need to run buildit in a toolchain64-shell to compile the package. Run the command given below in a standart shell:
+~$ toolchain64-shell
+
