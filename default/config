@@ -38,7 +38,7 @@ TCEXTTOOLS_ENCRYPTION_KEY="tinycore"
 #
 
 # Compiler and linker flags
-CFLAGS="-march=i486 -mtune=i686 -Os -pipe"
-CXXFLAGS="-march=i486 -mtune=i686 -Os -pipe"
-LDFLAGS="-Wl,-O1"
+TCEXTTOOLS_CFLAGS="-march=i486 -mtune=i686 -Os -pipe"
+TCEXTTOOLS_CXXFLAGS="-march=i486 -mtune=i686 -Os -pipe"
+TCEXTTOOLS_LDFLAGS="-Wl,-O1"
 #
