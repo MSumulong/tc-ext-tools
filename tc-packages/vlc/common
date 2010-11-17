@@ -1,5 +1,5 @@
 PACKAGE="vlc"
-VERSION="1.1.3"
+VERSION="1.1.5"
 SOURCE="${PACKAGE}-${VERSION}.tar.bz2"
 TOP_SRC="${PACKAGE}-${VERSION}"
 SOURCE_URL="http://download.videolan.org/pub/videolan/vlc/${VERSION}/vlc-${VERSION}.tar.bz2"
@@ -86,7 +86,7 @@ Xorg-7.5
 Xorg-7.5-dev
 libraw1394
 libraw1394-dev
-libproxy
+libproxy-2.7
 pulseaudio
 libsndfile-dev
 pulseaudio-dev
@@ -102,20 +102,20 @@ libxcb-util-dev
 libx11-xcb
 kdelibs
 kdelibs-dev
-#libshout
+libshout
 libshout-dev
+libass
+libass-dev
+libmodplug
+libmodplug-dev
 #twolame
 twolame-dev
 #libtar
 libtar-dev
 #libschroedinger
 libschroedinger-dev
-#libass
-libass-dev
 #libdvbpsi
 libdvbpsi-dev
-#libmodplug
-libmodplug-dev
 #live-media
 live-media-dev"
 
@@ -146,5 +146,6 @@ CHANGELOG="2009/11/05 First Version
 		2010/08/12 Updated to 1.1.2
 			-Added mozilla, pulseaudio, jack, svg, modplug, live-media, xcb, ass, dvb plugins
 			-Added lua support
-			-Most of the dependencies are now dynamic linked while there are still some static linked ones"
-CURRENT="Updated to 1.1.3"
+			-Most of the dependencies are now dynamic linked while there are still some static linked ones
+		2010/08/24 Updated to 1.1.3"
+CURRENT="Updated to 1.1.5"

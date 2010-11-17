@@ -1,4 +1,3 @@
-usr/local/bin/nvlc
 usr/local/bin/svlc
 usr/local/bin/qvlc
 usr/local/bin/cvlc
@@ -6,6 +5,7 @@ usr/local/bin/vlc-wrapper
 usr/local/bin/rvlc
 usr/local/bin/vlc
 usr/local/include/vlc/libvlc.h
+usr/local/include/vlc/libvlc_version.h
 usr/local/include/vlc/deprecated.h
 usr/local/include/vlc/libvlc_media.h
 usr/local/include/vlc/libvlc_media_list.h
@@ -122,6 +122,7 @@ usr/local/share/locale/nn/LC_MESSAGES/vlc.mo
 usr/local/share/locale/fi/LC_MESSAGES/vlc.mo
 usr/local/share/locale/sl/LC_MESSAGES/vlc.mo
 usr/local/share/locale/vi/LC_MESSAGES/vlc.mo
+usr/local/share/locale/hy/LC_MESSAGES/vlc.mo
 usr/local/share/locale/ar/LC_MESSAGES/vlc.mo
 usr/local/share/locale/fa/LC_MESSAGES/vlc.mo
 usr/local/share/locale/bg/LC_MESSAGES/vlc.mo
@@ -166,6 +167,7 @@ usr/local/share/locale/id/LC_MESSAGES/vlc.mo
 usr/local/share/locale/he/LC_MESSAGES/vlc.mo
 usr/local/share/locale/co/LC_MESSAGES/vlc.mo
 usr/local/share/locale/pt_BR/LC_MESSAGES/vlc.mo
+usr/local/share/locale/ast/LC_MESSAGES/vlc.mo
 usr/local/share/locale/ckb/LC_MESSAGES/vlc.mo
 usr/local/share/locale/fr/LC_MESSAGES/vlc.mo
 usr/local/share/locale/wa/LC_MESSAGES/vlc.mo
@@ -349,17 +351,18 @@ usr/local/share/vlc/mozilla/volume_slider_bar.xpm
 usr/local/share/vlc/mozilla/volume_knob.xpm
 usr/local/share/vlc/vlc.ico
 usr/local/lib/libvlccore.so.4
-usr/local/lib/libvlccore.so.4.0.0
 usr/local/lib/libvlc.so
 usr/local/lib/libvlc.la
 usr/local/lib/libvlccore.so
-usr/local/lib/libvlc.so.5.1.0
 usr/local/lib/libvlc.so.5
 usr/local/lib/libvlccore.la
+usr/local/lib/libvlccore.so.4.0.1
 usr/local/lib/mozilla/plugins/libvlcplugin.so
 usr/local/lib/mozilla/plugins/libvlcplugin.la
 usr/local/lib/pkgconfig/libvlc.pc
 usr/local/lib/pkgconfig/vlc-plugin.pc
+usr/local/lib/libvlc.so.5.2.0
+usr/local/lib/vlc/lua/sd/metachannels.luac
 usr/local/lib/vlc/lua/sd/jamendo.luac
 usr/local/lib/vlc/lua/sd/fmc.luac
 usr/local/lib/vlc/lua/sd/freebox.luac
@@ -373,6 +376,7 @@ usr/local/lib/vlc/lua/meta/art/03_lastfm.luac
 usr/local/lib/vlc/lua/modules/sandbox.luac
 usr/local/lib/vlc/lua/modules/simplexml.luac
 usr/local/lib/vlc/lua/playlist/youtube_homepage.luac
+usr/local/lib/vlc/lua/playlist/metachannels.luac
 usr/local/lib/vlc/lua/playlist/jamendo.luac
 usr/local/lib/vlc/lua/playlist/anevia_xml.luac
 usr/local/lib/vlc/lua/playlist/joox.luac
@@ -756,9 +760,7 @@ usr/local/lib/vlc/plugins/access/libaccess_tcp_plugin.so
 usr/local/lib/vlc/plugins/access/libaccess_alsa_plugin.so
 usr/local/lib/vlc/plugins/gui/libqt4_plugin.so
 usr/local/lib/vlc/plugins/gui/libqt4_plugin.la
-usr/local/lib/vlc/plugins/gui/libncurses_plugin.so
 usr/local/lib/vlc/plugins/gui/libskins2_plugin.la
-usr/local/lib/vlc/plugins/gui/libncurses_plugin.la
 usr/local/lib/vlc/plugins/gui/libskins2_plugin.so
 usr/local/lib/vlc/plugins/audio_output/libaout_file_plugin.so
 usr/local/lib/vlc/plugins/audio_output/libpulse_plugin.la
@@ -878,6 +880,7 @@ usr/local/lib/vlc/plugins/misc/libstats_plugin.la
 usr/local/lib/vlc/plugins/misc/libfreetype_plugin.so
 usr/local/lib/vlc/plugins/misc/libsvg_plugin.la
 usr/local/lib/vlc/plugins/misc/libexport_plugin.la
+usr/local/lib/vlc/plugins/misc/libxscreensaver_plugin.so
 usr/local/lib/vlc/plugins/misc/libstats_plugin.so
 usr/local/lib/vlc/plugins/misc/liblogger_plugin.so
 usr/local/lib/vlc/plugins/misc/libnotify_plugin.la
@@ -893,6 +896,7 @@ usr/local/lib/vlc/plugins/misc/libosd_parser_plugin.so
 usr/local/lib/vlc/plugins/misc/libxml_plugin.la
 usr/local/lib/vlc/plugins/misc/libxtag_plugin.la
 usr/local/lib/vlc/plugins/misc/libdummy_plugin.la
+usr/local/lib/vlc/plugins/misc/libxscreensaver_plugin.la
 usr/local/lib/vlc/plugins/misc/libvod_rtsp_plugin.la
 usr/local/lib/vlc/plugins/misc/libaudioscrobbler_plugin.la
 usr/local/lib/vlc/plugins/misc/libdummy_plugin.so

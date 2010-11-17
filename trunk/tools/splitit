@@ -50,23 +50,24 @@ this_split() {
 
   for i in $CONTENTS
   do
-      if [ "${i#\#}" = "$i" ]; then
-           if [ "${i#x-}" = "$i" ]; then
-                if [ "${i%\*}" = "$i" ]; then
-                     sudo find "$i" -not -type d >> "$LIST" || return 1
-                else
-                     i="${i%\*}"
-                     sudo find "$i"* -not -type d >> "$LIST" || return 1
-                fi
-           else
-                i="${i#x-}"
-                if [ "${i%\*}" = "$i" ]; then
-                     sudo find "$i" -not -type d >> "$X_LIST" || return 1
-                else
-                     i="${i%\*}"
-                     sudo find "$i"* -not -type d >> "$X_LIST" || return 1
-                fi
-           fi
+      if [ -z "$(echo "$i" | grep '*')" ]; then
+              if [ "${i#\#}" = "$i" ]; then
+                   if [ "${i#x-}" = "$i" ]; then
+                        sudo find "$i" -not -type d >> "$LIST" || return 1
+                   else
+                        i="${i#x-}"
+                        sudo find "$i" -not -type d >> "$X_LIST" || return 1
+                   fi
+              fi
+      else
+              if [ "${i#\#}" = "$i" ]; then
+                   if [ "${i#x-}" = "$i" ]; then
+                        sudo find $i -not -type d >> "$LIST" || return 1
+                   else
+                        i="${i#x-}"
+                        sudo find $i -not -type d >> "$X_LIST" || return 1
+                   fi
+              fi
       fi
   done
 

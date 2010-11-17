@@ -19,6 +19,9 @@ libcdaudio.tcz
 libdvdnav.tcz
 flac.tcz
 faad.tcz
+libass.tcz
+libmodplug.tcz
+libshout.tcz
 libmatroska.tcz
 libavcodec.tcz
 libavformat.tcz
@@ -33,3 +36,4 @@ libx11-xcb.tcz
 libxcb-util.tcz
 shared-mime-info.tcz
 hicolor-icon-theme.tcz
+
