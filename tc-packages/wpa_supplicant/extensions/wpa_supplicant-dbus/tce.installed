@@ -1,0 +1,5 @@
+#!/bin/sh
+
+[ -d /var/lib/wpa_supplicant ] || mkdir -p /var/lib/wpa_supplicant
+[ -d /var/run/wpa_supplicant ] || mkdir -p /var/run/wpa_supplicant
+

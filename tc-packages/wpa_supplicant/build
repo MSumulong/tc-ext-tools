@@ -1,0 +1,59 @@
+#
+# tc-ext-tools build functions: configure, compile, install, rules
+#
+
+# Configure
+build_configure() {
+
+   cd wpa_supplicant
+   busybox cp -f "$PACKAGE_SRC"/config .config || return 1
+
+}
+
+# Compile
+build_compile() {
+
+   cd wpa_supplicant
+   make || return 1
+
+}
+
+# Install
+build_install() {
+
+   cd wpa_supplicant
+   make DESTDIR="$INSTALL_ROOT" install || return 1
+
+   install -m 755 -d "$INSTALL_ROOT"/"$PREFIX"/etc
+   install -m 755 -d "$INSTALL_ROOT"/"$PREFIX"/share/dbus-1/system-services
+   install -m 755 -d "$INSTALL_ROOT"/"$PREFIX"/etc/dbus-1/system.d
+   install -m 644 wpa_supplicant.conf "$INSTALL_ROOT"/"$PREFIX"/etc/wpa_supplicant.conf
+   install -m 644 dbus/fi.epitest.hostap.WPASupplicant.service "$INSTALL_ROOT"/"$PREFIX"/share/dbus-1/system-services/fi.epitest.hostap.WPASupplicant.service
+   install -m 644 dbus/fi.w1.wpa_supplicant1.service "$INSTALL_ROOT"/"$PREFIX"/share/dbus-1/system-services/fi.w1.wpa_supplicant1.service
+   install -m 644 dbus/dbus-wpa_supplicant.conf "$INSTALL_ROOT"/"$PREFIX"/etc/dbus-1/system.d/fi.epitest.hostap.WPASupplicant.conf
+
+   sed -e 's/sbin/usr\/local\/sbin/' -i "$INSTALL_ROOT"/"$PREFIX"/share/dbus-1/system-services/*.service
+
+}
+
+# Rules
+build_rules() {
+
+   buildit load || exit 1
+   buildit download || exit 1
+   buildit convert || exit 1
+   buildit unpack || exit 1
+   buildit patch || exit 1
+   buildit configure || exit 1
+   buildit compile || exit 1
+   buildit install || exit 1
+   buildit strip || exit 1
+   buildit split || exit 1
+   buildit create || exit 1
+   buildit generate || exit 1
+   buildit check || exit 1
+   buildit package || exit 1
+   buildit compress || exit 1
+   buildit encrypt || exit 1
+
+}
