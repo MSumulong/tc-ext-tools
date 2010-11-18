@@ -1,5 +1,5 @@
 PACKAGE="poppler-data"
-VERSION="0.4.3"
+VERSION="0.4.4"
 SOURCE="${PACKAGE}-${VERSION}.tar.gz"
 TOP_SRC="${PACKAGE}-${VERSION}"
 SOURCE_URL="http://poppler.freedesktop.org/poppler-data-${VERSION}.tar.gz"
@@ -13,5 +13,6 @@ COPYING="GPL/Adobe"
 MAINTAINERS="Jason W, Arslan S."
 COMMENTS="This extension is PPI compatible."
 CHANGELOG="2008/10/22 First version 0.2.1 by Jason W
-		2010/02/21 Updated to 0.4.0 by Arslan S."
-CURRENT="Updated to 0.4.3 by Arslan S."
+		2010/02/21 Updated to 0.4.0 by Arslan S.
+		2010/09/05 Updated to 0.4.3 by Arslan S."
+CURRENT="Updated to 0.4.4 by Arslan S."

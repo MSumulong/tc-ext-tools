@@ -1,5 +1,5 @@
 PACKAGE="conkeror"
-VERSION="git100824"
+VERSION="git101118"
 SOURCE="${PACKAGE}-${VERSION}.tar.xz"
 SOURCE_URL="git://repo.or.cz/conkeror.git"
 VCS_TYPE="git"
@@ -18,5 +18,6 @@ COMMENTS="Conkeror is a keyboard-oriented, highly-customizable,
 		software such as Emacs and vi.
 
 		This extension is PPI compatible."
-CHANGELOG="2010/06/09 First Version git100609"
+CHANGELOG="2010/06/09 First Version git100609
+		2010/08/24 Updated to git100824"
 CURRENT="Updated to $VERSION"

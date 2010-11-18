@@ -41,6 +41,7 @@ usr/local/conkeror/modules/content-buffer.js
 usr/local/conkeror/modules/page-modes/gmane.js
 usr/local/conkeror/modules/page-modes/dailymotion.js
 usr/local/conkeror/modules/page-modes/youtube.js
+usr/local/conkeror/modules/page-modes/stackexchange.js
 usr/local/conkeror/modules/page-modes/google-images.js
 usr/local/conkeror/modules/page-modes/google-voice.js
 usr/local/conkeror/modules/page-modes/xkcd.js
@@ -48,9 +49,9 @@ usr/local/conkeror/modules/page-modes/google-gqueues.js
 usr/local/conkeror/modules/page-modes/reddit.js
 usr/local/conkeror/modules/page-modes/google-maps.js
 usr/local/conkeror/modules/page-modes/google-search-results.js
-usr/local/conkeror/modules/page-modes/stackoverflow.js
 usr/local/conkeror/modules/page-modes/google-video.js
 usr/local/conkeror/modules/page-modes/gmail.js
+usr/local/conkeror/modules/page-modes/twitter.js
 usr/local/conkeror/modules/page-modes/google-reader.js
 usr/local/conkeror/modules/page-modes/wikipedia.js
 usr/local/conkeror/modules/page-modes/google-calendar.js
@@ -66,13 +67,13 @@ usr/local/conkeror/modules/mime-type-override.js
 usr/local/conkeror/modules/timer.js
 usr/local/conkeror/modules/env.js
 usr/local/conkeror/modules/clicks-in-new-buffer.js
+usr/local/conkeror/modules/formfill.js
 usr/local/conkeror/modules/suggest-file-name.js
 usr/local/conkeror/modules/isearch.js
 usr/local/conkeror/modules/webjump.js
 usr/local/conkeror/modules/help.js
 usr/local/conkeror/modules/hints.js
 usr/local/conkeror/modules/builtin-commands.js
-usr/local/conkeror/modules/search-engine.js
 usr/local/conkeror/modules/minibuffer-read-option.js
 usr/local/conkeror/modules/index-webjump.js
 usr/local/conkeror/modules/rc.js
@@ -80,6 +81,7 @@ usr/local/conkeror/modules/media.js
 usr/local/conkeror/modules/bindings/default/minibuffer.js
 usr/local/conkeror/modules/bindings/default/content-buffer/checkbox.js
 usr/local/conkeror/modules/bindings/default/content-buffer/button.js
+usr/local/conkeror/modules/bindings/default/content-buffer/embed.js
 usr/local/conkeror/modules/bindings/default/content-buffer/anchor.js
 usr/local/conkeror/modules/bindings/default/content-buffer/richedit.js
 usr/local/conkeror/modules/bindings/default/content-buffer/text.js
@@ -92,6 +94,7 @@ usr/local/conkeror/modules/bindings/default/content-buffer/element.js
 usr/local/conkeror/modules/bindings/default/universal-argument.js
 usr/local/conkeror/modules/bindings/default/special-buffer.js
 usr/local/conkeror/modules/bindings/default/caret.js
+usr/local/conkeror/modules/bindings/default/formfill.js
 usr/local/conkeror/modules/bindings/default/isearch.js
 usr/local/conkeror/modules/bindings/default/hints.js
 usr/local/conkeror/modules/bindings/default/basic-commands.js
@@ -106,6 +109,7 @@ usr/local/conkeror/modules/block-content-focus-change.js
 usr/local/conkeror/modules/interactive.js
 usr/local/conkeror/modules/follow-relationship.js
 usr/local/conkeror/modules/hook.js
+usr/local/conkeror/modules/content-policy.js
 usr/local/conkeror/modules/walnut.js
 usr/local/conkeror/modules/text.js
 usr/local/conkeror/modules/zoom.js
@@ -115,6 +119,7 @@ usr/local/conkeror/modules/minibuffer-completion.js
 usr/local/conkeror/modules/casual-spelling.js
 usr/local/conkeror/modules/string.js
 usr/local/conkeror/modules/debug.js
+usr/local/conkeror/modules/opensearch.js
 usr/local/conkeror/modules/keymap.js
 usr/local/conkeror/modules/minibuffer-read-mime-type.js
 usr/local/conkeror/modules/window.js
@@ -158,8 +163,9 @@ usr/local/conkeror/conkeror-spawn-helper
 usr/local/conkeror/application.ini
 usr/local/conkeror/components/application.js
 usr/local/conkeror/components/download_helper.js
-usr/local/conkeror/components/commandline.js
+usr/local/conkeror/components/content-policy.js
 usr/local/conkeror/components/.autoreg
+usr/local/conkeror/components/command-line.js
 usr/local/conkeror/components/download_manager_ui.js
 usr/local/conkeror/defaults/preferences/history-frecency.js
 usr/local/conkeror/defaults/preferences/default-modules.js
