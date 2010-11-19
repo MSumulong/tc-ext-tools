@@ -171,7 +171,7 @@ DAY=$(date +%d)
 DATE="$YEAR/$MONTH/$DAY"
 
 # kernel version
-KERNELVER=$(uname -r)
+KERNEL=$(uname -r)
 
 # export tc-ext-tools environment variables by respecting environment variables
 [ -z "$CFLAGS" ] && export CFLAGS="$TCEXTTOOLS_CFLAGS"

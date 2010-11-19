@@ -40,8 +40,8 @@ build_install() {
 
    cd kernel
    # kernel module
-   install -d -m 755 $INSTALL_ROOT/usr/local/lib/modules/$KERNELVER/kernel/drivers/video
-   install -m 644 nvidia.ko $INSTALL_ROOT/usr/local/lib/modules/$KERNELVER/kernel/drivers/video/nvidia.ko || return 1
+   install -d -m 755 $INSTALL_ROOT/usr/local/lib/modules/$KERNEL/kernel/drivers/video
+   install -m 644 nvidia.ko $INSTALL_ROOT/usr/local/lib/modules/$KERNEL/kernel/drivers/video/nvidia.ko || return 1
 
 }
 
