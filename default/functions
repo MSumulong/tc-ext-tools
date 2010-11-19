@@ -66,6 +66,22 @@ print_it() {
   esac
 }
 
+# tc user
+TCUSER=$(cat /etc/sysconfig/tcuser)
+
+if [ "$THIS" = "installit" ]; then
+     su "$TCUSER" -c "touch $TCEXTTOOLS_ERROR_LOG_2"
+fi
+
+# date
+YEAR=$(date +%Y)
+MONTH=$(date +%m)
+DAY=$(date +%d)
+DATE="$YEAR/$MONTH/$DAY"
+
+# kernel version
+KERNEL=$(uname -r)
+
 PACKAGE_ROOT="$PWD"
 PACKAGE_COMMON="$PACKAGE_ROOT/$TCEXTTOOLS_COMMON"
 PACKAGE_BUILD="$PACKAGE_ROOT/$TCEXTTOOLS_BUILD"
@@ -156,22 +172,6 @@ elif [ "$THIS" != "boostit" ]; then
      print_it error "the package $PACKAGE build file not found!"
      exit 1
 fi
-
-# tc user
-TCUSER=$(cat /etc/sysconfig/tcuser)
-
-if [ "$THIS" = "installit" ]; then
-     su "$TCUSER" -c "touch $TCEXTTOOLS_ERROR_LOG_2"
-fi
-
-# date
-YEAR=$(date +%Y)
-MONTH=$(date +%m)
-DAY=$(date +%d)
-DATE="$YEAR/$MONTH/$DAY"
-
-# kernel version
-KERNEL=$(uname -r)
 
 # export tc-ext-tools environment variables by respecting environment variables
 [ -z "$CFLAGS" ] && export CFLAGS="$TCEXTTOOLS_CFLAGS"
