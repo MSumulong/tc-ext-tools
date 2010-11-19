@@ -22,7 +22,7 @@ cyrus-sasl-dev
 gobject-introspection
 gobject-introspection-dev"
 
-EXTENSIONS="GConf GConf-dev GConf-doc GConf-locale GConf-defaults-service"
+EXTENSIONS="GConf GConf-dev GConf-doc GConf-gir GConf-locale GConf-defaults-service"
 DESCRIPTION="GNOME configuration database system for storing application preferences."
 AUTHOR="Havoc Pennington"
 SITE="http://projects.gnome.org/gconf"
