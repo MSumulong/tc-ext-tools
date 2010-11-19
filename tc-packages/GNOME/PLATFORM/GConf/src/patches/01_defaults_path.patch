@@ -1,0 +1,26 @@
+Index: gconf-2.31.4/defaults/gconf-defaults.c
+===================================================================
+--- gconf-2.31.4.orig/defaults/gconf-defaults.c	2010-01-20 02:35:56.000000000 +0100
++++ gconf-2.31.4/defaults/gconf-defaults.c	2010-06-22 14:17:40.000000000 +0200
+@@ -811,7 +811,7 @@
+ 	else {
+ 		adata->annotation_key = "org.gnome.gconf.defaults.set-system.prefix";
+ 		adata->default_action = "org.gnome.gconf.defaults.set-system";
+-		cdata->dest_address = "xml:merged:" SYSGCONFDIR "/gconf.xml.system";
++		cdata->dest_address = "xml:merged:" SYSGCONFDIR "/gconf.xml.defaults";
+ 	}
+ 
+         polkit_authority_enumerate_actions (mechanism->priv->auth,
+Index: gconf-2.31.4/gconf/gconfd.c
+===================================================================
+--- gconf-2.31.4.orig/gconf/gconfd.c	2010-06-14 18:17:05.000000000 +0200
++++ gconf-2.31.4/gconf/gconfd.c	2010-06-22 14:17:40.000000000 +0200
+@@ -667,7 +667,7 @@
+ 
+ 	  gconf_log (GCL_DEBUG, "System defaults changed.  Notifying.");
+ 
+-	  addresses.data = "xml:merged:/etc/gconf/gconf.xml.system";
++	  addresses.data = "xml:merged:/etc/gconf/gconf.xml.defaults";
+ 	  addresses.next = NULL;
+ 	  system_sources = gconf_sources_new_from_addresses (&addresses, NULL);
+ 

@@ -1,0 +1,6 @@
+#!/bin/sh
+
+[ -d /usr/local/etc/gconf/gconf.xml.system ] || mkdir -p /usr/local/etc/gconf/gconf.xml.system
+[ -d /usr/local/etc/gconf/gconf.xml.defaults ] || mkdir -p /usr/local/etc/gconf/gconf.xml.defaults
+[ -d /usr/local/etc/gconf/gconf.xml.mandatory ] || mkdir -p /usr/local/etc/gconf/gconf.xml.mandatory
+
