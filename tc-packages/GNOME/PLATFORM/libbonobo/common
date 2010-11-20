@@ -1,0 +1,27 @@
+PACKAGE="libbonobo"
+VERSION="2.32.0"
+SOURCE="${PACKAGE}-${VERSION}.tar.bz2"
+SOURCE_URL="http://ftp.gnome.org/pub/GNOME/sources/libbonobo/${VERSION%.*}/libbonobo-${VERSION}.tar.bz2"
+TOP_SRC="${PACKAGE}-${VERSION}"
+BUILD_DEPENDS="glib2
+glib2-dev
+dbus
+dbus-glib
+ORBit2
+ORBit2-dev
+libxml2
+libxml2-dev
+popt
+popt-dev"
+
+EXTENSIONS="libbonobo libbonobo-dev libbonobo-doc libbonobo-locale"
+DESCRIPTION="Bonobo is a set of language and system independent CORBA interfaces."
+AUTHOR="GNOME Maintainers"
+SITE="http://live.gnome.org/Bonobo"
+COPYING="GPL/LGPL"
+MAINTAINERS="Arslan S."
+COMMENTS="This extension is PPI compatible."
+CHANGELOG="2009/05/25 First Version 2.24.1 by jpeters
+		2010/01/30 Updated to 2.24.2
+		2010/07/15 Updated to 2.24.3"
+CURRENT="Updated to 2.32.0"

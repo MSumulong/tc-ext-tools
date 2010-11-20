@@ -38,6 +38,8 @@ usr/local/include/libsoup-2.4/libsoup/soup-cookie.h
 usr/local/include/libsoup-2.4/libsoup/soup-auth.h
 usr/local/include/libsoup-2.4/libsoup/soup-date.h
 usr/local/include/libsoup-2.4/libsoup/soup-content-decoder.h
+usr/local/share/gir-1.0/Soup-2.4.gir
+usr/local/share/gir-1.0/SoupGNOME-2.4.gir
 usr/local/share/gtk-doc/html/libsoup-2.4/libsoup-2.4-soup-method.html
 usr/local/share/gtk-doc/html/libsoup-2.4/SoupAuthDomainDigest.html
 usr/local/share/gtk-doc/html/libsoup-2.4/style.css
@@ -48,6 +50,7 @@ usr/local/share/gtk-doc/html/libsoup-2.4/SoupCookieJarSqlite.html
 usr/local/share/gtk-doc/html/libsoup-2.4/SoupSessionFeature.html
 usr/local/share/gtk-doc/html/libsoup-2.4/SoupSocket.html
 usr/local/share/gtk-doc/html/libsoup-2.4/SoupContentSniffer.html
+usr/local/share/gtk-doc/html/libsoup-2.4/annotation-glossary.html
 usr/local/share/gtk-doc/html/libsoup-2.4/ch06.html
 usr/local/share/gtk-doc/html/libsoup-2.4/ch02.html
 usr/local/share/gtk-doc/html/libsoup-2.4/SoupLogger.html
@@ -93,6 +96,8 @@ usr/local/lib/libsoup-2.4.la
 usr/local/lib/libsoup-2.4.so
 usr/local/lib/libsoup-2.4.so.1
 usr/local/lib/libsoup-gnome-2.4.so.1
+usr/local/lib/girepository-1.0/Soup-2.4.typelib
+usr/local/lib/girepository-1.0/SoupGNOME-2.4.typelib
 usr/local/lib/libsoup-gnome-2.4.a
 usr/local/lib/pkgconfig/libsoup-gnome-2.4.pc
 usr/local/lib/pkgconfig/libsoup-2.4.pc
