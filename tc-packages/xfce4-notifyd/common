@@ -1,0 +1,32 @@
+PACKAGE="xfce4-notifyd"
+VERSION="0.1.0"
+SOURCE="${PACKAGE}-${VERSION}.tar.bz2"
+TOP_SRC="${PACKAGE}-${VERSION}"
+SOURCE_URL="http://spuriousinterrupt.org/files/xfce4-notifyd/xfce4-notifyd-${VERSION}.tar.bz2"
+BUILD_DEPENDS="gtk2
+gtk2-dev
+dbus-glib
+libsexy
+libsexy-dev
+libxfce4util
+libxfce4util-dev
+libxfcegui4
+libxfcegui4-dev
+xfconf
+xfconf-dev
+libstartup-notification
+libstartup-notification-dev"
+
+EXTENSIONS="xfce4-notifyd xfce4-notifyd-locale"
+DESCRIPTION="A simple, visually-appealing notification daemon."
+AUTHOR="Brian Tarricone"
+SITE="http://spuriousinterrupt.org/projects/xfce4-notifyd"
+COPYING="GPL-3"
+MAINTAINERS="Arslan S."
+COMMENTS="Example usage:
+
+		        notify-send \"title\" \"message\"
+
+		This extension is PPI compatible."
+CHANGELOG="---"
+CURRENT="First Version"
