@@ -1,0 +1,6 @@
+usr/local/include
+usr/local/lib/pkgconfig
+usr/local/lib/*.a
+usr/local/lib/*.la
+usr/local/lib/libglade/2.0/*.a
+usr/local/lib/libglade/2.0/*.la

@@ -1,0 +1,2 @@
+#!/bin/sh
+[ -x $(which update-gconf-database) ] && sudo update-gconf-database register libcanberra > /dev/null 2>&1 

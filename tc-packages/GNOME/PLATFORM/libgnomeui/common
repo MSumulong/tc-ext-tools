@@ -1,0 +1,38 @@
+PACKAGE="libgnomeui"
+VERSION="2.24.4"
+SOURCE="${PACKAGE}-${VERSION}.tar.bz2"
+SOURCE_URL="http://ftp.gnome.org/pub/GNOME/sources/libgnomeui/${VERSION%.*}/libgnomeui-${VERSION}.tar.bz2"
+TOP_SRC="${PACKAGE}-${VERSION}"
+BUILD_DEPENDS="glib2
+glib2-dev
+gtk2
+gtk2-dev
+popt
+popt-dev
+gnome-vfs
+gnome-vfs-dev
+libglade
+libglade-dev
+libgnome
+libgnome-dev
+libbonoboui
+libbonoboui-dev
+libgnomecanvas
+libgnomecanvas-dev
+libgnome-keyring
+libgnome-keyring-dev
+libxml2
+libxml2-dev
+Xorg-7.5-lib
+Xorg-7.5-dev"
+
+EXTENSIONS="libgnomeui libgnomeui-dev libgnomeui-doc libgnomeui-locale"
+DESCRIPTION="The Gnome UI library."
+AUTHOR="GNOME Maintainers"
+SITE="http://www.gnome.org"
+COPYING="LGPL"
+MAINTAINERS="Arslan S."
+COMMENTS="This extension is PPI compatible."
+CHANGELOG="2010/03/06 Original 2.24.2
+		2010/07/18 Updated to 2.24.3"
+CURRENT="Updated to 2.24.4"

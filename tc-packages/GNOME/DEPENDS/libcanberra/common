@@ -1,0 +1,37 @@
+PACKAGE="libcanberra"
+VERSION="0.26"
+SOURCE="${PACKAGE}-${VERSION}.tar.gz"
+SOURCE_URL="http://0pointer.de/lennart/projects/libcanberra/libcanberra-${VERSION}.tar.gz"
+TOP_SRC="${PACKAGE}-${VERSION}"
+BUILD_DEPENDS="libasound
+alsa-dev
+libltdl
+libtool
+libtool-dev
+libvorbis
+libvorbis-dev
+libogg
+libogg-dev
+pulseaudio
+pulseaudio-dev
+libsndfile-dev
+flac-dev
+libglademm
+gstreamer
+gstreamer-dev
+gtk2
+gtk2-dev
+GConf
+GConf-dev"
+
+EXTENSIONS="libcanberra libcanberra-dev libcanberra-doc"
+DESCRIPTION="Simple abstract interface for playing event sounds."
+AUTHOR="Lennart Poettering"
+SITE="http://0pointer.de/lennart/projects/libcanberra"
+COPYING="LGPL"
+MAINTAINERS="Arslan S."
+COMMENTS="This extension is PPI compatible."
+CHANGELOG="2010/01/23 Original 0.22 by Arslan S.
+		2010/04/19 added pulseaudio plugin & updated 0.22 -> 0.23 by juanito
+		2010/07/21 Updated to 0.25 by Arslan S."
+CURRENT="Updated to 0.26 by Arslan S."

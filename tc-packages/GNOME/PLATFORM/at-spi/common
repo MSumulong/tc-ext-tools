@@ -1,0 +1,36 @@
+PACKAGE="at-spi"
+VERSION="1.32.0"
+SOURCE="${PACKAGE}-${VERSION}.tar.bz2"
+SOURCE_URL="http://ftp.gnome.org/pub/GNOME/sources/at-spi/${VERSION%.*}/at-spi-${VERSION}.tar.bz2"
+TOP_SRC="${PACKAGE}-${VERSION}"
+BUILD_DEPENDS="libbonobo
+libbonobo-dev
+ORBit2
+ORBit2-dev
+libgnomecanvas
+libgnomecanvas-dev
+gtk2
+gtk2-dev
+dbus-glib
+libxml2
+libxml2-dev
+popt
+popt-dev
+libart
+libart-dev
+GConf
+GConf-dev
+Xorg-7.5-lib
+Xorg-7.5-dev
+python
+python-dev"
+
+EXTENSIONS="at-spi at-spi-dev at-spi-doc at-spi-locale at-spi-python"
+DESCRIPTION="The Gnome Accessibility Project."
+AUTHOR="GNOME Maintainers"
+SITE="http://www.gnome.org"
+COPYING="GPL"
+MAINTAINERS="Arslan S."
+COMMENTS="This extension is PPI compatible."
+CHANGELOG="2010/07/18 First Version 1.30.1"
+CURRENT="Updated to 1.32.0"

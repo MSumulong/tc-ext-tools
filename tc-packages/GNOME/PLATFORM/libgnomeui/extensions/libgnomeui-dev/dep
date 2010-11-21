@@ -1,0 +1,8 @@
+libgnomeui.tcz
+glib2-dev.tcz
+gtk2-dev.tcz
+GConf-dev.tcz
+libgnome-dev.tcz
+libbonoboui-dev.tcz
+libgnome-keyring-dev.tcz
+Xorg-7.5-dev.tcz

@@ -1,0 +1,11 @@
+libxml2.tcz
+popt.tcz
+ORBit2.tcz
+dbus-glib.tcz
+GConf.tcz
+gtk2.tcz
+libart.tcz
+libgnomecanvas.tcz
+libbonobo.tcz
+Xorg-7.5-lib.tcz
+
