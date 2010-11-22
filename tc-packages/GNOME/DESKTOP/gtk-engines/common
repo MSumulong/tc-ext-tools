@@ -1,0 +1,21 @@
+PACKAGE="gtk-engines"
+VERSION="2.20.2"
+SOURCE="${PACKAGE}-${VERSION}.tar.bz2"
+SOURCE_URL="http://ftp.gnome.org/pub/GNOME/sources/gtk-engines/${VERSION%.*}/gtk-engines-${VERSION}.tar.bz2"
+TOP_SRC="${PACKAGE}-${VERSION}"
+BUILD_DEPENDS="gtk2
+gtk2-dev
+perl_xml_parser"
+
+EXTENSIONS="gtk-engines gtk-engines-locale"
+DESCRIPTION="GTK2 theme engines and themes"
+AUTHOR="Various"
+SITE="http://ftp.gnome.org/pub/gnome/sources/gtk-engines"
+COPYING="GPL,LGPL"
+MAINTAINERS="Curaga, Arslan S."
+COMMENTS="This extension is PPI compatible."
+CHANGELOG="2009/01/18 Original
+		2010/01/24 Added default .gtkrc-2.0, stripped some more
+		2010/01/25 Edited startup script
+		2010/07/23 Updated to 2.20.1 & murrine is now in gtk-engine-murrine by Arslan S."
+CURRENT="Updated to 2.20.2 by Arslan S."
