@@ -1,0 +1,37 @@
+PACKAGE="libgweather"
+VERSION="2.30.3"
+SOURCE="${PACKAGE}-${VERSION}.tar.bz2"
+SOURCE_URL="http://ftp.gnome.org/pub/GNOME/sources/libgweather/${VERSION%.*}/libgweather-${VERSION}.tar.bz2"
+TOP_SRC="${PACKAGE}-${VERSION}"
+BUILD_DEPENDS="libxml2
+libxml2-dev
+glib2
+glib2-dev
+gtk2
+gtk2-dev
+libsoup-gnome
+libsoup-gnome-dev
+libgnome-keyring
+libgnome-keyring-dev
+sqlite3
+sqlite3-dev
+GConf
+GConf-dev
+python
+python-dev
+pygobject-2.7
+pygobject-2.7-dev
+pygtk-2.7
+pygtk-2.7-dev
+gtk-doc"
+
+EXTENSIONS="libgweather libgweather-dev libgweather-locale libgweather-doc libgweather-python"
+DESCRIPTION="A library to access weather information."
+AUTHOR="Papadimitriou Spiros"
+SITE="http://www.gnome.org/"
+COPYING="GPL"
+MAINTAINERS="Arslan S."
+COMMENTS="This extension is PPI compatible."
+CHANGELOG="2010/03/28 Original 2.28.0
+		2010/07/19 Updated to 2.30.2"
+CURRENT="Updated to 2.30.3"
