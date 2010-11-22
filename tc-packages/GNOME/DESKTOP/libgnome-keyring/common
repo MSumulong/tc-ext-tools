@@ -1,0 +1,22 @@
+PACKAGE="libgnome-keyring"
+VERSION="2.32.0"
+SOURCE="${PACKAGE}-${VERSION}.tar.bz2"
+TOP_SRC="${PACKAGE}-${VERSION}"
+SOURCE_URL="http://ftp.gnome.org/pub/GNOME/sources/libgnome-keyring/${VERSION%.*}/libgnome-keyring-${VERSION}.tar.bz2"
+BUILD_DEPENDS="glib2
+glib2-dev
+dbus
+eggdbus
+libgcrypt
+libgcrypt-dev"
+
+EXTENSIONS="libgnome-keyring libgnome-keyring-dev libgnome-keyring-doc libgnome-keyring-locale"
+DESCRIPTION="Used by applications to integrate with the gnome keyring system."
+AUTHOR="Stef Walter"
+SITE="http://live.gnome.org/GnomeKeyring"
+COPYING="GPL-2"
+MAINTAINERS="juanito, Arslan S."
+COMMENTS="This extension is PPI compatible."
+CHANGELOG="2009/12/24 First Version 2.29.4 by juanito
+		2010/07/05 Updated to 2.30.1 & separated out dev files by Arslan S."
+CURRENT="Updated to 2.32.0 by Arslan S."
