@@ -1,0 +1,27 @@
+PACKAGE="gnome-keyring"
+VERSION="2.32.1"
+SOURCE="${PACKAGE}-${VERSION}.tar.bz2"
+TOP_SRC="${PACKAGE}-${VERSION}"
+SOURCE_URL="http://ftp.gnome.org/pub/GNOME/sources/gnome-keyring/${VERSION%.*}/gnome-keyring-${VERSION}.tar.bz2"
+BUILD_DEPENDS="libtasn1
+dbus
+GConf
+GConf-dev
+glib2
+glib2-dev
+gtk2
+gtk2-dev
+libgcrypt
+libgcrypt-dev
+Linux-PAM
+Linux-PAM-dev"
+
+EXTENSIONS="gnome-keyring gnome-keyring-dev gnome-keyring-locale gnome-keyring-doc"
+DESCRIPTION="A program that keeps password and other secrets for users."
+AUTHOR="Alexander Larsson, Stef Walter, Fernando Herrera"
+SITE="http://live.gnome.org/GnomeKeyring"
+COPYING="GPL-2/LGPL-2"
+MAINTAINERS="Arslan S."
+COMMENTS="This extension is PPI compatible."
+CHANGELOG="2010/07/05 First Version 2.30.3"
+CURRENT="Updated to $VERSION"
