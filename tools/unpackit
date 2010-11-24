@@ -41,7 +41,7 @@ this_main() {
   mkdir -p "$TCEXTTOOLS_BIN_TEMP"
 
   if [ "$SOURCE_TYPE" = "bz2" ] || [ "$SOURCE_TYPE" = "gz" ] || [ "$SOURCE_TYPE" = "tgz" ] || [ "$SOURCE_TYPE" = "xz" ]; then
-       busybox tar -C "$TCEXTTOOLS_BIN_TEMP" -xf "$TCEXTTOOLS_SOURCE" || return 1
+       tar -C "$TCEXTTOOLS_BIN_TEMP" -xf "$TCEXTTOOLS_SOURCE" || return 1
   elif [ "$SOURCE_TYPE" = "zip" ]; then
        unzip "$TCEXTTOOLS_SOURCE" -d "$TCEXTTOOLS_BIN_TEMP" || return 1
   elif [ "$SOURCE_TYPE" = "custom" ]; then
