@@ -1,0 +1,32 @@
+PACKAGE="gnome-desktop"
+VERSION="2.32.1"
+SOURCE="${PACKAGE}-${VERSION}.tar.bz2"
+SOURCE_URL="http://ftp.gnome.org/pub/GNOME/sources/gnome-desktop/${VERSION%.*}/gnome-desktop-${VERSION}.tar.bz2"
+TOP_SRC="${PACKAGE}-${VERSION}"
+BUILD_DEPENDS="gnome-doc-utils
+rarian
+glib2
+glib2-dev
+Xorg-7.5-lib
+Xorg-7.5-dev
+gtk2
+gtk2-dev
+libstartup-notification
+libstartup-notification-dev
+libxml2
+libxml2-dev
+GConf
+GConf-dev
+python
+python-dev"
+
+EXTENSIONS="libgnome-desktop libgnome-desktop-dev libgnome-desktop-doc gnome-about gnome-about-locale"
+DESCRIPTION="Utility library for loading .desktop files."
+AUTHOR="various"
+SITE="http://www.gnome.org"
+COPYING="GPL/LGPL/FDL"
+MAINTAINERS="Arslan S."
+COMMENTS="This extension is PPI compatible."
+CHANGELOG="2010/03/28 Original 2.28.2
+		2010/07/29 Updated to 2.30.2"
+CURRENT="Updated to $VERSION"
