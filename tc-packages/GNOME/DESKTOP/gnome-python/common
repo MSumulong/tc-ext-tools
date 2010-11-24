@@ -19,13 +19,15 @@ libgnomeui
 libgnomeui-dev
 libgnomecanvas
 libgnomecanvas-dev
+libgnome-desktop
+libgnome-desktop-dev
 python
 python-dev
 pyorbit-2.7
-pygtk-2.7
-pygtk-2.7-dev
 pygobject-2.7
-pygobject-2.7-dev"
+pygobject-2.7-dev
+pygtk-2.7
+pygtk-2.7-dev"
 
 EXTENSIONS="gnome-python gnome-python-dev gnome-python-doc"
 DESCRIPTION="Python bindings to gnome libs."
