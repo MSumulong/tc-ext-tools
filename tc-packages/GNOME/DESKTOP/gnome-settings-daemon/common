@@ -1,0 +1,40 @@
+PACKAGE="gnome-settings-daemon"
+VERSION="2.32.1"
+SOURCE="${PACKAGE}-${VERSION}.tar.bz2"
+SOURCE_URL="http://ftp.gnome.org/pub/GNOME/sources/gnome-settings-daemon/${VERSION%.*}/gnome-settings-daemon-$VERSION.tar.bz2"
+TOP_SRC="${PACKAGE}-${VERSION}"
+BUILD_DEPENDS="gtk2
+gtk2-dev
+dbus-glib
+GConf
+GConf-dev
+libnotify
+libgnome-desktop
+libgnome-desktop-dev
+Xorg-7.5-lib
+Xorg-7.5-dev
+libxklavier
+libxklavier-dev
+libgnomekbd
+libgnomekbd-dev
+gstreamer
+gstreamer-dev
+gst-plugins-base
+gst-plugins-base-dev
+libcanberra
+libcanberra-dev
+pulseaudio
+libsndfile-dev
+flac-dev
+libvorbis-dev
+pulseaudio-dev"
+
+EXTENSIONS="gnome-settings-daemon gnome-settings-daemon-dev gnome-settings-daemon-locale"
+DESCRIPTION="Gnome settings daemon."
+AUTHOR="Jonathan Blandford, William Jon McCann"
+SITE="http://www.gnome.org"
+COPYING="GPL/LGPL"
+MAINTAINERS="Arslan S."
+COMMENTS="This extension is PPI compatible."
+CHANGELOG="2010/07/30 First Version 2.30.2"
+CURRENT="Updated to $VERSION"
