@@ -1,0 +1,24 @@
+PACKAGE="zenity"
+VERSION="2.32.1"
+SOURCE="${PACKAGE}-${VERSION}.tar.bz2"
+SOURCE_URL="http://ftp.gnome.org/pub/GNOME/sources/zenity/${VERSION%.*}/zenity-${VERSION}.tar.bz2"
+TOP_SRC="${PACKAGE}-${VERSION}"
+BUILD_DEPENDS="glib2
+glib2-dev
+gtk2
+gtk2-dev
+libnotify
+rarian
+gnome-doc-utils"
+
+EXTENSIONS="zenity zenity-locale"
+DESCRIPTION="Display Gtk+ dialog boxes from command line and shell scripts."
+AUTHOR="Glynn Foster, Mike Newman"
+SITE="http://live.gnome.org/Zenity"
+COPYING="LGPL"
+MAINTAINERS="jls_legalize (unsenepopiu at tin dot it), Arslan S."
+COMMENTS="This extension is PPI compatible."
+CHANGELOG="2010/01/30 First version 2.20.1 by jls_legalize
+		2010/05/15 Updated to 2.28.0 by Arslan S.
+		2010/07/23 Updated to 2.30.0 by Arslan S."
+CURRENT="Updated to $VERSION by Arslan S."
