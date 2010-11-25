@@ -1,0 +1,23 @@
+PACKAGE="gnome-menus"
+VERSION="2.30.5"
+SOURCE="${PACKAGE}-${VERSION}.tar.bz2"
+SOURCE_URL="http://ftp.gnome.org/pub/GNOME/sources/gnome-menus/${VERSION%.*}/gnome-menus-${VERSION}.tar.bz2"
+TOP_SRC="${PACKAGE}-${VERSION}"
+BUILD_DEPENDS="python
+python-dev
+glib2
+glib2-dev
+gobject-introspection
+gobject-introspection-dev
+gir-repository
+gir-repository-dev"
+
+EXTENSIONS="gnome-menus gnome-menus-dev gnome-menus-locale"
+DESCRIPTION="An implementation of the freedesktop.org menu specifications for the GNOME desktop."
+AUTHOR="Mark McLoughlin, Havoc Pennington"
+SITE="http://www.gnome.org"
+COPYING="GPL/LGPL"
+MAINTAINERS="Arslan S."
+COMMENTS="This extension is PPI compatible."
+CHANGELOG="2010/07/30 First Version 2.30.2"
+CURRENT="Updated to $VERSION"
