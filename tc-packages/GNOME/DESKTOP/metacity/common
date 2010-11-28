@@ -1,0 +1,31 @@
+PACKAGE="metacity"
+VERSION="2.30.3"
+SOURCE="${PACKAGE}-${VERSION}.tar.bz2"
+SOURCE_URL="http://ftp.gnome.org/pub/GNOME/sources/metacity/${VERSION%.*}/metacity-${VERSION}.tar.bz2"
+TOP_SRC="${PACKAGE}-${VERSION}"
+BUILD_DEPENDS="gnome-doc-utils
+rarian
+gtk2
+gtk2-dev
+libcanberra
+libcanberra-dev
+GConf
+GConf-dev
+libstartup-notification
+libstartup-notification-dev
+Xorg-7.5-lib
+Xorg-7.5-dev
+zenity
+libgtop
+libgtop-dev"
+
+EXTENSIONS="metacity metacity-dev metacity-locale"
+DESCRIPTION="A lightweight GTK2 based Window Manager."
+AUTHOR="Havoc Pennington"
+SITE="http://www.gnome.org/"
+COPYING="GPL-2"
+MAINTAINERS="Arslan S."
+COMMENTS="This extension is PPI compatible."
+CHANGELOG="2010/05/15 Original 2.28.0
+		2010/07/30 Updated to 2.30.1"
+CURRENT="Updated to $VERSION"
