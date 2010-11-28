@@ -1,0 +1,39 @@
+PACKAGE="nautilus"
+VERSION="2.32.1"
+SOURCE="${PACKAGE}-${VERSION}.tar.bz2"
+SOURCE_URL="http://ftp.gnome.org/pub/GNOME/sources/nautilus/${VERSION%.*}/nautilus-${VERSION}.tar.bz2"
+TOP_SRC="${PACKAGE}-${VERSION}"
+BUILD_DEPENDS="gnome-doc-utils
+rarian
+glib2
+glib2-dev
+gtk2
+gtk2-dev
+libgnome-desktop
+libgnome-desktop-dev
+libxml2
+libxml2-dev
+libexif
+libexif-dev
+libexempi
+libexempi-dev
+libunique
+libunique-dev
+dbus-glib
+GConf
+GConf-dev
+Xorg-7.5-lib
+Xorg-7.5-dev
+shared-mime-info
+#gobject-introspection
+#gobject-introspection-dev"
+
+EXTENSIONS="nautilus nautilus-locale libnautilus-extension libnautilus-extension-dev libnautilus-extension-doc"
+DESCRIPTION="The file manager of GNOME."
+AUTHOR="GNOME Maintainers"
+SITE="http://www.gnome.org"
+COPYING="GPL/LGPL"
+MAINTAINERS="Arslan S."
+COMMENTS="This extension is PPI compatible."
+CHANGELOG="2010/07/29 First Version 2.30.1"
+CURRENT="Updated to $VERSION"
