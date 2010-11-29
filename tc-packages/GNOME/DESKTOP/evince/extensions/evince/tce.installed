@@ -1,0 +1,13 @@
+#!/bin/sh
+
+this_main() {
+
+[ -x $(which glib-compile-schemas) ] && glib-compile-schemas /usr/local/share/glib-2.0/schemas
+[ -x $(which update-gconf-database) ] && update-gconf-database register-extension evince
+[ -x $(which update-desktop-database) ] && update-desktop-database -q
+[ -x $(which gtk-update-icon-cache) ] && gtk-update-icon-cache -q -f -t /usr/local/share/icons/hicolor
+
+}
+
+this_main > /dev/null 2>&1
+
