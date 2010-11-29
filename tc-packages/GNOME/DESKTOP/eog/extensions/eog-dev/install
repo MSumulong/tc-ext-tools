@@ -1,0 +1,3 @@
+usr/local/include
+usr/local/lib/eog/plugins/*.la
+usr/local/lib/pkgconfig
