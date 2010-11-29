@@ -1,0 +1,12 @@
+Index: brasero-2.26.2/nautilus/brasero-nautilus.desktop.in.in
+===================================================================
+--- brasero-2.26.2.orig/nautilus/brasero-nautilus.desktop.in.in	2009-05-18 17:06:15.000000000 +0200
++++ brasero-2.26.2/nautilus/brasero-nautilus.desktop.in.in	2009-06-16 00:52:14.459041223 +0200
+@@ -10,6 +10,7 @@ StartupNotify=true
+ Terminal=false
+ Type=Application
+ OnlyShowIn=GNOME;
++NoDisplay=true
+ X-GNOME-Bugzilla-Bugzilla=GNOME
+ X-GNOME-Bugzilla-Product=brasero
+ X-GNOME-Bugzilla-Component=general

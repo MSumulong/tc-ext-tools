@@ -1,0 +1,22 @@
+#!/bin/sh
+
+this_main() {
+
+[ -x $(which glib-compile-schemas) ] && glib-compile-schemas /usr/local/share/glib-2.0/schemas
+[ -x $(which update-desktop-database) ] && update-desktop-database -q
+[ -x $(which update-mime-database) ] && update-mime-database /usr/local/share/mime
+[ -x $(which gtk-update-icon-cache) ] && gtk-update-icon-cache -q -f -t /usr/local/share/icons/hicolor
+
+DEVICES=$(ls /mnt | cut -d/ -f1)
+for DEV in $DEVICES
+do
+	MSG=$(dmesg | grep CD | grep "$DEV")
+	if [ ! "X$MSG" = "X" ] ; then
+	     [ -e "/dev/$DEV" ] && sudo chmod 666 "/dev/$DEV"
+	fi
+done
+
+}
+
+this_main > /dev/null 2>&1
+

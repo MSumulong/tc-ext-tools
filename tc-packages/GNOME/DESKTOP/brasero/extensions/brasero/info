@@ -1,0 +1,13 @@
+COMMENTS="Optional dependencies:
+			-cdrdao     : to burn CD-Rs at DAO mode (Disk-At-Once)
+			-dvdauthor  : to create video DVDs
+			-vcdimager  : to create VCDs and SVCDs
+			-libdvdcss  : to copy encrypted DVDs
+			-gst-plugins-bad or
+			-gst-plugins-ugly or
+			-gst-plugins-good or
+			-gst-ffmpeg : for more audio and video format support when creating AUDIO CDs, DVD Movies, VCDs and SVCDs
+			-libburn    : alternative burning backend
+			-libisofs   : alternative iso backend
+
+		This extension is PPI compatible."

@@ -1,0 +1,25 @@
+--- a/libbrasero-burn/burn-plugin.c	2010-06-21 22:56:08.000000000 +0000
++++ b/libbrasero-burn/burn-plugin.c	2010-07-29 12:17:32.728104468 +0000
+@@ -217,21 +217,8 @@
+ 		return;
+ 	}
+ 
+-	/* make sure that's not a symlink pointing to something with another
+-	 * name like wodim.
+-	 * NOTE: we used to test the target and see if it had the same name as
+-	 * the symlink with GIO. The problem is, when the symlink pointed to
+-	 * another symlink, then GIO didn't follow that other symlink. And in
+-	 * the end it didn't work. So forbid all symlink. */
+-	if (g_file_test (prog_path, G_FILE_TEST_IS_SYMLINK)) {
+-		brasero_plugin_add_error (plugin,
+-		                          BRASERO_PLUGIN_ERROR_SYMBOLIC_LINK_APP,
+-		                          name);
+-		g_free (prog_path);
+-		return;
+-	}
+ 	/* Make sure it's a regular file */
+-	else if (!g_file_test (prog_path, G_FILE_TEST_IS_REGULAR)) {
++	if (!g_file_test (prog_path, G_FILE_TEST_IS_REGULAR)) {
+ 		brasero_plugin_add_error (plugin,
+ 		                          BRASERO_PLUGIN_ERROR_MISSING_APP,
+ 		                          name);
