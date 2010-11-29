@@ -1,0 +1,23 @@
+PACKAGE="gconf-editor"
+VERSION="2.32.0"
+SOURCE="${PACKAGE}-${VERSION}.tar.bz2"
+SOURCE_URL="http://ftp.se.debian.org/pub/gnome/sources/gconf-editor/${VERSION%.*}/gconf-editor-${VERSION}.tar.bz2"
+TOP_SRC="${PACKAGE}-${VERSION}"
+BUILD_DEPENDS="gnome-doc-utils
+rarian
+dbus-glib
+gtk2
+gtk2-dev
+GConf
+GConf-dev"
+
+EXTENSIONS="gconf-editor gconf-editor-locale"
+DESCRIPTION="A graphical editor for the GConf configuration system."
+AUTHOR="Anders Carlsson"
+SITE="http://www.gnome.org/"
+COPYING="GPL-2"
+MAINTAINERS="Arslan S."
+COMMENTS="This extension is PPI compatible."
+CHANGELOG="2010/06/15 Original 2.28.0
+		2010/08/02 Updated to 2.30.0"
+CURRENT="Updated to $VERSION"

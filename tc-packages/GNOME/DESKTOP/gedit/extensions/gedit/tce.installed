@@ -1,0 +1,10 @@
+#!/bin/sh
+
+this_main() {
+
+  [ -x $(which update-gconf-database) ] && sudo update-gconf-database register-extension gedit
+
+} 
+
+this_main > /dev/null 2>&1
+

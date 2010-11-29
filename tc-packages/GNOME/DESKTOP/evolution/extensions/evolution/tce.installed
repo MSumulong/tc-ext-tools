@@ -1,0 +1,11 @@
+#!/bin/sh
+
+this_main() {
+
+[ -x $(which update-gconf-database) ] && update-gconf-database register-extension evolution
+[ -x $(which gtk-update-icon-cache) ] && gtk-update-icon-cache -q -f -t /usr/local/share/icons/hicolor
+
+}
+
+this_main > /dev/null 2>&1
+
