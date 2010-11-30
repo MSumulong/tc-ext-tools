@@ -12,8 +12,6 @@ alsa-dev
 python
 python-dev
 zip-unzip
-sqlite3
-sqlite3-dev
 dbus-glib
 gnome-vfs
 gnome-vfs-dev
@@ -31,7 +29,8 @@ libIDL
 libnotify
 wireless_tools
 hunspell
-hunspell-dev"
+hunspell-dev
+#autoconf2.13"
 
 EXTENSIONS="xulrunner xulrunner-dev"
 DESCRIPTION="XULRunner is a Mozilla runtime package."
