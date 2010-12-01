@@ -1,0 +1,11 @@
+GConf.tcz
+libbonoboui.tcz
+libgnome-desktop.tcz
+libgtop.tcz
+libwnck.tcz
+gucharmap.tcz
+libgweather.tcz
+libnotify.tcz
+libpanel-applet.tcz
+polkit.tcz
+python.tcz
