@@ -1,0 +1,9 @@
+glib2.tcz
+dbus-glib.tcz
+gtk2.tcz
+libnotify.tcz
+libunique.tcz
+libgnome-keyring.tcz
+libavahi.tcz
+libatasmart.tcz
+udisks.tcz

@@ -1,0 +1,7 @@
+usr/local/bin
+usr/local/etc
+usr/local/lib/*.so*
+usr/local/lib/gio/modules/*.so
+usr/local/libexec
+usr/local/share
+x-usr/local/share/locale
