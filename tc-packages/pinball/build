@@ -2,32 +2,34 @@
 # tc-ext-tools build functions: configure, compile, install, rules
 #
 
-### Configure
+# Configure
 build_configure() {
 
-  ./configure --prefix=/usr/local --localstatedir=/var \
-       --disable-scrollkeeper || return 1
+  ./configure --prefix=/usr/local || return 1
 
 }
-##
 
-### Compile
+# Compile
 build_compile() {
 
   make || return 1
 
 }
-##
 
-### Install
+# Install
 build_install() {
 
   make DESTDIR="$INSTALL_ROOT" install || return 1
 
-}
-##
+  install -d "$INSTALL_ROOT/usr/local/share/applications"
+  install -d "$INSTALL_ROOT/usr/local/share/pixmaps"
 
-### Rules
+  install -m644 pinball.desktop "$INSTALL_ROOT/usr/local/share/applications/pinball.desktop"
+  install -m644 data/pinball.xpm "$INSTALL_ROOT/usr/local/share/pixmaps/pinball.xpm"
+
+}
+
+# Rules
 build_rules() {
 
   buildit load || exit 1
@@ -48,4 +50,3 @@ build_rules() {
   buildit encrypt || exit 1
 
 }
-##

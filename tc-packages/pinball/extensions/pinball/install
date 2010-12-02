@@ -1,0 +1,4 @@
+usr/local/bin/pinball
+usr/local/lib/pinball/*.la
+usr/local/lib/pinball/*.so*
+usr/local/share

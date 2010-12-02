@@ -43,76 +43,76 @@ build_install() {
   mkdir -p "$INSTALL_ROOT/usr/local/share/virtualbox/nls"
   mkdir -p "$INSTALL_ROOT/usr/local/share/doc/virtualbox-ose"
 
-  install -m 0644 COPYING "$INSTALL_ROOT/usr/local/share/doc/virtualbox-ose/license"
+  install -m 0644 COPYING "$INSTALL_ROOT/usr/local/share/doc/virtualbox-ose/license" || return 1
 
   # virtualbox-ose
   cd out/linux.x86/release/bin
-  install -m 0755 VBox.sh "$INSTALL_ROOT/usr/local/bin/VBox"
+  install -m 0755 VBox.sh "$INSTALL_ROOT/usr/local/bin/VBox" || return 1
 
-  ln -sf VBox "$INSTALL_ROOT/usr/local/bin/VBoxHeadless"
-  ln -sf VBox "$INSTALL_ROOT/usr/local/bin/VBoxManage"
-  ln -sf VBox "$INSTALL_ROOT/usr/local/bin/VBoxSDL"
-  ln -sf VBox "$INSTALL_ROOT/usr/local/bin/VirtualBox"
+  ln -sf VBox "$INSTALL_ROOT/usr/local/bin/VBoxHeadless" || return 1
+  ln -sf VBox "$INSTALL_ROOT/usr/local/bin/VBoxManage" || return 1
+  ln -sf VBox "$INSTALL_ROOT/usr/local/bin/VBoxSDL" || return 1
+  ln -sf VBox "$INSTALL_ROOT/usr/local/bin/VirtualBox" || return 1
 
-  install -m 0755 VBoxTunctl "$INSTALL_ROOT/usr/local/bin"
+  install -m 0755 VBoxTunctl "$INSTALL_ROOT/usr/local/bin" || return 1
 
-  install -m 0755 components/* -t "$INSTALL_ROOT/usr/local/lib/virtualbox/components"
+  install -m 0755 components/* -t "$INSTALL_ROOT/usr/local/lib/virtualbox/components" || return 1
 
-  install -m 0755 *.so "$INSTALL_ROOT/usr/local/lib/virtualbox"
-  install -m 0644 *.gc *.r0  VBoxEFI*.fd "$INSTALL_ROOT/usr/local/lib/virtualbox"
+  install -m 0755 *.so "$INSTALL_ROOT/usr/local/lib/virtualbox" || return 1
+  install -m 0644 *.gc *.r0  VBoxEFI*.fd "$INSTALL_ROOT/usr/local/lib/virtualbox" || return 1
 
-  install -m 4755 VBoxHeadless VBoxSDL VBoxNetDHCP VBoxNetAdpCtl VirtualBox VBoxBFE -t "$INSTALL_ROOT/usr/local/lib/virtualbox"
+  install -m 4755 VBoxHeadless VBoxSDL VBoxNetDHCP VBoxNetAdpCtl VirtualBox VBoxBFE -t "$INSTALL_ROOT/usr/local/lib/virtualbox" || return 1
 
-  install -m 0755 VBoxManage VBoxSVC VBoxXPCOMIPCD VBoxSysInfo.sh xpidl VBoxTestOGL EfiThunk -t "$INSTALL_ROOT/usr/local/lib/virtualbox"
+  install -m 0755 VBoxManage VBoxSVC VBoxXPCOMIPCD VBoxSysInfo.sh xpidl VBoxTestOGL EfiThunk -t "$INSTALL_ROOT/usr/local/lib/virtualbox" || return 1
 
-  install -m 0755 nls/*.qm -t "$INSTALL_ROOT/usr/local/share/virtualbox/nls"
+  install -m 0755 nls/*.qm -t "$INSTALL_ROOT/usr/local/share/virtualbox/nls" || return 1
 
-  install -D -m 0644 VBox.png "$INSTALL_ROOT/usr/local/share/pixmaps/VBox.png"
+  install -D -m 0644 VBox.png "$INSTALL_ROOT/usr/local/share/pixmaps/VBox.png" || return 1
 
-  install -D -m 0644 virtualbox.desktop "$INSTALL_ROOT/usr/local/share/applications/virtualbox.desktop"
+  install -D -m 0644 virtualbox.desktop "$INSTALL_ROOT/usr/local/share/applications/virtualbox.desktop" || return 1
 
   mkdir -p "$INSTALL_ROOT/usr/local/etc/vbox"
   echo "INSTALL_DIR=/usr/local/lib/virtualbox" > "$INSTALL_ROOT/usr/local/etc/vbox/vbox.cfg"
 
-  install -D -m 0644 "$PACKAGE_SRC/60-virtualbox.rules" "$INSTALL_ROOT/lib/udev/rules.d/60-virtualbox.rules"
+  install -D -m 0644 "$PACKAGE_SRC/60-virtualbox.rules" "$INSTALL_ROOT/lib/udev/rules.d/60-virtualbox.rules" || return 1
 
-  install -D -m 0744 "$PACKAGE_SRC/vboxdrv.sh" "$INSTALL_ROOT/usr/local/etc/init.d/vboxdrv"
+  install -D -m 0744 "$PACKAGE_SRC/vboxdrv.sh" "$INSTALL_ROOT/usr/local/etc/init.d/vboxdrv" || return 1
 
   # host kernel modules
   cd "$TOP_SRC/out/linux.x86/release/bin/src"
 
-  install -d "$INSTALL_ROOT/usr/local/lib/modules/$KERNELV/kernel/misc"
-  install -D -m 0644 *.ko -t "$INSTALL_ROOT/usr/local/lib/modules/$KERNELV/kernel/misc"
+  install -d -m755 "$INSTALL_ROOT/usr/local/lib/modules/$KERNELVER/kernel/misc" || return 1
+  install -m 0644 *.ko -t "$INSTALL_ROOT/usr/local/lib/modules/$KERNELVER/kernel/misc" || return 1
 
   # guest additions
   cd "$TOP_SRC/out/linux.x86/release/bin/additions"
 
-  install -m755 VBoxClient VBoxControl VBoxService "$INSTALL_ROOT/usr/local/bin"
-  install -m755 mount.vboxsf "$INSTALL_ROOT/usr/local/sbin"
-  install -m755 -D "$TOP_SRC"/src/VBox/Additions/x11/Installer/98vboxadd-xclient "$INSTALL_ROOT"/usr/local/bin/VBoxClient-all
-  install -m755 -D "$TOP_SRC"/src/VBox/Additions/x11/Installer/vboxclient.desktop "$INSTALL_ROOT"/usr/local/etc/xdg/autostart/vboxclient.desktop
-  install -m755 -D pam_vbox.so "$INSTALL_ROOT/usr/local/lib/security/pam_vbox.so"
-  install -D -m644 "$PACKAGE_SRC/xorg.conf.sample" "$INSTALL_ROOT/usr/local/share/virtualbox-ose-additions/xorg.conf.sample"
+  install -m755 VBoxClient VBoxControl VBoxService "$INSTALL_ROOT/usr/local/bin" || return 1
+  install -m755 mount.vboxsf "$INSTALL_ROOT/usr/local/sbin" || return 1
+  install -m755 -D "$TOP_SRC"/src/VBox/Additions/x11/Installer/98vboxadd-xclient "$INSTALL_ROOT"/usr/local/bin/VBoxClient-all || return 1
+  install -m755 -D "$TOP_SRC"/src/VBox/Additions/x11/Installer/vboxclient.desktop "$INSTALL_ROOT"/usr/local/etc/xdg/autostart/vboxclient.desktop || return 1
+  install -m755 -D pam_vbox.so "$INSTALL_ROOT/usr/local/lib/security/pam_vbox.so" || return 1
+  install -D -m644 "$PACKAGE_SRC/xorg.conf.sample" "$INSTALL_ROOT/usr/local/share/virtualbox-ose-additions/xorg.conf.sample" || return 1
 
-  install -D vboxmouse_drv_17.so "$INSTALL_ROOT/usr/local/lib/X11/modules/input/vboxmouse.so"
-  install -D vboxvideo_drv_17.so "$INSTALL_ROOT/usr/local/lib/X11/modules/drivers/vboxvideo.so"
-  install -m755 VBoxOGL*.so "$INSTALL_ROOT/usr/local/lib"
-  install -d "$INSTALL_ROOT/usr/local/lib/X11/modules/dri"
-  ln -s /usr/local/lib/VBoxOGL.so "$INSTALL_ROOT/usr/local/lib/X11/modules/dri/vboxvideo_dri.so"
+  install -D vboxmouse_drv_17.so "$INSTALL_ROOT/usr/local/lib/X11/modules/input/vboxmouse.so" || return 1
+  install -D vboxvideo_drv_17.so "$INSTALL_ROOT/usr/local/lib/X11/modules/drivers/vboxvideo.so" || return 1
+  install -m755 VBoxOGL*.so "$INSTALL_ROOT/usr/local/lib" || return 1
+  install -d -m755 "$INSTALL_ROOT/usr/local/lib/X11/modules/dri"
+  ln -s /usr/local/lib/VBoxOGL.so "$INSTALL_ROOT/usr/local/lib/X11/modules/dri/vboxvideo_dri.so" || return 1
 
   # guest additions kernel modules
   cd "$TOP_SRC/out/linux.x86/release/bin/additions/src"
 
   cd vboxguest
-  install -D -m644 vboxguest.ko "$INSTALL_ROOT/usr/local/lib/modules/$KERNELV/kernel/misc/vboxguest.ko"
+  install -D -m644 vboxguest.ko "$INSTALL_ROOT/usr/local/lib/modules/$KERNELV/kernel/misc/vboxguest.ko" || return 1
 
   cd ../vboxsf
-  install -D -m644 vboxsf.ko "$INSTALL_ROOT/usr/local/lib/modules/$KERNELV/kernel/misc/vboxsf.ko"
+  install -D -m644 vboxsf.ko "$INSTALL_ROOT/usr/local/lib/modules/$KERNELV/kernel/misc/vboxsf.ko" || return 1
 
   cd ../vboxvideo
-  install -D -m644 vboxvideo.ko "$INSTALL_ROOT/usr/local/lib/modules/$KERNELV/kernel/misc/vboxvideo.ko"
+  install -D -m644 vboxvideo.ko "$INSTALL_ROOT/usr/local/lib/modules/$KERNELV/kernel/misc/vboxvideo.ko" || return 1
 
-  install -D -m 0644 "$PACKAGE_SRC/60-vboxguest.rules" "$INSTALL_ROOT/lib/udev/rules.d/60-vboxguest.rules"
+  install -D -m 0644 "$PACKAGE_SRC/60-vboxguest.rules" "$INSTALL_ROOT/lib/udev/rules.d/60-vboxguest.rules" || return 1
 
 }
 

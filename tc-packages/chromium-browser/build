@@ -16,6 +16,7 @@ build_configure() {
     -Dlinux_sandbox_path=/usr/local/chromium-browser/chromium-browser-sandbox \
     -Dlinux_strip_binary=1 \
     -Dffmpeg_branding=Chrome \
+    -Dproprietary_codecs=1 \
     -Drelease_extra_cflags="${CFLAGS}" \
     -Duse_cups=0 \
     -Duse_system_libjpeg=1 \

@@ -1,0 +1,3 @@
+usr/local/bin/pinball-config
+usr/local/include
+usr/local/lib/pinball/*.a

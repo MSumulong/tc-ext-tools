@@ -2,4 +2,5 @@ libstartup-notification.tcz
 dbus-glib.tcz
 GConf.tcz
 gtk2.tcz
+vte.tcz
 

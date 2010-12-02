@@ -1,0 +1,26 @@
+PACKAGE="upower"
+VERSION="0.9.7"
+SOURCE="${PACKAGE}-${VERSION}.tar.bz2"
+SOURCE_URL="http://upower.freedesktop.org/releases/upower-${VERSION}.tar.bz2"
+TOP_SRC="${PACKAGE}-${VERSION}"
+BUILD_DEPENDS="dbus
+dbus-glib
+glib2
+glib2-dev
+gudev-lib
+gudev-dev
+polkit
+polkit-dev
+libusb
+libusb-dev"
+
+EXTENSIONS="upower upower-dev upower-locale"
+DESCRIPTION="UPower is an abstraction for power management."
+AUTHOR="David Zeuthen, Richard Hughes"
+SITE="http://upower.freedesktop.org/"
+COPYING="GPL"
+MAINTAINERS="Arslan S."
+COMMENTS="This extension is PPI compatible."
+CHANGELOG="2010/07/22 First Version 0.9.5
+		2010/08/02 Rebuilt"
+CURRENT="Updated to $VERSION"
