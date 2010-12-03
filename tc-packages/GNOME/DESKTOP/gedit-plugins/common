@@ -1,8 +1,8 @@
 PACKAGE="gedit-plugins"
-VERSION="2.30.0"
+VERSION="2.32.0"
 SOURCE="${PACKAGE}-${VERSION}.tar.bz2"
 TOP_SRC="${PACKAGE}-${VERSION}"
-SOURCE_URL="http://ftp.gnome.org/pub/GNOME/sources/gedit-plugins/2.30/gedit-plugins-${VERSION}.tar.bz2"
+SOURCE_URL="http://ftp.gnome.org/pub/GNOME/sources/gedit-plugins/2.32/gedit-plugins-${VERSION}.tar.bz2"
 BUILD_DEPENDS="gnome-doc-utils
 rarian
 gtk2
@@ -22,7 +22,8 @@ gedit
 gedit-dev
 vte
 vte-dev
-vtemodule-2.7
+vtemodule
+dbus-python-2.7
 gnome-python
 gnome-python-dev"
 

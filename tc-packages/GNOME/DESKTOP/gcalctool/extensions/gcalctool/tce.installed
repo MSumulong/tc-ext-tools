@@ -1,2 +1,5 @@
 #!/bin/sh
+
 [ -x $(which update-gconf-database) ] && update-gconf-database register gcalctool > /dev/null 2>&1
+[ -x $(which glib-compile-schemas) ] && glib-compile-schemas /usr/local/share/glib-2.0/schemas > /dev/null 2>&1
+

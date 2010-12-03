@@ -1,16 +1,12 @@
 PACKAGE="epiphany"
-VERSION="2.30.5"
+VERSION="2.30.6"
 SOURCE="${PACKAGE}-${VERSION}.tar.bz2"
-SOURCE_URL="http://ftp.gnome.org/pub/GNOME/sources/epiphany/2.30/epiphany-${VERSION}.tar.bz2"
+SOURCE_URL="http://ftp.gnome.org/pub/GNOME/sources/epiphany/${VERSION%.*}/epiphany-${VERSION}.tar.bz2"
 TOP_SRC="${PACKAGE}-${VERSION}"
 ICON="/usr/local/share/icons/hicolor/32x32/apps/gnome-web-browser.png"
 DESKTOP_ENTRY="/usr/local/share/applications/epiphany.desktop"
 BUILD_DEPENDS="gnome-doc-utils
 rarian
-seed
-seed-dev
-webkit
-webkit-dev
 icu
 icu-dev
 libglade
@@ -32,16 +28,14 @@ libsoup-gnome
 libsoup-gnome-dev
 nss
 nss-dev
-gobject-introspection
-gobject-introspection-dev
-gir-repository
-gir-repository-dev
-webkit-gir
 iso-codes
+webkit
+webkit-dev
 NetworkManager
 NetworkManager-dev
 enchant
 enchant-dev
+gst-plugins-base
 gst-plugins-base-dev"
 
 EXTENSIONS="epiphany epiphany-dev epiphany-doc epiphany-locale"
@@ -53,5 +47,6 @@ MAINTAINERS="Arslan S."
 COMMENTS="This extension is PPI compatible."
 CHANGELOG="2010/03/14 Original 2.28.2
 		2010/05/08 Updated to 2.29.6 & Added seed support
-		2010/08/06 Updated to 2.30.2"
-CURRENT="Updated to 2.30.5"
+		2010/08/06 Updated to 2.30.2
+		2010/09/01 Updated to 2.30.5"
+CURRENT="Updated to $VERSION & Dropped seed support"

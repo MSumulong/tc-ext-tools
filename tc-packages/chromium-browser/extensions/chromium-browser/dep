@@ -3,5 +3,7 @@ GConf.tcz
 bzip2-lib.tcz
 libasound.tcz
 nss.tcz
+libevent.tcz
 shared-mime-info.tcz
 hicolor-icon-theme.tcz
+

@@ -1,5 +1,5 @@
 PACKAGE="chromium-browser"
-VERSION="7.0.517.44"
+VERSION="8.0.552.215"
 SOURCE="chromium-${VERSION}.tar.bz2"
 TOP_SRC="chromium-${VERSION}"
 SOURCE_URL="http://build.chromium.org/buildbot/official/chromium-${VERSION}.tar.bz2"
@@ -28,6 +28,8 @@ Xorg-7.5
 Xorg-7.5-dev
 libxft
 libxft-dev
+libevent
+libevent-dev
 #libcups
 #cups"
 
@@ -41,8 +43,8 @@ COMMENTS="This extension is PPI compatible."
 CHANGELOG="2009/12/17 First Version
 	     	2009/12/19 Updated info
 	     	2009/12/31 Updated to 4.0.286.0
-				-Now wrapper passes user flags to the browser
-				-Making chromium the default browser fixed for Freedesktops
+			   -Now wrapper passes user flags to the browser
+			   -Making chromium the default browser fixed for Freedesktops
 	     	2010/03/02 Updated to 5.0.343.0 (40399)
 		2010/03/08 Recovered desktop entry and fixed dep list	
 		2010/04/13 Updated to 5.0.376.0 (44267)
@@ -51,5 +53,8 @@ CHANGELOG="2009/12/17 First Version
 		2010/08/29 Switched to stable channel & Updated to 5.0.375.127
 		2010/09/04 Updated to 6.0.472.53
 		2010/09/17 Updated to 6.0.472.59
-		2010/10/23 Updated to 7.0.517.43"
-CURRENT="Updated to 7.0.517.44"
+		2010/10/23 Updated to 7.0.517.43
+		2010/11/07 Updated to 7.0.517.44"
+CURRENT="Updated to $VERSION
+		   -Built with system libevent
+		   -Added proprietary codecs (aac/ac3/mpeg4audio/h264/mov/mp3) support to the bundled ffmpeg library"

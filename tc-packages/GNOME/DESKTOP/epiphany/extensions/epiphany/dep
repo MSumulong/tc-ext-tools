@@ -1,12 +1,10 @@
 libxslt.tcz
 libnotify.tcz
 libstartup-notification.tcz
-gobject-introspection.tcz
 libsoup-gnome.tcz
 libavahi.tcz
 nss.tcz
 webkit.tcz
-seed.tcz
 iso-codes.tcz
 shared-mime-info.tcz
 hicolor-icon-theme.tcz

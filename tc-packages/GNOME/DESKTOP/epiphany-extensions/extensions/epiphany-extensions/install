@@ -1,5 +1,4 @@
-usr/local/share/gnome/help/epiphany-extensions/C
-usr/local/share/epiphany/icons
-usr/local/share/omf/epiphany-extensions/epiphany-extensions-C.omf
-usr/local/share/epiphany-extensions
-usr/local/lib/epiphany
+usr/local/lib
+usr/local/share/epiphany*
+usr/local/share/gnome/help/*/C
+usr/local/share/omf/*/*-C.omf

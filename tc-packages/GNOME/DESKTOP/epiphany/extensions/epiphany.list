@@ -42,7 +42,6 @@ usr/local/share/icons/hicolor/16x16/apps/gnome-web-browser.png
 usr/local/share/icons/hicolor/scalable/apps/gnome-web-browser.svg
 usr/local/share/icons/hicolor/48x48/apps/epiphany-bookmarks.png
 usr/local/share/icons/hicolor/32x32/apps/gnome-web-browser.png
-usr/local/share/gir-1.0/Epiphany-2.29.gir
 usr/local/share/gnome/help/epiphany/el/figures/ephy-bookmarkbar-smartbookmark-screenshot.png
 usr/local/share/gnome/help/epiphany/el/figures/ephy-history-window-screenshot.png
 usr/local/share/gnome/help/epiphany/el/figures/ephy-addressbar-smartbookmark-screenshot.png
@@ -304,6 +303,7 @@ usr/local/share/locale/is/LC_MESSAGES/epiphany.mo
 usr/local/share/locale/lv/LC_MESSAGES/epiphany.mo
 usr/local/share/locale/mk/LC_MESSAGES/epiphany.mo
 usr/local/share/locale/da/LC_MESSAGES/epiphany.mo
+usr/local/share/locale/an/LC_MESSAGES/epiphany.mo
 usr/local/share/locale/hi/LC_MESSAGES/epiphany.mo
 usr/local/share/locale/hu/LC_MESSAGES/epiphany.mo
 usr/local/share/locale/lt/LC_MESSAGES/epiphany.mo
@@ -330,7 +330,6 @@ usr/local/share/locale/ast/LC_MESSAGES/epiphany.mo
 usr/local/share/locale/yo/LC_MESSAGES/epiphany.mo
 usr/local/share/locale/fr/LC_MESSAGES/epiphany.mo
 usr/local/share/locale/wa/LC_MESSAGES/epiphany.mo
-usr/local/lib/girepository-1.0/Epiphany-2.29.typelib
 usr/local/lib/pkgconfig/epiphany-2.29.pc
 usr/local/etc/gconf/schemas/epiphany.schemas
 usr/local/etc/gconf/schemas/epiphany-lockdown.schemas
