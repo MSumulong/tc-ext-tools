@@ -1,0 +1,39 @@
+PACKAGE="cairo-dock-plugins"
+MAJORVERSION="2.2.0"
+VERSION="${MAJORVERSION}-4"
+SOURCE="${PACKAGE}-${VERSION}.tar.gz"
+TOP_SRC="${PACKAGE}-${VERSION}"
+SOURCE_URL="http://launchpad.net/cairo-dock-plug-ins/2.2/${MAJORVERSION}/+download/cairo-dock-plugins-${VERSION}.tar.gz"
+BUILD_DEPENDS="cmake
+cairo-dock-core
+cairo-dock-core-dev
+libasound
+alsa-dev
+vte
+vte-dev
+gtkglext
+gtkglext-dev
+librsvg
+librsvg-dev
+libical
+libical-dev
+Xorg-7.5-lib
+Xorg-7.5-dev
+gnome-menus
+gnome-menus-dev
+libxklavier
+libxklavier-dev
+libexif
+libexif-dev
+webkit
+webkit-dev"
+
+EXTENSIONS="cairo-dock-plugins cairo-dock-plugins-locale"
+DESCRIPTION="Cairo-Dock plugins package."
+AUTHOR="Cairo-Dock Team"
+SITE="https://launchpad.net/cairo-dock-plug-ins"
+COPYING="GPL"
+MAINTAINERS="Arslan S."
+COMMENTS="This extension is PPI compatible."
+CHANGELOG="---"
+CURRENT="First Version"
