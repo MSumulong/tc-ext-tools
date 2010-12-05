@@ -1,0 +1,4 @@
+COMMENTS="EBML was designed to be a simplified binary extension of XML for the purpose of storing
+		and manipulating data in a hierarchical form with variable field lengths.
+
+		This extension is PPI compatible."

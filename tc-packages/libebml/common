@@ -1,0 +1,17 @@
+PACKAGE="libebml"
+VERSION="1.0.0"
+SOURCE="${PACKAGE}-${VERSION}.tar.bz2"
+TOP_SRC="${PACKAGE}-${VERSION}"
+SOURCE_URL="http://dl.matroska.org/downloads/libebml/libebml-${VERSION}.tar.bz2"
+BUILD_DEPENDS=""
+
+EXTENSIONS="libebml libebml-dev"
+DESCRIPTION="Open standard Extensible Binary Meta-Language."
+AUTHOR="Matroska Team"
+SITE="http://www.matroska.org/"
+COPYING="LGPL"
+MAINTAINERS="Arslan S."
+COMMENTS="This extension is PPI compatible."
+CHANGELOG="2009/11/13 Original 0.7.8
+		2010/02/20 Updated with rtti (Curaga)"
+CURRENT="Updated to $VERSION"
