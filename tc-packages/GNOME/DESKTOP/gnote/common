@@ -1,5 +1,5 @@
 PACKAGE="gnote"
-VERSION="0.7.2"
+VERSION="0.7.3"
 SOURCE="${PACKAGE}-${VERSION}.tar.bz2"
 TOP_SRC="${PACKAGE}-${VERSION}"
 SOURCE_URL="http://ftp.gnome.org/pub/GNOME/sources/gnote/0.7/gnote-${VERSION}.tar.bz2"
@@ -24,6 +24,8 @@ gtkmm
 gtkmm-dev
 libpanelappletmm
 libpanelappletmm-dev
+enchant
+enchant-dev
 gnome-doc-utils
 rarian"
 
@@ -34,5 +36,6 @@ SITE="http://live.gnome.org/Gnote"
 COPYING="GPL-3"
 MAINTAINERS="Arslan S."
 COMMENTS="This extension is PPI compatible."
-CHANGELOG="2010/03/08 Original 0.7.1"
-CURRENT="Updated to 0.7.2"
+CHANGELOG="2010/03/08 Original 0.7.1
+		2010/08/13 Updated to 0.7.2"
+CURRENT="Updated to $VERSION"

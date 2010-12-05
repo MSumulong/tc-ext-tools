@@ -1,4 +1,4 @@
 #!/bin/sh
 
-[ -x $(which update-gconf-database) ] && sudo update-gconf-database register gedit-plugins > /dev/null 2>&1
+[ -x $(which update-gconf-database) ] && sudo update-gconf-database register-extension gedit-plugins > /dev/null 2>&1
 
