@@ -35,5 +35,6 @@ CHANGELOG="2009/05/26 First Version 2.18.0.1 by jpeters
 		2010/05/18 Updated to 2.28.1
 			-added evoldap backend
 			-added a script: update-gconf-database to properly install schemas
-		2010/07/15 Rebuilt with patches & updated script: update-gconf-database"
-CURRENT="Updated to 2.32.0"
+		2010/07/15 Rebuilt with patches & updated script: update-gconf-database
+		2010/11/19 Updated to 2.32.0"
+CURRENT="Updated to $VERSION"

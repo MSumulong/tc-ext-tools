@@ -21,10 +21,12 @@
 
 . /etc/init.d/tc-functions
 
-if [ "$(id -u)" -ne 0 ] ; then
+check_for_root() {
+   if [ "$(id -u)" -ne 0 ] ; then
 	echo "${RED}You need to run me as root!${NORMAL}"
 	exit 1
-fi
+   fi
+}
 
 SYS_CONF_DIR=/usr/local/etc
 SCHEMAS_DIR=${SYS_CONF_DIR}/gconf/schemas
@@ -51,41 +53,45 @@ _EOF
 }
 
 register() {
-	if [ -z "$INPUT" ]; then
-	     print_usage
-	     exit 1
-	fi
+   if [ -z "$INPUT" ]; then
+           print_usage
+	   exit 1
+   fi
 
-	if [ -f "${INPUT}" ]; then
-	     echo -e "${BLUE}Registering $INPUT ... \c${NORMAL}"
-	     $GCONFTOOL --makefile-install-rule $INPUT > /dev/null 2>&1
-	     echo -e "${YELLOW}done!${NORMAL}"
-	elif [ -f ${SCHEMAS_DIR}/${INPUT}.schemas ]; then
-	     echo -e "${BLUE}Registering $INPUT ... \c${NORMAL}"
-	     $GCONFTOOL --makefile-install-rule ${SCHEMAS_DIR}/${INPUT}.schemas > /dev/null 2>&1
-	     echo -e "${YELLOW}done!${NORMAL}"
-	else
-	     print_usage
-	fi
+   if [ -f "${INPUT}" ]; then
+           echo -e "${BLUE}Registering $INPUT ... \c${NORMAL}"
+	   $GCONFTOOL --makefile-install-rule $INPUT > /dev/null 2>&1 || return 1
+	   echo -e "${YELLOW}done!${NORMAL}"
+   elif [ -f ${SCHEMAS_DIR}/${INPUT}.schemas ]; then
+           echo -e "${BLUE}Registering $INPUT ... \c${NORMAL}"
+	   $GCONFTOOL --makefile-install-rule ${SCHEMAS_DIR}/${INPUT}.schemas > /dev/null 2>&1 || return 1
+	   echo -e "${YELLOW}done!${NORMAL}"
+   else
+           print_usage
+   fi
+
+   return 0
 }
 
 unregister() {
-	if [ -z "$INPUT" ]; then
-	     print_usage
-	     exit 1
-	fi
+   if [ -z "$INPUT" ]; then
+           print_usage
+           exit 1
+   fi
 
-	if [ -f "${INPUT}" ]; then
-	     echo -e "${BLUE}Unregistering $INPUT ... \c${NORMAL}"
-	     $GCONFTOOL --makefile-uninstall-rule $INPUT > /dev/null 2>&1
-	     echo -e "${YELLOW}done!${NORMAL}"
-	elif [ -f ${SCHEMAS_DIR}/${INPUT}.schemas ]; then
-	     echo -e "${BLUE}Unregistering ${SCHEMAS_DIR}/${INPUT}.schemas ... \c${NORMAL}"
-	     $GCONFTOOL --makefile-uninstall-rule $INPUT > /dev/null 2>&1
-	     echo -e "${YELLOW}done!${NORMAL}"
-	else
-	     print_usage
-	fi
+   if [ -f "${INPUT}" ]; then
+           echo -e "${BLUE}Unregistering $INPUT ... \c${NORMAL}"
+	   $GCONFTOOL --makefile-uninstall-rule $INPUT > /dev/null 2>&1 || return 1
+	   echo -e "${YELLOW}done!${NORMAL}"
+   elif [ -f ${SCHEMAS_DIR}/${INPUT}.schemas ]; then
+           echo -e "${BLUE}Unregistering ${SCHEMAS_DIR}/${INPUT}.schemas ... \c${NORMAL}"
+	   $GCONFTOOL --makefile-uninstall-rule $INPUT > /dev/null 2>&1 || return 1
+	   echo -e "${YELLOW}done!${NORMAL}"
+   else
+           print_usage
+   fi
+
+   return 0
 }
 
 register_list() {
@@ -98,14 +104,16 @@ register_list() {
 	do
 	    if [ -f "${i}" ]; then
 	         echo -e "${BLUE}Registering $i ... \c${NORMAL}"
-	         $GCONFTOOL --makefile-install-rule $i > /dev/null 2>&1
+	         $GCONFTOOL --makefile-install-rule $i > /dev/null 2>&1 || return 1
 	         echo -e "${YELLOW}done!${NORMAL}"
 	    elif [ -f "${SCHEMAS_DIR}/${i}.schemas" ]; then
 	           echo -e "${BLUE}Registering $i ... \c${NORMAL}"
-	           $GCONFTOOL --makefile-install-rule ${SCHEMAS_DIR}/${i}.schemas > /dev/null 2>&1
+	           $GCONFTOOL --makefile-install-rule ${SCHEMAS_DIR}/${i}.schemas > /dev/null 2>&1 || return 1
 	           echo -e "${YELLOW}done!${NORMAL}"
 	    fi
-	done	
+	done
+
+   return 0
 }
 
 unregister_list() {
@@ -118,18 +126,18 @@ unregister_list() {
 	do
 	    if [ -f "${i}" ]; then
 	         echo -e "${BLUE}Unregistering $i ... \c${NORMAL}"
-	         $GCONFTOOL --makefile-uninstall-rule $i > /dev/null 2>&1
+	         $GCONFTOOL --makefile-uninstall-rule $i > /dev/null 2>&1 || return 1
 	         echo -e "${YELLOW}done!${NORMAL}"
 	    elif [ -f ${SCHEMAS_DIR}/${i}.schemas ]; then
 	           echo -e "${BLUE}Unregistering $i ... \c${NORMAL}"
-	           $GCONFTOOL --makefile-uninstall-rule ${SCHEMAS_DIR}/${i}.schemas > /dev/null 2>&1
+	           $GCONFTOOL --makefile-uninstall-rule ${SCHEMAS_DIR}/${i}.schemas > /dev/null 2>&1 || return 1
 	           echo -e "${YELLOW}done!${NORMAL}"
 	    fi
-	done	
+	done
+   return 0
 }
 
 register_all() {
-
 	echo "${RED}Updating GConf database, this may take a few minutes please wait ...${NORMAL}"
 
 	SCHEMAS_FILES=$(find $SYS_CONF_DIR/gconf -name *.schemas 2> /dev/null)
@@ -137,7 +145,7 @@ register_all() {
 	     for SCHEMAS_FILE in $SCHEMAS_FILES
 	     do
 		 echo -e "${BLUE}Registering $SCHEMAS_FILE ... \c${NORMAL}"
-		 $GCONFTOOL --makefile-install-rule $SCHEMAS_FILE > /dev/null 2>&1
+		 $GCONFTOOL --makefile-install-rule $SCHEMAS_FILE > /dev/null 2>&1 || return 1
 		 echo -e "${YELLOW}done!${NORMAL}"
 	     done
 	fi
@@ -147,12 +155,14 @@ register_all() {
 	     for ENTRIES_FILE in $ENTRIES_FILES
 	     do
 		 echo -e "${CYAN}Registering $ENTRIES_FILE ... \c${NORMAL}"
-		 $GCONFTOOL --config-source=xml:readwrite:$SYS_CONF_DIR/gconf/gconf.xml.defaults --direct --load $ENTRIES_FILE > /dev/null 2>&1
+		 $GCONFTOOL --config-source=xml:readwrite:$SYS_CONF_DIR/gconf/gconf.xml.defaults --direct --load $ENTRIES_FILE > /dev/null 2>&1 || return 1
 		 echo -e "${YELLOW}done!${NORMAL}"
 	     done
 	fi
 
 	echo -e "${RED}All done!${NORMAL}"
+
+   return 0
 }
 
 unregister_all() {
@@ -163,12 +173,14 @@ unregister_all() {
 	     for SCHEMAS_FILE in $SCHEMAS_FILES
 	     do
 		 echo -e "${BLUE}Unregistering $SCHEMAS_FILE ... \c${NORMAL}"
-		 $GCONFTOOL --makefile-uninstall-rule $SCHEMAS_FILE > /dev/null 2>&1
+		 $GCONFTOOL --makefile-uninstall-rule $SCHEMAS_FILE > /dev/null 2>&1 || return 1
 		 echo "${YELLOW}done!${NORMAL}"
 	     done
 	fi
 
 	echo -e "${RED}All done!${NORMAL}"
+
+   return 0
 }
 
 register_extension() {
@@ -182,7 +194,6 @@ register_extension() {
 	     exit 1
 	fi
 
-	
 	echo -e "${RED}Registering the extension ${INPUT} ...${NORMAL}"
 
 	SCHEMAS_FILES=$(find /tmp/tcloop/${INPUT}${SYS_CONF_DIR}/gconf -name *.schemas 2> /dev/null)
@@ -190,12 +201,14 @@ register_extension() {
 	     for SCHEMAS_FILE in $SCHEMAS_FILES
 	     do
 		 echo -e "${BLUE}Registering $SCHEMAS_FILE ... \c${NORMAL}"
-		 $GCONFTOOL --makefile-install-rule $SCHEMAS_FILE > /dev/null 2>&1
+		 $GCONFTOOL --makefile-install-rule $SCHEMAS_FILE > /dev/null 2>&1 || return 1
 		 echo "${YELLOW}done!${NORMAL}"
 	     done
 	fi
 
-	echo -e "${RED}All done!${NORMAL}"	
+	echo -e "${RED}All done!${NORMAL}"
+
+   return 0	
 }
 
 unregister_extension() {
@@ -209,7 +222,6 @@ unregister_extension() {
 	     exit 1
 	fi
 
-	
 	echo -e "${RED}Unregistering the extension ${INPUT} ...${NORMAL}"
 
 	SCHEMAS_FILES=$(find /tmp/tcloop/${INPUT}${SYS_CONF_DIR}/gconf -name *.schemas 2> /dev/null)
@@ -217,37 +229,66 @@ unregister_extension() {
 	     for SCHEMAS_FILE in $SCHEMAS_FILES
 	     do
 		 echo -e "${BLUE}Unregistering $SCHEMAS_FILE ... \c${NORMAL}"
-		 $GCONFTOOL --makefile-uninstall-rule $SCHEMAS_FILE > /dev/null 2>&1
+		 $GCONFTOOL --makefile-uninstall-rule $SCHEMAS_FILE > /dev/null 2>&1 || return 1
 		 echo "${YELLOW}done!${NORMAL}"
 	     done
 	fi
 
-	echo -e "${RED}All done!${NORMAL}"	
+	echo -e "${RED}All done!${NORMAL}"
+
+   return 0
+}
+
+adjust_backup_list() {
+   if [ "X$(grep 'usr/local/etc/gconf/gconf.xml.defaults' /opt/.filetool.lst)" = "X" ]
+   then
+        echo -e "${RED}It seems you do not have gconf.xml.defaults directory listed in your backup.${NORMAL}"
+        echo -e "${GREEN}Do you wish to add it to your backup list ? [y][n]${NORMAL}"
+        read ans
+        case $ans in
+               y|Y|yes|YES)
+                          echo -e "usr/local/etc/gconf/gconf.xml.defaults" >> /opt/.filetool.lst
+                          ;;
+               n|N|No|NO)
+                          echo -e "{RED}As you wish!${NORMAL}"
+                          ;;
+               *)
+                          ;;
+        esac
+   fi
 }
 
 case "$1" in
 	register)
+		check_for_root
 		register
 		;;
 	register-list)
+		check_for_root
 		register_list
 		;;
 	register-all)
+		check_for_root
 		register_all
 		;;
 	unregister)
+		check_for_root
 		unregister
 		;;
 	unregister-list)
+		check_for_root
 		unregister_list
 		;;
 	unregister-all)
+		check_for_root
 		unregister_all
 		;;
 	register-extension)
+		check_for_root
 		register_extension
 		;;
 	unregister-extension)
+		check_for_root
 		unregister_extension
 		;;
 	*)

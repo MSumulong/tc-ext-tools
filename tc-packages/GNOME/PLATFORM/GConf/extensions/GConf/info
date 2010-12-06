@@ -1,16 +1,8 @@
-COMMENTS="update-gconf-database usage:
-		sudo update-gconf-database register-extension name (if the extension \"name\" is mounted)
-		sudo update-gconf-database register /full/path/to/name.schemas
-		sudo update-gconf-database register name (if the name.schemas is in in /usr/local/etc/gconf/schemas)
-		sudo update-gconf-database register-list \"/full/path/to/name1.schemas /full/path/to/name2.schemas\"
-		sudo update-gconf-database register-list \"name1 name2\" (if the name1.schemas and name2.schemas are in in /usr/local/etc/gconf/schemas)
-		sudo update-gconf-database register-all (all schemas in /usr/local/etc/gconf/schemas)
-		And replace register with unregister.
+COMMENTS="Run update-gconf-database for help
 
 		It is recommended to add to backup (/opt/.filetool.lst):
-		usr/local/etc/gconf/gconf.xml.defaults/%gconf-tree.xml
-		In addition to this backup entry If you are running a locale setup then add the appropriate
-		usr/local/etc/gconf/gconf.xml.defaults/%gconf-tree-XX.xml to backup list where XX=es|de|fr|it for example
+		usr/local/etc/gconf/gconf.xml.defaults
 
 		Optional dependency: openldap (only needed for evoldap backend)
+
 		This extension is PPI compatible."
