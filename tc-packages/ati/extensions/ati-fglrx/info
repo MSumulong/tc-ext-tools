@@ -1,0 +1,11 @@
+COMMENTS="Installation
+		1-) Download and install the extension ati-fglrx-kernel-source (ati license does not permit distribution of kernel module)
+		2-) Run ati-fglrx-kernel-module-installer to build a kernel module extension which is required by ati-fglrx
+			sudo ati-fglrx-kernel-module-installer
+		3-) Download and install the extension ati-flgrx
+		4-) Exit to prompt to terminate X and then run the following command:
+			sudo aticonfig --initial
+		5-) Start the desktop
+			startx
+		6-) For persistency you need to add etc/X11/xorg.conf to your backup list (/opt/.filetool.lst)
+			echo \"etc/X11/xorg.conf\" >> /opt/.filetool.lst"
