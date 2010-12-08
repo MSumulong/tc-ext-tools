@@ -1,0 +1,53 @@
+Index: mjpegtools-1.9.0/scripts/lav2mpeg
+===================================================================
+--- mjpegtools-1.9.0.orig/scripts/lav2mpeg	2009-06-06 09:59:09.000000000 +0200
++++ mjpegtools-1.9.0/scripts/lav2mpeg	2009-06-06 10:00:24.000000000 +0200
+@@ -16,7 +16,7 @@
+ YUVSCALER=${YUVSCALER:-"yuvscaler"}
+ MPEG2ENC=${MPEG2ENC:-"mpeg2enc"}
+ LAV2WAV=${LAV2WAV:-"lav2wav"}
+-AUDIOENC=${AUDIOENC:-"mp2enc"}       # can be "toolame" or "mp2enc"
++AUDIOENC=${AUDIOENC:-"mp2enc"}       # can be "twolame" or "mp2enc"
+ MPLEX=${MPLEX:-"mplex"}
+ YUVDENOISE=${YUVDENOISE:-"yuvdenoise"}
+ LAVINFO=${LAVINFO:-"lavinfo"}
+@@ -382,7 +382,7 @@
+ if [ $AUDIOENC = "mp2enc" ]; then
+    audioenc_flags="$mono_flag -r 44100 ${audioenc_flags} -o $audio"
+ else
+-   # assume toolame
++   # assume twolame
+    audioenc_flags="$mono_flag -s 44.1 /dev/stdin ${audioenc_flags} $audio"
+ fi
+ mplex_flags=" -o $outfile $mplex_flags $audio $video"
+@@ -491,7 +491,7 @@
+    yuvscale_str=""
+ fi
+ 
+-#final flags  -- bitrate flag is -b for both mp2enc and toolame
++#final flags  -- bitrate flag is -b for both mp2enc and twolame
+ audioenc_flags="-b $aencbpr $audioenc_flags"
+ 
+ 
+Index: mjpegtools-1.9.0/scripts/mpegtranscode
+===================================================================
+--- mjpegtools-1.9.0.orig/scripts/mpegtranscode	2009-06-06 10:00:47.000000000 +0200
++++ mjpegtools-1.9.0/scripts/mpegtranscode	2009-06-06 10:01:29.000000000 +0200
+@@ -14,7 +14,7 @@
+ exit 0
+ }
+ 
+-#  Use this commented-out version if you haven't got sox and toolame
++#  Use this commented-out version if you haven't got sox and twolame
+ #MP2ENC="nice -n 29 wav2mp2 -v -o" 
+ MPEG2ENC=mpeg2enc
+ MPLEX=mplex
+@@ -79,7 +79,7 @@
+ 
+ cat $* | extract_a52 - -s | a52dec -m wav | \
+         sox -t wav /dev/stdin -t wav -r 44100 /dev/stdout | \
+-        toolame -p 2 -b 224 /dev/stdin $outfile.mp2
++        twolame -p 2 -b 224 /dev/stdin $outfile.mp2
+ 
+ # Eventually mux-ing goes here!
+ 

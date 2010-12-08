@@ -1,0 +1,23 @@
+PACKAGE="libdv"
+VERSION="1.0.0"
+SOURCE="${PACKAGE}-${VERSION}.tar.gz"
+TOP_SRC="${PACKAGE}-${VERSION}"
+SOURCE_URL="http://downloads.sourceforge.net/libdv/libdv-${VERSION}.tar.gz"
+BUILD_DEPENDS="popt
+popt-dev
+gtk2
+gtk2-dev
+SDL
+SDL-dev
+Xorg-7.5-lib
+Xorg-7.5-dev"
+
+EXTENSIONS="libdv libdv-dev"
+DESCRIPTION="The Quasar DV codec (libdv) is a software codec for DV video."
+AUTHOR="various"
+SITE="http://libdv.sourceforge.net/"
+COPYING="LGPL"
+MAINTAINERS="Arslan S."
+COMMENTS="This extension is PPI compatible."
+CHANGELOG="---"
+CURRENT="First Version"

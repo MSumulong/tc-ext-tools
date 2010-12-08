@@ -1,0 +1,53 @@
+#
+# tc-ext-tools build functions: configure, compile, install, rules
+#
+
+# Configure
+build_configure() {
+
+    # CImg is only required for building wxcam
+    [ -e "$TCEXTTOOLS_SRC/CImg-1.3.4.zip" ] || wget http://downloads.sourceforge.net/cimg/CImg-1.3.4.zip -P "$TCEXTTOOLS_SRC"
+    unzip "$TCEXTTOOLS_SRC/CImg-1.3.4.zip"
+    cp CImg-1.3.4/CImg.h . || return 1
+
+   ./configure --prefix=/usr/local || return 1
+
+}
+
+# Compile
+build_compile() {
+
+   make || return 1
+
+}
+
+# Install
+build_install() {
+
+   make DESTDIR="$INSTALL_ROOT" install || return 1
+
+   mv "$INSTALL_ROOT"/usr/share/* "$INSTALL_ROOT"/usr/local/share || return 1
+
+}
+
+# Rules
+build_rules() {
+
+   buildit load || exit 1
+   buildit download || exit 1
+   buildit convert || exit 1
+   buildit unpack || exit 1
+   buildit patch || exit 1
+   buildit configure || exit 1
+   buildit compile || exit 1
+   buildit install || exit 1
+   buildit strip || exit 1
+   buildit split || exit 1
+   buildit create || exit 1
+   buildit generate || exit 1
+   buildit check || exit 1
+   buildit package || exit 1
+   buildit compress || exit 1
+   buildit encrypt || exit 1
+
+}
