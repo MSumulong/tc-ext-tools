@@ -1,0 +1,19 @@
+PACKAGE="pycurl"
+VERSION="7.19.0"
+SOURCE="${PACKAGE}-${VERSION}.tar.gz"
+TOP_SRC="${PACKAGE}-${VERSION}"
+SOURCE_URL="http://pycurl.sourceforge.net/download/pycurl-${VERSION}.tar.gz"
+BUILD_DEPENDS="curl
+curl-dev
+python
+python-dev"
+
+EXTENSIONS="pycurl pycurl-doc"
+DESCRIPTION="Python bindings for libcurl."
+AUTHOR="various"
+SITE="http://pycurl.sourceforge.net"
+COPYING="LGPL"
+MAINTAINERS="Arslan S."
+COMMENTS="This extension is PPI compatible."
+CHANGELOG="---"
+CURRENT="First Version"

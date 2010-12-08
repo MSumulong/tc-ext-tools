@@ -1,7 +1,5 @@
 #
-# Note: This file is sourced by buildit
-#
-# Defines mandatory build functions: configure, compile, install
+# tc-ext-tools build functions: configure, compile, install, rules
 #
 
 export LTLINK_EXTRAS="-ldl"
@@ -27,11 +25,11 @@ build_install() {
 
 build_rules() {
 
+  buildit load || exit 1
   buildit download || exit 1
   buildit convert || exit 1
   buildit unpack || exit 1
   buildit patch || exit 1
-  buildit load || exit 1
   buildit configure || exit 1
   buildit compile || exit 1
   buildit install || exit 1
