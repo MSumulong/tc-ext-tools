@@ -1,0 +1,23 @@
+PACKAGE="gst-python"
+VERSION="0.10.20"
+SOURCE="${PACKAGE}-${VERSION}.tar.bz2"
+SOURCE_URL="http://gstreamer.freedesktop.org/src/gst-python/gst-python-${VERSION}.tar.bz2"
+TOP_SRC="${PACKAGE}-${VERSION}"
+BUILD_DEPENDS="gstreamer
+gstreamer-dev
+python
+python-dev
+pygtk-2.7
+pygtk-2.7-dev"
+
+EXTENSIONS="gst-python"
+DESCRIPTION="GStreamer python bindings."
+AUTHOR="various"
+SITE="http://gstreamer.freedesktop.org"
+COPYING="LGPL"
+MAINTAINERS="juanito, Arslan S."
+COMMENTS="This extension is PPI compatible."
+CHANGELOG="2009/11/08 First version 0.10.17 by Juanito
+		2010/03/16 Updated to 0.10.18 by Arslan S.
+		2010/07/19 Updated to 0.10.19 by Arslan S."
+CURRENT="Updated to $VERSION & renamed by Arslan S."

@@ -1,0 +1,2 @@
+COMMENTS="Optional dependencies: libv4l, perl5, gnome-vfs
+		This extension is PPI compatible." 

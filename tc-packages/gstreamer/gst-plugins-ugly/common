@@ -1,0 +1,43 @@
+PACKAGE="gst-plugins-ugly"
+VERSION="0.10.16"
+SOURCE="${PACKAGE}-${VERSION}.tar.bz2"
+SOURCE_URL="http://gstreamer.freedesktop.org/src/${PACKAGE}/${PACKAGE}-${VERSION}.tar.bz2"
+TOP_SRC="${PACKAGE}-${VERSION}"
+BUILD_DEPENDS="gstreamer
+gstreamer-dev
+gst-plugins-base
+gst-plugins-base-dev
+liba52
+liba52-dev
+libcdio
+libcdio-dev
+libdvdread
+libdvdread-dev
+libid3tag
+libid3tag-dev
+libmad
+libmad-dev
+libmpeg2
+libmpeg2-dev
+liboil
+x264
+x264-dev
+lame
+lame-dev"
+
+EXTENSIONS="gst-plugins-ugly gst-plugins-ugly-locale"
+DESCRIPTION="GStreamer Ugly Plugins."
+AUTHOR="various"
+SITE="http://gstreamer.freedesktop.org"
+COPYING="LGPL"
+MAINTAINERS="juanito, Arslan S."
+COMMENTS="This extension is PPI compatible."
+CHANGELOG="2009/11/08 First Version by juanito
+	   	2010/01/10 Rebuild with more libs (Arslan S.)
+			-Added AC3 audio codec (liba52)
+			-Added cd,dvd input plugins
+			-Added mpeg2 decoder
+		2010/01/18 Rebuild with libdvdread (Arslan S.)
+		2010/03/16 Updated to 0.10.14 (Arslan S.)
+		2010/07/19 Updated to 0.10.15 by Arslan S."
+CURRENT="Updated to $VERSION by Arslan S."

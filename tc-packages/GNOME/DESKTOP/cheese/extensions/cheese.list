@@ -46,6 +46,13 @@ usr/local/share/gnome/help/cheese/th/figures/cheese-share.jpg
 usr/local/share/gnome/help/cheese/th/figures/cheese-wide.jpg
 usr/local/share/gnome/help/cheese/th/figures/cheese-preferences.jpg
 usr/local/share/gnome/help/cheese/th/figures/cheese-effects.jpg
+usr/local/share/gnome/help/cheese/sl/cheese.xml
+usr/local/share/gnome/help/cheese/sl/figures/cheese-main.jpg
+usr/local/share/gnome/help/cheese/sl/figures/cheese-fullscreen.jpg
+usr/local/share/gnome/help/cheese/sl/figures/cheese-share.jpg
+usr/local/share/gnome/help/cheese/sl/figures/cheese-wide.jpg
+usr/local/share/gnome/help/cheese/sl/figures/cheese-preferences.jpg
+usr/local/share/gnome/help/cheese/sl/figures/cheese-effects.jpg
 usr/local/share/gnome/help/cheese/sv/cheese.xml
 usr/local/share/gnome/help/cheese/sv/figures/cheese-main.jpg
 usr/local/share/gnome/help/cheese/sv/figures/cheese-fullscreen.jpg
@@ -134,6 +141,7 @@ usr/local/share/omf/cheese/cheese-sv.omf
 usr/local/share/omf/cheese/cheese-es.omf
 usr/local/share/omf/cheese/cheese-en_GB.omf
 usr/local/share/omf/cheese/cheese-oc.omf
+usr/local/share/omf/cheese/cheese-sl.omf
 usr/local/share/omf/cheese/cheese-it.omf
 usr/local/share/omf/cheese/cheese-de.omf
 usr/local/share/omf/cheese/cheese-cs.omf
@@ -207,6 +215,7 @@ usr/local/share/locale/ko/LC_MESSAGES/cheese.mo
 usr/local/share/locale/cs/LC_MESSAGES/cheese.mo
 usr/local/share/locale/be/LC_MESSAGES/cheese.mo
 usr/local/share/locale/ca/LC_MESSAGES/cheese.mo
+usr/local/share/locale/ka/LC_MESSAGES/cheese.mo
 usr/local/share/locale/nds/LC_MESSAGES/cheese.mo
 usr/local/share/locale/af/LC_MESSAGES/cheese.mo
 usr/local/share/locale/th/LC_MESSAGES/cheese.mo
@@ -229,6 +238,7 @@ usr/local/share/locale/hr/LC_MESSAGES/cheese.mo
 usr/local/share/locale/ta/LC_MESSAGES/cheese.mo
 usr/local/share/locale/mr/LC_MESSAGES/cheese.mo
 usr/local/share/locale/tr/LC_MESSAGES/cheese.mo
+usr/local/share/locale/ug/LC_MESSAGES/cheese.mo
 usr/local/share/locale/et/LC_MESSAGES/cheese.mo
 usr/local/share/locale/nb/LC_MESSAGES/cheese.mo
 usr/local/share/locale/bn_IN/LC_MESSAGES/cheese.mo
@@ -239,6 +249,7 @@ usr/local/share/locale/zh_TW/LC_MESSAGES/cheese.mo
 usr/local/share/locale/it/LC_MESSAGES/cheese.mo
 usr/local/share/locale/ja/LC_MESSAGES/cheese.mo
 usr/local/share/locale/bn/LC_MESSAGES/cheese.mo
+usr/local/share/locale/kk/LC_MESSAGES/cheese.mo
 usr/local/share/locale/lv/LC_MESSAGES/cheese.mo
 usr/local/share/locale/mk/LC_MESSAGES/cheese.mo
 usr/local/share/locale/da/LC_MESSAGES/cheese.mo

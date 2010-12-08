@@ -2,31 +2,29 @@
 # tc-ext-tools build functions: configure, compile, install, rules
 #
 
-### Configure
+# Configure
 build_configure() {
 
   ./configure --prefix=/usr/local --localstatedir=/var \
-      --disable-scrollkeeper || return 1
+       --enable-experimental || return 1
 
 }
-##
 
-### Compile
+# Compile
 build_compile() {
 
   make || return 1
 
 }
-##
 
-### Install
+# Install
 build_install() {
 
   make DESTDIR="$INSTALL_ROOT" install || return 1
-}
-##
 
-### Rules
+}
+
+# Rules
 build_rules() {
 
   buildit load || exit 1
@@ -47,4 +45,3 @@ build_rules() {
   buildit encrypt || exit 1
 
 }
-##
