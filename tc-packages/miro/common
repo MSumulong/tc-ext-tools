@@ -1,0 +1,31 @@
+PACKAGE="miro"
+VERSION="3.5.1"
+SOURCE="${PACKAGE}-${VERSION}.tar.gz"
+TOP_SRC="${PACKAGE}-${VERSION}"
+SOURCE_URL="http://ftp.osuosl.org/pub/pculture.org/miro/src/miro-${VERSION}.tar.gz"
+ICON="/usr/local/share/pixmaps/miro.xpm"
+DESKTOP_ENTRY="/usr/local/share/applications/miro.desktop"
+BUILD_DEPENDS="python
+python-dev
+pyrex-2.7
+pygtk-2.7
+pygtk-2.7-dev
+gnome-python
+gnome-python-dev
+libxcb
+libxcb-dev
+Xorg-7.5-lib
+Xorg-7.5-dev
+webkit
+webkit-dev
+pywebkit-2.7"
+
+EXTENSIONS="miro miro-locale"
+DESCRIPTION="The free and open source internet TV platform."
+AUTHOR="various"
+SITE="http://www.getmiro.com/"
+COPYING="GPL-2"
+MAINTAINERS="Arslan S."
+COMMENTS="This extension is PPI compatible."
+CHANGELOG="---"
+CURRENT="First Version"

@@ -1,0 +1,15 @@
+gnome-python.tcz
+pyrex-2.7.tcz
+dbus-python-2.7.tcz
+notify-python-2.7.tcz
+pygtk-2.7.tcz
+pywebkit-2.7.tcz
+pycurl.tcz
+pysqlite2.tcz
+gst-plugins-good.tcz
+gst-plugins-bad.tcz
+gst-ffmpeg.tcz
+gst-python.tcz
+libtorrent-rasterbar-python.tcz
+hicolor-icon-theme.tcz
+shared-mime-info.tcz
