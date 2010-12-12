@@ -56,7 +56,7 @@ this_main() {
             xz "$TCEXTTOOLS_SRC_TEMP/${SOURCE%.tgz}.tar" || return 1
             busybox mv -f "$TCEXTTOOLS_SRC_TEMP/${SOURCE%.tgz}.tar.xz" "$TCEXTTOOLS_SRC" || return 1
        elif [ "$SOURCE_TYPE" = "zip" ]; then
-            unzip "$TCEXTTOOLS_SOURCE" -d "$TCEXTTOOLS_TEMP" || return 1
+            unzip "$TCEXTTOOLS_SOURCE" -d "$TCEXTTOOLS_SRC_TEMP" || return 1
             tar -C "$TCEXTTOOLS_SRC_TEMP" -cJf "$TCEXTTOOLS_SRC_TEMP/${SOURCE%.zip}.tar.xz" "$TOP_SRC" || return 1
             busybox mv -f "$TCEXTTOOLS_SRC_TEMP/${SOURCE%.zip}.tar.xz" "$TCEXTTOOLS_SRC" || return 1
        elif [ "$SOURCE_TYPE" = "custom" ]; then
