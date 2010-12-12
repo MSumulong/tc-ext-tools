@@ -1,0 +1,4 @@
+usr/local/bin
+usr/local/lib/*.so*
+usr/local/lib/OGRE
+x-usr/local/lib/OGRE/cmake

@@ -1,0 +1,18 @@
+PACKAGE="bullet"
+VERSION="2.77"
+SOURCE="${PACKAGE}-${VERSION}.tgz"
+TOP_SRC="${PACKAGE}-${VERSION}"
+SOURCE_URL="http://bullet.googlecode.com/files/bullet-${VERSION}.tgz"
+BUILD_DEPENDS="cmake
+freeglut
+freeglut-dev"
+
+EXTENSIONS="bullet bullet-dev"
+DESCRIPTION="A 3D Collision Detection and Rigid Body Dynamics Library."
+AUTHOR="various"
+SITE="http://www.bulletphysics.com/Bullet"
+COPYING="zlib"
+MAINTAINERS="Arslan S."
+COMMENTS="This extension is PPI compatible."
+CHANGELOG="---"
+CURRENT="First Version"

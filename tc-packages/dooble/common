@@ -1,0 +1,24 @@
+PACKAGE="dooble"
+VERSION="1.14"
+SOURCE="Dooble.d-${VERSION}.tar.gz"
+TOP_SRC="dooble.d"
+SOURCE_URL="http://sourceforge.net/projects/dooble/files/Version%20${VERSION}/Dooble.d-${VERSION}.tar.gz/download"
+ICON=""
+DESKTOP_ENTRY=""
+BUILD_DEPENDS="qt-4.x-base
+qt-4.x-webkit
+qt-4.x-sql
+qt-4.x-dev
+sharutils
+Xorg-7.5-lib
+Xorg-7.5-dev"
+
+EXTENSIONS="dooble dooble-themes dooble-backgrounds"
+DESCRIPTION="Dooble is a web browser based on Qt/Webkit."
+AUTHOR="The Dooble Team"
+SITE="http://dooble.sourceforge.net/"
+COPYING="GPL-2"
+MAINTAINERS="Arslan S."
+COMMENTS="This extension is PPI compatible."
+CHANGELOG="2010/06/10 First Version 0.09.01~100607"
+CURRENT="Updated to $VERSION"

@@ -1,0 +1,33 @@
+PACKAGE="sensors-applet"
+VERSION="2.2.7"
+SOURCE="${PACKAGE}-${VERSION}.tar.gz"
+TOP_SRC="${PACKAGE}-${VERSION}"
+SOURCE_URL="http://downloads.sourceforge.net/sensors-applet/sensors-applet-${VERSION}.tar.gz"
+BUILD_DEPENDS="gnome-doc-utils
+rarian
+lm_sensors
+lm_sensors-dev
+libgnomeui
+libgnomeui-dev
+libpanel-applet
+libpanel-applet-dev
+libnotify
+libxcb
+libxcb-dev
+Xorg-7.5-lib
+Xorg-7.5-dev
+libxnvctrl
+dbus
+dbus-dev
+dbus-glib
+dbus-glib-dev"
+
+EXTENSIONS="sensors-applet sensors-applet-dev sensors-applet-locale"
+DESCRIPTION="GNOME panel applets to display readings from hardware sensors."
+AUTHOR="Alex Murray"
+SITE="http://sensors-applet.sourceforge.net/"
+COPYING="GPL"
+MAINTAINERS="Arslan S."
+COMMENTS="This extension is PPI compatible."
+CHANGELOG="---"
+CURRENT="First Version"
