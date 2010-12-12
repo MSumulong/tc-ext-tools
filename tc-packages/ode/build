@@ -5,8 +5,8 @@
 # Configure
 build_configure() {
 
-   ./configure --prefix=/usr/local --enable-release --enable-shared || return 1
-   # --enable-double-precision
+   ./configure --prefix=/usr/local --enable-release \
+       --enable-shared --enable-double-precision || return 1
 
 }
 

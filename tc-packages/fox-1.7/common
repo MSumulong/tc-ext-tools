@@ -1,12 +1,16 @@
 PACKAGE="fox-1.7"
-VERSION="1.7.21"
+VERSION="1.7.25"
 SOURCE="fox-${VERSION}.tar.gz"
 TOP_SRC="fox-${VERSION}"
 SOURCE_URL="http://www.fox-toolkit.org/ftp/fox-${VERSION}.tar.gz"
 BUILD_DEPENDS="Xorg-7.5
 Xorg-7.5-dev
 fontconfig
-fontconfig-dev"
+fontconfig-dev
+libxft
+libxft-dev
+libxcb
+libxcb-dev"
 
 EXTENSIONS="fox-1.7 fox-1.7-dev fox-1.7-bin"
 DESCRIPTION="FOX is a C++ based Toolkit for developing Graphical User Interfaces easily and effectively."
@@ -15,7 +19,6 @@ SITE="http://www.fox-toolkit.org/"
 COPYING="LGPL-3"
 MAINTAINERS="Arslan S."
 COMMENTS="This is the development branch of FOX-Toolkit which will be FOX-1.8 Stable in the future.
-
 		This extension is PPI compatible."
 CHANGELOG="---"
 CURRENT="First Version"

@@ -6,3 +6,4 @@ libasound.tcz
 dbus-glib.tcz
 libnotify.tcz
 libstartup-notification.tcz
+sqlite3.tcz

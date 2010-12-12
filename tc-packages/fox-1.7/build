@@ -5,11 +5,8 @@
 ### Configure
 build_configure() {
 
-  ./configure --prefix=/usr/local \
-                --enable-debug \
-                --with-xft=yes \
-                --with-opengl=yes \
-                --with-xim || return 1
+  ./configure --prefix=/usr/local --enable-debug \
+      --with-xft=yes --with-opengl=yes --with-xim || return 1
 
 }
 ##
@@ -25,7 +22,7 @@ build_compile() {
 ### Install
 build_install() {
 
-  sudo make DESTDIR=${INSTALL_ROOT} install || return 1
+  make DESTDIR="$INSTALL_ROOT" install || return 1
 
 }
 ##
@@ -33,11 +30,11 @@ build_install() {
 ### Rules
 build_rules() {
 
+  buildit load || exit 1
   buildit download || exit 1
   buildit convert || exit 1
   buildit unpack || exit 1
   buildit patch || exit 1
-  buildit load || exit 1
   buildit configure || exit 1
   buildit compile || exit 1
   buildit install || exit 1

@@ -23,5 +23,6 @@ CHANGELOG="2008/12/24 First version 3.6.7 by stevens
 			-removed sqlite3-doc extension, and added sqlite3-bin extension
 			-moved sqlite3 shell tool to sqlite3-bin
 			-sqlite3 shell tool compiled with readline support
-		2010/10/08 Updated to 3.7.3"
-CURRENT="Updated to $VERSION"
+		2010/10/08 Updated to 3.7.3
+		2010/12/08 Updated to 3.7.4"
+CURRENT="Rebuilt and added -DSQLITE_SECURE_DELETE"
