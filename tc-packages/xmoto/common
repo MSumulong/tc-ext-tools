@@ -1,0 +1,31 @@
+PACKAGE="xmoto"
+VERSION="0.5.4"
+SOURCE="${PACKAGE}-${VERSION}-src.tar.gz"
+TOP_SRC="${PACKAGE}-${VERSION}"
+SOURCE_URL="http://download.tuxfamily.org/xmoto/xmoto/${VERSION}/xmoto-${VERSION}-src.tar.gz"
+ICON="/usr/local/share/pixmaps/xmoto.xpm"
+DESKTOP_ENTRY="/usr/local/share/applications/xmoto.desktop"
+BUILD_DEPENDS="ode
+ode-dev
+bzip2-lib
+bzip2-dev
+SDL
+SDL-dev
+Xorg-7.5
+Xorg-7.5-dev
+curl
+curl-dev
+sqlite3
+sqlite3-dev
+lua
+lua-dev"
+
+EXTENSIONS="xmoto xmoto-locale"
+DESCRIPTION="A challenging 2D motocross platform game."
+AUTHOR="various"
+SITE="http://xmoto.tuxfamily.org/"
+COPYING="GPL"
+MAINTAINERS="Arslan S."
+COMMENTS="This extension is PPI compatible."
+CHANGELOG="---"
+CURRENT="First Version"

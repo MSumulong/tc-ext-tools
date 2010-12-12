@@ -22,10 +22,16 @@ Xorg-7.5-lib
 Xorg-7.5-dev
 GConf
 GConf-dev
+dbus
+dbus-dev
+dbus-glib
+dbus-glib-dev
 libgnome-keyring
 libgnome-keyring-dev
 Xorg-7.5
 Xorg-7.5-dev
+libxcb
+libxcb-dev
 libxft
 libxft-dev
 libevent
