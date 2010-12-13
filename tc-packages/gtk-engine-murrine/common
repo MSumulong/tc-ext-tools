@@ -1,0 +1,19 @@
+PACKAGE="gtk-engine-murrine"
+VERSION="0.98.1.1"
+SOURCE="murrine-${VERSION}.tar.bz2"
+TOP_SRC="murrine-${VERSION}"
+SOURCE_URL="http://ftp.gnome.org/pub/GNOME/sources/murrine/0.98/murrine-${VERSION}.tar.bz2"
+BUILD_DEPENDS="gtk2
+gtk2-dev
+libxcb
+libxcb-dev"
+
+EXTENSIONS="gtk-engine-murrine"
+DESCRIPTION="GTK2 engine to make your desktop look like a 'murrina', an italian word meaning the art glass works done by Venicians glass blowers."
+AUTHOR="Andrea Cimitan"
+SITE="http://www.gnome.org"
+COPYING="GPL"
+MAINTAINERS="Arslan S."
+COMMENTS="This extension is PPI compatible."
+CHANGELOG="2010/07/23 First Version 0.90.3"
+CURRENT="Updated to $VERSION"
