@@ -129,43 +129,57 @@ if [ -e "$PACKAGE_COMMON" ]; then
      [ -d "$TCEXTTOOLS_SRC_TEMP" ] || install -m 755 -d "$TCEXTTOOLS_SRC_TEMP"
      [ -d "$TCEXTTOOLS_LOG" ] || install -m 755 -d "$TCEXTTOOLS_LOG"
 
-     # determine the type of package source from the supported generic types
-     if [ ! "${SOURCE%.bz2}" = "$SOURCE" ]; then
-            SOURCE_TYPE="bz2"
-            CONVERTED_SOURCE="${SOURCE%.bz2}.xz"
-     elif [ ! "${SOURCE%.gz}" = "$SOURCE" ]; then
-            SOURCE_TYPE="gz"
-            CONVERTED_SOURCE="${SOURCE%.gz}.xz"
-     elif [ ! "${SOURCE%.tgz}" = "$SOURCE" ]; then
-            CONVERTED_SOURCE="${SOURCE%.tgz}.tar.xz"
-            SOURCE_TYPE="tgz"
-     elif [ ! "${SOURCE%.zip}" = "$SOURCE" ]; then
-            SOURCE_TYPE="zip"
-            CONVERTED_SOURCE="${SOURCE%.zip}.tar.xz"
-     elif [ ! "${SOURCE%.xz}" = "$SOURCE" ]; then
-            SOURCE_TYPE="xz"
-            CONVERTED_SOURCE="$SOURCE"
+     # source name, and top src dir for vcs
+     if [ -z "$VCS" ]; then
+          SOURCE_NAME=${SOURCE##*/}
      else
-            # user must define custom build_unpack, and build_convert functions in the build file for custom package sources
-            [ -z "$SOURCE_TYPE" ] && SOURCE_TYPE="custom"
-            [ -z "$CONVERTED_SOURCE" ] && CONVERTED_SOURCE="${SOURCE%.*}.tar.xz"
+          [ -z "$TOP_SRC" ] && TOP_SRC=${PACKAGE}-${VERSION}
+          SOURCE_NAME=${PACKAGE}-${VERSION}.tar.xz
      fi
 
-     TCEXTTOOLS_SOURCE="$TCEXTTOOLS_SRC/$SOURCE"
-     TCEXTTOOLS_TOP_SRC="$TCEXTTOOLS_BIN_TEMP/$TOP_SRC"
+     # determine the type of package source from the supported generic types
+     if [ ! "${SOURCE_NAME%.bz2}" = "$SOURCE_NAME" ]; then
+            SOURCE_TYPE="bz2"
+            CONVERTED_SOURCE="${SOURCE_NAME%.bz2}.xz"
+     elif [ ! "${SOURCE_NAME%.gz}" = "$SOURCE_NAME" ]; then
+            SOURCE_TYPE="gz"
+            CONVERTED_SOURCE="${SOURCE_NAME%.gz}.xz"
+     elif [ ! "${SOURCE_NAME%.tgz}" = "$SOURCE_NAME" ]; then
+            CONVERTED_SOURCE="${SOURCE_NAME%.tgz}.tar.xz"
+            SOURCE_TYPE="tgz"
+     elif [ ! "${SOURCE_NAME%.zip}" = "$SOURCE_NAME" ]; then
+            SOURCE_TYPE="zip"
+            CONVERTED_SOURCE="${SOURCE_NAME%.zip}.tar.xz"
+     elif [ ! "${SOURCE_NAME%.xz}" = "$SOURCE_NAME" ]; then
+            SOURCE_TYPE="xz"
+            CONVERTED_SOURCE="$SOURCE_NAME"
+     else
+            # user must define custom build_unpack, and build_convert functions in the build file for custom package sources
+            SOURCE_TYPE="custom"
+            [ -z "$CONVERTED_SOURCE" ] && CONVERTED_SOURCE="${SOURCE_NAME%.*}.tar.xz"
+     fi
+
+     if [ "$THIS" != "unpackit" ]; then
+          TOP_SRC=$(ls $TCEXTTOOLS_BIN_TEMP)
+          if [ -n "$TOP_SRC" ]; then
+               TCEXTTOOLS_TOP_SRC="$TCEXTTOOLS_BIN_TEMP/$TOP_SRC"
+               PACKAGE_TOP_SRC="$TCEXTTOOLS_TOP_SRC"
+          fi
+     fi
+
+     TCEXTTOOLS_SOURCE="$TCEXTTOOLS_SRC/$SOURCE_NAME"
      TCEXTTOOLS_CONVERTED_SOURCE="$TCEXTTOOLS_SRC/$CONVERTED_SOURCE"
      TCEXTTOOLS_INSTALL_ROOT="$TCEXTTOOLS_BIN/root"
-     TCEXTTOOLS_PREFIX=/usr/local
+     TCEXTTOOLS_PREFIX="/usr/local"
 
      PACKAGE_SOURCE="$TCEXTTOOLS_SOURCE"
-     PACKAGE_TOP_SRC="$TCEXTTOOLS_TOP_SRC"
      PACKAGE_CONVERTED_SOURCE="$TCEXTTOOLS_CONVERTED_SOURCE"
      PACKAGE_INSTALL_ROOT="$TCEXTTOOLS_INSTALL_ROOT"
 
      INSTALL_ROOT="$PACKAGE_INSTALL_ROOT"
      PREFIX="$TCEXTTOOLS_PREFIX"
 
-     #EXTENSIONS=$(echo $EXTENSIONS | sed -e "s/KERNEL/$(uname -r)/g")
+     KERNEL_EXTENSIONS=$(echo $EXTENSIONS | sed -e "s/KERNEL/$(uname -r)/g")
 
 elif [ "$THIS" != "boostit" ]; then
      print_it error "the package $PACKAGE common file not found!"

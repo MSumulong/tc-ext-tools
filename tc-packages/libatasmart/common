@@ -1,8 +1,7 @@
 PACKAGE="libatasmart"
 VERSION="0.17"
-SOURCE="${PACKAGE}-${VERSION}.tar.gz"
-SOURCE_URL="http://0pointer.de/public/libatasmart-${VERSION}.tar.gz"
-TOP_SRC="${PACKAGE}-${VERSION}"
+SOURCE="http://0pointer.de/public/libatasmart-${VERSION}.tar.gz"
+
 BUILD_DEPENDS="udev-lib
 udev-dev"
 

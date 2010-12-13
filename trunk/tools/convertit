@@ -51,21 +51,21 @@ this_main() {
 
   if [ ! -e "$TCEXTTOOLS_CONVERTED_SOURCE" ] || [ "$COMMAND" = "force" ]; then
        if [ "$SOURCE_TYPE" = "bz2" ]; then
-            bzip2 -d -c "$TCEXTTOOLS_SOURCE" > "$TCEXTTOOLS_SRC_TEMP/${SOURCE%.bz2}" || return 1
-            xz "$TCEXTTOOLS_SRC_TEMP/${SOURCE%.bz2}" || return 1
-            busybox mv -f "$TCEXTTOOLS_SRC_TEMP/${SOURCE%.bz2}.xz" "$TCEXTTOOLS_SRC" || return 1
+            bzip2 -d -c "$TCEXTTOOLS_SOURCE" > "$TCEXTTOOLS_SRC_TEMP/${SOURCE_NAME%.bz2}" || return 1
+            xz "$TCEXTTOOLS_SRC_TEMP/${SOURCE_NAME%.bz2}" || return 1
+            busybox mv -f "$TCEXTTOOLS_SRC_TEMP/${SOURCE_NAME%.bz2}.xz" "$TCEXTTOOLS_SRC" || return 1
        elif [ "$SOURCE_TYPE" = "gz" ]; then
-            gzip -d -c "$TCEXTTOOLS_SOURCE" > "$TCEXTTOOLS_SRC_TEMP/${SOURCE%.gz}" || return 1
-            xz "$TCEXTTOOLS_SRC_TEMP/${SOURCE%.gz}" || return 1
-            busybox mv -f "$TCEXTTOOLS_SRC_TEMP/${SOURCE%.gz}.xz" "$TCEXTTOOLS_SRC" || return 1
+            gzip -d -c "$TCEXTTOOLS_SOURCE" > "$TCEXTTOOLS_SRC_TEMP/${SOURCE_NAME%.gz}" || return 1
+            xz "$TCEXTTOOLS_SRC_TEMP/${SOURCE_NAME%.gz}" || return 1
+            busybox mv -f "$TCEXTTOOLS_SRC_TEMP/${SOURCE_NAME%.gz}.xz" "$TCEXTTOOLS_SRC" || return 1
        elif [ "$SOURCE_TYPE" = "tgz" ]; then
-            gzip -d -c "$TCEXTTOOLS_SOURCE" > "$TCEXTTOOLS_SRC_TEMP/${SOURCE%.tgz}.tar" || return 1
-            xz "$TCEXTTOOLS_SRC_TEMP/${SOURCE%.tgz}.tar" || return 1
-            busybox mv -f "$TCEXTTOOLS_SRC_TEMP/${SOURCE%.tgz}.tar.xz" "$TCEXTTOOLS_SRC" || return 1
+            gzip -d -c "$TCEXTTOOLS_SOURCE" > "$TCEXTTOOLS_SRC_TEMP/${SOURCE_NAME%.tgz}.tar" || return 1
+            xz "$TCEXTTOOLS_SRC_TEMP/${SOURCE_NAME%.tgz}.tar" || return 1
+            busybox mv -f "$TCEXTTOOLS_SRC_TEMP/${SOURCE_NAME%.tgz}.tar.xz" "$TCEXTTOOLS_SRC" || return 1
        elif [ "$SOURCE_TYPE" = "zip" ]; then
             unzip "$TCEXTTOOLS_SOURCE" -d "$TCEXTTOOLS_SRC_TEMP" || return 1
-            tar -C "$TCEXTTOOLS_SRC_TEMP" -cJf "$TCEXTTOOLS_SRC_TEMP/${SOURCE%.zip}.tar.xz" "$TOP_SRC" || return 1
-            busybox mv -f "$TCEXTTOOLS_SRC_TEMP/${SOURCE%.zip}.tar.xz" "$TCEXTTOOLS_SRC" || return 1
+            tar -C "$TCEXTTOOLS_SRC_TEMP" -cJf "$TCEXTTOOLS_SRC_TEMP/${SOURCE_NAME%.zip}.tar.xz" "$(ls $TCEXTTOOLS_SRC_TEMP)" || return 1
+            busybox mv -f "$TCEXTTOOLS_SRC_TEMP/${SOURCE_NAME%.zip}.tar.xz" "$TCEXTTOOLS_SRC" || return 1
        elif [ "$SOURCE_TYPE" = "custom" ]; then
             cd "$TCEXTTOOLS_SRC_TEMP"
             build_convert || return 1

@@ -40,20 +40,20 @@ this_main() {
   [ -d "$TCEXTTOOLS_SRC" ] && sudo rm -rf "$TCEXTTOOLS_SRC"
   mkdir -p "$TCEXTTOOLS_SRC" || return 1
 
-  if [ "$VCS_TYPE" = "svn" ]; then
+  if [ "$VCS" = "svn" ]; then
        [ -d "$TCEXTTOOLS_SRC_TEMP" ] && sudo rm -rf "$TCEXTTOOLS_SRC_TEMP"
        mkdir -p "$TCEXTTOOLS_SRC_TEMP"
-       svn --non-interactive --trust-server-cert co "$SOURCE_URL" "$TCEXTTOOLS_SRC_TEMP/$TOP_SRC" || return 1
+       svn --non-interactive --trust-server-cert co "$SOURCE" "$TCEXTTOOLS_SRC_TEMP/$TOP_SRC" || return 1
        compressit xz "$TCEXTTOOLS_SRC_TEMP/$TOP_SRC" || return 1
        busybox mv -f "${TOP_SRC}.tar.xz" "$TCEXTTOOLS_SRC" || return 1
-  elif [ "$VCS_TYPE" = "git" ]; then
+  elif [ "$VCS" = "git" ]; then
        [ -d "$TCEXTTOOLS_SRC_TEMP" ] && sudo rm -rf "$TCEXTTOOLS_SRC_TEMP"
        mkdir -p "$TCEXTTOOLS_SRC_TEMP"
-       git clone "$SOURCE_URL" "$TCEXTTOOLS_SRC_TEMP/$TOP_SRC" || return 1
+       git clone "$SOURCE" "$TCEXTTOOLS_SRC_TEMP/$TOP_SRC" || return 1
        compressit xz "$TCEXTTOOLS_SRC_TEMP/$TOP_SRC" || return 1
        busybox mv -f "${TOP_SRC}.tar.xz" "$TCEXTTOOLS_SRC" || return 1
   else
-       busybox wget --no-check-certificate "$SOURCE_URL" -O "$TCEXTTOOLS_SRC/$SOURCE" || return 1
+       busybox wget --no-check-certificate "$SOURCE" -O "$TCEXTTOOLS_SRC/$SOURCE_NAME" || return 1
   fi
 
   return 0
