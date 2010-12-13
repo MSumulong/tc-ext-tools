@@ -1,6 +1,11 @@
 #!/bin/sh
-#
-#  encryptit: Encrypts the file with the default encryption key
+
+############################################################################
+#                                                                          #
+#       encryptit: Encrypts the file with the default encryption key       #
+#                                                                          #
+############################################################################
+
 #
 #  This program is free software; you can redistribute it and/or modify
 #  it under the terms of the GNU General Public License as published by

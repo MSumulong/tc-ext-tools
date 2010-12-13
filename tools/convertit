@@ -1,6 +1,13 @@
 #!/bin/sh
 #
 #  convertit: Converts the package source to xz compressed tarball
+
+############################################################################
+#                                                                          #
+#     convertit: Converts the package source to xz compressed tarball      #
+#                                                                          #
+############################################################################
+
 #
 #  This program is free software; you can redistribute it and/or modify
 #  it under the terms of the GNU General Public License as published by

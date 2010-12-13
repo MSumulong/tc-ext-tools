@@ -1,8 +1,14 @@
-#
-# tc-ext-tools build functions: configure, compile, install, rules
-#
 
-# Configure
+############################################################################
+#                                                                          #
+#  tc-ext-tools build functions: configure, compile, install, rules, etc.  #
+#                                                                          #
+############################################################################
+
+############################################################################ 
+#                            Configure                                     #
+############################################################################
+
 build_configure() {
 
    # autotools
@@ -10,6 +16,7 @@ build_configure() {
    #
 
    # cmake
+   #[ -d build ] && sudo rm -rf build
    #mkdir build
    #cd build
    #cmake -DCMAKE_INSTALL_PREFIX=/usr/local -DCMAKE_BUILD_TYPE=Release .. || return 1
@@ -23,25 +30,31 @@ build_configure() {
 
 }
 
-# Compile
+############################################################################ 
+#                              Compile                                     #
+############################################################################
+
 build_compile() {
 
    #cd build # cmake
    make || return 1
    #
 
-   # jam
-   #jam || return 1
-
    # python
    #python setup.py build || return 1
+
+   # jam
+   #jam || return 1
 
    # waf
    #./waf build || return 1
 
 }
 
-# Install
+############################################################################ 
+#                              Install                                     #
+############################################################################
+
 build_install() {
 
    # DESTDIR
@@ -54,12 +67,12 @@ build_install() {
    #make INSTALL_ROOT="$INSTALL_ROOT" install || return 1
    #
 
-   # jam
-   #DESTDIR="$INSTALL_ROOT" jam install || return 1
-   #
-
    # python install
    #python setup.py install --prefix=/usr/local --root="$INSTALL_ROOT" || return 1
+   #
+
+   # jam
+   #DESTDIR="$INSTALL_ROOT" jam install || return 1
    #
 
    # waf
@@ -67,7 +80,10 @@ build_install() {
 
 }
 
-# Rules
+############################################################################ 
+#                                Rules                                     #
+############################################################################
+
 build_rules() {
 
    buildit load || exit 1
@@ -88,3 +104,4 @@ build_rules() {
    buildit encrypt || exit 1
 
 }
+

@@ -1,6 +1,11 @@
 #!/bin/sh
-#
-#  unpackit: Unpacks the package source
+
+############################################################################
+#                                                                          #
+#                  unpackit: Unpacks the package source                    #
+#                                                                          #
+############################################################################
+
 #
 #  This program is free software; you can redistribute it and/or modify
 #  it under the terms of the GNU General Public License as published by
