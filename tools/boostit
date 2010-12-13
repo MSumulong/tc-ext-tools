@@ -83,14 +83,9 @@ this_main() {
        cat > "$PACKAGE_COMMON" << _EOF
 PACKAGE="$PACKAGE"
 VERSION="svn\${YEAR}\${MONTH}\${DAY}"
-TOP_SRC="\${PACKAGE}-\${VERSION}"
-SOURCE="\${TOP_SRC}.tar.xz"
-SOURCE_URL=""
-VCS_TYPE="svn"
-ICON=""
-DESKTOP_ENTRY=""
+SOURCE=""
+VCS="svn"
 BUILD_DEPENDS=""
-
 EXTENSIONS="$EXTENSIONS"
 DESCRIPTION="A brief description of package."
 AUTHOR="authors of package"
@@ -109,14 +104,9 @@ _EOF
        cat > "$PACKAGE_COMMON" << _EOF
 PACKAGE="${PACKAGE}"
 VERSION="git\${YEAR}\${MONTH}\${DAY}"
-TOP_SRC="\${PACKAGE}-\${VERSION}"
-SOURCE="\${TOP_SRC}.tar.xz"
-SOURCE_URL=""
-VCS_TYPE="git"
-ICON=""
-DESKTOP_ENTRY=""
+SOURCE=""
+VCS="git"
 BUILD_DEPENDS=""
-
 EXTENSIONS="$EXTENSIONS"
 DESCRIPTION="A brief description of package."
 AUTHOR="authors of package"
@@ -135,13 +125,8 @@ _EOF
        cat > "$PACKAGE_COMMON" << _EOF
 PACKAGE="$PACKAGE"
 VERSION="$VERSION"
-SOURCE="\${PACKAGE}-\${VERSION}.tar.bz2"
-TOP_SRC="\${PACKAGE}-\${VERSION}"
-SOURCE_URL=""
-ICON=""
-DESKTOP_ENTRY=""
+SOURCE=""
 BUILD_DEPENDS=""
-
 EXTENSIONS="$EXTENSIONS"
 DESCRIPTION="A brief description of package."
 AUTHOR="authors of package"
