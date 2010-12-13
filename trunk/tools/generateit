@@ -1,6 +1,11 @@
 #!/bin/sh
-#
-#  generateit: Generates extension info file
+
+############################################################################
+#                                                                          #
+#         generateit: Generates the package extensions info files          #
+#                                                                          #
+############################################################################
+
 #
 #  This program is free software; you can redistribute it and/or modify
 #  it under the terms of the GNU General Public License as published by

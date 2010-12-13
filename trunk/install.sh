@@ -1,6 +1,11 @@
 #!/bin/sh
-#
-#  install.sh: install tc-ext-tools to your system
+
+############################################################################
+#                                                                          #
+#             install.sh: Installs tc-ext-tools to your system             #
+#                                                                          #
+############################################################################
+
 #
 #  This program is free software; you can redistribute it and/or modify
 #  it under the terms of the GNU General Public License as published by

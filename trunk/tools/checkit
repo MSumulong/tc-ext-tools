@@ -1,6 +1,11 @@
 #!/bin/sh
-#
-#  checkit: Checks the extension for possible errors
+
+############################################################################
+#                                                                          #
+#           checkit: Checks the extension for possible errors              #
+#                                                                          #
+############################################################################
+
 #
 #  This program is free software; you can redistribute it and/or modify
 #  it under the terms of the GNU General Public License as published by

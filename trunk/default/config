@@ -1,13 +1,23 @@
-# tc-ext-tools default configuration
 
-# Message colors
+############################################################################
+#                                                                          #
+#               tc-ext-tools default configuration file                    #
+#                                                                          #
+############################################################################
+
+############################################################################ 
+#                      tc-ext-tools message colors                         #
+############################################################################
+
 TCEXTTOOLS_MESSAGE_COLOR="${BLUE}"
 TCEXTTOOLS_WARNING_COLOR="${YELLOW}"
 TCEXTTOOLS_ERROR_COLOR="${RED}"
 TCEXTTOOLS_HILIGHT_COLOR="${CYAN}"
-#
 
-# Please do not edit this section!
+############################################################################ 
+#                    tc-ext-tools directory layout                         #
+############################################################################
+
 TCEXTTOOLS_COMMON="common"
 TCEXTTOOLS_BUILD="build"
 TCEXTTOOLS_SRC="src"
@@ -15,7 +25,11 @@ TCEXTTOOLS_BIN="bin"
 TCEXTTOOLS_PKG="pkg"
 TCEXTTOOLS_LOG="log"
 TCEXTTOOLS_EXTENSIONS="extensions"
-TCEXTTOOLS_PATCHES="patches"
+
+############################################################################ 
+#                       tc-ext-tools dependencies                          #
+############################################################################
+
 TCEXTTOOLS_DEPENDS="compiletc
                     squashfs-tools-4.x
                     tar
@@ -34,11 +48,17 @@ TCEXTTOOLS_DEPENDS="compiletc
                     autoconf
                     automake"
 
-TCEXTTOOLS_ENCRYPTION_KEY="tinycore"
-#
+############################################################################ 
+#                   tc-ext-tools default encryption key                    #
+############################################################################
 
-# Compiler and linker flags
+TCEXTTOOLS_ENCRYPTION_KEY="tinycore"
+
+############################################################################ 
+#                  tc-ext-tools compiler and linker flags                  #
+############################################################################
+
 TCEXTTOOLS_CFLAGS="-march=i486 -mtune=i686 -Os -pipe"
 TCEXTTOOLS_CXXFLAGS="-march=i486 -mtune=i686 -Os -pipe"
 TCEXTTOOLS_LDFLAGS="-Wl,-O1"
-#
+
