@@ -1,5 +1,10 @@
-#
-#  functions: common tc-ext-tools functions and definitions
+
+############################################################################
+#                                                                          #
+#               tc-ext-tools common functions and definitions              #
+#                                                                          #
+############################################################################
+
 #
 #  This program is free software; you can redistribute it and/or modify
 #  it under the terms of the GNU General Public License as published by
@@ -17,6 +22,10 @@
 #
 #  (C) Copyright 2010 Sercan Arslan
 #
+
+############################################################################ 
+#                       tc-ext-tools initialization                        #
+############################################################################
 
 THIS=$(basename $0)
 
@@ -46,48 +55,46 @@ else
     exit 1
 fi
 
+############################################################################ 
+#                   tc-ext-tools message print function                    #
+############################################################################
+
 print_it() {
   case  "$1" in
         error)
-                [ -z "$2" ] && echo -e "${TCEXTTOOLS_MESSAGE_COLOR}$1${NORMAL}"
-                echo -e "${TCEXTTOOLS_ERROR_COLOR}$2${NORMAL}"
+                [ -z "$2" ] && echo -e "${TCEXTTOOLS_MESSAGE_COLOR}${1}${NORMAL}"
+                echo -e "${TCEXTTOOLS_ERROR_COLOR}${2}${NORMAL}"
                 ;;
         warning)   
-                [ -z "$2" ] && echo -e "${TCEXTTOOLS_MESSAGE_COLOR}$1${NORMAL}"
-                echo -e "${TCEXTTOOLS_WARNING_COLOR}$2${NORMAL}"
+                [ -z "$2" ] && echo -e "${TCEXTTOOLS_MESSAGE_COLOR}${1}${NORMAL}"
+                echo -e "${TCEXTTOOLS_WARNING_COLOR}${2}${NORMAL}"
                 ;;
         hilight)   
-                [ -z "$2" ] && echo -e "${TCEXTTOOLS_MESSAGE_COLOR}$1${NORMAL}"
-                echo -e "${TCEXTTOOLS_HILIGHT_COLOR}$2${NORMAL}"
+                [ -z "$2" ] && echo -e "${TCEXTTOOLS_MESSAGE_COLOR}${1}${NORMAL}"
+                echo -e "${TCEXTTOOLS_HILIGHT_COLOR}${2}${NORMAL}"
                 ;;
         *)
-                echo -e "${TCEXTTOOLS_MESSAGE_COLOR}$1${NORMAL}"
+                echo -e "${TCEXTTOOLS_MESSAGE_COLOR}${1}${NORMAL}"
                 ;;
   esac
 }
 
-# tc user
+############################################################################ 
+#                            tc-ext-tools user                             #
+############################################################################
+
 TCUSER=$(cat /etc/sysconfig/tcuser)
 
-if [ "$THIS" = "installit" ]; then
-     su "$TCUSER" -c "touch $TCEXTTOOLS_ERROR_LOG_2"
-fi
-
-# date
-YEAR=$(date +%Y)
-MONTH=$(date +%m)
-DAY=$(date +%d)
-DATE="$YEAR/$MONTH/$DAY"
-
-# kernel version
-KERNEL=$(uname -r)
+############################################################################ 
+#                   tc-ext-tools package specific definitions              #
+############################################################################
 
 PACKAGE_ROOT="$PWD"
 PACKAGE_COMMON="$PACKAGE_ROOT/$TCEXTTOOLS_COMMON"
 PACKAGE_BUILD="$PACKAGE_ROOT/$TCEXTTOOLS_BUILD"
 PACKAGE_SRC="$PACKAGE_ROOT/$TCEXTTOOLS_SRC"
 PACKAGE_EXTENSIONS="$PACKAGE_ROOT/$TCEXTTOOLS_EXTENSIONS"
-PACKAGE_PATCHES="$PACKAGE_SRC/$TCEXTTOOLS_PATCHES"
+PACKAGE_PATCHES="$PACKAGE_SRC/patches"
 
 if [ -e "$PACKAGE_COMMON" ]; then
      . "$PACKAGE_COMMON"
@@ -139,7 +146,7 @@ if [ -e "$PACKAGE_COMMON" ]; then
             SOURCE_TYPE="xz"
             CONVERTED_SOURCE="$SOURCE"
      else
-            # the user have to define custom build_unpack, and build_convert functions in the build file for custom package sources
+            # user must define custom build_unpack, and build_convert functions in the build file for custom package sources
             [ -z "$SOURCE_TYPE" ] && SOURCE_TYPE="custom"
             [ -z "$CONVERTED_SOURCE" ] && CONVERTED_SOURCE="${SOURCE%.*}.tar.xz"
      fi
@@ -166,6 +173,15 @@ elif [ "$THIS" != "boostit" ]; then
      exit 1
 fi
 
+# to prevent a write permission error due to running installit as root
+if [ "$THIS" = "installit" ]; then
+     su "$TCUSER" -c "touch $TCEXTTOOLS_ERROR_LOG_2"
+fi
+
+############################################################################ 
+#               import tc-ext-tools package build functions                #
+############################################################################
+
 if [ -e "$PACKAGE_BUILD" ]; then
      . "$PACKAGE_BUILD"
 elif [ "$THIS" != "boostit" ]; then
@@ -173,7 +189,25 @@ elif [ "$THIS" != "boostit" ]; then
      exit 1
 fi
 
-# export tc-ext-tools environment variables by respecting environment variables
+############################################################################ 
+#                             date (YYYY/MM/DD)                            #
+############################################################################
+
+YEAR=$(date +%Y)
+MONTH=$(date +%m)
+DAY=$(date +%d)
+DATE="$YEAR/$MONTH/$DAY"
+
+############################################################################ 
+#                             kernel version                               #
+############################################################################
+
+KERNEL=$(uname -r)
+
+############################################################################ 
+#                export tc-ext-tools environment variables                 #
+############################################################################
+
 [ -z "$CFLAGS" ] && export CFLAGS="$TCEXTTOOLS_CFLAGS"
 [ -z "$CXXFLAGS" ] && export CXXFLAGS="$TCEXTTOOLS_CXXFLAGS"
 [ -z "$LDFLAGS" ] && export LDFLAGS="$TCEXTTOOLS_LDFLAGS"
