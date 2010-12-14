@@ -129,15 +129,14 @@ if [ -e "$PACKAGE_COMMON" ]; then
      [ -d "$TCEXTTOOLS_SRC_TEMP" ] || install -m 755 -d "$TCEXTTOOLS_SRC_TEMP"
      [ -d "$TCEXTTOOLS_LOG" ] || install -m 755 -d "$TCEXTTOOLS_LOG"
 
-     # source name, and top src dir for vcs
+     # source name
      if [ -z "$VCS" ]; then
           SOURCE_NAME=${SOURCE##*/}
      else
-          [ -z "$TOP_SRC" ] && TOP_SRC=${PACKAGE}-${VERSION}
           SOURCE_NAME=${PACKAGE}-${VERSION}.tar.xz
      fi
 
-     # determine the type of package source from the supported generic types
+     # source type
      if [ ! "${SOURCE_NAME%.bz2}" = "$SOURCE_NAME" ]; then
             SOURCE_TYPE="bz2"
             CONVERTED_SOURCE="${SOURCE_NAME%.bz2}.xz"
@@ -159,8 +158,13 @@ if [ -e "$PACKAGE_COMMON" ]; then
             [ -z "$CONVERTED_SOURCE" ] && CONVERTED_SOURCE="${SOURCE_NAME%.*}.tar.xz"
      fi
 
+     # top level source directory
      if [ "$THIS" != "unpackit" ]; then
-          TOP_SRC=$(ls $TCEXTTOOLS_BIN_TEMP)
+          if [ -z "$VCS" ]; then
+               TOP_SRC=$(ls $TCEXTTOOLS_BIN_TEMP)
+          else
+               TOP_SRC=${PACKAGE}-${VERSION}
+          fi
           if [ -n "$TOP_SRC" ]; then
                TCEXTTOOLS_TOP_SRC="$TCEXTTOOLS_BIN_TEMP/$TOP_SRC"
                PACKAGE_TOP_SRC="$TCEXTTOOLS_TOP_SRC"

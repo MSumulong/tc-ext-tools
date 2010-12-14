@@ -52,8 +52,11 @@ this_main() {
        git clone "$SOURCE" "$TCEXTTOOLS_SRC_TEMP/$TOP_SRC" || return 1
        compressit xz "$TCEXTTOOLS_SRC_TEMP/$TOP_SRC" || return 1
        busybox mv -f "${TOP_SRC}.tar.xz" "$TCEXTTOOLS_SRC" || return 1
-  else
+  elif [ -z "$VCS" ]; then
        busybox wget --no-check-certificate "$SOURCE" -O "$TCEXTTOOLS_SRC/$SOURCE_NAME" || return 1
+  else
+       echo "Error! Unsupported source type."
+       return 1
   fi
 
   return 0
