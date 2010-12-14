@@ -1,11 +1,8 @@
 PACKAGE="gazebo"
 VERSION="svn"
-#SOURCE="${PACKAGE}-${VERSION}.tar.bz2"
-SOURCE="${PACKAGE}-${VERSION}.tar.xz"
-TOP_SRC="${PACKAGE}-${VERSION}"
-#SOURCE_URL="http://garr.dl.sourceforge.net/project/playerstage/Gazebo/${VERSION}/gazebo-${VERSION}.tar.bz2"
-SOURCE_URL="https://playerstage.svn.sourceforge.net/svnroot/playerstage/code/gazebo/trunk"
-VCS_TYPE="svn"
+#SOURCE="http://garr.dl.sourceforge.net/project/playerstage/Gazebo/${VERSION}/gazebo-${VERSION}.tar.bz2"
+SOURCE="https://playerstage.svn.sourceforge.net/svnroot/playerstage/code/gazebo/trunk"
+VCS="svn"
 BUILD_DEPENDS="cmake
 robot-player
 robot-player-dev
