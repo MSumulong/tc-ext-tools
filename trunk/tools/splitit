@@ -91,10 +91,30 @@ this_split() {
   return 0
 }
 
+this_modify() {
+
+  if [ -f "$PACKAGE_EXTENSIONS/$EXTENSION/icon" ]; then
+       . "$PACKAGE_EXTENSIONS/$EXTENSION/icon"
+  fi
+
+  if [ -n "$ICON" ]; then
+       if [ ! -e "$TCEXTTOOLS_BIN/$EXTENSION/$ICON" ]; then
+            print_it error "The icon: $TCEXTTOOLS_BIN/$EXTENSION/$ICON does not exist!"
+            return 1
+       elif [ ! -e "$TCEXTTOOLS_BIN/$EXTENSION/$DESKTOP" ]; then
+            print_it error "The desktop entry: $TCEXTTOOLS_BIN/$EXTENSION/$DESKTOP does not exist!"
+            return 1
+       else
+            sudo sh -c "echo \"X-FullPathIcon=$ICON\" >> $TCEXTTOOLS_BIN/$EXTENSION/$DESKTOP" || return 1
+       fi
+  fi
+}
+
 this_main() {
 
   for EXTENSION in $EXTENSIONS
   do
+
       TMP_DIR=$(busybox mktemp -d)
 
       this_split
@@ -104,6 +124,14 @@ this_main() {
            return 1
       else
            print_it "Splitting the extension $EXTENSION successful!"
+      fi
+
+      this_modify
+      if [ "$?" -gt 0 ]; then
+           print_it error "Modifying the extension $EXTENSION failed!"
+           return 1
+      else
+           print_it "Modifying the extension $EXTENSION successful!"
       fi
   done
 

@@ -55,19 +55,6 @@ this_main() {
   cd "$TCEXTTOOLS_TOP_SRC"
   build_install > "$TCEXTTOOLS_INSTALL_LOG" 2>&1 || return 1
 
-  # Add wbar item if ICON variable is set
-  if [ -n "$ICON" ]; then
-       if [ ! -e "$INSTALL_ROOT/$ICON" ]; then
-            print_it error "The icon: $INSTALL_ROOT/$ICON does not exist!"
-            return 1
-       elif [ ! -e "$INSTALL_ROOT/$DESKTOP_ENTRY" ]; then
-            print_it error "The desktop entry: $INSTALL_ROOT/$DESKTOP_ENTRY does not exist!"
-            return 1
-       else
-            echo "X-FullPathIcon=$ICON" >> "$INSTALL_ROOT/$DESKTOP_ENTRY" || return 1
-       fi
-  fi
-
   # Convert symlinks to full path for gnome help browser files
   if [ -d "$INSTALL_ROOT/usr/local/share/gnome/help" ]; then
        for link in $(sudo find "$INSTALL_ROOT/usr/local/share/gnome/help" -type l)
