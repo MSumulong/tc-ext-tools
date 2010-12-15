@@ -1,10 +1,6 @@
 PACKAGE="celestia"
 VERSION="1.6.0"
-SOURCE="${PACKAGE}-${VERSION}.tar.gz"
-TOP_SRC="${PACKAGE}-${VERSION}"
-SOURCE_URL="http://downloads.sourceforge.net/sourceforge/celestia/celestia-${VERSION}.tar.gz"
-ICON="/usr/local/share/pixmaps/celestia.png"
-DESKTOP_ENTRY="/usr/local/share/applications/celestia.desktop"
+SOURCE="http://downloads.sourceforge.net/sourceforge/celestia/celestia-${VERSION}.tar.gz"
 BUILD_DEPENDS="gtk2
 gtk2-dev
 lua

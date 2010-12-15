@@ -1,9 +1,7 @@
 PACKAGE="conkeror"
-VERSION="git101118"
-SOURCE="${PACKAGE}-${VERSION}.tar.xz"
-SOURCE_URL="git://repo.or.cz/conkeror.git"
-VCS_TYPE="git"
-TOP_SRC="${PACKAGE}-${VERSION}"
+VERSION="git101215"
+SOURCE="git://repo.or.cz/conkeror.git"
+VCS="git"
 BUILD_DEPENDS=""
 
 EXTENSIONS="conkeror"
@@ -19,5 +17,6 @@ COMMENTS="Conkeror is a keyboard-oriented, highly-customizable,
 
 		This extension is PPI compatible."
 CHANGELOG="2010/06/09 First Version git100609
-		2010/08/24 Updated to git100824"
+		2010/08/24 Updated to git100824
+		2010/11/18 Updated to git101118"
 CURRENT="Updated to $VERSION"

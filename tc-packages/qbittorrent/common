@@ -1,10 +1,6 @@
 PACKAGE="qbittorrent"
-VERSION="2.4.9"
-SOURCE="${PACKAGE}-${VERSION}.tar.gz"
-TOP_SRC="${PACKAGE}-${VERSION}"
-SOURCE_URL="http://downloads.sourceforge.net/sourceforge/qbittorrent/${PACKAGE}-${VERSION}.tar.gz"
-ICON="/usr/local/share/icons/hicolor/64x64/apps/qbittorrent.png"
-DESKTOP_ENTRY="/usr/local/share/applications/qbittorrent.desktop"
+VERSION="2.5.1"
+SOURCE="http://downloads.sourceforge.net/sourceforge/qbittorrent/${PACKAGE}-${VERSION}.tar.gz"
 BUILD_DEPENDS="glib2
 glib2-dev
 expat2
@@ -38,5 +34,6 @@ COMMENTS="Please do for the first time due to a bug:
 CHANGELOG="2009/12/08 First Version 1.5.6
 		2010/01/28 Updated to 2.1.2
 		2010/07/09 Updated to 2.2.10
-		2010/10/09 Updated to 2.4.4"
-CURRENT="Updated to 2.4.9"
+		2010/10/09 Updated to 2.4.4
+		2010/11/09 Updated to 2.4.9"
+CURRENT="Updated to $VERSION"
