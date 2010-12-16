@@ -61,12 +61,12 @@ this_create() {
 
   cd "$PACKAGE_ROOT"
 
-  [ -d "$TCEXTTOOLS_EXTENSIONS/$EXTENSION_NAME" ] || mkdir -p "$TCEXTTOOLS_EXTENSIONS/$EXTENSION_NAME"
+  [ -d "$TCEXTTOOLS_PKG/$EXTENSION_NAME" ] || mkdir -p "$TCEXTTOOLS_PKG/$EXTENSION_NAME"
 
-  busybox cp -f "$TCEXTTOOLS_BIN/${EXTENSION_NAME}.tcz"* "$TCEXTTOOLS_EXTENSIONS/$EXTENSION_NAME" || return 1
+  busybox cp -f "$TCEXTTOOLS_BIN/${EXTENSION_NAME}.tcz"* "$TCEXTTOOLS_PKG/$EXTENSION_NAME" || return 1
 
   if [ -e "$PACKAGE_EXTENSIONS/$EXTENSION/dep" ]; then
-       install -m 644 "$PACKAGE_EXTENSIONS/$EXTENSION/dep" "$TCEXTTOOLS_EXTENSIONS/$EXTENSION_NAME/${EXTENSION_NAME}.tcz.dep" || return 1
+       install -m 644 "$PACKAGE_EXTENSIONS/$EXTENSION/dep" "$TCEXTTOOLS_PKG/$EXTENSION_NAME/${EXTENSION_NAME}.tcz.dep" || return 1
   fi
 
   sudo rm -f "$TCEXTTOOLS_BIN/${EXTENSION_NAME}.tcz"*
@@ -76,8 +76,8 @@ this_create() {
 
 this_main() {
 
-  [ -d "$TCEXTTOOLS_EXTENSIONS" ] && sudo rm -rf "$TCEXTTOOLS_EXTENSIONS"
-  mkdir -p "$TCEXTTOOLS_EXTENSIONS"
+  [ -d "$TCEXTTOOLS_PKG" ] && sudo rm -rf "$TCEXTTOOLS_PKG"
+  mkdir -p "$TCEXTTOOLS_PKG"
 
   for EXTENSION in $EXTENSIONS
   do

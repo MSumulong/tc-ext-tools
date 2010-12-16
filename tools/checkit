@@ -37,7 +37,7 @@ fi
 
 this_check() {
 
-  sudo busybox mount -o loop "$TCEXTTOOLS_EXTENSIONS/$EXTENSION_NAME/${EXTENSION_NAME}.tcz" "$TMPDIR" || return 1
+  sudo busybox mount -o loop "$TCEXTTOOLS_PKG/$EXTENSION_NAME/${EXTENSION_NAME}.tcz" "$TMPDIR" || return 1
 
   FILES="$(sudo find $TMPDIR -not -type d)"
   SAVEIFS="$IFS"
@@ -98,7 +98,7 @@ this_main() {
 
       set_extension_name
 
-      if [ ! -e "$TCEXTTOOLS_EXTENSIONS/$EXTENSION_NAME/${EXTENSION_NAME}.tcz" ]; then
+      if [ ! -e "$TCEXTTOOLS_PKG/$EXTENSION_NAME/${EXTENSION_NAME}.tcz" ]; then
              print_it error "You must create it first!"
              exit 1
       fi
