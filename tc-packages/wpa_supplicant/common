@@ -1,8 +1,6 @@
 PACKAGE="wpa_supplicant"
 VERSION="0.7.3"
-SOURCE="${PACKAGE}-${VERSION}.tar.gz"
-TOP_SRC="${PACKAGE}-${VERSION}"
-SOURCE_URL="http://hostap.epitest.fi/releases/wpa_supplicant-${VERSION}.tar.gz"
+SOURCE="http://hostap.epitest.fi/releases/wpa_supplicant-${VERSION}.tar.gz"
 BUILD_DEPENDS="openssl-0.9.8
 openssl-0.9.8-dev
 dbus
@@ -12,7 +10,6 @@ libnl1-dev
 readline
 readline-dev"
 
-EXTENSIONS="wpa_supplicant-dbus"
 DESCRIPTION="WPA Supplicant with dbus support."
 AUTHOR="Jouni Malinen"
 SITE="http://hostap.epitest.fi/wpa_supplicant"

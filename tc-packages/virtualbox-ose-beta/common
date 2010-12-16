@@ -1,11 +1,7 @@
 PACKAGE="virtualbox-ose-beta"
 VERSION="4.0.0"
 BETAVERSION="BETA1"
-SOURCE="VirtualBox-${VERSION}_${BETAVERSION}-OSE.tar.bz2"
-TOP_SRC="VirtualBox-${VERSION}_OSE"
-SOURCE_URL="http://download.virtualbox.org/virtualbox/${VERSION}_${BETAVERSION}/VirtualBox-${VERSION}_${BETAVERSION}-OSE.tar.bz2"
-ICON="/usr/local/share/pixmaps/VBox.png"
-DESKTOP_ENTRY="/usr/local/share/applications/virtualbox.desktop"
+SOURCE="http://download.virtualbox.org/virtualbox/${VERSION}_${BETAVERSION}/VirtualBox-${VERSION}_${BETAVERSION}-OSE.tar.bz2"
 BUILD_DEPENDS="coreutils
 bzip2
 libxslt
@@ -44,7 +40,6 @@ dbus-dev
 dbus-glib
 dbus-glib-dev"
 
-EXTENSIONS="virtualbox-ose-beta virtualbox-ose-beta-locale virtualbox-ose-beta-modules-2.6.33.3-tinycore virtualbox-ose-beta-additions virtualbox-ose-beta-additions-modules-2.6.33.3-tinycore"
 DESCRIPTION="A Powerful x86 virtualization solution."
 AUTHOR="Sun Microsystems"
 SITE="http://www.virtualbox.org/"

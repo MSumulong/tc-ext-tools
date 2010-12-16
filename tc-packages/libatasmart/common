@@ -1,11 +1,9 @@
 PACKAGE="libatasmart"
 VERSION="0.17"
 SOURCE="http://0pointer.de/public/libatasmart-${VERSION}.tar.gz"
-
 BUILD_DEPENDS="udev-lib
 udev-dev"
 
-EXTENSIONS="libatasmart libatasmart-dev"
 DESCRIPTION="ATA S.M.A.R.T. reading and parsing library."
 AUTHOR="Lennart Poettering"
 SITE="http://0pointer.de/blog/projects/being-smart.html"

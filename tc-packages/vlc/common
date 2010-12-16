@@ -1,10 +1,6 @@
 PACKAGE="vlc"
 VERSION="1.1.5"
-SOURCE="${PACKAGE}-${VERSION}.tar.bz2"
-TOP_SRC="${PACKAGE}-${VERSION}"
-SOURCE_URL="http://download.videolan.org/pub/videolan/vlc/${VERSION}/vlc-${VERSION}.tar.bz2"
-ICON="/usr/local/share/icons/hicolor/48x48/apps/vlc.png"
-DESKTOP_ENTRY="/usr/local/share/applications/vlc.desktop"
+SOURCE="http://download.videolan.org/pub/videolan/vlc/${VERSION}/vlc-${VERSION}.tar.bz2"
 BUILD_DEPENDS="ffmpeg-ffserver
 ffmpeg-ffserver-dev
 glib2
@@ -119,7 +115,6 @@ libdvbpsi-dev
 #live-media
 live-media-dev"
 
-EXTENSIONS="vlc vlc-dev vlc-doc vlc-locale"
 DESCRIPTION="VLC is a free and open source cross-platform multimedia player."
 AUTHOR="VideoLAN Team"
 SITE="http://www.videolan.org"

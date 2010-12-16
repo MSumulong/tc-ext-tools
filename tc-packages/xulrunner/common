@@ -1,8 +1,6 @@
 PACKAGE="xulrunner"
 VERSION="1.9.2.13"
-SOURCE="${PACKAGE}-${VERSION}.tar.bz2"
-TOP_SRC="mozilla-1.9.2"
-SOURCE_URL="http://releases.mozilla.org/pub/mozilla.org/xulrunner/releases/${VERSION}/source/xulrunner-${VERSION}.source.tar.bz2"
+SOURCE="http://releases.mozilla.org/pub/mozilla.org/xulrunner/releases/${VERSION}/source/xulrunner-${VERSION}.source.tar.bz2"
 BUILD_DEPENDS="gtk2
 gtk2-dev
 Xorg-7.5-lib
@@ -39,7 +37,6 @@ sqlite3-dev
 libxcb
 libxcb-dev"
 
-EXTENSIONS="xulrunner xulrunner-dev"
 DESCRIPTION="XULRunner is a Mozilla runtime package."
 AUTHOR="Mozilla Foundation"
 SITE="https://developer.mozilla.org/en/XULRunner"

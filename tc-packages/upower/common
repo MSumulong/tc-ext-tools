@@ -1,8 +1,6 @@
 PACKAGE="upower"
 VERSION="0.9.7"
-SOURCE="${PACKAGE}-${VERSION}.tar.bz2"
-SOURCE_URL="http://upower.freedesktop.org/releases/upower-${VERSION}.tar.bz2"
-TOP_SRC="${PACKAGE}-${VERSION}"
+SOURCE="http://upower.freedesktop.org/releases/upower-${VERSION}.tar.bz2"
 BUILD_DEPENDS="dbus
 dbus-glib
 glib2
@@ -14,7 +12,6 @@ polkit-dev
 libusb
 libusb-dev"
 
-EXTENSIONS="upower upower-dev upower-locale"
 DESCRIPTION="UPower is an abstraction for power management."
 AUTHOR="David Zeuthen, Richard Hughes"
 SITE="http://upower.freedesktop.org/"

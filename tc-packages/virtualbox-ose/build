@@ -69,7 +69,7 @@ build_install() {
 
   install -D -m 0644 VBox.png "$INSTALL_ROOT/usr/local/share/pixmaps/VBox.png" || return 1
 
-  install -D -m 0644 virtualbox.desktop "$INSTALL_ROOT/usr/local/share/applications/virtualbox.desktop" || return 1
+  install -D -m 0644 virtualbox.desktop "$INSTALL_ROOT/usr/local/share/applications/virtualbox-ose.desktop" || return 1
 
   mkdir -p "$INSTALL_ROOT/usr/local/etc/vbox"
   echo "INSTALL_DIR=/usr/local/lib/virtualbox" > "$INSTALL_ROOT/usr/local/etc/vbox/vbox.cfg"

@@ -1,10 +1,6 @@
 PACKAGE="virtualbox-ose"
 VERSION="3.2.12"
-SOURCE="VirtualBox-${VERSION}-OSE.tar.bz2"
-TOP_SRC="VirtualBox-${VERSION}_OSE"
-SOURCE_URL="http://download.virtualbox.org/virtualbox/${VERSION}/VirtualBox-${VERSION}-OSE.tar.bz2"
-ICON="/usr/local/share/pixmaps/VBox.png"
-DESKTOP_ENTRY="/usr/local/share/applications/virtualbox.desktop"
+SOURCE="http://download.virtualbox.org/virtualbox/${VERSION}/VirtualBox-${VERSION}-OSE.tar.bz2"
 BUILD_DEPENDS="coreutils
 bzip2
 libxslt
@@ -36,7 +32,6 @@ linux-headers-2.6.33.3-tinycore
 Linux-PAM
 Linux-PAM-dev"
 
-EXTENSIONS="virtualbox-ose virtualbox-ose-locale virtualbox-ose-modules-2.6.33.3-tinycore virtualbox-ose-additions virtualbox-ose-additions-modules-2.6.33.3-tinycore"
 DESCRIPTION="A Powerful x86 virtualization solution."
 AUTHOR="Sun Microsystems"
 SITE="http://www.virtualbox.org/"

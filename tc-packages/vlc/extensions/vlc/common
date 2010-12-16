@@ -1,3 +1,5 @@
+ICON="/usr/local/share/icons/hicolor/48x48/apps/vlc.png"
+DESKTOP="/usr/local/share/applications/vlc.desktop"
 COMMENTS="VLC media player is a highly portable multimedia player supporting most audio 
 		and video formats (H.264, Ogg, DivX, MKV, TS, MPEG-2, mp3, MPEG-4, aac, ...) 
 		from files, physical media (DVDs, VCD, Audio-CD), TV capture cards and many 
