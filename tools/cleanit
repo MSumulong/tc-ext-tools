@@ -43,9 +43,6 @@ this_main() {
   [ -d "$TCEXTTOOLS_PKG" ] && sudo rm -rf "$TCEXTTOOLS_PKG"
   mkdir -p "$TCEXTTOOLS_PKG" || return 1
 
-  [ -d "$TCEXTTOOLS_BIN_TEMP" ] && sudo rm -rf "$TCEXTTOOLS_BIN_TEMP"
-  mkdir -p "$TCEXTTOOLS_BIN_TEMP" || return 1
-
   [ -d "$TCEXTTOOLS_SRC_TEMP" ] && sudo rm -rf "$TCEXTTOOLS_SRC_TEMP"
   mkdir -p "$TCEXTTOOLS_SRC_TEMP" || return 1
 
