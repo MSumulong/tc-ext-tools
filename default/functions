@@ -80,6 +80,51 @@ print_it() {
 }
 
 ############################################################################ 
+#           sets the variables related with the package source             #
+############################################################################
+
+set_package_source() {
+
+     if [ -z "$VCS" ]; then
+          SOURCE_NAME=${SOURCE##*/}
+     else
+          SOURCE_NAME=${PACKAGE}-${VERSION}.tar.xz
+     fi
+
+     if [ ! "${SOURCE_NAME%.bz2}" = "$SOURCE_NAME" ]; then
+            SOURCE_TYPE="bz2"
+            CONVERTED_SOURCE="${SOURCE_NAME%.bz2}.xz"
+     elif [ ! "${SOURCE_NAME%.gz}" = "$SOURCE_NAME" ]; then
+            SOURCE_TYPE="gz"
+            CONVERTED_SOURCE="${SOURCE_NAME%.gz}.xz"
+     elif [ ! "${SOURCE_NAME%.tgz}" = "$SOURCE_NAME" ]; then
+            CONVERTED_SOURCE="${SOURCE_NAME%.tgz}.tar.xz"
+            SOURCE_TYPE="tgz"
+     elif [ ! "${SOURCE_NAME%.zip}" = "$SOURCE_NAME" ]; then
+            SOURCE_TYPE="zip"
+            CONVERTED_SOURCE="${SOURCE_NAME%.zip}.tar.xz"
+     elif [ ! "${SOURCE_NAME%.xz}" = "$SOURCE_NAME" ]; then
+            SOURCE_TYPE="xz"
+            CONVERTED_SOURCE="$SOURCE_NAME"
+     else
+            # user must define custom build_unpack, and build_convert functions in the build file for custom package sources
+            SOURCE_TYPE="custom"
+            [ -z "$CONVERTED_SOURCE" ] && CONVERTED_SOURCE="${SOURCE_NAME%.*}.tar.xz"
+     fi
+
+     if [ -z "$VCS" ]; then
+          TOP_SRC=$(ls $TCEXTTOOLS_BIN_TEMP)
+     else
+          TOP_SRC=${PACKAGE}-${VERSION}
+     fi
+
+     if [ -n "$TOP_SRC" ]; then
+          TCEXTTOOLS_TOP_SRC="$TCEXTTOOLS_BIN_TEMP/$TOP_SRC"
+          PACKAGE_TOP_SRC="$TCEXTTOOLS_TOP_SRC"
+     fi
+}
+
+############################################################################ 
 #                            tc-ext-tools user                             #
 ############################################################################
 
@@ -129,47 +174,7 @@ if [ -e "$PACKAGE_COMMON" ]; then
      [ -d "$TCEXTTOOLS_SRC_TEMP" ] || install -m 755 -d "$TCEXTTOOLS_SRC_TEMP"
      [ -d "$TCEXTTOOLS_LOG" ] || install -m 755 -d "$TCEXTTOOLS_LOG"
 
-     # source name
-     if [ -z "$VCS" ]; then
-          SOURCE_NAME=${SOURCE##*/}
-     else
-          SOURCE_NAME=${PACKAGE}-${VERSION}.tar.xz
-     fi
-
-     # source type
-     if [ ! "${SOURCE_NAME%.bz2}" = "$SOURCE_NAME" ]; then
-            SOURCE_TYPE="bz2"
-            CONVERTED_SOURCE="${SOURCE_NAME%.bz2}.xz"
-     elif [ ! "${SOURCE_NAME%.gz}" = "$SOURCE_NAME" ]; then
-            SOURCE_TYPE="gz"
-            CONVERTED_SOURCE="${SOURCE_NAME%.gz}.xz"
-     elif [ ! "${SOURCE_NAME%.tgz}" = "$SOURCE_NAME" ]; then
-            CONVERTED_SOURCE="${SOURCE_NAME%.tgz}.tar.xz"
-            SOURCE_TYPE="tgz"
-     elif [ ! "${SOURCE_NAME%.zip}" = "$SOURCE_NAME" ]; then
-            SOURCE_TYPE="zip"
-            CONVERTED_SOURCE="${SOURCE_NAME%.zip}.tar.xz"
-     elif [ ! "${SOURCE_NAME%.xz}" = "$SOURCE_NAME" ]; then
-            SOURCE_TYPE="xz"
-            CONVERTED_SOURCE="$SOURCE_NAME"
-     else
-            # user must define custom build_unpack, and build_convert functions in the build file for custom package sources
-            SOURCE_TYPE="custom"
-            [ -z "$CONVERTED_SOURCE" ] && CONVERTED_SOURCE="${SOURCE_NAME%.*}.tar.xz"
-     fi
-
-     # top level source directory
-     if [ "$THIS" != "unpackit" ]; then
-          if [ -z "$VCS" ]; then
-               TOP_SRC=$(ls $TCEXTTOOLS_BIN_TEMP)
-          else
-               TOP_SRC=${PACKAGE}-${VERSION}
-          fi
-          if [ -n "$TOP_SRC" ]; then
-               TCEXTTOOLS_TOP_SRC="$TCEXTTOOLS_BIN_TEMP/$TOP_SRC"
-               PACKAGE_TOP_SRC="$TCEXTTOOLS_TOP_SRC"
-          fi
-     fi
+     set_package_source
 
      TCEXTTOOLS_SOURCE="$TCEXTTOOLS_SRC/$SOURCE_NAME"
      TCEXTTOOLS_CONVERTED_SOURCE="$TCEXTTOOLS_SRC/$CONVERTED_SOURCE"
@@ -229,4 +234,26 @@ KERNEL=$(uname -r)
 [ -z "$CFLAGS" ] && export CFLAGS="$TCEXTTOOLS_CFLAGS"
 [ -z "$CXXFLAGS" ] && export CXXFLAGS="$TCEXTTOOLS_CXXFLAGS"
 [ -z "$LDFLAGS" ] && export LDFLAGS="$TCEXTTOOLS_LDFLAGS"
+
+############################################################################ 
+#                      sets the name of an extension                       #
+############################################################################
+
+set_extension_name() {
+
+      if [ -f "$PACKAGE_EXTENSIONS/$EXTENSION/common" ]; then
+           . "$PACKAGE_EXTENSIONS/$EXTENSION/common"
+      fi
+
+      if [ -z "$NAME" ]; then
+           if [ -n "$SUFFIX" ]; then
+                EXTENSION_NAME="${EXTENSION}-${SUFFIX}"
+                unset SUFFIX
+           else
+                EXTENSION_NAME="$EXTENSION"
+           fi
+      else
+           EXTENSION_NAME="$NAME"
+      fi
+}
 
