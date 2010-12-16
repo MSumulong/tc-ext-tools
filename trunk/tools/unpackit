@@ -42,15 +42,15 @@ fi
 
 this_main() {
 
-  [ -d "$TCEXTTOOLS_BIN_TEMP" ] && sudo rm -rf "$TCEXTTOOLS_BIN_TEMP"
-  mkdir -p "$TCEXTTOOLS_BIN_TEMP"
+  [ -d "$TCEXTTOOLS_SRC_TEMP" ] && sudo rm -rf "$TCEXTTOOLS_SRC_TEMP"
+  mkdir -p "$TCEXTTOOLS_SRC_TEMP"
 
   if [ "$SOURCE_TYPE" = "bz2" ] || [ "$SOURCE_TYPE" = "gz" ] || [ "$SOURCE_TYPE" = "tgz" ] || [ "$SOURCE_TYPE" = "xz" ]; then
-       tar -C "$TCEXTTOOLS_BIN_TEMP" -xf "$TCEXTTOOLS_SOURCE" || return 1
+       tar -C "$TCEXTTOOLS_SRC_TEMP" -xf "$TCEXTTOOLS_SOURCE" || return 1
   elif [ "$SOURCE_TYPE" = "zip" ]; then
-       unzip "$TCEXTTOOLS_SOURCE" -d "$TCEXTTOOLS_BIN_TEMP" || return 1
+       unzip "$TCEXTTOOLS_SOURCE" -d "$TCEXTTOOLS_SRC_TEMP" || return 1
   elif [ "$SOURCE_TYPE" = "custom" ]; then
-       cd "$TCEXTTOOLS_BIN_TEMP"
+       cd "$TCEXTTOOLS_SRC_TEMP"
        build_unpack || return 1
   else
        print_it error "Unsupported source type!"

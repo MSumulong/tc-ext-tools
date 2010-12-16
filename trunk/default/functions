@@ -113,13 +113,13 @@ set_package_source() {
      fi
 
      if [ -z "$VCS" ]; then
-          TOP_SRC=$(ls -el $TCEXTTOOLS_BIN_TEMP | egrep '^d' | cut -d : -f3 | cut -d " " -f3)
+          TOP_SRC=$(ls -el $TCEXTTOOLS_SRC_TEMP | egrep '^d' | cut -d : -f3 | cut -d " " -f3)
      else
           TOP_SRC=${PACKAGE}-${VERSION}
      fi
 
      if [ -n "$TOP_SRC" ]; then
-          TCEXTTOOLS_TOP_SRC="$TCEXTTOOLS_BIN_TEMP/$TOP_SRC"
+          TCEXTTOOLS_TOP_SRC="$TCEXTTOOLS_SRC_TEMP/$TOP_SRC"
           PACKAGE_TOP_SRC="$TCEXTTOOLS_TOP_SRC"
      fi
 }
@@ -184,7 +184,6 @@ if [ -e "$PACKAGE_COMMON" ]; then
      TCEXTTOOLS_LOG="$TCEXTTOOLS_STORAGE/$PACKAGE/$TCEXTTOOLS_LOG"
      TCEXTTOOLS_EXTENSIONS="$TCEXTTOOLS_STORAGE/$PACKAGE/$TCEXTTOOLS_EXTENSIONS"
 
-     TCEXTTOOLS_BIN_TEMP="$TCEXTTOOLS_BIN/temp"
      TCEXTTOOLS_SRC_TEMP="$TCEXTTOOLS_SRC/temp"
 
      TCEXTTOOLS_DOWNLOAD_LOG="$TCEXTTOOLS_LOG/download.txt"
@@ -204,7 +203,6 @@ if [ -e "$PACKAGE_COMMON" ]; then
      [ -d "$TCEXTTOOLS_BIN" ] || install -m 755 -d "$TCEXTTOOLS_BIN"
      [ -d "$TCEXTTOOLS_SRC" ] || install -m 755 -d "$TCEXTTOOLS_SRC"
      [ -d "$TCEXTTOOLS_PKG" ] || install -m 755 -d "$TCEXTTOOLS_PKG"
-     [ -d "$TCEXTTOOLS_BIN_TEMP" ] || install -m 755 -d "$TCEXTTOOLS_BIN_TEMP"
      [ -d "$TCEXTTOOLS_SRC_TEMP" ] || install -m 755 -d "$TCEXTTOOLS_SRC_TEMP"
      [ -d "$TCEXTTOOLS_LOG" ] || install -m 755 -d "$TCEXTTOOLS_LOG"
 
