@@ -45,8 +45,8 @@ this_generate() {
   [ ! "${EXTENSION%-locale}" = "$EXTENSION" ] && DESCRIPTION="${DESCRIPTION%.}, locale files."
   [ ! "${EXTENSION%-gir}" = "$EXTENSION" ] && DESCRIPTION="${DESCRIPTION%.}, gobject introspection data."
 
-  if [ -e "$PACKAGE_EXTENSIONS/$EXTENSION/info" ]; then
-      . "$PACKAGE_EXTENSIONS/$EXTENSION/info"
+  if [ -e "$PACKAGE_EXTENSIONS/$EXTENSION/common" ]; then
+      . "$PACKAGE_EXTENSIONS/$EXTENSION/common"
   fi
 
   CURRENT="$DATE $CURRENT"
