@@ -113,7 +113,7 @@ set_package_source() {
      fi
 
      if [ -z "$VCS" ]; then
-          TOP_SRC=$(ls $TCEXTTOOLS_BIN_TEMP)
+          TOP_SRC=$(ls -el $TCEXTTOOLS_BIN_TEMP | egrep '^d' | cut -d : -f3 | cut -d " " -f3)
      else
           TOP_SRC=${PACKAGE}-${VERSION}
      fi
@@ -122,6 +122,40 @@ set_package_source() {
           TCEXTTOOLS_TOP_SRC="$TCEXTTOOLS_BIN_TEMP/$TOP_SRC"
           PACKAGE_TOP_SRC="$TCEXTTOOLS_TOP_SRC"
      fi
+}
+
+############################################################################ 
+#                           sets the extensions                            #
+############################################################################
+
+set_extensions() {
+
+      if [ "$THIS" != "boostit" ]; then
+           EXTENSIONS=$(ls -el $PACKAGE_EXTENSIONS | egrep '^d' | cut -d : -f3 | cut -d " " -f3)
+      fi
+
+}
+
+############################################################################ 
+#                      sets the name of an extension                       #
+############################################################################
+
+set_extension_name() {
+
+      if [ -f "$PACKAGE_EXTENSIONS/$EXTENSION/common" ]; then
+           . "$PACKAGE_EXTENSIONS/$EXTENSION/common"
+      fi
+
+      if [ -z "$NAME" ]; then
+           if [ -n "$SUFFIX" ]; then
+                EXTENSION_NAME="${EXTENSION}-${SUFFIX}"
+                unset SUFFIX
+           else
+                EXTENSION_NAME="$EXTENSION"
+           fi
+      else
+           EXTENSION_NAME="$NAME"
+      fi
 }
 
 ############################################################################ 
@@ -188,6 +222,8 @@ if [ -e "$PACKAGE_COMMON" ]; then
      INSTALL_ROOT="$PACKAGE_INSTALL_ROOT"
      PREFIX="$TCEXTTOOLS_PREFIX"
 
+     set_extensions
+
      KERNEL_EXTENSIONS=$(echo $EXTENSIONS | sed -e "s/KERNEL/$(uname -r)/g")
 
 elif [ "$THIS" != "boostit" ]; then
@@ -234,26 +270,4 @@ KERNEL=$(uname -r)
 [ -z "$CFLAGS" ] && export CFLAGS="$TCEXTTOOLS_CFLAGS"
 [ -z "$CXXFLAGS" ] && export CXXFLAGS="$TCEXTTOOLS_CXXFLAGS"
 [ -z "$LDFLAGS" ] && export LDFLAGS="$TCEXTTOOLS_LDFLAGS"
-
-############################################################################ 
-#                      sets the name of an extension                       #
-############################################################################
-
-set_extension_name() {
-
-      if [ -f "$PACKAGE_EXTENSIONS/$EXTENSION/common" ]; then
-           . "$PACKAGE_EXTENSIONS/$EXTENSION/common"
-      fi
-
-      if [ -z "$NAME" ]; then
-           if [ -n "$SUFFIX" ]; then
-                EXTENSION_NAME="${EXTENSION}-${SUFFIX}"
-                unset SUFFIX
-           else
-                EXTENSION_NAME="$EXTENSION"
-           fi
-      else
-           EXTENSION_NAME="$NAME"
-      fi
-}
 
