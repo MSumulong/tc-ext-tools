@@ -50,9 +50,9 @@ this_generate() {
   fi
 
   CURRENT="$DATE $CURRENT"
-  SIZE=$(du -h "$TCEXTTOOLS_EXTENSIONS/$EXTENSION_NAME/${EXTENSION_NAME}.tcz" | cut -f1)
+  SIZE=$(du -h "$TCEXTTOOLS_PKG/$EXTENSION_NAME/${EXTENSION_NAME}.tcz" | cut -f1)
 
-  cat > "$TCEXTTOOLS_EXTENSIONS/$EXTENSION_NAME/${EXTENSION_NAME}.tcz.info" << _EOF
+  cat > "$TCEXTTOOLS_PKG/$EXTENSION_NAME/${EXTENSION_NAME}.tcz.info" << _EOF
 Title:		${EXTENSION_NAME}.tcz
 Description:	${DESCRIPTION}
 Version:	${VERSION}
@@ -82,7 +82,7 @@ this_main() {
 
       set_extension_name
 
-      if [ ! -e "$TCEXTTOOLS_EXTENSIONS/$EXTENSION_NAME/${EXTENSION_NAME}.tcz" ]; then
+      if [ ! -e "$TCEXTTOOLS_PKG/$EXTENSION_NAME/${EXTENSION_NAME}.tcz" ]; then
              print_it error "You must create it first!"
              exit 1
       fi

@@ -274,13 +274,13 @@ package_it() {
 
 compress_it() {
 
-  if [ ! -d "$TCEXTTOOLS_PKG" ]; then
+  if [ ! -d "$TCEXTTOOLS_PACKAGE" ]; then
        print_it error "You must package it first!"
        exit 1
   fi
 
   print_it "Compressing the package $PACKAGE ... \c"
-  compressit bz2 "$TCEXTTOOLS_PKG" > "$TCEXTTOOLS_ERROR_LOG" 2>&1
+  compressit bz2 "$TCEXTTOOLS_PACKAGE" > "$TCEXTTOOLS_ERROR_LOG" 2>&1
   if [ "$?" -gt 0 ]; then
        print_it error "failed!"
        print_it warning "For details: buildit show error"

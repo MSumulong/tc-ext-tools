@@ -37,8 +37,8 @@ fi
 
 this_main() {
 
-  [ -d "$TCEXTTOOLS_PKG" ] && sudo rm -rf "$TCEXTTOOLS_PKG"
-  mkdir -p "$TCEXTTOOLS_PKG"
+  [ -d "$TCEXTTOOLS_PACKAGE" ] && sudo rm -rf "$TCEXTTOOLS_PACKAGE"
+  mkdir -p "$TCEXTTOOLS_PACKAGE"
 
   cd "$PACKAGE_ROOT"
 
@@ -48,18 +48,18 @@ this_main() {
 
       set_extension_name
 
-      if [ ! -d "$TCEXTTOOLS_EXTENSIONS/$EXTENSION_NAME" ]; then
+      if [ ! -d "$TCEXTTOOLS_PKG/$EXTENSION_NAME" ]; then
            print_it error "You must create it first!"
            exit 1
       fi
 
-      [ -d "$TCEXTTOOLS_PKG/$EXTENSION_NAME" ] || mkdir -p "$TCEXTTOOLS_PKG/$EXTENSION_NAME"
+      [ -d "$TCEXTTOOLS_PACKAGE/$EXTENSION_NAME" ] || mkdir -p "$TCEXTTOOLS_PACKAGE/$EXTENSION_NAME"
 
-      busybox cp -f "$TCEXTTOOLS_EXTENSIONS/$EXTENSION_NAME"/*.tcz* "$TCEXTTOOLS_PKG/$EXTENSION_NAME" || return 1
+      busybox cp -f "$TCEXTTOOLS_PKG/$EXTENSION_NAME"/*.tcz* "$TCEXTTOOLS_PACKAGE/$EXTENSION_NAME" || return 1
   done
 
   if [ -f "$TCEXTTOOLS_CONVERTED_SOURCE" ]; then
-       busybox cp -f "$TCEXTTOOLS_CONVERTED_SOURCE" "$TCEXTTOOLS_PKG" || return 1
+       busybox cp -f "$TCEXTTOOLS_CONVERTED_SOURCE" "$TCEXTTOOLS_PACKAGE" || return 1
   fi
 
   return 0
