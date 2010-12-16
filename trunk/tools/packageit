@@ -44,20 +44,19 @@ this_main() {
 
   for EXTENSION in $EXTENSIONS
   do
-      if [ ! -d "$TCEXTTOOLS_EXTENSIONS/$EXTENSION" ]; then
+      . "$PACKAGE_COMMON"
+
+      set_extension_name
+
+      if [ ! -d "$TCEXTTOOLS_EXTENSIONS/$EXTENSION_NAME" ]; then
            print_it error "You must create it first!"
            exit 1
       fi
 
-      [ -d "$TCEXTTOOLS_PKG/$EXTENSION" ] || mkdir -p "$TCEXTTOOLS_PKG/$EXTENSION"
+      [ -d "$TCEXTTOOLS_PKG/$EXTENSION_NAME" ] || mkdir -p "$TCEXTTOOLS_PKG/$EXTENSION_NAME"
 
-      busybox cp -f "$TCEXTTOOLS_EXTENSIONS/$EXTENSION"/*.tcz* "$TCEXTTOOLS_PKG/$EXTENSION" || return 1
+      busybox cp -f "$TCEXTTOOLS_EXTENSIONS/$EXTENSION_NAME"/*.tcz* "$TCEXTTOOLS_PKG/$EXTENSION_NAME" || return 1
   done
-
-  #if [ -d "$PACKAGE_SRC" ]; then
-  #     compressit xz "$PACKAGE_SRC" "${PACKAGE}-src" || return 1
-  #     busybox mv -f "${PACKAGE}-src.tar.xz" "$TCEXTTOOLS_PKG" || return 1
-  #fi
 
   if [ -f "$TCEXTTOOLS_CONVERTED_SOURCE" ]; then
        busybox cp -f "$TCEXTTOOLS_CONVERTED_SOURCE" "$TCEXTTOOLS_PKG" || return 1

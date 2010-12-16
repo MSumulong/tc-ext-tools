@@ -80,11 +80,11 @@ this_split() {
   sudo mkdir "$TMP_DIR/root"
   sudo tar -C "$TMP_DIR/root" -pxzf "$TMP_DIR/pkg.tar.gz" || return 1
 
-  if [ -d "$TCEXTTOOLS_BIN/$EXTENSION" ]; then
-       sudo rm -rf "$TCEXTTOOLS_BIN/$EXTENSION" || return 1
+  if [ -d "$TCEXTTOOLS_BIN/$EXTENSION_NAME" ]; then
+       sudo rm -rf "$TCEXTTOOLS_BIN/$EXTENSION_NAME" || return 1
   fi
 
-  sudo mv "$TMP_DIR/root" "$TCEXTTOOLS_BIN/$EXTENSION" || return 1
+  sudo mv "$TMP_DIR/root" "$TCEXTTOOLS_BIN/$EXTENSION_NAME" || return 1
 
   sudo rm -rf "$TMP_DIR"
 
@@ -93,19 +93,17 @@ this_split() {
 
 this_modify() {
 
-  if [ -f "$PACKAGE_EXTENSIONS/$EXTENSION/icon" ]; then
-       . "$PACKAGE_EXTENSIONS/$EXTENSION/icon"
-  fi
-
   if [ -n "$ICON" ]; then
-       if [ ! -e "$TCEXTTOOLS_BIN/$EXTENSION/$ICON" ]; then
-            print_it error "The icon: $TCEXTTOOLS_BIN/$EXTENSION/$ICON does not exist!"
+       if [ ! -e "$TCEXTTOOLS_BIN/$EXTENSION_NAME/$ICON" ]; then
+            print_it error "The icon: $TCEXTTOOLS_BIN/$EXTENSION_NAME/$ICON does not exist!"
             return 1
-       elif [ ! -e "$TCEXTTOOLS_BIN/$EXTENSION/$DESKTOP" ]; then
-            print_it error "The desktop entry: $TCEXTTOOLS_BIN/$EXTENSION/$DESKTOP does not exist!"
+       elif [ ! -e "$TCEXTTOOLS_BIN/$EXTENSION_NAME/$DESKTOP" ]; then
+            print_it error "The desktop entry: $TCEXTTOOLS_BIN/$EXTENSION_NAME/$DESKTOP does not exist!"
             return 1
        else
-            sudo sh -c "echo \"X-FullPathIcon=$ICON\" >> $TCEXTTOOLS_BIN/$EXTENSION/$DESKTOP" || return 1
+            sudo sh -c "echo \"X-FullPathIcon=$ICON\" >> $TCEXTTOOLS_BIN/$EXTENSION_NAME/$DESKTOP" || return 1
+            unset ICON
+            unset DESKTOP
        fi
   fi
 }
@@ -114,24 +112,27 @@ this_main() {
 
   for EXTENSION in $EXTENSIONS
   do
+      . "$PACKAGE_COMMON"
+
+      set_extension_name
 
       TMP_DIR=$(busybox mktemp -d)
 
       this_split
       if [ "$?" -gt 0 ]; then
-           print_it error "Splitting the extension $EXTENSION failed!"
+           print_it error "Splitting the extension $EXTENSION_NAME failed!"
            sudo rm -rf "$TMP_DIR"
            return 1
       else
-           print_it "Splitting the extension $EXTENSION successful!"
+           print_it "Splitting the extension $EXTENSION_NAME successful!"
       fi
 
       this_modify
       if [ "$?" -gt 0 ]; then
-           print_it error "Modifying the extension $EXTENSION failed!"
+           print_it error "Modifying the extension $EXTENSION_NAME failed!"
            return 1
       else
-           print_it "Modifying the extension $EXTENSION successful!"
+           print_it "Modifying the extension $EXTENSION_NAME successful!"
       fi
   done
 

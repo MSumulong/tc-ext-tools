@@ -50,10 +50,10 @@ this_generate() {
   fi
 
   CURRENT="$DATE $CURRENT"
-  SIZE=$(du -h "$TCEXTTOOLS_EXTENSIONS/$EXTENSION/${EXTENSION}.tcz" | cut -f1)
+  SIZE=$(du -h "$TCEXTTOOLS_EXTENSIONS/$EXTENSION_NAME/${EXTENSION_NAME}.tcz" | cut -f1)
 
-  cat > "$TCEXTTOOLS_EXTENSIONS/$EXTENSION/${EXTENSION}.tcz.info" << _EOF
-Title:		${EXTENSION}.tcz
+  cat > "$TCEXTTOOLS_EXTENSIONS/$EXTENSION_NAME/${EXTENSION_NAME}.tcz.info" << _EOF
+Title:		${EXTENSION_NAME}.tcz
 Description:	${DESCRIPTION}
 Version:	${VERSION}
 Author:		${AUTHOR}
@@ -67,7 +67,7 @@ Current:	${CURRENT}
 _EOF
 
   if [ "$?" -gt 0 ]; then
-       print_it error "Failed to write ${EXTENSION}.tcz.info"
+       print_it error "Failed to write to ${EXTENSION_NAME}.tcz.info"
        return 1
   fi
 
@@ -80,17 +80,19 @@ this_main() {
   do
       . "$PACKAGE_COMMON"
 
-      if [ ! -e "$TCEXTTOOLS_EXTENSIONS/$EXTENSION/${EXTENSION}.tcz" ]; then
+      set_extension_name
+
+      if [ ! -e "$TCEXTTOOLS_EXTENSIONS/$EXTENSION_NAME/${EXTENSION_NAME}.tcz" ]; then
              print_it error "You must create it first!"
              exit 1
       fi
 
       this_generate
       if [ "$?" -gt 0 ]; then
-           print_it error "Generating the extension $EXTENSION info failed!"
+           print_it error "Generating the extension $EXTENSION_NAME info failed!"
            return 1
       else
-           print_it "Generating the extension $EXTENSION info successful!"
+           print_it "Generating the extension $EXTENSION_NAME info successful!"
       fi
   done  
 
