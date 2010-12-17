@@ -2,11 +2,15 @@ gtk2.tcz
 dbus-glib.tcz
 GConf.tcz
 libv4l.tcz
+libxcb.tcz
 gst-plugins-base.tcz
 gst-plugins-good.tcz
 libgnome-desktop.tcz
 librsvg.tcz
 libcanberra.tcz
-gudev-lib.tcz
+hal.tcz
+libiconv.tcz
+evolution-data-server.tcz
 shared-mime-info.tcz
 hicolor-icon-theme.tcz
+
