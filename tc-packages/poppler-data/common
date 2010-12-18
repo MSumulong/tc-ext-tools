@@ -1,11 +1,8 @@
 PACKAGE="poppler-data"
 VERSION="0.4.4"
-SOURCE="${PACKAGE}-${VERSION}.tar.gz"
-TOP_SRC="${PACKAGE}-${VERSION}"
-SOURCE_URL="http://poppler.freedesktop.org/poppler-data-${VERSION}.tar.gz"
+SOURCE="http://poppler.freedesktop.org/poppler-data-${VERSION}.tar.gz"
 BUILD_DEPENDS=""
 
-EXTENSIONS="poppler-data"
 DESCRIPTION="Encoding data for the poppler PDF rendering library."
 AUTHOR="Kristian Hogsberg, Derek Noonburg, Albert Astals Cid"
 SITE="poppler.freedesktop.org/"

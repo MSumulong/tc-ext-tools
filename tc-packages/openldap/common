@@ -1,8 +1,6 @@
 PACKAGE="openldap"
 VERSION="2.4.23"
-SOURCE="${PACKAGE}-${VERSION}.tgz"
-TOP_SRC="${PACKAGE}-${VERSION}"
-SOURCE_URL="ftp://ftp.openldap.org/pub/OpenLDAP/openldap-release/openldap-${VERSION}.tgz"
+SOURCE="ftp://ftp.openldap.org/pub/OpenLDAP/openldap-release/openldap-${VERSION}.tgz"
 BUILD_DEPENDS="bsddb
 bsddb-dev
 cyrus-sasl
@@ -19,7 +17,6 @@ tcp_wrappers
 tcp_wrappers-dev
 groff"
 
-EXTENSIONS="openldap openldap-server openldap-dev openldap-doc"
 DESCRIPTION="Open LDAP (Lightweight Directory Access Protocol)."
 AUTHOR="OpenLDAP"
 SITE="http://www.openldap.org/"

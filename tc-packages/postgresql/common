@@ -21,7 +21,6 @@ openldap
 openldap-dev
 tzdata"
 
-EXTENSIONS="postgresql postgresql-lib postgresql-dev postgresql-doc postgresql-locale"
 DESCRIPTION="A powerful, open source object-relational database system."
 AUTHOR="various"
 SITE="http://www.postgresql.org/"

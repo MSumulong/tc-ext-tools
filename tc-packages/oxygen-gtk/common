@@ -7,7 +7,6 @@ gtk2-dev
 libxcb
 libxcb-dev"
 
-EXTENSIONS="oxygen-gtk"
 DESCRIPTION="Oxygen-Gtk is a port of the default KDE widget theme (Oxygen), to gtk."
 AUTHOR="various"
 SITE="http://kde-look.org/content/show.php/?content=136216"

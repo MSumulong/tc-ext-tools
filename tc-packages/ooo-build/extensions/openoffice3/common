@@ -1,3 +1,5 @@
+ICON="/usr/local/share/icons/hicolor/48x48/apps/ooo-base.png"
+DESKTOP="/usr/local/share/applications/openoffice3.desktop"
 COMMENTS="Go-oo (previously called ooo-build) is a concentrated set of patches
 		for the cross-platform OpenOffice.org office suite. Go-oo is also one
 		of OpenOffice.org variants created from these patches. It has better

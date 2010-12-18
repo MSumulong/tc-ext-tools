@@ -1,10 +1,6 @@
 PACKAGE="pinball"
 VERSION="0.3.1"
-SOURCE="${PACKAGE}-${VERSION}.tar.gz"
-TOP_SRC="${PACKAGE}-${VERSION}"
-SOURCE_URL="http://downloads.sourceforge.net/pinball/pinball-${VERSION}.tar.gz"
-ICON="/usr/local/share/pixmaps/pinball.xpm"
-DESKTOP_ENTRY="/usr/local/share/applications/pinball.desktop"
+SOURCE="http://downloads.sourceforge.net/pinball/pinball-${VERSION}.tar.gz"
 BUILD_DEPENDS="Xorg-7.5
 Xorg-7.5-dev
 libmad
@@ -20,7 +16,6 @@ SDL-dev
 freeglut
 freeglut-dev"
 
-EXTENSIONS="pinball pinball-dev"
 DESCRIPTION="A pinball simulator for Linux."
 AUTHOR="Henrik Enqvist"
 SITE="http://pinball.sourceforge.net/"

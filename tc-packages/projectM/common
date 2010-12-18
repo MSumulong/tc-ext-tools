@@ -1,8 +1,6 @@
 PACKAGE="projectM"
 VERSION="2.0.1"
-SOURCE="${PACKAGE}-${VERSION}-Source.tar.gz"
-TOP_SRC="${PACKAGE}-${VERSION}-Source"
-SOURCE_URL="http://downloads.sourceforge.net/projectm/projectM-${VERSION}-Source.tar.gz"
+SOURCE="http://downloads.sourceforge.net/projectm/projectM-${VERSION}-Source.tar.gz"
 BUILD_DEPENDS="cmake
 glew
 ftgl
@@ -12,7 +10,6 @@ gtkglext-dev
 Xorg-7.5
 Xorg-7.5-dev"
 
-EXTENSIONS="projectM projectM-dev"
 DESCRIPTION="An OpenGL based advanced music visualization program for Linux."
 AUTHOR="projectM Team"
 SITE="http://sourceforge.net/projects/projectm/"

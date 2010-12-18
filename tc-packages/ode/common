@@ -1,11 +1,8 @@
 PACKAGE="ode"
 VERSION="0.11.1"
-SOURCE="${PACKAGE}-${VERSION}.tar.bz2"
-TOP_SRC="${PACKAGE}-${VERSION}"
-SOURCE_URL="http://downloads.sourceforge.net/sourceforge/opende/ode-${VERSION}.tar.bz2"
+SOURCE="http://downloads.sourceforge.net/sourceforge/opende/ode-${VERSION}.tar.bz2"
 BUILD_DEPENDS=""
 
-EXTENSIONS="ode ode-dev"
 DESCRIPTION="An open source, high performance library for simulating rigid body dynamics."
 AUTHOR="Russell Smith"
 SITE="http://www.ode.org"

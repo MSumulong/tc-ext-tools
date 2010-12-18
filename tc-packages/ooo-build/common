@@ -1,10 +1,6 @@
 PACKAGE="ooo-build"
 VERSION="3.2.1.4"
-SOURCE="${PACKAGE}-${VERSION}.tar.gz"
-TOP_SRC="${PACKAGE}-${VERSION}"
-SOURCE_URL="http://download.go-oo.org/OOO320/ooo-build-${VERSION}.tar.gz"
-ICON="/usr/local/share/icons/hicolor/48x48/apps/ooo-base.png"
-DESKTOP_ENTRY="/usr/local/share/applications/openoffice3.desktop"
+SOURCE="http://download.go-oo.org/OOO320/ooo-build-${VERSION}.tar.gz"
 BUILD_DEPENDS="zip-unzip
 bash
 tar
@@ -62,7 +58,6 @@ libxml2-bin
 #boost
 #boost-dev"
 
-EXTENSIONS="openoffice3"
 DESCRIPTION="This is Go-oo for Tiny Core, a variant of the original OpenOffice.org."
 AUTHOR="Go-oo.org and OpenOffice.org Community"
 SITE="http://go-oo.org/"

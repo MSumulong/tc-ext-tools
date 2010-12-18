@@ -1,14 +1,9 @@
 PACKAGE="postr"
 VERSION="0.12.4"
-SOURCE="${PACKAGE}-${VERSION}.tar.bz2"
-TOP_SRC="${PACKAGE}-${VERSION}"
-SOURCE_URL="http://ftp.gnome.org/pub/GNOME/sources/postr/0.12/postr-${VERSION}.tar.bz2"
-ICON="/usr/local/share/icons/hicolor/32x32/apps/postr.png"
-DESKTOP_ENTRY="/usr/local/share/applications/postr.desktop"
+SOURCE="http://ftp.gnome.org/pub/GNOME/sources/postr/0.12/postr-${VERSION}.tar.bz2"
 BUILD_DEPENDS="python
 python-dev"
 
-EXTENSIONS="postr"
 DESCRIPTION="GNOME Flickr Uploader."
 AUTHOR="Ross Burton"
 SITE="http://projects.gnome.org/postr/"

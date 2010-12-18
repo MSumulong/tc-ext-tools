@@ -1,8 +1,6 @@
 PACKAGE="poppler"
 VERSION="0.14.5"
-SOURCE="${PACKAGE}-${VERSION}.tar.gz"
-TOP_SRC="${PACKAGE}-${VERSION}"
-SOURCE_URL="http://poppler.freedesktop.org/poppler-${VERSION}.tar.gz"
+SOURCE="http://poppler.freedesktop.org/poppler-${VERSION}.tar.gz"
 BUILD_DEPENDS="poppler
 glib2
 glib2-dev
@@ -23,7 +21,6 @@ openjpeg
 openjpeg-dev
 glibc_gconv"
 
-EXTENSIONS="poppler poppler-bin poppler-qt4 poppler-qt4-dev poppler-dev poppler-doc"
 DESCRIPTION="Poppler PDF rendering library."
 AUTHOR="Kristian Hogsberg, Derek Noonburg, Albert Astals Cid"
 SITE="poppler.freedesktop.org/"

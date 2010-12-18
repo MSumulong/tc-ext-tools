@@ -1,8 +1,6 @@
 PACKAGE="ogre"
 VERSION="1.7.2"
-SOURCE="${PACKAGE}_src_v${VERSION//./-}.tar.bz2"
-TOP_SRC="${PACKAGE}_src_v${VERSION//./-}"
-SOURCE_URL="http://downloads.sourceforge.net/${PACKAGE}/${PACKAGE}_src_v${VERSION//./-}.tar.bz2"
+SOURCE="http://downloads.sourceforge.net/${PACKAGE}/${PACKAGE}_src_v${VERSION//./-}.tar.bz2"
 BUILD_DEPENDS="cmake
 boost
 boost-dev
@@ -15,7 +13,6 @@ openexr-dev
 zziplib
 zziplib-dev"
 
-EXTENSIONS="ogre ogre-dev"
 DESCRIPTION="Object-oriented Graphics Rendering Engine."
 AUTHOR="various"
 SITE="http://www.ogre3d.org/"

@@ -1,8 +1,6 @@
 PACKAGE="opencv"
 VERSION="2.2.0"
-SOURCE="OpenCV-${VERSION}.tar.bz2"
-TOP_SRC="OpenCV-${VERSION}"
-SOURCE_URL="http://downloads.sourceforge.net/opencvlibrary/OpenCV-${VERSION}.tar.bz2"
+SOURCE="http://downloads.sourceforge.net/opencvlibrary/OpenCV-${VERSION}.tar.bz2"
 BUILD_DEPENDS="cmake
 gtk2
 gtk2-dev
@@ -26,7 +24,6 @@ libxcb-dev
 Xorg-7.5-lib
 Xorg-7.5-dev"
 
-EXTENSIONS="opencv opencv-dev opencv-doc"
 DESCRIPTION="A library of programming functions for real time computer vision."
 AUTHOR="various"
 SITE="http://opencv.willowgarage.com"

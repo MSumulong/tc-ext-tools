@@ -1,12 +1,9 @@
 PACKAGE="openjpeg"
 VERSION="1.3"
 _VERSION="v1_3"
-SOURCE="openjpeg_${_VERSION}.tar.gz"
-TOP_SRC="OpenJPEG_${_VERSION}"
-SOURCE_URL="http://www.openjpeg.org/openjpeg_${_VERSION}.tar.gz"
+SOURCE="http://www.openjpeg.org/openjpeg_${_VERSION}.tar.gz"
 BUILD_DEPENDS=""
 
-EXTENSIONS="openjpeg openjpeg-dev"
 DESCRIPTION="An open-source JPEG 2000 codec."
 AUTHOR="various"
 SITE="http://www.openjpeg.org/"
