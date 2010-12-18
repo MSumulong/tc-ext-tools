@@ -37,14 +37,10 @@ fi
 
 EXT_LIST="$1"
 
-TCE_DIR="$(cat /opt/.tce_dir)"
-if [ "$?" -gt 0 ]; then
-     print_it error "Getting system tce directory failed!"
-     exit 1
-fi
-
 print_usage(){
-  echo -e "${TCEXTTOOLS_ERROR_COLOR}Usage:${TCEXTTOOLS_MESSAGE_COLOR}\n$(basename $0) \"ext1 ext2 ext3\" | /path/to/extlist${NORMAL}"
+
+   echo -e "${TCEXTTOOLS_ERROR_COLOR}Usage:${TCEXTTOOLS_MESSAGE_COLOR}\n$(basename $0) \"ext1 ext2 ext3\" | /path/to/extlist${NORMAL}"
+
 }
 
 if [ -z "$EXT_LIST" ]; then
@@ -52,41 +48,51 @@ if [ -z "$EXT_LIST" ]; then
      exit 1
 fi
 
+############################################################################ 
+#                              load extension                              #
+############################################################################
+
 tcz_load() {
 
-  extension="$1"
-  if [ -n "$extension" ]; then
-       if [ "${extension#\#}" = "$extension" ]; then
-            if [ ! -e "$TCE_DIR/optional/${extension%.tcz}.tcz" ]; then
-                 tce-load -w "${extension%.tcz}.tcz" || return 1
-            fi
-            if [ ! -e "/usr/local/tce.installed/${extension%.tcz}" ]; then
-                 tce-load -i "${extension%.tcz}.tcz" || return 1
-            fi
-       fi
-  fi
+   extension="$1"
+   if [ -n "$extension" ]; then
+        if [ "${extension#\#}" = "$extension" ]; then
+             if [ ! -e "$TCE_DIR/optional/${extension%.tcz}.tcz" ]; then
+                    tce-load -w "${extension%.tcz}.tcz" || return 1
+             fi
+             if [ ! -e "/usr/local/tce.installed/${extension%.tcz}" ]; then
+                    tce-load -i "${extension%.tcz}.tcz" || return 1
+             fi
+        fi
+   fi
 
-  return 0
+   return 0
+
 }
+
+############################################################################ 
+#                                this main                                 #
+############################################################################
 
 this_main() {
 
-  if [ -f "$EXT_LIST" ]; then
-       EXT_LIST="$(cat $EXT_LIST)"
-       if [ -z "$EXT_LIST" ]; then
-            print_it error "Dependency list file is empty!"
-            return 1
-       fi
-  fi
+   if [ -f "$EXT_LIST" ]; then
+        EXT_LIST="$(cat $EXT_LIST)"
+        if [ -z "$EXT_LIST" ]; then
+             print_it error "Dependency list file is empty!"
+             return 1
+        fi
+   fi
 
-  EXT_LIST="$EXT_LIST $TCEXTTOOLS_DEPENDS"
+   EXT_LIST="$EXT_LIST $TCEXTTOOLS_DEPENDS"
 
-  for EXT in $EXT_LIST
-  do
-      tcz_load "$EXT" || return 1
-  done
+   for EXT in $EXT_LIST
+   do
+       tcz_load "$EXT" || return 1
+   done
 
-  return 0
+   return 0
+
 }
 
 print_it "Loading the extensions ... \c"

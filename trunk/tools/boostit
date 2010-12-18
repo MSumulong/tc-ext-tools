@@ -40,7 +40,9 @@ VERSION="$2"
 EXTENSIONS="$3"
 
 print_usage(){
-  echo -e "${TCEXTTOOLS_ERROR_COLOR}Usage:${TCEXTTOOLS_MESSAGE_COLOR}\n$(basename $0) package version \"extension1 extension2 ...\"${NORMAL}"
+
+   echo -e "${TCEXTTOOLS_ERROR_COLOR}Usage:${TCEXTTOOLS_MESSAGE_COLOR}\n$(basename $0) package version \"extension1 extension2 ...\"${NORMAL}"
+
 }
 
 if [ -z "$PACKAGE" ] || [ -z "$VERSION" ]; then
@@ -72,15 +74,19 @@ if [ -e "$PACKAGE_COMMON" ]; then
      esac
 fi
 
+############################################################################ 
+#                                this main                                 #
+############################################################################
+
 this_main() {
 
-  if [ ! -d "$PACKAGE_EXTENSIONS" ]; then
-       install -m 755 -d "$PACKAGE_EXTENSIONS" || return 1
-  fi
+   if [ ! -d "$PACKAGE_EXTENSIONS" ]; then
+          install -m 755 -d "$PACKAGE_EXTENSIONS" || return 1
+   fi
 
-  if [ "$VERSION" = "svn" ]; then
+   if [ "$VERSION" = "svn" ]; then
 
-       cat > "$PACKAGE_COMMON" << _EOF
+        cat > "$PACKAGE_COMMON" << _EOF
 PACKAGE="$PACKAGE"
 VERSION="svn\${YEAR}\${MONTH}\${DAY}"
 SOURCE=""
@@ -97,11 +103,11 @@ CHANGELOG="---"
 CURRENT="First Version"
 _EOF
 
-       [ "$?" -gt 0 ] && return 1
+        [ "$?" -gt 0 ] && return 1
 
-  elif [ "$VERSION" = "git" ]; then
+   elif [ "$VERSION" = "git" ]; then
 
-       cat > "$PACKAGE_COMMON" << _EOF
+        cat > "$PACKAGE_COMMON" << _EOF
 PACKAGE="${PACKAGE}"
 VERSION="git\${YEAR}\${MONTH}\${DAY}"
 SOURCE=""
@@ -118,11 +124,11 @@ CHANGELOG="---"
 CURRENT="First Version"
 _EOF
 
-       [ "$?" -gt 0 ] && return 1
+        [ "$?" -gt 0 ] && return 1
 
-  else
+   else
 
-       cat > "$PACKAGE_COMMON" << _EOF
+        cat > "$PACKAGE_COMMON" << _EOF
 PACKAGE="$PACKAGE"
 VERSION="$VERSION"
 SOURCE=""
@@ -138,28 +144,29 @@ CHANGELOG="---"
 CURRENT="First Version"
 _EOF
 
-       [ "$?" -gt 0 ] && return 1
+        [ "$?" -gt 0 ] && return 1
 
-  fi
+   fi
 
-  install -m 644 "$TCEXTTOOLS_ROOT/share/tc-ext-tools/build" "$PACKAGE_BUILD" || return 1
+   install -m 644 "$TCEXTTOOLS_ROOT/share/tc-ext-tools/build" "$PACKAGE_BUILD" || return 1
 
-  for EXTENSION in $EXTENSIONS
-  do
-      mkdir -p "$PACKAGE_EXTENSIONS/$EXTENSION" || return 1
-      touch "$PACKAGE_EXTENSIONS/$EXTENSION/install" || return 1
-      if [ "${EXTENSION%-doc}" = "$EXTENSION" ]; then
-           touch "$PACKAGE_EXTENSIONS/$EXTENSION/dep" || return 1
-      fi
-      if [ ! "${EXTENSION%-locale}" = "$EXTENSION" ]; then
-           echo "${EXTENSION%-locale}.tcz" > "$PACKAGE_EXTENSIONS/$EXTENSION/dep" || return 1
-           echo "usr/local/share/locale" > "$PACKAGE_EXTENSIONS/$EXTENSION/install" || return 1
-      elif [ ! "${EXTENSION%-dev}" = "$EXTENSION" ]; then
-           echo "${EXTENSION%-dev}.tcz" > "$PACKAGE_EXTENSIONS/$EXTENSION/dep" || return 1
-      fi
-  done
+   for EXTENSION in $EXTENSIONS
+   do
+       mkdir -p "$PACKAGE_EXTENSIONS/$EXTENSION" || return 1
+       touch "$PACKAGE_EXTENSIONS/$EXTENSION/install" || return 1
+       if [ "${EXTENSION%-doc}" = "$EXTENSION" ]; then
+            touch "$PACKAGE_EXTENSIONS/$EXTENSION/dep" || return 1
+       fi
+       if [ ! "${EXTENSION%-locale}" = "$EXTENSION" ]; then
+              echo "${EXTENSION%-locale}.tcz" > "$PACKAGE_EXTENSIONS/$EXTENSION/dep" || return 1
+              echo "usr/local/share/locale" > "$PACKAGE_EXTENSIONS/$EXTENSION/install" || return 1
+       elif [ ! "${EXTENSION%-dev}" = "$EXTENSION" ]; then
+              echo "${EXTENSION%-dev}.tcz" > "$PACKAGE_EXTENSIONS/$EXTENSION/dep" || return 1
+       fi
+   done
 
-  return 0
+   return 0
+
 }
 
 print_it "Boosting the package $PACKAGE ... \c"

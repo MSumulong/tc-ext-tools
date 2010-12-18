@@ -35,24 +35,40 @@ else
      exit 1
 fi
 
+for EXTENSION in $EXTENSIONS
+do
+    . "$PACKAGE_COMMON"
+
+    set_extension_name
+
+    if [ ! -e "$TCEXTTOOLS_PKG/$EXTENSION_NAME/${EXTENSION_NAME}.tcz" ]; then
+           print_it error "You must create it first!"
+           exit 1
+    fi
+done
+
+############################################################################ 
+#                       generates the extension info                       #
+############################################################################
+
 this_generate() {
 
-  [ ! "${EXTENSION%-bin}" = "$EXTENSION" ] && DESCRIPTION="${DESCRIPTION%.}, utilities."
-  [ ! "${EXTENSION%-lib}" = "$EXTENSION" ] && DESCRIPTION="${DESCRIPTION%.}, shared libraries."
-  [ ! "${EXTENSION%-dev}" = "$EXTENSION" ] && DESCRIPTION="${DESCRIPTION%.}, development files."
-  [ ! "${EXTENSION%-dbg}" = "$EXTENSION" ] && DESCRIPTION="${DESCRIPTION%.}, debugging symbols."
-  [ ! "${EXTENSION%-doc}" = "$EXTENSION" ] && DESCRIPTION="${DESCRIPTION%.}, documentation files."
-  [ ! "${EXTENSION%-locale}" = "$EXTENSION" ] && DESCRIPTION="${DESCRIPTION%.}, locale files."
-  [ ! "${EXTENSION%-gir}" = "$EXTENSION" ] && DESCRIPTION="${DESCRIPTION%.}, gobject introspection data."
+   [ ! "${EXTENSION%-bin}" = "$EXTENSION" ] && DESCRIPTION="${DESCRIPTION%.}, utilities."
+   [ ! "${EXTENSION%-lib}" = "$EXTENSION" ] && DESCRIPTION="${DESCRIPTION%.}, shared libraries."
+   [ ! "${EXTENSION%-dev}" = "$EXTENSION" ] && DESCRIPTION="${DESCRIPTION%.}, development files."
+   [ ! "${EXTENSION%-dbg}" = "$EXTENSION" ] && DESCRIPTION="${DESCRIPTION%.}, debugging symbols."
+   [ ! "${EXTENSION%-doc}" = "$EXTENSION" ] && DESCRIPTION="${DESCRIPTION%.}, documentation files."
+   [ ! "${EXTENSION%-locale}" = "$EXTENSION" ] && DESCRIPTION="${DESCRIPTION%.}, locale files."
+   [ ! "${EXTENSION%-gir}" = "$EXTENSION" ] && DESCRIPTION="${DESCRIPTION%.}, gobject introspection data."
 
-  if [ -e "$PACKAGE_EXTENSIONS/$EXTENSION/common" ]; then
-      . "$PACKAGE_EXTENSIONS/$EXTENSION/common"
-  fi
+   if [ -e "$PACKAGE_EXTENSIONS/$EXTENSION/common" ]; then
+        . "$PACKAGE_EXTENSIONS/$EXTENSION/common"
+   fi
 
-  CURRENT="$DATE $CURRENT"
-  SIZE=$(du -h "$TCEXTTOOLS_PKG/$EXTENSION_NAME/${EXTENSION_NAME}.tcz" | cut -f1)
+   CURRENT="$DATE $CURRENT"
+   SIZE=$(du -h "$TCEXTTOOLS_PKG/$EXTENSION_NAME/${EXTENSION_NAME}.tcz" | cut -f1)
 
-  cat > "$TCEXTTOOLS_PKG/$EXTENSION_NAME/${EXTENSION_NAME}.tcz.info" << _EOF
+   cat > "$TCEXTTOOLS_PKG/$EXTENSION_NAME/${EXTENSION_NAME}.tcz.info" << _EOF
 Title:		${EXTENSION_NAME}.tcz
 Description:	${DESCRIPTION}
 Version:	${VERSION}
@@ -66,37 +82,38 @@ Change-log:	${CHANGELOG}
 Current:	${CURRENT}
 _EOF
 
-  if [ "$?" -gt 0 ]; then
-       print_it error "Failed to write to ${EXTENSION_NAME}.tcz.info"
-       return 1
-  fi
+   if [ "$?" -gt 0 ]; then
+        print_it error "Failed to write to ${EXTENSION_NAME}.tcz.info"
+        return 1
+   fi
 
-  return 0
+   return 0
+
 }
+
+############################################################################ 
+#                               this main                                  #
+############################################################################
 
 this_main() {
 
-  for EXTENSION in $EXTENSIONS
-  do
-      . "$PACKAGE_COMMON"
+   for EXTENSION in $EXTENSIONS
+   do
+       . "$PACKAGE_COMMON"
 
-      set_extension_name
+       set_extension_name
 
-      if [ ! -e "$TCEXTTOOLS_PKG/$EXTENSION_NAME/${EXTENSION_NAME}.tcz" ]; then
-             print_it error "You must create it first!"
-             exit 1
-      fi
+       this_generate
+       if [ "$?" -gt 0 ]; then
+            print_it error "Generating the extension $EXTENSION_NAME info failed!"
+            return 1
+       else
+            print_it "Generating the extension $EXTENSION_NAME info successful!"
+       fi
+   done
 
-      this_generate
-      if [ "$?" -gt 0 ]; then
-           print_it error "Generating the extension $EXTENSION_NAME info failed!"
-           return 1
-      else
-           print_it "Generating the extension $EXTENSION_NAME info successful!"
-      fi
-  done  
+   return 0
 
-  return 0
 }
 
 print_it "Generating the package $PACKAGE extensions info files ... \c"

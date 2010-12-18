@@ -24,10 +24,14 @@
 #
 
 ############################################################################ 
-#                       tc-ext-tools initialization                        #
+#                             this is it                                   #
 ############################################################################
 
 THIS=$(basename $0)
+
+############################################################################ 
+#                     only some of them can be root                        #
+############################################################################
 
 if [ $(id -u) = 0 ] ; then
      if [ "$THIS" != "installit" ]; then
@@ -41,12 +45,20 @@ else
      fi
 fi
 
+############################################################################ 
+#                        default configuration                             #
+############################################################################
+
 if [ -f "$TCEXTTOOLS_ROOT/etc/tc-ext-tools/config" ]; then
      . "$TCEXTTOOLS_ROOT/etc/tc-ext-tools/config"
 else
      echo "${RED}$(basename $0):${BLUE} tc-ext-tools default configuration file not found!${NORMAL}"
      exit 1
 fi
+
+############################################################################ 
+#                           user configuration                             #
+############################################################################
 
 if [ -f "$HOME/.tc-ext-tools/config" ]; then
      . "$HOME/.tc-ext-tools/config"
@@ -56,10 +68,11 @@ else
 fi
 
 ############################################################################ 
-#                   tc-ext-tools message print function                    #
+#                         message print function                           #
 ############################################################################
 
 print_it() {
+
   case  "$1" in
         error)
                 [ -z "$2" ] && echo -e "${TCEXTTOOLS_MESSAGE_COLOR}${1}${NORMAL}"
@@ -77,13 +90,14 @@ print_it() {
                 echo -e "${TCEXTTOOLS_MESSAGE_COLOR}${1}${NORMAL}"
                 ;;
   esac
+
 }
 
 ############################################################################ 
 #           sets the variables related with the package source             #
 ############################################################################
 
-set_package_source() {
+set_source() {
 
      if [ -z "$VCS" ]; then
           SOURCE_NAME=${SOURCE##*/}
@@ -107,13 +121,12 @@ set_package_source() {
             SOURCE_TYPE="xz"
             CONVERTED_SOURCE="$SOURCE_NAME"
      else
-            # user must define custom build_unpack, and build_convert functions in the build file for custom package sources
             SOURCE_TYPE="custom"
             [ -z "$CONVERTED_SOURCE" ] && CONVERTED_SOURCE="${SOURCE_NAME%.*}.tar.xz"
      fi
 
      if [ -z "$VCS" ]; then
-          TOP_SRC=$(ls -el $TCEXTTOOLS_SRC_TEMP | egrep '^d' | cut -d : -f3 | cut -d " " -f3)
+          [ -d "$TCEXTTOOLS_SRC_TEMP" ] && TOP_SRC=$(ls -el $TCEXTTOOLS_SRC_TEMP | egrep '^d' | cut -d : -f3 | cut -d " " -f3)
      else
           TOP_SRC=${PACKAGE}-${VERSION}
      fi
@@ -122,6 +135,7 @@ set_package_source() {
           TCEXTTOOLS_TOP_SRC="$TCEXTTOOLS_SRC_TEMP/$TOP_SRC"
           PACKAGE_TOP_SRC="$TCEXTTOOLS_TOP_SRC"
      fi
+
 }
 
 ############################################################################ 
@@ -130,9 +144,7 @@ set_package_source() {
 
 set_extensions() {
 
-      if [ "$THIS" != "boostit" ]; then
-           EXTENSIONS=$(ls -el $PACKAGE_EXTENSIONS | egrep '^d' | cut -d : -f3 | cut -d " " -f3)
-      fi
+   [ -d "$PACKAGE_EXTENSIONS" ] && EXTENSIONS=$(ls -el $PACKAGE_EXTENSIONS | egrep '^d' | cut -d : -f3 | cut -d " " -f3)
 
 }
 
@@ -156,6 +168,47 @@ set_extension_name() {
       else
            EXTENSION_NAME="$NAME"
       fi
+
+      if [ -n "$(echo $EXTENSION_NAME | grep KERNEL)" ]; then
+           EXTENSION_NAME=$(echo $EXTENSION | sed -e "s/KERNEL/${KERNEL}/g")
+      fi
+
+}
+
+############################################################################ 
+#                        date, time, and seconds                           #
+############################################################################
+
+set_date_time() {
+
+    YEAR=$(date +%Y)
+    MONTH=$(date +%m)
+    DAY=$(date +%d)
+    DATE="$YEAR/$MONTH/$DAY"
+
+    HOUR=$(date +%H)
+    MIN=$(date +%M)
+    SEC=$(date +%S)
+    TIME="$HOUR:MIN:$SEC"
+
+}
+
+set_seconds() {
+
+    SECONDS=$(date +%s)
+
+}
+
+############################################################################ 
+#                      export environment variables                        #
+############################################################################
+
+export_flags() {
+
+    [ -z "$CFLAGS" ] && export CFLAGS="$TCEXTTOOLS_CFLAGS"
+    [ -z "$CXXFLAGS" ] && export CXXFLAGS="$TCEXTTOOLS_CXXFLAGS"
+    [ -z "$LDFLAGS" ] && export LDFLAGS="$TCEXTTOOLS_LDFLAGS"
+
 }
 
 ############################################################################ 
@@ -165,7 +218,19 @@ set_extension_name() {
 TCUSER=$(cat /etc/sysconfig/tcuser)
 
 ############################################################################ 
-#                   tc-ext-tools package specific definitions              #
+#                                set tce_dir                               #
+############################################################################
+
+TCE_DIR="$(cat /opt/.tce_dir)"
+
+############################################################################ 
+#                                set kernel                                #
+############################################################################
+
+KERNEL=$(uname -r)
+
+############################################################################ 
+#                          all other definitions                           #
 ############################################################################
 
 PACKAGE_ROOT="$PWD"
@@ -182,12 +247,9 @@ if [ -e "$PACKAGE_COMMON" ]; then
      TCEXTTOOLS_SRC="$TCEXTTOOLS_STORAGE/$PACKAGE/$TCEXTTOOLS_SRC"
      TCEXTTOOLS_LOG="$TCEXTTOOLS_STORAGE/$PACKAGE/$TCEXTTOOLS_LOG"
      TCEXTTOOLS_PKG="$TCEXTTOOLS_STORAGE/$PACKAGE/$TCEXTTOOLS_PKG"
-
      TCEXTTOOLS_BIN_TEMP="$TCEXTTOOLS_BIN/temp"
      TCEXTTOOLS_SRC_TEMP="$TCEXTTOOLS_SRC/temp"
-
      TCEXTTOOLS_PACKAGE="$TCEXTTOOLS_BIN_TEMP/$PACKAGE"
-
      TCEXTTOOLS_DOWNLOAD_LOG="$TCEXTTOOLS_LOG/download.txt"
      TCEXTTOOLS_CONFIGURE_LOG="$TCEXTTOOLS_LOG/configure.txt"
      TCEXTTOOLS_COMPILE_LOG="$TCEXTTOOLS_LOG/compile.txt"
@@ -207,7 +269,7 @@ if [ -e "$PACKAGE_COMMON" ]; then
      [ -d "$TCEXTTOOLS_PKG" ] || install -m 755 -d "$TCEXTTOOLS_PKG"
      [ -d "$TCEXTTOOLS_LOG" ] || install -m 755 -d "$TCEXTTOOLS_LOG"
 
-     set_package_source
+     set_source
 
      TCEXTTOOLS_SOURCE="$TCEXTTOOLS_SRC/$SOURCE_NAME"
      TCEXTTOOLS_CONVERTED_SOURCE="$TCEXTTOOLS_SRC/$CONVERTED_SOURCE"
@@ -222,52 +284,37 @@ if [ -e "$PACKAGE_COMMON" ]; then
      INSTALL_ROOT="$PACKAGE_INSTALL_ROOT"
      PREFIX="$TCEXTTOOLS_PREFIX"
 
-     set_extensions
-
-     KERNEL_EXTENSIONS=$(echo $EXTENSIONS | sed -e "s/KERNEL/$(uname -r)/g")
-
 elif [ "$THIS" != "boostit" ]; then
      print_it error "the package $PACKAGE common file not found!"
      print_it warning "You must boost it first!"
      exit 1
 fi
 
-# to prevent a write permission error due to running installit as root
-if [ "$THIS" = "installit" ]; then
-     su "$TCUSER" -c "touch $TCEXTTOOLS_ERROR_LOG_2"
+############################################################################ 
+#                        some needs build functions                        #
+############################################################################
+
+if [ "$THIS" = "buildit" ] || [ "$THIS" = "convertit" ] || [ "$THIS" = "unpackit" ] || [ "$THIS" = "configureit" ] || [ "$THIS" = "compileit" ] || [ "$THIS" = "installit" ]; then
+     if [ -e "$PACKAGE_BUILD" ]; then
+          . "$PACKAGE_BUILD"
+     else
+          print_it error "the package $PACKAGE build file not found!"
+          exit 1
+     fi
 fi
 
 ############################################################################ 
-#               import tc-ext-tools package build functions                #
+#                           some needs flags                               #
 ############################################################################
 
-if [ -e "$PACKAGE_BUILD" ]; then
-     . "$PACKAGE_BUILD"
-elif [ "$THIS" != "boostit" ]; then
-     print_it error "the package $PACKAGE build file not found!"
-     exit 1
+if [ "$THIS" = "configureit" ] || [ "$THIS" = "compileit" ] || [ "$THIS" = "installit" ]; then
+     export_flags
 fi
 
 ############################################################################ 
-#                             date (YYYY/MM/DD)                            #
+#                              common needs                                #
 ############################################################################
 
-YEAR=$(date +%Y)
-MONTH=$(date +%m)
-DAY=$(date +%d)
-DATE="$YEAR/$MONTH/$DAY"
-
-############################################################################ 
-#                             kernel version                               #
-############################################################################
-
-KERNEL=$(uname -r)
-
-############################################################################ 
-#                export tc-ext-tools environment variables                 #
-############################################################################
-
-[ -z "$CFLAGS" ] && export CFLAGS="$TCEXTTOOLS_CFLAGS"
-[ -z "$CXXFLAGS" ] && export CXXFLAGS="$TCEXTTOOLS_CXXFLAGS"
-[ -z "$LDFLAGS" ] && export LDFLAGS="$TCEXTTOOLS_LDFLAGS"
+set_extensions
+set_date_time
 

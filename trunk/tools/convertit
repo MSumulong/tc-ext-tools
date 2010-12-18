@@ -1,6 +1,4 @@
 #!/bin/sh
-#
-#  convertit: Converts the package source to xz compressed tarball
 
 ############################################################################
 #                                                                          #
@@ -38,41 +36,46 @@ else
 fi
 
 if [ ! -e "$TCEXTTOOLS_SOURCE" ]; then
-     print_it error "You must download it first!"
-     return 1
+       print_it error "You must download it first!"
+       exit 1
 fi
 
 COMMAND="$1"
 
+############################################################################ 
+#                                this main                                 #
+############################################################################
+
 this_main() {
 
-  [ -d "$TCEXTTOOLS_SRC_TEMP" ] && sudo rm -rf "$TCEXTTOOLS_SRC_TEMP"
-  mkdir -p "$TCEXTTOOLS_SRC_TEMP"
+   [ -d "$TCEXTTOOLS_SRC_TEMP" ] && sudo rm -rf "$TCEXTTOOLS_SRC_TEMP"
+   mkdir -p "$TCEXTTOOLS_SRC_TEMP"
 
-  if [ ! -e "$TCEXTTOOLS_CONVERTED_SOURCE" ] || [ "$COMMAND" = "force" ]; then
-       if [ "$SOURCE_TYPE" = "bz2" ]; then
-            bzip2 -d -c "$TCEXTTOOLS_SOURCE" > "$TCEXTTOOLS_SRC_TEMP/${SOURCE_NAME%.bz2}" || return 1
-            xz "$TCEXTTOOLS_SRC_TEMP/${SOURCE_NAME%.bz2}" || return 1
-            busybox mv -f "$TCEXTTOOLS_SRC_TEMP/${SOURCE_NAME%.bz2}.xz" "$TCEXTTOOLS_SRC" || return 1
-       elif [ "$SOURCE_TYPE" = "gz" ]; then
-            gzip -d -c "$TCEXTTOOLS_SOURCE" > "$TCEXTTOOLS_SRC_TEMP/${SOURCE_NAME%.gz}" || return 1
-            xz "$TCEXTTOOLS_SRC_TEMP/${SOURCE_NAME%.gz}" || return 1
-            busybox mv -f "$TCEXTTOOLS_SRC_TEMP/${SOURCE_NAME%.gz}.xz" "$TCEXTTOOLS_SRC" || return 1
-       elif [ "$SOURCE_TYPE" = "tgz" ]; then
-            gzip -d -c "$TCEXTTOOLS_SOURCE" > "$TCEXTTOOLS_SRC_TEMP/${SOURCE_NAME%.tgz}.tar" || return 1
-            xz "$TCEXTTOOLS_SRC_TEMP/${SOURCE_NAME%.tgz}.tar" || return 1
-            busybox mv -f "$TCEXTTOOLS_SRC_TEMP/${SOURCE_NAME%.tgz}.tar.xz" "$TCEXTTOOLS_SRC" || return 1
-       elif [ "$SOURCE_TYPE" = "zip" ]; then
-            unzip "$TCEXTTOOLS_SOURCE" -d "$TCEXTTOOLS_SRC_TEMP" || return 1
-            tar -C "$TCEXTTOOLS_SRC_TEMP" -cJf "$TCEXTTOOLS_SRC_TEMP/${SOURCE_NAME%.zip}.tar.xz" "$(ls -el $TCEXTTOOLS_SRC_TEMP | egrep '^d' | cut -d : -f3 | cut -d ' ' -f3)" || return 1
-            busybox mv -f "$TCEXTTOOLS_SRC_TEMP/${SOURCE_NAME%.zip}.tar.xz" "$TCEXTTOOLS_SRC" || return 1
-       elif [ "$SOURCE_TYPE" = "custom" ]; then
-            cd "$TCEXTTOOLS_SRC_TEMP"
-            build_convert || return 1
-       fi
-  fi
+   if [ ! -e "$TCEXTTOOLS_CONVERTED_SOURCE" ] || [ "$COMMAND" = "force" ]; then
+          if [ "$SOURCE_TYPE" = "bz2" ]; then
+               bzip2 -d -c "$TCEXTTOOLS_SOURCE" > "$TCEXTTOOLS_SRC_TEMP/${SOURCE_NAME%.bz2}" || return 1
+               xz "$TCEXTTOOLS_SRC_TEMP/${SOURCE_NAME%.bz2}" || return 1
+               busybox mv -f "$TCEXTTOOLS_SRC_TEMP/${SOURCE_NAME%.bz2}.xz" "$TCEXTTOOLS_SRC" || return 1
+          elif [ "$SOURCE_TYPE" = "gz" ]; then
+               gzip -d -c "$TCEXTTOOLS_SOURCE" > "$TCEXTTOOLS_SRC_TEMP/${SOURCE_NAME%.gz}" || return 1
+               xz "$TCEXTTOOLS_SRC_TEMP/${SOURCE_NAME%.gz}" || return 1
+               busybox mv -f "$TCEXTTOOLS_SRC_TEMP/${SOURCE_NAME%.gz}.xz" "$TCEXTTOOLS_SRC" || return 1
+          elif [ "$SOURCE_TYPE" = "tgz" ]; then
+               gzip -d -c "$TCEXTTOOLS_SOURCE" > "$TCEXTTOOLS_SRC_TEMP/${SOURCE_NAME%.tgz}.tar" || return 1
+               xz "$TCEXTTOOLS_SRC_TEMP/${SOURCE_NAME%.tgz}.tar" || return 1
+               busybox mv -f "$TCEXTTOOLS_SRC_TEMP/${SOURCE_NAME%.tgz}.tar.xz" "$TCEXTTOOLS_SRC" || return 1
+          elif [ "$SOURCE_TYPE" = "zip" ]; then
+               unzip "$TCEXTTOOLS_SOURCE" -d "$TCEXTTOOLS_SRC_TEMP" || return 1
+               tar -C "$TCEXTTOOLS_SRC_TEMP" -cJf "$TCEXTTOOLS_SRC_TEMP/${SOURCE_NAME%.zip}.tar.xz" "$(ls -el $TCEXTTOOLS_SRC_TEMP | egrep '^d' | cut -d : -f3 | cut -d ' ' -f3)" || return 1
+               busybox mv -f "$TCEXTTOOLS_SRC_TEMP/${SOURCE_NAME%.zip}.tar.xz" "$TCEXTTOOLS_SRC" || return 1
+          elif [ "$SOURCE_TYPE" = "custom" ]; then
+               cd "$TCEXTTOOLS_SRC_TEMP"
+               build_convert || return 1
+          fi
+   fi
 
-  return 0
+   return 0
+
 }
 
 print_it "Converting the package $PACKAGE source to xz compressed tarball ... \c"

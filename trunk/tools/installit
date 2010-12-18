@@ -35,48 +35,45 @@ else
      exit 1
 fi
 
-if [ -e "$TCEXTTOOLS_BUILD" ]; then
-     . "$TCEXTTOOLS_BUILD"
-else
-     print_it error "tc-ext-tools build functions file not found: $TCEXTTOOLS_BUILD"
-     exit 1
+if [ ! -d "$TCEXTTOOLS_TOP_SRC" ]; then
+       print_it error "You must compile it first!"
+       exit 1
 fi
 
-if [ ! -d "$TCEXTTOOLS_TOP_SRC" ]; then
-     print_it error "You must compile it first!"
-     exit 1
-fi
+[ -f "$TCEXTTOOLS_ERROR_LOG_2" ] || su "$TCUSER" -c "touch $TCEXTTOOLS_ERROR_LOG_2"
+
+############################################################################ 
+#                                this main                                 #
+############################################################################
 
 this_main() {
 
-  [ -d "$TCEXTTOOLS_INSTALL_ROOT" ] && sudo rm -rf "$TCEXTTOOLS_INSTALL_ROOT"
+   [ -d "$TCEXTTOOLS_INSTALL_ROOT" ] && sudo rm -rf "$TCEXTTOOLS_INSTALL_ROOT"
 
-  # Install the package
-  cd "$TCEXTTOOLS_TOP_SRC"
-  build_install > "$TCEXTTOOLS_INSTALL_LOG" 2>&1 || return 1
+   cd "$TCEXTTOOLS_TOP_SRC"
+   build_install > "$TCEXTTOOLS_INSTALL_LOG" 2>&1 || return 1
 
-  # Convert symlinks to full path for gnome help browser files
-  if [ -d "$INSTALL_ROOT/usr/local/share/gnome/help" ]; then
-       for link in $(sudo find "$INSTALL_ROOT/usr/local/share/gnome/help" -type l)
-       do
-           FILE=$(busybox readlink -f "$link")
-           LINK="${FILE#${INSTALL_ROOT}}"
-           busybox ln -sf "$LINK" "$link" || return 1
-       done
-  fi
+   if [ -d "$INSTALL_ROOT/usr/local/share/gnome/help" ]; then
+        for link in $(sudo find "$INSTALL_ROOT/usr/local/share/gnome/help" -type l)
+        do
+            FILE=$(busybox readlink -f "$link")
+            LINK="${FILE#${INSTALL_ROOT}}"
+            busybox ln -sf "$LINK" "$link" || return 1
+        done
+   fi
 
-  # Create a list of package contents so that user can choose where to put files
-  [ -e "$PACKAGE_EXTENSIONS/${PACKAGE}.list" ] && rm -f "$PACKAGE_EXTENSIONS/${PACKAGE}.list"
+   [ -e "$PACKAGE_EXTENSIONS/${PACKAGE}.list" ] && rm -f "$PACKAGE_EXTENSIONS/${PACKAGE}.list"
 
-  if [ -d "$INSTALL_ROOT" ]; then
-          cd "$INSTALL_ROOT"
-          for i in $(ls)
-          do
+   if [ -d "$INSTALL_ROOT" ]; then
+        cd "$INSTALL_ROOT"
+        for i in $(ls)
+        do
               su "$TCUSER" -c "cd $INSTALL_ROOT;sudo find '$i' -not -type d >> $PACKAGE_EXTENSIONS/${PACKAGE}.list" || return 1
-          done
-  fi
+        done
+   fi
 
-  return 0
+   return 0
+
 }
 
 print_it "Installing the package $PACKAGE ... \c"
