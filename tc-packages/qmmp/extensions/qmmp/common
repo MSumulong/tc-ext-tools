@@ -1,3 +1,5 @@
+ICON="/usr/local/share/icons/hicolor/48x48/apps/qmmp.png"
+DESKTOP="/usr/local/share/applications/qmmp.desktop"
 COMMENTS="Optional :
 			- projectM plugin depends on projectM, and qt-4.x-opengl
 			- mplayer plugin depends on any mplayer extension available

@@ -1,14 +1,11 @@
 PACKAGE="shared-mime-info"
 VERSION="0.90"
-SOURCE="${PACKAGE}-${VERSION}.tar.bz2"
-SOURCE_URL="http://freedesktop.org/~hadess/shared-mime-info-${VERSION}.tar.bz2"
-TOP_SRC="${PACKAGE}-${VERSION}"
+SOURCE="http://freedesktop.org/~hadess/shared-mime-info-${VERSION}.tar.bz2"
 BUILD_DEPENDS="glib2
 glib2-dev
 libxml2
 libxml2-dev"
 
-EXTENSIONS="shared-mime-info shared-mime-info-locale"
 DESCRIPTION="Database for common mime types."
 AUTHOR="freedesktop.org "
 SITE="http://www.freedesktop.org/wiki/Software/shared-mime-info"

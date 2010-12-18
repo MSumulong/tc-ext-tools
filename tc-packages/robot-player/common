@@ -1,8 +1,6 @@
 PACKAGE="robot-player"
 VERSION="3.0.2"
-SOURCE="player-${VERSION}.tar.gz"
-TOP_SRC="player-${VERSION}"
-SOURCE_URL="http://garr.dl.sourceforge.net/project/playerstage/Player/${VERSION}/player-${VERSION}.tar.gz"
+SOURCE="http://garr.dl.sourceforge.net/project/playerstage/Player/${VERSION}/player-${VERSION}.tar.gz"
 BUILD_DEPENDS="cmake
 boost
 boost-dev
@@ -37,7 +35,6 @@ libdc1394
 libdc1394-dev
 linux-headers-2.6.33.3-tinycore"
 
-EXTENSIONS="robot-player robot-player-dev robot-player-python robot-player-doc"
 DESCRIPTION="Player is a network server for robot control."
 AUTHOR="Brian Gerkey"
 SITE="http://playerstage.sourceforge.net/"

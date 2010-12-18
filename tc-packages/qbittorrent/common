@@ -18,7 +18,6 @@ boost-dev
 libtorrent-rasterbar
 libtorrent-rasterbar-dev"
 
-EXTENSIONS="qbittorrent"
 DESCRIPTION="Free Software alternative to µtorrent."
 AUTHOR="Christophe Dumez"
 SITE="http://qbittorrent.sourceforge.net/"

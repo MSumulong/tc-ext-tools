@@ -1,14 +1,11 @@
 PACKAGE="pysqlite"
 VERSION="2.6.0"
-SOURCE="pysqlite-${VERSION}.tar.gz"
-TOP_SRC="pysqlite-${VERSION}"
-SOURCE_URL="http://pysqlite.googlecode.com/files/pysqlite-${VERSION}.tar.gz"
+SOURCE="http://pysqlite.googlecode.com/files/pysqlite-${VERSION}.tar.gz"
 BUILD_DEPENDS="sqlite3
 sqlite3-dev
 python
 python-dev"
 
-EXTENSIONS="pysqlite2"
 DESCRIPTION="SQLite binding for Python that complies to the Database API 2.0."
 AUTHOR="Gerhard Haering"
 SITE="http://code.google.com/p/pysqlite/"

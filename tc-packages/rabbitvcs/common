@@ -1,8 +1,6 @@
 PACKAGE="rabbitvcs"
 VERSION="0.13.3"
-SOURCE="${PACKAGE}-${VERSION}.tar.gz"
-TOP_SRC="${PACKAGE}-${VERSION}"
-SOURCE_URL="http://rabbitvcs.googlecode.com/files/rabbitvcs-${VERSION}.tar.gz"
+SOURCE="http://rabbitvcs.googlecode.com/files/rabbitvcs-${VERSION}.tar.gz"
 BUILD_DEPENDS="python
 python-dev
 pygtk-2.7
@@ -11,7 +9,6 @@ python_configobj-2.7
 pysvn
 #meld"
 
-EXTENSIONS="rabbitvcs rabbitvcs-locale rabbitvcs-gedit rabbitvcs-nautilus rabbitvcs-thunar"
 DESCRIPTION="RabbitVCS is a TortoiseSVN-like easy version control system for Linux."
 AUTHOR="Jason Field, Bruce van der Kooij, Adam Plumb, Jason Heeris"
 SITE="http://www.rabbitvcs.org/"

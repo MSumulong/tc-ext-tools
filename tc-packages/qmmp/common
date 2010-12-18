@@ -1,10 +1,6 @@
 PACKAGE="qmmp"
 VERSION="0.4.3"
-SOURCE="${PACKAGE}-${VERSION}.tar.bz2"
-TOP_SRC="${PACKAGE}-${VERSION}"
-SOURCE_URL="http://qmmp.ylsoftware.com/files/qmmp-${VERSION}.tar.bz2"
-ICON="/usr/local/share/icons/hicolor/48x48/apps/qmmp.png"
-DESKTOP_ENTRY="/usr/local/share/applications/qmmp.desktop"
+SOURCE="http://qmmp.ylsoftware.com/files/qmmp-${VERSION}.tar.bz2"
 BUILD_DEPENDS="cmake
 libmpcdec
 libmpcdec-dev
@@ -55,7 +51,6 @@ libmodplug-dev
 ffmpeg-ffserver
 ffmpeg-ffserver-dev"
 
-EXTENSIONS="qmmp qmmp-dev"
 DESCRIPTION="Qt-based Multimedia Player."
 AUTHOR="Ilya Kotov, Vladimir Kuznetsov, Yuriy Zhuravlev, Andrey Adreev"
 SITE="http://qmmp.ylsoftware.com/"

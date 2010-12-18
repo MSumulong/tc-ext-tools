@@ -1,15 +1,12 @@
 PACKAGE="pysvn"
 VERSION="1.7.4"
-SOURCE="${PACKAGE}-${VERSION}.tar.gz"
-TOP_SRC="${PACKAGE}-${VERSION}/Source"
-SOURCE_URL="http://pysvn.barrys-emacs.org/source_kits/pysvn-${VERSION}.tar.gz"
+SOURCE="http://pysvn.barrys-emacs.org/source_kits/pysvn-${VERSION}.tar.gz"
 BUILD_DEPENDS="svn
 svn-dev
 python
 python-dev
 krb5"
 
-EXTENSIONS="pysvn"
 DESCRIPTION="Python SVN Extension."
 AUTHOR="Barry A. Scott"
 SITE="http://pysvn.tigris.org/"

@@ -1,10 +1,6 @@
 PACKAGE="qps"
 VERSION="1.10.12.2"
-SOURCE="${PACKAGE}-${VERSION}.tar.bz2"
-TOP_SRC="${PACKAGE}-${VERSION}"
-SOURCE_URL="http://kldp.net/frs/download.php/5843/qps-${VERSION}.tar.bz2"
-ICON="/usr/local/share/pixmaps/qps.xpm"
-DESKTOP_ENTRY="/usr/local/share/applications/qps.desktop"
+SOURCE="http://kldp.net/frs/download.php/5843/qps-${VERSION}.tar.bz2"
 BUILD_DEPENDS="qt-4.x-base
 qt-4.x-xml
 qt-4.x-dbus
@@ -12,7 +8,6 @@ qt-4.x-dev
 Xorg-7.5-lib
 Xorg-7.5-dev"
 
-EXTENSIONS="qps"
 DESCRIPTION="Visual process manager and status monitor."
 AUTHOR="various"
 SITE="http://qps.kldp.net/projects/qps"

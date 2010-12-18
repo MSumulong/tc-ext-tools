@@ -1,10 +1,6 @@
 PACKAGE="tangogps"
 VERSION="0.99.4"
-SOURCE="${PACKAGE}-${VERSION}.tar.gz"
-TOP_SRC="${PACKAGE}-${VERSION}"
-SOURCE_URL="http://www.tangogps.org/downloads/tangogps-${VERSION}.tar.gz"
-ICON="/usr/local/share/pixmaps/tangogps.png"
-DESKTOP_ENTRY="/usr/local/share/applications/tangogps.desktop"
+SOURCE="http://www.tangogps.org/downloads/tangogps-${VERSION}.tar.gz"
 BUILD_DEPENDS="glib2
 glib2-dev
 gtk2
@@ -22,7 +18,6 @@ libsoup
 libsoup-dev
 bluez"
 
-EXTENSIONS="tangogps tangogps-locale"
 DESCRIPTION="The fastest map & gps viewer for Linux."
 AUTHOR="Marcus Bauer"
 SITE="http://www.tangogps.org"

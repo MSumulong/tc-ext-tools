@@ -1,8 +1,6 @@
 PACKAGE="telepathy-farsight"
 VERSION="0.0.15"
-SOURCE="${PACKAGE}-${VERSION}.tar.gz"
-TOP_SRC="${PACKAGE}-${VERSION}"
-SOURCE_URL="http://telepathy.freedesktop.org/releases/telepathy-farsight/telepathy-farsight-${VERSION}.tar.gz"
+SOURCE="http://telepathy.freedesktop.org/releases/telepathy-farsight/telepathy-farsight-${VERSION}.tar.gz"
 BUILD_DEPENDS="farsight2
 farsight2-dev
 gstreamer
@@ -17,7 +15,6 @@ python-dev
 pygobject-2.7
 pygobject-2.7-dev"
 
-EXTENSIONS="telepathy-farsight telepathy-farsight-dev telepathy-farsight-doc telepathy-farsight-python"
 DESCRIPTION="Glue library between telepathy and farsight."
 AUTHOR="various"
 SITE="http://telepathy.freedesktop.org/wiki/"

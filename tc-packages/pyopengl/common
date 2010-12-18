@@ -1,8 +1,6 @@
 PACKAGE="pyopengl"
 VERSION="3.0.1"
-SOURCE="PyOpenGL-${VERSION}.tar.gz"
-SOURCE_URL="http://downloads.sourceforge.net/pyopengl/PyOpenGL-${VERSION}.tar.gz"
-TOP_SRC="PyOpenGL-${VERSION}"
+SOURCE="http://downloads.sourceforge.net/pyopengl/PyOpenGL-${VERSION}.tar.gz"
 BUILD_DEPENDS="python
 python-dev
 Xorg-7.5
@@ -10,7 +8,6 @@ Xorg-7.5-dev
 freeglut
 freeglut-dev"
 
-EXTENSIONS="pyopengl"
 DESCRIPTION="PyOpenGL is the cross platform Python binding to OpenGL and related APIs."
 AUTHOR="Mike C. Fletcher"
 SITE="http://pyopengl.sourceforge.net"

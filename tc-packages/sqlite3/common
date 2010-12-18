@@ -1,13 +1,12 @@
 PACKAGE="sqlite3"
 VERSION="3.7.4"
 _VERSION="3070400"
-SOURCE="sqlite-autoconf-${_VERSION}.tar.gz"
-SOURCE_URL="http://www.sqlite.org/sqlite-autoconf-${_VERSION}.tar.gz"
-TOP_SRC="sqlite-autoconf-${_VERSION}"
+SOURCE="http://www.sqlite.org/sqlite-autoconf-${_VERSION}.tar.gz"
 BUILD_DEPENDS="readline
-readline-dev"
+readline-dev
+ncurses
+ncurses-dev"
 
-EXTENSIONS="sqlite3 sqlite3-dev sqlite3-bin"
 DESCRIPTION="SQLite is a in-process library that implements a self-contained, serverless, zero-configuration, transactional SQL database engine."
 AUTHOR="Richard Hipp, Dan Kennedy, Shane Harrelson, Christian Werner"
 SITE="http://www.sqlite.org"
