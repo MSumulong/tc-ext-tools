@@ -40,67 +40,79 @@ TARGET="$2"
 NAME="$3"
 
 print_usage(){
-  echo -e "${TCEXTTOOLS_ERROR_COLOR}Usage:${TCEXTTOOLS_MESSAGE_COLOR}\n$(basename $0) bz2|gz|xz /path/to/target name${NORMAL}"
+
+   echo -e "${TCEXTTOOLS_ERROR_COLOR}Usage:${TCEXTTOOLS_MESSAGE_COLOR}\n$(basename $0) bz2|gz|xz /path/to/target name${NORMAL}"
+
 }
 
-if [ -z "$TARGET" -o -z "$FORMAT" ]; then
+if [ -z "$TARGET" ] || [ -z "$FORMAT" ]; then
      print_usage
      exit 1
 fi
 
-compress() {
+############################################################################ 
+#            compresses the target with a compression format               #
+############################################################################
 
-  if [ -d "$TARGET" ]; then
-       TOP_DIR="$(basename $TARGET)"
-       if [ -n "$NAME" ]; then
-            OUTPUT="${NAME}.tar.${FORMAT}"
-       else
-            OUTPUT="${TOP_DIR}.tar.${FORMAT}"
-       fi
+this_compress() {
 
-       [ -e "$OUTPUT" ] && sudo rm -f "$OUTPUT"
+   if [ -d "$TARGET" ]; then
+        TOP_DIR="$(basename $TARGET)"
+        if [ -n "$NAME" ]; then
+             OUTPUT="${NAME}.tar.${FORMAT}"
+        else
+             OUTPUT="${TOP_DIR}.tar.${FORMAT}"
+        fi
 
-       tar -C $(dirname $TARGET) -c"${XXX}f" "$OUTPUT" "$TOP_DIR" || return 1
+        [ -e "$OUTPUT" ] && sudo rm -f "$OUTPUT"
 
-  elif [ -f "$TARGET" ]; then
-       if [ -n "$NAME" ]; then
+        tar -C $(dirname $TARGET) -c"${XXX}f" "$OUTPUT" "$TOP_DIR" || return 1
+
+   elif [ -f "$TARGET" ]; then
+        if [ -n "$NAME" ]; then
             OUTPUT="${NAME}.${FORMAT}"
-       else
+        else
             OUTPUT="$(basename $TARGET).${FORMAT}"
-       fi
+        fi
 
-       [ -e "$OUTPUT" ] && sudo rm -f "$OUTPUT"
+        [ -e "$OUTPUT" ] && sudo rm -f "$OUTPUT"
 
-       "$COMPRESSOR" -c "$TARGET" > "$OUTPUT" || return 1
-  fi
+        "$COMPRESSOR" -c "$TARGET" > "$OUTPUT" || return 1
+   fi
 
-  return 0
+   return 0
+
 }
+
+############################################################################ 
+#                                this main                                 #
+############################################################################
 
 this_main() {
 
-  case "$FORMAT" in
-       bz2)
-           COMPRESSOR="bzip2"
-           XXX=j
-           compress || return 1
-           ;;
-       gz)
-           COMPRESSOR="gzip"
-           XXX="z"
-           compress || return 1
-           ;;
-       xz)
-           COMPRESSOR="xz"
-           XXX="J"
-           compress || return 1
-           ;;
-       *)
-           return 1
-           ;;
-  esac
+   case "$FORMAT" in
+        bz2)
+            COMPRESSOR="bzip2"
+            XXX=j
+            this_compress || return 1
+            ;;
+        gz)
+            COMPRESSOR="gzip"
+            XXX="z"
+            this_compress || return 1
+            ;;
+        xz)
+            COMPRESSOR="xz"
+            XXX="J"
+            this_compress || return 1
+            ;;
+        *)
+            return 1
+            ;;
+   esac
 
-  return 0
+   return 0
+
 }
 
 print_it "Compressing the target $TARGET with the compression format $FORMAT ... \c"

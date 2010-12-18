@@ -35,34 +35,39 @@ else
      exit 1
 fi
 
+############################################################################ 
+#                                this main                                 #
+############################################################################
+
 this_main() {
 
-  [ -d "$TCEXTTOOLS_PACKAGE" ] && sudo rm -rf "$TCEXTTOOLS_PACKAGE"
-  mkdir -p "$TCEXTTOOLS_PACKAGE"
+   [ -d "$TCEXTTOOLS_PACKAGE" ] && sudo rm -rf "$TCEXTTOOLS_PACKAGE"
+   mkdir -p "$TCEXTTOOLS_PACKAGE"
 
-  cd "$PACKAGE_ROOT"
+   cd "$PACKAGE_ROOT"
 
-  for EXTENSION in $EXTENSIONS
-  do
-      . "$PACKAGE_COMMON"
+   for EXTENSION in $EXTENSIONS
+   do
+       . "$PACKAGE_COMMON"
 
-      set_extension_name
+       set_extension_name
 
-      if [ ! -d "$TCEXTTOOLS_PKG/$EXTENSION_NAME" ]; then
-           print_it error "You must create it first!"
-           exit 1
-      fi
+       if [ ! -d "$TCEXTTOOLS_PKG/$EXTENSION_NAME" ]; then
+              print_it error "You must create it first!"
+              exit 1
+       fi
 
-      [ -d "$TCEXTTOOLS_PACKAGE/$EXTENSION_NAME" ] || mkdir -p "$TCEXTTOOLS_PACKAGE/$EXTENSION_NAME"
+       [ -d "$TCEXTTOOLS_PACKAGE/$EXTENSION_NAME" ] || mkdir -p "$TCEXTTOOLS_PACKAGE/$EXTENSION_NAME"
 
-      busybox cp -f "$TCEXTTOOLS_PKG/$EXTENSION_NAME"/*.tcz* "$TCEXTTOOLS_PACKAGE/$EXTENSION_NAME" || return 1
-  done
+       busybox cp -f "$TCEXTTOOLS_PKG/$EXTENSION_NAME"/*.tcz* "$TCEXTTOOLS_PACKAGE/$EXTENSION_NAME" || return 1
+   done
 
-  if [ -f "$TCEXTTOOLS_CONVERTED_SOURCE" ]; then
-       busybox cp -f "$TCEXTTOOLS_CONVERTED_SOURCE" "$TCEXTTOOLS_PACKAGE" || return 1
-  fi
+   if [ -f "$TCEXTTOOLS_CONVERTED_SOURCE" ]; then
+        busybox cp -f "$TCEXTTOOLS_CONVERTED_SOURCE" "$TCEXTTOOLS_PACKAGE" || return 1
+   fi
 
-  return 0
+   return 0
+
 }
 
 print_it "Packaging the package $PACKAGE ... \c"

@@ -35,88 +35,105 @@ else
      exit 1
 fi
 
+for EXTENSION in $EXTENSIONS
+do
+    . "$PACKAGE_COMMON"
+
+    set_extension_name
+
+    if [ ! -e "$TCEXTTOOLS_PKG/$EXTENSION_NAME/${EXTENSION_NAME}.tcz" ]; then
+           print_it error "You must create it first!"
+           exit 1
+    fi
+done
+
+############################################################################ 
+#                        checks the extension                              #
+############################################################################
+
 this_check() {
 
-  sudo busybox mount -o loop "$TCEXTTOOLS_PKG/$EXTENSION_NAME/${EXTENSION_NAME}.tcz" "$TMPDIR" || return 1
+   sudo busybox mount -o loop "$TCEXTTOOLS_PKG/$EXTENSION_NAME/${EXTENSION_NAME}.tcz" "$TMPDIR" || return 1
 
-  FILES="$(sudo find $TMPDIR -not -type d)"
-  SAVEIFS="$IFS"
-  IFS="$(echo -en "\n\b")"
-  for f in $FILES
-  do
-      sudo file "$f" || return 1
-  done
-  IFS="$SAVEIFS"
+   FILES="$(sudo find $TMPDIR -not -type d)"
+   SAVEIFS="$IFS"
+   IFS="$(echo -en "\n\b")"
+   for f in $FILES
+   do
+       sudo file "$f" || return 1
+   done
+   IFS="$SAVEIFS"
 
-  if [ -d "$TMPDIR/usr/local/tce.installed" ]; then
-       OUT=$(sudo busybox ls -d -l "$TMPDIR/usr/local/tce.installed")
-       PERM=$(echo $OUT | cut -d" " -f1)
-       OWNER=$(echo $OUT | cut -d" " -f3-4)
+   if [ -d "$TMPDIR/usr/local/tce.installed" ]; then
+        OUT=$(sudo busybox ls -d -l "$TMPDIR/usr/local/tce.installed")
+        PERM=$(echo $OUT | cut -d" " -f1)
+        OWNER=$(echo $OUT | cut -d" " -f3-4)
 
-       if [ "$PERM" != "drwxrwxr-x" ] && [ "$PERM" != "drwxrwsr-x" ]; then
-            print_it error "Wrong permissions on $EXTENSION_NAME tce.installed directory."
-            print_it warning "Expected permissions drwxrwxr-x or drwxrwsr-x but found permissions $PERM"
-            return 1
-       fi
+        if [ "$PERM" != "drwxrwxr-x" ] && [ "$PERM" != "drwxrwsr-x" ]; then
+             print_it error "Wrong permissions on $EXTENSION_NAME tce.installed directory."
+             print_it warning "Expected permissions drwxrwxr-x or drwxrwsr-x but found permissions $PERM"
+             return 1
+        fi
 
-       if [ "$OWNER" != "root staff" ]; then
-            print_it error "Wrong ownership on $EXTENSION_NAME tce.installed directory."
-            print_it warning "Expected ownership \"root staff\" but found ownership \"$OWNER\""
-            return 1
-       fi
+        if [ "$OWNER" != "root staff" ]; then
+             print_it error "Wrong ownership on $EXTENSION_NAME tce.installed directory."
+             print_it warning "Expected ownership \"root staff\" but found ownership \"$OWNER\""
+             return 1
+        fi
 
-       if [ -e "$TMPDIR/usr/local/tce.installed/$EXTENSION_NAME" ]; then
-            OUT=$(sudo busybox ls -l "$TMPDIR/usr/local/tce.installed/$EXTENSION_NAME")
-            PERM=$(echo $OUT | cut -d" " -f1)
-            OWNER=$(echo $OUT | cut -d" " -f3-4)
+        if [ -e "$TMPDIR/usr/local/tce.installed/$EXTENSION_NAME" ]; then
+             OUT=$(sudo busybox ls -l "$TMPDIR/usr/local/tce.installed/$EXTENSION_NAME")
+             PERM=$(echo $OUT | cut -d" " -f1)
+             OWNER=$(echo $OUT | cut -d" " -f3-4)
 
-            if [ "$PERM" != "-rwxrwxr-x" ] && [ "$PERM" != "-rwxrwsr-x" ]; then
-                 print_it error "Wrong permissions on $EXTENSION_NAME tce.installed script."
-                 print_it warning "Expected permissions -rwxrwxr-x or -rwxrwsr-x but found permissions $PERM"
-                 return 1
-            fi
+             if [ "$PERM" != "-rwxrwxr-x" ] && [ "$PERM" != "-rwxrwsr-x" ]; then
+                  print_it error "Wrong permissions on $EXTENSION_NAME tce.installed script."
+                  print_it warning "Expected permissions -rwxrwxr-x or -rwxrwsr-x but found permissions $PERM"
+                  return 1
+             fi
 
-            if [ "$OWNER" != "root staff" ]; then
-                 print_it error "Wrong ownership on $EXTENSION_NAME tce.installed script."
-                 print_it warning "Expected ownership \"root staff\" but found ownership \"$OWNER\""
-                 return 1
-            fi
-       fi
-  fi
+             if [ "$OWNER" != "root staff" ]; then
+                  print_it error "Wrong ownership on $EXTENSION_NAME tce.installed script."
+                  print_it warning "Expected ownership \"root staff\" but found ownership \"$OWNER\""
+                  return 1
+             fi
+        fi
+   fi
 
-  sudo busybox umount "$TMPDIR"
-  sudo rm -rf "$TMPDIR"
+   sudo busybox umount "$TMPDIR"
+   sudo rm -rf "$TMPDIR"
 
-  return 0
+   return 0
+
 }
+
+############################################################################ 
+#                                this main                                 #
+############################################################################
 
 this_main() {
 
-  for EXTENSION in $EXTENSIONS
-  do
-      . "$PACKAGE_COMMON"
+   for EXTENSION in $EXTENSIONS
+   do
+       . "$PACKAGE_COMMON"
 
-      set_extension_name
+       set_extension_name
 
-      if [ ! -e "$TCEXTTOOLS_PKG/$EXTENSION_NAME/${EXTENSION_NAME}.tcz" ]; then
-             print_it error "You must create it first!"
-             exit 1
-      fi
+       TMPDIR=$(busybox mktemp -d)
 
-      TMPDIR=$(busybox mktemp -d)
+       this_check
+       if [ "$?" -gt 0 ]; then
+            print_it error "Checking the extension $EXTENSION_NAME failed!"
+            sudo busybox umount "$TMPDIR"
+            sudo rm -rf "$TMPDIR"
+            return 1
+       else
+            print_it "Checking the extension $EXTENSION_NAME successful!"
+       fi
+   done
 
-      this_check
-      if [ "$?" -gt 0 ]; then
-           print_it error "Checking the extension $EXTENSION_NAME failed!"
-           sudo busybox umount "$TMPDIR"
-           sudo rm -rf "$TMPDIR"
-           return 1
-      else
-           print_it "Checking the extension $EXTENSION_NAME successful!"
-      fi
-  done
+   return 0
 
-  return 0
 }
 
 print_it "Checking the package $PACKAGE extensions ... \c"

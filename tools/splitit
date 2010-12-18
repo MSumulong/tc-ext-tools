@@ -36,107 +36,122 @@ else
 fi
 
 if [ ! -d "$TCEXTTOOLS_INSTALL_ROOT" ]; then
-     print_it error "You must install it first!"
-     exit 1
+       print_it error "You must install it first!"
+       exit 1
 fi
+
+############################################################################ 
+#                splits the files out of install root                      #
+############################################################################
 
 this_split() {
 
-  CONTENTS="$(cat $PACKAGE_EXTENSIONS/$EXTENSION/install)"
-  [ -z "$CONTENTS" ] && return 1
+   CONTENTS="$(cat $PACKAGE_EXTENSIONS/$EXTENSION/install)"
+   [ -z "$CONTENTS" ] && return 1
 
-  LIST="${TMP_DIR}/install.list"
-  X_LIST="${TMP_DIR}/x-install.list"
+   LIST="${TMP_DIR}/install.list"
+   X_LIST="${TMP_DIR}/x-install.list"
 
-  touch "$LIST" || return 1
-  touch "$X_LIST" || return 1
+   touch "$LIST" || return 1
+   touch "$X_LIST" || return 1
 
-  cd "$TCEXTTOOLS_INSTALL_ROOT"
+   cd "$TCEXTTOOLS_INSTALL_ROOT"
 
-  for i in $CONTENTS
-  do
-      if [ -z "$(echo "$i" | grep '*')" ]; then
-              if [ "${i#\#}" = "$i" ]; then
-                   if [ "${i#x-}" = "$i" ]; then
-                        sudo find "$i" -not -type d >> "$LIST" || return 1
-                   else
-                        i="${i#x-}"
-                        sudo find "$i" -not -type d >> "$X_LIST" || return 1
-                   fi
-              fi
-      else
-              if [ "${i#\#}" = "$i" ]; then
-                   if [ "${i#x-}" = "$i" ]; then
-                        sudo find $i -not -type d >> "$LIST" || return 1
-                   else
-                        i="${i#x-}"
-                        sudo find $i -not -type d >> "$X_LIST" || return 1
-                   fi
-              fi
-      fi
-  done
+   for i in $CONTENTS
+   do
+       if [ -z "$(echo "$i" | grep '*')" ]; then
+               if [ "${i#\#}" = "$i" ]; then
+                    if [ "${i#x-}" = "$i" ]; then
+                         sudo find "$i" -not -type d >> "$LIST" || return 1
+                    else
+                         i="${i#x-}"
+                         sudo find "$i" -not -type d >> "$X_LIST" || return 1
+                    fi
+               fi
+       else
+               if [ "${i#\#}" = "$i" ]; then
+                    if [ "${i#x-}" = "$i" ]; then
+                         sudo find $i -not -type d >> "$LIST" || return 1
+                    else
+                         i="${i#x-}"
+                         sudo find $i -not -type d >> "$X_LIST" || return 1
+                    fi
+               fi
+       fi
+   done
 
-  sudo tar -T "$LIST" -X "$X_LIST" -cpzf "$TMP_DIR/pkg.tar.gz" || return 1
-  sudo mkdir "$TMP_DIR/root"
-  sudo tar -C "$TMP_DIR/root" -pxzf "$TMP_DIR/pkg.tar.gz" || return 1
+   sudo tar -T "$LIST" -X "$X_LIST" -cpzf "$TMP_DIR/pkg.tar.gz" || return 1
+   sudo mkdir "$TMP_DIR/root"
+   sudo tar -C "$TMP_DIR/root" -pxzf "$TMP_DIR/pkg.tar.gz" || return 1
 
-  if [ -d "$TCEXTTOOLS_BIN/$EXTENSION_NAME" ]; then
-       sudo rm -rf "$TCEXTTOOLS_BIN/$EXTENSION_NAME" || return 1
-  fi
+   if [ -d "$TCEXTTOOLS_BIN/$EXTENSION_NAME" ]; then
+        sudo rm -rf "$TCEXTTOOLS_BIN/$EXTENSION_NAME" || return 1
+   fi
 
-  sudo mv "$TMP_DIR/root" "$TCEXTTOOLS_BIN/$EXTENSION_NAME" || return 1
+   sudo mv "$TMP_DIR/root" "$TCEXTTOOLS_BIN/$EXTENSION_NAME" || return 1
 
-  sudo rm -rf "$TMP_DIR"
+   sudo rm -rf "$TMP_DIR"
 
-  return 0
+   return 0
+
 }
+
+############################################################################ 
+#                    modifies the files of an extension                    #
+############################################################################
 
 this_modify() {
 
-  if [ -n "$ICON" ]; then
-       if [ ! -e "$TCEXTTOOLS_BIN/$EXTENSION_NAME/$ICON" ]; then
-            print_it error "The icon: $TCEXTTOOLS_BIN/$EXTENSION_NAME/$ICON does not exist!"
-            return 1
-       elif [ ! -e "$TCEXTTOOLS_BIN/$EXTENSION_NAME/$DESKTOP" ]; then
-            print_it error "The desktop entry: $TCEXTTOOLS_BIN/$EXTENSION_NAME/$DESKTOP does not exist!"
-            return 1
-       else
-            sudo sh -c "echo \"X-FullPathIcon=$ICON\" >> $TCEXTTOOLS_BIN/$EXTENSION_NAME/$DESKTOP" || return 1
-            unset ICON
-            unset DESKTOP
-       fi
-  fi
+   if [ -n "$ICON" ]; then
+        if [ ! -e "$TCEXTTOOLS_BIN/$EXTENSION_NAME/$ICON" ]; then
+               print_it error "The icon: $TCEXTTOOLS_BIN/$EXTENSION_NAME/$ICON does not exist!"
+               return 1
+        elif [ ! -e "$TCEXTTOOLS_BIN/$EXTENSION_NAME/$DESKTOP" ]; then
+               print_it error "The desktop entry: $TCEXTTOOLS_BIN/$EXTENSION_NAME/$DESKTOP does not exist!"
+               return 1
+        else
+             sudo sh -c "echo \"X-FullPathIcon=$ICON\" >> $TCEXTTOOLS_BIN/$EXTENSION_NAME/$DESKTOP" || return 1
+             unset ICON
+             unset DESKTOP
+        fi
+   fi
+
 }
+
+############################################################################ 
+#                                this main                                 #
+############################################################################
 
 this_main() {
 
-  for EXTENSION in $EXTENSIONS
-  do
-      . "$PACKAGE_COMMON"
+   for EXTENSION in $EXTENSIONS
+   do
+       . "$PACKAGE_COMMON"
 
-      set_extension_name
+       set_extension_name
 
-      TMP_DIR=$(busybox mktemp -d)
+       TMP_DIR=$(busybox mktemp -d)
 
-      this_split
-      if [ "$?" -gt 0 ]; then
-           print_it error "Splitting the extension $EXTENSION_NAME failed!"
-           sudo rm -rf "$TMP_DIR"
-           return 1
-      else
-           print_it "Splitting the extension $EXTENSION_NAME successful!"
-      fi
+       this_split
+       if [ "$?" -gt 0 ]; then
+            print_it error "Splitting the extension $EXTENSION_NAME failed!"
+            sudo rm -rf "$TMP_DIR"
+            return 1
+       else
+            print_it "Splitting the extension $EXTENSION_NAME successful!"
+       fi
 
-      this_modify
-      if [ "$?" -gt 0 ]; then
-           print_it error "Modifying the extension $EXTENSION_NAME failed!"
-           return 1
-      else
-           print_it "Modifying the extension $EXTENSION_NAME successful!"
-      fi
-  done
+       this_modify
+       if [ "$?" -gt 0 ]; then
+            print_it error "Modifying the extension $EXTENSION_NAME failed!"
+            return 1
+       else
+            print_it "Modifying the extension $EXTENSION_NAME successful!"
+       fi
+   done
 
-  return 0
+   return 0
+
 }
 
 print_it "Splitting the package $PACKAGE extensions ... \c"
