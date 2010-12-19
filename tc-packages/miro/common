@@ -1,10 +1,6 @@
 PACKAGE="miro"
 VERSION="3.5.1"
-SOURCE="${PACKAGE}-${VERSION}.tar.gz"
-TOP_SRC="${PACKAGE}-${VERSION}"
-SOURCE_URL="http://ftp.osuosl.org/pub/pculture.org/miro/src/miro-${VERSION}.tar.gz"
-ICON="/usr/local/share/pixmaps/miro.xpm"
-DESKTOP_ENTRY="/usr/local/share/applications/miro.desktop"
+SOURCE="http://ftp.osuosl.org/pub/pculture.org/miro/src/miro-${VERSION}.tar.gz"
 BUILD_DEPENDS="python
 python-dev
 pyrex-2.7
@@ -20,7 +16,6 @@ webkit
 webkit-dev
 pywebkit-2.7"
 
-EXTENSIONS="miro miro-locale"
 DESCRIPTION="The free and open source internet TV platform."
 AUTHOR="various"
 SITE="http://www.getmiro.com/"

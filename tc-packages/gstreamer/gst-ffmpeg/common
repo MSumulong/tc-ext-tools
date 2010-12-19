@@ -1,8 +1,6 @@
 PACKAGE="gst-ffmpeg"
 VERSION="0.10.11"
-SOURCE="${PACKAGE}-${VERSION}.tar.bz2"
-SOURCE_URL="http://gstreamer.freedesktop.org/src/${PACKAGE}/${PACKAGE}-${VERSION}.tar.bz2"
-TOP_SRC="${PACKAGE}-${VERSION}"
+SOURCE="http://gstreamer.freedesktop.org/src/${PACKAGE}/${PACKAGE}-${VERSION}.tar.bz2"
 BUILD_DEPENDS="gstreamer
 gstreamer-dev
 gst-plugins-base
@@ -11,7 +9,6 @@ bzip2-lib
 bzip2-dev
 coreutils"
 
-EXTENSIONS="gst-ffmpeg"
 DESCRIPTION="GStreamer ffmpeg plugin."
 AUTHOR="various"
 SITE="http://gstreamer.freedesktop.org"

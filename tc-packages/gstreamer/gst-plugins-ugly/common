@@ -1,8 +1,6 @@
 PACKAGE="gst-plugins-ugly"
 VERSION="0.10.16"
-SOURCE="${PACKAGE}-${VERSION}.tar.bz2"
-SOURCE_URL="http://gstreamer.freedesktop.org/src/${PACKAGE}/${PACKAGE}-${VERSION}.tar.bz2"
-TOP_SRC="${PACKAGE}-${VERSION}"
+SOURCE="http://gstreamer.freedesktop.org/src/${PACKAGE}/${PACKAGE}-${VERSION}.tar.bz2"
 BUILD_DEPENDS="gstreamer
 gstreamer-dev
 gst-plugins-base
@@ -25,7 +23,6 @@ x264-dev
 lame
 lame-dev"
 
-EXTENSIONS="gst-plugins-ugly gst-plugins-ugly-locale"
 DESCRIPTION="GStreamer Ugly Plugins."
 AUTHOR="various"
 SITE="http://gstreamer.freedesktop.org"

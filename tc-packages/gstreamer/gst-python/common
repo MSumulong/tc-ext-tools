@@ -1,8 +1,6 @@
 PACKAGE="gst-python"
 VERSION="0.10.20"
-SOURCE="${PACKAGE}-${VERSION}.tar.bz2"
-SOURCE_URL="http://gstreamer.freedesktop.org/src/gst-python/gst-python-${VERSION}.tar.bz2"
-TOP_SRC="${PACKAGE}-${VERSION}"
+SOURCE="http://gstreamer.freedesktop.org/src/gst-python/gst-python-${VERSION}.tar.bz2"
 BUILD_DEPENDS="gstreamer
 gstreamer-dev
 python
@@ -10,7 +8,6 @@ python-dev
 pygtk-2.7
 pygtk-2.7-dev"
 
-EXTENSIONS="gst-python"
 DESCRIPTION="GStreamer python bindings."
 AUTHOR="various"
 SITE="http://gstreamer.freedesktop.org"

@@ -1,10 +1,6 @@
 PACKAGE="midori"
 VERSION="0.2.9"
-SOURCE="${PACKAGE}-${VERSION}.tar.bz2"
-TOP_SRC="${PACKAGE}-${VERSION}"
-SOURCE_URL="http://archive.xfce.org/src/apps/midori/0.2/midori-${VERSION}.tar.bz2"
-ICON="/usr/local/share/icons/hicolor/48x48/apps/midori.png"
-DESKTOP_ENTRY="/usr/local/share/applications/midori.desktop"
+SOURCE="http://archive.xfce.org/src/apps/midori/0.2/midori-${VERSION}.tar.bz2"
 BUILD_DEPENDS="glib2
 glib2-dev
 gtk2
@@ -26,7 +22,6 @@ gtk-doc
 librsvg
 librsvg-dev"
 
-EXTENSIONS="midori midori-locale"
 DESCRIPTION="Midori is a lightweight web browser based on WebKit/GTK+."
 AUTHOR="Christian Dywan"
 SITE="http://www.twotoasts.de/index.php?/pages/midori_summary.html"

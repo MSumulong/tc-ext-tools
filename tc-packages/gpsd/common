@@ -1,10 +1,8 @@
 PACKAGE="gpsd"
 VERSION="git"
-SOURCE="${PACKAGE}-${VERSION}.tar.xz"
-TOP_SRC="${PACKAGE}-${VERSION}"
-SOURCE_URL="git://git.berlios.de/gpsd"
-VCS_TYPE="git"
-#SOURCE_URL="http://download.berlios.de/gpsd/gpsd-${VERSION}.tar.gz"
+SOURCE="git://git.berlios.de/gpsd"
+VCS="git"
+#SOURCE="http://download.berlios.de/gpsd/gpsd-${VERSION}.tar.gz"
 BUILD_DEPENDS="dbus-glib
 Xorg-7.5-lib
 Xorg-7.5-dev
@@ -24,7 +22,6 @@ lesstif
 lesstif-dev
 dbus-glib"
 
-EXTENSIONS="gpsd gpsd-dev gpsd-clients gpsd-python"
 DESCRIPTION="GPS (Global Positioning System) services daemon."
 AUTHOR="various"
 SITE="http://gpsd.berlios.de/"

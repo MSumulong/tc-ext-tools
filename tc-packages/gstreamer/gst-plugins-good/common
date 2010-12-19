@@ -1,8 +1,6 @@
 PACKAGE="gst-plugins-good"
 VERSION="0.10.26"
-SOURCE="${PACKAGE}-${VERSION}.tar.bz2"
-SOURCE_URL="http://gstreamer.freedesktop.org/src/${PACKAGE}/${PACKAGE}-${VERSION}.tar.bz2"
-TOP_SRC="${PACKAGE}-${VERSION}"
+SOURCE="http://gstreamer.freedesktop.org/src/${PACKAGE}/${PACKAGE}-${VERSION}.tar.bz2"
 BUILD_DEPENDS="gstreamer
 gstreamer-dev
 gst-plugins-base
@@ -71,7 +69,6 @@ dbus-glib-dev
 libgdbm
 libgdbm-dev"
 
-EXTENSIONS="gst-plugins-good gst-plugins-good-locale"
 DESCRIPTION="GStreamer Good Plugins."
 AUTHOR="various"
 SITE="http://gstreamer.freedesktop.org"

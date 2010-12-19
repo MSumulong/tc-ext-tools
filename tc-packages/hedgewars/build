@@ -25,13 +25,13 @@ build_compile() {
 build_install() {
 
   cd build
-  sudo make DESTDIR=${INSTALL_ROOT} install || return 1
+  make DESTDIR="$INSTALL_ROOT" install || return 1
 
   cd ..
 
-  sudo install -D -m 644 ${PACKAGE_SRC}/hedgewars.png ${INSTALL_ROOT}/usr/local/share/pixmaps/hedgewars.png || return 1
-  sudo install -D -m 644 ${PACKAGE_SRC}/hedgewars.desktop ${INSTALL_ROOT}/usr/local/share/applications/hedgewars.desktop || return 1
-  sudo install -D -m 644 Fonts_LICENSE.txt $startdir/pkg/usr/share/licenses/$pkgname/Fonts_LICENSE.txt || return 1
+  install -D -m 644 "$PACKAGE_SRC/hedgewars.png" "$INSTALL_ROOT/usr/local/share/pixmaps/hedgewars.png" || return 1
+  install -D -m 644 "$PACKAGE_SRC/hedgewars.desktop" "$INSTALL_ROOT/usr/local/share/applications/hedgewars.desktop" || return 1
+  install -D -m 644 Fonts_LICENSE.txt "$INSTALL_ROOT/usr/local/share/licenses/$PACKAGE/Fonts_LICENSE.txt" || return 1
 
 }
 ##
@@ -40,7 +40,7 @@ build_install() {
 build_rules() {
 
   buildit download || exit 1
-  #buildit convert || exit 1
+  buildit convert || exit 1
   buildit unpack || exit 1
   buildit patch || exit 1
   buildit load || exit 1

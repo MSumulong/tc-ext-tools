@@ -1,11 +1,8 @@
 PACKAGE="libyaml"
 VERSION="0.1.3"
-SOURCE="yaml-${VERSION}.tar.gz"
-TOP_SRC="yaml-${VERSION}"
-SOURCE_URL="http://pyyaml.org/download/libyaml/yaml-${VERSION}.tar.gz"
+SOURCE="http://pyyaml.org/download/libyaml/yaml-${VERSION}.tar.gz"
 BUILD_DEPENDS=""
 
-EXTENSIONS="libyaml libyaml-dev"
 DESCRIPTION="A C library for parsing and emitting YAML."
 AUTHOR="Kirill Simonov"
 SITE="http://pyyaml.org/wiki/LibYAML"

@@ -1,11 +1,8 @@
 PACKAGE="icu"
 VERSION="4.4.2"
-SOURCE="${PACKAGE}4c-${VERSION//./_}-src.tgz"
-TOP_SRC="${PACKAGE}"
-SOURCE_URL="http://download.icu-project.org/files/${PACKAGE}4c/${VERSION}/${PACKAGE}4c-${VERSION//./_}-src.tgz"
+SOURCE="http://download.icu-project.org/files/${PACKAGE}4c/${VERSION}/${PACKAGE}4c-${VERSION//./_}-src.tgz"
 BUILD_DEPENDS=""
 
-EXTENSIONS="icu icu-dev"
 DESCRIPTION="International Components for Unicode."
 AUTHOR="various"
 SITE="http://site.icu-project.org/"

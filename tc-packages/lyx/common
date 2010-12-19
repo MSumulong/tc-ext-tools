@@ -1,8 +1,6 @@
 PACKAGE="lyx"
 VERSION="1.6.8"
-SOURCE="${PACKAGE}-${VERSION}.tar.bz2"
-TOP_SRC="${PACKAGE}-${VERSION}"
-SOURCE_URL="ftp://ftp.devel.lyx.org/pub/lyx/stable/lyx-${VERSION}.tar.bz2"
+SOURCE="ftp://ftp.devel.lyx.org/pub/lyx/stable/lyx-${VERSION}.tar.bz2"
 BUILD_DEPENDS="qt-4.x-base
 qt-4.x-dev
 glibc_gconv
@@ -15,7 +13,6 @@ python
 enchant
 enchant-dev"
 
-EXTENSIONS="lyx lyx-locale"
 DESCRIPTION="LyX is a document processor."
 AUTHOR="LyX Team"
 SITE="http://www.lyx.org"

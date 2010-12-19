@@ -1,8 +1,6 @@
 PACKAGE="libtorrent-rasterbar"
 VERSION="0.15.4"
-SOURCE="${PACKAGE}-${VERSION}.tar.gz"
-TOP_SRC="${PACKAGE}-${VERSION}"
-SOURCE_URL="http://libtorrent.googlecode.com/files/${PACKAGE}-${VERSION}.tar.gz"
+SOURCE="http://libtorrent.googlecode.com/files/${PACKAGE}-${VERSION}.tar.gz"
 BUILD_DEPENDS="python
 python-dev
 boost
@@ -10,7 +8,6 @@ boost-dev
 openssl-0.9.8
 openssl-0.9.8-dev"
 
-EXTENSIONS="libtorrent-rasterbar libtorrent-rasterbar-dev libtorrent-rasterbar-python"
 DESCRIPTION="A C++ bittorrent library."
 AUTHOR="Arvid Norberg"
 SITE="http://code.google.com/p/libtorrent/"

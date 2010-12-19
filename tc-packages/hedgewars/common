@@ -1,10 +1,6 @@
 PACKAGE="hedgewars"
 VERSION="0.9.13"
-SOURCE="${PACKAGE}-src-${VERSION}.tar.bz2"
-TOP_SRC="${PACKAGE}-src-${VERSION}"
-SOURCE_URL="http://hedgewars.org/download/hedgewars-src-${VERSION}.tar.bz2"
-ICON="/usr/local/share/pixmaps/hedgewars.png"
-DESKTOP_ENTRY="/usr/local/share/applications/hedgewars.desktop"
+SOURCE="http://hedgewars.org/download/hedgewars-src-${VERSION}.tar.bz2"
 BUILD_DEPENDS="cmake
 fpc
 SDL
@@ -16,28 +12,11 @@ qt-4.x-dev
 Xorg-7.5
 Xorg-7.5-dev"
 
-EXTENSIONS="hedgewars"
 DESCRIPTION="A Worms-like turn based strategy game."
 AUTHOR="various"
 SITE="http://www.hedgewars.org/"
 COPYING="GPL-2/Custom"
 MAINTAINERS="Arslan S."
-COMMENTS="Each player controls a team of several hedgehogs. During the course of 
-		the game, players take turns with one of their hedgehogs. They then use 
-		whatever tools and weapons are available to attack and kill the opponents' 
-		hedgehogs, thereby winning the game. Hedgehogs may move around the terrain 
-		in a variety of ways, normally by walking and jumping but also by using 
-		particular tools such as the \"Rope\" or \"Parachute\", to move to otherwise 
-		inaccessible areas. Each turn is time-limited to ensure that players do not 
-		hold up the game with excessive thinking or moving.
-
-		You need OSS or ALSA for sound.
-
-		You need GPU acceleration for smooth playing experience.
-
-		IMPORTANT NOTE FOR ALSA USERS: Till SDL is compiled with alsa support please copy this file to ~/.hedgewars
-		http://bugs.gentoo.org/attachment.cgi?id=228035
-
-		This extension is PPI compatible."
+COMMENTS="This extension is PPI compatible."
 CHANGELOG="2009/12/03 Original 0.9.12"
 CURRENT="Updated to 0.9.13"

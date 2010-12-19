@@ -21,7 +21,7 @@ build_install() {
 
    make DESTDIR="$INSTALL_ROOT" install || return 1
 
-   install -m644 mpeg2enc/mpeg2syntaxcodes.h "${INSTALL_ROOT}/usr/local/include/mjpegtools/mpeg2enc/"
+   install -m644 mpeg2enc/mpeg2syntaxcodes.h "${INSTALL_ROOT}/usr/local/include/mjpegtools/mpeg2enc/" || return 1
 
 }
 

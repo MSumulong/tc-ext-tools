@@ -1,8 +1,6 @@
 PACKAGE="notify-osd"
 VERSION="0.9.29"
-SOURCE="${PACKAGE}-${VERSION}.tar.gz"
-TOP_SRC="${PACKAGE}-${VERSION}"
-SOURCE_URL="http://launchpad.net/notify-osd/lucid/ubuntu-10.04-beta-2/+download/notify-osd-${VERSION}.tar.gz"
+SOURCE="http://launchpad.net/notify-osd/lucid/ubuntu-10.04-beta-2/+download/notify-osd-${VERSION}.tar.gz"
 BUILD_DEPENDS="gtk2
 gtk2-dev
 libstartup-notification
@@ -14,7 +12,6 @@ GConf-dev
 dbus-glib
 libnotify"
 
-EXTENSIONS="notify-osd"
 DESCRIPTION="A notification daemon that displays pop-up notifications."
 AUTHOR="Mirco \"MacSlow\" Mueller, David Barth et al."
 SITE="https://launchpad.net/notify-osd"

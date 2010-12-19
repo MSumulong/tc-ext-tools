@@ -1,8 +1,6 @@
 PACKAGE="gst-plugins-bad"
 VERSION="0.10.20"
-SOURCE="${PACKAGE}-${VERSION}.tar.bz2"
-SOURCE_URL="http://gstreamer.freedesktop.org/src/${PACKAGE}/${PACKAGE}-${VERSION}.tar.bz2"
-TOP_SRC="${PACKAGE}-${VERSION}"
+SOURCE="http://gstreamer.freedesktop.org/src/${PACKAGE}/${PACKAGE}-${VERSION}.tar.bz2"
 BUILD_DEPENDS="gstreamer
 gstreamer-dev
 gst-plugins-base
@@ -46,7 +44,6 @@ openssl-0.9.8-dev
 Xorg-7.5-lib
 Xorg-7.5-dev"
 
-EXTENSIONS="gst-plugins-bad gst-plugins-bad-dev gst-plugins-bad-locale"
 DESCRIPTION="GStreamer Bad Plugins."
 AUTHOR="various"
 SITE="http://gstreamer.freedesktop.org"
