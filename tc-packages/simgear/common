@@ -1,0 +1,27 @@
+PACKAGE="simgear"
+VERSION="2.0.0"
+SOURCE="ftp://mirrors.ibiblio.org/pub/mirrors/simgear/ftp/Source/SimGear-${VERSION}.tar.gz"
+BUILD_DEPENDS="Xorg-7.5
+Xorg-7.5-dev
+libxcb
+libxcb-dev
+libopenal
+libopenal-dev
+freeglut
+freeglut-dev
+freealut
+freealut-dev
+openscenegraph
+openscenegraph-dev
+plib
+boost
+boost-dev"
+
+DESCRIPTION="A set of open-source libraries designed to be used as building blocks for quickly assembling 3d simulations, games, and visualization."
+AUTHOR="Curtis Olsen et al"
+SITE="http://www.simgear.org"
+COPYING="LGPL"
+MAINTAINERS="Arslan S."
+COMMENTS="This extension is PPI compatible."
+CHANGELOG="---"
+CURRENT="First Version"

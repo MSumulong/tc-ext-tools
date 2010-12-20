@@ -1,0 +1,14 @@
+PACKAGE="freealut"
+VERSION="1.1.0"
+SOURCE="http://connect.creativelabs.com/openal/Downloads/ALUT/freealut-${VERSION}.tar.gz"
+BUILD_DEPENDS="libopenal
+libopenal-dev"
+
+DESCRIPTION="OpenAL Utility Toolkit (ALUT)."
+AUTHOR="various"
+SITE="http://www.openal.org"
+COPYING="LGPL"
+MAINTAINERS="Arslan S."
+COMMENTS="This extension is PPI compatible."
+CHANGELOG="---"
+CURRENT="First Version"

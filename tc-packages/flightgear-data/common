@@ -1,0 +1,13 @@
+PACKAGE="flightgear-data"
+VERSION="2.0.0"
+SOURCE="ftp://flightgear.wo0t.de/flightgear-ftp/ftp/Shared/FlightGear-data-${VERSION}.tar.bz2"
+BUILD_DEPENDS=""
+
+DESCRIPTION="Data for open source flight simulator."
+AUTHOR="Curt Olson et al"
+SITE="http://www.flightgear.org"
+COPYING="GPL"
+MAINTAINERS="Arslan S."
+COMMENTS="This extension is PPI compatible."
+CHANGELOG="---"
+CURRENT="First Version"

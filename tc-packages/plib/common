@@ -1,0 +1,14 @@
+PACKAGE="plib"
+VERSION="1.8.5"
+SOURCE="http://plib.sourceforge.net/dist/plib-${VERSION}.tar.gz"
+BUILD_DEPENDS="Xorg-7.5
+Xorg-7.5-dev"
+
+DESCRIPTION="A Suite of Portable Game Libraries."
+AUTHOR="various"
+SITE="http://plib.sourceforge.net/"
+COPYING="LGPL"
+MAINTAINERS="Arslan S."
+COMMENTS="This extension is PPI compatible."
+CHANGELOG="---"
+CURRENT="First Version"
