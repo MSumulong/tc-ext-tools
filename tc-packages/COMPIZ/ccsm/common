@@ -1,10 +1,6 @@
 PACKAGE="ccsm"
 VERSION="0.8.4"
-SOURCE="${PACKAGE}-${VERSION}.tar.bz2"
-TOP_SRC="${PACKAGE}-${VERSION}"
-SOURCE_URL="http://releases.compiz-fusion.org/${VERSION}/${PACKAGE}-${VERSION}.tar.bz2"
-ICON="/usr/local/share/icons/hicolor/48x48/apps/ccsm.png"
-DESKTOP_ENTRY="/usr/local/share/applications/ccsm.desktop"
+SOURCE="http://releases.compiz-fusion.org/${VERSION}/${PACKAGE}-${VERSION}.tar.bz2"
 BUILD_DEPENDS="glib2
 glib2-dev
 compiz
@@ -17,7 +13,6 @@ python-dev
 pygtk-2.7
 pygtk-2.7-dev"
 
-EXTENSIONS="ccsm ccsm-locale"
 DESCRIPTION="Compiz Config Settings Manager."
 AUTHOR="Patrick Niklaus, Quinnstorm"
 SITE="http://www.compiz.org/"

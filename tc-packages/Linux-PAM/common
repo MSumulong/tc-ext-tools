@@ -1,14 +1,11 @@
 PACKAGE="Linux-PAM"
 VERSION="1.1.1"
-SOURCE="${PACKAGE}-${VERSION}.tar.bz2"
-SOURCE_URL="http://www.kernel.org/pub/linux/libs/pam/library/Linux-PAM-${VERSION}.tar.bz2"
-TOP_SRC="${PACKAGE}-${VERSION}"
+SOURCE="http://www.kernel.org/pub/linux/libs/pam/library/Linux-PAM-${VERSION}.tar.bz2"
 BUILD_DEPENDS="bsddb
 bsddb-dev
 cracklib
 cracklib-dev"
 
-EXTENSIONS="Linux-PAM Linux-PAM-dev Linux-PAM-doc"
 DESCRIPTION="Pluggable Authentication Modules for Linux."
 AUTHOR="Andrew G. Morgan ,Dmitry V. Levin, Thorsten Kukuk, Sebastien Tricaud, Tomas Mraz"
 SITE="http://www.kernel.org/pub/linux/libs/pam/"

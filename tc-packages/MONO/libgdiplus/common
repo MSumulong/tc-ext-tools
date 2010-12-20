@@ -1,8 +1,6 @@
 PACKAGE="libgdiplus"
 VERSION="2.6.7"
-SOURCE="${PACKAGE}-${VERSION}.tar.bz2"
-TOP_SRC="${PACKAGE}-${VERSION}"
-SOURCE_URL="http://ftp.novell.com/pub/mono/sources/libgdiplus/libgdiplus-${VERSION}.tar.bz2"
+SOURCE="http://ftp.novell.com/pub/mono/sources/libgdiplus/libgdiplus-${VERSION}.tar.bz2"
 BUILD_DEPENDS="glib2
 glib2-dev
 cairo
@@ -16,7 +14,6 @@ graphics-libs-1-dev
 Xorg-7.5-lib
 Xorg-7.5-dev"
 
-EXTENSIONS="libgdiplus"
 DESCRIPTION="An Open Source implementation of the GDI+ API."
 AUTHOR="various"
 SITE="http://www.mono-project.com/"

@@ -2,9 +2,7 @@ PACKAGE="cairo-dock"
 MAJORVERSION="2.2.0"
 SUBVERSION="4"
 VERSION="${MAJORVERSION}-${SUBVERSION}"
-SOURCE="${PACKAGE}-${VERSION}.tar.gz"
-TOP_SRC="${PACKAGE}-${VERSION}"
-SOURCE_URL="http://launchpad.net/cairo-dock-core/2.2/${MAJORVERSION}/+download/cairo-dock-${VERSION}.tar.gz"
+SOURCE="http://launchpad.net/cairo-dock-core/2.2/${MAJORVERSION}/+download/cairo-dock-${VERSION}.tar.gz"
 BUILD_DEPENDS="cmake
 glib2
 glib2-dev
@@ -24,7 +22,6 @@ gtkglext-dev
 Xorg-7.5
 Xorg-7.5-dev"
 
-EXTENSIONS="cairo-dock cairo-dock-core cairo-dock-core-dev cairo-dock-core-locale"
 DESCRIPTION="Cairo-Dock core package."
 AUTHOR="Cairo-Dock Team"
 SITE="https://launchpad.net/cairo-dock-core"

@@ -22,10 +22,10 @@ build_compile() {
 # Install
 build_install() {
 
-  sudo make DESTDIR=$INSTALL_ROOT install || return 1
+  make DESTDIR=$INSTALL_ROOT install || return 1
 
   #fix .pc file to be able to request mono on what it depends, fixes go-oo build
-  sudo sed -i -e "s:#Requires:Requires:" ${INSTALL_ROOT}/usr/local/lib/pkgconfig/mono.pc || return 1
+  sed -i -e "s:#Requires:Requires:" ${INSTALL_ROOT}/usr/local/lib/pkgconfig/mono.pc || return 1
 
 }
 

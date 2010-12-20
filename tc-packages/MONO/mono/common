@@ -1,13 +1,10 @@
 PACKAGE="mono"
 VERSION="2.6.7"
-SOURCE="${PACKAGE}-${VERSION}.tar.bz2"
-TOP_SRC="${PACKAGE}-${VERSION}"
-SOURCE_URL="http://ftp.novell.com/pub/mono/sources/mono/mono-${VERSION}.tar.bz2"
+SOURCE="http://ftp.novell.com/pub/mono/sources/mono/mono-${VERSION}.tar.bz2"
 BUILD_DEPENDS="glib2
 glib2-dev
 libgdiplus"
 
-EXTENSIONS="mono mono-dev mono-doc mono-dbg mono-locale"
 DESCRIPTION="Cross platform, open source .NET framework."
 AUTHOR="Miguel de Icaza, Paolo Molaro, Dietmar Maurer"
 SITE="http://www.mono-project.com/"

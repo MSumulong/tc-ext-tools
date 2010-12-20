@@ -1,13 +1,10 @@
 PACKAGE="assimp"
 VERSION="2.0.863"
-SOURCE="assimp--${VERSION}-sdk.zip"
-TOP_SRC="assimp--${VERSION}-sdk"
-SOURCE_URL="http://garr.dl.sourceforge.net/project/assimp/assimp-${VERSION%.*}/assimp--${VERSION}-sdk.zip"
+SOURCE="http://garr.dl.sourceforge.net/project/assimp/assimp-${VERSION%.*}/assimp--${VERSION}-sdk.zip"
 BUILD_DEPENDS="cmake
 boost
 boost-dev"
 
-EXTENSIONS="assimp assimp-dev"
 DESCRIPTION="Open Asset Import Library."
 AUTHOR="various"
 SITE="http://assimp.sourceforge.net/"

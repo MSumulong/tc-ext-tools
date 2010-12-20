@@ -21,7 +21,7 @@ build_install() {
    make DESTDIR="$INSTALL_ROOT" install || return 1
 
    install -m 755 -d "$INSTALL_ROOT"/usr/local/lib/ConsoleKit/run-session.d
-   install -m 755 "$PACKAGE_SRC"/pam-foreground-compat.ck "$INSTALL_ROOT"/usr/local/lib/ConsoleKit/run-session.d
+   install -m 755 "$PACKAGE_SRC"/pam-foreground-compat.ck "$INSTALL_ROOT"/usr/local/lib/ConsoleKit/run-session.d || return 1
 
 }
 

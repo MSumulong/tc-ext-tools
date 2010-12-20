@@ -1,12 +1,9 @@
 PACKAGE="catfish"
 VERSION="0.3.2"
-SOURCE="${PACKAGE}-${VERSION}.tar.gz"
-TOP_SRC="${PACKAGE}-${VERSION}"
-SOURCE_URL="http://www.twotoasts.de/media/catfish/catfish-${VERSION}.tar.gz"
+SOURCE="http://www.twotoasts.de/media/catfish/catfish-${VERSION}.tar.gz"
 BUILD_DEPENDS="python
 python-dev"
 
-EXTENSIONS="catfish catfish-locale"
 DESCRIPTION="A versatile file searching tool."
 AUTHOR="Christian Dywan"
 SITE="http://software.twotoasts.de/index.php?/pages/catfish_summary.html"

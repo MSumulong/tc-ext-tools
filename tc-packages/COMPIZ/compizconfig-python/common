@@ -1,8 +1,6 @@
 PACKAGE="compizconfig-python"
 VERSION="0.8.4"
-SOURCE="${PACKAGE}-${VERSION}.tar.bz2"
-TOP_SRC="${PACKAGE}-${VERSION}"
-SOURCE_URL="http://releases.compiz-fusion.org/${VERSION}/${PACKAGE}-${VERSION}.tar.bz2"
+SOURCE="http://releases.compiz-fusion.org/${VERSION}/${PACKAGE}-${VERSION}.tar.bz2"
 BUILD_DEPENDS="glib2
 glib2-dev
 compiz
@@ -13,7 +11,6 @@ python
 python-dev
 pyrex-2.7"
 
-EXTENSIONS="compizconfig-python"
 DESCRIPTION="Python bindings for libcompizconfig."
 AUTHOR="various"
 SITE="http://www.compiz.org/"

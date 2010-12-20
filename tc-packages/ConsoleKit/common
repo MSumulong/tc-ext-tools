@@ -1,8 +1,6 @@
 PACKAGE="ConsoleKit"
 VERSION="0.4.1"
-SOURCE="${PACKAGE}-${VERSION}.tar.bz2"
-SOURCE_URL="http://www.freedesktop.org/software/ConsoleKit/dist/ConsoleKit-${VERSION}.tar.bz2"
-TOP_SRC="${PACKAGE}-${VERSION}"
+SOURCE="http://www.freedesktop.org/software/ConsoleKit/dist/ConsoleKit-${VERSION}.tar.bz2"
 BUILD_DEPENDS="Xorg-7.5
 Xorg-7.5-dev
 polkit
@@ -15,7 +13,6 @@ glib2-dev
 expat2
 expat2-dev"
 
-EXTENSIONS="ConsoleKit ConsoleKit-dev"
 DESCRIPTION="ConsoleKit  is a framework for defining and tracking users, login sessions, and seats."
 AUTHOR="William Jon McCann"
 SITE="http://www.freedesktop.org/wiki/Software/ConsoleKit"

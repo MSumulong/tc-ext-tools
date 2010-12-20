@@ -1,8 +1,6 @@
 PACKAGE="NetworkManager-vpnc"
 VERSION="0.8.2"
-SOURCE="${PACKAGE}-${VERSION}.tar.bz2"
-SOURCE_URL="http://ftp.gnome.org/pub/GNOME/sources/NetworkManager-vpnc/0.8/NetworkManager-vpnc-$VERSION.tar.bz2"
-TOP_SRC="${PACKAGE}-${VERSION}"
+SOURCE="http://ftp.gnome.org/pub/GNOME/sources/NetworkManager-vpnc/0.8/NetworkManager-vpnc-$VERSION.tar.bz2"
 BUILD_DEPENDS="NetworkManager
 NetworkManager-dev
 dbus-glib
@@ -19,7 +17,6 @@ libglade-dev
 gudev-lib
 gudev-dev"
 
-EXTENSIONS="NetworkManager-vpnc NetworkManager-vpnc-locale"
 DESCRIPTION="NetworkManager vpnc plugin."
 AUTHOR="Dan Williams, David Zeuthen"
 SITE="http://projects.gnome.org/NetworkManager/"

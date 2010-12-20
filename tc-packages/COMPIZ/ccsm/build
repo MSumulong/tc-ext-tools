@@ -21,7 +21,7 @@ build_compile() {
 ### Install
 build_install() {
 
-  sudo python setup.py install --prefix=/usr/local --root=${INSTALL_ROOT} || return 1
+  python setup.py install --prefix=/usr/local --root=${INSTALL_ROOT} || return 1
 
 }
 ##

@@ -17,13 +17,13 @@ build_compile() {
 
 build_install() {
 
-   sudo make DESTDIR=$INSTALL_ROOT install || return 1
+   make DESTDIR=$INSTALL_ROOT install || return 1
 
-   sudo install -D -m 644 "$PACKAGE_SRC"/other "$INSTALL_ROOT"/usr/local/etc/pam.d/other || return 1
-   sudo install -D -m 644 "$PACKAGE_SRC"/system-auth "$INSTALL_ROOT"/usr/local/etc/pam.d/system-auth || return 1
+   install -D -m 644 "$PACKAGE_SRC"/other "$INSTALL_ROOT"/usr/local/etc/pam.d/other || return 1
+   install -D -m 644 "$PACKAGE_SRC"/system-auth "$INSTALL_ROOT"/usr/local/etc/pam.d/system-auth || return 1
 
-   sudo chmod 4755 "$INSTALL_ROOT"/usr/local/sbin/unix_chkpwd || return 1
-   sudo chmod 4755 "$INSTALL_ROOT"/usr/local/sbin/pam_timestamp_check || return 1
+   chmod 4755 "$INSTALL_ROOT"/usr/local/sbin/unix_chkpwd || return 1
+   chmod 4755 "$INSTALL_ROOT"/usr/local/sbin/pam_timestamp_check || return 1
 
 }
 

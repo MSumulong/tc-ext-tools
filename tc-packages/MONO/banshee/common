@@ -1,10 +1,6 @@
 PACKAGE="banshee"
 VERSION="1.8.0"
-SOURCE="${PACKAGE}-1-${VERSION}.tar.bz2"
-TOP_SRC="${PACKAGE}-1-${VERSION}"
-SOURCE_URL="http://download.banshee-project.org/banshee/stable/$VERSION/banshee-1-${VERSION}.tar.bz2"
-ICON="/usr/local/share/icons/hicolor/48x48/apps/media-player-banshee.png"
-DESKTOP_ENTRY="/usr/local/share/applications/banshee.desktop"
+SOURCE="http://download.banshee-project.org/banshee/stable/$VERSION/banshee-1-${VERSION}.tar.bz2"
 BUILD_DEPENDS="mono
 mono-dev
 gtk-sharp
@@ -35,7 +31,6 @@ libmtp-dev
 libgoogle-data-mono
 boo"
 
-EXTENSIONS="banshee banshee-locale banshee-doc banshee-dbg"
 DESCRIPTION="A music management and playback application for GNOME."
 AUTHOR="various"
 SITE="http://banshee-project.org/"
