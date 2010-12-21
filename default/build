@@ -16,7 +16,6 @@ build_configure() {
    #
 
    # cmake
-   #[ -d build ] && sudo rm -rf build
    #mkdir build
    #cd build
    #cmake -DCMAKE_INSTALL_PREFIX=/usr/local -DCMAKE_BUILD_TYPE=Release .. || return 1
