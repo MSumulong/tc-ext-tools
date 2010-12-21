@@ -8,6 +8,13 @@ sudo chown "${USER}:staff" "/home/${USER}/.gstreamer-0.10" > /dev/null 2>&1
 [ -x $(which gtk-update-icon-cache) ] && sudo gtk-update-icon-cache -q -f -t /usr/local/share/icons/hicolor > /dev/null 2>&1
 [ -x $(which update-gconf-database) ] && sudo update-gconf-database register cheese > /dev/null 2>&1
 
+/usr/local/etc/init.d/dbus status
+if [ "$?" -gt 0 ]; then
+    /usr/local/etc/init.d/dbus start
+else
+    /usr/local/etc/init.d/dbus restart
+fi
+
 /usr/local/etc/init.d/haldaemon status
 if [ "$?" -gt 0 ]; then
     /usr/local/etc/init.d/haldaemon start

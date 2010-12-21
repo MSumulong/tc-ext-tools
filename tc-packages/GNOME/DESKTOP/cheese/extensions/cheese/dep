@@ -10,6 +10,7 @@ librsvg.tcz
 libcanberra.tcz
 hal.tcz
 libiconv.tcz
+krb5.tcz
 evolution-data-server.tcz
 shared-mime-info.tcz
 hicolor-icon-theme.tcz

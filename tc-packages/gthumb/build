@@ -11,21 +11,7 @@
 
 build_configure() {
 
-   # autotools
-   ./configure --prefix=/usr/local || return 1
-   #
-
-   # cmake
-   #mkdir build
-   #cd build
-   #cmake -DCMAKE_INSTALL_PREFIX=/usr/local -DCMAKE_BUILD_TYPE=Release .. || return 1
-   #
-
-   # python
-   #python setup.py configure || return 1
-
-   # waf
-   #./waf configure --prefix=/usr/local || return 1
+   ./configure --prefix=/usr/local --localstatedir=/var --disable-static || return 1
 
 }
 
@@ -35,18 +21,7 @@ build_configure() {
 
 build_compile() {
 
-   #cd build # cmake
    make || return 1
-   #
-
-   # python
-   #python setup.py build || return 1
-
-   # jam
-   #jam || return 1
-
-   # waf
-   #./waf build || return 1
 
 }
 
@@ -56,26 +31,7 @@ build_compile() {
 
 build_install() {
 
-   # DESTDIR
-   #cd build # cmake
    make DESTDIR="$INSTALL_ROOT" install || return 1
-   #
-
-   # INSTALL_ROOT
-   #cd build # cmake
-   #make INSTALL_ROOT="$INSTALL_ROOT" install || return 1
-   #
-
-   # python install
-   #python setup.py install --prefix=/usr/local --root="$INSTALL_ROOT" || return 1
-   #
-
-   # jam
-   #DESTDIR="$INSTALL_ROOT" jam install || return 1
-   #
-
-   # waf
-   #./waf install --destdir="$INSTALL_ROOT" || return 1
 
 }
 
