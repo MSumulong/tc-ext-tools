@@ -1,3 +1,5 @@
+ICON="/usr/local/share/icons/hicolor/64x64/apps/chromium-browser.png"
+DESKTOP="/usr/local/share/applications/chromium-browser.desktop"
 COMMENTS="This is Chromium, the open source project behind Google Chrome. Chrome is the official build of Google.
 		Chromium VS Chrome :
 		http://code.google.com/p/chromium/wiki/ChromiumBrowserVsGoogleChrome

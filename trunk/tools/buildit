@@ -289,20 +289,20 @@ show_it() {
 
    case "$1" in
         download) 
-                 [ -e "$TCEXTTOOLS_DOWNLOAD_LOG" ] && cat "$TCEXTTOOLS_DOWNLOAD_LOG"
+                 [ -e "$TCEXTTOOLS_DOWNLOAD_LOG" ] && { cat "$TCEXTTOOLS_DOWNLOAD_LOG" ; echo -e "${NORMAL}\c" ; }
                  ;;
         configure)
-                 [ -e "$TCEXTTOOLS_CONFIGURE_LOG" ] && cat "$TCEXTTOOLS_CONFIGURE_LOG"
+                 [ -e "$TCEXTTOOLS_CONFIGURE_LOG" ] && { cat "$TCEXTTOOLS_CONFIGURE_LOG" ; echo -e "${NORMAL}\c" ; }
                  ;;
         compile)
-                 [ -e "$TCEXTTOOLS_COMPILE_LOG" ] && cat "$TCEXTTOOLS_COMPILE_LOG"
+                 [ -e "$TCEXTTOOLS_COMPILE_LOG" ] && { cat "$TCEXTTOOLS_COMPILE_LOG" ; echo -e "${NORMAL}\c" ; }
                  ;;
         install)
-                 [ -e "$TCEXTTOOLS_INSTALL_LOG" ] && cat "$TCEXTTOOLS_INSTALL_LOG"
+                 [ -e "$TCEXTTOOLS_INSTALL_LOG" ] && { cat "$TCEXTTOOLS_INSTALL_LOG" ; echo -e "${NORMAL}\c" ; }
                  ;;
         error)
-                 [ -e "$TCEXTTOOLS_ERROR_LOG" ] && cat "$TCEXTTOOLS_ERROR_LOG"
-                 [ -e "$TCEXTTOOLS_ERROR_LOG_2" ] && cat "$TCEXTTOOLS_ERROR_LOG_2"
+                 [ -e "$TCEXTTOOLS_ERROR_LOG" ] && { cat "$TCEXTTOOLS_ERROR_LOG" ; echo -e "${NORMAL}\c" ; }
+                 [ -e "$TCEXTTOOLS_ERROR_LOG_2" ] && { cat "$TCEXTTOOLS_ERROR_LOG_2" ; echo -e "${NORMAL}\c" ; }
                  ;;
         *)
                  print_it warning "Usage: buildit show download|configure|compile|install|error"
