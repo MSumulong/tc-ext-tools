@@ -1,7 +1,6 @@
 PACKAGE="virtualbox-ose-beta"
 VERSION="4.0.0"
-BETAVERSION="BETA1"
-SOURCE="http://download.virtualbox.org/virtualbox/${VERSION}_${BETAVERSION}/VirtualBox-${VERSION}_${BETAVERSION}-OSE.tar.bz2"
+SOURCE="http://download.virtualbox.org/virtualbox/${VERSION}/VirtualBox-${VERSION}.tar.bz2"
 BUILD_DEPENDS="coreutils
 bzip2
 libxslt
@@ -46,5 +45,6 @@ SITE="http://www.virtualbox.org/"
 COPYING="GPL-2"
 MAINTAINERS="Arslan S."
 COMMENTS="This extension is PPI compatible."
-CHANGELOG="---"
-CURRENT="First Version"
+CHANGELOG="2010/10/16 First Version 3.2.10
+		2010/12/02 Updated to 3.2.12"
+CURRENT="Updated to $VERSION"

@@ -8,7 +8,7 @@ usr/local/bin/VBoxManage
 usr/local/bin/VBox
 usr/local/share/doc/virtualbox-ose/license
 usr/local/share/pixmaps/VBox.png
-usr/local/share/applications/virtualbox.desktop
+usr/local/share/applications/virtualbox-ose-beta.desktop
 usr/local/lib/virtualbox
 usr/local/etc/init.d/vboxdrv
 

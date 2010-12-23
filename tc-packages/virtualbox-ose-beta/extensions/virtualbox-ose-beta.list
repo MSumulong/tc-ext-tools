@@ -80,7 +80,7 @@ usr/local/share/virtualbox/nls/qt_ar.qm
 usr/local/share/virtualbox/nls/VirtualBox_de.qm
 usr/local/share/virtualbox/nls/VirtualBox_ru.qm
 usr/local/share/virtualbox/nls/VirtualBox_id.qm
-usr/local/share/applications/virtualbox.desktop
+usr/local/share/applications/virtualbox-ose-beta.desktop
 usr/local/share/virtualbox-ose-additions/xorg.conf.sample
 usr/local/lib/VBoxOGLpassthroughspu.so
 usr/local/lib/VBoxOGL.so
