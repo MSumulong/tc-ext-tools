@@ -59,6 +59,7 @@ this_split() {
 
    for i in $CONTENTS
    do
+       i=$(eval echo $i)
        if [ -z "$(echo "$i" | grep '*')" ]; then
                if [ "${i#\#}" = "$i" ]; then
                     if [ "${i#x-}" = "$i" ]; then

@@ -126,7 +126,7 @@ set_source() {
      fi
 
      if [ -z "$VCS" ]; then
-          [ -d "$TCEXTTOOLS_SRC_TEMP" ] && TOP_SRC=$(ls -el $TCEXTTOOLS_SRC_TEMP | egrep '^d' | cut -d : -f3 | cut -d " " -f3)
+          [ -d "$TCEXTTOOLS_SRC_TEMP" ] && TOP_SRC=$(busybox ls -el $TCEXTTOOLS_SRC_TEMP | egrep '^d' | cut -d : -f3 | cut -d " " -f3)
      else
           TOP_SRC=${PACKAGE}-${VERSION}
      fi
@@ -144,7 +144,7 @@ set_source() {
 
 set_extensions() {
 
-   [ -d "$PACKAGE_EXTENSIONS" ] && EXTENSIONS=$(ls -el $PACKAGE_EXTENSIONS | egrep '^d' | cut -d : -f3 | cut -d " " -f3)
+   [ -d "$PACKAGE_EXTENSIONS" ] && EXTENSIONS=$(busybox ls -el $PACKAGE_EXTENSIONS | egrep '^d' | cut -d : -f3 | cut -d " " -f3)
 
 }
 
