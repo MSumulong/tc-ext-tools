@@ -51,7 +51,7 @@ build_install() {
   install -m 755 -D out/Release/libffmpegsumo.so ${INSTALL_ROOT}/usr/local/chromium-browser/libffmpegsumo.so || return 1
   install -m 644 -D out/Release/resources.pak ${INSTALL_ROOT}/usr/local/chromium-browser/resources.pak || return 1
   install -m 755 -D out/Release/xdg-settings ${INSTALL_ROOT}/usr/local/chromium-browser/xdg-settings || return 1
-  cp -R out/Release/resources ${INSTALL_ROOT}/usr/local/chromium-browser || return 1
+  cp -a out/Release/resources ${INSTALL_ROOT}/usr/local/chromium-browser || return 1
   install -m 644 -D out/Release/chrome.1 ${INSTALL_ROOT}/usr/local/share/man/man1/chromium-browser.1 || return 1
   install -m 644 -D ${PACKAGE_SRC}/chromium-browser.desktop ${INSTALL_ROOT}/usr/local/share/applications/chromium-browser.desktop || return 1
   install -m 755 -D ${PACKAGE_SRC}/chromium-browser.sh ${INSTALL_ROOT}/usr/local/bin/chromium-browser || return 1
