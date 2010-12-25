@@ -1,11 +1,8 @@
 PACKAGE="google-perftools"
 VERSION="1.6"
-SOURCE="${PACKAGE}-${VERSION}.tar.gz"
-TOP_SRC="${PACKAGE}-${VERSION}"
-SOURCE_URL="http://google-perftools.googlecode.com/files/google-perftools-${VERSION}.tar.gz"
+SOURCE="http://google-perftools.googlecode.com/files/google-perftools-${VERSION}.tar.gz"
 BUILD_DEPENDS=""
 
-EXTENSIONS="google-perftools google-perftools-dev google-perftools-doc"
 DESCRIPTION="Fast, multi-threaded malloc() and nifty performance analysis tools."
 AUTHOR="Google Inc."
 SITE="http://code.google.com/p/google-perftools/"

@@ -1,12 +1,9 @@
 PACKAGE="freeglut"
 VERSION="2.6.0"
-SOURCE="${PACKAGE}-${VERSION}.tar.gz"
-TOP_SRC="${PACKAGE}-${VERSION}"
-SOURCE_URL="http://downloads.sourceforge.net/freeglut/freeglut-${VERSION}.tar.gz"
+SOURCE="http://downloads.sourceforge.net/freeglut/freeglut-${VERSION}.tar.gz"
 BUILD_DEPENDS="Xorg-7.5
 Xorg-7.5-dev"
 
-EXTENSIONS="freeglut freeglut-dev"
 DESCRIPTION="Open Source alternative to the OpenGL Utility Toolkit (GLUT)."
 AUTHOR="Pawel W. Olszta, Andreas Umbach, Steve Baker"
 SITE="http://freeglut.sourceforge.net"

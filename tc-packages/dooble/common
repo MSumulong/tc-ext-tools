@@ -1,10 +1,6 @@
 PACKAGE="dooble"
 VERSION="1.14"
-SOURCE="Dooble.d-${VERSION}.tar.gz"
-TOP_SRC="dooble.d"
-SOURCE_URL="http://sourceforge.net/projects/dooble/files/Version%20${VERSION}/Dooble.d-${VERSION}.tar.gz/download"
-ICON=""
-DESKTOP_ENTRY=""
+SOURCE="http://sourceforge.net/projects/dooble/files/Version%20${VERSION}/Dooble.d-${VERSION}.tar.gz/download"
 BUILD_DEPENDS="qt-4.x-base
 qt-4.x-webkit
 qt-4.x-sql
@@ -13,7 +9,6 @@ sharutils
 Xorg-7.5-lib
 Xorg-7.5-dev"
 
-EXTENSIONS="dooble dooble-themes dooble-backgrounds"
 DESCRIPTION="Dooble is a web browser based on Qt/Webkit."
 AUTHOR="The Dooble Team"
 SITE="http://dooble.sourceforge.net/"

@@ -42,7 +42,6 @@ intel-tbb-dev
 google-perftools
 google-perftools-dev"
 
-EXTENSIONS="gazebo"
 DESCRIPTION="A dynamic multi-robot simulator."
 AUTHOR="Nate Koenig, Andrew Howard"
 SITE="http://playerstage.sourceforge.net/"

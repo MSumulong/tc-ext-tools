@@ -14,7 +14,6 @@ Xorg-7.5-dev
 freeglut
 freeglut-dev"
 
-EXTENSIONS="celestia celestia-locale"
 DESCRIPTION="A real-time space simulation in 3D."
 AUTHOR="Celestia Development Team"
 SITE="http://www.shatters.net/celestia/"

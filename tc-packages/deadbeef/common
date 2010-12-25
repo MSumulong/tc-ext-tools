@@ -1,10 +1,6 @@
 PACKAGE="deadbeef"
 VERSION="0.4.4"
-SOURCE="${PACKAGE}-${VERSION}.tar.bz2"
-TOP_SRC="${PACKAGE}-${VERSION}"
-SOURCE_URL="http://downloads.sourceforge.net/project/deadbeef/deadbeef-${VERSION}.tar.bz2"
-ICON="/usr/local/share/icons/hicolor/48x48/apps/deadbeef.png"
-DESKTOP_ENTRY="/usr/local/share/applications/deadbeef.desktop"
+SOURCE="http://downloads.sourceforge.net/project/deadbeef/deadbeef-${VERSION}.tar.bz2"
 BUILD_DEPENDS="libasound
 alsa-dev
 pulseaudio
@@ -43,7 +39,6 @@ Xorg-7.5-dev
 libiconv
 libiconv-dev"
 
-EXTENSIONS="deadbeef deadbeef-locale"
 DESCRIPTION="DeaDBeeF - ultimate music player for GNU/Linux systems with X11."
 AUTHOR="Alexey Yakovenko, Viktor Semykin, Stas Akimushkin"
 SITE="http://deadbeef.sourceforge.net/"

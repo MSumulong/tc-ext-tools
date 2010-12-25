@@ -1,8 +1,6 @@
 PACKAGE="dvdauthor"
 VERSION="0.6.18"
-SOURCE="${PACKAGE}-${VERSION}.tar.gz"
-TOP_SRC="${PACKAGE}"
-SOURCE_URL="http://downloads.sourceforge.net/project/dvdauthor/dvdauthor/${VERSION}/dvdauthor-${VERSION}.tar.gz"
+SOURCE="http://downloads.sourceforge.net/project/dvdauthor/dvdauthor/${VERSION}/dvdauthor-${VERSION}.tar.gz"
 BUILD_DEPENDS="ImageMagick
 ImageMagick-dev
 bzip2-lib
@@ -22,7 +20,6 @@ glib2
 glib2-dev
 glibc_gconv"
 
-EXTENSIONS="dvdauthor"
 DESCRIPTION="Generates DVD movies from mpeg2 stream."
 AUTHOR="Scott Smith"
 SITE="http://dvdauthor.sourceforge.net/"

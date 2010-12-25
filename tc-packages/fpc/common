@@ -1,13 +1,10 @@
 PACKAGE="fpc"
 VERSION="2.4.0"
-SOURCE="fpcbuild-${VERSION}.tar.gz"
-TOP_SRC="fpcbuild-${VERSION}"
-SOURCE_URL="ftp://ftp.freepascal.org/pub/fpc/dist/${VERSION}/source/fpcbuild-${VERSION}.tar.gz"
+SOURCE="ftp://ftp.freepascal.org/pub/fpc/dist/${VERSION}/source/fpcbuild-${VERSION}.tar.gz"
 BUILD_DEPENDS="ncurses
 ncurses-dev
 fpc"
 
-EXTENSIONS="fpc fpc-doc"
 DESCRIPTION="Open source compiler for Pascal and Object Pascal."
 AUTHOR="various"
 SITE="http://www.freepascal.org/"

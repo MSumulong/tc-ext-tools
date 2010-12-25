@@ -1,12 +1,9 @@
 PACKAGE="desktop-file-utils"
 VERSION="0.17"
-SOURCE="${PACKAGE}-${VERSION}.tar.bz2"
-TOP_SRC="${PACKAGE}-${VERSION}"
-SOURCE_URL="http://www.freedesktop.org/software/desktop-file-utils/releases/desktop-file-utils-${VERSION}.tar.bz2"
+SOURCE="http://www.freedesktop.org/software/desktop-file-utils/releases/desktop-file-utils-${VERSION}.tar.bz2"
 BUILD_DEPENDS="glib2
 glib2-dev"
 
-EXTENSIONS="desktop-file-utils"
 DESCRIPTION="Utilities for working with desktop entries."
 AUTHOR="Havoc Pennington, Alex Larsson, Vincent Untz"
 SITE="http://www.freedesktop.org/wiki/Software/desktop-file-utils"

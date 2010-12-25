@@ -1,11 +1,8 @@
 PACKAGE="dhcpcd"
 VERSION="5.2.8"
-SOURCE="${PACKAGE}-${VERSION}.tar.bz2"
-TOP_SRC="${PACKAGE}-${VERSION}"
-SOURCE_URL="http://roy.marples.name/downloads/dhcpcd/dhcpcd-${VERSION}.tar.bz2"
+SOURCE="http://roy.marples.name/downloads/dhcpcd/dhcpcd-${VERSION}.tar.bz2"
 BUILD_DEPENDS=""
 
-EXTENSIONS="dhcpcd dhcpcd-doc"
 DESCRIPTION="A RFC2131 compliant DHCP client."
 AUTHOR="Roy Marples"
 SITE="http://roy.marples.name/projects/dhcpcd"

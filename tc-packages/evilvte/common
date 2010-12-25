@@ -1,16 +1,11 @@
 PACKAGE="evilvte"
 VERSION="0.4.7.1"
-SOURCE="${PACKAGE}-${VERSION}.tar.gz"
-TOP_SRC="${PACKAGE}-${VERSION}"
-SOURCE_URL="http://www.calno.com/evilvte/evilvte-${VERSION}.tar.gz"
-ICON="/usr/local/share/pixmaps/evilvte.png"
-DESKTOP_ENTRY="/usr/local/share/applications/evilvte.desktop"
+SOURCE="http://www.calno.com/evilvte/evilvte-${VERSION}.tar.gz"
 BUILD_DEPENDS="gtk2
 gtk2-dev
 vte
 vte-dev"
 
-EXTENSIONS="evilvte"
 DESCRIPTION="VTE based, highly customizable terminal emulator."
 AUTHOR="Wen-Yen Chuang"
 SITE="http://www.calno.com/evilvte/"

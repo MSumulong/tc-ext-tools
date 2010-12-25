@@ -1,10 +1,6 @@
 PACKAGE="codeblocks"
 VERSION="10.05"
-SOURCE="${PACKAGE}-${VERSION}-src.tar.bz2"
-TOP_SRC="${PACKAGE}-${VERSION}-release"
-SOURCE_URL="http://download.berlios.de/codeblocks/codeblocks-${VERSION}-src.tar.bz2"
-ICON="/usr/local/share/pixmaps/codeblocks.png"
-DESKTOP_ENTRY="/usr/local/share/applications/codeblocks.desktop"
+SOURCE="http://download.berlios.de/codeblocks/codeblocks-${VERSION}-src.tar.bz2"
 BUILD_DEPENDS="gtk2
 gtk2-dev
 wxgtk
@@ -13,7 +9,6 @@ bzip2-lib
 bzip2-dev
 zip-unzip"
 
-EXTENSIONS="codeblocks"
 DESCRIPTION="The open source, cross platform, free C++ IDE."
 AUTHOR="The Code::Blocks Team"
 SITE="http://www.codeblocks.org"

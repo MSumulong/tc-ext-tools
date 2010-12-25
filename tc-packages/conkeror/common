@@ -4,7 +4,6 @@ SOURCE="git://repo.or.cz/conkeror.git"
 VCS="git"
 BUILD_DEPENDS=""
 
-EXTENSIONS="conkeror"
 DESCRIPTION="Conkeror is a free, keyboard-driven, Mozilla-based web browser."
 AUTHOR="various"
 SITE="http://conkeror.org/"

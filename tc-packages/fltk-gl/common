@@ -1,14 +1,11 @@
 PACKAGE="fltk-gl"
 VERSION="1.1.10"
-SOURCE="fltk-${VERSION}-source.tar.bz2"
-TOP_SRC="fltk-${VERSION}"
-SOURCE_URL="http://ftp.easysw.com/pub/fltk/${VERSION}/fltk-${VERSION}-source.tar.bz2"
+SOURCE="http://ftp.easysw.com/pub/fltk/${VERSION}/fltk-${VERSION}-source.tar.bz2"
 BUILD_DEPENDS="libxft
 libxft-dev
 Xorg-7.5
 Xorg-7.5-dev"
 
-EXTENSIONS="fltk-gl"
 DESCRIPTION="FLTK with OpenGL support."
 AUTHOR="fltk.org"
 SITE="http://www.fltk.org/"

@@ -1,2 +1,0 @@
-COMMENTS="You need pulseaudio or alsa or OSS for sound output plugins.
-		This extension is PPI compatible."
