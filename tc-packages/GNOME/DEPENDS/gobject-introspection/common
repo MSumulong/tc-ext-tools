@@ -1,8 +1,6 @@
 PACKAGE="gobject-introspection"
 VERSION="0.9.12"
-SOURCE="${PACKAGE}-${VERSION}.tar.bz2"
-SOURCE_URL="http://ftp.gnome.org/pub/GNOME/sources/gobject-introspection/0.9/gobject-introspection-${VERSION}.tar.bz2"
-TOP_SRC="${PACKAGE}-${VERSION}"
+SOURCE="http://ftp.gnome.org/pub/GNOME/sources/gobject-introspection/0.9/gobject-introspection-${VERSION}.tar.bz2"
 BUILD_DEPENDS="python
 python-dev
 libffi
@@ -14,7 +12,6 @@ cairo-dev
 Xorg-7.5-lib
 Xorg-7.5-dev"
 
-EXTENSIONS="gobject-introspection gobject-introspection-dev gobject-introspection-doc"
 DESCRIPTION="A project for providing machine readable introspection data of the API of C libraries."
 AUTHOR="Colin Walters, Johan Dahlin, Matthias Clasen, Jürg Billeter"
 SITE="http://live.gnome.org/GObjectIntrospection"

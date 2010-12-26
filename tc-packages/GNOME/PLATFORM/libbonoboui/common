@@ -1,8 +1,6 @@
 PACKAGE="libbonoboui"
 VERSION="2.24.4"
-SOURCE="${PACKAGE}-${VERSION}.tar.bz2"
-SOURCE_URL="http://ftp.gnome.org/pub/GNOME/sources/libbonoboui/${VERSION%.*}/libbonoboui-${VERSION}.tar.bz2"
-TOP_SRC="${PACKAGE}-${VERSION}"
+SOURCE="http://ftp.gnome.org/pub/GNOME/sources/libbonoboui/${VERSION%.*}/libbonoboui-${VERSION}.tar.bz2"
 BUILD_DEPENDS="popt
 popt-dev
 libxml2
@@ -25,7 +23,6 @@ Xorg-7.5-bin
 Xorg-7.5-lib
 Xorg-7.5-dev"
 
-EXTENSIONS="libbonoboui libbonoboui-dev libbonoboui-doc libbonoboui-locale"
 DESCRIPTION="Bonobo UI library."
 AUTHOR="GNOME Maintainers"
 SITE="http://www.gnome.org"

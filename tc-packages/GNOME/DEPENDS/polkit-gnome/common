@@ -1,14 +1,11 @@
 PACKAGE="polkit-gnome"
 VERSION="0.99"
-SOURCE="${PACKAGE}-${VERSION}.tar.bz2"
-SOURCE_URL="http://hal.freedesktop.org/releases/polkit-gnome-${VERSION}.tar.bz2"
-TOP_SRC="${PACKAGE}-${VERSION}"
+SOURCE="http://hal.freedesktop.org/releases/polkit-gnome-${VERSION}.tar.bz2"
 BUILD_DEPENDS="polkit
 polkit-dev
 gtk2
 gtk2-dev"
 
-EXTENSIONS="polkit-gnome polkit-gnome-dev polkit-gnome-locale"
 DESCRIPTION="D-Bus service to bring up authentication dialogs."
 AUTHOR="David Zeuthen"
 SITE="http://www.freedesktop.org/wiki/Software/PolicyKit"

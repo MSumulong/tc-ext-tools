@@ -1,8 +1,6 @@
 PACKAGE="libgnome"
 VERSION="2.32.0"
-SOURCE="${PACKAGE}-${VERSION}.tar.bz2"
-SOURCE_URL="http://ftp.gnome.org/pub/GNOME/sources/libgnome/${VERSION%.*}/libgnome-${VERSION}.tar.bz2"
-TOP_SRC="${PACKAGE}-${VERSION}"
+SOURCE="http://ftp.gnome.org/pub/GNOME/sources/libgnome/${VERSION%.*}/libgnome-${VERSION}.tar.bz2"
 BUILD_DEPENDS="glib2
 glib2-dev
 ORBit2
@@ -18,7 +16,6 @@ libcanberra-dev
 popt
 popt-dev"
 
-EXTENSIONS="libgnome libgnome-dev libgnome-doc libgnome-locale"
 DESCRIPTION="The GNOME library."
 AUTHOR="GNOME Maintainers"
 SITE="http://www.gnome.org"

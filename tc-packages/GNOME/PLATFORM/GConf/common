@@ -1,10 +1,10 @@
 PACKAGE="GConf"
 VERSION="2.32.0"
-SOURCE="${PACKAGE}-${VERSION}.tar.bz2"
-SOURCE_URL="http://ftp.gnome.org/pub/GNOME/sources/GConf/2.32/GConf-${VERSION}.tar.bz2"
-TOP_SRC="${PACKAGE}-${VERSION}"
+SOURCE="http://ftp.gnome.org/pub/GNOME/sources/GConf/2.32/GConf-${VERSION}.tar.bz2"
 BUILD_DEPENDS="dbus
+dbus-dev
 dbus-glib
+dbus-glib-dev
 ORBit2
 ORBit2-dev
 libxml2
@@ -22,7 +22,6 @@ cyrus-sasl-dev
 gobject-introspection
 gobject-introspection-dev"
 
-EXTENSIONS="GConf GConf-dev GConf-doc GConf-gir GConf-locale GConf-defaults-service"
 DESCRIPTION="GNOME configuration database system for storing application preferences."
 AUTHOR="Havoc Pennington"
 SITE="http://projects.gnome.org/gconf"

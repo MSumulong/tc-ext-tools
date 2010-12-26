@@ -1,8 +1,6 @@
 PACKAGE="sensors-applet"
 VERSION="2.2.7"
-SOURCE="${PACKAGE}-${VERSION}.tar.gz"
-TOP_SRC="${PACKAGE}-${VERSION}"
-SOURCE_URL="http://downloads.sourceforge.net/sensors-applet/sensors-applet-${VERSION}.tar.gz"
+SOURCE="http://downloads.sourceforge.net/sensors-applet/sensors-applet-${VERSION}.tar.gz"
 BUILD_DEPENDS="gnome-doc-utils
 rarian
 lm_sensors
@@ -22,7 +20,6 @@ dbus-dev
 dbus-glib
 dbus-glib-dev"
 
-EXTENSIONS="sensors-applet sensors-applet-dev sensors-applet-locale"
 DESCRIPTION="GNOME panel applets to display readings from hardware sensors."
 AUTHOR="Alex Murray"
 SITE="http://sensors-applet.sourceforge.net/"

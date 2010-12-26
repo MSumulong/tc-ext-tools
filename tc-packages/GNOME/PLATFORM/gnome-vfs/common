@@ -1,8 +1,6 @@
 PACKAGE="gnome-vfs"
 VERSION="2.24.4"
-SOURCE="${PACKAGE}-${VERSION}.tar.bz2"
-SOURCE_URL="http://ftp.gnome.org/pub/GNOME/sources/gnome-vfs/2.24/gnome-vfs-${VERSION}.tar.bz2"
-TOP_SRC="${PACKAGE}-${VERSION}"
+SOURCE="http://ftp.gnome.org/pub/GNOME/sources/gnome-vfs/2.24/gnome-vfs-${VERSION}.tar.bz2"
 BUILD_DEPENDS="glib2
 glib2-dev
 libxml2
@@ -29,7 +27,6 @@ hal-dev
 gnome-mime-data
 gtk-doc"
 
-EXTENSIONS="gnome-vfs gnome-vfs-dev gnome-vfs-doc gnome-vfs-locale"
 DESCRIPTION="GNOME Virtual File System."
 AUTHOR="GNOME Maintainers"
 SITE="http://www.gnome.org"

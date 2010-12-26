@@ -1,8 +1,6 @@
 PACKAGE="libcanberra"
 VERSION="0.26"
-SOURCE="${PACKAGE}-${VERSION}.tar.gz"
-SOURCE_URL="http://0pointer.de/lennart/projects/libcanberra/libcanberra-${VERSION}.tar.gz"
-TOP_SRC="${PACKAGE}-${VERSION}"
+SOURCE="http://0pointer.de/lennart/projects/libcanberra/libcanberra-${VERSION}.tar.gz"
 BUILD_DEPENDS="libasound
 alsa-dev
 libltdl
@@ -24,7 +22,6 @@ gtk2-dev
 GConf
 GConf-dev"
 
-EXTENSIONS="libcanberra libcanberra-dev libcanberra-doc"
 DESCRIPTION="Simple abstract interface for playing event sounds."
 AUTHOR="Lennart Poettering"
 SITE="http://0pointer.de/lennart/projects/libcanberra"

@@ -1,14 +1,11 @@
 PACKAGE="gamin"
 VERSION="0.1.10"
-SOURCE="${PACKAGE}-${VERSION}.tar.bz2"
-SOURCE_URL="http://ftp.gnome.org/pub/GNOME/sources/gamin/0.1/gamin-${VERSION}.tar.bz2"
-TOP_SRC="${PACKAGE}-${VERSION}"
+SOURCE="http://ftp.gnome.org/pub/GNOME/sources/gamin/0.1/gamin-${VERSION}.tar.bz2"
 BUILD_DEPENDS="python
 python-dev
 glib2
 glib2-dev"
 
-EXTENSIONS="gamin gamin-dev python-gamin"
 DESCRIPTION="File Alteration Monitor."
 AUTHOR="Daniel Veillard"
 SITE="http://www.gnome.org/~veillard/gamin/"

@@ -1,8 +1,6 @@
 PACKAGE="gtkhtml"
 VERSION="3.32.1"
-SOURCE="${PACKAGE}-${VERSION}.tar.bz2"
-SOURCE_URL="http://ftp.gnome.org/pub/GNOME/sources/gtkhtml/${VERSION%.*}/gtkhtml-${VERSION}.tar.bz2"
-TOP_SRC="${PACKAGE}-${VERSION}"
+SOURCE="http://ftp.gnome.org/pub/GNOME/sources/gtkhtml/${VERSION%.*}/gtkhtml-${VERSION}.tar.bz2"
 BUILD_DEPENDS="gtk2
 gtk2-dev
 ORBit2
@@ -18,7 +16,6 @@ libgnomeui-dev
 iso-codes
 gnome-icon-theme"
 
-EXTENSIONS="gtkhtml gtkhtml-dev gtkhtml-locale"
 DESCRIPTION="A lightweight HTML rendering/printing/editing engine."
 AUTHOR="GNOME Maintainers"
 SITE="http://www.gnome.org/"

@@ -1,12 +1,12 @@
 PACKAGE="libbonobo"
 VERSION="2.32.0"
-SOURCE="${PACKAGE}-${VERSION}.tar.bz2"
-SOURCE_URL="http://ftp.gnome.org/pub/GNOME/sources/libbonobo/${VERSION%.*}/libbonobo-${VERSION}.tar.bz2"
-TOP_SRC="${PACKAGE}-${VERSION}"
+SOURCE="http://ftp.gnome.org/pub/GNOME/sources/libbonobo/${VERSION%.*}/libbonobo-${VERSION}.tar.bz2"
 BUILD_DEPENDS="glib2
 glib2-dev
 dbus
+dbus-dev
 dbus-glib
+dbus-glib-dev
 ORBit2
 ORBit2-dev
 libxml2
@@ -14,7 +14,6 @@ libxml2-dev
 popt
 popt-dev"
 
-EXTENSIONS="libbonobo libbonobo-dev libbonobo-doc libbonobo-locale"
 DESCRIPTION="Bonobo is a set of language and system independent CORBA interfaces."
 AUTHOR="GNOME Maintainers"
 SITE="http://live.gnome.org/Bonobo"

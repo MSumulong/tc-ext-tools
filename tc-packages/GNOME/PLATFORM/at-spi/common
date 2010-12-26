@@ -1,8 +1,6 @@
 PACKAGE="at-spi"
 VERSION="1.32.0"
-SOURCE="${PACKAGE}-${VERSION}.tar.bz2"
-SOURCE_URL="http://ftp.gnome.org/pub/GNOME/sources/at-spi/${VERSION%.*}/at-spi-${VERSION}.tar.bz2"
-TOP_SRC="${PACKAGE}-${VERSION}"
+SOURCE="http://ftp.gnome.org/pub/GNOME/sources/at-spi/${VERSION%.*}/at-spi-${VERSION}.tar.bz2"
 BUILD_DEPENDS="libbonobo
 libbonobo-dev
 ORBit2
@@ -11,7 +9,10 @@ libgnomecanvas
 libgnomecanvas-dev
 gtk2
 gtk2-dev
+dbus
+dbus-dev
 dbus-glib
+dbus-glib-dev
 libxml2
 libxml2-dev
 popt
@@ -25,7 +26,6 @@ Xorg-7.5-dev
 python
 python-dev"
 
-EXTENSIONS="at-spi at-spi-dev at-spi-doc at-spi-locale at-spi-python"
 DESCRIPTION="The Gnome Accessibility Project."
 AUTHOR="GNOME Maintainers"
 SITE="http://www.gnome.org"

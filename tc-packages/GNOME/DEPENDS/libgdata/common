@@ -12,7 +12,6 @@ dbus-dev
 dbus-glib
 dbus-glib-dev"
 
-EXTENSIONS="libgdata libgdata-dev libgdata-doc libgdata-locale libgdata-gir"
 DESCRIPTION="GLib-based library for accessing online service APIs using the GData protocol."
 AUTHOR="Philip Withnall"
 SITE="http://live.gnome.org/libgdata"
