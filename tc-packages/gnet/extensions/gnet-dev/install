@@ -1,0 +1,7 @@
+usr/local/include
+usr/local/lib/pkgconfig
+usr/local/lib/*.a
+usr/local/lib/*.la
+usr/local/lib/gnet-2.0/include
+usr/local/share/aclocal
+usr/local/share/gtk-doc
