@@ -1,10 +1,6 @@
 PACKAGE="evince"
 VERSION="2.32.0"
-SOURCE="${PACKAGE}-${VERSION}.tar.bz2"
-SOURCE_URL="http://ftp.gnome.org/pub/GNOME/sources/evince/${VERSION%.*}/evince-${VERSION}.tar.bz2"
-TOP_SRC="${PACKAGE}-${VERSION}"
-ICON="/usr/local/share/icons/hicolor/48x48/apps/evince.png"
-DESKTOP_ENTRY="/usr/local/share/applications/evince.desktop"
+SOURCE="http://ftp.gnome.org/pub/GNOME/sources/evince/${VERSION%.*}/evince-${VERSION}.tar.bz2"
 BUILD_DEPENDS="gnome-doc-utils
 rarian
 gtk2
@@ -32,7 +28,6 @@ libgs
 openjpeg
 openjpeg-dev"
 
-EXTENSIONS="evince evince-dev evince-doc evince-locale"
 DESCRIPTION="Document Viewer of GNOME."
 AUTHOR="GNOME Maintainers"
 SITE="http://projects.gnome.org/evince/"

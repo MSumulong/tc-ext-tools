@@ -1,3 +1,5 @@
+ICON="/usr/local/share/icons/hicolor/48x48/apps/brasero.png"
+DESKTOP="/usr/local/share/applications/brasero.desktop"
 COMMENTS="Optional dependencies:
 			-cdrdao     : to burn CD-Rs at DAO mode (Disk-At-Once)
 			-dvdauthor  : to create video DVDs

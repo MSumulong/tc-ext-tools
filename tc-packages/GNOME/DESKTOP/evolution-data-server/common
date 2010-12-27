@@ -1,8 +1,6 @@
 PACKAGE="evolution-data-server"
 VERSION="2.32.1"
-SOURCE="${PACKAGE}-${VERSION}.tar.bz2"
-SOURCE_URL="http://ftp.gnome.org/pub/GNOME/sources/evolution-data-server/${VERSION%.*}/evolution-data-server-${VERSION}.tar.bz2"
-TOP_SRC="${PACKAGE}-${VERSION}"
+SOURCE="http://ftp.gnome.org/pub/GNOME/sources/evolution-data-server/${VERSION%.*}/evolution-data-server-${VERSION}.tar.bz2"
 BUILD_DEPENDS="glib2
 glib2-dev
 ORBit2
@@ -43,7 +41,6 @@ libiconv-dev
 libgdata
 libgdata-dev"
 
-EXTENSIONS="evolution-data-server evolution-data-server-dev evolution-data-server-doc evolution-data-server-locale"
 DESCRIPTION="Manages mail, calendar, addressbook, tasks and memo information."
 AUTHOR="GNOME Maintainers"
 SITE="http://www.gnome.org/"

@@ -1,8 +1,6 @@
 PACKAGE="gconf-editor"
 VERSION="2.32.0"
-SOURCE="${PACKAGE}-${VERSION}.tar.bz2"
-SOURCE_URL="http://ftp.se.debian.org/pub/gnome/sources/gconf-editor/${VERSION%.*}/gconf-editor-${VERSION}.tar.bz2"
-TOP_SRC="${PACKAGE}-${VERSION}"
+SOURCE="http://ftp.se.debian.org/pub/gnome/sources/gconf-editor/${VERSION%.*}/gconf-editor-${VERSION}.tar.bz2"
 BUILD_DEPENDS="gnome-doc-utils
 rarian
 dbus-glib
@@ -11,7 +9,6 @@ gtk2-dev
 GConf
 GConf-dev"
 
-EXTENSIONS="gconf-editor gconf-editor-locale"
 DESCRIPTION="A graphical editor for the GConf configuration system."
 AUTHOR="Anders Carlsson"
 SITE="http://www.gnome.org/"

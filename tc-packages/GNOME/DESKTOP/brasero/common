@@ -1,10 +1,6 @@
 PACKAGE="brasero"
 VERSION="2.32.1"
-SOURCE="${PACKAGE}-${VERSION}.tar.bz2"
-SOURCE_URL="http://ftp.gnome.org/pub/GNOME/sources/brasero/${VERSION%.*}/brasero-${VERSION}.tar.bz2"
-TOP_SRC="${PACKAGE}-${VERSION}"
-ICON="/usr/local/share/icons/hicolor/48x48/apps/brasero.png"
-DESKTOP_ENTRY="/usr/local/share/applications/brasero.desktop"
+SOURCE="http://ftp.gnome.org/pub/GNOME/sources/brasero/${VERSION%.*}/brasero-${VERSION}.tar.bz2"
 BUILD_DEPENDS="gnome-doc-utils
 rarian
 glib2
@@ -36,7 +32,6 @@ libburn-dev
 libisofs
 libisofs-dev"
 
-EXTENSIONS="brasero brasero-dev brasero-doc brasero-locale"
 DESCRIPTION="CD/DVD Burning Application of GNOME."
 AUTHOR="Philippe Rouquier"
 SITE="http://live.gnome.org/Brasero"

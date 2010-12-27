@@ -1,8 +1,6 @@
 PACKAGE="gcalctool"
 VERSION="5.32.2"
-SOURCE="${PACKAGE}-${VERSION}.tar.bz2"
-TOP_SRC="${PACKAGE}-${VERSION}"
-SOURCE_URL="http://ftp.gnome.org/pub/GNOME/sources/gcalctool/5.32/gcalctool-${VERSION}.tar.bz2"
+SOURCE="http://ftp.gnome.org/pub/GNOME/sources/gcalctool/5.32/gcalctool-${VERSION}.tar.bz2"
 BUILD_DEPENDS="gnome-doc-utils
 rarian
 gtk2
@@ -10,7 +8,6 @@ gtk2-dev
 GConf
 GConf-dev"
 
-EXTENSIONS="gcalctool gcalctool-locale"
 DESCRIPTION="A calculator application for GNOME."
 AUTHOR="Rich Burridge"
 SITE="http://live.gnome.org/Gcalctool"

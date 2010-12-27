@@ -1,10 +1,6 @@
 PACKAGE="eog"
 VERSION="2.32.1"
-SOURCE="${PACKAGE}-${VERSION}.tar.bz2"
-SOURCE_URL="http://ftp.gnome.org/pub/GNOME/sources/eog/${VERSION%.*}/eog-${VERSION}.tar.bz2"
-TOP_SRC="${PACKAGE}-${VERSION}"
-ICON="/usr/local/share/icons/hicolor/32x32/apps/eog.png"
-DESKTOP_ENTRY="/usr/local/share/applications/eog.desktop"
+SOURCE="http://ftp.gnome.org/pub/GNOME/sources/eog/${VERSION%.*}/eog-${VERSION}.tar.bz2"
 BUILD_DEPENDS="gnome-doc-utils
 rarian
 glib2
@@ -31,7 +27,6 @@ python-dev
 pygtk-2.7
 pygtk-2.7-dev"
 
-EXTENSIONS="eog eog-dev eog-doc eog-locale"
 DESCRIPTION="The Eye of GNOME image viewer."
 AUTHOR="GNOME Maintainers"
 SITE="http://projects.gnome.org/eog/"

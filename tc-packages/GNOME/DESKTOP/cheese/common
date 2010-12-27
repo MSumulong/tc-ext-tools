@@ -43,7 +43,6 @@ evolution-data-server-dev
 libiconv
 libiconv-dev"
 
-EXTENSIONS="cheese cheese-dev cheese-locale"
 DESCRIPTION="Take pictures and videos from your web cam."
 AUTHOR="various"
 SITE="http://projects.gnome.org/cheese/"
