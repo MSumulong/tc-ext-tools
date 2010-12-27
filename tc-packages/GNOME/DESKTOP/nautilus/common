@@ -1,8 +1,6 @@
 PACKAGE="nautilus"
 VERSION="2.32.1"
-SOURCE="${PACKAGE}-${VERSION}.tar.bz2"
-SOURCE_URL="http://ftp.gnome.org/pub/GNOME/sources/nautilus/${VERSION%.*}/nautilus-${VERSION}.tar.bz2"
-TOP_SRC="${PACKAGE}-${VERSION}"
+SOURCE="http://ftp.gnome.org/pub/GNOME/sources/nautilus/${VERSION%.*}/nautilus-${VERSION}.tar.bz2"
 BUILD_DEPENDS="gnome-doc-utils
 rarian
 glib2
@@ -28,7 +26,6 @@ shared-mime-info
 #gobject-introspection
 #gobject-introspection-dev"
 
-EXTENSIONS="nautilus nautilus-locale libnautilus-extension libnautilus-extension-dev libnautilus-extension-doc"
 DESCRIPTION="The file manager of GNOME."
 AUTHOR="GNOME Maintainers"
 SITE="http://www.gnome.org"

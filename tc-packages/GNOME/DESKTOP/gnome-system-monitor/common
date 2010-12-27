@@ -1,8 +1,8 @@
 PACKAGE="gnome-system-monitor"
 VERSION="2.28.2"
-SOURCE="${PACKAGE}-${VERSION}.tar.bz2"
-SOURCE_URL="http://ftp.gnome.org/pub/GNOME/sources/gnome-system-monitor/${VERSION%.*}/gnome-system-monitor-${VERSION}.tar.bz2"
-TOP_SRC="${PACKAGE}-${VERSION}"
+
+SOURCE="http://ftp.gnome.org/pub/GNOME/sources/gnome-system-monitor/${VERSION%.*}/gnome-system-monitor-${VERSION}.tar.bz2"
+
 BUILD_DEPENDS="gnome-doc-utils
 rarian
 gtk2
@@ -23,7 +23,7 @@ gtkmm-dev
 librsvg
 librsvg-dev"
 
-EXTENSIONS="gnome-system-monitor gnome-system-monitor-locale"
+
 DESCRIPTION="GNOME system monitor."
 AUTHOR="GNOME Maintainers"
 SITE="http://www.gnome.org"

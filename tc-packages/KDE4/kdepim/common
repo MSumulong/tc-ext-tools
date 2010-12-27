@@ -1,8 +1,8 @@
 PACKAGE="kdepim"
 VERSION="4.4.6"
-SOURCE="${PACKAGE}-${VERSION}.tar.bz2"
-SOURCE_URL="ftp://ftp.kde.org/pub/kde/stable/kdepim-${VERSION}/src/kdepim-${VERSION}.tar.bz2"
-TOP_SRC="${PACKAGE}-${VERSION}"
+
+SOURCE="ftp://ftp.kde.org/pub/kde/stable/kdepim-${VERSION}/src/kdepim-${VERSION}.tar.bz2"
+
 BUILD_DEPENDS="cmake
 automoc4
 libxml2-bin
@@ -37,7 +37,7 @@ libxml2-dev
 shared-desktop-ontologies
 docbook_xsl"
 
-EXTENSIONS="kdepim"
+
 DESCRIPTION="KDE pim applications."
 AUTHOR="KDE development team"
 SITE="http://www.kde.org"

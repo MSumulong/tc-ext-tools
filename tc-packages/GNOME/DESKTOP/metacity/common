@@ -1,8 +1,8 @@
 PACKAGE="metacity"
 VERSION="2.30.3"
-SOURCE="${PACKAGE}-${VERSION}.tar.bz2"
-SOURCE_URL="http://ftp.gnome.org/pub/GNOME/sources/metacity/${VERSION%.*}/metacity-${VERSION}.tar.bz2"
-TOP_SRC="${PACKAGE}-${VERSION}"
+
+SOURCE="http://ftp.gnome.org/pub/GNOME/sources/metacity/${VERSION%.*}/metacity-${VERSION}.tar.bz2"
+
 BUILD_DEPENDS="gnome-doc-utils
 rarian
 gtk2
@@ -19,7 +19,7 @@ zenity
 libgtop
 libgtop-dev"
 
-EXTENSIONS="metacity metacity-dev metacity-locale"
+
 DESCRIPTION="A lightweight GTK2 based Window Manager."
 AUTHOR="Havoc Pennington"
 SITE="http://www.gnome.org/"

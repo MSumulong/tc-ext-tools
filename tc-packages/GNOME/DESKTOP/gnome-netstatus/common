@@ -1,8 +1,8 @@
 PACKAGE="gnome-netstatus"
 VERSION="2.28.1"
-SOURCE="${PACKAGE}-${VERSION}.tar.bz2"
-SOURCE_URL="http://ftp.gnome.org/pub/gnome/sources/gnome-netstatus/${VERSION%.*}/gnome-netstatus-${VERSION}.tar.bz2"
-TOP_SRC="${PACKAGE}-${VERSION}"
+
+SOURCE="http://ftp.gnome.org/pub/gnome/sources/gnome-netstatus/${VERSION%.*}/gnome-netstatus-${VERSION}.tar.bz2"
+
 BUILD_DEPENDS="gnome-doc-utils
 rarian
 libpanel-applet
@@ -12,7 +12,7 @@ gtk2-dev
 libgnome-keyring
 libgnome-keyring-dev"
 
-EXTENSIONS="gnome-netstatus gnome-netstatus-locale"
+
 DESCRIPTION="A GNOME panel applet that shows information about network status."
 AUTHOR="various"
 SITE="http://www.gnome.org"

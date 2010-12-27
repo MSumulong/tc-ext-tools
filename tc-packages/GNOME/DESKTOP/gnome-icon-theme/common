@@ -1,14 +1,14 @@
 PACKAGE="gnome-icon-theme"
 VERSION="2.31.0"
-SOURCE="${PACKAGE}-${VERSION}.tar.bz2"
-SOURCE_URL="http://ftp.gnome.org/pub/GNOME/sources/gnome-icon-theme/${VERSION%.*}/gnome-icon-theme-${VERSION}.tar.bz2"
-TOP_SRC="${PACKAGE}-${VERSION}"
+
+SOURCE="http://ftp.gnome.org/pub/GNOME/sources/gnome-icon-theme/${VERSION%.*}/gnome-icon-theme-${VERSION}.tar.bz2"
+
 BUILD_DEPENDS="icon-naming-utils
 hicolor-icon-theme
 librsvg
 librsvg-dev"
 
-EXTENSIONS="gnome-icon-theme"
+
 DESCRIPTION="Default GNOME icon theme."
 AUTHOR="Various"
 SITE="http://ftp.gnome.org/pub/gnome/sources/gnome-icon-theme/"

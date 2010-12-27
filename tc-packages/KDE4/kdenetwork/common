@@ -1,8 +1,8 @@
 PACKAGE="kdenetwork"
 VERSION="4.5.2"
-SOURCE="${PACKAGE}-${VERSION}.tar.bz2"
-SOURCE_URL="ftp://ftp.kde.org/pub/kde/stable/${VERSION}/src/kdenetwork-${VERSION}.tar.bz2"
-TOP_SRC="${PACKAGE}-${VERSION}"
+
+SOURCE="ftp://ftp.kde.org/pub/kde/stable/${VERSION}/src/kdenetwork-${VERSION}.tar.bz2"
+
 BUILD_DEPENDS="cmake
 automoc4
 libxml2-bin
@@ -60,7 +60,7 @@ gmp
 openslp
 openslp-dev"
 
-EXTENSIONS="kdenetwork"
+
 DESCRIPTION="KDE network applications."
 AUTHOR="KDE development team"
 SITE="http://www.kde.org"

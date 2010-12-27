@@ -1,8 +1,8 @@
 PACKAGE="gucharmap"
 VERSION="2.32.0"
-SOURCE="${PACKAGE}-${VERSION}.tar.bz2"
-SOURCE_URL="http://ftp.gnome.org/pub/GNOME/sources/gucharmap/${VERSION%.*}/gucharmap-${VERSION}.tar.bz2"
-TOP_SRC="${PACKAGE}-${VERSION}"
+
+SOURCE="http://ftp.gnome.org/pub/GNOME/sources/gucharmap/${VERSION%.*}/gucharmap-${VERSION}.tar.bz2"
+
 BUILD_DEPENDS="glib2
 glib2-dev
 gtk2
@@ -16,7 +16,7 @@ rarian
 pygtk-2.7
 pygtk-2.7-dev"
 
-EXTENSIONS="gucharmap gucharmap-dev gucharmap-locale"
+
 DESCRIPTION="A featureful unicode character map."
 AUTHOR="Noah Levitt, Daniel Elstner, Padraig O'Briain"
 SITE="http://live.gnome.org/Gucharmap"

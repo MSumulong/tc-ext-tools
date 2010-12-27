@@ -1,8 +1,8 @@
 PACKAGE="gnome-terminal"
 VERSION="2.32.1"
-SOURCE="${PACKAGE}-${VERSION}.tar.bz2"
-SOURCE_URL="http://ftp.gnome.org/pub/GNOME/sources/gnome-terminal/${VERSION%.*}/gnome-terminal-${VERSION}.tar.bz2"
-TOP_SRC="${PACKAGE}-${VERSION}"
+
+SOURCE="http://ftp.gnome.org/pub/GNOME/sources/gnome-terminal/${VERSION%.*}/gnome-terminal-${VERSION}.tar.bz2"
+
 BUILD_DEPENDS="glib2
 glib2-dev
 gtk2
@@ -19,7 +19,7 @@ Xorg-7.5-dev
 vte
 vte-dev"
 
-EXTENSIONS="gnome-terminal gnome-terminal-locale"
+
 DESCRIPTION="The terminal emulator of GNOME."
 AUTHOR="Guilherme de S. Pastore, Havoc Pennington, Mariano Suarez-Alvarez"
 SITE="http://www.gnome.org"

@@ -1,8 +1,8 @@
 PACKAGE="qimageblitz"
 VERSION="0.0.6"
-SOURCE="${PACKAGE}-${VERSION}.tar.bz2"
-TOP_SRC="${PACKAGE}-${VERSION}"
-SOURCE_URL="ftp://ftp.kde.org/pub/kde/stable/qimageblitz/qimageblitz-${VERSION}.tar.bz2"
+
+
+SOURCE="ftp://ftp.kde.org/pub/kde/stable/qimageblitz/qimageblitz-${VERSION}.tar.bz2"
 BUILD_DEPENDS="cmake
 qt-4.x-base
 qt-4.x-dev
@@ -11,7 +11,7 @@ fontconfig-dev
 Xorg-7.5-lib
 Xorg-7.5-dev"
 
-EXTENSIONS="qimageblitz qimageblitz-dev"
+
 DESCRIPTION="Image Effect Library."
 AUTHOR="Daniel M. Duley"
 SITE="http://sourceforge.net/projects/qimageblitz/"

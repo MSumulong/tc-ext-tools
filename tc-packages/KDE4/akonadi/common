@@ -1,8 +1,8 @@
 PACKAGE="akonadi"
 VERSION="1.4.0"
-SOURCE="${PACKAGE}-${VERSION}.tar.bz2"
-SOURCE_URL="http://download.akonadi-project.org/akonadi-${VERSION}.tar.bz2"
-TOP_SRC="${PACKAGE}-${VERSION}"
+
+SOURCE="http://download.akonadi-project.org/akonadi-${VERSION}.tar.bz2"
+
 BUILD_DEPENDS="cmake
 qt-4.x-base
 qt-4.x-xml
@@ -25,7 +25,7 @@ libxslt
 dbus
 automoc4"
 
-EXTENSIONS="akonadi akonadi-dev"
+
 DESCRIPTION="The PIM Storage Service."
 AUTHOR="Volker Krause, Till Adam, Tobias Koenig, Kevin Krammer"
 SITE="http://www.akonadi-project.org"

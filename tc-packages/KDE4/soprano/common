@@ -1,8 +1,8 @@
 PACKAGE="soprano"
 VERSION="2.5.2"
-SOURCE="${PACKAGE}-${VERSION}.tar.bz2"
-TOP_SRC="${PACKAGE}-${VERSION}"
-SOURCE_URL="http://downloads.sourceforge.net/soprano/soprano-${VERSION}.tar.bz2"
+
+
+SOURCE="http://downloads.sourceforge.net/soprano/soprano-${VERSION}.tar.bz2"
 BUILD_DEPENDS="cmake
 clucene
 clucene-dev
@@ -17,7 +17,7 @@ libiodbc-dev
 redland
 redland-dev"
 
-EXTENSIONS="soprano soprano-dev"
+
 DESCRIPTION="Qt interface for RDF storage solutions."
 AUTHOR="Daniele Galdi, Sebastian Trueg"
 SITE="http://sourceforge.net/projects/soprano/"

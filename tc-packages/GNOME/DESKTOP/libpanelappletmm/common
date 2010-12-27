@@ -1,8 +1,8 @@
 PACKAGE="libpanelappletmm"
 VERSION="2.26.0"
-SOURCE="${PACKAGE}-${VERSION}.tar.bz2"
-TOP_SRC="${PACKAGE}-${VERSION}"
-SOURCE_URL="http://ftp.gnome.org/pub/GNOME/sources/libpanelappletmm/2.26/libpanelappletmm-${VERSION}.tar.bz2"
+
+
+SOURCE="http://ftp.gnome.org/pub/GNOME/sources/libpanelappletmm/2.26/libpanelappletmm-${VERSION}.tar.bz2"
 BUILD_DEPENDS="gconfmm
 gconfmm-dev
 gtkmm
@@ -13,7 +13,7 @@ libxcb
 libxcb-dev
 dbus-glib-dev"
 
-EXTENSIONS="libpanelappletmm libpanelappletmm-dev"
+
 DESCRIPTION="C++ wrapper for libpanel-applet."
 AUTHOR="Murray Cumming , Bryan Forbes"
 SITE="http://ftp.gnome.org/pub/GNOME/sources/libpanelappletmm"

@@ -1,11 +1,11 @@
 PACKAGE="oxygen-icons"
 VERSION="4.5.2"
-SOURCE="${PACKAGE}-${VERSION}.tar.bz2"
-SOURCE_URL="ftp://ftp.kde.org/pub/kde/stable/${VERSION}/src/${PACKAGE}-${VERSION}.tar.bz2"
-TOP_SRC="${PACKAGE}-${VERSION}"
+
+SOURCE="ftp://ftp.kde.org/pub/kde/stable/${VERSION}/src/${PACKAGE}-${VERSION}.tar.bz2"
+
 BUILD_DEPENDS="cmake"
 
-EXTENSIONS="oxygen-icon-theme"
+
 DESCRIPTION="The Oxygen Icon Theme."
 AUTHOR="The Oxygen Team"
 SITE="http://www.kde.org"

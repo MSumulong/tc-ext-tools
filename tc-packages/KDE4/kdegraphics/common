@@ -1,8 +1,8 @@
 PACKAGE="kdegraphics"
 VERSION="4.5.2"
-SOURCE="${PACKAGE}-${VERSION}.tar.bz2"
-SOURCE_URL="ftp://ftp.kde.org/pub/kde/stable/${VERSION}/src/${PACKAGE}-${VERSION}.tar.bz2"
-TOP_SRC="${PACKAGE}-${VERSION}"
+
+SOURCE="ftp://ftp.kde.org/pub/kde/stable/${VERSION}/src/${PACKAGE}-${VERSION}.tar.bz2"
+
 BUILD_DEPENDS="cmake
 kdelibs
 kdelibs-dev
@@ -41,7 +41,7 @@ Xorg-7.5-dev
 libxft
 libxft-dev"
 
-EXTENSIONS="kdegraphics kdegraphics-dev"
+
 DESCRIPTION="KDE graphics oriented applications."
 AUTHOR="KDE development team"
 SITE="http://www.kde.org"

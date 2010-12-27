@@ -1,8 +1,8 @@
 PACKAGE="gnome-power-manager"
 VERSION="2.32.0"
-SOURCE="${PACKAGE}-${VERSION}.tar.bz2"
-SOURCE_URL="http://ftp.gnome.org/pub/GNOME/sources/gnome-power-manager/${VERSION%.*}/gnome-power-manager-${VERSION}.tar.bz2"
-TOP_SRC="${PACKAGE}-${VERSION}"
+
+SOURCE="http://ftp.gnome.org/pub/GNOME/sources/gnome-power-manager/${VERSION%.*}/gnome-power-manager-${VERSION}.tar.bz2"
+
 BUILD_DEPENDS="gnome-doc-utils
 rarian
 libpanel-applet
@@ -23,7 +23,7 @@ libunique-dev
 libgnome-keyring
 libgnome-keyring-dev"
 
-EXTENSIONS="gnome-power-manager gnome-power-manager-locale"
+
 DESCRIPTION="A Power Manager for GNOME."
 AUTHOR="GNOME Maintainers"
 SITE="http://www.gnome.org"

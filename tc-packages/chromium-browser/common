@@ -35,7 +35,7 @@ libevent-dev
 #libcups
 #cups"
 
-EXTENSIONS="chromium-browser chromium-browser-locale"
+
 DESCRIPTION="Chromium Web Browser."
 AUTHOR="Chromium Authors"
 SITE="http://code.google.com/chromium/"

@@ -1,11 +1,8 @@
 PACKAGE="nspr"
 VERSION="4.8.6"
-SOURCE="${PACKAGE}-${VERSION}.tar.gz"
-TOP_SRC="${PACKAGE}-${VERSION}"
-SOURCE_URL="ftp://ftp.mozilla.org/pub/mozilla.org/nspr/releases/v${VERSION}/src/nspr-${VERSION}.tar.gz"
+SOURCE="ftp://ftp.mozilla.org/pub/mozilla.org/nspr/releases/v${VERSION}/src/nspr-${VERSION}.tar.gz"
 BUILD_DEPENDS=""
 
-EXTENSIONS="nspr nspr-dev"
 DESCRIPTION="Netscape Portable Runtime."
 AUTHOR="The Mozilla Community"
 SITE="http://www.mozilla.org/projects/nspr/"

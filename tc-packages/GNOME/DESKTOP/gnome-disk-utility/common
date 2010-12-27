@@ -1,8 +1,8 @@
 PACKAGE="gnome-disk-utility"
 VERSION="2.32.0"
-SOURCE="${PACKAGE}-${VERSION}.tar.bz2"
-SOURCE_URL="http://ftp.gnome.org/pub/GNOME/sources/gnome-disk-utility/${VERSION%.*}/gnome-disk-utility-${VERSION}.tar.bz2"
-TOP_SRC="${PACKAGE}-${VERSION}"
+
+SOURCE="http://ftp.gnome.org/pub/GNOME/sources/gnome-disk-utility/${VERSION%.*}/gnome-disk-utility-${VERSION}.tar.bz2"
+
 BUILD_DEPENDS="gnome-doc-utils
 rarian
 dbus-glib
@@ -25,7 +25,7 @@ avahi-2.7-dev
 gnome-common
 gtk-doc"
 
-EXTENSIONS="gnome-disk-utility gnome-disk-utility-dev gnome-disk-utility-locale"
+
 DESCRIPTION="The Gnome disk utility to deal with storage devices."
 AUTHOR="David Zeuthen"
 SITE="http://www.gnome.org"

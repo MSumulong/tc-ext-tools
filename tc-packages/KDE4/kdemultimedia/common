@@ -1,8 +1,6 @@
 PACKAGE="kdemultimedia"
 VERSION="4.5.2"
-SOURCE="${PACKAGE}-${VERSION}.tar.bz2"
-SOURCE_URL="ftp://ftp.kde.org/pub/kde/stable/${VERSION}/src/kdemultimedia-${VERSION}.tar.bz2"
-TOP_SRC="${PACKAGE}-${VERSION}"
+SOURCE="ftp://ftp.kde.org/pub/kde/stable/${VERSION}/src/kdemultimedia-${VERSION}.tar.bz2"
 BUILD_DEPENDS="cmake
 automoc4
 kdelibs
@@ -34,14 +32,6 @@ libtunepimp
 libtunepimp-dev
 libxml2-bin
 docbook_xsl"
-
-EXTENSIONS="kdemultimedia
-kdemultimedia-dragonplayer
-kdemultimedia-juk
-kdemultimedia-kioslave
-kdemultimedia-kmix
-kdemultimedia-kscd
-kdemultimedia-mplayerthumbs"
 
 DESCRIPTION="KDE multimedia applications and libraries."
 AUTHOR="KDE development team"

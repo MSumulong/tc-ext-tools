@@ -1,8 +1,8 @@
 PACKAGE="gnome-themes"
 VERSION="2.32.1"
-SOURCE="${PACKAGE}-${VERSION}.tar.bz2"
-SOURCE_URL="http://ftp.gnome.org/pub/GNOME/sources/gnome-themes/${VERSION%.*}/gnome-themes-${VERSION}.tar.bz2"
-TOP_SRC="${PACKAGE}-${VERSION}"
+
+SOURCE="http://ftp.gnome.org/pub/GNOME/sources/gnome-themes/${VERSION%.*}/gnome-themes-${VERSION}.tar.bz2"
+
 BUILD_DEPENDS="advcomp
 perl_xml_parser
 icon-naming-utils
@@ -12,7 +12,7 @@ gtk-engines
 librsvg
 librsvg-dev"
 
-EXTENSIONS="gnome-themes gnome-themes-locale"
+
 DESCRIPTION="The GNOME desktop themes."
 AUTHOR="various"
 SITE="http://www.gnome.org"

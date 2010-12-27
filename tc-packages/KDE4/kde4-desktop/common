@@ -1,11 +1,11 @@
 PACKAGE="kde4-desktop"
 VERSION="4.5.2"
+
 SOURCE=""
-SOURCE_URL=""
-TOP_SRC=""
+
 BUILD_DEPENDS=""
 
-EXTENSIONS="kde4-desktop"
+
 DESCRIPTION="K Desktop Environment for Tiny Core Linux."
 AUTHOR="Sercan Arslan"
 SITE="<arslanserc@gmail.com>"

@@ -1,3 +1,5 @@
+ICON="/usr/local/share/pixmaps/gedit.png"
+DESKTOP="/usr/local/share/applications/gedit.desktop"
 COMMENTS="gnome-icon-theme is recommended.
 		
 		For some plugins gnome-python is required.

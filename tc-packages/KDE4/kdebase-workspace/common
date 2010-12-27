@@ -1,8 +1,8 @@
 PACKAGE="kdebase-workspace"
 VERSION="4.5.2"
-SOURCE="${PACKAGE}-${VERSION}.tar.bz2"
-SOURCE_URL="ftp://ftp.kde.org/pub/kde/stable/${VERSION}/src/${PACKAGE}-${VERSION}.tar.bz2"
-TOP_SRC="${PACKAGE}-${VERSION}"
+
+SOURCE="ftp://ftp.kde.org/pub/kde/stable/${VERSION}/src/${PACKAGE}-${VERSION}.tar.bz2"
+
 BUILD_DEPENDS="cmake
 kdelibs
 kdelibs-dev
@@ -58,7 +58,7 @@ libxft
 libxft-dev
 docbook_xsl"
 
-EXTENSIONS="kdebase-workspace kdebase-workspace-dev"
+
 DESCRIPTION="KDE base workspace."
 AUTHOR="KDE development team"
 SITE="http://www.kde.org"

@@ -1,8 +1,6 @@
 PACKAGE="gvfs"
 VERSION="1.6.6"
-SOURCE="${PACKAGE}-${VERSION}.tar.bz2"
-SOURCE_URL="http://ftp.gnome.org/pub/GNOME/sources/gvfs/1.6/gvfs-${VERSION}.tar.bz2"
-TOP_SRC="${PACKAGE}-${VERSION}"
+SOURCE="http://ftp.gnome.org/pub/GNOME/sources/gvfs/1.6/gvfs-${VERSION}.tar.bz2"
 BUILD_DEPENDS="glib2
 glib2-dev
 #fuse
@@ -37,7 +35,6 @@ openssh
 libcdio
 libcdio-dev"
 
-EXTENSIONS="gvfs gvfs-dev gvfs-locale"
 DESCRIPTION="Userspace virtual filesystem."
 AUTHOR="various"
 SITE="http://www.gnome.org"

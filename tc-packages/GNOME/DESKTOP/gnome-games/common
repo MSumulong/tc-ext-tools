@@ -1,8 +1,6 @@
 PACKAGE="gnome-games"
 VERSION="2.30.2"
-SOURCE="${PACKAGE}-${VERSION}.tar.bz2"
-TOP_SRC="${PACKAGE}-${VERSION}"
-SOURCE_URL="http://ftp.gnome.org/pub/GNOME/sources/gnome-games/2.30/gnome-games-${VERSION}.tar.bz2"
+SOURCE="http://ftp.gnome.org/pub/GNOME/sources/gnome-games/2.30/gnome-games-${VERSION}.tar.bz2"
 BUILD_DEPENDS="gnome-doc-utils
 rarian
 gtk2
@@ -29,7 +27,6 @@ gobject-introspection-dev
 gir-repository
 gir-repository-dev"
 
-EXTENSIONS="gnome-games gnome-games-locale"
 DESCRIPTION="A collection of sixteen small five-minute games."
 AUTHOR="various"
 SITE="http://live.gnome.org/GnomeGames/"

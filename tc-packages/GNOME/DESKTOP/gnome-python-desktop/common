@@ -1,8 +1,8 @@
 PACKAGE="gnome-python-desktop"
 VERSION="2.32.0"
-SOURCE="${PACKAGE}-${VERSION}.tar.bz2"
-SOURCE_URL="http://ftp.gnome.org/pub/GNOME/sources/gnome-python-desktop/${VERSION%.*}/gnome-python-desktop-${VERSION}.tar.bz2"
-TOP_SRC="${PACKAGE}-${VERSION}"
+
+SOURCE="http://ftp.gnome.org/pub/GNOME/sources/gnome-python-desktop/${VERSION%.*}/gnome-python-desktop-${VERSION}.tar.bz2"
+
 BUILD_DEPENDS="python
 python-dev
 pygtk-2.7
@@ -44,7 +44,7 @@ evolution-dev
 gnome-python
 gnome-python-dev"
 
-EXTENSIONS="gnome-python-desktop gnome-python-desktop-dev gnome-python-desktop-doc"
+
 DESCRIPTION="GNOME Python bindings for libraries not part of the core platform."
 AUTHOR="GNOME Maintainers"
 SITE="http://www.gnome.org"

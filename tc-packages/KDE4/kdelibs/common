@@ -1,8 +1,6 @@
 PACKAGE="kdelibs"
 VERSION="4.5.2"
-SOURCE="${PACKAGE}-${VERSION}.tar.bz2"
-SOURCE_URL="ftp://ftp.kde.org/pub/kde/stable/${VERSION}/src/kdelibs-${VERSION}.tar.bz2"
-TOP_SRC="${PACKAGE}-${VERSION}"
+SOURCE="ftp://ftp.kde.org/pub/kde/stable/${VERSION}/src/kdelibs-${VERSION}.tar.bz2"
 BUILD_DEPENDS="cmake
 attr
 attr-dev
@@ -76,7 +74,6 @@ docbook_xsl
 libxml2-bin
 glibc_gconv"
 
-EXTENSIONS="kdelibs kdelibs-dev"
 DESCRIPTION="KDE core libraries."
 AUTHOR="KDE development team"
 SITE="http://www.kde.org"

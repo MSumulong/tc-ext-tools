@@ -1,8 +1,8 @@
 PACKAGE="kdeedu"
 VERSION="4.5.2"
-SOURCE="${PACKAGE}-${VERSION}.tar.bz2"
-SOURCE_URL="ftp://ftp.kde.org/pub/kde/stable/${VERSION}/src/${PACKAGE}-${VERSION}.tar.bz2"
-TOP_SRC="${PACKAGE}-${VERSION}"
+
+SOURCE="ftp://ftp.kde.org/pub/kde/stable/${VERSION}/src/${PACKAGE}-${VERSION}.tar.bz2"
+
 BUILD_DEPENDS="cmake
 automoc4
 kdelibs
@@ -32,7 +32,7 @@ gsl
 readline
 readline-dev"
 
-EXTENSIONS="kdeedu kdeedu-dev"
+
 DESCRIPTION="KDE education project."
 AUTHOR="KDE development team"
 SITE="http://www.kde.org"

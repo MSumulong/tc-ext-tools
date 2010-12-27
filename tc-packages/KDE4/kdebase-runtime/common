@@ -1,8 +1,8 @@
 PACKAGE="kdebase-runtime"
 VERSION="4.5.2"
-SOURCE="${PACKAGE}-${VERSION}.tar.bz2"
-SOURCE_URL="ftp://ftp.kde.org/pub/kde/stable/${VERSION}/src/kdebase-runtime-${VERSION}.tar.bz2"
-TOP_SRC="${PACKAGE}-${VERSION}"
+
+SOURCE="ftp://ftp.kde.org/pub/kde/stable/${VERSION}/src/kdebase-runtime-${VERSION}.tar.bz2"
+
 BUILD_DEPENDS="libxml2
 libxml2-dev
 libxml2-bin
@@ -52,7 +52,7 @@ xine-lib-dev
 kdelibs
 kdelibs-dev"
 
-EXTENSIONS="kdebase-runtime"
+
 DESCRIPTION="KDE base runtime environment."
 AUTHOR="KDE development team"
 SITE="http://www.kde.org"

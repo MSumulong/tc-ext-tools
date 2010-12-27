@@ -1,8 +1,8 @@
 PACKAGE="libgnome-keyring"
 VERSION="2.32.0"
-SOURCE="${PACKAGE}-${VERSION}.tar.bz2"
-TOP_SRC="${PACKAGE}-${VERSION}"
-SOURCE_URL="http://ftp.gnome.org/pub/GNOME/sources/libgnome-keyring/${VERSION%.*}/libgnome-keyring-${VERSION}.tar.bz2"
+
+
+SOURCE="http://ftp.gnome.org/pub/GNOME/sources/libgnome-keyring/${VERSION%.*}/libgnome-keyring-${VERSION}.tar.bz2"
 BUILD_DEPENDS="glib2
 glib2-dev
 dbus
@@ -10,7 +10,7 @@ eggdbus
 libgcrypt
 libgcrypt-dev"
 
-EXTENSIONS="libgnome-keyring libgnome-keyring-dev libgnome-keyring-doc libgnome-keyring-locale"
+
 DESCRIPTION="Used by applications to integrate with the gnome keyring system."
 AUTHOR="Stef Walter"
 SITE="http://live.gnome.org/GnomeKeyring"

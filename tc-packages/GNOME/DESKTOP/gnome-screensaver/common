@@ -1,8 +1,8 @@
 PACKAGE="gnome-screensaver"
 VERSION="2.30.2"
-SOURCE="${PACKAGE}-${VERSION}.tar.bz2"
-SOURCE_URL="http://ftp.gnome.org/pub/GNOME/sources/gnome-screensaver/${VERSION%.*}/gnome-screensaver-${VERSION}.tar.bz2"
-TOP_SRC="${PACKAGE}-${VERSION}"
+
+SOURCE="http://ftp.gnome.org/pub/GNOME/sources/gnome-screensaver/${VERSION%.*}/gnome-screensaver-${VERSION}.tar.bz2"
+
 BUILD_DEPENDS="gnome-doc-utils
 rarian
 gtk2
@@ -23,7 +23,7 @@ libnotify
 xscreensaver-base
 xscreensaver-extra"
 
-EXTENSIONS="gnome-screensaver gnome-screensaver-locale"
+
 DESCRIPTION="GNOME screensaver."
 AUTHOR="William Jon McCann"
 SITE="http://www.gnome.org"

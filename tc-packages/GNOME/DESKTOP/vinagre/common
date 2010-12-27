@@ -1,8 +1,6 @@
 PACKAGE="vinagre"
 VERSION="2.30.2"
-SOURCE="${PACKAGE}-${VERSION}.tar.bz2"
-TOP_SRC="${PACKAGE}-${VERSION}"
-SOURCE_URL="http://ftp.gnome.org/pub/GNOME/sources/vinagre/2.30/vinagre-${VERSION}.tar.bz2"
+SOURCE="http://ftp.gnome.org/pub/GNOME/sources/vinagre/2.30/vinagre-${VERSION}.tar.bz2"
 BUILD_DEPENDS="gnome-doc-utils
 rarian
 gtk2
@@ -24,7 +22,6 @@ telepathy-glib-dev
 Xorg-7.5-lib
 Xorg-7.5-dev"
 
-EXTENSIONS="vinagre vinagre-dev vinagre-locale"
 DESCRIPTION="A VNC Client for the GNOME Desktop."
 AUTHOR="Jonh Wendell"
 SITE="http://projects.gnome.org/vinagre/"

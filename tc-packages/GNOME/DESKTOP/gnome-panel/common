@@ -1,8 +1,6 @@
 PACKAGE="gnome-panel"
 VERSION="2.32.1"
-SOURCE="${PACKAGE}-${VERSION}.tar.bz2"
-SOURCE_URL="http://ftp.gnome.org/pub/GNOME/sources/gnome-panel/${VERSION%.*}/gnome-panel-${VERSION}.tar.bz2"
-TOP_SRC="${PACKAGE}-${VERSION}"
+SOURCE="http://ftp.gnome.org/pub/GNOME/sources/gnome-panel/${VERSION%.*}/gnome-panel-${VERSION}.tar.bz2"
 BUILD_DEPENDS="gnome-doc-utils
 rarian
 Xorg-7.5-lib
@@ -38,7 +36,6 @@ libgdata-dev
 #gir-repository
 #gir-repository-dev"
 
-EXTENSIONS="gnome-panel gnome-panel-locale libpanel-applet libpanel-applet-dev libpanel-applet-doc"
 DESCRIPTION="The GNOME panel."
 AUTHOR="GNOME Maintainers"
 SITE="http://www.gnome.org"

@@ -1,8 +1,6 @@
 PACKAGE="gnome-desktop"
 VERSION="2.32.1"
-SOURCE="${PACKAGE}-${VERSION}.tar.bz2"
-SOURCE_URL="http://ftp.gnome.org/pub/GNOME/sources/gnome-desktop/${VERSION%.*}/gnome-desktop-${VERSION}.tar.bz2"
-TOP_SRC="${PACKAGE}-${VERSION}"
+SOURCE="http://ftp.gnome.org/pub/GNOME/sources/gnome-desktop/${VERSION%.*}/gnome-desktop-${VERSION}.tar.bz2"
 BUILD_DEPENDS="gnome-doc-utils
 rarian
 glib2
@@ -20,7 +18,6 @@ GConf-dev
 python
 python-dev"
 
-EXTENSIONS="libgnome-desktop libgnome-desktop-dev libgnome-desktop-doc gnome-about gnome-about-locale"
 DESCRIPTION="Utility library for loading .desktop files."
 AUTHOR="various"
 SITE="http://www.gnome.org"
