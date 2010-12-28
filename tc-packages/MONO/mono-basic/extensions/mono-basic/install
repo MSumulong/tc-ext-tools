@@ -1,0 +1,5 @@
+usr/local/bin
+usr/local/lib
+x-usr/local/lib/mono/*/*.mdb
+x-usr/local/lib/mono/gac/*/*/*.mdb
+usr/local/share

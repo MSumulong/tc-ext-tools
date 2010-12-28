@@ -2,13 +2,9 @@ usr/local/bin
 usr/local/etc
 usr/local/share
 x-usr/local/share/locale
-x-usr/local/share/man
 usr/local/lib/*.so*
 usr/local/lib/mono
-x-usr/local/lib/mono/1.0/*.mdb
-x-usr/local/lib/mono/2.0/*.mdb
-x-usr/local/lib/mono/3.5/*.mdb
-x-usr/local/lib/mono/4.0/*.mdb
+x-usr/local/lib/mono/*/*.mdb
 x-usr/local/lib/mono/gac/*/*/*.mdb
 usr/local/lib/mono-source-libs
 

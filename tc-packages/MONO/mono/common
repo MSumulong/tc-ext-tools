@@ -1,5 +1,5 @@
 PACKAGE="mono"
-VERSION="2.6.7"
+VERSION="2.8.1"
 SOURCE="http://ftp.novell.com/pub/mono/sources/mono/mono-${VERSION}.tar.bz2"
 BUILD_DEPENDS="glib2
 glib2-dev
@@ -12,6 +12,7 @@ COPYING="GPL-2/LGPL-2/MIT"
 MAINTAINERS="Arslan S."
 COMMENTS="This extension is PPI compatible."
 CHANGELOG="2010/04/10 First Version 2.6.3
-		2010/04/18 Added init script to copy executables to file system"
-CURRENT="Updated to 2.6.7"
+		2010/04/18 Added init script to copy executables to file system
+		2010/10/04 Updated to 2.6.7"
+CURRENT="Updated to $VERSION"
 
