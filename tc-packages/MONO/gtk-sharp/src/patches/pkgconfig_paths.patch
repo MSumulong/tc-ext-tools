@@ -1,0 +1,45 @@
+diff -rupN gtk-sharp-2.12.10_orig/glade/glade-sharp-2.0.pc.in gtk-sharp-2.12.10/glade/glade-sharp-2.0.pc.in
+--- gtk-sharp-2.12.10_orig/glade/glade-sharp-2.0.pc.in	2010-04-10 22:00:21.000000000 +0000
++++ gtk-sharp-2.12.10/glade/glade-sharp-2.0.pc.in	2010-04-10 22:01:06.000000000 +0000
+@@ -1,4 +1,4 @@
+-prefix=${pcfiledir}/../..
++prefix=@prefix@
+ exec_prefix=${prefix}
+ libdir=${exec_prefix}/lib
+ gapidir=${prefix}/share/gapi-2.0
+diff -rupN gtk-sharp-2.12.10_orig/glib/glib-sharp-2.0.pc.in gtk-sharp-2.12.10/glib/glib-sharp-2.0.pc.in
+--- gtk-sharp-2.12.10_orig/glib/glib-sharp-2.0.pc.in	2010-04-10 22:00:20.000000000 +0000
++++ gtk-sharp-2.12.10/glib/glib-sharp-2.0.pc.in	2010-04-10 22:02:32.000000000 +0000
+@@ -1,4 +1,4 @@
+-prefix=${pcfiledir}/../..
++prefix=@prefix@
+ exec_prefix=${prefix}
+ libdir=${exec_prefix}/lib
+ gapidir=${prefix}/share/gapi-2.0
+diff -rupN gtk-sharp-2.12.10_orig/gtk/gtk-sharp-2.0.pc.in gtk-sharp-2.12.10/gtk/gtk-sharp-2.0.pc.in
+--- gtk-sharp-2.12.10_orig/gtk/gtk-sharp-2.0.pc.in	2010-04-10 22:00:21.000000000 +0000
++++ gtk-sharp-2.12.10/gtk/gtk-sharp-2.0.pc.in	2010-04-10 22:02:52.000000000 +0000
+@@ -1,4 +1,4 @@
+-prefix=${pcfiledir}/../..
++prefix=@prefix@
+ exec_prefix=${prefix}
+ libdir=${exec_prefix}/lib
+ gapidir=${prefix}/share/gapi-2.0
+diff -rupN gtk-sharp-2.12.10_orig/gtkdotnet/gtk-dotnet-2.0.pc.in gtk-sharp-2.12.10/gtkdotnet/gtk-dotnet-2.0.pc.in
+--- gtk-sharp-2.12.10_orig/gtkdotnet/gtk-dotnet-2.0.pc.in	2010-04-10 22:00:20.000000000 +0000
++++ gtk-sharp-2.12.10/gtkdotnet/gtk-dotnet-2.0.pc.in	2010-04-10 22:03:06.000000000 +0000
+@@ -1,4 +1,4 @@
+-prefix=${pcfiledir}/../..
++prefix=@prefix@
+ exec_prefix=${prefix}
+ libdir=${exec_prefix}/lib
+ 
+diff -rupN gtk-sharp-2.12.10_orig/parser/gapi-2.0.pc.in gtk-sharp-2.12.10/parser/gapi-2.0.pc.in
+--- gtk-sharp-2.12.10_orig/parser/gapi-2.0.pc.in	2010-04-10 22:00:21.000000000 +0000
++++ gtk-sharp-2.12.10/parser/gapi-2.0.pc.in	2010-04-10 22:03:33.000000000 +0000
+@@ -1,4 +1,4 @@
+-prefix=${pcfiledir}/../..
++prefix=@prefix@
+ 
+ 
+ Name: GAPI

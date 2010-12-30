@@ -1,0 +1,13 @@
+#!/bin/sh
+
+PERL_LOCAL="/usr/local/lib/perl5/5.10.1/i686-linux"
+PERL_POD="$PERL_LOCAL/perllocal.pod"
+YAML_POD="/usr/local/share/perl_YAML/perllocal.pod"
+
+if [ -f "$PERL_POD" ]; then
+ cat "$YAML_POD" >> "$PERL_POD"
+else
+  [ -d "$PERL_LOCAL" ] || mkdir -p "$PERL_LOCAL"
+  cp -p "$YAML_POD" "$PERL_LOCAL"
+fi
+
