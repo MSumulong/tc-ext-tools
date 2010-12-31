@@ -1,0 +1,34 @@
+PACKAGE="gnome-desktop-sharp"
+VERSION="2.26.0"
+SOURCE="http://ftp.gnome.org/pub/gnome/sources/gnome-desktop-sharp/2.26/gnome-desktop-sharp-${VERSION}.tar.bz2"
+BUILD_DEPENDS="gtk-sharp
+gtk-sharp-dev
+gnome-sharp
+gnome-sharp-dev
+mono
+mono-dev
+libgnome-desktop
+libgnome-desktop-dev
+vte
+vte-dev
+librsvg
+librsvg-dev
+libpanel-applet
+libpanel-applet-dev
+libwnck
+libwnck-dev
+gtkhtml
+gtkhtml-dev
+gtksourceview
+gtksourceview-dev
+libgnomeprintui
+libgnomeprintui-dev"
+
+DESCRIPTION="C# language binding for assorted GNOME libraries from the desktop release."
+AUTHOR="Mike Kestner"
+SITE="http://www.mono-project.com/"
+COPYING="LGPL"
+MAINTAINERS="Arslan S."
+COMMENTS="This extension is PPI compatible."
+CHANGELOG="2010/04/16 Original 2.26.0"
+CURRENT="Rebuilt"
