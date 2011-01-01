@@ -279,6 +279,12 @@ encrypt_it() {
 
 }
 
+custom_it() {
+
+   build_custom || exit 1
+
+}
+
 build_it() {
 
    build_rules || exit 1
@@ -370,6 +376,9 @@ case "$1" in
 		  ;;
 	show)
 		  show_it "$2"
+		  ;;
+	custom)
+		  custom_it
 		  ;;
 	all)
 		  clean_it
