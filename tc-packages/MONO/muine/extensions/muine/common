@@ -1,0 +1,4 @@
+ICON="/usr/local/share/icons/hicolor/48x48/apps/muine.png"
+DESKTOP="/usr/local/share/applications/muine.desktop"
+COMMENTS="Optional dependencies: gst-plugins-ugly, gst-plugins-bad, gst-ffmpeg
+		This extension is PPI compatible."

@@ -1,0 +1,29 @@
+## Description: add some description
+## Origin/Author: add some origin or author
+## Bug: bug URL
+Index: muine-0.8.11/README
+===================================================================
+--- muine-0.8.11.orig/README	2009-09-13 15:53:58.000000000 +0100
++++ muine-0.8.11/README	2010-06-10 09:49:11.031428865 +0100
+@@ -24,7 +24,7 @@
+ ======================
+ 
+ Our website (including Wiki) can be found here:
+-  http://www.muine-player.org/
++  http://muine.gooeylinux.org/
+ 
+ Additionally, see the files MAINTAINERS, AUTHORS, HACKING and PLUGINS in the
+ Muine package for more information about Muine (and development).
+Index: muine-0.8.11/src/About.cs
+===================================================================
+--- muine-0.8.11.orig/src/About.cs	2009-09-13 15:53:58.000000000 +0100
++++ muine-0.8.11/src/About.cs	2010-06-10 09:49:11.031428865 +0100
+@@ -43,7 +43,7 @@
+ 			Catalog.GetString ("A music player");
+ 
+ 		private static readonly string string_website =
+-			"http://www.muine-player.org/";
++			"http://muine.gooeylinux.org/";
+ 		
+ 		// Authors
+ 		private static readonly string [] authors = {

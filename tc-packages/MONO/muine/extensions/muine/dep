@@ -1,0 +1,10 @@
+gtk2.tcz
+GConf.tcz
+libgdbm.tcz
+gnome-sharp.tcz
+taglib-sharp.tcz
+ndesk-dbus-glib.tcz
+gst-plugins-good.tcz
+shared-mime-info.tcz
+hicolor-icon-theme.tcz
+gnome-icon-theme.tcz

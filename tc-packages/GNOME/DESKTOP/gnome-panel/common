@@ -1,6 +1,6 @@
 PACKAGE="gnome-panel"
 VERSION="2.32.1"
-SOURCE="http://ftp.gnome.org/pub/GNOME/sources/gnome-panel/${VERSION%.*}/gnome-panel-${VERSION}.tar.bz2"
+SOURCE="http://ftp.gnome.org/pub/GNOME/sources/gnome-panel/2.32/gnome-panel-${VERSION}.tar.bz2"
 BUILD_DEPENDS="gnome-doc-utils
 rarian
 Xorg-7.5-lib
@@ -42,5 +42,6 @@ SITE="http://www.gnome.org"
 COPYING="GPL/LGPL"
 MAINTAINERS="Arslan S."
 COMMENTS="This extension is PPI compatible."
-CHANGELOG="2010/08/02 First Version 2.30.2"
-CURRENT="Updated to $VERSION"
+CHANGELOG="2010/08/02 First Version 2.30.2
+		2010/11/25 Updated to 2.32.1"
+CURRENT="Fixed bonobo applets support"
