@@ -40,6 +40,7 @@ _Hint: version can be a number, "svn" or "git"._
 
   * Most important variables that you need to specify in the common file are SOURCE, and BUILD_DEPENDS. You also need to define configure, compile, install, and rules functions in the package build file.
 _Note: Rules function is placed in the build file to give complete control to the user for defining the build rules._
+
 _Hint: SOURCE can be the direct link to a tarball or the url of an svn or git repository._
 
   * Then you can execute buildit in the package root directory to build the package with the rules defined in the build file.
