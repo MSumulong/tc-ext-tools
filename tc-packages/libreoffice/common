@@ -1,12 +1,14 @@
-PACKAGE="ooo-build"
-VERSION="3.2.1.4"
-SOURCE="http://download.go-oo.org/OOO320/ooo-build-${VERSION}.tar.gz"
+PACKAGE="libreoffice"
+VERSION="3.3.0.2"
+SOURCE="http://ftp.linux.org.tr/tdf/libreoffice/src/libreoffice-build-${VERSION}.tar.gz"
 BUILD_DEPENDS="zip-unzip
 bash
 tar
 perl_archive_zip
 cups
 cups-dev
+nspr
+nspr-dev
 nss
 nss-dev
 xulrunner
@@ -58,14 +60,18 @@ openclipart-png
 libxml2
 libxml2-dev
 libxml2-bin
-#boost
-#boost-dev"
+boost
+boost-dev
+unixODBC
+unixODBC-dev
+ImageMagick
+ImageMagick-dev"
 
-DESCRIPTION="This is Go-oo for Tiny Core, a variant of the original OpenOffice.org."
-AUTHOR="Go-oo.org and OpenOffice.org Community"
-SITE="http://go-oo.org/"
+DESCRIPTION="LibreOffice is a productivity suite that is compatible with other major office suites."
+AUTHOR="The Document Foundation"
+SITE="http://www.libreoffice.org/"
 COPYING="GNU Lesser GPL-3"
 MAINTAINERS="Arslan S."
 COMMENTS="This extension is PPI compatible."
-CHANGELOG="2010/05/06 First Version 3.2.0.7"
-CURRENT="Updated to 3.2.1.4"
+CHANGELOG="---"
+CURRENT="First Version"

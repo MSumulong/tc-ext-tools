@@ -1,0 +1,23 @@
+ICON="/usr/local/share/icons/hicolor/48x48/apps/ooo-base.png"
+DESKTOP="/usr/local/share/applications/libreoffice.desktop"
+COMMENTS="LibreOffice is a productivity suite that is compatible with other major office suites, and available
+		on a variety of platforms. The goal is to produce a vendor-independent office suite with ODF
+		support and without any copyright assignment requirements. The name is a hybrid word with the first
+		part Libre, which means free (as in freedom) in both Spanish and French and the English word Office.
+		As free software, users are free to download, modify, use and distribute LibreOffice
+
+		Optional extensions:
+			ALSA or OSS, gst-plugins-*,gst-ffmpeg, liberation-fonts-ttf,
+			sil-gentium-ttf, sil-gentium-basic-ttf, msttcorefonts (available at forums/scripting),
+			openclipart-svg, cups, hunspell-en-us (or any other hunspell dictionary) ...
+
+		OpenOffice.org extensions are also recommended.(dictionaries,templates etc.)
+
+		You can install OpenOffice.org extensions from http://extensions.services.openoffice.org
+		Download any extension and Tools->Extension Manager->Add and select the extension (.oxt) file to install
+
+		LibreOffice installs OpenOffice3 extensions into ~/.openoffice.org
+
+		This extension conflicts with openoffice3.
+
+		This extension is PPI compatible."

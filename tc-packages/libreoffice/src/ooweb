@@ -1,0 +1,2 @@
+#!/bin/sh
+/usr/local/libreoffice/program/soffice -web "$@"
