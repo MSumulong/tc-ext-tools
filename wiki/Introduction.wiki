@@ -9,7 +9,7 @@ TC-EXT-TOOLS is an extension build system developed for Tiny Core Linux. The mai
  * Divide and conquer.
  * Easy maintenance of packages.
  * Minimize initial packaging time.
- * Each package has a source, and source is a tarball or vcs repository (currently git and svn supported only).
+ * Each package has a source, and source is a tarball or vcs repository.
  * Extensions are created from packages.
  * All the information to build the packages is hosted under an svn repository and it is available to everyone publicly.
  * Support for Tiny Core Linux specific features (tce.installed, wbar icon etc.).
@@ -37,38 +37,37 @@ boostit package version "extension1 extension2 ..."
 _Hint: version can be a number, "svn" or "git"._
 
   * Then edit the files generated under package root directory by using your favorite file manager and text editor.
-{{{
-mytexteditor {common, build, ...}
-}}}
-  * Most important ones you need to specify in the common file are SOURCE,SOURCE_URL, TOP_SRC, BUILD_DEPENDS, and in the build file configure, compile, install functions. Rules function is placed in the build file to give complete control to the user for defining the build rules.
-_Hint: SOURCE_URL can be the direct link for a tarball or the url of an svn or git repository._
 
-_Hint: Make sure you entered SOURCE and TOP_SRC correctly._
+  * Most important variables that you need to specify in the common file are SOURCE, and BUILD_DEPENDS. You also need to define configure, compile, install, and rules functions in the package build file.
+_Note: Rules function is placed in the build file to give complete control to the user for defining the build rules._
+_Hint: SOURCE can be the direct link to a tarball or the url of an svn or git repository._
+
   * Then you can execute buildit in the package root directory to build the package with the rules defined in the build file.
 {{{
 buildit
 }}}
   * When creating a package for the first time you better advance step by step.
 {{{
-buildit {load,download,convert,unpack,configure,compile,install,strip,split,create,check,generate,package,compress,encrypt}
+buildit load|download|convert|unpack|configure|compile|install|strip|split|create|check|generate|package|compress|encrypt
 }}}
-  * If you want to see configure, compile or install standart output.
+  * There is also custom build function which can be used for general purposes.
 {{{
-buildit show {configure,compile,install}
+buildit custom
 }}}
-  * If an error occured you can see details about the error.
+_Hint: You need to define build_custom function in the package build file._
+  * If you want to see download, configure, compile, install output messages.
+{{{
+buildit show download|configure|compile|install
+}}}
+  * If an error occured you can see the details about the error.
 {{{
 buildit show error
-}}}
-  * If you want to see download status.
-{{{
-buildit show download
 }}}
 * See available packages for more
 {{{
 svn checkout http://tc-ext-tools.googlecode.com/svn/tc-packages/
 }}}
 
-*Note: This project is still under development and is in alpha stage. So any suggestion or critiques welcome.*
+*Important Note: This project is still under development and is in alpha stage. So any suggestion or critiques welcome.*
 
 *Sercan Arslan <arslanserc@gmail.com>*
