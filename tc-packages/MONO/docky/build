@@ -5,11 +5,16 @@
 #                                                                          #
 ############################################################################
 
+# to get rid of that .wapi errors
+export MONO_SHARED_DIR="${PACKAGE_TOP_SRC}/src/weird"
+
 ############################################################################ 
 #                            Configure                                     #
 ############################################################################
 
 build_configure() {
+
+   [ -d "${MONO_SHARED_DIR}" ] || mkdir -p "${MONO_SHARED_DIR}"
 
    ./configure --prefix=/usr/local || return 1
 
@@ -32,10 +37,6 @@ build_compile() {
 build_install() {
 
    make DESTDIR="$INSTALL_ROOT" install || return 1
-
-   install -m 755 "$PACKAGE_SRC/pinta.sh" "$INSTALL_ROOT/usr/local/bin/pinta" || return 1
-   install -Dm644 license-mit.txt "$INSTALL_ROOT/usr/local/share/doc/pinta/license-mit.txt" || return 1
-   install -Dm644 license-pdn.txt "$INSTALL_ROOT/usr/local/share/doc/pinta/license-pdn.txt" || return 1
 
 }
 
