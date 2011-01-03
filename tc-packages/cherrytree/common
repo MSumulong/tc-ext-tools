@@ -1,0 +1,17 @@
+PACKAGE="cherrytree"
+VERSION="0.19"
+SOURCE="http://www.giuspen.com/software/cherrytree-${VERSION}.tar.gz"
+BUILD_DEPENDS="gtk2
+gtk2-dev
+pygtk-2.7
+pygtk-2.7-dev
+pygtksourceview"
+
+DESCRIPTION="A hierarchical note taking application featuring rich text and syntax highlighting."
+AUTHOR="Giuseppe Penone"
+SITE="http://www.giuspen.com/cherrytree/"
+COPYING="GPL"
+MAINTAINERS="Arslan S."
+COMMENTS="This extension is PPI compatible."
+CHANGELOG="---"
+CURRENT="First Version"

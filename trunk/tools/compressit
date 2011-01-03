@@ -37,11 +37,11 @@ fi
 
 FORMAT="$1"
 TARGET="$2"
-NAME="$3"
+OPTIONS="$3"
 
 print_usage(){
 
-   echo -e "${TCEXTTOOLS_ERROR_COLOR}Usage:${TCEXTTOOLS_MESSAGE_COLOR}\n$(basename $0) bz2|gz|xz /path/to/target name${NORMAL}"
+   echo -e "${TCEXTTOOLS_ERROR_COLOR}Usage:${TCEXTTOOLS_MESSAGE_COLOR}\n$(basename $0) bz2|gz|xz /path/to/target options${NORMAL}"
 
 }
 
@@ -58,25 +58,12 @@ this_compress() {
 
    if [ -d "$TARGET" ]; then
         TOP_DIR="$(basename $TARGET)"
-        if [ -n "$NAME" ]; then
-             OUTPUT="${NAME}.tar.${FORMAT}"
-        else
-             OUTPUT="${TOP_DIR}.tar.${FORMAT}"
-        fi
-
+        OUTPUT="${TOP_DIR}.tar.${FORMAT}"
         [ -e "$OUTPUT" ] && sudo rm -f "$OUTPUT"
-
-        tar -C $(dirname $TARGET) -c"${XXX}f" "$OUTPUT" "$TOP_DIR" || return 1
-
+        tar "$OPTIONS" -C $(dirname $TARGET) -c"${XXX}f" "$OUTPUT" "$TOP_DIR" || return 1
    elif [ -f "$TARGET" ]; then
-        if [ -n "$NAME" ]; then
-            OUTPUT="${NAME}.${FORMAT}"
-        else
-            OUTPUT="$(basename $TARGET).${FORMAT}"
-        fi
-
+        OUTPUT="$(basename $TARGET).${FORMAT}"
         [ -e "$OUTPUT" ] && sudo rm -f "$OUTPUT"
-
         "$COMPRESSOR" -c "$TARGET" > "$OUTPUT" || return 1
    fi
 
