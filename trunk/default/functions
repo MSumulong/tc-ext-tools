@@ -114,12 +114,21 @@ set_source() {
      elif [ ! "${SOURCE_NAME%.tgz}" = "$SOURCE_NAME" ]; then
             CONVERTED_SOURCE="${SOURCE_NAME%.tgz}.tar.xz"
             SOURCE_TYPE="tgz"
+     elif [ ! "${SOURCE_NAME%.tbz2}" = "$SOURCE_NAME" ]; then
+            CONVERTED_SOURCE="${SOURCE_NAME%.tbz2}.tar.xz"
+            SOURCE_TYPE="tbz2"
      elif [ ! "${SOURCE_NAME%.zip}" = "$SOURCE_NAME" ]; then
             SOURCE_TYPE="zip"
             CONVERTED_SOURCE="${SOURCE_NAME%.zip}.tar.xz"
      elif [ ! "${SOURCE_NAME%.xz}" = "$SOURCE_NAME" ]; then
             SOURCE_TYPE="xz"
             CONVERTED_SOURCE="$SOURCE_NAME"
+     elif [ ! "${SOURCE_NAME%.txz}" = "$SOURCE_NAME" ]; then
+            SOURCE_TYPE="txz"
+            CONVERTED_SOURCE="$SOURCE_NAME"
+     elif [ ! "${SOURCE_NAME%.tar}" = "$SOURCE_NAME" ]; then
+            SOURCE_TYPE="tar"
+            CONVERTED_SOURCE="${SOURCE_NAME%.tar}.tar.xz"
      else
             SOURCE_TYPE="custom"
             [ -z "$CONVERTED_SOURCE" ] && CONVERTED_SOURCE="${SOURCE_NAME%.*}.tar.xz"
@@ -298,7 +307,7 @@ if [ "$THIS" = "buildit" ] || [ "$THIS" = "convertit" ] || [ "$THIS" = "unpackit
      if [ -e "$PACKAGE_BUILD" ]; then
           . "$PACKAGE_BUILD"
      else
-          print_it error "the package $PACKAGE build file not found!"
+          print_it error "The package $PACKAGE build file not found!"
           exit 1
      fi
 fi
