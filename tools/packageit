@@ -62,8 +62,10 @@ this_main() {
        busybox cp -f "$TCEXTTOOLS_PKG/$EXTENSION_NAME"/*.tcz* "$TCEXTTOOLS_PACKAGE/$EXTENSION_NAME" || return 1
    done
 
-   if [ -f "$TCEXTTOOLS_CONVERTED_SOURCE" ]; then
+   if [ -e "$TCEXTTOOLS_CONVERTED_SOURCE" ]; then
         busybox cp -f "$TCEXTTOOLS_CONVERTED_SOURCE" "$TCEXTTOOLS_PACKAGE" || return 1
+   elif [ -e "$TCEXTTOOLS_SOURCE" ]; then
+        busybox cp -f "$TCEXTTOOLS_SOURCE" "$TCEXTTOOLS_PACKAGE" || return 1
    fi
 
    return 0
