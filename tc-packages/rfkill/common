@@ -1,0 +1,14 @@
+PACKAGE="rfkill"
+VERSION="0.4"
+SOURCE="http://wireless.kernel.org/download/rfkill/rfkill-${VERSION}.tar.bz2"
+BUILD_DEPENDS=""
+
+DESCRIPTION="A tool to list and set the rfkill state of wireless devices."
+AUTHOR="Johannes Berg, Marcel Holtmann, Tim Gardner"
+SITE="http://linuxwireless.org/en/users/Documentation/rfkill"
+COPYING="custom"
+MAINTAINERS="Arslan S."
+COMMENTS="Add this command to your bootlocal.sh:
+		sudo /usr/local/etc/init.d/rfkill start"
+CHANGELOG="---"
+CURRENT="First Version"

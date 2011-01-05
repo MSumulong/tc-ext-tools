@@ -17,8 +17,8 @@ dbus
 dbus-dev
 Xorg-7.5-lib
 Xorg-7.5-dev
-NetworkManager
-NetworkManager-dev"
+#NetworkManager
+#NetworkManager-dev"
 
 DESCRIPTION="Liferea (Linux Feed Reader) is an aggregator for online news feeds."
 AUTHOR="various"
@@ -26,5 +26,5 @@ SITE="http://liferea.sourceforge.net/"
 COPYING="GPL"
 MAINTAINERS="Arslan S."
 COMMENTS="This extension is PPI compatible."
-CHANGELOG="---"
-CURRENT="First Version"
+CHANGELOG="2011/01/03 First Version 1.6.5"
+CURRENT="Disabled nm support"

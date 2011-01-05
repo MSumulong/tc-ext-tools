@@ -1,0 +1,6 @@
+lib/udev/rules.d/60-rfkill.rules
+usr/local/share/licenses/rfkill/LICENSE
+usr/local/share/man/man8/rfkill.8.gz
+usr/local/sbin/rfkill
+usr/local/etc/conf.d/rfkill
+usr/local/etc/init.d/rfkill

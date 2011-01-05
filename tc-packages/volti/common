@@ -1,0 +1,16 @@
+PACKAGE="volti"
+VERSION="0.2.3"
+SOURCE="http://volti.googlecode.com/files/volti-${VERSION}.tar.gz"
+BUILD_DEPENDS="pyalsaaudio
+dbus-python-2.7
+pygtk-2.7
+pygtk-2.7-dev"
+
+DESCRIPTION="GTK+ application for controlling audio volume from system tray/notification area."
+AUTHOR="Milan Nikolic"
+SITE="http://code.google.com/p/volti/"
+COPYING="GPL-3"
+MAINTAINERS="Arslan S."
+COMMENTS="This extension is PPI compatible."
+CHANGELOG="---"
+CURRENT="First Version"

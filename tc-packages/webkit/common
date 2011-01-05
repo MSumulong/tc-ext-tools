@@ -1,5 +1,5 @@
 PACKAGE="webkit"
-VERSION="1.2.5"
+VERSION="1.2.6"
 SOURCE="http://webkitgtk.org/webkit-${VERSION}.tar.gz"
 BUILD_DEPENDS="gtk-doc
 gtk2
@@ -15,14 +15,12 @@ gst-plugins-base
 gst-plugins-base-dev
 enchant
 enchant-dev
-gobject-introspection
-gobject-introspection-dev
-gir-repository
-gir-repository-dev
 librsvg
 librsvg-dev
 icu
-icu-dev"
+icu-dev
+#gobject-introspection
+#gobject-introspection-dev"
 
 DESCRIPTION="WebKit/GTK+ is the GTK+ port of WebKit."
 AUTHOR="various"
@@ -35,5 +33,6 @@ CHANGELOG="2009/05/04 First Version by Roberto A. Foglietta
 		2010/04/12 Updated to 1.2.0
 		2010/05/01 Rebuilt against icu 4.4
 		2010/05/30 Updated to 1.2.1
-		2010/08/24 Updated to 1.2.3"
-CURRENT="Updated to 1.2.5"
+		2010/08/24 Updated to 1.2.3
+		2010/10/08 Updated to 1.2.5"
+CURRENT="Updated to $VERSION"
