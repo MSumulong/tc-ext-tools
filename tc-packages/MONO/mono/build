@@ -2,7 +2,7 @@
 # tc-ext-tools build functions: configure, compile, install, rules
 #
 
-export PATH="$TCEXTTOOLS_STORAGE/mono/src/temp/mono-$VERSION/runtime/_tmpinst/bin:$PATH"
+export PATH="$PACKAGE_TOP_SRC/runtime/_tmpinst/bin:$PATH"
 
 # Configure
 build_configure() {

@@ -2,15 +2,12 @@
 # tc-ext-tools build functions: configure, compile, install, rules
 #
 
-export CXXFLAGS="$CXXFLAGS -I/usr/local/include/bullet"
-
 # Configure
 build_configure() {
 
    [ -d build ] || mkdir build
    cd build
-   cmake -DCMAKE_INSTALL_PREFIX=/usr/local -DCMAKE_BUILD_TYPE=Release \
-      -Dbullet_include_dirs=/usr/local/include/bullet/BulletDynamics .. || return 1
+   cmake -DCMAKE_INSTALL_PREFIX=/usr/local -DCMAKE_BUILD_TYPE=Release .. || return 1
 
 }
 

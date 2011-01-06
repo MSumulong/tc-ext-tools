@@ -1,0 +1,14 @@
+PACKAGE="ilmbase"
+VERSION="1.0.2"
+SOURCE="http://savannah.nongnu.org/download/openexr/ilmbase-${VERSION}.tar.gz"
+BUILD_DEPENDS=""
+
+DESCRIPTION="Ilmbase libraries."
+AUTHOR="various"
+SITE="http://www.openexr.com/"
+COPYING="custom"
+MAINTAINERS="Juanito, Arslan S."
+COMMENTS="This extension is PPI compatible."
+CHANGELOG="2009/09/28 First Version 1.0.1 by Juanito
+		2010/07/07 Rebuilt by Arslan S."
+CURRENT="Updated to $VERSION by Arslan S."

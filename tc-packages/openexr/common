@@ -1,0 +1,15 @@
+PACKAGE="openexr"
+VERSION="1.7.0"
+SOURCE="http://download.savannah.nongnu.org/releases/openexr/openexr-${VERSION}.tar.gz"
+BUILD_DEPENDS="ilmbase
+ilmbase-dev"
+
+DESCRIPTION="OpenEXR is an HDR image file format."
+AUTHOR="various"
+SITE="http://www.openexr.com/"
+COPYING="custom"
+MAINTAINERS="Juanito, Arslan S."
+COMMENTS="This extension is PPI compatible."
+CHANGELOG="2009/09/28 First Version 1.6.1 by Juanito
+		2010/07/07 Rebuilt by Arslan S."
+CURRENT="Updated to $VERSION Arslan S."

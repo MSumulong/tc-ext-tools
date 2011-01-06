@@ -1,0 +1,10 @@
+#!/bin/sh
+
+USER=$(cat /etc/sysconfig/tcuser)
+
+if [ ! -f "/home/${USER}/.gazeborc" ]
+then
+       cp -L /usr/local/share/gazebo/gazeborc /home/${USER}/.gazeborc
+       chown ${USER}:staff /home/${USER}/.gazeborc
+fi
+
