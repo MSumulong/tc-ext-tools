@@ -1,0 +1,13 @@
+PACKAGE="java-sun"
+VERSION="6u23"
+SOURCE="http://download.java.net/dlj/binaries/jdk-${VERSION}-dlj-linux-i586.bin"
+BUILD_DEPENDS=""
+
+DESCRIPTION="Sun/Oracle's implementation of tha Java 6 specification."
+AUTHOR="Sun/Oracle"
+SITE="http://java.sun.com"
+COPYING="custom"
+MAINTAINERS="Arslan S."
+COMMENTS="---"
+CHANGELOG="---"
+CURRENT="First Version"

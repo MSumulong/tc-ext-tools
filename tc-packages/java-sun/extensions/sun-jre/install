@@ -1,0 +1,5 @@
+etc/profile.d/jre.sh
+etc/.java
+opt/java/jre
+usr/local/share/licenses/jre
+usr/local/lib/mozilla/plugins

@@ -1,0 +1,13 @@
+Index: Makefile.gazebo.tarball
+===================================================================
+--- a/Makefile.gazebo.tarball	(revision 33195)
++++ b/Makefile.gazebo.tarball	(working copy)
+@@ -54,7 +54,7 @@
+ 		-D bullet_cflags="$(BULLET_CFLAGS)" \
+                 -D gazebo_lflags="`rospack libs-only-other gazebo`"\
+ 		-D ENABLE_SHADOWS="ON" \
+-		-D CMAKE_CXX_FLAGS="`fltk-config --use-gl --cxxflags`" \
++		-D CMAKE_CXX_FLAGS="`fltk-config --use-gl --cxxflags` -D__STDC_CONSTANT_MACROS" \
+ 		-D CMAKE_CXX_LINK_FLAGS="`fltk-config --use-gl --ldflags`" \
+ 		-D FLTK_LIBRARIES="`fltk-config --use-gl --ldflags`" \
+ 		-D FLTK_INCLUDE_DIR="`fltk-config --use-gl --cxxflags`"

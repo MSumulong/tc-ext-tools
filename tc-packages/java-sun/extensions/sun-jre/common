@@ -1,0 +1,4 @@
+COMMENTS="The sun-jre package is licensed software.
+		You MUST read and agree to the license stored in /opt/java/jre/LICENSE before using it.
+
+		You need relogin or reboot to include java in your PATH"

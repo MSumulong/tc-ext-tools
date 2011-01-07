@@ -1,0 +1,121 @@
+
+############################################################################
+#                                                                          #
+#  tc-ext-tools build functions: configure, compile, install, rules, etc.  #
+#                                                                          #
+############################################################################
+
+build_unpack() {
+
+   mkdir java-sun
+   cd java-sun
+
+   wget --no-check-certificate https://jdk-distros.dev.java.net/source/browse/*checkout*/jdk-distros/trunk/utils/construct.sh || return 1
+   chmod +x construct.sh
+
+   mkdir unbundle-jdk
+   cd unbundle-jdk
+   sh "$PACKAGE_SOURCE" --accept-license
+   cd ..
+   ./construct.sh unbundle-jdk linux-jdk linux-jre || return 1
+
+}
+
+############################################################################ 
+#                            Configure                                     #
+############################################################################
+
+build_configure() {
+
+   return 0
+
+}
+
+############################################################################ 
+#                              Compile                                     #
+############################################################################
+
+build_compile() {
+
+   return 0
+
+}
+
+############################################################################ 
+#                              Install                                     #
+############################################################################
+
+build_install() {
+
+  # main files for jre
+  mkdir -p ${INSTALL_ROOT}/opt/java
+  cp -R linux-jdk/jre ${INSTALL_ROOT}/opt/java
+
+  # profiles
+  install -D ${PACKAGE_SRC}/jre.profile ${INSTALL_ROOT}/etc/profile.d/jre.sh
+
+  mkdir -p ${INSTALL_ROOT}/usr/local/lib/mozilla/plugins
+
+  ln -s /opt/java/jre/lib/i386/libnpjp2.so ${INSTALL_ROOT}/usr/local/lib/mozilla/plugins
+
+  # licenses
+  install -d -m 755 ${INSTALL_ROOT}/usr/local/share/licenses/jre
+  install -m644 ${INSTALL_ROOT}/opt/java/jre/COPYRIGHT ${INSTALL_ROOT}/usr/local/share/licenses/jre
+  install -m644 ${INSTALL_ROOT}/opt/java/jre/LICENSE ${INSTALL_ROOT}/usr/local/share/licenses/jre
+  install -m644 ${INSTALL_ROOT}/opt/java/jre/THIRDPARTYLICENSEREADME.txt ${INSTALL_ROOT}/usr/local/share/licenses/jre
+
+  # Fix system prefs folder (FS#18872)
+  mkdir -p ${INSTALL_ROOT}/etc/.java/.systemPrefs
+  touch ${INSTALL_ROOT}/etc/.java/.systemPrefs/noname
+
+  #copy icon
+  install -D -m644 ${PACKAGE_TOP_SRC}/linux-jdk/jre/lib/desktop/icons/hicolor/48x48/apps/sun-java.png ${INSTALL_ROOT}/usr/local/share/pixmaps/java.png
+
+  # main files for jdk
+  install -d ${INSTALL_ROOT}/opt
+  cp -R linux-jdk ${INSTALL_ROOT}/opt/java/jdk
+  rm -rf ${INSTALL_ROOT}/opt/java/jdk/jre
+  ln -s /opt/java/jre ${INSTALL_ROOT}/opt/java/jdk/jre
+
+  # profiles
+  install -D ${PACKAGE_SRC}/jdk.profile ${INSTALL_ROOT}/etc/profile.d/jdk.sh
+
+  # licenses
+  install -d -m 755 ${INSTALL_ROOT}/usr/local/share/licenses/jdk
+  install -m644 ${INSTALL_ROOT}/opt/java/jdk/COPYRIGHT ${INSTALL_ROOT}/usr/local/share/licenses/jdk
+  install -m644 ${INSTALL_ROOT}/opt/java/jdk/LICENSE ${INSTALL_ROOT}/usr/local/share/licenses/jdk
+  install -m644 ${INSTALL_ROOT}/opt/java/jdk/THIRDPARTYLICENSEREADME.txt ${INSTALL_ROOT}/usr/local/share/licenses/jdk
+
+  # desktop entries
+  install -Dm644 ${PACKAGE_SRC}/java-control-panel.desktop ${INSTALL_ROOT}/usr/local/share/applications/java-control-panel.desktop
+  install -Dm644 ${PACKAGE_SRC}/java-monitoring-and-management-console.desktop ${INSTALL_ROOT}/usr/local/share/applications/java-monitoring-and-management-console.desktop
+  install -Dm644 ${PACKAGE_SRC}/java-policy-settings.desktop ${INSTALL_ROOT}/usr/local/share/applications/java-policy-settings.desktop
+  install -Dm644 ${PACKAGE_SRC}/java-visualvm.desktop ${INSTALL_ROOT}/usr/local/share/applications/java-visualvm.desktop
+  install -Dm644 ${PACKAGE_SRC}/java-web-start.desktop ${INSTALL_ROOT}/usr/local/share/applications/java-web-start.desktop
+
+  # javadb (apache derby) daemon files
+  install -D ${PACKAGE_SRC}/derby-network-server ${INSTALL_ROOT}/etc/init.d/derby-network-server
+  install -D -m644 ${PACKAGE_SRC}/derby-network-server.conf ${INSTALL_ROOT}/etc/conf.d/derby-network-server
+
+}
+
+############################################################################ 
+#                                Rules                                     #
+############################################################################
+
+build_rules() {
+
+   buildit load || exit 1
+   buildit download || exit 1
+   buildit unpack || exit 1
+   buildit install || exit 1
+   buildit split || exit 1
+   buildit create || exit 1
+   buildit generate || exit 1
+   buildit check || exit 1
+   buildit package || exit 1
+   buildit compress || exit 1
+   buildit encrypt || exit 1
+
+}
+

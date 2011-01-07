@@ -1,6 +1,6 @@
 PACKAGE="pyopenssl"
-VERSION="0.10"
-SOURCE="http://pypi.python.org/packages/source/p/pyOpenSSL/pyOpenSSL-${VERSION}.tar.gz"
+VERSION="0.11"
+SOURCE="http://launchpad.net/pyopenssl/main/${VERSION}/+download/pyOpenSSL-${VERSION}.tar.gz"
 BUILD_DEPENDS="python
 python-dev
 openssl-0.9.8
@@ -12,5 +12,6 @@ SITE="https://launchpad.net/pyopenssl"
 COPYING="LGPL"
 MAINTAINERS="Kingdomcome, Arslan S."
 COMMENTS="This extension is PPI compatible."
-CHANGELOG="2010/03/12 First Version 0.10 by Kingdomcome"
-CURRENT="Rebuilt against python 2.7 by Arslan S."
+CHANGELOG="2010/03/12 First Version 0.10 by Kingdomcome
+		2011/01/04 Rebuilt against python 2.7 by Arslan S."
+CURRENT="Updated to $VERSION by Arslan S."
