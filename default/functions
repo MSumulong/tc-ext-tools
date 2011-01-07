@@ -278,7 +278,9 @@ if [ -e "$PACKAGE_COMMON" ]; then
      [ -d "$TCEXTTOOLS_PKG" ] || install -m 755 -d "$TCEXTTOOLS_PKG"
      [ -d "$TCEXTTOOLS_LOG" ] || install -m 755 -d "$TCEXTTOOLS_LOG"
 
+     set_date_time
      set_source
+     set_extensions
 
      TCEXTTOOLS_SOURCE="$TCEXTTOOLS_SRC/$SOURCE_NAME"
      TCEXTTOOLS_CONVERTED_SOURCE="$TCEXTTOOLS_SRC/$CONVERTED_SOURCE"
@@ -319,11 +321,4 @@ fi
 if [ "$THIS" = "configureit" ] || [ "$THIS" = "compileit" ] || [ "$THIS" = "installit" ]; then
      export_flags
 fi
-
-############################################################################ 
-#                              common needs                                #
-############################################################################
-
-set_extensions
-set_date_time
 
