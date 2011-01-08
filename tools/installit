@@ -54,7 +54,7 @@ this_main() {
    build_install > "$TCEXTTOOLS_INSTALL_LOG" 2>&1 || return 1
 
    if [ -d "$INSTALL_ROOT/usr/local/share/gnome/help" ]; then
-        for link in $(sudo find "$INSTALL_ROOT/usr/local/share/gnome/help" -type l)
+        for link in $(find "$INSTALL_ROOT/usr/local/share/gnome/help" -type l)
         do
             FILE=$(busybox readlink -f "$link")
             LINK="${FILE#${INSTALL_ROOT}}"
@@ -62,13 +62,13 @@ this_main() {
         done
    fi
 
-   [ -e "$PACKAGE_EXTENSIONS/${PACKAGE}.list" ] && rm -f "$PACKAGE_EXTENSIONS/${PACKAGE}.list"
+   [ -e "$PACKAGE_EXTENSIONS/list" ] && rm -f "$PACKAGE_EXTENSIONS/list"
 
    if [ -d "$INSTALL_ROOT" ]; then
         cd "$INSTALL_ROOT"
         for i in $(ls)
         do
-              su "$TCUSER" -c "cd $INSTALL_ROOT;sudo find '$i' -not -type d >> $PACKAGE_EXTENSIONS/${PACKAGE}.list" || return 1
+              su "$TCUSER" -c "cd $INSTALL_ROOT;sudo find '$i' -not -type d >> $PACKAGE_EXTENSIONS/list" || return 1
         done
    fi
 
