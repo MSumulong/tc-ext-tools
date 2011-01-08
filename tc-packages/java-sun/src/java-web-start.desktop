@@ -1,5 +1,5 @@
 [Desktop Entry]
-Exec=/opt/java/jdk/bin/javaws -viewer
+Exec=/usr/local/java-sun/jdk/bin/javaws -viewer
 GenericName[cs]=Spravovat a spouštět aplikace Java Web Start
 GenericName=Manage and run Java Web Start Applications
 Icon=java

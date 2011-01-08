@@ -35,6 +35,7 @@ TCEXTTOOLS_DEPENDS="compiletc
                     tar
                     git
                     svn
+                    wget
                     xz
                     zip-unzip
                     bzip2

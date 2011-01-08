@@ -47,22 +47,22 @@ build_compile() {
 
 build_install() {
 
-  # main files for jre
-  mkdir -p ${INSTALL_ROOT}/opt/java
-  cp -R linux-jdk/jre ${INSTALL_ROOT}/opt/java
+  # sun-jre
+  mkdir -p ${INSTALL_ROOT}/usr/local/java-sun
+  cp -R linux-jdk/jre ${INSTALL_ROOT}/usr/local/java-sun
 
   # profiles
   install -D ${PACKAGE_SRC}/jre.profile ${INSTALL_ROOT}/etc/profile.d/jre.sh
 
   mkdir -p ${INSTALL_ROOT}/usr/local/lib/mozilla/plugins
 
-  ln -s /opt/java/jre/lib/i386/libnpjp2.so ${INSTALL_ROOT}/usr/local/lib/mozilla/plugins
+  ln -s /usr/local/java-sun/jre/lib/i386/libnpjp2.so ${INSTALL_ROOT}/usr/local/lib/mozilla/plugins
 
   # licenses
   install -d -m 755 ${INSTALL_ROOT}/usr/local/share/licenses/jre
-  install -m644 ${INSTALL_ROOT}/opt/java/jre/COPYRIGHT ${INSTALL_ROOT}/usr/local/share/licenses/jre
-  install -m644 ${INSTALL_ROOT}/opt/java/jre/LICENSE ${INSTALL_ROOT}/usr/local/share/licenses/jre
-  install -m644 ${INSTALL_ROOT}/opt/java/jre/THIRDPARTYLICENSEREADME.txt ${INSTALL_ROOT}/usr/local/share/licenses/jre
+  install -m644 ${INSTALL_ROOT}/usr/local/java-sun/jre/COPYRIGHT ${INSTALL_ROOT}/usr/local/share/licenses/jre
+  install -m644 ${INSTALL_ROOT}/usr/local/java-sun/jre/LICENSE ${INSTALL_ROOT}/usr/local/share/licenses/jre
+  install -m644 ${INSTALL_ROOT}/usr/local/java-sun/jre/THIRDPARTYLICENSEREADME.txt ${INSTALL_ROOT}/usr/local/share/licenses/jre
 
   # Fix system prefs folder (FS#18872)
   mkdir -p ${INSTALL_ROOT}/etc/.java/.systemPrefs
@@ -72,19 +72,18 @@ build_install() {
   install -D -m644 ${PACKAGE_TOP_SRC}/linux-jdk/jre/lib/desktop/icons/hicolor/48x48/apps/sun-java.png ${INSTALL_ROOT}/usr/local/share/pixmaps/java.png
 
   # main files for jdk
-  install -d ${INSTALL_ROOT}/opt
-  cp -R linux-jdk ${INSTALL_ROOT}/opt/java/jdk
-  rm -rf ${INSTALL_ROOT}/opt/java/jdk/jre
-  ln -s /opt/java/jre ${INSTALL_ROOT}/opt/java/jdk/jre
+  cp -R linux-jdk ${INSTALL_ROOT}/usr/local/java-sun/jdk
+  rm -rf ${INSTALL_ROOT}/usr/local/java-sun/jdk/jre
+  ln -s /usr/local/java-sun/jre ${INSTALL_ROOT}/usr/local/java-sun/jdk/jre
 
   # profiles
   install -D ${PACKAGE_SRC}/jdk.profile ${INSTALL_ROOT}/etc/profile.d/jdk.sh
 
   # licenses
   install -d -m 755 ${INSTALL_ROOT}/usr/local/share/licenses/jdk
-  install -m644 ${INSTALL_ROOT}/opt/java/jdk/COPYRIGHT ${INSTALL_ROOT}/usr/local/share/licenses/jdk
-  install -m644 ${INSTALL_ROOT}/opt/java/jdk/LICENSE ${INSTALL_ROOT}/usr/local/share/licenses/jdk
-  install -m644 ${INSTALL_ROOT}/opt/java/jdk/THIRDPARTYLICENSEREADME.txt ${INSTALL_ROOT}/usr/local/share/licenses/jdk
+  install -m644 ${INSTALL_ROOT}/usr/local/java-sun/jdk/COPYRIGHT ${INSTALL_ROOT}/usr/local/share/licenses/jdk
+  install -m644 ${INSTALL_ROOT}/usr/local/java-sun/jdk/LICENSE ${INSTALL_ROOT}/usr/local/share/licenses/jdk
+  install -m644 ${INSTALL_ROOT}/usr/local/java-sun/jdk/THIRDPARTYLICENSEREADME.txt ${INSTALL_ROOT}/usr/local/share/licenses/jdk
 
   # desktop entries
   install -Dm644 ${PACKAGE_SRC}/java-control-panel.desktop ${INSTALL_ROOT}/usr/local/share/applications/java-control-panel.desktop
@@ -94,8 +93,8 @@ build_install() {
   install -Dm644 ${PACKAGE_SRC}/java-web-start.desktop ${INSTALL_ROOT}/usr/local/share/applications/java-web-start.desktop
 
   # javadb (apache derby) daemon files
-  install -D ${PACKAGE_SRC}/derby-network-server ${INSTALL_ROOT}/etc/init.d/derby-network-server
-  install -D -m644 ${PACKAGE_SRC}/derby-network-server.conf ${INSTALL_ROOT}/etc/conf.d/derby-network-server
+  install -D ${PACKAGE_SRC}/derby-network-server ${INSTALL_ROOT}/usr/local/etc/init.d/derby-network-server
+  install -D -m644 ${PACKAGE_SRC}/derby-network-server.conf ${INSTALL_ROOT}/usr/local/etc/conf.d/derby-network-server
 
 }
 

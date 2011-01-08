@@ -1,5 +1,5 @@
 [Desktop Entry]
-Exec=/opt/java/jdk/bin/policytool
+Exec=/usr/local/java-sun/jdk/bin/policytool
 Icon=java
 Name[cs]=Nastavení politiky Java aplikací
 Name=Java Policy Settings

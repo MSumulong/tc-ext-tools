@@ -1,7 +1,7 @@
 etc/profile.d/jdk.sh
-etc/conf.d/derby-network-server
-etc/init.d/derby-network-server
-opt/java/jdk
+usr/local/etc/conf.d/derby-network-server
+usr/local/etc/init.d/derby-network-server
+usr/local/java-sun/jdk
 usr/local/share/licenses/jdk
 usr/local/share/pixmaps/java.png
 usr/local/share/applications

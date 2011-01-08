@@ -1,0 +1,15 @@
+PACKAGE="attica"
+VERSION="0.2.0"
+SOURCE="ftp://ftp.kde.org/pub/kde/stable/attica/attica-${VERSION}.tar.bz2"
+BUILD_DEPENDS="cmake
+qt-4.x-base
+qt-4.x-dev"
+
+DESCRIPTION="The Open Collaboration Services API."
+AUTHOR="Eckhart Worner, Frederik Gladhorn, Cornelius Schumacher"
+SITE="http://www.kde.org"
+COPYING="LGPL-2.1"
+MAINTAINERS="Arslan S."
+COMMENTS="This extension is PPI compatible."
+CHANGELOG="2010/07/11 First Version 0.1.4"
+CURRENT="Updated to $VERSION"

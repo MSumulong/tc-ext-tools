@@ -4,7 +4,7 @@
 . $DERBY_HOME/bin/derby_common.sh
 
 DAEMON_NAME="derby-network-server"
-DAEMON_CONF="/etc/conf.d/$DAEMON_NAME"
+DAEMON_CONF="/usr/local/etc/conf.d/$DAEMON_NAME"
 DAEMON_PID="/var/run/$DAEMON_NAME.pid"
 
 [ -f $DAEMON_CONF ] && . $DAEMON_CONF

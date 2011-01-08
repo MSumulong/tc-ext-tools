@@ -1,0 +1,14 @@
+PACKAGE="apache-ant"
+VERSION="1.8.2"
+SOURCE="http://archive.apache.org/dist/ant/binaries/apache-ant-${VERSION}-bin.tar.bz2"
+BUILD_DEPENDS=""
+
+DESCRIPTION="Ant is a Java based build tool."
+AUTHOR="The Apache Software Foundation"
+SITE="http://ant.apache.org/"
+COPYING="Apache License, Version 2.0"
+MAINTAINERS="Arslan S."
+COMMENTS="A Java runtime package (sun-jre, openjdk-jre) needs to be installed.
+		Relogin or reboot is required to have ANT in PATH"
+CHANGELOG="---"
+CURRENT="First Version"
