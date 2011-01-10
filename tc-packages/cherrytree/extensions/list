@@ -82,6 +82,7 @@ usr/local/share/cherrytree/glade/cherrytree.glade
 usr/local/share/cherrytree/glade/cherry_orange_dark.png
 usr/local/share/cherrytree/glade/anchor_char.png
 usr/local/share/application-registry/cherrytree.applications
+usr/local/share/pixmaps/cherrytree.png
 usr/local/share/mime/packages/cherrytree.xml
 usr/local/share/applications/cherrytree.desktop
 usr/local/share/locale/cs/LC_MESSAGES/cherrytree.mo

@@ -33,6 +33,10 @@ build_install() {
 
    python setup.py install --prefix=/usr/local --root="$INSTALL_ROOT" || return 1
 
+   install -d -m 755 "$INSTALL_ROOT/usr/local/share/pixmaps"
+   convert -background None "$INSTALL_ROOT/usr/local/share/icons/hicolor/scalable/apps/cherrytree.svg" \
+        -compress none -depth 16 "$INSTALL_ROOT/usr/local/share/pixmaps/cherrytree.png"
+
 }
 
 ############################################################################ 
