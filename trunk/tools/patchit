@@ -21,23 +21,23 @@
 #  with this program; if not, write to the Free Software Foundation, Inc.,
 #  51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 #
-#  (C) Copyright 2010 Sercan Arslan
+#  (C) Copyright 2011 Sercan Arslan
 #
 
 . /etc/init.d/tc-functions
 
 TCEXTTOOLS_ROOT="$(dirname $0)/.."
 
-if [ -f "$TCEXTTOOLS_ROOT/etc/tc-ext-tools/functions" ]; then
-     . "$TCEXTTOOLS_ROOT/etc/tc-ext-tools/functions"
+if [ -f "$TCEXTTOOLS_ROOT/etc/init.d/tc-ext-tools.sh" ]; then
+     . "$TCEXTTOOLS_ROOT/etc/init.d/tc-ext-tools.sh"
 else
      echo "${RED}$(basename $0):${BLUE} tc-ext-tools functions file not found!${NORMAL}"
      exit 1
 fi
 
-if [ ! -d "$TCEXTTOOLS_TOP_SRC" ]; then
-       print_it error "You must unpack it first!"
-       exit 1
+if [ -z "$TCEXTTOOLS_TOP_SRC" ]; then
+     print_it error "You must unpack it first!"
+     exit 1
 fi
 
 ############################################################################ 
@@ -46,23 +46,29 @@ fi
 
 this_main() {
 
-   if [ -f "$PACKAGE_PATCHES/series" ]; then
-        PATCHES=$(cat "$PACKAGE_PATCHES/series")
+   if [ -f "$TCEXTTOOLS_PATCHES/series" ]; then
+        PATCHES=$(cat "$TCEXTTOOLS_PATCHES/series")
         for PATCH in $PATCHES
         do
-            if [ "${PATCH#"#"}" = "$PATCH" ]; then
-                 if [ -f "$PACKAGE_PATCHES/$PATCH" ]; then
-                      patch --directory="$TCEXTTOOLS_TOP_SRC" -Np1 -i "$PACKAGE_PATCHES/$PATCH" || return 1
+            if [ "${PATCH#\#}" = "$PATCH" ]; then
+                 if [ -f "$TCEXTTOOLS_PATCHES/$PATCH" ]; then
+                      patch --directory="$TCEXTTOOLS_TOP_SRC" -Np1 -i "$TCEXTTOOLS_PATCHES/$PATCH"
+                      if [ "$?" -gt 0 ]; then
+                           patch --directory="$TCEXTTOOLS_TOP_SRC" -Np0 -i "$TCEXTTOOLS_PATCHES/$PATCH" || return 1
+                      fi
                  fi
             fi
         done
-   elif [ -d "$PACKAGE_PATCHES" ]; then
-        PATCHES=$(ls "$PACKAGE_PATCHES")
+   elif [ -d "$TCEXTTOOLS_PATCHES" ]; then
+        PATCHES=$(ls "$TCEXTTOOLS_PATCHES")
         if [ -n "$PATCHES" ]; then
              for PATCH in $PATCHES
              do
-                 if [ -f "$PACKAGE_PATCHES/$PATCH" ]; then
-                      patch --directory="$TCEXTTOOLS_TOP_SRC" -Np1 -i "$PACKAGE_PATCHES/$PATCH" || return 1
+                 if [ -f "$TCEXTTOOLS_PATCHES/$PATCH" ]; then
+                      patch --directory="$TCEXTTOOLS_TOP_SRC" -Np1 -i "$TCEXTTOOLS_PATCHES/$PATCH"
+                      if [ "$?" -gt 0 ]; then
+                           patch --directory="$TCEXTTOOLS_TOP_SRC" -Np0 -i "$TCEXTTOOLS_PATCHES/$PATCH" || return 1
+                      fi
                  fi
              done
         fi
@@ -73,7 +79,7 @@ this_main() {
 }
 
 print_it "Patching the package $PACKAGE source ... \c"
-this_main > "$TCEXTTOOLS_ERROR_LOG_2" 2>&1
+this_main > "$TCEXTTOOLS_MESSAGE_LOG_2" 2>&1
 if [ "$?" -gt 0 ]; then
      print_it error "failed!"
      exit 1

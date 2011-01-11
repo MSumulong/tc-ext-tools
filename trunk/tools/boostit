@@ -21,15 +21,15 @@
 #  with this program; if not, write to the Free Software Foundation, Inc.,
 #  51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 #
-#  (C) Copyright 2010 Sercan Arslan
+#  (C) Copyright 2011 Sercan Arslan
 #
 
 . /etc/init.d/tc-functions
 
 TCEXTTOOLS_ROOT="$(dirname $0)/.."
 
-if [ -f "$TCEXTTOOLS_ROOT/etc/tc-ext-tools/functions" ]; then
-     . "$TCEXTTOOLS_ROOT/etc/tc-ext-tools/functions"
+if [ -f "$TCEXTTOOLS_ROOT/etc/init.d/tc-ext-tools.sh" ]; then
+     . "$TCEXTTOOLS_ROOT/etc/init.d/tc-ext-tools.sh"
 else
      echo "${RED}$(basename $0):${BLUE} tc-ext-tools functions file not found!${NORMAL}"
      exit 1
@@ -41,7 +41,7 @@ EXTENSIONS="$3"
 
 print_usage(){
 
-   echo -e "${TCEXTTOOLS_ERROR_COLOR}Usage:${TCEXTTOOLS_MESSAGE_COLOR}\n$(basename $0) package version \"extension1 extension2 ...\"${NORMAL}"
+   echo -e "${TCEXTTOOLS_ERROR_COLOR}${THIS} usage:\n\t${TCEXTTOOLS_MESSAGE_COLOR}${THIS} package version \"extension1 extension2 ...\"${NORMAL}"
 
 }
 
@@ -54,20 +54,20 @@ if [ -z "$EXTENSIONS" ]; then
      EXTENSIONS="$PACKAGE"
 fi
 
-print_it "You entered:\n\n\tPACKAGE=$PACKAGE\n\tVERSION=$VERSION\n\tEXTENSIONS=$EXTENSIONS\n"
+echo -e "${RED}${THIS}: Boosting the package with;\n\t${BLUE}PACKAGE=$PACKAGE\n\tVERSION=$VERSION\n\tEXTENSIONS=$EXTENSIONS\n${NORMAL}"
 
-if [ -e "$PACKAGE_COMMON" ]; then
-     print_it warning "Warning! This package looks to be boosted before.\nIf you continue existing files will be overwritten.\nWould you like you continue ? [y or n]"
+if [ -f "$PACKAGE_COMMON" ]; then
+     print_it warning "This package looks to be boosted before.\nIf you continue existing files will be overwritten.\nWould you like you continue ? [y or n]"
      read ans
      case "$ans" in
           y)
             print_it "You agreed to continue. The files will be overwritten."
             ;;
           n)
-            print_it "You don't want to continue ? Farewell then!"
+            print_it "You don't want to continue ? Farewell!"
             exit 0
             ;;
-          *) 
+          *)
             print_it error "I don't understand what you are saying!"
             exit 1
             ;;
@@ -80,9 +80,11 @@ fi
 
 this_main() {
 
-   if [ ! -d "$PACKAGE_EXTENSIONS" ]; then
-          install -m 755 -d "$PACKAGE_EXTENSIONS" || return 1
+   if [ -d "$PACKAGE_EXTENSIONS" ]; then
+        rm -rf "$PACKAGE_EXTENSIONS"
    fi
+
+   mkdir -p "$PACKAGE_EXTENSIONS" || return 1
 
    if [ "$VERSION" = "svn" ]; then
 
@@ -160,6 +162,7 @@ _EOF
        if [ ! "${EXTENSION%-locale}" = "$EXTENSION" ]; then
               echo "${EXTENSION%-locale}.tcz" > "$PACKAGE_EXTENSIONS/$EXTENSION/dep" || return 1
               echo "usr/local/share/locale" > "$PACKAGE_EXTENSIONS/$EXTENSION/install" || return 1
+              echo "x-usr/local/share/locale" > "$PACKAGE_EXTENSIONS/${EXTENSION%-locale}/install" || return 1
        elif [ ! "${EXTENSION%-dev}" = "$EXTENSION" ]; then
               echo "${EXTENSION%-dev}.tcz" > "$PACKAGE_EXTENSIONS/$EXTENSION/dep" || return 1
        fi

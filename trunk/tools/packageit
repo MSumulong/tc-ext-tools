@@ -21,15 +21,15 @@
 #  with this program; if not, write to the Free Software Foundation, Inc.,
 #  51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 #
-#  (C) Copyright 2010 Sercan Arslan
+#  (C) Copyright 2011 Sercan Arslan
 #
 
 . /etc/init.d/tc-functions
 
 TCEXTTOOLS_ROOT="$(dirname $0)/.."
 
-if [ -f "$TCEXTTOOLS_ROOT/etc/tc-ext-tools/functions" ]; then
-     . "$TCEXTTOOLS_ROOT/etc/tc-ext-tools/functions"
+if [ -f "$TCEXTTOOLS_ROOT/etc/init.d/tc-ext-tools.sh" ]; then
+     . "$TCEXTTOOLS_ROOT/etc/init.d/tc-ext-tools.sh"
 else
      echo "${RED}$(basename $0):${BLUE} tc-ext-tools functions file not found!${NORMAL}"
      exit 1
@@ -41,8 +41,8 @@ fi
 
 this_main() {
 
-   [ -d "$TCEXTTOOLS_PACKAGE" ] && sudo rm -rf "$TCEXTTOOLS_PACKAGE"
-   mkdir -p "$TCEXTTOOLS_PACKAGE"
+   [ -d "$TCEXTTOOLS_PKG_TEMP" ] && sudo rm -rf "$TCEXTTOOLS_PKG_TEMP"
+   mkdir -p "$TCEXTTOOLS_PKG_TEMP"
 
    cd "$PACKAGE_ROOT"
 
@@ -57,15 +57,15 @@ this_main() {
               exit 1
        fi
 
-       [ -d "$TCEXTTOOLS_PACKAGE/$EXTENSION_NAME" ] || mkdir -p "$TCEXTTOOLS_PACKAGE/$EXTENSION_NAME"
+       [ -d "$TCEXTTOOLS_PKG_TEMP/$PACKAGE/$EXTENSION_NAME" ] || mkdir -p "$TCEXTTOOLS_PKG_TEMP/$PACKAGE/$EXTENSION_NAME"
 
-       busybox cp -f "$TCEXTTOOLS_PKG/$EXTENSION_NAME"/*.tcz* "$TCEXTTOOLS_PACKAGE/$EXTENSION_NAME" || return 1
+       busybox cp -f "$TCEXTTOOLS_PKG/$EXTENSION_NAME"/*.tcz* "$TCEXTTOOLS_PKG_TEMP/$PACKAGE/$EXTENSION_NAME" || return 1
    done
 
-   if [ -e "$TCEXTTOOLS_CONVERTED_SOURCE" ]; then
-        busybox cp -f "$TCEXTTOOLS_CONVERTED_SOURCE" "$TCEXTTOOLS_PACKAGE" || return 1
+   if [ -e "$TCEXTTOOLS_SOURCE_CONVERTED" ]; then
+        busybox cp -f "$TCEXTTOOLS_SOURCE_CONVERTED" "$TCEXTTOOLS_PKG_TEMP/$PACKAGE" || return 1
    elif [ -e "$TCEXTTOOLS_SOURCE" ]; then
-        busybox cp -f "$TCEXTTOOLS_SOURCE" "$TCEXTTOOLS_PACKAGE" || return 1
+        busybox cp -f "$TCEXTTOOLS_SOURCE" "$TCEXTTOOLS_PKG_TEMP/$PACKAGE" || return 1
    fi
 
    return 0
@@ -73,7 +73,7 @@ this_main() {
 }
 
 print_it "Packaging the package $PACKAGE ... \c"
-this_main > "$TCEXTTOOLS_ERROR_LOG_2" 2>&1
+this_main > "$TCEXTTOOLS_MESSAGE_LOG_2" 2>&1
 if [ "$?" -gt 0 ]; then
      print_it error "failed!"
      exit 1
