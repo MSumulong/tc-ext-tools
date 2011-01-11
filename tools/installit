@@ -35,7 +35,7 @@ else
      exit 1
 fi
 
-if [ ! -d "$TCEXTTOOLS_TOP_SRC" ]; then
+if [ ! -d "$TCEXTTOOLS_SOURCE_TOPDIR" ]; then
        print_it error "You must compile it first!"
        exit 1
 fi
@@ -50,7 +50,7 @@ this_main() {
 
    [ -d "$TCEXTTOOLS_INSTALL_ROOT" ] && sudo rm -rf "$TCEXTTOOLS_INSTALL_ROOT"
 
-   cd "$TCEXTTOOLS_TOP_SRC"
+   cd "$TCEXTTOOLS_SOURCE_TOPDIR"
    build_install > "$TCEXTTOOLS_INSTALL_LOG" 2>&1 || return 1
 
    if [ -d "$INSTALL_ROOT/usr/local/share/gnome/help" ]; then

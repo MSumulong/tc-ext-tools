@@ -35,7 +35,7 @@ else
      exit 1
 fi
 
-if [ ! -d "$TCEXTTOOLS_TOP_SRC" ]; then
+if [ ! -d "$TCEXTTOOLS_SOURCE_TOPDIR" ]; then
        print_it error "You must configure it first!"
        exit 1
 fi
@@ -46,7 +46,7 @@ fi
 
 this_main() {
 
-   cd "$TCEXTTOOLS_TOP_SRC"
+   cd "$TCEXTTOOLS_SOURCE_TOPDIR"
    build_compile > "$TCEXTTOOLS_COMPILE_LOG" 2>&1 || return 1
 
    return 0
