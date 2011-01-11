@@ -35,7 +35,7 @@ else
      exit 1
 fi
 
-if [ -z "$TCEXTTOOLS_TOP_SRC" ]; then
+if [ -z "$TCEXTTOOLS_SOURCE_TOPDIR" ]; then
      print_it error "You must unpack it first!"
      exit 1
 fi
@@ -52,9 +52,9 @@ this_main() {
         do
             if [ "${PATCH#\#}" = "$PATCH" ]; then
                  if [ -f "$TCEXTTOOLS_PATCHES/$PATCH" ]; then
-                      patch --directory="$TCEXTTOOLS_TOP_SRC" -Np1 -i "$TCEXTTOOLS_PATCHES/$PATCH"
+                      patch --directory="$TCEXTTOOLS_SOURCE_TOPDIR" -Np1 -i "$TCEXTTOOLS_PATCHES/$PATCH"
                       if [ "$?" -gt 0 ]; then
-                           patch --directory="$TCEXTTOOLS_TOP_SRC" -Np0 -i "$TCEXTTOOLS_PATCHES/$PATCH" || return 1
+                           patch --directory="$TCEXTTOOLS_SOURCE_TOPDIR" -Np0 -i "$TCEXTTOOLS_PATCHES/$PATCH" || return 1
                       fi
                  fi
             fi
@@ -65,9 +65,9 @@ this_main() {
              for PATCH in $PATCHES
              do
                  if [ -f "$TCEXTTOOLS_PATCHES/$PATCH" ]; then
-                      patch --directory="$TCEXTTOOLS_TOP_SRC" -Np1 -i "$TCEXTTOOLS_PATCHES/$PATCH"
+                      patch --directory="$TCEXTTOOLS_SOURCE_TOPDIR" -Np1 -i "$TCEXTTOOLS_PATCHES/$PATCH"
                       if [ "$?" -gt 0 ]; then
-                           patch --directory="$TCEXTTOOLS_TOP_SRC" -Np0 -i "$TCEXTTOOLS_PATCHES/$PATCH" || return 1
+                           patch --directory="$TCEXTTOOLS_SOURCE_TOPDIR" -Np0 -i "$TCEXTTOOLS_PATCHES/$PATCH" || return 1
                       fi
                  fi
              done

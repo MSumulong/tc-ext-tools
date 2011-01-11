@@ -49,12 +49,12 @@ this_main() {
         mkdir -p "$TCEXTTOOLS_SRC_TEMP"
 
         if [ "$VCS" = "svn" ]; then
-             svn --non-interactive --trust-server-cert co "$SOURCE" "$TCEXTTOOLS_TOP_SRC" || return 1
-             compressit xz "$TCEXTTOOLS_TOP_SRC" --exclude-vcs || return 1
+             svn --non-interactive --trust-server-cert co "$SOURCE" "$TCEXTTOOLS_SOURCE_TOPDIR" || return 1
+             compressit xz "$TCEXTTOOLS_SOURCE_TOPDIR" --exclude-vcs || return 1
              busybox mv -f "$SOURCE_NAME" "$TCEXTTOOLS_SRC" || return 1
         elif [ "$VCS" = "git" ]; then
-             git clone "$SOURCE" "$TCEXTTOOLS_TOP_SRC" || return 1
-             compressit xz "$TCEXTTOOLS_TOP_SRC" --exclude-vcs || return 1
+             git clone "$SOURCE" "$TCEXTTOOLS_SOURCE_TOPDIR" || return 1
+             compressit xz "$TCEXTTOOLS_SOURCE_TOPDIR" --exclude-vcs || return 1
              busybox mv -f "$SOURCE_NAME" "$TCEXTTOOLS_SRC" || return 1
         fi
    else

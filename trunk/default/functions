@@ -134,18 +134,10 @@ set_source() {
             [ -z "$SOURCE_NAME_CONVERTED" ] && SOURCE_NAME_CONVERTED="${SOURCE_NAME%.*}.tar.xz"
      fi
 
-}
-
-############################################################################ 
-#           sets the variables related with the package source             #
-############################################################################
-
-set_top_src() {
-
      if [ -z "$VCS" ]; then
-          [ -d "$TCEXTTOOLS_SRC_TEMP" ] && TOP_SRC=$(busybox ls -el $TCEXTTOOLS_SRC_TEMP | egrep '^d' | cut -d : -f3 | cut -d " " -f3)
+          [ -d "$TCEXTTOOLS_SRC_TEMP" ] && SOURCE_TOPDIR=$(busybox ls -el $TCEXTTOOLS_SRC_TEMP | egrep '^d' | cut -d : -f3 | cut -d " " -f3)
      else
-          TOP_SRC=${PACKAGE}-${VERSION}
+          SOURCE_TOPDIR=${PACKAGE}-${VERSION}
      fi
 
 }
@@ -250,11 +242,8 @@ if [ -f "$PACKAGE_COMMON" ]; then
      # set source related variables
      set_source
 
-     # set top src dir
-     set_top_src
-
-     if [ -n "$TOP_SRC" ]; then
-          TCEXTTOOLS_TOP_SRC="$TCEXTTOOLS_SRC_TEMP/$TOP_SRC"
+     if [ -n "$SOURCE_TOPDIR" ]; then
+          TCEXTTOOLS_SOURCE_TOPDIR="$TCEXTTOOLS_SRC_TEMP/$SOURCE_TOPDIR"
      fi
 
      # set extensions
@@ -264,13 +253,15 @@ if [ -f "$PACKAGE_COMMON" ]; then
 
      TCEXTTOOLS_SOURCE="$TCEXTTOOLS_SRC/$SOURCE_NAME"
      TCEXTTOOLS_SOURCE_CONVERTED="$TCEXTTOOLS_SRC/$SOURCE_NAME_CONVERTED"
+     TCEXTTOOLS_PACKAGE="$TCEXTTOOLS_PKG_TEMP/${PACKAGE}.tar.bz2"
+     TCEXTTOOLS_PACKAGE_ENCRYPTED="$TCEXTTOOLS_PKG_TEMP/${PACKAGE}.tar.bz2.bfe"
 
-     PACKAGE_PACKAGE="$TCEXTTOOLS_PKG_TEMP/${PACKAGE}.tar.bz2"
-     PACKAGE_PACKAGE_ENCRYPTED="$TCEXTTOOLS_PKG_TEMP/${PACKAGE}.tar.bz2.bfe"
+     PACKAGE_PACKAGE="$TCEXTTOOLS_PACKAGE"
+     PACKAGE_PACKAGE_ENCRYPTED="$TCEXTTOOLS_PACKAGE_ENCRYPTED"
      PACKAGE_SOURCE="$TCEXTTOOLS_SOURCE"
      PACKAGE_SOURCE_CONVERTED="$TCEXTTOOLS_SOURCE_CONVERTED"
      PACKAGE_INSTALL_ROOT="$TCEXTTOOLS_INSTALL_ROOT"
-     PACKAGE_TOP_SRC="$TCEXTTOOLS_TOP_SRC"
+     PACKAGE_SOURCE_TOPDIR="$TCEXTTOOLS_SOURCE_TOPDIR"
 
      INSTALL_ROOT="$PACKAGE_INSTALL_ROOT"
      PREFIX=/usr/local
