@@ -140,6 +140,10 @@ set_source() {
           SOURCE_TOPDIR=${PACKAGE}-${VERSION}
      fi
 
+     if [ -z "$SOURCE_TOPDIR" ]; then
+          SOURCE_TOPDIR=${PACKAGE}-${VERSION}
+     fi
+
 }
 
 ############################################################################ 
