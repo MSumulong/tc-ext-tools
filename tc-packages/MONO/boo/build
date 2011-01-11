@@ -5,7 +5,7 @@
 #                                                                          #
 ############################################################################
 
-export MONO_SHARED_DIR="${PACKAGE_TOP_SRC}/.wabi"
+export MONO_SHARED_DIR="${PACKAGE_SOURCE_TOPDIR}/.wabi"
 
 ############################################################################ 
 #                            Configure                                     #

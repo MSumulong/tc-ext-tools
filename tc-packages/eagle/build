@@ -23,7 +23,7 @@ build_convert() {
 
    sh "$PACKAGE_SOURCE" . || return 1
 
-   tar -cJvf "$PACKAGE_CONVERTED_SOURCE" "$TOP_SRC" || return 1
+   tar -cJvf "$PACKAGE_SOURCE_CONVERTED" "$SOURCE_TOPDIR" || return 1
 
 }
 

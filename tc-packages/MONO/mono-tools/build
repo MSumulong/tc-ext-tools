@@ -6,7 +6,7 @@
 ############################################################################
 
 # to get rid of that .wapi errors
-export MONO_SHARED_DIR="${PACKAGE_TOP_SRC}/src/weird"
+export MONO_SHARED_DIR="${PACKAGE_SOURCE_TOPDIR}/src/weird"
 
 ############################################################################ 
 #                            Configure                                     #

@@ -44,7 +44,7 @@ build_configure() {
 
 build_custom() {
 
-  cd $PACKAGE_TOP_SRC
+  cd $PACKAGE_SOURCE_TOPDIR
 
   if [ -d "$TCEXTTOOLS_SRC"/download-src ]; then
        busybox cp -rf "$TCEXTTOOLS_SRC"/download-src/* ./

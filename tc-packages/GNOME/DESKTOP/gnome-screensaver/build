@@ -30,7 +30,7 @@ build_install() {
 
   sed -e 's|Exec=|Exec=/usr/local/libexec/xscreensaver/|' -i data/xscreensaver-config.xsl || return 1
   cd "$INSTALL_ROOT/usr/local/share/applications/screensavers"
-  "$PACKAGE_TOP_SRC/data/migrate-xscreensaver-config.sh" /usr/local/share/xscreensaver/config/*.xml || return 1
+  "$PACKAGE_SOURCE_TOPDIR/data/migrate-xscreensaver-config.sh" /usr/local/share/xscreensaver/config/*.xml || return 1
 
 }
 ##

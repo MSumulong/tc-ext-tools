@@ -69,7 +69,7 @@ build_install() {
   touch ${INSTALL_ROOT}/etc/.java/.systemPrefs/noname
 
   #copy icon
-  install -D -m644 ${PACKAGE_TOP_SRC}/linux-jdk/jre/lib/desktop/icons/hicolor/48x48/apps/sun-java.png ${INSTALL_ROOT}/usr/local/share/pixmaps/java.png
+  install -D -m644 ${PACKAGE_SOURCE_TOPDIR}/linux-jdk/jre/lib/desktop/icons/hicolor/48x48/apps/sun-java.png ${INSTALL_ROOT}/usr/local/share/pixmaps/java.png
 
   # main files for jdk
   cp -R linux-jdk ${INSTALL_ROOT}/usr/local/java-sun/jdk
