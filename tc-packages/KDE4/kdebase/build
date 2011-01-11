@@ -19,8 +19,8 @@ build_compile() {
 
 build_install() {
 
-  cd build
-  make DESTDIR="$INSTALL_ROOT" install
+   cd build
+   make DESTDIR="$INSTALL_ROOT" install
 
 }
 
@@ -41,7 +41,6 @@ build_rules() {
   buildit check || exit 1
   buildit package || exit 1
   buildit compress || exit 1
-  buildit encrypt || exit 1
 
 }
 

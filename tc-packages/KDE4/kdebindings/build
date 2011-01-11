@@ -6,7 +6,12 @@ build_configure() {
 
   mkdir build
   cd build
-  cmake -DCMAKE_INSTALL_PREFIX=/usr/local -DCMAKE_BUILD_TYPE=Release -DENABLE_QTXMLPATTERNS_SMOKE=off .. || return 1
+  cmake -DCMAKE_INSTALL_PREFIX=/usr/local \
+        -DCMAKE_BUILD_TYPE=Release \
+	-DBUILD_falcon=OFF \
+	-DBUILD_java=OFF \
+	-DBUILD_php=OFF \
+	-DWITH_PolkitQt=OFF .. || return 1
 
 }
 
@@ -41,7 +46,6 @@ build_rules() {
   buildit check || exit 1
   buildit package || exit 1
   buildit compress || exit 1
-  buildit encrypt || exit 1
 
 }
 

@@ -1,8 +1,6 @@
 PACKAGE="kdepimlibs"
-VERSION="4.5.2"
-
+VERSION="4.5.5"
 SOURCE="ftp://ftp.kde.org/pub/kde/stable/${VERSION}/src/${PACKAGE}-${VERSION}.tar.bz2"
-
 BUILD_DEPENDS="cmake
 libxml2
 libxml2-dev
@@ -35,8 +33,8 @@ qt-4.x-dev
 Xorg-7.5
 Xorg-7.5-dev
 shared-desktop-ontologies
-shared-mime-info"
-
+shared-mime-info
+docbook_xsl"
 
 DESCRIPTION="KDE PIM libraries."
 AUTHOR="KDE development team"
@@ -44,5 +42,6 @@ SITE="http://www.kde.org"
 COPYING="GPL/LGPL/BSD"
 MAINTAINERS="Arslan S."
 COMMENTS="This extension is PPI compatible."
-CHANGELOG="2010/07/18 First Version 4.4.5"
-CURRENT="Updated to 4.5.2"
+CHANGELOG="2010/07/18 First Version 4.4.5
+		2010/10/07 Updated to 4.5.2"
+CURRENT="Updated to $VERSION"

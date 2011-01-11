@@ -23,7 +23,10 @@ build_install() {
   make DESTDIR="$INSTALL_ROOT" install || return 1
 
   rm -f "$INSTALL_ROOT/usr/local/share/icons/default.kde4"
-  ln -s /usr/local/share/icons/oxygen "$INSTALL_ROOT/usr/local/share/icons/default.kde4" || return 1
+  ln -s /usr/local/share/icons/oxygen "$INSTALL_ROOT/usr/local/share/icons/default.kde4" || return 
+
+  rm -f "${INSTALL_ROOT}/usr/local/share/icons/hicolor/index.theme"
+  ln -sf "/usr/local/lib/kde4/libexec/kdesu" "${INSTALL_ROOT}/usr/local/bin/" || return 1
 
 }
 
@@ -44,6 +47,5 @@ build_rules() {
   buildit check || exit 1
   buildit package || exit 1
   buildit compress || exit 1
-  buildit encrypt || exit 1
 
 }

@@ -1,8 +1,6 @@
 PACKAGE="kdegraphics"
-VERSION="4.5.2"
-
+VERSION="4.5.5"
 SOURCE="ftp://ftp.kde.org/pub/kde/stable/${VERSION}/src/${PACKAGE}-${VERSION}.tar.bz2"
-
 BUILD_DEPENDS="cmake
 kdelibs
 kdelibs-dev
@@ -22,7 +20,6 @@ qca-dev
 graphics-libs-1
 graphics-libs-1-dev
 libxml2-dev
-libxml2-bin
 libgphoto2
 qimageblitz
 qimageblitz-dev
@@ -39,8 +36,9 @@ sane-backends-dev
 Xorg-7.5-lib
 Xorg-7.5-dev
 libxft
-libxft-dev"
-
+libxft-dev
+libxml2-bin
+docbook_xsl"
 
 DESCRIPTION="KDE graphics oriented applications."
 AUTHOR="KDE development team"
@@ -48,5 +46,6 @@ SITE="http://www.kde.org"
 COPYING="GPL/LGPL/FDL"
 MAINTAINERS="Arslan S."
 COMMENTS="This extension is PPI compatible."
-CHANGELOG="2010/07/20 First Version 4.4.5"
-CURRENT="Updated to 4.5.2"
+CHANGELOG="2010/07/20 First Version 4.4.5
+		2010/10/09 Updated to 4.5.2"
+CURRENT="Updated to $VERSION"

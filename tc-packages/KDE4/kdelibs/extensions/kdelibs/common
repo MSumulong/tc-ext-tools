@@ -1,20 +1,13 @@
-COMMENTS="I didn't put all the dependencies in the dep list intentionally. If you link an application against kdelibs
-		please do a base test to resolve actual dependencies. Here are the ones which are not included in the dep list:
+COMMENTS="Optional dependencies:
 
-		bzip2-lib.tcz
 		enchant.tcz
-		graphics-libs-1.tcz
 		pcre.tcz
-		krb5.tcz
 		qt-4.x-designer.tcz
 		qt-4.x-webkit.tcz
 		openexr.tcz
 		jasper.tcz
-		phonon.tcz
 		qca.tcz
 		polkit-qt-1.tcz
-		attica.tcz
-                avahi-2.7
 		xdg-utils.tcz
 		shared-mime-info.tcz
 		shared-desktop-ontologies.tcz

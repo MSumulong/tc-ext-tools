@@ -1,5 +1,5 @@
 PACKAGE="kdebindings"
-VERSION="4.5.2"
+VERSION="4.5.5"
 SOURCE="ftp://ftp.kde.org/pub/kde/stable/${VERSION}/src/${PACKAGE}-${VERSION}.tar.bz2"
 BUILD_DEPENDS="cmake
 automoc4
@@ -34,7 +34,7 @@ phonon
 phonon-dev
 shared-desktop-ontologies
 libxml2-bin
-perl5"
+docbook_xsl"
 
 DESCRIPTION="KDE bindings."
 AUTHOR="KDE development team"
@@ -42,5 +42,6 @@ SITE="http://www.kde.org"
 COPYING="GPL/LGPL"
 MAINTAINERS="Arslan S."
 COMMENTS="This extension is PPI compatible."
-CHANGELOG="2010/07/20 First Version 4.4.5"
-CURRENT="Updated to 4.5.2"
+CHANGELOG="2010/07/20 First Version 4.4.5
+		2010/10/29 Updated to 4.5.2"
+CURRENT="Updated to $VERSION"

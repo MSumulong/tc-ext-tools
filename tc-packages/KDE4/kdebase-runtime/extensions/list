@@ -1,4 +1,5 @@
 usr/local/bin/kreadconfig
+usr/local/bin/kdesu
 usr/local/bin/kmimetypefinder
 usr/local/bin/kde-cp
 usr/local/bin/solid-hardware
@@ -83,7 +84,6 @@ usr/local/share/dbus-1/interfaces/org.kde.nepomuk.Strigi.xml
 usr/local/share/dbus-1/interfaces/org.kde.KTimeZoned.xml
 usr/local/share/dbus-1/interfaces/org.kde.NepomukServer.xml
 usr/local/share/icons/default.kde4
-usr/local/share/icons/hicolor/index.theme
 usr/local/share/icons/hicolor/64x64/apps/knetattach.png
 usr/local/share/icons/hicolor/22x22/apps/knetattach.png
 usr/local/share/icons/hicolor/16x16/apps/knetattach.png
@@ -209,6 +209,9 @@ usr/local/share/doc/HTML/en/kcontrol/spellchecking/index.docbook
 usr/local/share/doc/HTML/en/kioslave/fish/index.cache.bz2
 usr/local/share/doc/HTML/en/kioslave/fish/common
 usr/local/share/doc/HTML/en/kioslave/fish/index.docbook
+usr/local/share/doc/HTML/en/kioslave/nepomuksearch/index.cache.bz2
+usr/local/share/doc/HTML/en/kioslave/nepomuksearch/common
+usr/local/share/doc/HTML/en/kioslave/nepomuksearch/index.docbook
 usr/local/share/doc/HTML/en/kioslave/sftp/index.cache.bz2
 usr/local/share/doc/HTML/en/kioslave/sftp/common
 usr/local/share/doc/HTML/en/kioslave/sftp/index.docbook
@@ -522,7 +525,6 @@ usr/local/share/kde4/services/kcmcgi.desktop
 usr/local/share/kde4/services/emoticons.desktop
 usr/local/share/kde4/services/comicbookthumbnail.desktop
 usr/local/share/kde4/services/componentchooser.desktop
-usr/local/share/kde4/services/kcm_phononxine.desktop
 usr/local/share/kde4/services/gzip.protocol
 usr/local/share/kde4/services/thumbnail.protocol
 usr/local/share/kde4/services/kcm_kdnssd.desktop
@@ -1516,7 +1518,6 @@ usr/local/lib/kde4/kio_nepomuk.so
 usr/local/lib/kde4/kcm_cgi.so
 usr/local/lib/kde4/kded_solidautoeject.so
 usr/local/lib/kde4/kio_smb.so
-usr/local/lib/kde4/kcm_phononxine.so
 usr/local/lib/kde4/nepomukstorage.so
 usr/local/lib/kde4/libexec/kcmremotewidgetshelper
 usr/local/lib/kde4/libexec/kdesu

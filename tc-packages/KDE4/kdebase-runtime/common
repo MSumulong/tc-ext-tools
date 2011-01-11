@@ -1,9 +1,8 @@
 PACKAGE="kdebase-runtime"
-VERSION="4.5.2"
-
+VERSION="4.5.5"
 SOURCE="ftp://ftp.kde.org/pub/kde/stable/${VERSION}/src/kdebase-runtime-${VERSION}.tar.bz2"
-
-BUILD_DEPENDS="libxml2
+BUILD_DEPENDS="cmake
+libxml2
 libxml2-dev
 libxml2-bin
 phonon
@@ -47,11 +46,11 @@ libasound
 alsa-dev
 pulseaudio
 pulseaudio-dev
-xine-lib
-xine-lib-dev
 kdelibs
-kdelibs-dev"
-
+kdelibs-dev
+docbook_xsl
+rarian
+rarian-dev"
 
 DESCRIPTION="KDE base runtime environment."
 AUTHOR="KDE development team"
@@ -60,5 +59,6 @@ COPYING="GPL/LGPL"
 MAINTAINERS="Arslan S."
 COMMENTS="This extension is PPI compatible."
 CHANGELOG="2010/07/18 First Version 4.4.5
-		2010/07/27 Added Xorg to dep list"
-CURRENT="Updated to 4.5.2"
+		2010/07/27 Added Xorg to dep list
+		2010/10/30 Updated to 4.5.2"
+CURRENT="Updated to $VERSION"

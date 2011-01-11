@@ -1,5 +1,5 @@
 PACKAGE="kdelibs"
-VERSION="4.5.2"
+VERSION="4.5.5"
 SOURCE="ftp://ftp.kde.org/pub/kde/stable/${VERSION}/src/kdelibs-${VERSION}.tar.bz2"
 BUILD_DEPENDS="cmake
 attr
@@ -81,5 +81,6 @@ COPYING="GPL/LGPL/FDL"
 MAINTAINERS="Arslan S."
 COMMENTS="This extension is PPI compatible."
 CHANGELOG="2010/07/18 First Version 4.4.5
-		2010/07/27 Adjusted dep list"
-CURRENT="Updated to 4.5.2"
+		2010/07/27 Adjusted dep list
+		2010/11/09 Updated to 4.5.2"
+CURRENT="Updated to $VERSION"
