@@ -21,7 +21,7 @@
 #  with this program; if not, write to the Free Software Foundation, Inc.,
 #  51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 #
-#  (C) Copyright 2010 Sercan Arslan
+#  (C) Copyright 2011 Sercan Arslan
 #
 
 if [ ! -e .config ]; then
@@ -32,7 +32,7 @@ else
      . .config
 fi
 
-USER=$(cat /etc/sysconfig/tcuser)
+TCUSER=$(cat /etc/sysconfig/tcuser)
 
 [ -z "$DESTDIR" ] && DESTDIR="$HOME/.local"
 
@@ -47,21 +47,13 @@ do
     install -m 755 "$tool" "$BINDIR"
 done
 
-[ -d "$SYSCONFDIR/tc-ext-tools" ] && sudo rm -rf "$SYSCONFDIR/tc-ext-tools"
-install -m 755 -d "$SYSCONFDIR/tc-ext-tools"
-
-for f in default/config default/functions
-do
-    install -m 644 $f "$SYSCONFDIR/tc-ext-tools"
-done
+install -D -m 644 default/config "$SYSCONFDIR/conf.d/tc-ext-tools.conf"
+install -D -m 755 default/functions "$SYSCONFDIR/init.d/tc-ext-tools.sh"
 
 [ -d "$DATADIR/tc-ext-tools" ] && sudo rm -rf "$DATADIR/tc-ext-tools"
 install -m 755 -d "$DATADIR/tc-ext-tools"
 
 install -m 644 default/build "$DATADIR/tc-ext-tools"
 
-[ -d "$HOME/.tc-ext-tools" ] || install -m 755 -d -o "$USER" -g staff "$HOME/.tc-ext-tools"
-install -m 644 -o "$USER" -g staff .config "$HOME/.tc-ext-tools/config"
-
-[ -d "$TCEXTTOOLS_STORAGE" ] || sudo install -m 755 -d -o "$USER" -g staff "$TCEXTTOOLS_STORAGE"
+install -D -m 644 -o "$TCUSER" -g staff .config "$HOME/.config/tc-ext-tools.conf"
 

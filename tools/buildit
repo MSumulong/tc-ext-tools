@@ -21,19 +21,15 @@
 #  with this program; if not, write to the Free Software Foundation, Inc.,
 #  51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 #
-#  (C) Copyright 2010 Sercan Arslan
+#  (C) Copyright 2011 Sercan Arslan
 #
-
-############################################################################ 
-#                        the one that rules them all                       #
-############################################################################
 
 . /etc/init.d/tc-functions
 
 TCEXTTOOLS_ROOT="$(dirname $0)/.."
 
-if [ -f "$TCEXTTOOLS_ROOT/etc/tc-ext-tools/functions" ]; then
-     . "$TCEXTTOOLS_ROOT/etc/tc-ext-tools/functions"
+if [ -f "$TCEXTTOOLS_ROOT/etc/init.d/tc-ext-tools.sh" ]; then
+     . "$TCEXTTOOLS_ROOT/etc/init.d/tc-ext-tools.sh"
 else
      echo "${RED}$(basename $0):${BLUE} tc-ext-tools functions file not found!${NORMAL}"
      exit 1
@@ -41,14 +37,14 @@ fi
 
 print_usage(){
 
-   echo -e "${TCEXTTOOLS_ERROR_COLOR}Usage:${TCEXTTOOLS_MESSAGE_COLOR}\n$(basename $0) (clean|clear)|load|download|convert|unpack|patch|configure|compile|install|strip|split|create|check|generate|package|compress|encrypt|show|help|all${NORMAL}"
+   echo -e "${TCEXTTOOLS_ERROR_COLOR}${THIS} usage:\n\t${TCEXTTOOLS_MESSAGE_COLOR}${THIS} (clean|clear)|load|download|convert|unpack|patch|configure|compile|install|strip|split|create|check|generate|package|compress|encrypt|show|help|all${NORMAL}"
 
 }
 
 clean_it() {
 
    print_it "Cleaning the package $PACKAGE ... \c"
-   cleanit > "$TCEXTTOOLS_ERROR_LOG" 2>&1
+   cleanit > "$TCEXTTOOLS_MESSAGE_LOG" 2>&1
    if [ "$?" -gt 0 ]; then
         print_it error "failed!"
         print_it warning "For details: buildit show error"
@@ -62,11 +58,12 @@ download_it() {
 
    if [ -f "$PACKAGE_SOURCE" ]; then
         print_it warning "The package $PACKAGE source is already downloaded."
+        print_it warning "Run downloadit for force downloading of the package source."
         exit 0
    fi
 
    print_it "Downloading the package $PACKAGE source ... \c"
-   downloadit > "$TCEXTTOOLS_ERROR_LOG" 2>&1
+   downloadit > "$TCEXTTOOLS_MESSAGE_LOG" 2>&1
    if [ "$?" -gt 0 ]; then
         print_it error "failed!"
         print_it warning "For details: buildit show download"
@@ -78,13 +75,14 @@ download_it() {
 
 convert_it() {
 
-   if [ -f "$PACKAGE_CONVERTED_SOURCE" ]; then
+   if [ -f "$PACKAGE_SOURCE_CONVERTED" ]; then
         print_it warning "The package $PACKAGE source is already converted."
+        print_it warning "Run convertit for force converting of the package source."
         exit 0
    fi
 
-   print_it "Converting the package $PACKAGE source to xz compressed tarball ... \c"
-   convertit > "$TCEXTTOOLS_ERROR_LOG" 2>&1
+   print_it "Converting the package $PACKAGE source ... \c"
+   convertit > "$TCEXTTOOLS_MESSAGE_LOG" 2>&1
    if [ "$?" -gt 0 ]; then
         print_it error "failed!"
         print_it warning "For details: buildit show error"
@@ -97,7 +95,7 @@ convert_it() {
 unpack_it() {
 
    print_it "Unpacking the package $PACKAGE source ... \c"
-   unpackit > "$TCEXTTOOLS_ERROR_LOG" 2>&1
+   unpackit > "$TCEXTTOOLS_MESSAGE_LOG" 2>&1
    if [ "$?" -gt 0 ]; then
         print_it error "failed!"
         print_it warning "For details: buildit show error"
@@ -110,7 +108,7 @@ unpack_it() {
 load_it() {
 
    print_it "Loading the package $PACKAGE build dependencies ... \c"
-   loadit "$BUILD_DEPENDS" > "$TCEXTTOOLS_ERROR_LOG" 2>&1
+   loadit "$BUILD_DEPENDS" > "$TCEXTTOOLS_MESSAGE_LOG" 2>&1
    if [ "$?" -gt 0 ]; then
         print_it error "failed!"
         print_it warning "For details: buildit show error"
@@ -123,7 +121,7 @@ load_it() {
 patch_it() {
 
    print_it "Patching the package $PACKAGE source ... \c"
-   patchit > "$TCEXTTOOLS_ERROR_LOG" 2>&1
+   patchit > "$TCEXTTOOLS_MESSAGE_LOG" 2>&1
    if [ "$?" -gt 0 ]; then
         print_it error "failed!"
         print_it warning "For details: buildit show error"
@@ -136,7 +134,7 @@ patch_it() {
 configure_it() {
 
    print_it "Configuring the package $PACKAGE ... \c"
-   configureit > "$TCEXTTOOLS_ERROR_LOG" 2>&1
+   configureit > "$TCEXTTOOLS_MESSAGE_LOG" 2>&1
    if [ "$?" -gt 0 ]; then
         print_it error "failed!"
         print_it warning "For details: buildit show configure"
@@ -149,7 +147,7 @@ configure_it() {
 compile_it() {
 
    print_it "Compiling the package $PACKAGE ... \c"
-   compileit > "$TCEXTTOOLS_ERROR_LOG" 2>&1
+   compileit > "$TCEXTTOOLS_MESSAGE_LOG" 2>&1
    if [ "$?" -gt 0 ]; then
         print_it error "failed!"
         print_it warning "For details: buildit show compile"
@@ -162,7 +160,7 @@ compile_it() {
 install_it() {
 
    print_it "Installing the package $PACKAGE ... \c"
-   sudo installit > "$TCEXTTOOLS_ERROR_LOG" 2>&1
+   sudo installit > "$TCEXTTOOLS_MESSAGE_LOG" 2>&1
    if [ "$?" -gt 0 ]; then
         print_it error "failed!"
         print_it warning "For details: buildit show install"
@@ -175,7 +173,7 @@ install_it() {
 strip_it() {
 
    print_it "Stripping the package $PACKAGE ... \c"
-   stripit "$PACKAGE_INSTALL_ROOT" > "$TCEXTTOOLS_ERROR_LOG" 2>&1
+   stripit "$TCEXTTOOLS_INSTALL_ROOT" > "$TCEXTTOOLS_MESSAGE_LOG" 2>&1
    if [ "$?" -gt 0 ]; then
         print_it error "failed!"
         print_it warning "For details: buildit show error"
@@ -188,7 +186,7 @@ strip_it() {
 split_it() {
 
    print_it "Splitting the package $PACKAGE extensions ... \c"
-   splitit > "$TCEXTTOOLS_ERROR_LOG" 2>&1
+   splitit > "$TCEXTTOOLS_MESSAGE_LOG" 2>&1
    if [ "$?" -gt 0 ]; then
         print_it error "failed!"
         print_it warning "For details: buildit show error"
@@ -201,7 +199,7 @@ split_it() {
 create_it() {
 
    print_it "Creating the package $PACKAGE extensions ... \c"
-   createit > "$TCEXTTOOLS_ERROR_LOG" 2>&1
+   createit > "$TCEXTTOOLS_MESSAGE_LOG" 2>&1
    if [ "$?" -gt 0 ]; then
         print_it error "failed!"
         print_it warning "For details: buildit show error"
@@ -213,8 +211,8 @@ create_it() {
 
 generate_it() {
 
-   print_it "Generating the package $PACKAGE extensions info files ... \c"
-   generateit > "$TCEXTTOOLS_ERROR_LOG" 2>&1
+   print_it "Generating the package $PACKAGE extensions' info files ... \c"
+   generateit > "$TCEXTTOOLS_MESSAGE_LOG" 2>&1
    if [ "$?" -gt 0 ]; then
         print_it error "failed!"
         print_it warning "For details: buildit show error"
@@ -227,7 +225,7 @@ generate_it() {
 check_it() {
 
    print_it "Checking the package $PACKAGE extensions ... \c"
-   checkit > "$TCEXTTOOLS_ERROR_LOG" 2>&1
+   checkit > "$TCEXTTOOLS_MESSAGE_LOG" 2>&1
    if [ "$?" -gt 0 ]; then
         print_it error "failed!"
         print_it warning "For details: buildit show error"
@@ -240,7 +238,7 @@ check_it() {
 package_it() {
 
    print_it "Packaging the package $PACKAGE ... \c"
-   packageit > "$TCEXTTOOLS_ERROR_LOG" 2>&1
+   packageit > "$TCEXTTOOLS_MESSAGE_LOG" 2>&1
    if [ "$?" -gt 0 ]; then
         print_it error "failed!"
         print_it warning "For details: buildit show error"
@@ -252,17 +250,26 @@ package_it() {
 
 compress_it() {
 
-   if [ ! -d "$TCEXTTOOLS_PACKAGE" ]; then
+   if [ ! -d "$TCEXTTOOLS_PKG_TEMP/$PACKAGE" ]; then
           print_it error "You must package it first!"
           exit 1
    fi
 
    print_it "Compressing the package $PACKAGE ... \c"
-   compressit bz2 "$TCEXTTOOLS_PACKAGE" > "$TCEXTTOOLS_ERROR_LOG" 2>&1
+   compressit bz2 "$TCEXTTOOLS_PKG_TEMP/$PACKAGE" > "$TCEXTTOOLS_MESSAGE_LOG" 2>&1
    if [ "$?" -gt 0 ]; then
         print_it error "failed!"
         print_it warning "For details: buildit show error"
+        rm -f "${PACKAGE}.tar.bz2"
         exit 1
+   else
+        busybox mv -f "${PACKAGE}.tar.bz2" "$TCEXTTOOLS_PKG_TEMP" >> "$TCEXTTOOLS_MESSAGE_LOG" 2>&1
+        if [ "$?" -gt 0 ]; then
+             print_it error "failed!"
+             print_it warning "For details: buildit show error"
+             rm -f "${PACKAGE}.tar.bz2"
+             exit 1
+        fi
    fi
    print_it hilight "successful!"
 
@@ -270,12 +277,12 @@ compress_it() {
 
 encrypt_it() {
 
-   if [ ! -e "${PACKAGE}.tar.bz2" ]; then
+   if [ ! -e "$PACKAGE_PACKAGE" ]; then
           print_it error "You must compress it first!"
           exit 1
    fi
 
-   encryptit "${PACKAGE}.tar.bz2" || exit 1
+   encryptit "$PACKAGE_PACKAGE" || exit 1
 
 }
 
@@ -287,7 +294,13 @@ custom_it() {
 
 build_it() {
 
+   print_it "Building the package $PACKAGE started at $(print_it hilight $TIME) $(print_it on) $(print_it hilight $DATE)"
+   set_date && SECONDS_BEFORE="$SECONDS"
+   clean_it || exit 1
    build_rules || exit 1
+   set_date && SECONDS_AFTER="$SECONDS"
+   print_it "Building the package $PACKAGE finished at $(print_it hilight $TIME) $(print_it on) $(print_it hilight $DATE) $(print_it in) $(print_it hilight $(expr $SECONDS_AFTER - $SECONDS_BEFORE)) $(print_it seconds)"
+   encrypt_it || exit 1
 
 }
 
@@ -307,8 +320,8 @@ show_it() {
                  [ -e "$TCEXTTOOLS_INSTALL_LOG" ] && { cat "$TCEXTTOOLS_INSTALL_LOG" ; echo -e "${NORMAL}\c" ; }
                  ;;
         error)
-                 [ -e "$TCEXTTOOLS_ERROR_LOG" ] && { cat "$TCEXTTOOLS_ERROR_LOG" ; echo -e "${NORMAL}\c" ; }
-                 [ -e "$TCEXTTOOLS_ERROR_LOG_2" ] && { cat "$TCEXTTOOLS_ERROR_LOG_2" ; echo -e "${NORMAL}\c" ; }
+                 [ -e "$TCEXTTOOLS_MESSAGE_LOG" ] && { cat "$TCEXTTOOLS_MESSAGE_LOG" ; echo -e "${NORMAL}\c" ; }
+                 [ -e "$TCEXTTOOLS_MESSAGE_LOG_2" ] && { cat "$TCEXTTOOLS_MESSAGE_LOG_2" ; echo -e "${NORMAL}\c" ; }
                  ;;
         *)
                  print_it warning "Usage: buildit show download|configure|compile|install|error"
@@ -381,10 +394,9 @@ case "$1" in
 		  custom_it
 		  ;;
 	all)
-		  clean_it
 		  build_it
 		  ;;
-	help|*)
+	*)
 		  print_usage
 		  ;;
 esac

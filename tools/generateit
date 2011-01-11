@@ -21,15 +21,15 @@
 #  with this program; if not, write to the Free Software Foundation, Inc.,
 #  51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 #
-#  (C) Copyright 2010 Sercan Arslan
+#  (C) Copyright 2011 Sercan Arslan
 #
 
 . /etc/init.d/tc-functions
 
 TCEXTTOOLS_ROOT="$(dirname $0)/.."
 
-if [ -f "$TCEXTTOOLS_ROOT/etc/tc-ext-tools/functions" ]; then
-     . "$TCEXTTOOLS_ROOT/etc/tc-ext-tools/functions"
+if [ -f "$TCEXTTOOLS_ROOT/etc/init.d/tc-ext-tools.sh" ]; then
+     . "$TCEXTTOOLS_ROOT/etc/init.d/tc-ext-tools.sh"
 else
      echo "${RED}$(basename $0):${BLUE} tc-ext-tools functions file not found!${NORMAL}"
      exit 1
@@ -117,7 +117,7 @@ this_main() {
 }
 
 print_it "Generating the package $PACKAGE extensions info files ... \c"
-this_main > "$TCEXTTOOLS_ERROR_LOG_2" 2>&1
+this_main > "$TCEXTTOOLS_MESSAGE_LOG_2" 2>&1
 if [ "$?" -gt 0 ]; then
      print_it error "failed!"
      exit 1
