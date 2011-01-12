@@ -2,7 +2,7 @@
 
 ############################################################################
 #                                                                          #
-#         generateit: Generates the package extensions info files          #
+#         generateit: Generates the package extensions' info files         #
 #                                                                          #
 ############################################################################
 
@@ -34,18 +34,6 @@ else
      echo "${RED}$(basename $0):${BLUE} tc-ext-tools functions file not found!${NORMAL}"
      exit 1
 fi
-
-for EXTENSION in $EXTENSIONS
-do
-    . "$PACKAGE_COMMON"
-
-    set_extension_name
-
-    if [ ! -e "$TCEXTTOOLS_PKG/$EXTENSION_NAME/${EXTENSION_NAME}.tcz" ]; then
-           print_it error "You must create it first!"
-           exit 1
-    fi
-done
 
 ############################################################################ 
 #                       generates the extension info                       #
@@ -99,9 +87,12 @@ this_main() {
 
    for EXTENSION in $EXTENSIONS
    do
-       . "$PACKAGE_COMMON"
+       set_extension || return 1
 
-       set_extension_name
+       if [ ! -e "$TCEXTTOOLS_EXTENSION" ]; then
+              print_it error "You must create it first!"
+              exit 1
+       fi
 
        this_generate
        if [ "$?" -gt 0 ]; then

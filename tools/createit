@@ -41,10 +41,8 @@ fi
 
 this_create() {
 
-   cd $PACKAGE_ROOT
-
-   if [ -e "$PACKAGE_EXTENSIONS/$EXTENSION/tce.installed" ]; then
-        sudo install -m 775 -D "$PACKAGE_EXTENSIONS/$EXTENSION/tce.installed" "$TCEXTTOOLS_BIN/$EXTENSION_NAME/usr/local/tce.installed/$EXTENSION_NAME" || return 1
+   if [ -e "$PACKAGE_EXTENSION_TCEINSTALLED" ]; then
+        sudo install -m 775 -D "$PACKAGE_EXTENSION_TCEINSTALLED" "$TCEXTTOOLS_BIN/$EXTENSION_NAME/usr/local/tce.installed/$EXTENSION_NAME" || return 1
         sudo chown -R root:staff "$TCEXTTOOLS_BIN/$EXTENSION_NAME/usr/local/tce.installed" || return 1
         sudo chmod -R 775 "$TCEXTTOOLS_BIN/$EXTENSION_NAME/usr/local/tce.installed" || return 1
    fi
@@ -69,11 +67,11 @@ this_create() {
 
    busybox cp -f "$TCEXTTOOLS_BIN/${EXTENSION_NAME}".tcz* "$TCEXTTOOLS_PKG/$EXTENSION_NAME" || return 1
 
-   if [ -e "$PACKAGE_EXTENSIONS/$EXTENSION/dep" ]; then
-        install -m 644 "$PACKAGE_EXTENSIONS/$EXTENSION/dep" "$TCEXTTOOLS_PKG/$EXTENSION_NAME/${EXTENSION_NAME}.tcz.dep" || return 1
+   if [ -e "$PACKAGE_EXTENSION_DEP" ]; then
+        install -m 644 "$PACKAGE_EXTENSION_DEP" "$TCEXTTOOLS_PKG/$EXTENSION_NAME/${EXTENSION_NAME}.tcz.dep" || return 1
    fi
 
-   sudo rm -f "$TCEXTTOOLS_BIN/${EXTENSION_NAME}".tcz*
+   sudo rm -f "$TCEXTTOOLS_BIN"/*.tcz*
 
    return 0
 
@@ -90,9 +88,7 @@ this_main() {
 
    for EXTENSION in $EXTENSIONS
    do
-       . "$PACKAGE_COMMON"
-
-       set_extension_name
+       set_extension || return 1
 
        if [ ! -d "$TCEXTTOOLS_BIN/$EXTENSION_NAME" ]; then
               print_it error "You must split it first!"

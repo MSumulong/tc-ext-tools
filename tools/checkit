@@ -36,14 +36,15 @@ else
 fi
 
 ############################################################################ 
-#                        checks the extension                              #
+#                     checks the extension for errors                      #
 ############################################################################
 
 this_check() {
 
-   sudo busybox mount -o loop "$TCEXTTOOLS_PKG/$EXTENSION_NAME/${EXTENSION_NAME}.tcz" "$TMPDIR" || return 1
+   sudo unsquashfs -d "$EXTRACTDIR" "$TCEXTTOOLS_EXTENSION" || return 1
 
-   FILES=$(sudo find $TMPDIR -not -type d)
+   FILES=$(sudo find "$EXTRACTDIR" -not -type d)
+
    SAVEIFS="$IFS"
    IFS=$(echo -en "\n\b")
    for f in $FILES
@@ -52,8 +53,8 @@ this_check() {
    done
    IFS="$SAVEIFS"
 
-   if [ -d "$TMPDIR/usr/local/tce.installed" ]; then
-        OUT=$(sudo busybox ls -d -l "$TMPDIR/usr/local/tce.installed")
+   if [ -d "$EXTRACTDIR/usr/local/tce.installed" ]; then
+        OUT=$(sudo busybox ls -d -l "$EXTRACTDIR/usr/local/tce.installed")
         PERM=$(echo $OUT | cut -d" " -f1)
         OWNER=$(echo $OUT | cut -d" " -f3-4)
 
@@ -69,8 +70,8 @@ this_check() {
              return 1
         fi
 
-        if [ -e "$TMPDIR/usr/local/tce.installed/$EXTENSION_NAME" ]; then
-             OUT=$(sudo busybox ls -l "$TMPDIR/usr/local/tce.installed/$EXTENSION_NAME")
+        if [ -e "$EXTRACTDIR/usr/local/tce.installed/$EXTENSION_NAME" ]; then
+             OUT=$(sudo busybox ls -l "$EXTRACTDIR/usr/local/tce.installed/$EXTENSION_NAME")
              PERM=$(echo $OUT | cut -d" " -f1)
              OWNER=$(echo $OUT | cut -d" " -f3-4)
 
@@ -88,9 +89,6 @@ this_check() {
         fi
    fi
 
-   sudo busybox umount "$TMPDIR"
-   sudo rm -rf "$TMPDIR"
-
    return 0
 
 }
@@ -101,24 +99,23 @@ this_check() {
 
 this_main() {
 
+   [ -d "$TCEXTTOOLS_BIN_TEMP" ] || mkdir -p "$TCEXTTOOLS_BIN_TEMP"
+
    for EXTENSION in $EXTENSIONS
    do
-       . "$PACKAGE_COMMON"
+       set_extension || return 1
 
-       set_extension_name
-
-       if [ ! -e "$TCEXTTOOLS_PKG/$EXTENSION_NAME/${EXTENSION_NAME}.tcz" ]; then
+       if [ ! -e "$TCEXTTOOLS_EXTENSION" ]; then
               print_it error "You must create it first!"
               return 1
        fi
 
-       TMPDIR=$(busybox mktemp -d)
+       EXTRACTDIR=$TCEXTTOOLS_BIN_TEMP/$EXTENSION_NAME
+       [ -d "$EXTRACTDIR" ] && sudo rm -rf "$EXTRACTDIR"
 
        this_check
        if [ "$?" -gt 0 ]; then
             print_it error "Checking the extension $EXTENSION_NAME failed!"
-            sudo busybox umount "$TMPDIR"
-            sudo rm -rf "$TMPDIR"
             return 1
        else
             print_it "Checking the extension $EXTENSION_NAME successful!"

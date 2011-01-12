@@ -147,13 +147,46 @@ set_source() {
 }
 
 ############################################################################ 
-#                      sets the name of an extension                       #
+#                        sets the package extensions                       #
 ############################################################################
 
-set_extension_name() {
+set_extensions() {
 
-      if [ -f "$PACKAGE_EXTENSIONS/$EXTENSION/common" ]; then
-           . "$PACKAGE_EXTENSIONS/$EXTENSION/common"
+     unset EXTENSIONS
+     if [ -d "$PACKAGE_EXTENSIONS" ]; then
+          for i in $(find "$PACKAGE_EXTENSIONS" -type f -name install)
+          do
+              EXTENSION=$(basename ${i%/install})
+              if [ -z "$EXTENSIONS" ]; then
+                   EXTENSIONS="$EXTENSION"
+              else
+                   EXTENSIONS="$EXTENSIONS $EXTENSION"
+              fi
+          done
+     fi
+
+}
+
+############################################################################ 
+#                        sets the package extension                        #
+############################################################################
+
+set_extension() {
+
+      if [ -z "$EXTENSION" ]; then
+           print_it error "EXTENSION is not set!"
+           return 1
+      fi
+
+      PACKAGE_EXTENSION_COMMON="$PACKAGE_EXTENSIONS/$EXTENSION/common"
+      PACKAGE_EXTENSION_INSTALL="$PACKAGE_EXTENSIONS/$EXTENSION/install"
+      PACKAGE_EXTENSION_DEP="$PACKAGE_EXTENSIONS/$EXTENSION/dep"
+      PACKAGE_EXTENSION_TCEINSTALLED="$PACKAGE_EXTENSIONS/$EXTENSION/tce.installed"
+
+       . "$PACKAGE_COMMON"
+
+      if [ -f "$PACKAGE_EXTENSION_COMMON" ]; then
+           . "$PACKAGE_EXTENSION_COMMON"
       fi
 
       if [ -z "$NAME" ]; then
@@ -167,14 +200,17 @@ set_extension_name() {
            EXTENSION_NAME="$NAME"
       fi
 
-      if [ -n "$(echo $EXTENSION_NAME | grep KERNEL)" ]; then
-           EXTENSION_NAME=$(echo $EXTENSION | sed "s|KERNEL|${KERNEL}|")
+      if [ $(echo $EXTENSION_NAME | grep KERNEL) ]; then
+           EXTENSION_NAME=$(echo $EXTENSION | sed "s/KERNEL/${KERNEL}/")
       fi
+
+      TCEXTTOOLS_EXTENSION="$TCEXTTOOLS_PKG/$EXTENSION_NAME/${EXTENSION_NAME}.tcz"
+      PACKAGE_EXTENSION="$TCEXTTOOLS_EXTENSION"
 
 }
 
 ############################################################################ 
-#                        date, time, and seconds                           #
+#                     sets the date, time, and seconds                     #
 ############################################################################
 
 set_date() {
@@ -194,7 +230,7 @@ set_date() {
 }
 
 ############################################################################ 
-#                            tc-ext-tools user                             #
+#                                 tc user                                  #
 ############################################################################
 
 TCUSER=$(cat /etc/sysconfig/tcuser)
@@ -206,7 +242,7 @@ TCUSER=$(cat /etc/sysconfig/tcuser)
 TCE_DIR=$(cat /opt/.tce_dir)
 
 ############################################################################ 
-#                                 kernel                                   #
+#                               tc kernel                                  #
 ############################################################################
 
 KERNEL=$(uname -r)
@@ -229,6 +265,7 @@ if [ -f "$PACKAGE_COMMON" ]; then
      TCEXTTOOLS_SRC="$TCEXTTOOLS_STORAGE/$PACKAGE/src"
      TCEXTTOOLS_LOG="$TCEXTTOOLS_STORAGE/$PACKAGE/log"
      TCEXTTOOLS_PKG="$TCEXTTOOLS_STORAGE/$PACKAGE/pkg"
+     TCEXTTOOLS_BIN_TEMP="$TCEXTTOOLS_BIN/temp"
      TCEXTTOOLS_SRC_TEMP="$TCEXTTOOLS_SRC/temp"
      TCEXTTOOLS_PKG_TEMP="$TCEXTTOOLS_PKG/temp"
      TCEXTTOOLS_INSTALL_ROOT="$TCEXTTOOLS_BIN/root"
@@ -251,9 +288,7 @@ if [ -f "$PACKAGE_COMMON" ]; then
      fi
 
      # set extensions
-     if [ -d "$PACKAGE_EXTENSIONS" ]; then
-          EXTENSIONS=$(busybox ls -el $PACKAGE_EXTENSIONS | egrep '^d' | cut -d : -f3 | cut -d " " -f3)
-     fi
+     set_extensions
 
      TCEXTTOOLS_SOURCE="$TCEXTTOOLS_SRC/$SOURCE_NAME"
      TCEXTTOOLS_SOURCE_CONVERTED="$TCEXTTOOLS_SRC/$SOURCE_NAME_CONVERTED"
