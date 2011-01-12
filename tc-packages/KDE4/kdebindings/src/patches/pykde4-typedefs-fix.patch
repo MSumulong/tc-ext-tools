@@ -1,5 +1,5 @@
---- pykde4-4.5.5/python/pykde4/sip/kdecore/typedefs.sip~	2010-11-02 12:51:10.000000000 +0000
-+++ pykde4-4.5.5/python/pykde4/sip/kdecore/typedefs.sip	2011-01-08 22:34:29.006096324 +0000
+--- a/python/pykde4/sip/kdecore/typedefs.sip	2010-11-02 12:51:10.000000000 +0000
++++ b/python/pykde4/sip/kdecore/typedefs.sip	2011-01-08 22:34:29.006096324 +0000
 @@ -582,90 +582,6 @@
  %End
  };

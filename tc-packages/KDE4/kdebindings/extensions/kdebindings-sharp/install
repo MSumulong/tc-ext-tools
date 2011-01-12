@@ -7,6 +7,6 @@ usr/local/lib/kde4/*mono*
 usr/local/lib/*sharp*
 usr/local/lib/*mono*
 usr/local/lib/*qyoto*
-usr/local/share/apps/plasma*
-usr/local/share/kde4/services/plasma*
+usr/local/share/apps/plasma_scriptengine_kimono
+usr/local/share/kde4/services
 

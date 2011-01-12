@@ -20,7 +20,7 @@ build_compile() {
 build_install() {
 
    cd build
-   sudo make DESTDIR=$INSTALL_ROOT install || return 1
+   make DESTDIR="$INSTALL_ROOT" install || return 1
 
 }
 

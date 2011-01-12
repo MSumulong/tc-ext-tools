@@ -4,6 +4,7 @@ qt-4.x-xml.tcz
 qt-4.x-sql.tcz
 postgresql.tcz
 soprano.tcz
+sqlite3.tcz
 boost.tcz
 shared-mime-info.tcz
 
