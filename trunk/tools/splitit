@@ -46,7 +46,7 @@ fi
 
 this_split() {
 
-   CONTENTS="$(cat $PACKAGE_EXTENSIONS/$EXTENSION/install)"
+   CONTENTS=$(cat $PACKAGE_EXTENSION_INSTALL)
    [ -z "$CONTENTS" ] && return 1
 
    LIST="${TMP_DIR}/install.list"
@@ -82,7 +82,7 @@ this_split() {
    done
 
    sudo tar -T "$LIST" -X "$X_LIST" -cpzf "$TMP_DIR/pkg.tar.gz" || return 1
-   sudo mkdir "$TMP_DIR/root"
+   sudo mkdir -p "$TMP_DIR/root" || return 1
    sudo tar -C "$TMP_DIR/root" -pxzf "$TMP_DIR/pkg.tar.gz" || return 1
 
    if [ -d "$TCEXTTOOLS_BIN/$EXTENSION_NAME" ]; then
@@ -127,11 +127,13 @@ this_main() {
 
    for EXTENSION in $EXTENSIONS
    do
-       . "$PACKAGE_COMMON"
-
-       set_extension_name
+       set_extension || return 1
 
        TMP_DIR=$(busybox mktemp -d)
+       if [ ! -d "$TMP_DIR" ]; then
+              print_it error "Creating a temporary directory for splitting the extension $EXTENSION_NAME failed!"
+              return 1
+       fi
 
        this_split
        if [ "$?" -gt 0 ]; then
