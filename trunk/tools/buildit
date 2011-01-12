@@ -58,7 +58,7 @@ download_it() {
 
    if [ -f "$PACKAGE_SOURCE" ]; then
         print_it warning "The package $PACKAGE source is already downloaded."
-        print_it warning "Run downloadit for force downloading of the package source."
+        print_it warning "Run downloadit to force it to download the package source."
         exit 0
    fi
 
@@ -77,7 +77,7 @@ convert_it() {
 
    if [ -f "$PACKAGE_SOURCE_CONVERTED" ]; then
         print_it warning "The package $PACKAGE source is already converted."
-        print_it warning "Run convertit for force converting of the package source."
+        print_it warning "Run convertit to force it to convert the package source."
         exit 0
    fi
 
