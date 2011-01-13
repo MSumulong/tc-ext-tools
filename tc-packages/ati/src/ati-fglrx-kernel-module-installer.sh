@@ -1,5 +1,7 @@
 #!/bin/sh
 #
+#  AMD/ATI Linux Drivers fglrx kernel module installer for Tiny Core Linux
+#
 #  This program is free software; you can redistribute it and/or modify
 #  it under the terms of the GNU General Public License as published by
 #  the Free Software Foundation; either version 2 of the License, or
@@ -14,16 +16,16 @@
 #  with this program; if not, write to the Free Software Foundation, Inc.,
 #  51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 #
-#  AMD/ATI Linux Drivers fglrx kernel module installer for Tiny Core Linux
-#  Sercan Arslan <arslanserc@gmail.com>
-#  19th November 2010
+#  Copyright (c) 2010 Sercan Arslan <arslanserc@gmail.com>
+#
+
+THIS=$(basename $0)
 
 if [ "$(id -u)" -ne 0 ] ; then
-     echo "You need to run me as root !"
+     echo "You need to run $THIS as root!"
      exit 1
 fi
 
-THIS=$(basename $0)
 LOG=/tmp/${THIS}.log
 TCUSER=$(cat /etc/sysconfig/tcuser)
 TCEDIR=$(cat /opt/.tce_dir)
@@ -32,8 +34,12 @@ KERNEL=$(uname -r)
 if [ -z "$(echo $KERNEL | grep 64)" ]
 then
         ARCH=x86
+        CC=gcc
+        LD=ld
 else
         ARCH=x86_64
+        CC=x86_64-unknown-linux-gnu-gcc
+        LD=x86_64-unknown-linux-gnu-ld
 fi
 
 EXTNAM="ati-fglrx-module-$KERNEL"
@@ -87,6 +93,7 @@ build_clean() {
 
 build_unpack() {
 
+   [ -d $TMPDIR ] && rm -rf $TMPDIR
    mkdir -p $TMPDIR
 
    tar xf $SOURCE -C $TMPDIR || return 1
@@ -100,7 +107,11 @@ build_compile() {
 
    cp libfglrx_ip.a.GCC4.${ARCH} libfglrx_ip.a.GCC4
 
-   sh make.sh || return 1
+   if [ "$ARCH" = x86_64 ]; then
+        make CC=$CC LD=$LD GCC_VER_MAJ=4 SMP=1 PAGE_ATTR_FIX=0 COMPAT_ALLOC_USER_SPACE=compat_alloc_user_space || return 1
+   else
+        ./make.sh || return 1
+   fi
 
    return 0
 }
@@ -112,7 +123,12 @@ build_create() {
    mkdir -p $INSTALL_ROOT/usr/local/lib/modules/${KERNEL}/kernel/drivers/video
    mkdir -p $INSTALL_ROOT/usr/local/share/doc/$EXTNAM
 
-   cp 2.6.x/fglrx.ko $INSTALL_ROOT/usr/local/lib/modules/${KERNEL}/kernel/drivers/video || return 1
+   if [ "$ARCH" = x86_64 ]; then
+        cp fglrx.ko $INSTALL_ROOT/usr/local/lib/modules/${KERNEL}/kernel/drivers/video || return 1
+   else
+        cp 2.6.x/fglrx.ko $INSTALL_ROOT/usr/local/lib/modules/${KERNEL}/kernel/drivers/video || return 1
+   fi
+
    cp $LICENSE $INSTALL_ROOT/usr/local/share/doc/$EXTNAM
 
    cd $TMPDIR

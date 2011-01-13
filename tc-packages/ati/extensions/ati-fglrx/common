@@ -8,4 +8,9 @@ COMMENTS="Installation
 		5-) Start the desktop
 			startx
 		6-) For persistency you need to add etc/X11/xorg.conf to your backup list (/opt/.filetool.lst)
-			echo \"etc/X11/xorg.conf\" >> /opt/.filetool.lst"
+			echo \"etc/X11/xorg.conf\" >> /opt/.filetool.lst
+
+		Important Notes for 64 bit kernel users:
+		You need to load toolchain64 extension for building 64 bit kernel module, and
+		run ati-fglrx-kernel-module-installer in a toolchain64 shell. You can start
+		toolchain64 shell by executing toolchain64-shell in a standart terminal."

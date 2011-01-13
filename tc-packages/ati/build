@@ -4,21 +4,19 @@
 
 build_convert() {
 
-   sh $PACKAGE_SOURCE --extract $SOURCE_TOPDIR || return 1
+   sh "$PACKAGE_SOURCE" --extract "$SOURCE_TOPDIR" || return 1
 
-   tar -cJvf $SOURCE_NAME_CONVERTED $SOURCE_TOPDIR || return 1
+   tar -cJvf "$SOURCE_NAME_CONVERTED" "$SOURCE_TOPDIR" || return 1
 
-   busybox mv -f $SOURCE_NAME_CONVERTED $TCEXTTOOLS_SRC || return 1
+   busybox mv -f "$SOURCE_NAME_CONVERTED" "$TCEXTTOOLS_SRC" || return 1
 
 }
 
 build_unpack() {
 
-   sh $PACKAGE_SOURCE --extract $SOURCE_TOPDIR || return 1
+   sh "$PACKAGE_SOURCE" --extract "$SOURCE_TOPDIR" || return 1
 
 }
-
-
 
 # Configure
 build_configure() {
@@ -77,15 +75,14 @@ build_install() {
    #install -m755 extensions/libdri.so "${INSTALL_ROOT}/usr/local/lib/X11/modules/extensions/libdri.ati" || return 1
 
    cd "${PACKAGE_SOURCE_TOPDIR}/arch/x86/usr" || return 1
-   _lib=lib
 
    install -m755 X11R6/bin/* "${INSTALL_ROOT}/usr/local/bin/" || return 1
    install -m755 sbin/* "${INSTALL_ROOT}/usr/local/sbin/" || return 1
-   install -m755 X11R6/${_lib}/*.so* "${INSTALL_ROOT}/usr/local/lib/" || return 1
-   install -m644 X11R6/${_lib}/*.a "${INSTALL_ROOT}/usr/local/lib/" || return 1 # really needed?
-   install -m644 X11R6/${_lib}/*.cap "${INSTALL_ROOT}/usr/local/lib/" || return 1
-   install -m755 X11R6/${_lib}/modules/dri/*.so "${INSTALL_ROOT}/usr/local/lib/X11/modules/dri/" || return 1
-   install -m755 ${_lib}/*.so* "${INSTALL_ROOT}/usr/local/lib/" || return 1
+   install -m755 X11R6/lib/*.so* "${INSTALL_ROOT}/usr/local/lib/" || return 1
+   install -m644 X11R6/lib/*.a "${INSTALL_ROOT}/usr/local/lib/" || return 1 # really needed?
+   install -m644 X11R6/lib/*.cap "${INSTALL_ROOT}/usr/local/lib/" || return 1
+   install -m755 X11R6/lib/modules/dri/*.so "${INSTALL_ROOT}/usr/local/lib/X11/modules/dri/" || return 1
+   install -m755 lib/*.so* "${INSTALL_ROOT}/usr/local/lib/" || return 1
 
    ln -sf /usr/local/lib/X11/modules/dri/fglrx_dri.so ${INSTALL_ROOT}/usr/local/lib/dri/fglrx_dri.so
    ln -sf libfglrx_dm.so.1.0 "${INSTALL_ROOT}/usr/local/lib/libfglrx_dm.so.1"
@@ -150,13 +147,9 @@ build_rules() {
 
    buildit load || exit 1
    buildit download || exit 1
-   buildit convert || exit 1
    buildit unpack || exit 1
    buildit patch || exit 1
-   buildit configure || exit 1
-   buildit compile || exit 1
    buildit install || exit 1
-   buildit strip || exit 1
    buildit split || exit 1
    buildit create || exit 1
    buildit generate || exit 1
