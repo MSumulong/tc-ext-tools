@@ -5,6 +5,7 @@ pygtk-2.7.tcz
 python_configobj-2.7.tcz
 svn.tcz
 pysvn.tcz
+meld.tcz
 librsvg.tcz
 shared-mime-info.tcz
 hicolor-icon-theme.tcz
