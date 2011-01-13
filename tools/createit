@@ -47,6 +47,22 @@ this_create() {
         sudo chmod -R 775 "$TCEXTTOOLS_BIN/$EXTENSION_NAME/usr/local/tce.installed" || return 1
    fi
 
+   if [ -n "$ICON" ]; then
+        if [ ! -e "$TCEXTTOOLS_BIN/$EXTENSION_NAME/$ICON" ]; then
+               print_it error "The icon: $ICON does not exist!"
+               return 1
+        elif [ ! -e "$TCEXTTOOLS_BIN/$EXTENSION_NAME/$DESKTOP" ]; then
+               print_it error "The desktop file: $DESKTOP does not exist!"
+               return 1
+        else
+             if [ ! $(grep "X-FullPathIcon=" "$TCEXTTOOLS_BIN/$EXTENSION_NAME/$DESKTOP") ]; then
+                    sudo sh -c "echo \"X-FullPathIcon=$ICON\" >> $TCEXTTOOLS_BIN/$EXTENSION_NAME/$DESKTOP" || return 1
+             fi
+             unset ICON
+             unset DESKTOP
+        fi
+   fi
+
    cd "$TCEXTTOOLS_BIN"
 
    sudo rm -f *.tcz*

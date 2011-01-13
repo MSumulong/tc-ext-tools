@@ -98,28 +98,6 @@ this_split() {
 }
 
 ############################################################################ 
-#                    modifies the files of an extension                    #
-############################################################################
-
-this_modify() {
-
-   if [ -n "$ICON" ]; then
-        if [ ! -e "$TCEXTTOOLS_BIN/$EXTENSION_NAME/$ICON" ]; then
-               print_it error "The icon: $TCEXTTOOLS_BIN/$EXTENSION_NAME/$ICON does not exist!"
-               return 1
-        elif [ ! -e "$TCEXTTOOLS_BIN/$EXTENSION_NAME/$DESKTOP" ]; then
-               print_it error "The desktop entry: $TCEXTTOOLS_BIN/$EXTENSION_NAME/$DESKTOP does not exist!"
-               return 1
-        else
-             sudo sh -c "echo \"X-FullPathIcon=$ICON\" >> $TCEXTTOOLS_BIN/$EXTENSION_NAME/$DESKTOP" || return 1
-             unset ICON
-             unset DESKTOP
-        fi
-   fi
-
-}
-
-############################################################################ 
 #                                this main                                 #
 ############################################################################
 
@@ -142,14 +120,6 @@ this_main() {
             return 1
        else
             print_it "Splitting the extension $EXTENSION_NAME successful!"
-       fi
-
-       this_modify
-       if [ "$?" -gt 0 ]; then
-            print_it error "Modifying the extension $EXTENSION_NAME failed!"
-            return 1
-       else
-            print_it "Modifying the extension $EXTENSION_NAME successful!"
        fi
    done
 
