@@ -41,6 +41,10 @@ fi
 
 this_check() {
 
+   EXTRACTDIR=$TCEXTTOOLS_BIN_TEMP/$EXTENSION_NAME
+
+   [ -d "$EXTRACTDIR" ] && sudo rm -rf "$EXTRACTDIR"
+
    sudo unsquashfs -d "$EXTRACTDIR" "$TCEXTTOOLS_EXTENSION" || return 1
 
    FILES=$(sudo find "$EXTRACTDIR" -not -type d)
@@ -110,14 +114,13 @@ this_main() {
               return 1
        fi
 
-       EXTRACTDIR=$TCEXTTOOLS_BIN_TEMP/$EXTENSION_NAME
-       [ -d "$EXTRACTDIR" ] && sudo rm -rf "$EXTRACTDIR"
-
        this_check
        if [ "$?" -gt 0 ]; then
+            sudo rm -rf "$EXTRACTDIR"
             print_it error "Checking the extension $EXTENSION_NAME failed!"
             return 1
        else
+            sudo rm -rf "$EXTRACTDIR"
             print_it "Checking the extension $EXTENSION_NAME successful!"
        fi
    done
