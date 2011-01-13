@@ -7,7 +7,9 @@ pygtk-2.7
 pygtk-2.7-dev
 python_configobj-2.7
 pysvn
-meld"
+meld
+python-dulwich
+python-simplejson"
 
 DESCRIPTION="RabbitVCS is a TortoiseSVN-like easy version control system for Linux."
 AUTHOR="Jason Field, Bruce van der Kooij, Adam Plumb, Jason Heeris"
