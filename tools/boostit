@@ -54,7 +54,7 @@ if [ -z "$EXTENSIONS" ]; then
      EXTENSIONS="$PACKAGE"
 fi
 
-echo -e "${RED}${THIS}: Boosting the package with;\n\t${BLUE}PACKAGE=$PACKAGE\n\tVERSION=$VERSION\n\tEXTENSIONS=$EXTENSIONS\n${NORMAL}"
+echo -e "${TCEXTTOOLS_MESSAGE_COLOR}You entered :\n\n\t${TCEXTTOOLS_MESSAGE_COLOR}PACKAGE=${TCEXTTOOLS_WARNING_COLOR}$PACKAGE\n\t${TCEXTTOOLS_MESSAGE_COLOR}VERSION=${TCEXTTOOLS_WARNING_COLOR}$VERSION\n\t${TCEXTTOOLS_MESSAGE_COLOR}EXTENSIONS=${TCEXTTOOLS_WARNING_COLOR}$EXTENSIONS\n${NORMAL}"
 
 if [ -f "$PACKAGE_COMMON" ]; then
      print_it warning "This package looks to be boosted before.\nIf you continue existing files will be overwritten.\nWould you like you continue ? [y or n]"

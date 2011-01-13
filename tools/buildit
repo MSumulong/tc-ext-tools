@@ -294,12 +294,12 @@ custom_it() {
 
 build_it() {
 
-   print_it "Building the package $PACKAGE started at $(print_it hilight $TIME) $(print_it on) $(print_it hilight $DATE)"
+   echo -e "${TCEXTTOOLS_MESSAGE_COLOR}Building the package $PACKAGE started at ${TCEXTTOOLS_HILIGHT_COLOR}$TIME${TCEXTTOOLS_MESSAGE_COLOR} on ${TCEXTTOOLS_HILIGHT_COLOR}$DATE${NORMAL}"
    set_date && SECONDS_BEFORE="$SECONDS"
    clean_it || exit 1
    build_rules || exit 1
    set_date && SECONDS_AFTER="$SECONDS"
-   print_it "Building the package $PACKAGE finished at $(print_it hilight $TIME) $(print_it on) $(print_it hilight $DATE) $(print_it in) $(print_it hilight $(expr $SECONDS_AFTER - $SECONDS_BEFORE)) $(print_it seconds)"
+   echo -e "${TCEXTTOOLS_MESSAGE_COLOR}Building the package $PACKAGE finished at ${TCEXTTOOLS_HILIGHT_COLOR}$TIME${TCEXTTOOLS_MESSAGE_COLOR} on ${TCEXTTOOLS_HILIGHT_COLOR}$DATE${TCEXTTOOLS_MESSAGE_COLOR} in ${TCEXTTOOLS_HILIGHT_COLOR}$(expr $SECONDS_AFTER - $SECONDS_BEFORE)${TCEXTTOOLS_MESSAGE_COLOR} seconds${NORMAL}"
    encrypt_it || exit 1
 
 }
