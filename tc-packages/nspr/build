@@ -7,8 +7,7 @@ build_configure() {
 
   cd mozilla/nsprpub
   ./configure --prefix=/usr/local \
-     --with-mozilla \
-     --with-pthreads \
+     --with-mozilla --with-pthreads \
      --enable-optimize --disable-debug || return 1
 
 }
@@ -49,3 +48,4 @@ build_rules() {
   buildit compress || exit 1
 
 }
+

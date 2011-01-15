@@ -1223,7 +1223,9 @@ usr/local/share/config/kdm/kdmrc
 usr/local/share/config/aurorae.knsrc
 usr/local/share/config/colorschemes.knsrc
 usr/local/share/config/plasma-themes.knsrc
+usr/local/share/man/man1/plasmoidviewer.1
 usr/local/share/man/man1/plasmaengineexplorer.1
+usr/local/share/man/man1/plasmapkg.1
 usr/local/share/sounds/pop.wav
 usr/local/share/apps/kcmsolidactions/solid-action-template.desktop
 usr/local/share/apps/kcmkeys/unix3.kksrc
@@ -1969,7 +1971,6 @@ usr/local/lib/libplasma_applet-system-monitor.so.4
 usr/local/lib/libkworkspace.so
 usr/local/lib/libkdeinit4_plasma-desktop.so
 usr/local/lib/libkdecorations.so.4.5.0
-usr/local/lib/libweather_ion.so.4
 usr/local/lib/libkwineffects.so.1
 usr/local/lib/kconf_update_bin/krdb_clearlibrarypath
 usr/local/lib/kconf_update_bin/plasma-to-plasma-desktop
@@ -1979,10 +1980,10 @@ usr/local/lib/kconf_update_bin/kwin_update_tabbox_settings
 usr/local/lib/kconf_update_bin/kwin_update_default_rules
 usr/local/lib/libkfontinst.so.4.5.0
 usr/local/lib/libprocessui.so.4.5.0
-usr/local/lib/cmake/KDE4Workspace-4.5.2/KDE4WorkspaceConfig.cmake
-usr/local/lib/cmake/KDE4Workspace-4.5.2/KDE4WorkspaceLibraryTargets.cmake
-usr/local/lib/cmake/KDE4Workspace-4.5.2/KDE4WorkspaceLibraryTargets-release.cmake
-usr/local/lib/cmake/KDE4Workspace-4.5.2/KDE4WorkspaceConfigVersion.cmake
+usr/local/lib/cmake/KDE4Workspace-4.5.5/KDE4WorkspaceConfig.cmake
+usr/local/lib/cmake/KDE4Workspace-4.5.5/KDE4WorkspaceLibraryTargets.cmake
+usr/local/lib/cmake/KDE4Workspace-4.5.5/KDE4WorkspaceLibraryTargets-release.cmake
+usr/local/lib/cmake/KDE4Workspace-4.5.5/KDE4WorkspaceConfigVersion.cmake
 usr/local/lib/libkdeinit4_ksysguard.so
 usr/local/lib/libksgrd.so.4
 usr/local/lib/libsolidcontrol.so.4.5.0
@@ -1992,6 +1993,7 @@ usr/local/lib/libkdeinit4_klipper.so
 usr/local/lib/libsystemsettingsview.so.2
 usr/local/lib/liboxygenstyle.so.4.5.0
 usr/local/lib/libprocesscore.so.4.5.0
+usr/local/lib/libweather_ion.so.5.0.0
 usr/local/lib/libkwinnvidiahack.so
 usr/local/lib/libplasmaclock.so
 usr/local/lib/libkscreensaver.so
@@ -2243,7 +2245,6 @@ usr/local/lib/libkwinnvidiahack.so.4.5.0
 usr/local/lib/libsolidcontrolifaces.so.4
 usr/local/lib/libkdeinit4_plasma-netbook.so
 usr/local/lib/libkdecorations.so.4
-usr/local/lib/libweather_ion.so.4.5.0
 usr/local/lib/libplasmaclock.so.4
 usr/local/lib/libkworkspace.so.4.5.0
 usr/local/lib/libprocesscore.so.4
@@ -2261,6 +2262,7 @@ usr/local/lib/libweather_ion.so
 usr/local/lib/libkfontinst.so.4
 usr/local/lib/libkephal.so.4
 usr/local/lib/libsolidcontrol.so.4
+usr/local/lib/libweather_ion.so.5
 usr/local/etc/dbus-1/system.d/org.kde.kcontrol.kcmclock.conf
 usr/local/etc/dbus-1/system.d/org.kde.ksysguard.processlisthelper.conf
 usr/local/etc/dbus-1/system.d/org.kde.kcontrol.kcmkdm.conf
