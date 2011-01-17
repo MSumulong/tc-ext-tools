@@ -3,14 +3,10 @@
 EXTENSION=$(basename $0)
 
 [ -d /usr/lib/dri ] || mkdir -p /usr/lib/dri
+
 ln -sf /usr/local/lib/dri/fglrx_dri.so /usr/lib/dri/fglrx_dri.so
+ln -sf libGL.so.1.2 /usr/local/lib/libGL.so
+ln -sf libGL.so.1.2 /usr/local/lib/libGL.so.1
+ln -sf libGL.so.1.2.ati /usr/local/lib/libGL.so.1.2
+ln -sf /usr/local/lib/X11/modules/extensions/libglx.so.ati /usr/local/lib/X11/modules/extensions/libglx.so
 
-if [ -d "/tmp/tcloop/${EXTENSION}" ]
-then
-        ln -sf libGL.so.1.2 /usr/local/lib/libGL.so
-        ln -sf libGL.so.1.2 /usr/local/lib/libGL.so.1
-        ln -sf "/tmp/tcloop/${EXTENSION}/usr/local/lib/libGL.so.1.2" /usr/local/lib/libGL.so.1.2
-
-        [ -d /usr/local/lib/X11/modules/extensions ] || mkdir -p /usr/local/lib/X11/modules/extensions
-        ln -sf "/tmp/tcloop/${EXTENSION}/usr/local/lib/X11/modules/extensions/libglx.so" /usr/local/lib/X11/modules/extensions/libglx.so
-fi

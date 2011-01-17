@@ -1,13 +1,14 @@
 #!/bin/sh
 
 CHROMIUM=$(basename $0)
-CHROMIUM_ADDONS=/usr/local/${CHROMIUM}-addons
-CHROMIUM_PLUGINS=${CHROMIUM_ADDONS}/plugins
-FLASHPLAYER=/usr/local/lib/mozilla/plugins/libflashplayer.so
+CHROMIUM_ADDONS="/usr/local/${CHROMIUM}-addons"
+CHROMIUM_PLUGINS="${CHROMIUM_ADDONS}/plugins"
+FLASHPLAYER="/usr/local/lib/mozilla/plugins/libflashplayer.so"
 
-[ -d ${CHROMIUM_PLUGINS} ] || sudo mkdir -p ${CHROMIUM_PLUGINS}
-sudo ln -sf ${FLASHPLAYER} ${CHROMIUM_PLUGINS}
+[ -d "${CHROMIUM_PLUGINS}" ] || mkdir -p "${CHROMIUM_PLUGINS}"
+ln -sf "${FLASHPLAYER}" "${CHROMIUM_PLUGINS}"
 
-[ -x $(which gtk-update-icon-cache) ] && sudo gtk-update-icon-cache -q -f -t /usr/local/share/icons/hicolor
+[ -x $(which gtk-update-icon-cache) ] && gtk-update-icon-cache -q -f -t /usr/local/share/icons/hicolor
 
-[ -d /tmp/tcloop/${CHROMIUM} ] && sudo busybox cp -Lf /usr/local/${CHROMIUM}/${CHROMIUM}-sandbox /usr/local/${CHROMIUM}/${CHROMIUM}-sandbox
+[ -d "/tmp/tcloop/${CHROMIUM}" ] && busybox cp -Lf "/usr/local/${CHROMIUM}/${CHROMIUM}-sandbox" "/usr/local/${CHROMIUM}/${CHROMIUM}-sandbox"
+

@@ -1,10 +1,10 @@
 #!/bin/sh
 
-APPNAME=chromium-browser
+CHROMIUM_APP=chromium-browser
 CHROMIUM_ROOT=/usr/local/chromium-browser
 CHROME_DESKTOP=chromium-browser.desktop
 CHROME_WRAPPER=true
-PATH=$CHROMIUM_ROOT:$PATH
+PATH="$CHROMIUM_ROOT:$PATH"
 CHROME_VERSION_EXTRA="Tiny Core Linux"
 
 if [ "X$LD_LIBRARY_PATH" = "X" ]; then
@@ -15,4 +15,5 @@ fi
 
 export PATH LD_LIBRARY_PATH CHROME_WRAPPER CHROME_DESKTOP CHROME_VERSION_EXTRA
 
-exec $CHROMIUM_ROOT/$APPNAME "$@"
+exec $CHROMIUM_ROOT/$CHROMIUM_APP "$@"
+

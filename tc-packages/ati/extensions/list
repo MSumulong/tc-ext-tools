@@ -69,11 +69,12 @@ usr/local/lib/X11/modules/amdxmm.so
 usr/local/lib/X11/modules/drivers/fglrx_drv.so
 usr/local/lib/X11/modules/glesx.so
 usr/local/lib/X11/modules/dri/fglrx_dri.so
-usr/local/lib/X11/modules/extensions/libglx.so
+usr/local/lib/X11/modules/extensions/libglx.so.ati
 usr/local/lib/X11/modules/linux/libfglrxdrm.so
 usr/local/lib/dri/fglrx_dri.so
 usr/local/lib/libAMDXvBA.cap
 usr/local/lib/libfglrx_dm.so
+usr/local/lib/libGL.so.1.2.ati
 usr/local/lib/libatiuki.so.1
 usr/local/sbin/atieventsd
 usr/local/sbin/atigetsysteminfo.sh

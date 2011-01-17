@@ -1,5 +1,5 @@
 PACKAGE="chromium-browser"
-VERSION="8.0.552.231"
+VERSION="8.0.552.237"
 SOURCE="http://build.chromium.org/buildbot/official/chromium-${VERSION}.tar.bz2"
 BUILD_DEPENDS="python
 python-dev
@@ -31,10 +31,7 @@ libxcb-dev
 libxft
 libxft-dev
 libevent
-libevent-dev
-#libcups
-#cups"
-
+libevent-dev"
 
 DESCRIPTION="Chromium Web Browser."
 AUTHOR="Chromium Authors"
@@ -59,6 +56,7 @@ CHANGELOG="2009/12/17 First Version
 		2010/11/07 Updated to 7.0.517.44
 		2010/12/03 Updated to 8.0.552.215
 		   -Built with system libevent
-		   -Added proprietary codecs (aac/ac3/mpeg4audio/h264/mov/mp3) support to the bundled ffmpeg library"
+		   -Added proprietary codecs (aac/ac3/mpeg4audio/h264/mov/mp3) support to the bundled ffmpeg library
+		2010/12/23 Updated to 8.0.552.231"
 CURRENT="Updated to $VERSION"
 

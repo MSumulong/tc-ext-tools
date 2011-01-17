@@ -71,7 +71,7 @@ build_install() {
    install -m755 *.so "${INSTALL_ROOT}/usr/local/lib/X11/modules/" || return 1
    install -m755 drivers/*.so "${INSTALL_ROOT}/usr/local/lib/X11/modules/drivers/" || return 1
    install -m755 linux/*.so "${INSTALL_ROOT}/usr/local/lib/X11/modules/linux/" || return 1
-   install -m755 extensions/libglx.so "${INSTALL_ROOT}/usr/local/lib/X11/modules/extensions/" || return 1
+   install -m755 extensions/libglx.so "${INSTALL_ROOT}/usr/local/lib/X11/modules/extensions/libglx.so.ati" || return 1
    #install -m755 extensions/libdri.so "${INSTALL_ROOT}/usr/local/lib/X11/modules/extensions/libdri.ati" || return 1
 
    cd "${PACKAGE_SOURCE_TOPDIR}/arch/x86/usr" || return 1
@@ -84,12 +84,15 @@ build_install() {
    install -m755 X11R6/lib/modules/dri/*.so "${INSTALL_ROOT}/usr/local/lib/X11/modules/dri/" || return 1
    install -m755 lib/*.so* "${INSTALL_ROOT}/usr/local/lib/" || return 1
 
+   mv "${INSTALL_ROOT}/usr/local/lib/libGL.so.1.2" "${INSTALL_ROOT}/usr/local/lib/libGL.so.1.2.ati" || return 1
+
    ln -sf /usr/local/lib/X11/modules/dri/fglrx_dri.so ${INSTALL_ROOT}/usr/local/lib/dri/fglrx_dri.so
    ln -sf libfglrx_dm.so.1.0 "${INSTALL_ROOT}/usr/local/lib/libfglrx_dm.so.1"
    ln -sf libfglrx_dm.so.1.0 "${INSTALL_ROOT}/usr/local/lib/libfglrx_dm.so"
    #ln -sf libfglrx_pp.so.1.0 "${INSTALL_ROOT}/usr/local/lib/libfglrx_pp.so.1"
    #ln -sf libfglrx_tvout.so.1.0 "${INSTALL_ROOT}/usr/local/lib/libfglrx_tvout.so.1"
    ln -sf libfglrx_gamma.so.1.0 "${INSTALL_ROOT}/usr/local/lib/libfglrx_gamma.so.1"
+   ln -sf libGL.so.1.2.ati "${INSTALL_ROOT}/usr/local/lib/libGL.so.1.2"
    ln -sf libGL.so.1.2 "${INSTALL_ROOT}/usr/local/lib/libGL.so.1"
    ln -sf libGL.so.1.2 "${INSTALL_ROOT}/usr/local/lib/libGL.so"
    ln -sf libatiuki.so.1.0 "${INSTALL_ROOT}/usr/local/lib/libatiuki.so.1"
