@@ -41,22 +41,27 @@ fi
 
 this_create() {
 
-   if [ -e "$PACKAGE_EXTENSION_TCEINSTALLED" ]; then
-        sudo install -m 775 -D "$PACKAGE_EXTENSION_TCEINSTALLED" "$TCEXTTOOLS_BIN/$EXTENSION_NAME/usr/local/tce.installed/$EXTENSION_NAME" || return 1
-        sudo chown -R root:staff "$TCEXTTOOLS_BIN/$EXTENSION_NAME/usr/local/tce.installed" || return 1
-        sudo chmod -R 775 "$TCEXTTOOLS_BIN/$EXTENSION_NAME/usr/local/tce.installed" || return 1
+   if [ -e "$TCEXTTOOLS_EXTENSION_TCEINSTALLED" ]; then
+        sudo install -D -m 775 "$TCEXTTOOLS_EXTENSION_TCEINSTALLED" "$TCEXTTOOLS_EXTENSION_BINDIR/usr/local/tce.installed/$EXTENSION_NAME" || return 1
+        sudo chown -R root:staff "$TCEXTTOOLS_EXTENSION_BINDIR/usr/local/tce.installed" || return 1
+        sudo chmod -R 775 "$TCEXTTOOLS_EXTENSION_BINDIR/usr/local/tce.installed" || return 1
    fi
 
    if [ -n "$ICON" ]; then
-        if [ ! -e "$TCEXTTOOLS_BIN/$EXTENSION_NAME/$ICON" ]; then
-               print_it error "The icon: $ICON does not exist!"
-               return 1
-        elif [ ! -e "$TCEXTTOOLS_BIN/$EXTENSION_NAME/$DESKTOP" ]; then
-               print_it error "The desktop file: $DESKTOP does not exist!"
+        if [ -z "$DESKTOP" ]; then
+             if [ -d "$TCEXTTOOLS_EXTENSION_BINDIR/usr/share/applications" ]; then
+                  DESKTOP="/usr/share/applications/${EXTENSION_NAME}.desktop"
+             else
+                  DESKTOP="/usr/local/share/applications/${EXTENSION_NAME}.desktop"
+             fi
+        fi
+
+        if [ ! -e "$TCEXTTOOLS_EXTENSION_BINDIR/$DESKTOP" ]; then
+               print_it error "The desktop file of the extension $EXTENSION_NAME does not exist!"
                return 1
         else
-             if [ ! $(grep "X-FullPathIcon=" "$TCEXTTOOLS_BIN/$EXTENSION_NAME/$DESKTOP") ]; then
-                    sudo sh -c "echo \"X-FullPathIcon=$ICON\" >> $TCEXTTOOLS_BIN/$EXTENSION_NAME/$DESKTOP" || return 1
+             if [ ! $(grep "X-FullPathIcon=" "$TCEXTTOOLS_EXTENSION_BINDIR/$DESKTOP") ]; then
+                    sudo sh -c "echo \"X-FullPathIcon=$ICON\" >> $TCEXTTOOLS_EXTENSION_BINDIR/$DESKTOP" || return 1
              fi
              unset ICON
              unset DESKTOP
@@ -71,20 +76,18 @@ this_create() {
 
    md5sum "${EXTENSION_NAME}.tcz" > "${EXTENSION_NAME}.tcz.md5.txt" || return 1
 
-   cd "$TCEXTTOOLS_BIN/$EXTENSION_NAME"
+   cd "$TCEXTTOOLS_EXTENSION_BINDIR"
    for i in $(ls)
    do
        sudo find "$i" -not -type d >> "$TCEXTTOOLS_BIN/${EXTENSION_NAME}.tcz.list"
    done
 
-   cd "$PACKAGE_ROOT"
+   [ -d "$TCEXTTOOLS_EXTENSION_PKGDIR" ] || mkdir -p "$TCEXTTOOLS_EXTENSION_PKGDIR"
 
-   [ -d "$TCEXTTOOLS_PKG/$EXTENSION_NAME" ] || mkdir -p "$TCEXTTOOLS_PKG/$EXTENSION_NAME"
-
-   busybox cp -f "$TCEXTTOOLS_BIN/${EXTENSION_NAME}".tcz* "$TCEXTTOOLS_PKG/$EXTENSION_NAME" || return 1
+   busybox cp -f "$TCEXTTOOLS_BIN/${EXTENSION_NAME}".tcz* "$TCEXTTOOLS_EXTENSION_PKGDIR" || return 1
 
    if [ -e "$PACKAGE_EXTENSION_DEP" ]; then
-        install -m 644 "$PACKAGE_EXTENSION_DEP" "$TCEXTTOOLS_PKG/$EXTENSION_NAME/${EXTENSION_NAME}.tcz.dep" || return 1
+        install -m 644 "$PACKAGE_EXTENSION_DEP" "$TCEXTTOOLS_EXTENSION_PKGDIR/${EXTENSION_NAME}.tcz.dep" || return 1
    fi
 
    sudo rm -f "$TCEXTTOOLS_BIN"/*.tcz*
@@ -106,7 +109,7 @@ this_main() {
    do
        set_extension || return 1
 
-       if [ ! -d "$TCEXTTOOLS_BIN/$EXTENSION_NAME" ]; then
+       if [ ! -d "$TCEXTTOOLS_EXTENSION_BINDIR" ]; then
               print_it error "You must split it first!"
               exit 1
        fi
