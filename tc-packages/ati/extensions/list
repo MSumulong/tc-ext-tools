@@ -70,6 +70,7 @@ usr/local/lib/X11/modules/drivers/fglrx_drv.so
 usr/local/lib/X11/modules/glesx.so
 usr/local/lib/X11/modules/dri/fglrx_dri.so
 usr/local/lib/X11/modules/extensions/libglx.so.ati
+usr/local/lib/X11/modules/extensions/libglx.so
 usr/local/lib/X11/modules/linux/libfglrxdrm.so
 usr/local/lib/dri/fglrx_dri.so
 usr/local/lib/libAMDXvBA.cap

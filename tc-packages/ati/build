@@ -72,6 +72,7 @@ build_install() {
    install -m755 drivers/*.so "${INSTALL_ROOT}/usr/local/lib/X11/modules/drivers/" || return 1
    install -m755 linux/*.so "${INSTALL_ROOT}/usr/local/lib/X11/modules/linux/" || return 1
    install -m755 extensions/libglx.so "${INSTALL_ROOT}/usr/local/lib/X11/modules/extensions/libglx.so.ati" || return 1
+   ln -sf libglx.so.ati "${INSTALL_ROOT}/usr/local/lib/X11/modules/extensions/libglx.so"
    #install -m755 extensions/libdri.so "${INSTALL_ROOT}/usr/local/lib/X11/modules/extensions/libdri.ati" || return 1
 
    cd "${PACKAGE_SOURCE_TOPDIR}/arch/x86/usr" || return 1
