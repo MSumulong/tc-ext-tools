@@ -1,5 +1,5 @@
 PACKAGE="cherrytree"
-VERSION="0.19"
+VERSION="0.19.3"
 SOURCE="http://www.giuspen.com/software/cherrytree-${VERSION}.tar.gz"
 BUILD_DEPENDS="gtk2
 gtk2-dev
@@ -14,5 +14,6 @@ SITE="http://www.giuspen.com/cherrytree/"
 COPYING="GPL"
 MAINTAINERS="Arslan S."
 COMMENTS="This extension is PPI compatible."
-CHANGELOG="2011/01/03 First Version 0.19"
-CURRENT="Added wbar icon"
+CHANGELOG="2011/01/03 First Version 0.19
+		2011/01/09 Added wbar icon"
+CURRENT="Updated to $VERSION"
