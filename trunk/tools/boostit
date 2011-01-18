@@ -155,16 +155,22 @@ _EOF
    for EXTENSION in $EXTENSIONS
    do
        mkdir -p "$PACKAGE_EXTENSIONS/$EXTENSION" || return 1
+
        touch "$PACKAGE_EXTENSIONS/$EXTENSION/install" || return 1
+
        if [ "${EXTENSION%-doc}" = "$EXTENSION" ]; then
             touch "$PACKAGE_EXTENSIONS/$EXTENSION/dep" || return 1
        fi
+
        if [ ! "${EXTENSION%-locale}" = "$EXTENSION" ]; then
               echo "${EXTENSION%-locale}.tcz" > "$PACKAGE_EXTENSIONS/$EXTENSION/dep" || return 1
               echo "usr/local/share/locale" > "$PACKAGE_EXTENSIONS/$EXTENSION/install" || return 1
-              echo "x-usr/local/share/locale" > "$PACKAGE_EXTENSIONS/${EXTENSION%-locale}/install" || return 1
+       elif [ -n "$(echo $EXTENSIONS | grep ${EXTENSION}-locale)" ]; then
+              echo "usr/local" > "$PACKAGE_EXTENSIONS/$EXTENSION/install" || return 1
+              echo "x-usr/local/share/locale" >> "$PACKAGE_EXTENSIONS/$EXTENSION/install" || return 1
        elif [ ! "${EXTENSION%-dev}" = "$EXTENSION" ]; then
               echo "${EXTENSION%-dev}.tcz" > "$PACKAGE_EXTENSIONS/$EXTENSION/dep" || return 1
+              echo "usr/local/include" > "$PACKAGE_EXTENSIONS/$EXTENSION/install" || return 1
        fi
    done
 
@@ -173,9 +179,10 @@ _EOF
 }
 
 print_it "Boosting the package $PACKAGE ... \c"
-this_main > /dev/null 2>&1
+this_main > /tmp/boostit.log 2>&1
 if [ "$?" -gt 0 ]; then
      print_it error "failed!"
+     print_it warning "See /tmp/boostit.log for details."
      exit 1
 fi
 print_it hilight "successful!"

@@ -63,8 +63,6 @@ this_create() {
              if [ ! $(grep "X-FullPathIcon=" "$TCEXTTOOLS_EXTENSION_BINDIR/$DESKTOP") ]; then
                     sudo sh -c "echo \"X-FullPathIcon=$ICON\" >> $TCEXTTOOLS_EXTENSION_BINDIR/$DESKTOP" || return 1
              fi
-             unset ICON
-             unset DESKTOP
         fi
    fi
 
