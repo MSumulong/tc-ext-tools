@@ -183,6 +183,8 @@ set_extension() {
       TCEXTTOOLS_EXTENSION_DEP="$PACKAGE_EXTENSIONS/$EXTENSION/dep"
       TCEXTTOOLS_EXTENSION_TCEINSTALLED="$PACKAGE_EXTENSIONS/$EXTENSION/tce.installed"
 
+      unset NAME SUFFIX ICON DESKTOP
+
        . "$PACKAGE_COMMON"
 
       if [ -f "$TCEXTTOOLS_EXTENSION_COMMON" ]; then
@@ -192,7 +194,6 @@ set_extension() {
       if [ -z "$NAME" ]; then
            if [ -n "$SUFFIX" ]; then
                 EXTENSION_NAME="${EXTENSION}-${SUFFIX}"
-                unset SUFFIX
            else
                 EXTENSION_NAME="$EXTENSION"
            fi
@@ -200,8 +201,8 @@ set_extension() {
            EXTENSION_NAME="$NAME"
       fi
 
-      if [ $(echo $EXTENSION_NAME | grep KERNEL) ]; then
-           EXTENSION_NAME=$(echo $EXTENSION | sed "s/KERNEL/${KERNEL}/")
+      if [ -n "$(echo $EXTENSION_NAME | grep KERNEL)" ]; then
+           EXTENSION_NAME=$(echo $EXTENSION_NAME | sed "s/KERNEL/${KERNEL}/")
       fi
 
       TCEXTTOOLS_EXTENSION_BINDIR="$TCEXTTOOLS_BIN/$EXTENSION_NAME"
@@ -287,17 +288,14 @@ if [ -f "$PACKAGE_COMMON" ]; then
      TCEXTTOOLS_MESSAGE_LOG="$TCEXTTOOLS_LOG/message.txt"
      TCEXTTOOLS_MESSAGE_LOG_2="$TCEXTTOOLS_LOG/message2.txt"
 
-     # set date
      set_date
 
-     # set source related variables
      set_source
 
      if [ -n "$SOURCE_TOPDIR" ]; then
           TCEXTTOOLS_SOURCE_TOPDIR="$TCEXTTOOLS_SRC_TEMP/$SOURCE_TOPDIR"
      fi
 
-     # set extensions
      set_extensions
 
      TCEXTTOOLS_SOURCE="$TCEXTTOOLS_SRC/$SOURCE_NAME"
