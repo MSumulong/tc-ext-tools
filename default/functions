@@ -52,7 +52,7 @@ fi
 if [ -f "$TCEXTTOOLS_ROOT/etc/conf.d/tc-ext-tools.conf" ]; then
      . "$TCEXTTOOLS_ROOT/etc/conf.d/tc-ext-tools.conf"
 else
-     echo "${RED}${THIS}:${BLUE} tc-ext-tools default configuration file not found!${NORMAL}"
+     echo "${RED}${THIS}: default configuration file not found !${NORMAL}"
      exit 1
 fi
 
@@ -63,7 +63,7 @@ fi
 if [ -f "$HOME/.config/tc-ext-tools.conf" ]; then
      . "$HOME/.config/tc-ext-tools.conf"
 else
-    echo "${RED}$(basename $0):${BLUE} tc-ext-tools user configuration file not found!${NORMAL}"
+    echo "${RED}${THIS}: user configuration file not found !${NORMAL}"
     exit 1
 fi
 
@@ -130,8 +130,12 @@ set_source() {
             SOURCE_TYPE="tar"
             SOURCE_NAME_CONVERTED="${SOURCE_NAME%.tar}.tar.xz"
      else
-            SOURCE_TYPE="custom"
-            [ -z "$SOURCE_NAME_CONVERTED" ] && SOURCE_NAME_CONVERTED="${SOURCE_NAME%.*}.tar.xz"
+            if [ -z "$SOURCE" ]; then
+                 SOURCE_TYPE=none
+            else
+                 SOURCE_TYPE="custom"
+                 [ -z "$SOURCE_NAME_CONVERTED" ] && SOURCE_NAME_CONVERTED="${SOURCE_NAME%.*}.tar.xz"
+            fi
      fi
 
      if [ -z "$VCS" ]; then
@@ -153,6 +157,7 @@ set_source() {
 set_extensions() {
 
      unset EXTENSIONS
+
      if [ -d "$PACKAGE_EXTENSIONS" ]; then
           for i in $(find "$PACKAGE_EXTENSIONS" -type f -name install)
           do
@@ -298,8 +303,11 @@ if [ -f "$PACKAGE_COMMON" ]; then
 
      set_extensions
 
-     TCEXTTOOLS_SOURCE="$TCEXTTOOLS_SRC/$SOURCE_NAME"
-     TCEXTTOOLS_SOURCE_CONVERTED="$TCEXTTOOLS_SRC/$SOURCE_NAME_CONVERTED"
+     if [ "$SOURCE_TYPE" != "none" ]; then
+          TCEXTTOOLS_SOURCE="$TCEXTTOOLS_SRC/$SOURCE_NAME"
+          TCEXTTOOLS_SOURCE_CONVERTED="$TCEXTTOOLS_SRC/$SOURCE_NAME_CONVERTED"
+     fi
+
      TCEXTTOOLS_PACKAGE="$TCEXTTOOLS_PKG_TEMP/${PACKAGE}.tar.bz2"
      TCEXTTOOLS_PACKAGE_ENCRYPTED="$TCEXTTOOLS_PKG_TEMP/${PACKAGE}.tar.bz2.bfe"
 

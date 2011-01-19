@@ -35,6 +35,10 @@ else
      exit 1
 fi
 
+if [ "$SOURCE_TYPE" = "none" ]; then
+     mkdir -p "$TCEXTTOOLS_SOURCE_TOPDIR"
+fi
+
 if [ ! -d "$TCEXTTOOLS_SOURCE_TOPDIR" ]; then
        print_it error "You must compile it first!"
        exit 1
