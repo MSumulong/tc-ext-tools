@@ -1,10 +1,7 @@
 PACKAGE="kde4-desktop"
-VERSION="4.5.2"
-
+VERSION="4.5.5"
 SOURCE=""
-
 BUILD_DEPENDS=""
-
 
 DESCRIPTION="K Desktop Environment for Tiny Core Linux."
 AUTHOR="Sercan Arslan"
@@ -44,7 +41,6 @@ COMMENTS="Minimum System Requirements
 		Step 8-) Backup
 			 filetool.sh -b
 		
-		By default, I have setup kdm (KDE Display Manager) to login user=tc automatically
 		If you want to change kdm settings you have to run "systemsettings" as root.
 		Kdm settings is located at the bottom of the advanced tab.
 		You can install kdm themes from web after running systemsettings as root.
@@ -62,5 +58,6 @@ COMMENTS="Minimum System Requirements
 
 		This extension is PPI compatible."
 CHANGELOG="2010/07/21 First Version 4.4.5
-		2010/07/27 Updated"
-CURRENT="Updated to 4.5.2"
+		2010/07/27 Updated
+		2010/10/31 Updated to 4.5.2"
+CURRENT="Updated to $VERSION"

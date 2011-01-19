@@ -1,15 +1,17 @@
 #!/bin/sh
 #
-# Start KDE4 Desktop Session
-# 10th July 2010
+# Starts KDE4 Desktop Session
+# 
+# License: GPL
 #
-# Sercan Arslan <arslanserc@gmail.com>
+# (C) 2010-2011 Sercan Arslan <arslanserc@gmail.com>
 #
+
 STARTUP="startkde"
 CK_LAUNCH_SESSION=/usr/local/bin/ck-launch-session
 
-if [ -e /usr/local/etc/default/kde4 ] ; then
-     . /usr/local/etc/default/kde4
+if [ -e /usr/local/etc/conf.d/kde4-desktop.conf ] ; then
+     . /usr/local/etc/conf.d/kde4-desktop.conf
 fi
 
 if [ -x "$CK_LAUNCH_SESSION" -a -z "$XDG_SESSION_COOKIE" ]; then

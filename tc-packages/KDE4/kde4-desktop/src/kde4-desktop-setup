@@ -7,7 +7,7 @@ this_main() {
 if [ "X$(grep "update-mime-database /usr/local/share/mime" /opt/bootlocal.sh)" = "X" ]; then
 cat >> /opt/bootlocal.sh << EOF
 ## Added by ${THIS} please do not edit
-[ -x \$(which update-mime-database) ] && sudo update-mime-database /usr/local/share/mime > /dev/null 2>&1
+[ -x \$(which update-mime-database) ] && update-mime-database /usr/local/share/mime > /dev/null 2>&1
 #
 EOF
 fi
@@ -15,7 +15,7 @@ fi
 if [ "X$(grep "update-desktop-database" /opt/bootlocal.sh)" = "X" ]; then
 cat >> /opt/bootlocal.sh << EOF
 ## Added by ${THIS} please do not edit
-[ -x \$(which update-desktop-database) ] && sudo update-desktop-database -q > /dev/null 2>&1
+[ -x \$(which update-desktop-database) ] && update-desktop-database -q > /dev/null 2>&1
 #
 EOF
 fi
@@ -23,7 +23,7 @@ fi
 if [ "X$(grep "gtk-update-icon-cache -q -f -t /usr/local/share/icons/hicolor" /opt/bootlocal.sh)" = "X" ]; then
 cat >> /opt/bootlocal.sh << EOF
 ## Added by ${THIS} please do not edit
-[ -x \$(which gtk-update-icon-cache) ] && sudo gtk-update-icon-cache -q -f -t /usr/local/share/icons/hicolor > /dev/null 2>&1
+[ -x \$(which gtk-update-icon-cache) ] && gtk-update-icon-cache -q -f -t /usr/local/share/icons/hicolor > /dev/null 2>&1
 #
 EOF
 fi
@@ -31,7 +31,7 @@ fi
 if [ "X$(grep "/usr/local/etc/init.d/kdm start" /opt/bootlocal.sh)" = "X" ]; then
 cat >> /opt/bootlocal.sh << EOF
 ## Added by ${THIS} please do not edit
-[ -x /usr/local/etc/init.d/kdm ] && sudo /usr/local/etc/init.d/kdm start > /dev/null 2>&1
+[ -x /usr/local/etc/init.d/kdm ] && /usr/local/etc/init.d/kdm start > /dev/null 2>&1
 #
 EOF
 fi

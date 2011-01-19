@@ -6,15 +6,6 @@ main() {
 [ -x $(which update-desktop-database) ] && update-desktop-database
 [ -x $(which gtk-update-icon-cache) ] && gtk-update-icon-cache -q -f -t /usr/local/share/icons/hicolor
 
-[ -d /usr/local/lib/mozilla/plugins ] || mkdir -p /usr/local/lib/mozilla/plugins
-if [ ! -d /usr/lib/mozilla/plugins ]; then
-     [ -d /usr/lib/mozilla ] || mkdir -p /usr/lib/mozilla
-     ln -s /usr/local/lib/mozilla/plugins /usr/lib/mozilla/plugins
-fi
-if [ ! -e /usr/local/lib/mozilla/plugins/libflashplayer.so -a -e /usr/local/share/flash10/libflashplayer.so ]; then
-     ln -s /usr/local/share/flash10/libflashplayer.so /usr/local/lib/mozilla/plugins/libflashplayer.so
-fi
-
 [ -L /usr/local/share/config/kdm/kdmrc ] && cp -Lf /usr/local/share/config/kdm/kdmrc /usr/local/share/config/kdm/kdmrc
 
 /usr/local/etc/init.d/dbus status
