@@ -37,7 +37,7 @@ fi
 
 print_usage(){
 
-   echo -e "${TCEXTTOOLS_ERROR_COLOR}${THIS} usage:\n\t${TCEXTTOOLS_MESSAGE_COLOR}${THIS} (clean|clear)|load|download|convert|unpack|patch|configure|compile|install|strip|split|create|check|generate|package|compress|encrypt|show|help|all${NORMAL}"
+   echo -e "${TCEXTTOOLS_ERROR_COLOR}${THIS} usage:\n\t${TCEXTTOOLS_MESSAGE_COLOR}${THIS} (clean|clear)|load|download|convert|unpack|patch|configure|compile|install|split|strip|create|check|generate|package|compress|encrypt|show|help${NORMAL}"
 
 }
 
@@ -170,10 +170,10 @@ install_it() {
 
 }
 
-strip_it() {
+split_it() {
 
-   print_it "Stripping the package $PACKAGE ... \c"
-   stripit "$TCEXTTOOLS_INSTALL_ROOT" > "$TCEXTTOOLS_MESSAGE_LOG" 2>&1
+   print_it "Splitting the package $PACKAGE extensions ... \c"
+   splitit > "$TCEXTTOOLS_MESSAGE_LOG" 2>&1
    if [ "$?" -gt 0 ]; then
         print_it error "failed!"
         print_it warning "For details: buildit show error"
@@ -183,10 +183,10 @@ strip_it() {
 
 }
 
-split_it() {
+strip_it() {
 
-   print_it "Splitting the package $PACKAGE extensions ... \c"
-   splitit > "$TCEXTTOOLS_MESSAGE_LOG" 2>&1
+   print_it "Stripping the package $PACKAGE ... \c"
+   stripit > "$TCEXTTOOLS_MESSAGE_LOG" 2>&1
    if [ "$?" -gt 0 ]; then
         print_it error "failed!"
         print_it warning "For details: buildit show error"
@@ -211,7 +211,7 @@ create_it() {
 
 generate_it() {
 
-   print_it "Generating the package $PACKAGE extensions' info files ... \c"
+   print_it "Generating the package $PACKAGE extension info files ... \c"
    generateit > "$TCEXTTOOLS_MESSAGE_LOG" 2>&1
    if [ "$?" -gt 0 ]; then
         print_it error "failed!"
@@ -331,7 +331,7 @@ show_it() {
 }
 
 if [ -z "$1" ]; then
-     "$0" all
+     build_it || exit 1
      exit 0
 fi
 
@@ -363,11 +363,11 @@ case "$1" in
 	install)
 		  install_it
 		  ;;
-	strip)
-		  strip_it
-		  ;;
 	split)
 		  split_it
+		  ;;
+	strip)
+		  strip_it
 		  ;;
 	create)
 		  create_it
@@ -392,9 +392,6 @@ case "$1" in
 		  ;;
 	custom)
 		  custom_it
-		  ;;
-	all)
-		  build_it
 		  ;;
 	*)
 		  print_usage

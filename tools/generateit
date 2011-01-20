@@ -49,14 +49,14 @@ this_generate() {
    [ ! "${EXTENSION%-locale}" = "$EXTENSION" ] && DESCRIPTION="${DESCRIPTION%.}, locale files."
    [ ! "${EXTENSION%-gir}" = "$EXTENSION" ] && DESCRIPTION="${DESCRIPTION%.}, gobject introspection data."
 
-   if [ -e "$PACKAGE_EXTENSIONS/$EXTENSION/common" ]; then
-        . "$PACKAGE_EXTENSIONS/$EXTENSION/common"
+   if [ -e "$TCEXTTOOLS_EXTENSION_COMMON" ]; then
+        . "$TCEXTTOOLS_EXTENSION_COMMON"
    fi
 
    CURRENT="$DATE $CURRENT"
-   SIZE=$(du -h "$TCEXTTOOLS_PKG/$EXTENSION_NAME/${EXTENSION_NAME}.tcz" | cut -f1)
+   SIZE=$(du -h "$TCEXTTOOLS_EXTENSION" | cut -f1)
 
-   cat > "$TCEXTTOOLS_PKG/$EXTENSION_NAME/${EXTENSION_NAME}.tcz.info" << _EOF
+   cat > "$TCEXTTOOLS_EXTENSION_INFO" << _EOF
 Title:		${EXTENSION_NAME}.tcz
 Description:	${DESCRIPTION}
 Version:	${VERSION}
@@ -107,7 +107,7 @@ this_main() {
 
 }
 
-print_it "Generating the package $PACKAGE extensions info files ... \c"
+print_it "Generating the package $PACKAGE extension info files ... \c"
 this_main > "$TCEXTTOOLS_MESSAGE_LOG_2" 2>&1
 if [ "$?" -gt 0 ]; then
      print_it error "failed!"
