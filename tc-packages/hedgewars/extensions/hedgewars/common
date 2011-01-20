@@ -13,7 +13,4 @@ COMMENTS="Each player controls a team of several hedgehogs. During the course of
 
 		You need GPU acceleration for smooth playing experience.
 
-		IMPORTANT NOTE FOR ALSA USERS: Till SDL is compiled with alsa support please copy this file to ~/.hedgewars
-		http://bugs.gentoo.org/attachment.cgi?id=228035
-
 		This extension is PPI compatible."
