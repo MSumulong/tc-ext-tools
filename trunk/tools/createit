@@ -41,7 +41,7 @@ fi
 
 this_create() {
 
-   if [ -e "$TCEXTTOOLS_EXTENSION_TCEINSTALLED" ]; then
+   if [ -f "$TCEXTTOOLS_EXTENSION_TCEINSTALLED" ]; then
         sudo install -D -m 775 "$TCEXTTOOLS_EXTENSION_TCEINSTALLED" "$TCEXTTOOLS_EXTENSION_BINDIR/usr/local/tce.installed/$EXTENSION_NAME" || return 1
         sudo chown -R root:staff "$TCEXTTOOLS_EXTENSION_BINDIR/usr/local/tce.installed" || return 1
         sudo chmod -R 775 "$TCEXTTOOLS_EXTENSION_BINDIR/usr/local/tce.installed" || return 1
@@ -56,8 +56,8 @@ this_create() {
              fi
         fi
 
-        if [ ! -e "$TCEXTTOOLS_EXTENSION_BINDIR/$DESKTOP" ]; then
-               print_it error "The desktop file of the extension $EXTENSION_NAME does not exist!"
+        if [ ! -f "$TCEXTTOOLS_EXTENSION_BINDIR/$DESKTOP" ]; then
+               print_it error "The desktop file for the package $PACKAGE extension $EXTENSION_NAME not found!"
                return 1
         else
              if [ ! $(grep "X-FullPathIcon=" "$TCEXTTOOLS_EXTENSION_BINDIR/$DESKTOP") ]; then
@@ -85,7 +85,7 @@ this_create() {
    busybox cp -f "$TCEXTTOOLS_BIN/${EXTENSION_NAME}".tcz* "$TCEXTTOOLS_EXTENSION_PKGDIR" || return 1
 
    if [ -e "$PACKAGE_EXTENSION_DEP" ]; then
-        install -m 644 "$PACKAGE_EXTENSION_DEP" "$TCEXTTOOLS_EXTENSION_PKGDIR/${EXTENSION_NAME}.tcz.dep" || return 1
+        install -m 644 "$PACKAGE_EXTENSION_DEP" "$TCEXTTOOLS_EXTENSION_DEP" || return 1
    fi
 
    sudo rm -f "$TCEXTTOOLS_BIN"/*.tcz*
@@ -114,10 +114,10 @@ this_main() {
 
        this_create
        if [ "$?" -gt 0 ]; then
-            print_it error "Creating the extension $EXTENSION_NAME failed!"
+            print_it error "Creating the package $PACKAGE extension $EXTENSION_NAME failed!"
             return 1
        else
-            print_it "Creating the extension $EXTENSION_NAME successful!"
+            print_it "Creating the package $PACKAGE extension $EXTENSION_NAME successful!"
        fi
    done
 
