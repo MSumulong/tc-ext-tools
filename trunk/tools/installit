@@ -52,7 +52,7 @@ fi
 
 this_main() {
 
-   [ -d "$TCEXTTOOLS_INSTALL_ROOT" ] && sudo rm -rf "$TCEXTTOOLS_INSTALL_ROOT"
+   [ -d "$TCEXTTOOLS_BIN" ] && rm -rf "$TCEXTTOOLS_BIN"/*
 
    cd "$TCEXTTOOLS_SOURCE_TOPDIR"
    build_install > "$TCEXTTOOLS_INSTALL_LOG" 2>&1 || return 1
