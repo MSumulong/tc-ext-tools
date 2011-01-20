@@ -1,8 +1,6 @@
 PACKAGE="kdegames"
-VERSION="4.5.2"
-
+VERSION="4.5.5"
 SOURCE="ftp://ftp.kde.org/pub/kde/stable/${VERSION}/src/${PACKAGE}-${VERSION}.tar.bz2"
-
 BUILD_DEPENDS="cmake
 automoc4
 kdelibs
@@ -22,8 +20,8 @@ python-dev
 ggz-client-libs
 ggz-client-libs-dev
 libxml2-bin
-docbook_xsl"
-
+docbook_xsl
+python_twisted-2.7"
 
 DESCRIPTION="KDE games."
 AUTHOR="KDE development team"
@@ -31,5 +29,6 @@ SITE="http://www.kde.org"
 COPYING="GPL/LGPL/FDL"
 MAINTAINERS="Arslan S."
 COMMENTS="This extension is PPI compatible."
-CHANGELOG="2010/07/30 First Version 4.4.5"
-CURRENT="Updated to 4.5.2"
+CHANGELOG="2010/07/30 First Version 4.4.5
+		2010/11/03 Updated to 4.5.2"
+CURRENT="Updated to $VERSION"

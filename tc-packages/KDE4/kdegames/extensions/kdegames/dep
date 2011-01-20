@@ -1,7 +1,10 @@
+qt-4.x-opengl.tcz
+gst-plugins-base.tcz
+ggz-client-libs.tcz
+phonon.tcz
+qca.tcz
+python_twisted-2.7.tcz
 kdelibs.tcz
 kdebase-runtime.tcz
-qt-4.x-opengl.tcz
-phonon.tcz
-gst-plugins-base.tcz
-qca.tcz
-ggz-client-libs.tcz
+kdebindings-python.tcz
+

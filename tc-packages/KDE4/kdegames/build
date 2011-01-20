@@ -4,9 +4,9 @@
 
 build_configure() {
 
-   [ -d build ] || mkdir build
+   mkdir build
    cd build
-   cmake -DCMAKE_INSTALL_PREFIX=/usr/local -DCMAKE_BUILD_TYPE=Release .. || return 1
+   cmake -DCMAKE_INSTALL_PREFIX=/usr/local -DCMAKE_BUILD_TYPE=Release -DINSTALL_KAJONGG=TRUE .. || return 1
 
 }
 

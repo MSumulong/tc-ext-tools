@@ -20,29 +20,29 @@ build_compile() {
 build_install() {
 
 	cd build/ColorSchemes &&
-	make DESTDIR=${TCEXTTOOLS_BIN}/${PACKAGE}-colorschemes install || return 1
+	make DESTDIR=${PACKAGE_BIN}/${PACKAGE}-colorschemes install || return 1
 	cd ../IconThemes &&
-	make DESTDIR=${TCEXTTOOLS_BIN}/${PACKAGE}-iconthemes install || return 1
+	make DESTDIR=${PACKAGE_BIN}/${PACKAGE}-iconthemes install || return 1
 	cd ../desktopthemes &&
-	make DESTDIR=${TCEXTTOOLS_BIN}/${PACKAGE}-desktopthemes install || return 1
+	make DESTDIR=${PACKAGE_BIN}/${PACKAGE}-desktopthemes install || return 1
 	cd ../emoticons &&
-	make DESTDIR=${TCEXTTOOLS_BIN}/${PACKAGE}-emoticons install || return 1
+	make DESTDIR=${PACKAGE_BIN}/${PACKAGE}-emoticons install || return 1
 	cd ../kscreensaver &&
-	make DESTDIR=${TCEXTTOOLS_BIN}/${PACKAGE}-kscreensaver install || return 1
+	make DESTDIR=${PACKAGE_BIN}/${PACKAGE}-kscreensaver install || return 1
 	cd ../sounds &&
-	make DESTDIR=${TCEXTTOOLS_BIN}/${PACKAGE}-sounds install || return 1
+	make DESTDIR=${PACKAGE_BIN}/${PACKAGE}-sounds install || return 1
 	cd ../styles &&
-	make DESTDIR=${TCEXTTOOLS_BIN}/${PACKAGE}-styles install || return 1
+	make DESTDIR=${PACKAGE_BIN}/${PACKAGE}-styles install || return 1
 	cd ../WeatherWallpapers &&
-	make DESTDIR=${TCEXTTOOLS_BIN}/${PACKAGE}-weatherwallpapers install || return 1
+	make DESTDIR=${PACKAGE_BIN}/${PACKAGE}-weatherwallpapers install || return 1
 	cd ../wallpapers &&
-	make DESTDIR=${TCEXTTOOLS_BIN}/${PACKAGE}-wallpapers install || return 1
+	make DESTDIR=${PACKAGE_BIN}/${PACKAGE}-wallpapers install || return 1
 	cd ../HighResolutionWallpapers &&
-	make DESTDIR=${TCEXTTOOLS_BIN}/${PACKAGE}-wallpapers install || return 1
+	make DESTDIR=${PACKAGE_BIN}/${PACKAGE}-wallpapers install || return 1
 	#
 	
-	install -m 755 -d ${TCEXTTOOLS_BIN}/kdeartwork/usr/local/share/doc/kdeartwork
-cat > ${TCEXTTOOLS_BIN}/kdeartwork/usr/local/share/doc/kdeartwork/README << EOF
+	install -m 755 -d ${PACKAGE_BIN}/kdeartwork/usr/local/share/doc/kdeartwork
+cat > ${PACKAGE_BIN}/kdeartwork/usr/local/share/doc/kdeartwork/README << EOF
 This is a meta package that contains:
 
 	color schemes
@@ -73,7 +73,7 @@ build_rules() {
   buildit configure || exit 1
   buildit compile || exit 1
   buildit install || exit 1
-  stripit "$TCEXTTOOLS_BIN" || exit 1
+  buildit strip || exit 1
   buildit create || exit 1
   buildit generate || exit 1
   buildit check || exit 1
