@@ -4,14 +4,9 @@
 
 build_configure() {
 
-   ## pulseaudio support
-   #sudo mv /usr/local/include/pulse/version.h /usr/local/include/pulse/version_old.h
-   #sed 's/#define pa_get_headers_version() ("UNKNOWN")/#define pa_get_headers_version() ("0.9.22")/g' /usr/local/include/pulse/version_old.h > /tmp/version.h
-   #sudo mv /tmp/version.h /usr/local/include/pulse/version.h
-
-   [ -d build ] || mkdir build
+   mkdir build
    cd build
-   cmake -DCMAKE_INSTALL_PREFIX=/usr/local -DCMAKE_BUILD_TYPE=Release -DCMAKE_SKIP_RPATH=ON -DWITH_Xine=OFF -DWITH_PulseAudio=OFF .. || return 1
+   cmake -DCMAKE_INSTALL_PREFIX=/usr/local -DCMAKE_BUILD_TYPE=Release -DCMAKE_SKIP_RPATH=ON -DWITH_Xine=OFF -DWITH_PulseAudio=ON .. || return 1
 
 }
 
@@ -25,40 +20,43 @@ build_compile() {
 build_install() {
 
    cd build/dragonplayer &&
-   make DESTDIR=${TCEXTTOOLS_BIN}/${PACKAGE}-dragonplayer install || return 1
+   make DESTDIR=${PACKAGE_BIN}/${PACKAGE}-dragonplayer install || return 1
    cd ../doc/dragonplayer &&
-   make DESTDIR=${TCEXTTOOLS_BIN}/${PACKAGE}-dragonplayer install || return 1
+   make DESTDIR=${PACKAGE_BIN}/${PACKAGE}-dragonplayer install || return 1
    cd ..
 
    cd ../juk &&
-   make DESTDIR=${TCEXTTOOLS_BIN}/${PACKAGE}-juk install || return 1
+   make DESTDIR=${PACKAGE_BIN}/${PACKAGE}-juk install || return 1
    cd ../doc/juk &&
-   make DESTDIR=${TCEXTTOOLS_BIN}/${PACKAGE}-juk install || return 1
+   make DESTDIR=${PACKAGE_BIN}/${PACKAGE}-juk install || return 1
    cd ..
 
    for i in kioslave libkcddb libkcompactdisc doc/kioslave
    do
        cd ../${i} &&
-       make DESTDIR=${TCEXTTOOLS_BIN}/${PACKAGE}-kioslave install || return 1
+       make DESTDIR=${PACKAGE_BIN}/${PACKAGE}-kioslave install || return 1
    done
    cd ..
 
    for i in kmix doc/kmix
    do
        cd ../${i} &&
-       make DESTDIR=${TCEXTTOOLS_BIN}/${PACKAGE}-kmix install || return 1
+       make DESTDIR=${PACKAGE_BIN}/${PACKAGE}-kmix install || return 1
    done
    cd ..
 
    cd ../kscd &&
-   make DESTDIR=${TCEXTTOOLS_BIN}/${PACKAGE}-kscd install || return 1
+   make DESTDIR=${PACKAGE_BIN}/${PACKAGE}-kscd install || return 1
   
    cd ../mplayerthumbs &&
-   make DESTDIR=${TCEXTTOOLS_BIN}/${PACKAGE}-mplayerthumbs install || return 1
+   make DESTDIR=${PACKAGE_BIN}/${PACKAGE}-mplayerthumbs install || return 1
 
-   install -m 755 -d ${TCEXTTOOLS_BIN}/${PACKAGE}/usr/local/share/doc/${PACKAGE}
-cat > ${TCEXTTOOLS_BIN}/${PACKAGE}/usr/local/share/doc/${PACKAGE}/README << EOF
-This is a meta package that contains:
+   cd ../ffmpegthumbs &&
+   make DESTDIR=${PACKAGE_BIN}/${PACKAGE}-ffmpegthumbs install || return 1
+
+   install -m 755 -d ${PACKAGE_BIN}/${PACKAGE}/usr/local/share/doc/${PACKAGE}
+cat > ${PACKAGE_BIN}/${PACKAGE}/usr/local/share/doc/${PACKAGE}/README << EOF
+This is a meta extension that loads
 
 	dragonplayer
 	juk
@@ -66,24 +64,22 @@ This is a meta package that contains:
 	kmix
 	kscd
 	mplayerthumbs
+	ffmpegthumbs
 
-from ${PACKAGE} source package
+from ${PACKAGE}-${VERSION}
 
 Sercan Arslan <arslanserc@gmail.com>
 
 EOF
 
-   install -m 755 -d ${TCEXTTOOLS_BIN}/${PACKAGE}-mplayerthumbs/usr/local/share/config/mplayerthumbs
-cat > ${TCEXTTOOLS_BIN}/${PACKAGE}-mplayerthumbs/usr/local/share/config/mplayerthumbs/mplayerthumbs.config << EOF
+   install -m 755 -d ${PACKAGE_BIN}/${PACKAGE}-mplayerthumbs/usr/local/share/config/mplayerthumbs
+cat > ${PACKAGE_BIN}/${PACKAGE}-mplayerthumbs/usr/local/share/config/mplayerthumbs/mplayerthumbs.config << EOF
 [MPlayerThumbsCfg]
 backend=0
 EOF
 
-   echo "X-FullPathIcon=/usr/local/share/icons/hicolor/64x64/apps/dragonplayer.png" >> ${TCEXTTOOLS_BIN}/${PACKAGE}-dragonplayer/usr/local/share/applications/kde4/dragonplayer.desktop
-   echo "X-FullPathIcon=/usr/local/share/icons/hicolor/64x64/apps/juk.png" >> ${TCEXTTOOLS_BIN}/${PACKAGE}-juk/usr/local/share/applications/kde4/juk.desktop
-
-   ln -s kde4/dragonplayer.desktop ${TCEXTTOOLS_BIN}/${PACKAGE}-dragonplayer/usr/local/share/applications/${PACKAGE}-dragonplayer.desktop
-   ln -s kde4/juk.desktop ${TCEXTTOOLS_BIN}/${PACKAGE}-dragonplayer/usr/local/share/applications/${PACKAGE}-juk.desktop
+   ln -s kde4/dragonplayer.desktop ${PACKAGE_BIN}/${PACKAGE}-dragonplayer/usr/local/share/applications/${PACKAGE}-dragonplayer.desktop
+   ln -s kde4/juk.desktop ${PACKAGE_BIN}/${PACKAGE}-juk/usr/local/share/applications/${PACKAGE}-juk.desktop
 
 }
 
@@ -97,7 +93,7 @@ build_rules() {
   buildit configure || exit 1
   buildit compile || exit 1
   buildit install || exit 1
-  stripit "$TCEXTTOOLS_BIN" || exit 1
+  buildit strip || exit 1
   buildit create || exit 1
   buildit generate || exit 1
   buildit check || exit 1
