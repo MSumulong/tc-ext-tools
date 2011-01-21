@@ -1,0 +1,21 @@
+PACKAGE="kwebkitpart"
+VERSION="0.9.6"
+SOURCE="http://opendesktop.org/CONTENT/content-files/127960-kwebkitpart-${VERSION}.tar.bz2"
+BUILD_DEPENDS="cmake
+automoc4
+phonon
+phonon-dev
+kdelibs
+kdelibs-dev
+kdebase-runtime
+kdebase
+kdebase-dev"
+
+DESCRIPTION="A web browser component for KDE."
+AUTHOR="various"
+SITE="http://opendesktop.org/content/show.php?content=127960"
+COPYING="LGPL"
+MAINTAINERS="Arslan S."
+COMMENTS="This extension is PPI compatible."
+CHANGELOG="---"
+CURRENT="First Version"

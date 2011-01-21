@@ -1,0 +1,14 @@
+PACKAGE="libgadu"
+VERSION="1.9.1"
+SOURCE="http://toxygen.net/libgadu/files/libgadu-${VERSION}.tar.gz"
+BUILD_DEPENDS="openssl-0.9.8
+openssl-0.9.8-dev"
+
+DESCRIPTION="This library implements the client side of the Gadu-Gadu protocol."
+AUTHOR="various"
+SITE="http://toxygen.net/libgadu/"
+COPYING="LGPL"
+MAINTAINERS="Arslan S."
+COMMENTS="This extension is PPI compatible."
+CHANGELOG="---"
+CURRENT="First Version"
