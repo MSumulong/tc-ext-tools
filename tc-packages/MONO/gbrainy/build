@@ -5,11 +5,16 @@
 #                                                                          #
 ############################################################################
 
+# to get rid of that .wapi errors
+export MONO_SHARED_DIR="${PACKAGE_SOURCE_TOPDIR}/src/weird"
+
 ############################################################################ 
 #                            Configure                                     #
 ############################################################################
 
 build_configure() {
+
+   [ -d "${MONO_SHARED_DIR}" ] || mkdir -p "${MONO_SHARED_DIR}"
 
    ./configure --prefix=/usr/local --disable-scrollkeeper || return 1
 
