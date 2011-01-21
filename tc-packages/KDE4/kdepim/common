@@ -1,15 +1,16 @@
 PACKAGE="kdepim"
-VERSION="4.4.6"
-
+VERSION="4.4.9"
 SOURCE="ftp://ftp.kde.org/pub/kde/stable/kdepim-${VERSION}/src/kdepim-${VERSION}.tar.bz2"
-
 BUILD_DEPENDS="cmake
 automoc4
+docbook_xsl
 libxml2-bin
 kdelibs
 kdelibs-dev
 kdepimlibs
 kdepimlibs-dev
+soprano
+soprano-dev
 phonon
 phonon-dev
 gpgme
@@ -34,9 +35,7 @@ pilot-link-dev
 kdepim-runtime
 libxml2
 libxml2-dev
-shared-desktop-ontologies
-docbook_xsl"
-
+shared-desktop-ontologies"
 
 DESCRIPTION="KDE pim applications."
 AUTHOR="KDE development team"
@@ -44,5 +43,5 @@ SITE="http://www.kde.org"
 COPYING="GPL/LGPL/FDL"
 MAINTAINERS="Arslan S."
 COMMENTS="This extension is PPI compatible."
-CHANGELOG="---"
-CURRENT="First Version"
+CHANGELOG="2010/11/05 First Version 4.5.2"
+CURRENT="Updated to $VERSION"

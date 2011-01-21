@@ -625,6 +625,7 @@ usr/local/share/apps/akonadiconsole/akonadiconsoleui.rc
 usr/local/share/apps/korgac/icons/hicolor/22x22/actions/korgac.png
 usr/local/share/apps/kalarm/kalarmui.rc
 usr/local/share/apps/kalarm/icons/oxygen/22x22/emblems/partdisabled.png
+usr/local/share/apps/kalarm/icons/oxygen/22x22/actions/kalarm-disabled.png
 usr/local/share/apps/kalarm/icons/oxygen/22x22/actions/new-audio-alarm.png
 usr/local/share/apps/kalarm/icons/oxygen/22x22/actions/new-command-alarm.png
 usr/local/share/apps/kalarm/icons/oxygen/22x22/actions/kalarm.png

@@ -8,8 +8,16 @@ qimageblitz.tcz
 qca.tcz
 libzip.tcz
 libarchive.tcz
-xz.tcz
+qjson.tcz
 net-snmp.tcz
 gmp.tcz
 coreutils.tcz
+zip-unzip.tcz
+p7zip-full.tcz
+tar.tcz
+wget.tcz
+gzip.tcz
+bzip2.tcz
+xz.tcz
+unrar.tcz
 shared-desktop-ontologies.tcz

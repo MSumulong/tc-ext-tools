@@ -1,8 +1,6 @@
 PACKAGE="kdeutils"
-VERSION="4.5.2"
-
+VERSION="4.5.5"
 SOURCE="ftp://ftp.kde.org/pub/kde/stable/${VERSION}/src/${PACKAGE}-${VERSION}.tar.bz2"
-
 BUILD_DEPENDS="cmake
 automoc4
 kdelibs
@@ -28,14 +26,24 @@ python-dev
 kdebindings-python
 kdebindings-dev
 pyqt
-xz
-xz-dev
 kdebase-workspace
 kdebase-workspace-dev
 shared-desktop-ontologies
 libxml2-bin
-docbook_xsl"
-
+docbook_xsl
+libarchive
+libarchive-dev
+qjson
+qjson-dev
+zip-unzip.tcz
+p7zip-full.tcz
+tar.tcz
+wget.tcz
+gzip.tcz
+bzip2.tcz
+unrar.tcz
+xz
+xz-dev"
 
 DESCRIPTION="KDE utilities."
 AUTHOR="KDE development team"
@@ -43,5 +51,5 @@ SITE="http://www.kde.org"
 COPYING="GPL/LGPL/FDL"
 MAINTAINERS="Arslan S."
 COMMENTS="This extension is PPI compatible."
-CHANGELOG="---"
-CURRENT="First Version"
+CHANGELOG="2010/11/03 First Version 4.5.2"
+CURRENT="Updated to $VERSION"

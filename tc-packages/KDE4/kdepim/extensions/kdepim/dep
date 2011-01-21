@@ -2,7 +2,11 @@ kdelibs.tcz
 kdebase-runtime.tcz
 kdepimlibs.tcz
 kdepim-runtime.tcz
+boost.tcz
+akonadi.tcz
 phonon.tcz
+soprano.tcz
+libassuan.tcz
 strigi.tcz
 gpgme.tcz
 cyrus-sasl.tcz

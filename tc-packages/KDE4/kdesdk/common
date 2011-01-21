@@ -1,8 +1,6 @@
 PACKAGE="kdesdk"
-VERSION="4.5.2"
-
+VERSION="4.5.5"
 SOURCE="ftp://ftp.kde.org/pub/kde/stable/${VERSION}/src/${PACKAGE}-${VERSION}.tar.bz2"
-
 BUILD_DEPENDS="cmake
 automoc4
 kdelibs
@@ -13,7 +11,11 @@ kdebase-workspace
 kdebase-workspace-dev
 kdebase
 kdebase-dev
+kdebindings-python
+kdebindings
+kdebindings-dev
 qt-4.x-designer
+qt-4.x-sql
 phonon
 phonon-dev
 hunspell
@@ -31,12 +33,11 @@ libxml2-dev
 libxml2-bin
 docbook_xsl"
 
-
 DESCRIPTION="KDE software development kit."
 AUTHOR="KDE development team"
 SITE="http://www.kde.org"
 COPYING="GPL/LGPL/FDL"
 MAINTAINERS="Arslan S."
 COMMENTS="This extension is PPI compatible."
-CHANGELOG="---"
-CURRENT="First Version"
+CHANGELOG="2010/11/03 First Version 4.5.2"
+CURRENT="Updated to $VERSION"

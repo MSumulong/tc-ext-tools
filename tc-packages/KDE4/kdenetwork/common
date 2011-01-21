@@ -1,8 +1,6 @@
 PACKAGE="kdenetwork"
-VERSION="4.5.2"
-
+VERSION="4.5.5"
 SOURCE="ftp://ftp.kde.org/pub/kde/stable/${VERSION}/src/kdenetwork-${VERSION}.tar.bz2"
-
 BUILD_DEPENDS="cmake
 automoc4
 libxml2-bin
@@ -59,7 +57,6 @@ avahi-2.7-dev
 gmp
 openslp
 openslp-dev"
-
 
 DESCRIPTION="KDE network applications."
 AUTHOR="KDE development team"

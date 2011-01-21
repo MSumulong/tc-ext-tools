@@ -1,10 +1,10 @@
 PACKAGE="kdeedu"
-VERSION="4.5.2"
-
+VERSION="4.5.5"
 SOURCE="ftp://ftp.kde.org/pub/kde/stable/${VERSION}/src/${PACKAGE}-${VERSION}.tar.bz2"
-
 BUILD_DEPENDS="cmake
 automoc4
+libxml2-bin
+docbook_xsl
 kdelibs
 kdelibs-dev
 kdebase-workspace
@@ -13,8 +13,6 @@ kdegraphics
 kdegraphics-dev
 Xorg-7.5
 Xorg-7.5-dev
-libxml2-bin
-docbook_xsl
 eigen
 libqalculate
 libqalculate-dev
@@ -22,8 +20,8 @@ libspectre
 libspectre-dev
 python
 python-dev
-#gpsd
-#gpsd-dev
+gpsd
+gpsd-dev
 attica
 attica-dev
 boost
@@ -31,7 +29,6 @@ boost-dev
 gsl
 readline
 readline-dev"
-
 
 DESCRIPTION="KDE education project."
 AUTHOR="KDE development team"
