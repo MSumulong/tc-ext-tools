@@ -724,6 +724,7 @@ usr/local/share/doc/HTML/en/kmplot/settings-fonts.png
 usr/local/share/doc/HTML/en/kmplot/main.png
 usr/local/share/doc/HTML/en/kmplot/reference.docbook
 usr/local/share/doc/HTML/en/kmplot/credits.docbook
+usr/local/share/doc/HTML/en/kalgebra/commands.docbook
 usr/local/share/doc/HTML/en/kalgebra/kalgebra-main-window.png
 usr/local/share/doc/HTML/en/kalgebra/index.cache.bz2
 usr/local/share/doc/HTML/en/kalgebra/common
@@ -3943,6 +3944,7 @@ usr/local/lib/libscience.so.4
 usr/local/lib/libkdeeduui.so.4.5.0
 usr/local/lib/libmarblewidget.so.0.10.1
 usr/local/lib/libanalitzagui.so.4
+usr/local/lib/libcompoundviewer.so
 usr/local/lib/libanalitzagui.so.4.5.0
 usr/local/lib/libcantorlibs.so.0.0.2
 usr/local/lib/libmarblewidget.so
@@ -3956,6 +3958,7 @@ usr/local/lib/libSatLib.so.4.5.0
 usr/local/lib/libkdeeduui.so.4
 usr/local/lib/libanalitza.so.4
 usr/local/lib/libSatLib.so
+usr/local/lib/libcompoundviewer.so.4
 usr/local/lib/libkeduvocdocument.so.4.5.0
 usr/local/lib/kde4/cantor_nullbackend.so
 usr/local/lib/kde4/libcantorpart.so
@@ -4011,4 +4014,5 @@ usr/local/lib/libkiten.so.4.5.0
 usr/local/lib/libkiten.so
 usr/local/lib/librocslib.so.4.5.0
 usr/local/lib/libkiten.so.4
+usr/local/lib/libcompoundviewer.so.4.5.0
 usr/local/lib/libanalitza.so
