@@ -1,0 +1,436 @@
+usr/local/bin/avogadro
+usr/local/bin/avopkg
+usr/local/include/avogadro/primitive.h
+usr/local/include/avogadro/neighborlist.h
+usr/local/include/avogadro/pluginmanager.h
+usr/local/include/avogadro/idlist.h
+usr/local/include/avogadro/plugin.h
+usr/local/include/avogadro/extension.h
+usr/local/include/avogadro/plotobject.h
+usr/local/include/avogadro/undosequence.h
+usr/local/include/avogadro/zmatrix.h
+usr/local/include/avogadro/plotwidget.h
+usr/local/include/avogadro/colorbutton.h
+usr/local/include/avogadro/painter.h
+usr/local/include/avogadro/color3f.h
+usr/local/include/avogadro/navigate.h
+usr/local/include/avogadro/mesh.h
+usr/local/include/avogadro/camera.h
+usr/local/include/avogadro/painterdevice.h
+usr/local/include/avogadro/toolgroup.h
+usr/local/include/avogadro/animation.h
+usr/local/include/avogadro/periodictableview.h
+usr/local/include/avogadro/fragment.h
+usr/local/include/avogadro/color.h
+usr/local/include/avogadro/tool.h
+usr/local/include/avogadro/protein.h
+usr/local/include/avogadro/primitivelist.h
+usr/local/include/avogadro/global.h
+usr/local/include/avogadro/residue.h
+usr/local/include/avogadro/elementtranslator.h
+usr/local/include/avogadro/glhit.h
+usr/local/include/avogadro/cube.h
+usr/local/include/avogadro/bond.h
+usr/local/include/avogadro/engine.h
+usr/local/include/avogadro/molecule.h
+usr/local/include/avogadro/plotaxis.h
+usr/local/include/avogadro/moleculefile.h
+usr/local/include/avogadro/plotpoint.h
+usr/local/include/avogadro/meshgenerator.h
+usr/local/include/avogadro/glwidget.h
+usr/local/include/avogadro/atom.h
+usr/local/mkspecs/features/avogadro.prf
+usr/local/share/cmake-2.8/Modules/FindAvogadro.cmake
+usr/local/share/pixmaps/avogadro-icon.png
+usr/local/share/man/man1/avogadro.1
+usr/local/share/man/man1/avopkg.1
+usr/local/share/avogadro/builder/amino/l-asp.zmat
+usr/local/share/avogadro/builder/amino/d-val.zmat
+usr/local/share/avogadro/builder/amino/l-met.zmat
+usr/local/share/avogadro/builder/amino/l-arg.zmat
+usr/local/share/avogadro/builder/amino/d-ile.zmat
+usr/local/share/avogadro/builder/amino/d-met.zmat
+usr/local/share/avogadro/builder/amino/d-ser.zmat
+usr/local/share/avogadro/builder/amino/l-gln.zmat
+usr/local/share/avogadro/builder/amino/d-glu.zmat
+usr/local/share/avogadro/builder/amino/l-lys.zmat
+usr/local/share/avogadro/builder/amino/l-thr.zmat
+usr/local/share/avogadro/builder/amino/d-asn.zmat
+usr/local/share/avogadro/builder/amino/d-ala.zmat
+usr/local/share/avogadro/builder/amino/l-trp.zmat
+usr/local/share/avogadro/builder/amino/l-tyr.zmat
+usr/local/share/avogadro/builder/amino/l-pyl.zmat
+usr/local/share/avogadro/builder/amino/l-val.zmat
+usr/local/share/avogadro/builder/amino/d-cys.zmat
+usr/local/share/avogadro/builder/amino/l-asn.zmat
+usr/local/share/avogadro/builder/amino/l-his.zmat
+usr/local/share/avogadro/builder/amino/d-phe.zmat
+usr/local/share/avogadro/builder/amino/d-arg.zmat
+usr/local/share/avogadro/builder/amino/d-asp.zmat
+usr/local/share/avogadro/builder/amino/d-tyr.zmat
+usr/local/share/avogadro/builder/amino/d-trp.zmat
+usr/local/share/avogadro/builder/amino/l-leu.zmat
+usr/local/share/avogadro/builder/amino/l-ile.zmat
+usr/local/share/avogadro/builder/amino/l-glu.zmat
+usr/local/share/avogadro/builder/amino/d-lys.zmat
+usr/local/share/avogadro/builder/amino/l-pro.zmat
+usr/local/share/avogadro/builder/amino/l-ser.zmat
+usr/local/share/avogadro/builder/amino/d-gln.zmat
+usr/local/share/avogadro/builder/amino/gly.zmat
+usr/local/share/avogadro/builder/amino/l-cys.zmat
+usr/local/share/avogadro/builder/amino/d-pro.zmat
+usr/local/share/avogadro/builder/amino/l-ala.zmat
+usr/local/share/avogadro/builder/amino/d-his.zmat
+usr/local/share/avogadro/builder/amino/l-phe.zmat
+usr/local/share/avogadro/builder/amino/d-thr.zmat
+usr/local/share/avogadro/builder/amino/l-sec.zmat
+usr/local/share/avogadro/builder/amino/d-leu.zmat
+usr/local/share/avogadro/fragments/ketones/butanone.cml
+usr/local/share/avogadro/fragments/ketones/acetone.cml
+usr/local/share/avogadro/fragments/ethers/dipropylether.cml
+usr/local/share/avogadro/fragments/ethers/tetrahydrofuran.cml
+usr/local/share/avogadro/fragments/ethers/diethylether.cml
+usr/local/share/avogadro/fragments/ethers/diisopropylether.cml
+usr/local/share/avogadro/fragments/ethers/ethylmethylether.cml
+usr/local/share/avogadro/fragments/ethers/dimethylether.cml
+usr/local/share/avogadro/fragments/ethers/dibutylether.cml
+usr/local/share/avogadro/fragments/ethers/di-tert-butylether.cml
+usr/local/share/avogadro/fragments/carbamides/urea.cml
+usr/local/share/avogadro/fragments/cyclic sugars/beta-D-ribopyranose.cml
+usr/local/share/avogadro/fragments/cyclic sugars/alpha-L-sorbopyranose.cml
+usr/local/share/avogadro/fragments/cyclic sugars/beta-D-galactopyranose.cml
+usr/local/share/avogadro/fragments/cyclic sugars/alpha-L-galactopyranose.cml
+usr/local/share/avogadro/fragments/cyclic sugars/beta-D-allopyranose.cml
+usr/local/share/avogadro/fragments/cyclic sugars/beta-D-xylopyranose.cml
+usr/local/share/avogadro/fragments/cyclic sugars/alpha-L-fucopyranose.cml
+usr/local/share/avogadro/fragments/cyclic sugars/alpha-D-allopyranose.cml
+usr/local/share/avogadro/fragments/cyclic sugars/alpha-D-tagatopyranose.cml
+usr/local/share/avogadro/fragments/cyclic sugars/beta-D-mannopyranose.cml
+usr/local/share/avogadro/fragments/cyclic sugars/alpha-D-arabinopyranose.cml
+usr/local/share/avogadro/fragments/cyclic sugars/alpha-D-lyxopyranose.cml
+usr/local/share/avogadro/fragments/cyclic sugars/beta-D-idopyranose.cml
+usr/local/share/avogadro/fragments/cyclic sugars/alpha-L-xylopyranose.cml
+usr/local/share/avogadro/fragments/cyclic sugars/beta-L-arabinopyranose.cml
+usr/local/share/avogadro/fragments/cyclic sugars/beta-L-lyxopyranose.cml
+usr/local/share/avogadro/fragments/cyclic sugars/alpha-D-glucuronopyranose.cml
+usr/local/share/avogadro/fragments/cyclic sugars/beta-D-glucopyranose.cml
+usr/local/share/avogadro/fragments/cyclic sugars/alpha-D-psicopyranose.cml
+usr/local/share/avogadro/fragments/cyclic sugars/alpha-D-glucopyranose.cml
+usr/local/share/avogadro/fragments/cyclic sugars/beta-D-talopyranose.cml
+usr/local/share/avogadro/fragments/cyclic sugars/beta-D-gulopyranose.cml
+usr/local/share/avogadro/fragments/cyclic sugars/beta-L-ribopyranose.cml
+usr/local/share/avogadro/fragments/cyclic sugars/beta-D-lyxopyranose.cml
+usr/local/share/avogadro/fragments/cyclic sugars/alpha-D-ribopyranose.cml
+usr/local/share/avogadro/fragments/cyclic sugars/alpha-D-xylopyranose.cml
+usr/local/share/avogadro/fragments/cyclic sugars/beta-D-tagatopyranose.cml
+usr/local/share/avogadro/fragments/cyclic sugars/alpha-L-ribopyranose.cml
+usr/local/share/avogadro/fragments/cyclic sugars/beta-L-xylopyranose.cml
+usr/local/share/avogadro/fragments/cyclic sugars/alpha-D-fucopyranose.cml
+usr/local/share/avogadro/fragments/cyclic sugars/alpha-D-galacturonopyranose.cml
+usr/local/share/avogadro/fragments/cyclic sugars/beta-D-fructopyranose.cml
+usr/local/share/avogadro/fragments/cyclic sugars/alpha-L-arabinopyranose.cml
+usr/local/share/avogadro/fragments/cyclic sugars/alpha-D-gulopyranose.cml
+usr/local/share/avogadro/fragments/cyclic sugars/alpha-D-talopyranose.cml
+usr/local/share/avogadro/fragments/cyclic sugars/alpha-D-idopyranose.cml
+usr/local/share/avogadro/fragments/cyclic sugars/alpha-D-galactopyranose.cml
+usr/local/share/avogadro/fragments/cyclic sugars/alpha-D-rhamnopyranose.cml
+usr/local/share/avogadro/fragments/cyclic sugars/alpha-D-mannopyranose.cml
+usr/local/share/avogadro/fragments/cyclic sugars/beta-D-fucopyranose.cml
+usr/local/share/avogadro/fragments/cyclic sugars/beta-D-arabinopyranose.cml
+usr/local/share/avogadro/fragments/cyclic sugars/beta-D-rhamnopyranose.cml
+usr/local/share/avogadro/fragments/cyclic sugars/alpha-L-lyxopyranose.cml
+usr/local/share/avogadro/fragments/cyclic sugars/alpha-L-rhamnopyranose.cml
+usr/local/share/avogadro/fragments/steroids/testosterone.cml
+usr/local/share/avogadro/fragments/steroids/cholesterol.cml
+usr/local/share/avogadro/fragments/steroids/estradiol.cml
+usr/local/share/avogadro/fragments/buckminsterfullerene.cml
+usr/local/share/avogadro/fragments/carbohydrates/d-galactose.cml
+usr/local/share/avogadro/fragments/carbohydrates/d-ribulose.cml
+usr/local/share/avogadro/fragments/carbohydrates/d-sorbose.cml
+usr/local/share/avogadro/fragments/carbohydrates/d-gulose.cml
+usr/local/share/avogadro/fragments/carbohydrates/d-arabinose.cml
+usr/local/share/avogadro/fragments/carbohydrates/d-glyceraldehyde.cml
+usr/local/share/avogadro/fragments/carbohydrates/d-threose.cml
+usr/local/share/avogadro/fragments/carbohydrates/d-erythrulose.cml
+usr/local/share/avogadro/fragments/carbohydrates/dihydroxyacetone.cml
+usr/local/share/avogadro/fragments/carbohydrates/d-fructose.cml
+usr/local/share/avogadro/fragments/carbohydrates/d-altrose.cml
+usr/local/share/avogadro/fragments/carbohydrates/d-ribose.cml
+usr/local/share/avogadro/fragments/carbohydrates/d-glucose.cml
+usr/local/share/avogadro/fragments/carbohydrates/d-idose.cml
+usr/local/share/avogadro/fragments/carbohydrates/d-erythrose.cml
+usr/local/share/avogadro/fragments/carbohydrates/d-psicose.cml
+usr/local/share/avogadro/fragments/carbohydrates/d-mannose.cml
+usr/local/share/avogadro/fragments/carbohydrates/d-allose.cml
+usr/local/share/avogadro/fragments/carbohydrates/d-xylulose.cml
+usr/local/share/avogadro/fragments/carbohydrates/d-xylose.cml
+usr/local/share/avogadro/fragments/carbohydrates/d-tagatose.cml
+usr/local/share/avogadro/fragments/carbohydrates/d-lyxose.cml
+usr/local/share/avogadro/fragments/carbohydrates/d-talose.cml
+usr/local/share/avogadro/fragments/amino_acids/L-glutamine.cml
+usr/local/share/avogadro/fragments/amino_acids/L-asparagine.cml
+usr/local/share/avogadro/fragments/amino_acids/D-phenylalanine.cml
+usr/local/share/avogadro/fragments/amino_acids/L-methionine.cml
+usr/local/share/avogadro/fragments/amino_acids/D-leucine.cml
+usr/local/share/avogadro/fragments/amino_acids/D-arginine.cml
+usr/local/share/avogadro/fragments/amino_acids/L-lysine.cml
+usr/local/share/avogadro/fragments/amino_acids/L-alanine.cml
+usr/local/share/avogadro/fragments/amino_acids/L-allo-isoleucine.cml
+usr/local/share/avogadro/fragments/amino_acids/D-serine.cml
+usr/local/share/avogadro/fragments/amino_acids/L-phenylalanine.cml
+usr/local/share/avogadro/fragments/amino_acids/D-glutamine.cml
+usr/local/share/avogadro/fragments/amino_acids/L-threonine.cml
+usr/local/share/avogadro/fragments/amino_acids/D-tyrosine.cml
+usr/local/share/avogadro/fragments/amino_acids/D-threonine.cml
+usr/local/share/avogadro/fragments/amino_acids/L-tyrosine.cml
+usr/local/share/avogadro/fragments/amino_acids/L-glutamic_acid.cml
+usr/local/share/avogadro/fragments/amino_acids/D-alanine.cml
+usr/local/share/avogadro/fragments/amino_acids/D-proline.cml
+usr/local/share/avogadro/fragments/amino_acids/D-isoleucine.cml
+usr/local/share/avogadro/fragments/amino_acids/D-methionine.cml
+usr/local/share/avogadro/fragments/amino_acids/L-valine.cml
+usr/local/share/avogadro/fragments/amino_acids/L-leucine.cml
+usr/local/share/avogadro/fragments/amino_acids/D-asparagine.cml
+usr/local/share/avogadro/fragments/amino_acids/D-histidine.cml
+usr/local/share/avogadro/fragments/amino_acids/glycine.cml
+usr/local/share/avogadro/fragments/amino_acids/L-aspartic_acid.cml
+usr/local/share/avogadro/fragments/amino_acids/L-isoleucine.cml
+usr/local/share/avogadro/fragments/amino_acids/L-proline.cml
+usr/local/share/avogadro/fragments/amino_acids/L-cysteine.cml
+usr/local/share/avogadro/fragments/amino_acids/L-arginine.cml
+usr/local/share/avogadro/fragments/amino_acids/L-serine.cml
+usr/local/share/avogadro/fragments/amino_acids/D-lysine.cml
+usr/local/share/avogadro/fragments/amino_acids/L-histidine.cml
+usr/local/share/avogadro/fragments/amino_acids/D-aspartic_acid.cml
+usr/local/share/avogadro/fragments/amino_acids/L-tryptophan.cml
+usr/local/share/avogadro/fragments/amino_acids/L-4-nitrophenylalanine.cml
+usr/local/share/avogadro/fragments/amino_acids/D-allo-threonine.cml
+usr/local/share/avogadro/fragments/amino_acids/D-valine.cml
+usr/local/share/avogadro/fragments/amino_acids/D-cysteine.cml
+usr/local/share/avogadro/fragments/amino_acids/D-glutamic_acid.cml
+usr/local/share/avogadro/fragments/amino_acids/D-tryptophan.cml
+usr/local/share/avogadro/fragments/aldehydes/formaldehyde.cml
+usr/local/share/avogadro/fragments/aldehydes/acetaldehyde.cml
+usr/local/share/avogadro/fragments/aromatics/1H-indene.cml
+usr/local/share/avogadro/fragments/aromatics/anisole.cml
+usr/local/share/avogadro/fragments/aromatics/naphthalene.cml
+usr/local/share/avogadro/fragments/aromatics/benzene.cml
+usr/local/share/avogadro/fragments/aromatics/aniline.cml
+usr/local/share/avogadro/fragments/aromatics/caffeine.cml
+usr/local/share/avogadro/fragments/aromatics/benzoyl_chloride.cml
+usr/local/share/avogadro/fragments/aromatics/toluene.cml
+usr/local/share/avogadro/fragments/aromatics/nitrobenzene.cml
+usr/local/share/avogadro/fragments/aromatics/phenol.cml
+usr/local/share/avogadro/fragments/aromatics/anthracene.cml
+usr/local/share/avogadro/fragments/aromatics/benzoic_acid.cml
+usr/local/share/avogadro/fragments/aromatics/benzaldehyde.cml
+usr/local/share/avogadro/fragments/coordination/6-octahedral.cml
+usr/local/share/avogadro/fragments/coordination/4-planar.cml
+usr/local/share/avogadro/fragments/coordination/4-tetrahedral.cml
+usr/local/share/avogadro/fragments/coordination/5-square-pyramidal.cml
+usr/local/share/avogadro/fragments/coordination/3-trigonal-pyramidal.cml
+usr/local/share/avogadro/fragments/coordination/3-trigonal-planar.cml
+usr/local/share/avogadro/fragments/coordination/5-trigonal-bipyramidal.cml
+usr/local/share/avogadro/fragments/macrocycles/porphin.cml
+usr/local/share/avogadro/fragments/alkynes/acetylene.cml
+usr/local/share/avogadro/fragments/alkynes/propyne.cml
+usr/local/share/avogadro/fragments/water.cml
+usr/local/share/avogadro/fragments/heteroaromatics/pyridine.cml
+usr/local/share/avogadro/fragments/heteroaromatics/1_2-oxazole.cml
+usr/local/share/avogadro/fragments/heteroaromatics/furan.cml
+usr/local/share/avogadro/fragments/heteroaromatics/1H-pyrrole.cml
+usr/local/share/avogadro/fragments/heteroaromatics/thiophene.cml
+usr/local/share/avogadro/fragments/heteroaromatics/1H-indole.cml
+usr/local/share/avogadro/fragments/heteroaromatics/benzothiophene.cml
+usr/local/share/avogadro/fragments/heteroaromatics/1H-pyrazole.cml
+usr/local/share/avogadro/fragments/heteroaromatics/1_2-thiazole.cml
+usr/local/share/avogadro/fragments/heteroaromatics/1_3-thiazole.cml
+usr/local/share/avogadro/fragments/heteroaromatics/1_3-oxazole.cml
+usr/local/share/avogadro/fragments/heteroaromatics/benzofuran.cml
+usr/local/share/avogadro/fragments/alkenes/ethene.cml
+usr/local/share/avogadro/fragments/alkenes/but-1-ene.cml
+usr/local/share/avogadro/fragments/alcohols/propan-2-ol.cml
+usr/local/share/avogadro/fragments/alcohols/propan-1-ol.cml
+usr/local/share/avogadro/fragments/alcohols/ethanol.cml
+usr/local/share/avogadro/fragments/alcohols/methanol.cml
+usr/local/share/avogadro/fragments/amides/ethyl_carbamate.cml
+usr/local/share/avogadro/fragments/amides/oxamide.cml
+usr/local/share/avogadro/fragments/amides/N_N-dimethylformamide.cml
+usr/local/share/avogadro/fragments/amides/N_N-dimethylacetamide.cml
+usr/local/share/avogadro/fragments/amides/acetamide.cml
+usr/local/share/avogadro/fragments/nucleobases/thymine.cml
+usr/local/share/avogadro/fragments/nucleobases/uracil.cml
+usr/local/share/avogadro/fragments/nucleobases/guanine.cml
+usr/local/share/avogadro/fragments/nucleobases/cytosine.cml
+usr/local/share/avogadro/fragments/nucleobases/adenine.cml
+usr/local/share/avogadro/fragments/carboxylic_acids/D-malic_acid.cml
+usr/local/share/avogadro/fragments/carboxylic_acids/oxalic_acid.cml
+usr/local/share/avogadro/fragments/carboxylic_acids/L-tartaric_acid.cml
+usr/local/share/avogadro/fragments/carboxylic_acids/acetic_acid.cml
+usr/local/share/avogadro/fragments/carboxylic_acids/D-lactic_acid.cml
+usr/local/share/avogadro/fragments/carboxylic_acids/D-tartaric_acid.cml
+usr/local/share/avogadro/fragments/carboxylic_acids/L-ascorbic_acid.cml
+usr/local/share/avogadro/fragments/carboxylic_acids/isobutyric_acid.cml
+usr/local/share/avogadro/fragments/carboxylic_acids/citric_acid.cml
+usr/local/share/avogadro/fragments/carboxylic_acids/butanoic_acid.cml
+usr/local/share/avogadro/fragments/carboxylic_acids/2_2_2-trifluoroacetic_acid.cml
+usr/local/share/avogadro/fragments/carboxylic_acids/2_2_2-trichloroacetic_acid.cml
+usr/local/share/avogadro/fragments/carboxylic_acids/formic_acid.cml
+usr/local/share/avogadro/fragments/carboxylic_acids/L-lactic_acid.cml
+usr/local/share/avogadro/fragments/carboxylic_acids/2_2-dichloroacetic_acid.cml
+usr/local/share/avogadro/fragments/carboxylic_acids/L-malic_acid.cml
+usr/local/share/avogadro/fragments/carboxylic_acids/propanoic_acid.cml
+usr/local/share/avogadro/fragments/cyclic alkanes/cyclohexane.cml
+usr/local/share/avogadro/fragments/cyclic alkanes/norbornane.cml
+usr/local/share/avogadro/fragments/cyclic alkanes/cycloheptane.cml
+usr/local/share/avogadro/fragments/cyclic alkanes/cyclopentane.cml
+usr/local/share/avogadro/fragments/cyclic alkanes/cubane.cml
+usr/local/share/avogadro/fragments/cyclic alkanes/cyclopropane.cml
+usr/local/share/avogadro/fragments/cyclic alkanes/cyclobutane.cml
+usr/local/share/avogadro/fragments/cyclic alkanes/adamantane.cml
+usr/local/share/avogadro/fragments/thiols/ethanethiol.cml
+usr/local/share/avogadro/fragments/thiols/pentane-1-thiol.cml
+usr/local/share/avogadro/fragments/thiols/methanethiol.cml
+usr/local/share/avogadro/fragments/amines/azepane.cml
+usr/local/share/avogadro/fragments/amines/methylamine.cml
+usr/local/share/avogadro/fragments/amines/ammonia.cml
+usr/local/share/avogadro/fragments/amines/ethylamine.cml
+usr/local/share/avogadro/fragments/alkanes/2-methylpropane.cml
+usr/local/share/avogadro/fragments/alkanes/methane.cml
+usr/local/share/avogadro/fragments/alkanes/ethane.cml
+usr/local/share/avogadro/fragments/alkanes/propane.cml
+usr/local/share/avogadro/fragments/fatty acids/lauric_acid.cml
+usr/local/share/avogadro/fragments/fatty acids/decanoic_acid.cml
+usr/local/share/avogadro/fragments/fatty acids/oleic_acid.cml
+usr/local/share/avogadro/fragments/fatty acids/linoleic_acid.cml
+usr/local/share/avogadro/fragments/fatty acids/stearic_acid.cml
+usr/local/share/avogadro/fragments/fatty acids/palmitic_acid.cml
+usr/local/share/avogadro/fragments/fatty acids/hexanoic_acid.cml
+usr/local/share/avogadro/fragments/fatty acids/octanoic_acid.cml
+usr/local/share/avogadro/fragments/sulfoxides/dimethyl_sulfoxide.cml
+usr/local/share/avogadro/i18n/avogadro_bg.qm
+usr/local/share/avogadro/i18n/avogadro_fi.qm
+usr/local/share/avogadro/i18n/libavogadro_nl.qm
+usr/local/share/avogadro/i18n/libavogadro_pl.qm
+usr/local/share/avogadro/i18n/avogadro_de.qm
+usr/local/share/avogadro/i18n/avogadro_pl.qm
+usr/local/share/avogadro/i18n/avogadro_pt.qm
+usr/local/share/avogadro/i18n/avogadro_ko.qm
+usr/local/share/avogadro/i18n/libavogadro_pt_BR.qm
+usr/local/share/avogadro/i18n/avogadro_nb.qm
+usr/local/share/avogadro/i18n/libavogadro_en_GB.qm
+usr/local/share/avogadro/i18n/avogadro_nl.qm
+usr/local/share/avogadro/i18n/libavogadro_sv.qm
+usr/local/share/avogadro/i18n/avogadro_id.qm
+usr/local/share/avogadro/i18n/avogadro_hu.qm
+usr/local/share/avogadro/i18n/avogadro_ja.qm
+usr/local/share/avogadro/i18n/avogadro_uk.qm
+usr/local/share/avogadro/i18n/avogadro_tr.qm
+usr/local/share/avogadro/i18n/avogadro_af.qm
+usr/local/share/avogadro/i18n/avogadro_en_CA.qm
+usr/local/share/avogadro/i18n/libavogadro_id.qm
+usr/local/share/avogadro/i18n/libavogadro_hu.qm
+usr/local/share/avogadro/i18n/avogadro_it.qm
+usr/local/share/avogadro/i18n/libavogadro_kn.qm
+usr/local/share/avogadro/i18n/avogadro_kn.qm
+usr/local/share/avogadro/i18n/avogadro_zh_CN.qm
+usr/local/share/avogadro/i18n/libavogadro_tr.qm
+usr/local/share/avogadro/i18n/libavogadro_bg.qm
+usr/local/share/avogadro/i18n/avogadro_hr.qm
+usr/local/share/avogadro/i18n/libavogadro_he.qm
+usr/local/share/avogadro/i18n/libavogadro_oc.qm
+usr/local/share/avogadro/i18n/avogadro_pt_BR.qm
+usr/local/share/avogadro/i18n/libavogadro_el.qm
+usr/local/share/avogadro/i18n/avogadro_sk.qm
+usr/local/share/avogadro/i18n/avogadro_he.qm
+usr/local/share/avogadro/i18n/avogadro_el.qm
+usr/local/share/avogadro/i18n/libavogadro_es.qm
+usr/local/share/avogadro/i18n/libavogadro_zh_TW.qm
+usr/local/share/avogadro/i18n/libavogadro_sk.qm
+usr/local/share/avogadro/i18n/libavogadro_uk.qm
+usr/local/share/avogadro/i18n/avogadro_fr.qm
+usr/local/share/avogadro/i18n/libavogadro_zh_CN.qm
+usr/local/share/avogadro/i18n/libavogadro_en_CA.qm
+usr/local/share/avogadro/i18n/avogadro_es.qm
+usr/local/share/avogadro/i18n/libavogadro_ca.qm
+usr/local/share/avogadro/i18n/avogadro_ar.qm
+usr/local/share/avogadro/i18n/libavogadro_it.qm
+usr/local/share/avogadro/i18n/avogadro_cs.qm
+usr/local/share/avogadro/i18n/libavogadro_cs.qm
+usr/local/share/avogadro/i18n/libavogadro_pt.qm
+usr/local/share/avogadro/i18n/libavogadro_hi.qm
+usr/local/share/avogadro/i18n/avogadro_sv.qm
+usr/local/share/avogadro/i18n/avogadro_oc.qm
+usr/local/share/avogadro/i18n/avogadro_ca.qm
+usr/local/share/avogadro/i18n/avogadro_en_GB.qm
+usr/local/share/avogadro/i18n/libavogadro_fi.qm
+usr/local/share/avogadro/i18n/avogadro_zh_TW.qm
+usr/local/share/avogadro/i18n/libavogadro_fr.qm
+usr/local/share/avogadro/i18n/libavogadro_de.qm
+usr/local/share/avogadro/i18n/libavogadro_ko.qm
+usr/local/share/avogadro/i18n/avogadro_da.qm
+usr/local/share/avogadro/i18n/avogadro_ru.qm
+usr/local/share/avogadro/i18n/libavogadro_nb.qm
+usr/local/share/avogadro/i18n/libavogadro_ar.qm
+usr/local/share/avogadro/i18n/libavogadro_ja.qm
+usr/local/share/avogadro/i18n/libavogadro_ru.qm
+usr/local/share/avogadro/i18n/libavogadro_da.qm
+usr/local/share/applications/avogadro.desktop
+usr/local/lib/libavogadro.so.1.0.1
+usr/local/lib/libavogadro.so
+usr/local/lib/avogadro/1_0/tools/clickmeasuretool.so
+usr/local/lib/avogadro/1_0/tools/selectrotatetool.so
+usr/local/lib/avogadro/1_0/tools/navigatetool.so
+usr/local/lib/avogadro/1_0/tools/autoopttool.so
+usr/local/lib/avogadro/1_0/tools/manipulatetool.so
+usr/local/lib/avogadro/1_0/tools/aligntool.so
+usr/local/lib/avogadro/1_0/tools/drawtool.so
+usr/local/lib/avogadro/1_0/tools/bondcentrictool.so
+usr/local/lib/avogadro/1_0/tools/autorotatetool.so
+usr/local/lib/avogadro/1_0/AvogadroLibraryDeps.cmake
+usr/local/lib/avogadro/1_0/AvogadroBuildSettings.cmake
+usr/local/lib/avogadro/1_0/cmake/FindEigen2.cmake
+usr/local/lib/avogadro/1_0/cmake/FindGLEW.cmake
+usr/local/lib/avogadro/1_0/colors/chargecolor.so
+usr/local/lib/avogadro/1_0/colors/atomindexcolor.so
+usr/local/lib/avogadro/1_0/colors/customcolor.so
+usr/local/lib/avogadro/1_0/colors/residuecolor.so
+usr/local/lib/avogadro/1_0/colors/distancecolor.so
+usr/local/lib/avogadro/1_0/AvogadroUse.cmake
+usr/local/lib/avogadro/1_0/engines/labelengine.so
+usr/local/lib/avogadro/1_0/engines/simplewireengine.so
+usr/local/lib/avogadro/1_0/engines/forceengine.so
+usr/local/lib/avogadro/1_0/engines/ribbonengine.so
+usr/local/lib/avogadro/1_0/engines/ringengine.so
+usr/local/lib/avogadro/1_0/engines/overlayengine.so
+usr/local/lib/avogadro/1_0/engines/polygonengine.so
+usr/local/lib/avogadro/1_0/engines/surfaceengine.so
+usr/local/lib/avogadro/1_0/engines/cartoonengine.so
+usr/local/lib/avogadro/1_0/engines/dipoleengine.so
+usr/local/lib/avogadro/1_0/engines/stickengine.so
+usr/local/lib/avogadro/1_0/engines/axesengine.so
+usr/local/lib/avogadro/1_0/engines/hbondengine.so
+usr/local/lib/avogadro/1_0/engines/wireengine.so
+usr/local/lib/avogadro/1_0/engines/sphereengine.so
+usr/local/lib/avogadro/1_0/extensions/animationextension.so
+usr/local/lib/avogadro/1_0/extensions/selectextension.so
+usr/local/lib/avogadro/1_0/extensions/propextension.so
+usr/local/lib/avogadro/1_0/extensions/forcefieldextension.so
+usr/local/lib/avogadro/1_0/extensions/supercellextension.so
+usr/local/lib/avogadro/1_0/extensions/molecularpropextension.so
+usr/local/lib/avogadro/1_0/extensions/insertfragmentextension.so
+usr/local/lib/avogadro/1_0/extensions/spectraextension.so
+usr/local/lib/avogadro/1_0/extensions/networkfetchextension.so
+usr/local/lib/avogadro/1_0/extensions/povrayextension.so
+usr/local/lib/avogadro/1_0/extensions/gamessextension.so
+usr/local/lib/avogadro/1_0/extensions/h2methylextension.so
+usr/local/lib/avogadro/1_0/extensions/fileimportextension.so
+usr/local/lib/avogadro/1_0/extensions/inputfileextension.so
+usr/local/lib/avogadro/1_0/extensions/unitcellextension.so
+usr/local/lib/avogadro/1_0/extensions/insertpeptideextension.so
+usr/local/lib/avogadro/1_0/extensions/hydrogenextension.so
+usr/local/lib/avogadro/1_0/extensions/vibrationextension.so
+usr/local/lib/avogadro/1_0/extensions/surfaceextension.so
+usr/local/lib/avogadro/AvogadroConfigVersion.cmake
+usr/local/lib/avogadro/AvogadroConfig.cmake
+usr/local/lib/libavogadro.so.1

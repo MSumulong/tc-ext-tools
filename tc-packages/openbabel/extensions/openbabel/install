@@ -1,0 +1,5 @@
+usr/local/bin
+usr/local/lib
+x-usr/local/lib/openbabel/*.cmake
+x-usr/local/lib/pkgconfig
+usr/local/share

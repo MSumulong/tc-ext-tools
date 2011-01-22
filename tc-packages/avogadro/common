@@ -1,0 +1,25 @@
+PACKAGE="avogadro"
+VERSION="1.0.1"
+SOURCE="http://downloads.sourceforge.net/avogadro/avogadro-${VERSION}.tar.bz2"
+BUILD_DEPENDS="cmake
+boost
+boost-dev
+eigen
+pyqt
+qt-4.x-base
+qt-4.x-opengl
+qt-4.x-dev
+glew
+python
+python-dev
+openbabel
+openbabel-dev"
+
+DESCRIPTION="An advanced molecule editor and visualizer."
+AUTHOR="various"
+SITE="http://avogadro.openmolecules.net/wiki/Main_Page"
+COPYING="GPL-2"
+MAINTAINERS="Arslan S."
+COMMENTS="This extension is PPI compatible."
+CHANGELOG="---"
+CURRENT="First Version"
