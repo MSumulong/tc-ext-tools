@@ -22,8 +22,12 @@ attica
 attica-dev
 qimageblitz
 qimageblitz-dev
-#kdeedu
-#kdeedu-dev"
+kdeedu
+kdeedu-dev
+libqalculate
+libqalculate-dev
+boost
+boost-dev"
 
 DESCRIPTION="KDE plasma addons."
 AUTHOR="KDE development team"

@@ -56,7 +56,17 @@ avahi-2.7
 avahi-2.7-dev
 gmp
 openslp
-openslp-dev"
+openslp-dev
+ortp
+ortp-dev
+libvncserver
+libvncserver-dev
+libmsn
+libmsn-dev
+libgadu
+libgadu-dev
+kwebkitpart
+kwebkitpart-dev"
 
 DESCRIPTION="KDE network applications."
 AUTHOR="KDE development team"

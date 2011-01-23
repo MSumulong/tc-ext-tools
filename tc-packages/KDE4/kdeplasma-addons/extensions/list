@@ -348,6 +348,7 @@ usr/local/share/kde4/services/plasma-applet-bookmarks.desktop
 usr/local/share/kde4/services/plasma-applet-timer.desktop
 usr/local/share/kde4/services/plasma-applet-magnifique.desktop
 usr/local/share/kde4/services/plasma-runner-audioplayercontrol.desktop
+usr/local/share/kde4/services/plasma-wallpaper-marble.desktop
 usr/local/share/kde4/services/apodprovider.desktop
 usr/local/share/kde4/services/konquerorsessions.desktop
 usr/local/share/kde4/services/katesessions.desktop
@@ -440,6 +441,7 @@ usr/local/lib/kde4/plasma_applet_qalculate.so
 usr/local/lib/kde4/plasma_applet_nowplaying.so
 usr/local/lib/kde4/plasma_applet_previewer.so
 usr/local/lib/kde4/plasma_engine_microblog.so
+usr/local/lib/kde4/plasma_wallpaper_marble.so
 usr/local/lib/kde4/plasma_engine_rtm.so
 usr/local/lib/kde4/kcm_krunner_charrunner.so
 usr/local/lib/kde4/plasma_engine_comic.so
