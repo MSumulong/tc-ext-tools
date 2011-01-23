@@ -185,7 +185,7 @@ split_it() {
 
 strip_it() {
 
-   print_it "Stripping the package $PACKAGE ... \c"
+   print_it "Stripping the package $PACKAGE extensions ... \c"
    stripit > "$TCEXTTOOLS_MESSAGE_LOG" 2>&1
    if [ "$?" -gt 0 ]; then
         print_it error "failed!"

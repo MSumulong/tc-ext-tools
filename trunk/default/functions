@@ -325,13 +325,10 @@ if [ -f "$PACKAGE_COMMON" ]; then
           PACKAGE_SOURCE_CONVERTED="$TCEXTTOOLS_SOURCE_CONVERTED"
      fi
 
-     if [ -n "$BUILD_DEPENDS" ]; then
-          BUILD_DEPENDS="$TCEXTTOOLS_DEPENDS $BUILD_DEPENDS"
-     else
-          BUILD_DEPENDS="$TCEXTTOOLS_DEPENDS"
-     fi
-
+     # shortened variables
+     SOURCE_TOPDIR="$PACKAGE_SOURCE_TOPDIR"
      INSTALL_ROOT="$PACKAGE_INSTALL_ROOT"
+
      PREFIX=/usr/local
 
      # create directories
