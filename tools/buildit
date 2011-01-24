@@ -250,26 +250,12 @@ package_it() {
 
 compress_it() {
 
-   if [ ! -d "$TCEXTTOOLS_PKG_TEMP/$PACKAGE" ]; then
-          print_it error "You must package it first!"
-          exit 1
-   fi
-
    print_it "Compressing the package $PACKAGE ... \c"
-   compressit bz2 "$TCEXTTOOLS_PKG_TEMP/$PACKAGE" > "$TCEXTTOOLS_MESSAGE_LOG" 2>&1
+   compressit > "$TCEXTTOOLS_MESSAGE_LOG" 2>&1
    if [ "$?" -gt 0 ]; then
         print_it error "failed!"
         print_it warning "For details: buildit show error"
-        rm -f "${PACKAGE}.tar.bz2"
         exit 1
-   else
-        busybox mv -f "${PACKAGE}.tar.bz2" "$TCEXTTOOLS_PKG_TEMP" >> "$TCEXTTOOLS_MESSAGE_LOG" 2>&1
-        if [ "$?" -gt 0 ]; then
-             print_it error "failed!"
-             print_it warning "For details: buildit show error"
-             rm -f "${PACKAGE}.tar.bz2"
-             exit 1
-        fi
    fi
    print_it hilight "successful!"
 

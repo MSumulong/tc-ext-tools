@@ -35,16 +35,16 @@ else
      exit 1
 fi
 
-if [ -z "$TCEXTTOOLS_SOURCE_TOPDIR" ]; then
-     print_it error "You must unpack it first!"
-     exit 1
-fi
-
 ############################################################################ 
 #                                this main                                 #
 ############################################################################
 
 this_main() {
+
+   if [ -z "$TCEXTTOOLS_SOURCE_TOPDIR" ]; then
+        print_it error "You must unpack it first!"
+        exit 1
+   fi
 
    cd "$TCEXTTOOLS_SOURCE_TOPDIR"
    build_configure > "$TCEXTTOOLS_CONFIGURE_LOG" 2>&1 || return 1
