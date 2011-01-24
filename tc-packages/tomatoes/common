@@ -1,0 +1,18 @@
+PACKAGE="tomatoes"
+VERSION="1.55"
+SOURCE="http://downloads.sourceforge.net/tomatoes/tomatoes-linux-src-${VERSION}.tar.bz2"
+BUILD_DEPENDS="SDL
+SDL-dev
+libmikmod
+libmikmod-dev
+Xorg-7.5
+Xorg-7.5-dev"
+
+DESCRIPTION="How many tomatoes can you smash in ten short minutes?"
+AUTHOR="Mika Halttunen"
+SITE="http://tomatoes.sourceforge.net/"
+COPYING="ZLIB"
+MAINTAINERS="Arslan S."
+COMMENTS="This extension is PPI compatible."
+CHANGELOG="---"
+CURRENT="First Version"

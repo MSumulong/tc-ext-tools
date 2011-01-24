@@ -1,0 +1,13 @@
+PACKAGE="tomatoes-data"
+VERSION="1.5"
+SOURCE="http://downloads.sourceforge.net/tomatoes/tomatoes-linux-${VERSION}.tar.bz2"
+BUILD_DEPENDS=""
+
+DESCRIPTION="Tomatoes game data."
+AUTHOR="Mika Halttunen"
+SITE="http://tomatoes.sourceforge.net/"
+COPYING="ZLIB"
+MAINTAINERS="Arslan S."
+COMMENTS="This extension is PPI compatible."
+CHANGELOG="---"
+CURRENT="First Version"
