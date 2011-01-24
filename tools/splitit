@@ -85,11 +85,11 @@ this_split() {
    sudo mkdir -p "$TMP_DIR/root" || return 1
    sudo tar -C "$TMP_DIR/root" -pxzf "$TMP_DIR/pkg.tar.gz" || return 1
 
-   if [ -d "$TCEXTTOOLS_BIN/$EXTENSION_NAME" ]; then
-        sudo rm -rf "$TCEXTTOOLS_BIN/$EXTENSION_NAME" || return 1
+   if [ -d "$TCEXTTOOLS_EXTENSION_BINDIR" ]; then
+        sudo rm -rf "$TCEXTTOOLS_EXTENSION_BINDIR" || return 1
    fi
 
-   sudo mv "$TMP_DIR/root" "$TCEXTTOOLS_BIN/$EXTENSION_NAME" || return 1
+   sudo mv "$TMP_DIR/root" "$TCEXTTOOLS_EXTENSION_BINDIR" || return 1
 
    sudo rm -rf "$TMP_DIR"
 

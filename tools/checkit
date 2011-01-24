@@ -47,15 +47,7 @@ this_check() {
 
    sudo unsquashfs -d "$EXTRACTDIR" "$TCEXTTOOLS_EXTENSION" || return 1
 
-   FILES=$(sudo find "$EXTRACTDIR" -not -type d)
-
-   SAVEIFS="$IFS"
-   IFS=$(echo -en "\n\b")
-   for f in $FILES
-   do
-       sudo file "$f" || return 1
-   done
-   IFS="$SAVEIFS"
+   sudo find "$EXTRACTDIR" -not -type d -exec file "{}" \; || return 1
 
    if [ -d "$EXTRACTDIR/usr/local/tce.installed" ]; then
         OUT=$(sudo busybox ls -d -l "$EXTRACTDIR/usr/local/tce.installed")

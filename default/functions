@@ -99,10 +99,12 @@ print_it() {
 
 set_source() {
 
-     if [ -z "$VCS" ]; then
-          SOURCE_NAME=${SOURCE##*/}
-     else
+     if [ -n "$VCS" ]; then
           SOURCE_NAME=${PACKAGE}-${VERSION}.tar.xz
+     fi
+
+     if [ -z "$SOURCE_NAME" ]; then
+          SOURCE_NAME=${SOURCE##*/}
      fi
 
      if [ ! "${SOURCE_NAME%.bz2}" = "$SOURCE_NAME" ]; then
