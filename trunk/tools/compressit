@@ -2,7 +2,7 @@
 
 ############################################################################
 #                                                                          #
-#  compressit: Compresses the directory or file with a compression format  #
+#                    compressit: Compresses the package                    #
 #                                                                          #
 ############################################################################
 
@@ -35,74 +35,25 @@ else
      exit 1
 fi
 
-FORMAT="$1"
-TARGET="$2"
-OPTIONS="$3"
-
-print_usage(){
-
-   echo -e "${TCEXTTOOLS_ERROR_COLOR}${THIS} usage:\n\t${TCEXTTOOLS_MESSAGE_COLOR}${THIS} gz|bz2|xz /path/to/target options${NORMAL}"
-
-}
-
-if [ -z "$TARGET" ] || [ -z "$FORMAT" ]; then
-     print_usage
-     exit 1
-fi
-
-############################################################################ 
-#            compresses the target with a compression format               #
-############################################################################
-
-this_compress() {
-
-   if [ -d "$TARGET" ]; then
-        TOP_DIR="$(basename $TARGET)"
-        OUTPUT="${TOP_DIR}.tar.${FORMAT}"
-        [ -e "$OUTPUT" ] && sudo rm -f "$OUTPUT"
-        tar "$OPTIONS" -C "$(dirname $TARGET)" -cv${XYZ}f "$OUTPUT" "$TOP_DIR" || return 1
-   elif [ -f "$TARGET" ]; then
-        OUTPUT="$(basename $TARGET).${FORMAT}"
-        [ -e "$OUTPUT" ] && sudo rm -f "$OUTPUT"
-        "$COMPRESSOR" -c "$TARGET" > "$OUTPUT" || return 1
-   fi
-
-   return 0
-
-}
-
 ############################################################################ 
 #                                this main                                 #
 ############################################################################
 
 this_main() {
 
-   case "$FORMAT" in
-        bz2)
-            COMPRESSOR="bzip2"
-            XYZ=j
-            this_compress || return 1
-            ;;
-        gz)
-            COMPRESSOR="gzip"
-            XYZ="z"
-            this_compress || return 1
-            ;;
-        xz)
-            COMPRESSOR="xz"
-            XYZ="J"
-            this_compress || return 1
-            ;;
-        *)
-            return 1
-            ;;
-   esac
+   if [ -z "$TCEXTTOOLS_PACKAGE_PKGDIR" ]; then
+        print_it error "You must package it first!"
+        exit 1
+   fi
+
+   [ -f "$TCEXTTOOLS_PACKAGE" ] && sudo rm -f "$TCEXTTOOLS_PACKAGE"
+   tar -C "$TCEXTTOOLS_PKG_TEMP" -cvjf "$TCEXTTOOLS_PACKAGE" "$PACKAGE" || return 1
 
    return 0
 
 }
 
-print_it "Compressing the target $TARGET with the compression format $FORMAT ... \c"
+print_it "Compressing the package $PACKAGE ... \c"
 this_main > "$TCEXTTOOLS_MESSAGE_LOG_2" 2>&1
 if [ "$?" -gt 0 ]; then
      print_it error "failed!"
