@@ -10,6 +10,7 @@ dbus-glib-dev
 GConf
 GConf-dev
 libnotify
+libnotify-dev
 libgnome-desktop
 libgnome-desktop-dev
 Xorg-7.5-lib

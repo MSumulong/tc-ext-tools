@@ -14,6 +14,7 @@ libsoup-dev
 libunique
 libunique-dev
 libnotify
+libnotify-dev
 webkit
 webkit-dev
 python-docutils

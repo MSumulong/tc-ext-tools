@@ -16,6 +16,7 @@ libsoup-dev
 libunique
 libunique-dev
 libnotify
+libnotify-dev
 gnutls
 gnutls-dev
 libgnome-keyring

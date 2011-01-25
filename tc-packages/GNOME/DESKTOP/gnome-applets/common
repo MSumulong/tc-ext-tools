@@ -18,6 +18,7 @@ libwnck-dev
 libgnome-desktop
 libgnome-desktop-dev
 libnotify
+libnotify-dev
 python
 python-dev
 pygtk-2.7

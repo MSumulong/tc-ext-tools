@@ -2,6 +2,7 @@ PACKAGE="notify-python"
 VERSION="0.1.1"
 SOURCE="http://www.galago-project.org/files/releases/source/notify-python/notify-python-${VERSION}.tar.bz2"
 BUILD_DEPENDS="libnotify
+libnotify-dev
 pygtk-2.7
 pygtk-2.7-dev"
 

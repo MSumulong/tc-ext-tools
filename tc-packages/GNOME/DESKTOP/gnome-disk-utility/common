@@ -18,6 +18,7 @@ libgnome-keyring-dev
 libunique
 libunique-dev
 libnotify
+libnotify-dev
 libnautilus-extension
 libnautilus-extension-dev
 avahi-2.7

@@ -16,6 +16,7 @@ libgnome-keyring-dev
 libgnome-desktop
 libgnome-desktop-dev
 libnotify
+libnotify-dev
 libstartup-notification
 libstartup-notification-dev
 libcanberra

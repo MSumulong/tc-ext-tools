@@ -6,6 +6,7 @@ glib2-dev
 gtk2
 gtk2-dev
 libnotify
+libnotify-dev
 rarian
 gnome-doc-utils"
 

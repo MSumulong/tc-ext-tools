@@ -36,6 +36,7 @@ GConf-dev
 NetworkManager
 NetworkManager-dev
 libnotify
+libnotify-dev
 libsoup
 libsoup-dev
 gstreamer

@@ -28,6 +28,7 @@ bzip2-lib
 bzip2-dev
 libIDL
 libnotify
+libnotify-dev
 wireless_tools
 hunspell
 hunspell-dev
