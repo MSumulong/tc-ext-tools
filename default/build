@@ -45,6 +45,9 @@ build_compile() {
    # waf
    #./waf build || return 1
 
+   # scons
+   #scons || return 1
+
 }
 
 ############################################################################ 
@@ -69,6 +72,9 @@ build_install() {
 
    # waf
    #./waf install --destdir="$INSTALL_ROOT" || return 1
+
+   # scons
+   #scons prefix="$INSTALL_ROOT/usr/local" install || return 1
 
 }
 
