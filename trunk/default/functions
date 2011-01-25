@@ -348,20 +348,6 @@ elif [ "$THIS" != "boostit" ]; then
 fi
 
 ############################################################################ 
-#                           build functions                                #
-############################################################################
-
-if [ "$THIS" != "boostit" ]; then
-     if [ -f "$PACKAGE_BUILD" ]; then
-          . "$PACKAGE_BUILD"
-     else
-          print_it error "The package $PACKAGE build file not found!"
-          print_it warning "You must boost it first!"
-          exit 1
-     fi
-fi
-
-############################################################################ 
 #                      export environment variables                        #
 ############################################################################
 
@@ -374,4 +360,18 @@ fi
 ############################################################################
 
 set_date
+
+############################################################################ 
+#                           build functions                                #
+############################################################################
+
+if [ "$THIS" != "boostit" ]; then
+     if [ -f "$PACKAGE_BUILD" ]; then
+          . "$PACKAGE_BUILD"
+     else
+          print_it error "The package $PACKAGE build file not found!"
+          print_it warning "You must boost it first!"
+          exit 1
+     fi
+fi
 
