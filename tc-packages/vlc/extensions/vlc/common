@@ -23,6 +23,6 @@ COMMENTS="VLC media player is a highly portable multimedia player supporting mos
 		You need OSS, ALSA or PULSEAUDIO for sound.
 
 		Optional dependencies: Xorg-7.5, libmtp, libv4l, libdvdcss, xulrunner, pulseaudio, alsa, jack,
-		x264, libnotify, libproxy, fribidi, librsvg, libraw1394
+		x264, libnotify, libproxy, fribidi, librsvg, libraw1394, libdc1394, avahi
 		
 		This extension is PPI compatible."

@@ -1,6 +1,7 @@
 Xorg-7.5-lib.tcz
 fontconfig.tcz
 qt-4.x-base.tcz
+dbus.tcz
 libiconv.tcz
 libasound.tcz
 libxml2.tcz
@@ -9,8 +10,6 @@ libdca.tcz
 libmad.tcz
 libmpeg2.tcz
 libmpcdec.tcz
-liboil.tcz
-libogg.tcz
 libvorbis.tcz
 libtheora.tcz
 libcdio.tcz
@@ -32,8 +31,13 @@ lua.tcz
 fribidi.tcz
 taglib.tcz
 speex.tcz
-libx11-xcb.tcz
+twolame.tcz
+lirc.tcz
+libschroedinger.tcz
+libdvbpsi.tcz
+fluidsynth.tcz
 libxcb-util.tcz
+libx11-xcb.tcz
 shared-mime-info.tcz
 hicolor-icon-theme.tcz
 

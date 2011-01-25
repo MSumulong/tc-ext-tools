@@ -1,5 +1,5 @@
 PACKAGE="vlc"
-VERSION="1.1.5"
+VERSION="1.1.6"
 SOURCE="http://download.videolan.org/pub/videolan/vlc/${VERSION}/vlc-${VERSION}.tar.bz2"
 BUILD_DEPENDS="ffmpeg-ffserver
 ffmpeg-ffserver-dev
@@ -12,8 +12,9 @@ fontconfig-dev
 expat2
 expat2-dev
 qt-4.x-base
-glibc_gconv
 qt-4.x-dev
+dbus
+dbus-dev
 faac
 faac-dev
 faad
@@ -54,6 +55,7 @@ libcddb-dev
 libv4l
 libv4l-dev
 libnotify
+libnotify-dev
 libmad
 libmad-dev
 libmtp
@@ -68,6 +70,8 @@ libgcrypt-dev
 libmpcdec
 libmpcdec-dev
 SDL
+libmikmod
+libmikmod-dev
 graphics-libs-1
 graphics-libs-1-dev
 SDL-dev
@@ -82,6 +86,8 @@ Xorg-7.5
 Xorg-7.5-dev
 libraw1394
 libraw1394-dev
+libdc1394
+libdc1394-dev
 libproxy-2.7
 pulseaudio
 libsndfile-dev
@@ -91,11 +97,6 @@ xulrunner
 xulrunner-dev
 librsvg
 librsvg-dev
-libxcb
-libxcb-dev
-libxcb-util
-libxcb-util-dev
-libx11-xcb
 kdelibs
 kdelibs-dev
 libshout
@@ -104,16 +105,24 @@ libass
 libass-dev
 libmodplug
 libmodplug-dev
-#twolame
+twolame
 twolame-dev
-#libtar
-libtar-dev
-#libschroedinger
+libschroedinger
 libschroedinger-dev
-#libdvbpsi
+libdvbpsi
 libdvbpsi-dev
-#live-media
-live-media-dev"
+live-media
+libtar
+fluidsynth
+lirc
+avahi-2.7
+avahi-2.7-dev
+libxcb
+libxcb-dev
+libxcb-util
+libxcb-util-dev
+libx11-xcb
+coreutils"
 
 DESCRIPTION="VLC is a free and open source cross-platform multimedia player."
 AUTHOR="VideoLAN Team"
@@ -142,5 +151,6 @@ CHANGELOG="2009/11/05 First Version
 			-Added mozilla, pulseaudio, jack, svg, modplug, live-media, xcb, ass, dvb plugins
 			-Added lua support
 			-Most of the dependencies are now dynamic linked while there are still some static linked ones
-		2010/08/24 Updated to 1.1.3"
-CURRENT="Updated to 1.1.5"
+		2010/08/24 Updated to 1.1.3
+		2010/11/17 Updated to 1.1.5"
+CURRENT="Updated to $VERSION"
