@@ -1,14 +1,3 @@
-COMMENTS="#example pam config of an application can be:
-		auth 	  include   system-auth
-		account   include   system-auth
-		password  include   system-auth
-		session   include   system-auth
-
-		see man pages in Linux-PAM-doc for details.
-
-		If you are building a pam module or building an application with pam authentication enabled
-		please make sure the files go in to correct directories given as follows
-			modules dir: /usr/local/lib/security
-			config dir: /usr/local/etc/pam.d
-
+COMMENTS="modules dir = /usr/local/lib/security
+		config dir = /usr/local/etc/pam.d
 		This extension is PPI compatible."

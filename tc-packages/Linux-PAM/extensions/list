@@ -65,7 +65,6 @@ usr/local/share/man/man8/pam_ftp.8
 usr/local/share/man/man8/pam_deny.8
 usr/local/share/man/man8/pam_tally.8
 usr/local/share/man/man8/pam_namespace.8
-usr/local/share/man/man8/pam_tty_audit.8
 usr/local/share/man/man8/unix_chkpwd.8
 usr/local/share/man/man8/pam_access.8
 usr/local/share/man/man8/pam_faildelay.8
@@ -148,13 +147,14 @@ usr/local/share/locale/gu/LC_MESSAGES/Linux-PAM.mo
 usr/local/share/locale/pt/LC_MESSAGES/Linux-PAM.mo
 usr/local/share/locale/sr/LC_MESSAGES/Linux-PAM.mo
 usr/local/share/locale/uk/LC_MESSAGES/Linux-PAM.mo
+usr/local/share/locale/he/LC_MESSAGES/Linux-PAM.mo
 usr/local/share/locale/pt_BR/LC_MESSAGES/Linux-PAM.mo
 usr/local/share/locale/fr/LC_MESSAGES/Linux-PAM.mo
+usr/local/lib/libpam.so.0.83.0
 usr/local/lib/libpam.la
 usr/local/lib/libpamc.so.0.82.1
 usr/local/lib/libpam.so.0
 usr/local/lib/libpam_misc.so.0.82.0
-usr/local/lib/libpam.so.0.82.2
 usr/local/lib/libpamc.so.0
 usr/local/lib/security/pam_wheel.la
 usr/local/lib/security/pam_tally.la
