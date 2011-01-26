@@ -4,6 +4,8 @@
 
 build_configure() {
 
+   sed -i "/filesharing/d" CMakeLists.txt
+
    mkdir build
    cd build
    cmake -DCMAKE_INSTALL_PREFIX=/usr/local -DCMAKE_BUILD_TYPE=Release \

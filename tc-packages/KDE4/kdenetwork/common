@@ -4,8 +4,8 @@ SOURCE="ftp://ftp.kde.org/pub/kde/stable/${VERSION}/src/kdenetwork-${VERSION}.ta
 BUILD_DEPENDS="cmake
 automoc4
 libxml2-bin
-libxslt
 docbook_xsl
+libxslt
 kdelibs
 kdelibs-dev
 kdepimlibs
