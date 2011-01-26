@@ -1,0 +1,19 @@
+diff -Naur polkit-kde-1-0.95.1.old/agent/CMakeLists.txt polkit-kde-1-0.95.1/agent/CMakeLists.txt
+--- polkit-kde-1-0.95.1.old/agent/CMakeLists.txt	2009-12-23 04:31:29.000000000 -0700
++++ polkit-kde-1-0.95.1/agent/CMakeLists.txt	2010-03-25 15:54:12.000000000 -0700
+@@ -11,7 +11,7 @@
+ 
+ target_link_libraries(polkit-kde-authentication-agent-1
+                                          ${KDE4_KDEUI_LIBS}
+-                                         ${POLKITQT-1_AGENT_LIBRARY}
++                                         ${POLKITQT-1_LIBRARIES} 
+ )
+ 
+ configure_file(polkit-kde-authentication-agent-1.desktop.in ${CMAKE_BINARY_DIR}/polkit-kde-authentication-agent-1.desktop)
+@@ -25,4 +25,4 @@
+   set (DESKTOP_INSTALL_DIR /etc/xdg/autostart)
+ endif (DESKTOP_INSTALL_DIR)
+ 
+-install(FILES ${CMAKE_BINARY_DIR}/polkit-kde-authentication-agent-1.desktop DESTINATION ${DESKTOP_INSTALL_DIR})
++install(FILES ${CMAKE_BINARY_DIR}/polkit-kde-authentication-agent-1.desktop DESTINATION ${KDE4_AUTOSTART_INSTALL_DIR})
+
