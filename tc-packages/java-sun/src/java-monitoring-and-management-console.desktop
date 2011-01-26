@@ -1,5 +1,5 @@
 [Desktop Entry]
-Exec=/usr/local/java-sun/jdk/bin/jconsole
+Exec=/usr/local/java-sun/bin/jconsole
 Icon=java
 Name[cs]=Konzole monitorování a správy prostředí Java
 Name=Java Monitoring and Management Console

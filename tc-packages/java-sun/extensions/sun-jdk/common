@@ -1,4 +1,7 @@
+DESCRIPTION="Sun/Oracle's implementation of tha Java 6 specification, java development kit."
 COMMENTS="The sun-jdk package is licensed software.
-		You MUST read and agree to the license stored in /usr/local/java-sun/jdk/LICENSE before using it.
+		You MUST read and agree to the license stored in /usr/local/java-sun/LICENSE before using it.
 
-		You need relogin or reboot to include java in your PATH"
+		You need relogin or reboot to include java in your PATH
+
+		Copying this extension to file system is recommended."

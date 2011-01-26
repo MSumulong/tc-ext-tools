@@ -1,5 +1,5 @@
 [Desktop Entry]
-Exec=/usr/local/java-sun/jdk/bin/jcontrol
+Exec=/usr/local/java-sun/bin/jcontrol
 GenericName[cs]=Nastavení prostředí Java
 GenericName=Java Environment Settings
 Icon=java

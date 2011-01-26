@@ -47,43 +47,38 @@ build_compile() {
 
 build_install() {
 
-  # sun-jre
-  mkdir -p ${INSTALL_ROOT}/usr/local/java-sun
-  cp -R linux-jdk/jre ${INSTALL_ROOT}/usr/local/java-sun
+  # main files for java-sun
+  mkdir -p ${INSTALL_ROOT}/usr/local
+  cp -R linux-jdk ${INSTALL_ROOT}/usr/local/java-sun
 
   # profiles
-  install -D ${PACKAGE_SRC}/jre.profile ${INSTALL_ROOT}/etc/profile.d/jre.sh
+  install -D ${PACKAGE_SRC}/jre.profile ${INSTALL_ROOT}/etc/profile.d/sun-jre.sh
 
   mkdir -p ${INSTALL_ROOT}/usr/local/lib/mozilla/plugins
 
   ln -s /usr/local/java-sun/jre/lib/i386/libnpjp2.so ${INSTALL_ROOT}/usr/local/lib/mozilla/plugins
 
   # licenses
-  install -d -m 755 ${INSTALL_ROOT}/usr/local/share/licenses/jre
-  install -m644 ${INSTALL_ROOT}/usr/local/java-sun/jre/COPYRIGHT ${INSTALL_ROOT}/usr/local/share/licenses/jre
-  install -m644 ${INSTALL_ROOT}/usr/local/java-sun/jre/LICENSE ${INSTALL_ROOT}/usr/local/share/licenses/jre
-  install -m644 ${INSTALL_ROOT}/usr/local/java-sun/jre/THIRDPARTYLICENSEREADME.txt ${INSTALL_ROOT}/usr/local/share/licenses/jre
+  install -d -m 755 ${INSTALL_ROOT}/usr/local/share/licenses/sun-jre
+  install -m644 ${INSTALL_ROOT}/usr/local/java-sun/jre/COPYRIGHT ${INSTALL_ROOT}/usr/local/share/licenses/sun-jre
+  install -m644 ${INSTALL_ROOT}/usr/local/java-sun/jre/LICENSE ${INSTALL_ROOT}/usr/local/share/licenses/sun-jre
+  install -m644 ${INSTALL_ROOT}/usr/local/java-sun/jre/THIRDPARTYLICENSEREADME.txt ${INSTALL_ROOT}/usr/local/share/licenses/sun-jre
 
   # Fix system prefs folder (FS#18872)
   mkdir -p ${INSTALL_ROOT}/etc/.java/.systemPrefs
-  touch ${INSTALL_ROOT}/etc/.java/.systemPrefs/noname
+  touch ${INSTALL_ROOT}/etc/.java/.systemPrefs/emptyfile
 
   #copy icon
   install -D -m644 ${PACKAGE_SOURCE_TOPDIR}/linux-jdk/jre/lib/desktop/icons/hicolor/48x48/apps/sun-java.png ${INSTALL_ROOT}/usr/local/share/pixmaps/java.png
 
-  # main files for jdk
-  cp -R linux-jdk ${INSTALL_ROOT}/usr/local/java-sun/jdk
-  rm -rf ${INSTALL_ROOT}/usr/local/java-sun/jdk/jre
-  ln -s /usr/local/java-sun/jre ${INSTALL_ROOT}/usr/local/java-sun/jdk/jre
-
   # profiles
-  install -D ${PACKAGE_SRC}/jdk.profile ${INSTALL_ROOT}/etc/profile.d/jdk.sh
+  install -D ${PACKAGE_SRC}/jdk.profile ${INSTALL_ROOT}/etc/profile.d/sun-jdk.sh
 
   # licenses
-  install -d -m 755 ${INSTALL_ROOT}/usr/local/share/licenses/jdk
-  install -m644 ${INSTALL_ROOT}/usr/local/java-sun/jdk/COPYRIGHT ${INSTALL_ROOT}/usr/local/share/licenses/jdk
-  install -m644 ${INSTALL_ROOT}/usr/local/java-sun/jdk/LICENSE ${INSTALL_ROOT}/usr/local/share/licenses/jdk
-  install -m644 ${INSTALL_ROOT}/usr/local/java-sun/jdk/THIRDPARTYLICENSEREADME.txt ${INSTALL_ROOT}/usr/local/share/licenses/jdk
+  install -d -m 755 ${INSTALL_ROOT}/usr/local/share/licenses/sun-jdk
+  install -m644 ${INSTALL_ROOT}/usr/local/java-sun/COPYRIGHT ${INSTALL_ROOT}/usr/local/share/licenses/sun-jdk
+  install -m644 ${INSTALL_ROOT}/usr/local/java-sun/LICENSE ${INSTALL_ROOT}/usr/local/share/licenses/sun-jdk
+  install -m644 ${INSTALL_ROOT}/usr/local/java-sun/THIRDPARTYLICENSEREADME.txt ${INSTALL_ROOT}/usr/local/share/licenses/sun-jdk
 
   # desktop entries
   install -Dm644 ${PACKAGE_SRC}/java-control-panel.desktop ${INSTALL_ROOT}/usr/local/share/applications/java-control-panel.desktop
