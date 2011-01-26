@@ -7,7 +7,18 @@
 
 # temporary fix for fetching sources error, every update git tag id must be updated too !!!
 # check related tag for id: http://cgit.freedesktop.org/libreoffice/bootstrap/
-export GIT_TAG_ID="b4bcd413f91091ddba30d63473a287a5e7424aa3"
+#export GIT_TAG_ID="b4bcd413f91091ddba30d63473a287a5e7424aa3"
+
+unset J2REDIR; unset J2SDKDIR; unset JAVA_HOME; unset CLASSPATH
+if [ -z "${JAVA_HOME}" ]; then
+     [ -e /etc/profile.d/jdk.sh ] && . /etc/profile.d/jdk.sh
+fi
+
+if [ -z "${ANT_HOME}" ]; then
+     [ -e /etc/profile.d/apache-ant.sh ] && . /etc/profile.d/apache-ant.sh
+fi
+
+[ -z "${MOZ_PLUGIN_PATH}" ] && export MOZ_PLUGIN_PATH=/usr/local/lib/mozilla/plugins
 
 ############################################################################ 
 #                            Configure                                     #
@@ -21,20 +32,20 @@ build_configure() {
   autoconf --force || return 1
 
   ./configure --prefix=/usr/local --with-distro=TinyCoreLinux \
-              --with-binsuffix="" --with-build-version="$VERSION for Tiny Core Linux by Arslan S." \
+              --with-binsuffix=no --with-build-version="$VERSION for Tiny Core Linux by Arslan S." \
               --with-docdir=/usr/local/share/doc/libreoffice --mandir=/usr/local/share/man \
               --disable-odk --enable-extensions --enable-graphite --enable-evolution2 \
               --enable-cairo --enable-kde4 --disable-pam --enable-crashdump \
               --enable-ldap --enable-lockdown --enable-pdfimport --enable-presenter-console \
               --enable-presenter-extra-ui --enable-report-builder --enable-wiki-publisher \
               --disable-gio --disable-mono --disable-kde \
-              --with-gcc-speedup=ccache --without-java --with-lang="" \
+              --with-gcc-speedup=ccache --with-lang="" \
               --with-openclipart=/usr/local/share/openclipart --with-system-unixodbc-headers \
               --with-languagetool --with-oooblogger --with-nlpsolver \
               --with-google-docs --with-watch-window --with-ct2n \
+              --with-java --with-ant-home="/usr/local/share/java/apache-ant"\
               --with-sun-templates --with-installed-ooo-dirname=libreoffice \
-              --disable-post-install-scripts \
-              --with-num-cpus=2 --with-max-jobs=3 --with-drink=coffee || return 1
+              --disable-post-install-scripts --with-num-cpus=2 --with-max-jobs=3 --with-drink=coffee || return 1
 
 }
 

@@ -79,7 +79,7 @@ diff -Naur a/distro-configs/TinyCoreLinux.conf.in b/distro-configs/TinyCoreLinux
 +--with-external-dict-dir=/usr/local/share/myspell
 +--with-external-hyph-dir=/usr/local/share/myspell
 +--with-external-thes-dir=/usr/local/share/myspell
-+--without-java
++--with-java
 \ No newline at end of file
 diff -Naur a/download.in b/download.in
 --- a/download.in	2010-11-25 19:45:58.000000000 +0000
