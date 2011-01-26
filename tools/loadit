@@ -2,7 +2,7 @@
 
 ############################################################################
 #                                                                          #
-#       loadit: Loads the extensions required to build the package         #
+#              loadit: Loads the package build dependencies                #
 #                                                                          #
 ############################################################################
 
@@ -39,18 +39,40 @@ fi
 #                              load extension                              #
 ############################################################################
 
-tcz_load() {
+this_load() {
 
-   if [ -n "$EXTENSION" ]; then
-        if [ "${EXTENSION#\#}" = "$EXTENSION" ]; then
-             if [ ! -e "$TCE_DIR/optional/${EXTENSION%.tcz}.tcz" ]; then
-                    tce-load -w "${EXTENSION%.tcz}.tcz" || return 1
-             fi
-             if [ ! -e "/usr/local/tce.installed/${EXTENSION%.tcz}" ]; then
-                    tce-load -i "${EXTENSION%.tcz}.tcz" || return 1
-             fi
-        fi
+   COMMAND="${EXTENSION%::*}"
+   EXTENSION="${EXTENSION#*::}"
+
+   if [ "${EXTENSION#\#}" != "$EXTENSION" ]; then
+        echo "The extension $EXTENSION is commented out."
+        return 0
    fi
+
+   EXTENSION_TCZ="${EXTENSION%.tcz}.tcz"
+   EXTENSION_NAME="${EXTENSION_TCZ%.tcz}"
+
+   if [ -e "/usr/local/tce.installed/$EXTENSION_NAME" ]; then
+        echo "The extension $EXTENSION_NAME is already installed."
+        if [ "$COMMAND" = "cp2fs" -a -d "$TCLOOP/$EXTENSION_NAME" ]; then
+             echo "Warning! cp2fs command issued for $EXTENSION_NAME but it is mounted before."
+        fi
+        return 0
+   fi
+
+   if [ ! -e "$TCE_DIR/optional/$EXTENSION_TCZ" ]; then
+          echo "Downloading the extension $EXTENSION_NAME"
+          tce-load -w "$EXTENSION_TCZ" || return 1
+   else
+       echo "The extension $EXTENSION_NAME is already downloaded."
+   fi
+
+   case "$COMMAND" in
+       cp2fs) tce-load -i -c "$EXTENSION_TCZ" || return 1 ;;
+       *) tce-load -i "$EXTENSION_TCZ" || return 1 ;;
+   esac
+
+   echo "The extension $EXTENSION_NAME is loaded successfully."
 
    return 0
 
@@ -70,14 +92,16 @@ this_main() {
 
    for EXTENSION in $BUILD_DEPENDS
    do
-       tcz_load || return 1
+       if [ -n "$EXTENSION" ]; then
+            this_load || return 1
+       fi
    done
 
    return 0
 
 }
 
-print_it "Loading the extensions ... \c"
+print_it "Loading the package $PACKAGE build dependencies ... \c"
 this_main > "$TCEXTTOOLS_MESSAGE_LOG_2" 2>&1
 if [ "$?" -gt 0 ]; then
      print_it error "failed!"
