@@ -1,9 +1,6 @@
 PACKAGE="pinta"
 VERSION="0.5"
 SOURCE="http://cloud.github.com/downloads/jpobst/Pinta/pinta-${VERSION}.tar.gz"
-#VERSION="git${YEAR}${MONTH}${DAY}"
-#SOURCE="git://github.com/jpobst/Pinta.git"
-#VCS="git"
 BUILD_DEPENDS="mono
 mono-dev
 gtk-sharp

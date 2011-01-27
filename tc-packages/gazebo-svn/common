@@ -1,7 +1,6 @@
 PACKAGE="gazebo-svn"
 VERSION="svn"
-SOURCE="https://playerstage.svn.sourceforge.net/svnroot/playerstage/code/gazebo/trunk"
-VCS="svn"
+SOURCE="svn::https://playerstage.svn.sourceforge.net/svnroot/playerstage/code/gazebo/trunk"
 BUILD_DEPENDS="cmake
 robot-player
 robot-player-dev

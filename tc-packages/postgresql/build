@@ -51,6 +51,5 @@ build_rules() {
   buildit generate || exit 1
   buildit check || exit 1
   buildit package || exit 1
-  buildit compress || exit 1
 
 }

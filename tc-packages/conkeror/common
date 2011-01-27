@@ -1,7 +1,6 @@
 PACKAGE="conkeror"
 VERSION="git101215"
-SOURCE="git://repo.or.cz/conkeror.git"
-VCS="git"
+SOURCE="git::git://repo.or.cz/conkeror.git"
 BUILD_DEPENDS=""
 
 DESCRIPTION="Conkeror is a free, keyboard-driven, Mozilla-based web browser."

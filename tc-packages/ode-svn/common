@@ -1,7 +1,6 @@
 PACKAGE="ode-svn"
 VERSION="svn${DAY}${MONTH}${YEAR}"
-SOURCE="https://opende.svn.sourceforge.net/svnroot/opende/trunk"
-VCS="svn"
+SOURCE="svn::https://opende.svn.sourceforge.net/svnroot/opende/trunk"
 BUILD_DEPENDS=""
 
 DESCRIPTION="An open source, high performance library for simulating rigid body dynamics."

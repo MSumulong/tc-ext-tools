@@ -10,10 +10,11 @@ ccache
 rsync
 perl_archive_zip
 glibc_gconv
-sun-jdk
-apache-ant
-#junit
-#cppunit
+cp2fs::sun-jre
+cp2fs::sun-jdk
+cp2fs::apache-ant
+cp2fs::junit
+cppunit
 hicolor-icon-theme
 shared-mime-info
 desktop-file-utils
