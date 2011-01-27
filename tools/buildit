@@ -37,7 +37,7 @@ fi
 
 print_usage(){
 
-   echo -e "${TCEXTTOOLS_ERROR_COLOR}${THIS} usage:\n\t${TCEXTTOOLS_MESSAGE_COLOR}${THIS} (clean|clear)|load|download|convert|unpack|patch|configure|compile|install|split|strip|create|check|generate|package|encrypt|show|help${NORMAL}"
+   echo -e "${TCEXTTOOLS_ERROR_COLOR}${THIS} usage:\n\t${TCEXTTOOLS_MESSAGE_COLOR}${THIS} (clean|clear)|load|download|convert|unpack|patch|configure|compile|install|split|strip|create|check|generate|package|encrypt|print|help${NORMAL}"
 
 }
 
@@ -272,7 +272,7 @@ build_it() {
 
 }
 
-show_it() {
+_print_it() {
 
    case "$1" in
         download) 
@@ -287,12 +287,12 @@ show_it() {
         install)
                  [ -e "$TCEXTTOOLS_INSTALL_LOG" ] && { cat "$TCEXTTOOLS_INSTALL_LOG" ; echo -e "${NORMAL}\c" ; }
                  ;;
-        error)
+        error|message)
                  [ -e "$TCEXTTOOLS_MESSAGE_LOG" ] && { cat "$TCEXTTOOLS_MESSAGE_LOG" ; echo -e "${NORMAL}\c" ; }
                  [ -e "$TCEXTTOOLS_MESSAGE_LOG_2" ] && { cat "$TCEXTTOOLS_MESSAGE_LOG_2" ; echo -e "${NORMAL}\c" ; }
                  ;;
         *)
-                 print_it warning "Usage: buildit show download|configure|compile|install|error"
+                 print_it warning "Usage: buildit print download|configure|compile|install|error|message"
                  ;;
    esac
 
@@ -307,7 +307,7 @@ case "$1" in
 	clean|clear)
 		  clean_it
 		  ;;
-	download) 
+	download)
 		  download_it
 		  ;;
 	convert)
@@ -352,8 +352,8 @@ case "$1" in
 	encrypt)
 		  encrypt_it
 		  ;;
-	show)
-		  show_it "$2"
+	print)
+		  _print_it "$2"
 		  ;;
 	custom)
 		  custom_it
