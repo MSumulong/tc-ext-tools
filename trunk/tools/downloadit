@@ -44,23 +44,46 @@ this_main() {
    [ -d "$TCEXTTOOLS_SRC" ] && sudo rm -rf "$TCEXTTOOLS_SRC"
    mkdir -p "$TCEXTTOOLS_SRC" || return 1
 
-   if [ -n "$VCS" ]; then
+   if [ -n "$SOURCE_URL_TYPE" ]; then
+        echo "Applying appropriate operations for url type $SOURCE_URL_TYPE..."
+
+        echo "Cleaning out the temporary source directory..."
         [ -d "$TCEXTTOOLS_SRC_TEMP" ] && sudo rm -rf "$TCEXTTOOLS_SRC_TEMP"
         mkdir -p "$TCEXTTOOLS_SRC_TEMP"
+        echo "Cleaned out the temporary source directory."
 
         cd "$TCEXTTOOLS_SRC_TEMP"
 
-        if [ "$VCS" = "svn" ]; then
+        if [ "$SOURCE_URL_TYPE" = "svn" ]; then
+             echo "Checking out svn repository..."
              svn --non-interactive --trust-server-cert co "$SOURCE" "$TCEXTTOOLS_SOURCE_TOPDIR" || return 1
+             echo "Checked out svn repository successfully."
+
+             echo "Creating a tarball from the source..."
              tar --exclude-vcs -cvJf "$SOURCE_NAME" "$SOURCE_TOPDIR" || return 1
+             echo "Created the tarball successfully."
+
+             echo "Moving the tarball to the package source directory..."
              busybox mv -f "$SOURCE_NAME" "$TCEXTTOOLS_SRC" || return 1
-        elif [ "$VCS" = "git" ]; then
+             echo "Moved the tarball to the package source directory successfully."
+        elif [ "$SOURCE_URL_TYPE" = "git" ]; then
+             echo "Checking out git repository..."
              git clone "$SOURCE" "$TCEXTTOOLS_SOURCE_TOPDIR" || return 1
+             echo "Checked out git repository successfully."
+
+             echo "Creating a tarball from the source..."
              tar --exclude-vcs -cvJf "$SOURCE_NAME" "$SOURCE_TOPDIR" || return 1
+             echo "Created the tarball successfully."
+
+             echo "Moving the tarball to the package source directory..."
              busybox mv -f "$SOURCE_NAME" "$TCEXTTOOLS_SRC" || return 1
+             echo "Moved the tarball to the package source directory successfully."
         fi
+        echo "Applied all operations successfully."
    else
+        echo "Downloading the source $SOURCE_NAME from url $SOURCE..."
         wget --no-check-certificate "$SOURCE" -O "$TCEXTTOOLS_SOURCE" || return 1
+        echo "Downloaded the source $SOURCE_NAME from url $SOURCE successfully."
    fi
 
    return 0

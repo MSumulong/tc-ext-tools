@@ -37,7 +37,7 @@ fi
 
 print_usage(){
 
-   echo -e "${TCEXTTOOLS_ERROR_COLOR}${THIS} usage:\n\t${TCEXTTOOLS_MESSAGE_COLOR}${THIS} (clean|clear)|load|download|convert|unpack|patch|configure|compile|install|split|strip|create|check|generate|package|compress|encrypt|show|help${NORMAL}"
+   echo -e "${TCEXTTOOLS_ERROR_COLOR}${THIS} usage:\n\t${TCEXTTOOLS_MESSAGE_COLOR}${THIS} (clean|clear)|load|download|convert|unpack|patch|configure|compile|install|split|strip|create|check|generate|package|encrypt|show|help${NORMAL}"
 
 }
 
@@ -248,27 +248,9 @@ package_it() {
 
 }
 
-compress_it() {
-
-   print_it "Compressing the package $PACKAGE ... \c"
-   compressit > "$TCEXTTOOLS_MESSAGE_LOG" 2>&1
-   if [ "$?" -gt 0 ]; then
-        print_it error "failed!"
-        print_it warning "For details: buildit show error"
-        exit 1
-   fi
-   print_it hilight "successful!"
-
-}
-
 encrypt_it() {
 
-   if [ ! -e "$PACKAGE_PACKAGE" ]; then
-          print_it error "You must compress it first!"
-          exit 1
-   fi
-
-   encryptit "$PACKAGE_PACKAGE" || exit 1
+   encryptit || exit 1
 
 }
 
@@ -366,9 +348,6 @@ case "$1" in
 		  ;;
 	package)
 		  package_it
-		  ;;
-	compress)
-		  compress_it
 		  ;;
 	encrypt)
 		  encrypt_it

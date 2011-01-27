@@ -35,37 +35,40 @@ else
      exit 1
 fi
 
-FILE="$1"
-
-print_usage(){
-
-   echo -e "${TCEXTTOOLS_ERROR_COLOR}${THIS} usage:\n\t${TCEXTTOOLS_MESSAGE_COLOR}${THIS} /path/to/file${NORMAL}"
-
-}
-
-if [ -z "$FILE" ] || [ ! -e "$FILE" ]; then
-      print_usage
-      exit 1
-fi
-
 ############################################################################ 
 #                                this main                                 #
 ############################################################################
 
 this_main() {
 
-   [ -e "${PACKAGE}.tar.bz2.bfe" ] && sudo rm -f "${PACKAGE}.tar.bz2.bfe"
+   echo "Entering in $THIS main..." > "$TCEXTTOOLS_MESSAGE_LOG_2"
 
-   bcrypt "$FILE" || return 1
+   if [ ! -f "$TCEXTTOOLS_PACKAGE" ]; then
+          echo "The package tarball file not found." >> "$TCEXTTOOLS_MESSAGE_LOG_2"
+          echo "You must package it first!" >> "$TCEXTTOOLS_MESSAGE_LOG_2"
+          return 1
+   fi
+
+   if [ -f "$TCEXTTOOLS_PACKAGE_ENCRYPTED" ]; then
+        echo "The package tarball encrypted detected. Deleting it..." >> "$TCEXTTOOLS_MESSAGE_LOG_2"
+        sudo rm -f "$TCEXTTOOLS_PACKAGE_ENCRYPTED"
+        echo "Deleted the package tarball encrypted." >> "$TCEXTTOOLS_MESSAGE_LOG_2"
+   fi
+
+   echo "Encrypting the package tarball..." >> "$TCEXTTOOLS_MESSAGE_LOG_2"
+   print_it "Please enter the encryption key: \c"
+   print_it hilight "$TCEXTTOOLS_ENCRYPTION_KEY"
+   bcrypt "$TCEXTTOOLS_PACKAGE" || return 1
+   echo "Encrypted the package tarball successfully." >> "$TCEXTTOOLS_MESSAGE_LOG_2"
 
    return 0
 
 }
 
-print_it "Please enter the encryption key: \c"
-print_it hilight "$TCEXTTOOLS_ENCRYPTION_KEY"
+print_it "Encrypting the package $PACKAGE ..."
 this_main
 if [ "$?" -gt 0 ]; then
+     print_it error "Encrypting the package $PACKAGE failed!"
      exit 1
 fi
 

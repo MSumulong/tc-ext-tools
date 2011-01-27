@@ -90,9 +90,8 @@ this_main() {
 
         cat > "$PACKAGE_COMMON" << _EOF
 PACKAGE="$PACKAGE"
-VERSION="svn\${YEAR}\${MONTH}\${DAY}"
-SOURCE=""
-VCS="svn"
+VERSION="svn"
+SOURCE="svn::"
 BUILD_DEPENDS=""
 
 DESCRIPTION="A brief description of package."
@@ -112,8 +111,7 @@ _EOF
         cat > "$PACKAGE_COMMON" << _EOF
 PACKAGE="${PACKAGE}"
 VERSION="git\${YEAR}\${MONTH}\${DAY}"
-SOURCE=""
-VCS="git"
+SOURCE="git::"
 BUILD_DEPENDS=""
 
 DESCRIPTION="A brief description of package."
