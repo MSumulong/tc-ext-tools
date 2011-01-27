@@ -25,11 +25,11 @@
 #
 
 if [ ! -e .config ]; then
-     echo "You need to create a user config file!"
-     echo "See INSTALL for details."
-     exit 1
+       echo "You need to create a user config file!"
+       echo "See INSTALL for details."
+       exit 1
 else
-     . .config
+       . .config
 fi
 
 TCUSER=$(cat /etc/sysconfig/tcuser)
