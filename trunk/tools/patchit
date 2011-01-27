@@ -63,7 +63,7 @@ this_main() {
            fi
            for i in $(cat $TCEXTTOOLS_PATCHES/$PATCH | grep "\-\-\-" | cut -f2 -d" " | cut -f1 -d" ")
            do
-               if [ -f "$i" ]; then
+               if [ -f "$TCEXTTOOLS_SOURCE_TOPDIR/$i" ]; then
                     PATCH_LEVEL=0
                else
                     PATCH_LEVEL=1
