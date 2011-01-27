@@ -41,8 +41,12 @@ fi
 
 this_load() {
 
-   COMMAND="${EXTENSION%::*}"
-   EXTENSION="${EXTENSION#*::}"
+   COMMAND="${EXTENSION%%::*}"
+   if [ "$COMMAND" = "$EXTENSION" ]; then
+        COMMAND=""
+   else
+        EXTENSION="${EXTENSION#*::}"
+   fi
 
    if [ "${EXTENSION#\#}" != "$EXTENSION" ]; then
         echo "The extension $EXTENSION is commented out."

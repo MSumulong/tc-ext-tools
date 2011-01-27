@@ -41,28 +41,54 @@ fi
 
 this_main() {
 
+   echo "Starting the packaging process..."
+
+   echo "Cleaning the package temporary directory..."
    [ -d "$TCEXTTOOLS_PKG_TEMP" ] && sudo rm -rf "$TCEXTTOOLS_PKG_TEMP"
    mkdir -p "$TCEXTTOOLS_PKG_TEMP"
+   echo "Cleaned the package temporary directory."
 
    for EXTENSION in $EXTENSIONS
    do
        set_extension || return 1
 
+       echo "Processing the extension $EXTENSION_NAME..."
        if [ ! -d "$TCEXTTOOLS_EXTENSION_PKGDIR" ]; then
-              print_it error "You must create it first!"
+              echo "The extension $TCEXTTOOLS_EXTENSION_TCZ not found."
+              echo "You must create the package extensions first!"
               exit 1
        fi
 
+       echo "Copying the extension $EXTENSION_NAME files to the package temporary directory..."
        [ -d "$TCEXTTOOLS_PACKAGE_PKGDIR/$EXTENSION_NAME" ] || mkdir -p "$TCEXTTOOLS_PACKAGE_PKGDIR/$EXTENSION_NAME"
-
        busybox cp -f "$TCEXTTOOLS_EXTENSION_PKGDIR"/*.tcz* "$TCEXTTOOLS_PACKAGE_PKGDIR/$EXTENSION_NAME" || return 1
+       echo "Copied the extension $EXTENSION_NAME files to the package temporary directory successfully."
    done
 
+   echo "Copying the package source to the package temporary directory..."
    if [ -f "$TCEXTTOOLS_SOURCE_CONVERTED" ]; then
+        echo "Converted package source detected. Using it instead of the original source."
         busybox cp -f "$TCEXTTOOLS_SOURCE_CONVERTED" "$TCEXTTOOLS_PACKAGE_PKGDIR" || return 1
    elif [ -f "$TCEXTTOOLS_SOURCE" ]; then
         busybox cp -f "$TCEXTTOOLS_SOURCE" "$TCEXTTOOLS_PACKAGE_PKGDIR" || return 1
    fi
+   echo "Copied the package source to the package temporary directory successfully."
+
+   if [ -f "$TCEXTTOOLS_PACKAGE" ]; then
+        echo "The package tarball detected. Deleting it..."
+        sudo rm -f "$TCEXTTOOLS_PACKAGE"
+        echo "Deleted the package tarball."
+   fi
+
+   echo "Creating the package tarball from the package temporary directory..."
+   tar -C "$TCEXTTOOLS_PKG_TEMP" -cvjf "$TCEXTTOOLS_PACKAGE" "$PACKAGE" || return 1
+   echo "Created the package tarball from the package temporary directory successfully."
+
+   echo "Cleaning the package temporary directory..."
+   sudo rm -rf "$TCEXTTOOLS_PKG_TEMP"
+   echo "Cleaned the package temporary directory."
+
+   echo "Packaging process completed successfully."
 
    return 0
 
