@@ -1,7 +1,6 @@
-diff -Naur a/download.in c/download.in
---- a/download.in	2010-11-25 19:45:58.000000000 +0000
-+++ c/download.in	2011-01-01 16:33:59.741771117 +0000
-@@ -289,13 +289,14 @@
+--- a/download.in	2011-01-10 14:21:52.000000000 +0000
++++ c/download.in	2011-01-27 18:03:28.374570577 +0000
+@@ -286,13 +286,14 @@
  		}
  
          system( "cd @CLONEDIR@/$what ; git status | grep '^# Your branch is'" );
@@ -18,17 +17,3 @@ diff -Naur a/download.in c/download.in
                       fi
                   done" );
      }
-diff -Naur a/download_external_sources.sh c/download_external_sources.sh
---- a/download_external_sources.sh	2010-11-11 14:41:38.000000000 +0000
-+++ c/download_external_sources.sh	2011-01-01 16:34:38.002185140 +0000
-@@ -12,8 +12,8 @@
-     tmp=`mktemp -q -d`
- 
-     cd $tmp
--    wget http://cgit.freedesktop.org/libreoffice/bootstrap/plain/fetch_tarballs.sh?id=$GIT_TAG -O fetch_tarballs.sh && chmod 755 fetch_tarballs.sh
--    wget http://cgit.freedesktop.org/libreoffice/bootstrap/plain/ooo.lst?id=$GIT_TAG -O ooo.lst
-+    wget http://cgit.freedesktop.org/libreoffice/bootstrap/plain/fetch_tarballs.sh?id=$GIT_TAG_ID -O fetch_tarballs.sh && chmod 755 fetch_tarballs.sh
-+    wget http://cgit.freedesktop.org/libreoffice/bootstrap/plain/ooo.lst?id=$GIT_TAG_ID -O ooo.lst
-     ./fetch_tarballs.sh ooo.lst &&  rm -f fetch_tarballs.sh ooo.lst
-     cd ..
-     rmdir $tmp

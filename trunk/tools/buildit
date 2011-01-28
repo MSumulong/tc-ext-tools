@@ -47,7 +47,7 @@ clean_it() {
    cleanit > "$TCEXTTOOLS_MESSAGE_LOG" 2>&1
    if [ "$?" -gt 0 ]; then
         print_it error "failed!"
-        print_it warning "For details: buildit show error"
+        print_it warning "For details: buildit print error"
         exit 1
    fi
    print_it hilight "successful!"
@@ -66,7 +66,7 @@ download_it() {
    downloadit > "$TCEXTTOOLS_MESSAGE_LOG" 2>&1
    if [ "$?" -gt 0 ]; then
         print_it error "failed!"
-        print_it warning "For details: buildit show download"
+        print_it warning "For details: buildit print download"
         exit 1
    fi
    print_it hilight "successful!"
@@ -85,7 +85,7 @@ convert_it() {
    convertit > "$TCEXTTOOLS_MESSAGE_LOG" 2>&1
    if [ "$?" -gt 0 ]; then
         print_it error "failed!"
-        print_it warning "For details: buildit show error"
+        print_it warning "For details: buildit print error"
         exit 1
    fi
    print_it hilight "successful!"
@@ -98,7 +98,7 @@ unpack_it() {
    unpackit > "$TCEXTTOOLS_MESSAGE_LOG" 2>&1
    if [ "$?" -gt 0 ]; then
         print_it error "failed!"
-        print_it warning "For details: buildit show error"
+        print_it warning "For details: buildit print error"
         exit 1
    fi
    print_it hilight "successful!"
@@ -111,7 +111,7 @@ load_it() {
    loadit > "$TCEXTTOOLS_MESSAGE_LOG" 2>&1
    if [ "$?" -gt 0 ]; then
         print_it error "failed!"
-        print_it warning "For details: buildit show error"
+        print_it warning "For details: buildit print error"
         exit 1
    fi
    print_it hilight  "successful!"
@@ -124,7 +124,7 @@ patch_it() {
    patchit > "$TCEXTTOOLS_MESSAGE_LOG" 2>&1
    if [ "$?" -gt 0 ]; then
         print_it error "failed!"
-        print_it warning "For details: buildit show error"
+        print_it warning "For details: buildit print error"
         exit 1
    fi
    print_it hilight "successful!"
@@ -137,7 +137,7 @@ configure_it() {
    configureit > "$TCEXTTOOLS_MESSAGE_LOG" 2>&1
    if [ "$?" -gt 0 ]; then
         print_it error "failed!"
-        print_it warning "For details: buildit show configure"
+        print_it warning "For details: buildit print configure"
         exit 1
    fi
    print_it hilight "successful!"
@@ -150,7 +150,7 @@ compile_it() {
    compileit > "$TCEXTTOOLS_MESSAGE_LOG" 2>&1
    if [ "$?" -gt 0 ]; then
         print_it error "failed!"
-        print_it warning "For details: buildit show compile"
+        print_it warning "For details: buildit print compile"
         exit 1
    fi
    print_it hilight "successful!"
@@ -163,7 +163,7 @@ install_it() {
    sudo installit > "$TCEXTTOOLS_MESSAGE_LOG" 2>&1
    if [ "$?" -gt 0 ]; then
         print_it error "failed!"
-        print_it warning "For details: buildit show install"
+        print_it warning "For details: buildit print install"
         exit 1
    fi
    print_it hilight "successful!"
@@ -176,7 +176,7 @@ split_it() {
    splitit > "$TCEXTTOOLS_MESSAGE_LOG" 2>&1
    if [ "$?" -gt 0 ]; then
         print_it error "failed!"
-        print_it warning "For details: buildit show error"
+        print_it warning "For details: buildit print error"
         exit 1
    fi
    print_it hilight "successful!"
@@ -189,7 +189,7 @@ strip_it() {
    stripit > "$TCEXTTOOLS_MESSAGE_LOG" 2>&1
    if [ "$?" -gt 0 ]; then
         print_it error "failed!"
-        print_it warning "For details: buildit show error"
+        print_it warning "For details: buildit print error"
         exit 1
    fi
    print_it hilight "successful!"
@@ -202,7 +202,7 @@ create_it() {
    createit > "$TCEXTTOOLS_MESSAGE_LOG" 2>&1
    if [ "$?" -gt 0 ]; then
         print_it error "failed!"
-        print_it warning "For details: buildit show error"
+        print_it warning "For details: buildit print error"
         exit 1
    fi
    print_it hilight "successful!"
@@ -215,7 +215,7 @@ generate_it() {
    generateit > "$TCEXTTOOLS_MESSAGE_LOG" 2>&1
    if [ "$?" -gt 0 ]; then
         print_it error "failed!"
-        print_it warning "For details: buildit show error"
+        print_it warning "For details: buildit print error"
         exit 1
    fi
    print_it hilight "successful!"
@@ -228,7 +228,7 @@ check_it() {
    checkit > "$TCEXTTOOLS_MESSAGE_LOG" 2>&1
    if [ "$?" -gt 0 ]; then
         print_it error "failed!"
-        print_it warning "For details: buildit show error"
+        print_it warning "For details: buildit print error"
         exit 1
    fi
    print_it hilight "successful!"
@@ -241,7 +241,7 @@ package_it() {
    packageit > "$TCEXTTOOLS_MESSAGE_LOG" 2>&1
    if [ "$?" -gt 0 ]; then
         print_it error "failed!"
-        print_it warning "For details: buildit show error"
+        print_it warning "For details: buildit print error"
         exit 1
    fi
    print_it hilight "successful!"

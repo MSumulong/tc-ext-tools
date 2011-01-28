@@ -1,6 +1,8 @@
 PACKAGE="libreoffice"
 VERSION="3.3.0.4"
-SOURCE="http://download.documentfoundation.org/libreoffice/src/libreoffice-build-${VERSION}.tar.gz"
+MIRROR="http://download.documentfoundation.org/libreoffice/src"
+SOURCE="$MIRROR/libreoffice-build-${VERSION}.tar.gz"
+ADDITIONAL_SOURCE="artwork base bootstrap calc components extensions extras filters help impress l10n libs-core libs-extern libs-extern-sys libs-gui postprocess sdk testing ure writer"
 BUILD_DEPENDS="zip-unzip
 bash
 tar
@@ -8,6 +10,7 @@ autoconf
 automake
 ccache
 rsync
+mktemp
 perl_archive_zip
 glibc_gconv
 cp2fs::sun-jre
@@ -67,12 +70,14 @@ openclipart-png
 libxml2
 libxml2-dev
 libxml2-bin
-boost
-boost-dev
 unixODBC
 unixODBC-dev
 ImageMagick
-ImageMagick-dev"
+ImageMagick-dev
+boost
+boost-dev
+#kdelibs
+#kdelibs-dev"
 
 DESCRIPTION="LibreOffice is a productivity suite that is compatible with other major office suites."
 AUTHOR="The Document Foundation"
