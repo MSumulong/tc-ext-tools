@@ -7,7 +7,7 @@ build_configure() {
 
   cp "$PACKAGE_SRC/LocalConfig.kmk" .
 
-  ./configure --disable-pulse || return 1
+  ./configure --disable-pulse --disable-java --disable-docs || return 1
 
 }
 
@@ -32,8 +32,6 @@ build_compile() {
 # Install
 build_install() {
 
-  SOURCE_TOPDIR=$PWD
-
   source ./env.sh
 
   mkdir -p "$INSTALL_ROOT/usr/local/bin"
@@ -42,9 +40,9 @@ build_install() {
   mkdir -p "$INSTALL_ROOT/usr/local/share/virtualbox/nls"
   mkdir -p "$INSTALL_ROOT/usr/local/share/doc/virtualbox-ose"
 
+  # virtualbox-ose
   install -m 0644 COPYING "$INSTALL_ROOT/usr/local/share/doc/virtualbox-ose/license" || return 1
 
-  # virtualbox-ose
   cd out/linux.x86/release/bin
   install -m 0755 VBox.sh "$INSTALL_ROOT/usr/local/bin/VBox" || return 1
 
@@ -55,19 +53,29 @@ build_install() {
 
   install -m 0755 VBoxTunctl "$INSTALL_ROOT/usr/local/bin" || return 1
 
-  install -m 0755 components/* -t "$INSTALL_ROOT/usr/local/lib/virtualbox/components" || return 1
+  install -m 0755 components/* "$INSTALL_ROOT/usr/local/lib/virtualbox/components" || return 1
 
   install -m 0755 *.so "$INSTALL_ROOT/usr/local/lib/virtualbox" || return 1
   install -m 0644 *.gc *.r0  VBoxEFI*.fd "$INSTALL_ROOT/usr/local/lib/virtualbox" || return 1
 
-  install -m 4755 VBoxHeadless VBoxSDL VBoxNetDHCP VBoxNetAdpCtl VirtualBox VBoxBFE -t "$INSTALL_ROOT/usr/local/lib/virtualbox" || return 1
+  install -m 4755 VBoxHeadless VBoxSDL VBoxNetDHCP VBoxNetAdpCtl VirtualBox VBoxBFE "$INSTALL_ROOT/usr/local/lib/virtualbox" || return 1
 
-  install -m 0755 VBoxManage VBoxSVC VBoxXPCOMIPCD VBoxSysInfo.sh xpidl VBoxTestOGL EfiThunk -t "$INSTALL_ROOT/usr/local/lib/virtualbox" || return 1
+  install -m 0755 VBoxManage VBoxSVC VBoxXPCOMIPCD VBoxExtPackHelperApp VBoxSysInfo.sh xpidl VBoxTestOGL EfiThunk "$INSTALL_ROOT/usr/local/lib/virtualbox" || return 1
 
-  install -m 0755 nls/*.qm -t "$INSTALL_ROOT/usr/local/share/virtualbox/nls" || return 1
+  install -m 0755 SUPInstall SUPLoggerCtl SUPUninstall "$INSTALL_ROOT/usr/local/lib/virtualbox" || return 1
 
+  install -m 0755 nls/*.qm "$INSTALL_ROOT/usr/local/share/virtualbox/nls" || return 1
+
+  # install icons, desktop and mime info
+  for i in 16x16 20x20 24x24 32x32 48x48 64x64 72x72 96x96 128x128 256x256
+  do
+      install -Dm644 "icons/$i/virtualbox-ova.png" "$INSTALL_ROOT/usr/local/share/icons/hicolor/$i/mimetypes/virtualbox-ova.png"
+      install -Dm644 "icons/$i/virtualbox-ovf.png" "$INSTALL_ROOT/usr/local/share/icons/hicolor/$i/mimetypes/virtualbox-ovf.png"
+      install -Dm644 "icons/$i/virtualbox-vbox.png" "$INSTALL_ROOT/usr/local/share/icons/hicolor/$i/mimetypes/virtualbox-vbox.png"
+      install -Dm644 "icons/$i/virtualbox-vbox-extpack.png" "$INSTALL_ROOT/usr/local/share/icons/hicolor/$i/mimetypes/virtualbox-vbox-extpack.png"
+  done
   install -D -m 0644 VBox.png "$INSTALL_ROOT/usr/local/share/pixmaps/VBox.png" || return 1
-
+  install -D -m 0644 virtualbox.xml "$INSTALL_ROOT/usr/local/share/mime/packages/virtualbox.xml" || return 1
   install -D -m 0644 virtualbox.desktop "$INSTALL_ROOT/usr/local/share/applications/virtualbox-ose.desktop" || return 1
 
   mkdir -p "$INSTALL_ROOT/usr/local/etc/vbox"
@@ -77,19 +85,22 @@ build_install() {
 
   install -D -m 0744 "$PACKAGE_SRC/vboxdrv.sh" "$INSTALL_ROOT/usr/local/etc/init.d/vboxdrv" || return 1
 
-  # host kernel modules
-  cd "$SOURCE_TOPDIR/out/linux.x86/release/bin/src"
+  # virtualbox-ose kernel modules
+  cd "$PACKAGE_SOURCE_TOPDIR/out/linux.x86/release/bin/src"
 
   install -d -m755 "$INSTALL_ROOT/usr/local/lib/modules/$KERNEL/kernel/misc" || return 1
-  install -m 0644 *.ko -t "$INSTALL_ROOT/usr/local/lib/modules/$KERNEL/kernel/misc" || return 1
+  install -m 0644 *.ko "$INSTALL_ROOT/usr/local/lib/modules/$KERNEL/kernel/misc" || return 1
 
-  # guest additions
-  cd "$SOURCE_TOPDIR/out/linux.x86/release/bin/additions"
+  # virtualbox-ose guest additions
+  cd "$PACKAGE_SOURCE_TOPDIR/out/linux.x86/release/bin/additions"
 
   install -m755 VBoxClient VBoxControl VBoxService "$INSTALL_ROOT/usr/local/bin" || return 1
-  install -m755 mount.vboxsf "$INSTALL_ROOT/usr/local/sbin" || return 1
-  install -m755 -D "$SOURCE_TOPDIR"/src/VBox/Additions/x11/Installer/98vboxadd-xclient "$INSTALL_ROOT"/usr/local/bin/VBoxClient-all || return 1
-  install -m755 -D "$SOURCE_TOPDIR"/src/VBox/Additions/x11/Installer/vboxclient.desktop "$INSTALL_ROOT"/usr/local/etc/xdg/autostart/vboxclient.desktop || return 1
+  install -m4755 mount.vboxsf "$INSTALL_ROOT/usr/local/sbin" || return 1
+
+  install -d -m755 "$INSTALL_ROOT/usr/local/etc/xdg/autostart"
+  install -m755 "$PACKAGE_SOURCE_TOPDIR/src/VBox/Additions/x11/Installer/98vboxadd-xclient" "$INSTALL_ROOT/usr/local/bin/VBoxClient-all" || return 1
+  install -m644 "$PACKAGE_SOURCE_TOPDIR/src/VBox/Additions/x11/Installer/vboxclient.desktop" "$INSTALL_ROOT/usr/local/etc/xdg/autostart/vboxclient.desktop" || return 1
+
   install -m755 -D pam_vbox.so "$INSTALL_ROOT/usr/local/lib/security/pam_vbox.so" || return 1
   install -D -m644 "$PACKAGE_SRC/xorg.conf.sample" "$INSTALL_ROOT/usr/local/share/virtualbox-ose-additions/xorg.conf.sample" || return 1
 
@@ -99,8 +110,8 @@ build_install() {
   install -d -m755 "$INSTALL_ROOT/usr/local/lib/X11/modules/dri"
   ln -s /usr/local/lib/VBoxOGL.so "$INSTALL_ROOT/usr/local/lib/X11/modules/dri/vboxvideo_dri.so" || return 1
 
-  # guest additions kernel modules
-  cd "$SOURCE_TOPDIR/out/linux.x86/release/bin/additions/src"
+  # virtualbox-ose guest additions kernel modules
+  cd "$PACKAGE_SOURCE_TOPDIR/out/linux.x86/release/bin/additions/src"
 
   cd vboxguest
   install -D -m644 vboxguest.ko "$INSTALL_ROOT/usr/local/lib/modules/$KERNEL/kernel/misc/vboxguest.ko" || return 1
@@ -118,20 +129,20 @@ build_install() {
 # Rules
 build_rules() {
 
-  buildit load || exit 1
-  buildit download || exit 1
-  buildit convert || exit 1
-  buildit unpack || exit 1
-  buildit patch || exit 1
-  buildit configure || exit 1
-  buildit compile || exit 1
-  buildit install || exit 1
-  buildit split || exit 1
+   buildit load || exit 1
+   buildit download || exit 1
+   buildit convert || exit 1
+   buildit unpack || exit 1
+   buildit patch || exit 1
+   buildit configure || exit 1
+   buildit compile || exit 1
+   buildit install || exit 1
+   buildit split || exit 1
    buildit strip || exit 1
-  buildit create || exit 1
-  buildit generate || exit 1
-  buildit check || exit 1
-  buildit package || exit 1
+   buildit create || exit 1
+   buildit generate || exit 1
+   buildit check || exit 1
+   buildit package || exit 1
 
 }
 

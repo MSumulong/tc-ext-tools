@@ -1,11 +1,17 @@
-PACKAGE="virtualbox-ose-beta"
-VERSION="4.0.0"
+PACKAGE="virtualbox-ose-4"
+VERSION="4.0.2"
 SOURCE="http://download.virtualbox.org/virtualbox/${VERSION}/VirtualBox-${VERSION}.tar.bz2"
 BUILD_DEPENDS="coreutils
 bzip2
 libxslt
 libxml2
 libxml2-dev
+glib2
+glib2-dev
+expat2
+expat2-dev
+fontconfig
+fontconfig-dev
 iasl
 Dev86
 libcap
@@ -34,10 +40,13 @@ Linux-PAM-dev
 mkisofs-tools
 xulrunner
 xulrunner-dev
-dbus
-dbus-dev
 dbus-glib
-dbus-glib-dev"
+dbus-glib-dev
+libvncserver
+libvncserver-dev
+libxft
+libxft-dev
+#makeself"
 
 DESCRIPTION="A Powerful x86 virtualization solution."
 AUTHOR="Sun Microsystems"

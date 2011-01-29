@@ -1,5 +1,6 @@
 virtualbox-ose-modules-KERNEL.tcz
 libasound.tcz
+libvncserver.tcz
 libcap.tcz
 libxslt.tcz
 libIDL.tcz
