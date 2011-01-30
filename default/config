@@ -37,23 +37,23 @@ TCEXTTOOLS_HILIGHT_COLOR="${CYAN}"
 ############################################################################
 
 TCEXTTOOLS_DEPENDS="compiletc
-                    squashfs-tools-4.x
-                    tar
-                    git
-                    svn
-                    wget
-                    xz
-                    zip-unzip
-                    bzip2
-                    gzip
-                    intltool
-                    perl5
-                    perl_xml_parser
-                    gettext
-                    libtool
-                    libtool-dev
-                    autoconf
-                    automake"
+squashfs-tools-4.x
+tar
+git
+svn
+wget
+xz
+zip-unzip
+bzip2
+gzip
+intltool
+perl5
+perl_xml_parser
+gettext
+libtool
+libtool-dev
+autoconf
+automake"
 
 ############################################################################ 
 #                   tc-ext-tools default encryption key                    #

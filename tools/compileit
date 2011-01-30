@@ -35,19 +35,23 @@ else
      exit 1
 fi
 
-if [ ! -d "$TCEXTTOOLS_SOURCE_TOPDIR" ]; then
+if [ ! -e "$TCEXTTOOLS_SOURCE_TOPDIR" ]; then
        print_it error "You must configure it first!"
        exit 1
 fi
 
-############################################################################ 
-#                                this main                                 #
-############################################################################
-
 this_main() {
+
+   echo ""
+   echo "Compiling the package $PACKAGE ..."
 
    cd "$TCEXTTOOLS_SOURCE_TOPDIR"
    build_compile > "$TCEXTTOOLS_COMPILE_LOG" 2>&1 || return 1
+
+   echo "Compiled the package $PACKAGE successfully."
+
+   echo ""
+   echo "For details: buildit print compile"
 
    return 0
 

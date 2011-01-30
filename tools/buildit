@@ -58,7 +58,7 @@ download_it() {
 
    if [ -f "$PACKAGE_SOURCE" ]; then
         print_it warning "The package $PACKAGE source is already downloaded."
-        print_it warning "Run downloadit to force it to download the package source."
+        print_it warning "Run downloadit to force download the package source."
         exit 0
    fi
 
@@ -77,7 +77,7 @@ convert_it() {
 
    if [ -f "$PACKAGE_SOURCE_CONVERTED" ]; then
         print_it warning "The package $PACKAGE source is already converted."
-        print_it warning "Run convertit to force it to convert the package source."
+        print_it warning "Run convertit to force convert the package source."
         exit 0
    fi
 
@@ -254,28 +254,42 @@ encrypt_it() {
 
 }
 
-custom_it() {
+custom_function() {
 
-   build_custom || exit 1
+   FUNCTION="$1"
+
+   if [ -z "$FUNCTION" ]; then
+        print_it error "You need to specify the name of the custom function."
+        exit 1
+   fi
+
+   print_it "Executing the package $PACKAGE custom build function $FUNCTION ... \c"
+   build_${FUNCTION} > "$TCEXTTOOLS_MESSAGE_LOG_2" 2>&1
+   if [ "$?" -gt 0 ]; then
+        print_it error "failed!"
+        print_it warning "For details: buildit print error"
+        exit 1
+   fi
+   print_it hilight "successful!"
 
 }
 
 build_it() {
 
-   echo -e "${TCEXTTOOLS_MESSAGE_COLOR}Building the package $PACKAGE started at ${TCEXTTOOLS_HILIGHT_COLOR}$TIME${TCEXTTOOLS_MESSAGE_COLOR} on ${TCEXTTOOLS_HILIGHT_COLOR}$DATE${NORMAL}"
-   set_date && SECONDS_BEFORE="$SECONDS"
+   echo -e "${TCEXTTOOLS_MESSAGE_COLOR}Building the package $PACKAGE started at ${TCEXTTOOLS_HILIGHT_COLOR}$TIME${TCEXTTOOLS_MESSAGE_COLOR}"
+   set_date; SECONDS_BEFORE="$SECONDS"
    clean_it || exit 1
    build_rules || exit 1
-   set_date && SECONDS_AFTER="$SECONDS"
-   echo -e "${TCEXTTOOLS_MESSAGE_COLOR}Building the package $PACKAGE finished at ${TCEXTTOOLS_HILIGHT_COLOR}$TIME${TCEXTTOOLS_MESSAGE_COLOR} on ${TCEXTTOOLS_HILIGHT_COLOR}$DATE${TCEXTTOOLS_MESSAGE_COLOR} in ${TCEXTTOOLS_HILIGHT_COLOR}$(expr $SECONDS_AFTER - $SECONDS_BEFORE)${TCEXTTOOLS_MESSAGE_COLOR} seconds${NORMAL}"
+   set_date; SECONDS_AFTER="$SECONDS"
+   echo -e "${TCEXTTOOLS_MESSAGE_COLOR}Building the package $PACKAGE finished at ${TCEXTTOOLS_HILIGHT_COLOR}$TIME${TCEXTTOOLS_MESSAGE_COLOR} in ${TCEXTTOOLS_HILIGHT_COLOR}$(expr $SECONDS_AFTER - $SECONDS_BEFORE)${TCEXTTOOLS_MESSAGE_COLOR} seconds${NORMAL}"
    encrypt_it || exit 1
 
 }
 
-_print_it() {
+print_function() {
 
    case "$1" in
-        download) 
+        download)
                  [ -e "$TCEXTTOOLS_DOWNLOAD_LOG" ] && { cat "$TCEXTTOOLS_DOWNLOAD_LOG" ; echo -e "${NORMAL}\c" ; }
                  ;;
         configure)
@@ -353,10 +367,10 @@ case "$1" in
 		  encrypt_it
 		  ;;
 	print)
-		  _print_it "$2"
+		  print_function "$2"
 		  ;;
 	custom)
-		  custom_it
+		  custom_function "$2"
 		  ;;
 	*)
 		  print_usage

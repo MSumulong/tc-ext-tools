@@ -35,11 +35,14 @@ else
         exit 1
 fi
 
-############################################################################ 
-#                              load extension                              #
-############################################################################
-
 this_load() {
+
+   echo ""
+   echo "Checking if the extension is commented out ..."
+   if [ "${EXTENSION#\#}" != "$EXTENSION" ]; then
+        echo "The extension $EXTENSION is commented out."
+        return 0
+   fi
 
    COMMAND="${EXTENSION%%::*}"
    if [ "$COMMAND" = "$EXTENSION" ]; then
@@ -48,14 +51,11 @@ this_load() {
         EXTENSION="${EXTENSION#*::}"
    fi
 
-   if [ "${EXTENSION#\#}" != "$EXTENSION" ]; then
-        echo "The extension $EXTENSION is commented out."
-        return 0
-   fi
-
    EXTENSION_TCZ="${EXTENSION%.tcz}.tcz"
    EXTENSION_NAME="${EXTENSION_TCZ%.tcz}"
 
+   echo ""
+   echo "Checking if the extension is installed ..."
    if [ -e "/usr/local/tce.installed/$EXTENSION_NAME" ]; then
         echo "The extension $EXTENSION_NAME is already installed."
         if [ "$COMMAND" = "cp2fs" -a -d "$TCLOOP/$EXTENSION_NAME" ]; then
@@ -64,13 +64,17 @@ this_load() {
         return 0
    fi
 
+   echo ""
+   echo "Checking if the extension exists ..."
    if [ ! -e "$TCE_DIR/optional/$EXTENSION_TCZ" ]; then
-          echo "Downloading the extension $EXTENSION_NAME"
+          echo "Downloading the extension $EXTENSION_NAME."
           tce-load -w "$EXTENSION_TCZ" || return 1
    else
-       echo "The extension $EXTENSION_NAME is already downloaded."
+       echo "The extension $EXTENSION_NAME is available."
    fi
 
+   echo ""
+   echo "Executing extension load command ..."
    case "$COMMAND" in
        cp2fs) tce-load -i -c "$EXTENSION_TCZ" || return 1 ;;
        *) tce-load -i "$EXTENSION_TCZ" || return 1 ;;
@@ -82,24 +86,31 @@ this_load() {
 
 }
 
-############################################################################ 
-#                                this main                                 #
-############################################################################
-
 this_main() {
 
+   echo ""
+   echo "Loading the package build dependencies ..."
+
    if [ -n "$BUILD_DEPENDS" ]; then
-        BUILD_DEPENDS="$TCEXTTOOLS_DEPENDS $BUILD_DEPENDS"
+        BUILD_DEPENDS="$TCEXTTOOLS_DEPENDS
+$BUILD_DEPENDS"
    else
         BUILD_DEPENDS="$TCEXTTOOLS_DEPENDS"
    fi
 
+   echo "$BUILD_DEPENDS"
+
    for EXTENSION in $BUILD_DEPENDS
    do
        if [ -n "$EXTENSION" ]; then
+            echo ""
+            echo "Loading the extension $EXTENSION ..."
             this_load || return 1
        fi
    done
+
+   echo ""
+   echo "Loaded the package build dependencies successfully."
 
    return 0
 

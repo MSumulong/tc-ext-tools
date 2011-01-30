@@ -40,26 +40,35 @@ if [ ! -e "$TCEXTTOOLS_SOURCE" ]; then
        exit 1
 fi
 
-############################################################################ 
-#                                this main                                 #
-############################################################################
-
 this_main() {
 
+   echo ""
+   echo "Starting the unpacking process for the package $PACKAGE source ..."
+
+   echo ""
+   echo "Cleaning the package temporary source directory."
    [ -d "$TCEXTTOOLS_SRC_TEMP" ] && sudo rm -rf "$TCEXTTOOLS_SRC_TEMP"
    mkdir -p "$TCEXTTOOLS_SRC_TEMP"
 
+   echo ""
+   echo "Unpacking the package source $SOURCE_NAME with the source type $SOURCE_TYPE ..."
    if [ "$SOURCE_TYPE" = "bz2" ] || [ "$SOURCE_TYPE" = "gz" ] || [ "$SOURCE_TYPE" = "tgz" ] || [ "$SOURCE_TYPE" = "tbz2" ] || [ "$SOURCE_TYPE" = "xz" ] || [ "$SOURCE_TYPE" = "txz" ] || [ "$SOURCE_TYPE" = "tar" ]; then
+        echo "Using tar to extract the package source."
         tar -C "$TCEXTTOOLS_SRC_TEMP" -xf "$TCEXTTOOLS_SOURCE" || return 1
    elif [ "$SOURCE_TYPE" = "zip" ]; then
+        echo "Unzipping the package source."
         unzip "$TCEXTTOOLS_SOURCE" -d "$TCEXTTOOLS_SRC_TEMP" || return 1
    elif [ "$SOURCE_TYPE" = "custom" ]; then
+        echo "Executing custom unpack function defined in package build."
         cd "$TCEXTTOOLS_SRC_TEMP"
         build_unpack || return 1
    else
-        print_it error "Unsupported source type!"
+        echo "Error! unsupported source type."
         return 1
    fi
+
+   echo ""
+   echo "Unpacked the package $PACKAGE source successfully."
 
    return 0
 

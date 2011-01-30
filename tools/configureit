@@ -35,19 +35,23 @@ else
      exit 1
 fi
 
-############################################################################ 
-#                                this main                                 #
-############################################################################
+if [ ! -d "$TCEXTTOOLS_SOURCE_TOPDIR" ]; then
+       print_it error "You must unpack it first!"
+       exit 1
+fi
 
 this_main() {
 
-   if [ -z "$TCEXTTOOLS_SOURCE_TOPDIR" ]; then
-        print_it error "You must unpack it first!"
-        exit 1
-   fi
+   echo ""
+   echo "Configuring the package $PACKAGE ..."
 
    cd "$TCEXTTOOLS_SOURCE_TOPDIR"
    build_configure > "$TCEXTTOOLS_CONFIGURE_LOG" 2>&1 || return 1
+
+   echo "Configured the package $PACKAGE successfully."
+
+   echo ""
+   echo "For details: buildit print configure"
 
    return 0
 

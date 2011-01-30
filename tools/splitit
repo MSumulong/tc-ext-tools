@@ -40,88 +40,136 @@ if [ ! -d "$TCEXTTOOLS_INSTALL_ROOT" ]; then
        exit 1
 fi
 
-############################################################################ 
-#                splits the files out of install root                      #
-############################################################################
-
 this_split() {
 
+   echo ""
+   echo "Getting the contents of the extension install ..."
    CONTENTS=$(cat $PACKAGE_EXTENSION_INSTALL)
-   [ -z "$CONTENTS" ] && return 1
+   if [ -z "$CONTENTS" ]; then
+        echo "Error! the extension install is empty."
+        return 1
+   fi
+   echo "CONTENTS = $CONTENTS"
+   echo ""
 
-   LIST="${TMP_DIR}/install.list"
-   X_LIST="${TMP_DIR}/x-install.list"
+   echo ""
+   echo "Touching install.list and x-install.list files."
+   LIST="${TCEXTTOOLS_BIN_TEMP}/install.list"
+   X_LIST="${TCEXTTOOLS_BIN_TEMP}/x-install.list"
+   touch "$LIST"
+   touch "$X_LIST"
+   echo ""
 
-   touch "$LIST" || return 1
-   touch "$X_LIST" || return 1
-
+   echo ""
+   echo "Processing the extension install contents ..."
    cd "$TCEXTTOOLS_INSTALL_ROOT"
-
    for i in $CONTENTS
    do
-       i=$(eval echo $i)
-       if [ -z "$(echo "$i" | grep '*')" ]; then
-               if [ "${i#\#}" = "$i" ]; then
-                    if [ "${i#x-}" = "$i" ]; then
-                         sudo find "$i" -not -type d >> "$LIST" || return 1
-                    else
-                         i="${i#x-}"
-                         sudo find "$i" -not -type d >> "$X_LIST" || return 1
-                    fi
-               fi
-       else
-               if [ "${i#\#}" = "$i" ]; then
-                    if [ "${i#x-}" = "$i" ]; then
-                         sudo find $i -not -type d >> "$LIST" || return 1
-                    else
-                         i="${i#x-}"
-                         sudo find $i -not -type d >> "$X_LIST" || return 1
-                    fi
-               fi
+       echo ""
+       echo "Processing the content $i ..."
+
+       echo ""
+       echo "Checking if the content is commented out ..."
+       if [ "${i#\#}" != "$i" ]; then
+            echo "The content $i is commented out. Skipping it."
+            continue
        fi
+       echo ""
+
+       echo ""
+       echo "Evaluating the content $i ..."
+       i=$(eval echo $i)
+       echo "The content is $i after the evaluation."
+       echo ""
+
+       echo ""
+       echo "Checking if a special wildcard used."
+       if [ -n "$(echo "$i" | grep '*')" ]; then
+            echo "The wildcard * found in the content."
+       fi
+       echo ""
+
+       echo ""
+       if [ -z "$(echo "$i" | grep '*')" ]; then
+            if [ "${i#x-}" = "$i" ]; then
+                 echo "Putting the files in the content to the include list."
+                 sudo find "$i" -not -type d >> "$LIST" || return 1
+            else
+                 i="${i#x-}"
+                 echo "Putting the files in the content to the exclude list."
+                 sudo find "$i" -not -type d >> "$X_LIST" || return 1
+            fi
+       else
+            if [ "${i#x-}" = "$i" ]; then
+                 echo "Putting the files in the content to the include list."
+                 sudo find $i -not -type d >> "$LIST" || return 1
+            else
+                 i="${i#x-}"
+                 echo "Putting the files in the content to the exclude list."
+                 sudo find $i -not -type d >> "$X_LIST" || return 1
+            fi
+       fi
+       echo ""
    done
+   echo ""
 
-   sudo tar -T "$LIST" -X "$X_LIST" -cpzf "$TMP_DIR/pkg.tar.gz" || return 1
-   sudo mkdir -p "$TMP_DIR/root" || return 1
-   sudo tar -C "$TMP_DIR/root" -pxzf "$TMP_DIR/pkg.tar.gz" || return 1
+   echo ""
+   echo "Creating the extension contents tarball from the include and the exclude lists."
+   sudo tar -T "$LIST" -X "$X_LIST" -cvpzf "$TCEXTTOOLS_BIN_TEMP/pkg.tar.gz" || return 1
+   echo ""
 
-   if [ -d "$TCEXTTOOLS_EXTENSION_BINDIR" ]; then
-        sudo rm -rf "$TCEXTTOOLS_EXTENSION_BINDIR" || return 1
-   fi
+   echo "Cleaning the package extension bin directory."
+   [ -d "$TCEXTTOOLS_EXTENSION_BINDIR" ] && sudo rm -rf "$TCEXTTOOLS_EXTENSION_BINDIR"
+   sudo mkdir -p "$TCEXTTOOLS_EXTENSION_BINDIR"
 
-   sudo mv "$TMP_DIR/root" "$TCEXTTOOLS_EXTENSION_BINDIR" || return 1
+   echo ""
+   echo "Extracting the extension contents tarball to the extension bin directory."
+   sudo mkdir -p "$TCEXTTOOLS_EXTENSION_BINDIR"
+   sudo tar -C "$TCEXTTOOLS_EXTENSION_BINDIR" -pvxzf "$TCEXTTOOLS_BIN_TEMP/pkg.tar.gz" || return 1
+   echo ""
 
-   sudo rm -rf "$TMP_DIR"
+   echo ""
+   echo "Cleaning the extension bin temporary directory."
+   sudo rm -rf "$TCEXTTOOLS_BIN_TEMP"
+   echo ""
 
    return 0
 
 }
 
-############################################################################ 
-#                                this main                                 #
-############################################################################
-
 this_main() {
+
+   echo ""
+   echo "Starting the splitting process for the package $PACKAGE ..."
 
    for EXTENSION in $EXTENSIONS
    do
+       echo ""
+       echo "Processing the extension $EXTENSION ..."
+
+       echo ""
+       echo "Setting the extension parameters."
        set_extension || return 1
 
-       TMP_DIR=$(busybox mktemp -d)
-       if [ ! -d "$TMP_DIR" ]; then
-              print_it error "Creating a temporary directory for splitting the extension $EXTENSION_NAME failed!"
-              return 1
-       fi
+       echo ""
+       echo "Cleaning the package bin temporary directory."
+       [ -d "$TCEXTTOOLS_BIN_TEMP" ] && sudo rm -rf "$TCEXTTOOLS_BIN_TEMP"
+       mkdir -p "$TCEXTTOOLS_BIN_TEMP"
 
+       echo ""
+       echo "Splitting the extension $EXTENSION_NAME ..."
        this_split
        if [ "$?" -gt 0 ]; then
-            print_it error "Splitting the extension $EXTENSION_NAME failed!"
-            sudo rm -rf "$TMP_DIR"
+            echo "Error! splitting the extension $EXTENSION_NAME failed."
+            sudo rm -rf "$TCEXTTOOLS_BIN_TEMP"
             return 1
        else
-            print_it "Splitting the extension $EXTENSION_NAME successful!"
+            echo "Splitting the extension $EXTENSION_NAME successful."
        fi
    done
+
+   echo ""
+   echo "Splitted the package $PACKAGE extensions successfully."
 
    return 0
 

@@ -23,15 +23,7 @@
 #  (C) Copyright 2011 Sercan Arslan
 #
 
-############################################################################ 
-#                             this is it                                   #
-############################################################################
-
 THIS=$(basename $0)
-
-############################################################################ 
-#               only some of them can have root priviliges                 #
-############################################################################
 
 if [ $(id -u) = 0 ] ; then
      if [ "$THIS" != "installit" ]; then
@@ -45,10 +37,7 @@ else
      fi
 fi
 
-############################################################################ 
-#                          default configuration                           #
-############################################################################
-
+# default configuration
 if [ -f "$TCEXTTOOLS_ROOT/etc/conf.d/tc-ext-tools.conf" ]; then
      . "$TCEXTTOOLS_ROOT/etc/conf.d/tc-ext-tools.conf"
 else
@@ -56,10 +45,7 @@ else
      exit 1
 fi
 
-############################################################################ 
-#                           user configuration                             #
-############################################################################
-
+# user configuration
 if [ -f "$HOME/.config/tc-ext-tools.conf" ]; then
      . "$HOME/.config/tc-ext-tools.conf"
 else
@@ -67,10 +53,7 @@ else
     exit 1
 fi
 
-############################################################################ 
-#                         message print function                           #
-############################################################################
-
+# message print function
 print_it() {
 
   case  "$1" in
@@ -93,10 +76,7 @@ print_it() {
 
 }
 
-############################################################################ 
-#           sets the variables related with the package source             #
-############################################################################
-
+# sets the variables related with the package source
 set_source() {
 
      SOURCE_URL_TYPE="${SOURCE%%::*}"
@@ -151,11 +131,8 @@ set_source() {
      fi
 
 }
-
-############################################################################ 
-#                        sets the package extensions                       #
-############################################################################
-
+ 
+# sets the package extensions
 set_extensions() {
 
      unset EXTENSIONS
@@ -174,10 +151,7 @@ set_extensions() {
 
 }
 
-############################################################################ 
-#                        sets the package extension                        #
-############################################################################
-
+# sets the package extension
 set_extension() {
 
       if [ -z "$EXTENSION" ]; then
@@ -204,7 +178,7 @@ set_extension() {
 
       if [ -z "$NAME" ]; then
            if [ -n "$SUFFIX" ]; then
-                EXTENSION_NAME="${EXTENSION}-${SUFFIX}"
+                EXTENSION_NAME="${EXTENSION}${SUFFIX}"
            else
                 EXTENSION_NAME="$EXTENSION"
            fi
@@ -235,10 +209,7 @@ set_extension() {
 
 }
 
-############################################################################ 
-#                     sets the date, time, and seconds                     #
-############################################################################
-
+# sets the date, time, and seconds
 set_date() {
 
     YEAR=$(date +%Y)
@@ -255,34 +226,15 @@ set_date() {
 
 }
 
-############################################################################ 
-#                                 tc user                                  #
-############################################################################
+set_date
 
+# tc system
 TCUSER=$(cat /etc/sysconfig/tcuser)
-
-############################################################################ 
-#                              tce directory                               #
-############################################################################
-
 TCE_DIR=$(cat /opt/.tce_dir)
-
-############################################################################ 
-#                                tc loop                                   #
-############################################################################
-
 TCLOOP=/tmp/tcloop
-
-############################################################################ 
-#                               tc kernel                                  #
-############################################################################
-
 KERNEL=$(uname -r)
 
-############################################################################ 
-#                            package variables                             #
-############################################################################
-
+# package variables
 PACKAGE_ROOT="$PWD"
 PACKAGE_COMMON="$PACKAGE_ROOT/common"
 PACKAGE_BUILD="$PACKAGE_ROOT/build"
@@ -290,6 +242,7 @@ PACKAGE_EXTENSIONS="$PACKAGE_ROOT/extensions"
 PACKAGE_FILES_LIST="$PACKAGE_EXTENSIONS/list"
 PACKAGE_SRC="$PACKAGE_ROOT/src"
 PACKAGE_PATCHES="$PACKAGE_SRC/patches"
+TCEXTTOOLS_PATCHES="$PACKAGE_PATCHES"
 
 if [ -f "$PACKAGE_COMMON" ]; then
      . "$PACKAGE_COMMON"
@@ -309,16 +262,17 @@ if [ -f "$PACKAGE_COMMON" ]; then
      TCEXTTOOLS_MESSAGE_LOG="$TCEXTTOOLS_LOG/message.txt"
      TCEXTTOOLS_MESSAGE_LOG_2="$TCEXTTOOLS_LOG/message2.txt"
      TCEXTTOOLS_INSTALL_ROOT="$TCEXTTOOLS_BIN/root"
-     TCEXTTOOLS_PACKAGE_PKGDIR="$TCEXTTOOLS_PKG_TEMP/$PACKAGE"
      TCEXTTOOLS_PACKAGE="$TCEXTTOOLS_PKG/${PACKAGE}.tar.bz2"
      TCEXTTOOLS_PACKAGE_ENCRYPTED="$TCEXTTOOLS_PKG/${PACKAGE}.tar.bz2.bfe"
-     TCEXTTOOLS_PATCHES="$PACKAGE_PATCHES"
 
      PACKAGE_BIN="$TCEXTTOOLS_BIN"
      PACKAGE_PKG="$TCEXTTOOLS_PKG"
-     PACKAGE_INSTALL_ROOT="$TCEXTTOOLS_INSTALL_ROOT"
      PACKAGE_PACKAGE="$TCEXTTOOLS_PACKAGE"
      PACKAGE_PACKAGE_ENCRYPTED="$TCEXTTOOLS_PACKAGE_ENCRYPTED"
+     PACKAGE_INSTALL_ROOT="$TCEXTTOOLS_INSTALL_ROOT"
+
+     INSTALL_ROOT="$PACKAGE_INSTALL_ROOT"
+     PREFIX=/usr/local
 
      set_source
 
@@ -336,11 +290,15 @@ if [ -f "$PACKAGE_COMMON" ]; then
           PACKAGE_SOURCE_CONVERTED="$TCEXTTOOLS_SOURCE_CONVERTED"
      fi
 
-     # shortened variables
-     SOURCE_TOPDIR="$PACKAGE_SOURCE_TOPDIR"
-     INSTALL_ROOT="$PACKAGE_INSTALL_ROOT"
-
-     PREFIX=/usr/local
+     # shortened variables for use in package build
+     P_NAME="$PACKAGE"
+     P_VER="$VERSION"
+     P_SRC="$PACKAGE_SRC"
+     T_SRC="$TCEXTTOOLS_SRC"
+     S_SRC="$T_SRC"
+     S_ROOT="$PACKAGE_SOURCE_TOPDIR"
+     I_ROOT="$INSTALL_ROOT"
+     S_TOP="$SOURCE_TOPDIR"
 
      # create directories
      [ -d "$TCEXTTOOLS_STORAGE" ] || sudo install -m 755 -d -o "$TCUSER" -g staff "$TCEXTTOOLS_STORAGE"
@@ -350,35 +308,20 @@ if [ -f "$PACKAGE_COMMON" ]; then
      [ -d "$TCEXTTOOLS_LOG" ] || install -m 755 -d "$TCEXTTOOLS_LOG"
 
 elif [ "$THIS" != "boostit" ]; then
-     print_it error "The package $PACKAGE common file not found!"
-     print_it warning "You must boost it first!"
+     print_it error "You must boost it first!"
      exit 1
 fi
-
-############################################################################ 
-#                      export environment variables                        #
-############################################################################
 
 [ -z "$CFLAGS" ] && export CFLAGS="$TCEXTTOOLS_CFLAGS"
 [ -z "$CXXFLAGS" ] && export CXXFLAGS="$TCEXTTOOLS_CXXFLAGS"
 [ -z "$LDFLAGS" ] && export LDFLAGS="$TCEXTTOOLS_LDFLAGS"
 
-############################################################################ 
-#                                set date                                  #
-############################################################################
-
-set_date
-
-############################################################################ 
-#                           build functions                                #
-############################################################################
-
+# package build
 if [ "$THIS" != "boostit" ]; then
      if [ -f "$PACKAGE_BUILD" ]; then
           . "$PACKAGE_BUILD"
      else
-          print_it error "The package $PACKAGE build file not found!"
-          print_it warning "You must boost it first!"
+          print_it error "You must boost it first!"
           exit 1
      fi
 fi
