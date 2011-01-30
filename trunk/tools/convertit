@@ -40,10 +40,6 @@ if [ ! -e "$TCEXTTOOLS_SOURCE" ]; then
        exit 1
 fi
 
-############################################################################ 
-#                                this main                                 #
-############################################################################
-
 this_main() {
 
    [ -d "$TCEXTTOOLS_SRC_TEMP" ] && sudo rm -rf "$TCEXTTOOLS_SRC_TEMP"

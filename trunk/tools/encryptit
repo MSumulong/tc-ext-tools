@@ -35,27 +35,23 @@ else
      exit 1
 fi
 
-############################################################################ 
-#                                this main                                 #
-############################################################################
+if [ ! -f "$TCEXTTOOLS_PACKAGE" ]; then
+       print_it error "You must package it first!"
+       return 1
+fi
 
 this_main() {
 
-   echo "Entering in $THIS main..." > "$TCEXTTOOLS_MESSAGE_LOG_2"
-
-   if [ ! -f "$TCEXTTOOLS_PACKAGE" ]; then
-          echo "The package tarball file not found." >> "$TCEXTTOOLS_MESSAGE_LOG_2"
-          echo "You must package it first!" >> "$TCEXTTOOLS_MESSAGE_LOG_2"
-          return 1
-   fi
+   echo "" > "$TCEXTTOOLS_MESSAGE_LOG_2"
 
    if [ -f "$TCEXTTOOLS_PACKAGE_ENCRYPTED" ]; then
+        echo "" >> "$TCEXTTOOLS_MESSAGE_LOG_2"
         echo "The package tarball encrypted detected. Deleting it..." >> "$TCEXTTOOLS_MESSAGE_LOG_2"
         sudo rm -f "$TCEXTTOOLS_PACKAGE_ENCRYPTED"
-        echo "Deleted the package tarball encrypted." >> "$TCEXTTOOLS_MESSAGE_LOG_2"
    fi
 
-   echo "Encrypting the package tarball..." >> "$TCEXTTOOLS_MESSAGE_LOG_2"
+   echo "" >> "$TCEXTTOOLS_MESSAGE_LOG_2"
+   echo "Encrypting the package tarball ..." >> "$TCEXTTOOLS_MESSAGE_LOG_2"
    print_it "Please enter the encryption key: \c"
    print_it hilight "$TCEXTTOOLS_ENCRYPTION_KEY"
    bcrypt "$TCEXTTOOLS_PACKAGE" || return 1

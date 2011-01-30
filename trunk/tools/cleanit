@@ -35,17 +35,14 @@ else
      exit 1
 fi
 
-############################################################################ 
-#                                this main                                 #
-############################################################################
-
 this_main() {
 
+   echo ""
+   echo "Cleaning the package ..."
    [ -d "$TCEXTTOOLS_BIN" ] && sudo rm -rf "$TCEXTTOOLS_BIN"
-
    [ -d "$TCEXTTOOLS_SRC_TEMP" ] && sudo rm -rf "$TCEXTTOOLS_SRC_TEMP"
-
    [ -d "$TCEXTTOOLS_PKG_TEMP" ] && sudo rm -rf "$TCEXTTOOLS_PKG_TEMP"
+   echo "Cleaned the package."
 
    return 0
 

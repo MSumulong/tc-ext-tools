@@ -39,33 +39,44 @@ if [ "$SOURCE_TYPE" = "none" ]; then
      mkdir -p "$TCEXTTOOLS_SOURCE_TOPDIR"
 fi
 
-if [ ! -d "$TCEXTTOOLS_SOURCE_TOPDIR" ]; then
+if [ ! -e "$TCEXTTOOLS_SOURCE_TOPDIR" ]; then
        print_it error "You must compile it first!"
        exit 1
 fi
 
+[ -f "$TCEXTTOOLS_INSTALL_LOG" ] || su "$TCUSER" -c "touch $TCEXTTOOLS_MESSAGE_INSTALL_LOG"
 [ -f "$TCEXTTOOLS_MESSAGE_LOG_2" ] || su "$TCUSER" -c "touch $TCEXTTOOLS_MESSAGE_LOG_2"
-
-############################################################################ 
-#                                this main                                 #
-############################################################################
 
 this_main() {
 
-   [ -d "$TCEXTTOOLS_BIN" ] && rm -rf "$TCEXTTOOLS_BIN"/*
+   echo ""
+   echo "Installing the package $PACKAGE ..."
+
+   echo ""
+   echo "Cleaning the package install root directory."
+   [ -d "$TCEXTTOOLS_INSTALL_ROOT" ] && rm -rf "$TCEXTTOOLS_INSTALL_ROOT"
+
+   echo ""
+   echo "Executing the function build install ..."
 
    cd "$TCEXTTOOLS_SOURCE_TOPDIR"
    build_install > "$TCEXTTOOLS_INSTALL_LOG" 2>&1 || return 1
 
-   [ -f "$PACKAGE_FILES_LIST" ] && rm -f "$PACKAGE_FILES_LIST"
+   echo "The function build install returned with success status."
 
+   echo ""
+   echo "Creating a list of package files."
    if [ -d "$TCEXTTOOLS_INSTALL_ROOT" ]; then
+        [ -f "$PACKAGE_FILES_LIST" ] && rm -f "$PACKAGE_FILES_LIST"
         cd "$TCEXTTOOLS_INSTALL_ROOT"
         for i in $(ls)
         do
-              su "$TCUSER" -c "cd $TCEXTTOOLS_INSTALL_ROOT;sudo find '$i' -not -type d >> $PACKAGE_FILES_LIST" || return 1
+              su "$TCUSER" -c "cd $TCEXTTOOLS_INSTALL_ROOT;sudo find \"$i\" -not -type d >> $PACKAGE_FILES_LIST" || return 1
         done
    fi
+
+   echo ""
+   echo "Installing the package $PACKAGE completed successfully."
 
    return 0
 
