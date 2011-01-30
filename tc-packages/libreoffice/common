@@ -6,6 +6,7 @@ ADDITIONAL_SOURCE="artwork base bootstrap calc components extensions extras filt
 BUILD_DEPENDS="zip-unzip
 bash
 tar
+bzip2
 autoconf
 automake
 ccache
@@ -13,10 +14,6 @@ rsync
 mktemp
 perl_archive_zip
 glibc_gconv
-cp2fs::sun-jre
-cp2fs::sun-jdk
-cp2fs::apache-ant
-cp2fs::junit
 cppunit
 hicolor-icon-theme
 shared-mime-info
@@ -74,10 +71,12 @@ unixODBC
 unixODBC-dev
 ImageMagick
 ImageMagick-dev
-boost
-boost-dev
-#kdelibs
-#kdelibs-dev"
+#boost-1.45
+boost-1.45-dev
+#cp2fs::sun-jre
+#cp2fs::sun-jdk
+#cp2fs::apache-ant
+#cp2fs::junit"
 
 DESCRIPTION="LibreOffice is a productivity suite that is compatible with other major office suites."
 AUTHOR="The Document Foundation"

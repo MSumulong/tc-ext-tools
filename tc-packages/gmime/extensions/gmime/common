@@ -1,0 +1,8 @@
+COMMENTS="a C/C++ library for parsing and creating messages using the..
+                ..Multipurpose Internet Mail Extension (MIME)
+                ----------
+                requires the glib2 and libiconv extensions
+                ----------
+                this extension contains:
+                gmime-2.4.21 - GLPLv2.1 - http://ftp.acc.umu.se/pub/GNOME/sources/gmime/2.4/gmime-2.4.21.tar.bz2
+                ----------"

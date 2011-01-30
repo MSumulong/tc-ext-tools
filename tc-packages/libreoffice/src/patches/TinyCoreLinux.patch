@@ -57,9 +57,9 @@ diff -Naur a/distro-configs/TinyCoreLinux.conf.in b/distro-configs/TinyCoreLinux
 +--disable-qadevooo
 +--disable-pam
 +--enable-cups
-+--enable-ext-pdfimport
-+--enable-ext-presenter-console
-+--enable-ext-minimizer
++--enable-pdfimport
++--enable-presenter-console
++--enable-minimizer
 +--enable-graphite
 +--with-system-expat
 +--with-system-curl

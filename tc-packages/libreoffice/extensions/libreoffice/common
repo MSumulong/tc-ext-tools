@@ -7,7 +7,7 @@ COMMENTS="LibreOffice is a productivity suite that is compatible with other majo
 		As free software, users are free to download, modify, use and distribute LibreOffice
 
 		Optional extensions:
-			ALSA or OSS, gst-plugins-*,gst-ffmpeg, liberation-fonts-ttf,
+			ALSA or OSS, gst-plugins-*, gst-ffmpeg, unixODBC, ImageMagick, liberation-fonts-ttf,
 			sil-gentium-ttf, sil-gentium-basic-ttf, msttcorefonts (available at forums/scripting),
 			openclipart-svg, cups, hunspell-en-us (or any other hunspell dictionary) ...
 

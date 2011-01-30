@@ -5,7 +5,7 @@
 #                                                                          #
 ############################################################################
 
-unset J2REDIR J2SDKDIR JAVA_HOME CLASSPATH
+unset J2REDIR J2SDKDIR JAVA_HOME
 
 if [ -z "${JAVA_HOME}" ]; then
      [ -e /etc/profile.d/sun-jdk.sh ] && . /etc/profile.d/sun-jdk.sh
@@ -31,23 +31,20 @@ build_configure() {
   ./configure --prefix=/usr/local --with-distro=TinyCoreLinux \
               --without-binsuffix --with-build-version="$VERSION for Tiny Core Linux by Arslan S." \
               --with-docdir=/usr/local/share/doc/libreoffice --mandir=/usr/local/share/man \
-              --with-installed-ooo-dirname=libreoffice \
-              --with-srcdir=${TCEXTTOOLS_SRC}/additional-src \
+              --with-installed-ooo-dirname=libreoffice --with-srcdir=${T_SRC}/additional-src \
               --disable-odk --enable-extensions --enable-graphite --enable-evolution2 \
               --enable-cairo --disable-kde4 --disable-pam --enable-crashdump \
-              --enable-ldap --enable-lockdown --enable-opengl \
-              --enable-ext-pdfimport --enable-ext-presenter-console \
+              --enable-ldap --enable-lockdown --enable-opengl --enable-ogltrans \
+              --enable-ext-pdfimport --enable-ext-presenter-console --enable-ext-presenter-minimizer \
               --enable-presenter-ext-ui --enable-ext-report-builder --enable-ext-wiki-publisher \
               --disable-gio --disable-mono --disable-kde --without-stlport --with-system-boost \
-              --with-gcc-speedup=ccache --with-lang="" --without-git \
-              --with-openclipart=/usr/local/share/openclipart --with-system-unixodbc-headers \
-              --with-languagetool --with-oooblogger --with-nlpsolver \
-              --with-google-docs --with-watch-window --with-ct2n \
-              --with-java --with-junit=/usr/local/share/java/junit.jar --with-ant-home="/usr/local/share/java/apache-ant"\
-              --with-sun-templates --enable-ogltrans --enable-ext-presenter-minimizer \
-              --with-diagram --with-typo --with-numbertext \
-              --disable-post-install-scripts \
-              --with-num-cpus=2 --with-drink=coffee || return 1
+              --with-gcc-speedup=ccache --with-lang="" --without-git --without-java \
+              --with-openclipart=/usr/local/share/openclipart --with-system-unixodbc-headers --with-sun-templates \
+              --with-oooblogger --with-nlpsolver --with-google-docs --with-watch-window --with-ct2n --with-diagram \
+              --disable-post-install-scripts --with-num-cpus=2 --with-drink=coffee || return 1
+
+   # Registering java components fails during installation. (java loader error: No mapping from java to C++ ) 
+   #--with-java --with-junit=/usr/local/share/java/junit.jar --with-ant-home="/usr/local/share/java/apache-ant"\
 
 }
 
@@ -55,39 +52,22 @@ build_configure() {
 #                               Custom                                     #
 ############################################################################
 
-build_custom() {
+build_download() {
 
-  cd $PACKAGE_SOURCE_TOPDIR
+  cd "$S_ROOT"
 
-  [ -d "$TCEXTTOOLS_SRC/additional-src" ] || mkdir -p "$TCEXTTOOLS_SRC/additional-src"
+  [ -d "$T_SRC/additional-src" ] || mkdir -p "$T_SRC/additional-src"
 
-  echo "Downloading additional libreoffice sources."
+  echo "Downloading additional libreoffice sources..."
   for i in $ADDITIONAL_SOURCE
   do
-     if [ -e "$TCEXTTOOLS_SRC/additional-src/libreoffice-${i}-${VERSION}.tar.bz2" ]; then
+     if [ -e "$T_SRC/additional-src/libreoffice-${i}-${VERSION}.tar.bz2" ]; then
           echo "libreoffice-${i}-${VERSION}.tar.bz2 is already downloaded."
      else
           echo "Downloading libreoffice-${i}-${VERSION}.tar.bz2" 
-          wget "$MIRROR/libreoffice-${i}-${VERSION}.tar.bz2" -O "$TCEXTTOOLS_SRC/additional-src/libreoffice-${i}-${VERSION}.tar.bz2" || return 1
+          wget "$MIRROR/libreoffice-${i}-${VERSION}.tar.bz2" -O "$T_SRC/additional-src/libreoffice-${i}-${VERSION}.tar.bz2" || return 1
      fi
   done
-
-  #echo "Getting libreoffice-${VERSION} ooo.lst file."
-  #[ -e "$TCEXTTOOLS_SRC/ooo.lst" ] && rm -f "$TCEXTTOOLS_SRC/ooo.lst"
-  #wget http://cgit.freedesktop.org/libreoffice/bootstrap/plain/ooo.lst?id=libreoffice-${VERSION} -O "$TCEXTTOOLS_SRC/ooo.lst" || return 1
-
-  #echo "Getting libreoffice-${VERSION} fetch_tarballs.sh script to download sources in ooo.lst"
-  #[ -e "$TCEXTTOOLS_SRC/fetch_tarballs.sh" ] && rm -f "$TCEXTTOOLS_SRC/fetch_tarballs.sh"
-  #wget http://cgit.freedesktop.org/libreoffice/bootstrap/plain/fetch_tarballs.sh?id=libreoffice-3.3.0.4 -O "$TCEXTTOOLS_SRC/fetch_tarballs.sh" || return 1
-
-  #echo "Making fetch_tarballs.sh script executable."
-  #chmod 755 "$TCEXTTOOLS_SRC/fetch_tarballs.sh" || return 1
-
-  #echo "Executing fetch_tarballs.sh script."
-  #TARFILE_LOCATION="$TCEXTTOOLS_SRC/additional-src" "$TCEXTTOOLS_SRC/fetch_tarballs.sh" "$TCEXTTOOLS_SRC/ooo.lst" || return 1
-
-  #echo "Copying additional sources into libreoffice src directory."
-  #busybox cp -f "$TCEXTTOOLS_SRC"/additional-src/* "$PACKAGE_SOURCE_TOPDIR/src"
 
   ./download || return 1
 
@@ -111,34 +91,39 @@ build_compile() {
 
 build_install() {
 
-  ./bin/ooinstall "$INSTALL_ROOT/usr/local/libreoffice" || return 1
+  ./bin/ooinstall "$I_ROOT/usr/local/libreoffice" || return 1
 
-  ln -snf /usr/local/libreoffice/basis3.2 "$INSTALL_ROOT/usr/local/libreoffice/basis-link" || return 1
-  ln -snf /usr/local/libreoffice/ure "$INSTALL_ROOT/usr/local/libreoffice/basis3.2/ure-link" || return 1
+  ln -snf /usr/local/libreoffice/basis3.3 "$I_ROOT/usr/local/libreoffice/basis-link" || return 1
+  ln -snf /usr/local/libreoffice/ure "$I_ROOT/usr/local/libreoffice/basis3.3/ure-link" || return 1
 
-  install -m 755 -d "$INSTALL_ROOT/usr/local/bin"
+  install -m 755 -d "$I_ROOT/usr/local/bin"
   for WRAPPER in oobase  oocalc  oodraw  ooffice  ooimpress  oomath  ooweb  oowriter unopkg
   do
-      install -m 755 "$PACKAGE_SRC/$WRAPPER" "$INSTALL_ROOT/usr/local/bin/$WRAPPER" || return 1
+      install -m 755 "$PACKAGE_SRC/$WRAPPER" "$I_ROOT/usr/local/bin/$WRAPPER" || return 1
   done
 
-  ln -s /usr/local/bin/ooffice "$INSTALL_ROOT/usr/local/bin/libreoffice"
+  ln -s /usr/local/bin/ooffice "$I_ROOT/usr/local/bin/libreoffice"
 
-  install -m 755 -d "$INSTALL_ROOT/usr/local/share/applications"
-  install -m 644 desktop/*.desktop "$INSTALL_ROOT/usr/local/share/applications" || return 1
-  mv -f "$INSTALL_ROOT/usr/local/share/applications/startcenter.desktop" "$INSTALL_ROOT/usr/local/share/applications/libreoffice.desktop"
-  rm -f "$INSTALL_ROOT/usr/local/share/applications/template.desktop"
+  install -m 755 -d "$I_ROOT/usr/local/share/applications"
+  install -m 644 desktop/*.desktop "$I_ROOT/usr/local/share/applications" || return 1
+  mv -f "$I_ROOT/usr/local/share/applications/startcenter.desktop" "$I_ROOT/usr/local/share/applications/libreoffice.desktop"
+  rm -f "$I_ROOT/usr/local/share/applications/template.desktop"
 
   for DIR in 16x16 22x22 24x24 32x32 48x48
   do
-      install -m 755 -d "$INSTALL_ROOT/usr/local/share/icons/hicolor/$DIR/apps"
-      install -m 755 -d "$INSTALL_ROOT/usr/local/share/icons/hicolor/$DIR/mimetypes"
-      install -m 644 desktop/$DIR/*.png "$INSTALL_ROOT/usr/local/share/icons/hicolor/$DIR/apps" || return 1
-      install -m 644 desktop/mimetypes/$DIR/*.png "$INSTALL_ROOT/usr/local/share/icons/hicolor/$DIR/mimetypes" || return 1
+      install -m 755 -d "$I_ROOT/usr/local/share/icons/hicolor/$DIR/apps"
+      install -m 755 -d "$I_ROOT/usr/local/share/icons/hicolor/$DIR/mimetypes"
+      install -m 644 desktop/$DIR/*.png "$I_ROOT/usr/local/share/icons/hicolor/$DIR/apps" || return 1
+      install -m 644 desktop/mimetypes/$DIR/*.png "$I_ROOT/usr/local/share/icons/hicolor/$DIR/mimetypes" || return 1
   done
 
-  install -m 755 -d "$INSTALL_ROOT"/usr/local/share/icons/hicolor/scalable/apps
-  install -m 644 desktop/scalable/*.svg "$INSTALL_ROOT"/usr/local/share/icons/hicolor/scalable/apps || return 1
+  install -m 755 -d "$I_ROOT"/usr/local/share/icons/hicolor/scalable/apps
+  install -m 644 desktop/scalable/*.svg "$I_ROOT"/usr/local/share/icons/hicolor/scalable/apps || return 1
+
+  install -m 755 -d "$I_ROOT"/usr/local/share/mime/packages
+  install -m 644 desktop/openoffice.xml "$I_ROOT/usr/local/share/mime/packages" || return 1
+
+  rm -rf "$I_ROOT/usr/local/libreoffice/share/xdg"
 
 }
 
@@ -154,7 +139,7 @@ build_rules() {
    buildit unpack || exit 1
    buildit patch || exit 1
    buildit configure || exit 1
-   buildit custom || exit 1
+   buildit custom download || exit 1
    buildit compile || exit 1
    buildit install || exit 1
    buildit split || exit 1

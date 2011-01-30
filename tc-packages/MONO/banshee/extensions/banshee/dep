@@ -10,6 +10,7 @@ ndesk-dbus-glib.tcz
 mono-zeroconf.tcz
 libmtp.tcz
 libgoogle-data-mono.tcz
+libsoup-gnome.tcz
 gst-plugins-base.tcz
 gst-plugins-good.tcz
 

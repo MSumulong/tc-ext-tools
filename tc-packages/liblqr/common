@@ -1,0 +1,14 @@
+PACKAGE="liblqr"
+VERSION="0.4.1"
+SOURCE="http://liblqr.wikidot.com/local--files/en:download-page/liblqr-1-${VERSION}.tar.bz2"
+BUILD_DEPENDS="glib2
+glib2-dev"
+
+DESCRIPTION="An easy to use C/C++ seam carving library."
+AUTHOR="Carlo Baldassi"
+SITE="http://liblqr.wikidot.com/"
+COPYING="GPL"
+MAINTAINERS="Arslan S."
+COMMENTS="This extension is PPI compatible."
+CHANGELOG="---"
+CURRENT="First Version"
