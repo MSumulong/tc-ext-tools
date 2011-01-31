@@ -45,7 +45,6 @@ this_main() {
    echo "" > "$TCEXTTOOLS_MESSAGE_LOG_2"
 
    if [ -f "$TCEXTTOOLS_PACKAGE_ENCRYPTED" ]; then
-        echo "" >> "$TCEXTTOOLS_MESSAGE_LOG_2"
         echo "The package tarball encrypted detected. Deleting it..." >> "$TCEXTTOOLS_MESSAGE_LOG_2"
         sudo rm -f "$TCEXTTOOLS_PACKAGE_ENCRYPTED"
    fi

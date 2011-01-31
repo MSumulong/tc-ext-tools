@@ -42,37 +42,102 @@ fi
 
 this_main() {
 
+   echo ""
+   echo "Starting the convert process of the package source ..."
+
+   echo ""
+   echo "Cleaning the temporary source directory."
    [ -d "$TCEXTTOOLS_SRC_TEMP" ] && sudo rm -rf "$TCEXTTOOLS_SRC_TEMP"
    mkdir -p "$TCEXTTOOLS_SRC_TEMP"
 
+   echo ""
+   echo "Source type is set to $SOURCE_TYPE."
+
    if [ "$SOURCE_TYPE" = "bz2" ]; then
+        echo ""
+        echo "Decompressing the package source with bzip2."
         bzip2 -d -c "$TCEXTTOOLS_SOURCE" > "$TCEXTTOOLS_SRC_TEMP/${SOURCE_NAME%.bz2}" || return 1
+
+        echo ""
+        echo "Compressing the tar archive with xz."
         xz "$TCEXTTOOLS_SRC_TEMP/${SOURCE_NAME%.bz2}" || return 1
-        busybox mv -f "$TCEXTTOOLS_SRC_TEMP/${SOURCE_NAME%.bz2}.xz" "$TCEXTTOOLS_SRC" || return 1
+
+        echo ""
+        echo "Moving the converted source to the package source directory."
+        mv -f "$TCEXTTOOLS_SRC_TEMP/${SOURCE_NAME%.bz2}.xz" "$TCEXTTOOLS_SRC" || return 1
    elif [ "$SOURCE_TYPE" = "gz" ]; then
+        echo ""
+        echo "Decompressing the package source with gzip."
         gzip -d -c "$TCEXTTOOLS_SOURCE" > "$TCEXTTOOLS_SRC_TEMP/${SOURCE_NAME%.gz}" || return 1
+
+        echo ""
+        echo "Compressing the tar archive with xz."
         xz "$TCEXTTOOLS_SRC_TEMP/${SOURCE_NAME%.gz}" || return 1
-        busybox mv -f "$TCEXTTOOLS_SRC_TEMP/${SOURCE_NAME%.gz}.xz" "$TCEXTTOOLS_SRC" || return 1
+
+        echo ""
+        echo "Moving the converted source to the package source directory."
+        mv -f "$TCEXTTOOLS_SRC_TEMP/${SOURCE_NAME%.gz}.xz" "$TCEXTTOOLS_SRC" || return 1
    elif [ "$SOURCE_TYPE" = "tgz" ]; then
+        echo ""
+        echo "Decompressing the package source with gzip."
         gzip -d -c "$TCEXTTOOLS_SOURCE" > "$TCEXTTOOLS_SRC_TEMP/${SOURCE_NAME%.tgz}.tar" || return 1
+
+        echo ""
+        echo "Compressing the tar archive with xz."
         xz "$TCEXTTOOLS_SRC_TEMP/${SOURCE_NAME%.tgz}.tar" || return 1
-        busybox mv -f "$TCEXTTOOLS_SRC_TEMP/${SOURCE_NAME%.tgz}.tar.xz" "$TCEXTTOOLS_SRC" || return 1
+
+        echo ""
+        echo "Moving the converted source to the package source directory."
+        mv -f "$TCEXTTOOLS_SRC_TEMP/${SOURCE_NAME%.tgz}.tar.xz" "$TCEXTTOOLS_SRC" || return 1
    elif [ "$SOURCE_TYPE" = "tbz2" ]; then
+        echo ""
+        echo "Decompressing the package source with bzip2."
         bzip2 -d -c "$TCEXTTOOLS_SOURCE" > "$TCEXTTOOLS_SRC_TEMP/${SOURCE_NAME%.tbz2}.tar" || return 1
+
+        echo ""
+        echo "Compressing the tar archive with xz."
         xz "$TCEXTTOOLS_SRC_TEMP/${SOURCE_NAME%.tbz2}.tar" || return 1
-        busybox mv -f "$TCEXTTOOLS_SRC_TEMP/${SOURCE_NAME%.tbz2}.tar.xz" "$TCEXTTOOLS_SRC" || return 1
+
+        echo ""
+        echo "Moving the converted source to the package source directory."
+        mv -f "$TCEXTTOOLS_SRC_TEMP/${SOURCE_NAME%.tbz2}.tar.xz" "$TCEXTTOOLS_SRC" || return 1
    elif [ "$SOURCE_TYPE" = "tar" ]; then
+        echo ""
+        echo "Copying the tar archive to the temporary source directory."
         cp "$TCEXTTOOLS_SOURCE" "$TCEXTTOOLS_SRC_TEMP" || return 1
+
+        echo ""
+        echo "Compressing the tar archive with xz."
         xz "$TCEXTTOOLS_SRC_TEMP/${SOURCE_NAME%.tar}.tar" || return 1
-        busybox mv -f "$TCEXTTOOLS_SRC_TEMP/${SOURCE_NAME%.tar}.tar.xz" "$TCEXTTOOLS_SRC" || return 1
+
+        echo ""
+        echo "Moving the converted source to the package source directory."
+        mv -f "$TCEXTTOOLS_SRC_TEMP/${SOURCE_NAME%.tar}.tar.xz" "$TCEXTTOOLS_SRC" || return 1
    elif [ "$SOURCE_TYPE" = "zip" ]; then
+        echo ""
+        echo "Unzipping the package source to the temporary source directory."
         unzip "$TCEXTTOOLS_SOURCE" -d "$TCEXTTOOLS_SRC_TEMP" || return 1
+
+        echo ""
+        echo "Creating a tarball from the unzipped source."
         tar -C "$TCEXTTOOLS_SRC_TEMP" -cJf "$TCEXTTOOLS_SRC_TEMP/${SOURCE_NAME%.zip}.tar.xz" "$(ls $TCEXTTOOLS_SRC_TEMP)" || return 1
-        busybox mv -f "$TCEXTTOOLS_SRC_TEMP/${SOURCE_NAME%.zip}.tar.xz" "$TCEXTTOOLS_SRC" || return 1
+
+        echo ""
+        echo "Moving the converted source to the package source directory."
+        mv -f "$TCEXTTOOLS_SRC_TEMP/${SOURCE_NAME%.zip}.tar.xz" "$TCEXTTOOLS_SRC" || return 1
    elif [ "$SOURCE_TYPE" = "custom" ]; then
+        echo ""
+        echo "Executing the custom convert function defined in the package build."
         cd "$TCEXTTOOLS_SRC_TEMP"
         build_convert || return 1
+   else
+        echo ""
+        echo "Error! unsupported source type."
+        return 1
    fi
+
+   echo ""
+   echo "Completed the converting process successfully."
 
    return 0
 

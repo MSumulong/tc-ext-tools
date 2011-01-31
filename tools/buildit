@@ -37,7 +37,7 @@ fi
 
 print_usage(){
 
-   echo -e "${TCEXTTOOLS_ERROR_COLOR}${THIS} usage:\n\t${TCEXTTOOLS_MESSAGE_COLOR}${THIS} (clean|clear)|load|download|convert|unpack|patch|configure|compile|install|split|strip|create|check|generate|package|encrypt|print|help${NORMAL}"
+   echo -e "${TCEXTTOOLS_ERROR_COLOR}${THIS} usage:\n\t${TCEXTTOOLS_MESSAGE_COLOR}${THIS} (clean|clear)|load|download|convert|unpack|patch|configure|compile|install|split|strip|create|check|generate|package|encrypt|print|custom|help${NORMAL}"
 
 }
 
@@ -58,7 +58,7 @@ download_it() {
 
    if [ -f "$PACKAGE_SOURCE" ]; then
         print_it warning "The package $PACKAGE source is already downloaded."
-        print_it warning "Run downloadit to force download the package source."
+        print_it warning "Run downloadit to force download."
         exit 0
    fi
 
@@ -77,7 +77,7 @@ convert_it() {
 
    if [ -f "$PACKAGE_SOURCE_CONVERTED" ]; then
         print_it warning "The package $PACKAGE source is already converted."
-        print_it warning "Run convertit to force convert the package source."
+        print_it warning "Run convertit to force convert."
         exit 0
    fi
 

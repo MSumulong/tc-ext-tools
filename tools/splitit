@@ -49,8 +49,6 @@ this_split() {
         echo "Error! the extension install is empty."
         return 1
    fi
-   echo "CONTENTS = $CONTENTS"
-   echo ""
 
    echo ""
    echo "Touching install.list and x-install.list files."
@@ -58,7 +56,6 @@ this_split() {
    X_LIST="${TCEXTTOOLS_BIN_TEMP}/x-install.list"
    touch "$LIST"
    touch "$X_LIST"
-   echo ""
 
    echo ""
    echo "Processing the extension install contents ..."
@@ -78,7 +75,6 @@ this_split() {
        echo ""
        echo "Evaluating the content $i ..."
        i=$(eval echo $i)
-       echo "The content is $i after the evaluation."
 
        echo ""
        echo "Checking if a special wildcard used."
