@@ -729,6 +729,7 @@ usr/local/share/doc/postgresql/html/manage-ag-config.html
 usr/local/share/doc/postgresql/html/install-short.html
 usr/local/share/doc/postgresql/html/release-7-3-12.html
 usr/local/share/doc/postgresql/html/release-8-3.html
+usr/local/share/doc/postgresql/html/release-8-4-7.html
 usr/local/share/doc/postgresql/html/tutorial-delete.html
 usr/local/share/doc/postgresql/html/explicit-locking.html
 usr/local/share/doc/postgresql/html/release-7-3-21.html
@@ -856,6 +857,7 @@ usr/local/share/doc/postgresql/html/spi-spi-execute-plan-with-paramlist.html
 usr/local/share/doc/postgresql/html/xfunc-c.html
 usr/local/share/doc/postgresql/html/sourcerepo.html
 usr/local/share/doc/postgresql/html/row-estimation-examples.html
+usr/local/share/doc/postgresql/html/release-9-0-3.html
 usr/local/share/doc/postgresql/html/infoschema-view-table-usage.html
 usr/local/share/doc/postgresql/html/sql-cluster.html
 usr/local/share/doc/postgresql/html/infoschema-referential-constraints.html
@@ -905,6 +907,7 @@ usr/local/share/doc/postgresql/html/sql-droprule.html
 usr/local/share/doc/postgresql/html/release-7-3-13.html
 usr/local/share/doc/postgresql/html/datatype-oid.html
 usr/local/share/doc/postgresql/html/catalog-pg-constraint.html
+usr/local/share/doc/postgresql/html/release-8-2-20.html
 usr/local/share/doc/postgresql/html/ddl-system-columns.html
 usr/local/share/doc/postgresql/html/release-8-2-7.html
 usr/local/share/doc/postgresql/html/infoschema-sql-languages.html
@@ -1004,6 +1007,7 @@ usr/local/share/doc/postgresql/html/planner-optimizer.html
 usr/local/share/doc/postgresql/html/release-7-4-12.html
 usr/local/share/doc/postgresql/html/release-7-2-5.html
 usr/local/share/doc/postgresql/html/rowtypes.html
+usr/local/share/doc/postgresql/html/release-8-3-14.html
 usr/local/share/doc/postgresql/html/infoschema-data-type-privileges.html
 usr/local/share/doc/postgresql/html/contrib-dblink-error-message.html
 usr/local/share/doc/postgresql/html/textsearch-intro.html

@@ -3,7 +3,7 @@
 EXTENSION=$(basename $0)
 PREFIX=/usr/local
 
-if [ -d /tmp/tcloop/"$EXTENSION" ]; then
-	sudo busybox cp -Lf "$PREFIX"/bin/pg_config "$PREFIX"/bin
+if [ -d "/tmp/tcloop/$EXTENSION" ]; then
+	cp -a "/tmp/tcloop/$EXTENSION/$PREFIX/bin/pg_config" "$PREFIX/bin"
 fi
 
