@@ -168,7 +168,7 @@ set_extension() {
       TCEXTTOOLS_EXTENSION_INSTALL="$PACKAGE_EXTENSION_INSTALL"
       TCEXTTOOLS_EXTENSION_TCEINSTALLED="$PACKAGE_EXTENSION_TCEINSTALLED"
 
-      unset NAME SUFFIX ICON DESKTOP
+      unset NAME ICON DESKTOP
 
        . "$PACKAGE_COMMON"
 
@@ -177,11 +177,7 @@ set_extension() {
       fi
 
       if [ -z "$NAME" ]; then
-           if [ -n "$SUFFIX" ]; then
-                EXTENSION_NAME="${EXTENSION}${SUFFIX}"
-           else
-                EXTENSION_NAME="$EXTENSION"
-           fi
+           EXTENSION_NAME="$EXTENSION"
       else
            EXTENSION_NAME="$NAME"
       fi
@@ -295,10 +291,12 @@ if [ -f "$PACKAGE_COMMON" ]; then
      P_VER="$VERSION"
      P_SRC="$PACKAGE_SRC"
      T_SRC="$TCEXTTOOLS_SRC"
+     P_BIN="$PACKAGE_BIN"
+     T_BIN="$TCEXTTOOLS_BIN"
      S_SRC="$T_SRC"
+     S_TOP="$SOURCE_TOPDIR"
      S_ROOT="$PACKAGE_SOURCE_TOPDIR"
      I_ROOT="$INSTALL_ROOT"
-     S_TOP="$SOURCE_TOPDIR"
 
      # create directories
      [ -d "$TCEXTTOOLS_STORAGE" ] || sudo install -m 755 -d -o "$TCUSER" -g staff "$TCEXTTOOLS_STORAGE"

@@ -42,7 +42,6 @@ this_main() {
    [ -d "$TCEXTTOOLS_BIN" ] && sudo rm -rf "$TCEXTTOOLS_BIN"
    [ -d "$TCEXTTOOLS_SRC_TEMP" ] && sudo rm -rf "$TCEXTTOOLS_SRC_TEMP"
    [ -d "$TCEXTTOOLS_PKG_TEMP" ] && sudo rm -rf "$TCEXTTOOLS_PKG_TEMP"
-   echo "Cleaned the package successfully."
 
    return 0
 

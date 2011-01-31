@@ -37,45 +37,50 @@ fi
 
 this_check() {
 
-   EXTRACTDIR=$TCEXTTOOLS_BIN_TEMP/$EXTENSION_NAME
+   echo ""
+   echo "Cleaning the extension bin temporary directory."
+   EXTENSION_BIN_TEMP="$TCEXTTOOLS_BIN_TEMP/$EXTENSION_NAME"
+   [ -d "$EXTENSION_BIN_TEMP" ] && sudo rm -rf "$EXTENSION_BIN_TEMP"
 
-   [ -d "$EXTRACTDIR" ] && sudo rm -rf "$EXTRACTDIR"
+   echo ""
+   echo "Extracting the extension to the extension bin temporary directory."
+   sudo unsquashfs -d "$EXTENSION_BIN_TEMP" "$TCEXTTOOLS_EXTENSION" || return 1
 
-   sudo unsquashfs -d "$EXTRACTDIR" "$TCEXTTOOLS_EXTENSION" || return 1
+   echo ""
+   echo "Checking the extension files ..."
+   sudo find "$EXTENSION_BIN_TEMP" -not -type d -exec file "{}" \; || return 1
 
-   sudo find "$EXTRACTDIR" -not -type d -exec file "{}" \; || return 1
-
-   if [ -d "$EXTRACTDIR/usr/local/tce.installed" ]; then
-        OUT=$(sudo busybox ls -d -l "$EXTRACTDIR/usr/local/tce.installed")
+   echo ""
+   echo "Checking the permissions and ownership of the extension tce.installed directory ..."
+   if [ -d "$EXTENSION_BIN_TEMP/usr/local/tce.installed" ]; then
+        OUT=$(sudo busybox ls -d -l "$EXTENSION_BIN_TEMP/usr/local/tce.installed")
         PERM=$(echo $OUT | cut -d" " -f1)
         OWNER=$(echo $OUT | cut -d" " -f3-4)
 
         if [ "$PERM" != "drwxrwxr-x" ] && [ "$PERM" != "drwxrwsr-x" ]; then
-             print_it error "Wrong permissions on $EXTENSION_NAME tce.installed directory."
-             print_it warning "Expected permissions drwxrwxr-x or drwxrwsr-x but found permissions $PERM"
+             echo "Error! wrong permissions on the extension tce.installed directory."
              return 1
         fi
 
         if [ "$OWNER" != "root staff" ]; then
-             print_it error "Wrong ownership on $EXTENSION_NAME tce.installed directory."
-             print_it warning "Expected ownership \"root staff\" but found ownership \"$OWNER\""
+             echo "Error! wrong ownership on the extension tce.installed directory."
              return 1
         fi
 
-        if [ -e "$EXTRACTDIR/usr/local/tce.installed/$EXTENSION_NAME" ]; then
-             OUT=$(sudo busybox ls -l "$EXTRACTDIR/usr/local/tce.installed/$EXTENSION_NAME")
+        echo ""
+        echo "Checking the permissions and ownership of the extension tce.installed script ..."
+        if [ -e "$EXTENSION_BIN_TEMP/usr/local/tce.installed/$EXTENSION_NAME" ]; then
+             OUT=$(sudo busybox ls -l "$EXTENSION_BIN_TEMP/usr/local/tce.installed/$EXTENSION_NAME")
              PERM=$(echo $OUT | cut -d" " -f1)
              OWNER=$(echo $OUT | cut -d" " -f3-4)
 
              if [ "$PERM" != "-rwxrwxr-x" ] && [ "$PERM" != "-rwxrwsr-x" ]; then
-                  print_it error "Wrong permissions on $EXTENSION_NAME tce.installed script."
-                  print_it warning "Expected permissions -rwxrwxr-x or -rwxrwsr-x but found permissions $PERM"
+                  echo "Error! wrong permissions on $EXTENSION_NAME tce.installed script."
                   return 1
              fi
 
              if [ "$OWNER" != "root staff" ]; then
-                  print_it error "Wrong ownership on $EXTENSION_NAME tce.installed script."
-                  print_it warning "Expected ownership \"root staff\" but found ownership \"$OWNER\""
+                  echo "Error! wrong ownership on $EXTENSION_NAME tce.installed script."
                   return 1
              fi
         fi
@@ -87,27 +92,41 @@ this_check() {
 
 this_main() {
 
+   echo ""
+   echo "Starting the checking process for the package $PACKAGE extensions."
+
+   echo ""
+   echo "Cleaning the temporary bin directory."
    [ -d "$TCEXTTOOLS_BIN_TEMP" ] || mkdir -p "$TCEXTTOOLS_BIN_TEMP"
 
    for EXTENSION in $EXTENSIONS
    do
+       echo ""
+       echo "Setting the extension $EXTENSION parameters."
        set_extension || return 1
 
+       echo ""
+       echo "Checking if the extension exists."
        if [ ! -e "$TCEXTTOOLS_EXTENSION" ]; then
-              print_it error "You must create it first!"
+              echo "Error! You must create it first!"
               return 1
        fi
 
+       echo ""
+       echo "Checking the extension $EXTENSION_NAME"
        this_check
        if [ "$?" -gt 0 ]; then
-            sudo rm -rf "$EXTRACTDIR"
-            print_it error "Checking the extension $EXTENSION_NAME failed!"
+            sudo rm -rf "$EXTENSION_BIN_TEMP"
+            echo "Error! Checking the extension $EXTENSION_NAME failed."
             return 1
        else
-            sudo rm -rf "$EXTRACTDIR"
-            print_it "Checking the extension $EXTENSION_NAME successful!"
+            sudo rm -rf "$EXTENSION_BIN_TEMP"
+            echo "Checking the extension $EXTENSION_NAME successful."
        fi
    done
+
+   echo ""
+   echo "Checking the package $PACKAGE extensions completed successfully."
 
    return 0
 
