@@ -35,7 +35,7 @@ else
      exit 1
 fi
 
-if [ ! -e "$TCEXTTOOLS_SOURCE" ]; then
+if [ ! -f "$TCEXTTOOLS_SOURCE" ]; then
        print_it error "You must download it first!"
        exit 1
 fi
@@ -59,7 +59,7 @@ this_main() {
         echo "Unzipping the package source."
         unzip "$TCEXTTOOLS_SOURCE" -d "$TCEXTTOOLS_SRC_TEMP" || return 1
    elif [ "$SOURCE_TYPE" = "custom" ]; then
-        echo "Executing custom unpack function defined in package build."
+        echo "Executing the custom unpack function defined in the package build."
         cd "$TCEXTTOOLS_SRC_TEMP"
         build_unpack || return 1
    else

@@ -74,20 +74,17 @@ this_split() {
             echo "The content $i is commented out. Skipping it."
             continue
        fi
-       echo ""
 
        echo ""
        echo "Evaluating the content $i ..."
        i=$(eval echo $i)
        echo "The content is $i after the evaluation."
-       echo ""
 
        echo ""
        echo "Checking if a special wildcard used."
        if [ -n "$(echo "$i" | grep '*')" ]; then
             echo "The wildcard * found in the content."
        fi
-       echo ""
 
        echo ""
        if [ -z "$(echo "$i" | grep '*')" ]; then
@@ -109,14 +106,11 @@ this_split() {
                  sudo find $i -not -type d >> "$X_LIST" || return 1
             fi
        fi
-       echo ""
    done
-   echo ""
 
    echo ""
    echo "Creating the extension contents tarball from the include and the exclude lists."
    sudo tar -T "$LIST" -X "$X_LIST" -cvpzf "$TCEXTTOOLS_BIN_TEMP/pkg.tar.gz" || return 1
-   echo ""
 
    echo "Cleaning the package extension bin directory."
    [ -d "$TCEXTTOOLS_EXTENSION_BINDIR" ] && sudo rm -rf "$TCEXTTOOLS_EXTENSION_BINDIR"
@@ -126,12 +120,10 @@ this_split() {
    echo "Extracting the extension contents tarball to the extension bin directory."
    sudo mkdir -p "$TCEXTTOOLS_EXTENSION_BINDIR"
    sudo tar -C "$TCEXTTOOLS_EXTENSION_BINDIR" -pvxzf "$TCEXTTOOLS_BIN_TEMP/pkg.tar.gz" || return 1
-   echo ""
 
    echo ""
    echo "Cleaning the extension bin temporary directory."
    sudo rm -rf "$TCEXTTOOLS_BIN_TEMP"
-   echo ""
 
    return 0
 
