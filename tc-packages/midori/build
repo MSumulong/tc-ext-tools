@@ -5,10 +5,9 @@
 ### Configure
 build_configure() {
 
-  ./configure --prefix=/usr/local --enable-addons --disable-hildon \
-              --enable-unique --enable-libnotify --disable-libidn \
-              --disable-vala --disable-tests \
-              --enable-nls --enable-userdocs --enable-docs --enable-apidocs || return 1
+  ./configure --prefix=/usr/local --enable-addons --disable-hildon --disable-tests \
+      --enable-unique --enable-libnotify --disable-libidn --enable-vala \
+      --enable-nls --enable-userdocs --enable-docs --enable-apidocs || return 1
 
 }
 ##
@@ -41,7 +40,7 @@ build_rules() {
   buildit compile || exit 1
   buildit install || exit 1
   buildit split || exit 1
-   buildit strip || exit 1
+  buildit strip || exit 1
   buildit create || exit 1
   buildit generate || exit 1
   buildit check || exit 1

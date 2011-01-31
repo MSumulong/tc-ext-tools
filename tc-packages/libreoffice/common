@@ -73,10 +73,10 @@ ImageMagick
 ImageMagick-dev
 #boost-1.45
 boost-1.45-dev
-#cp2fs::sun-jre
-#cp2fs::sun-jdk
-#cp2fs::apache-ant
-#cp2fs::junit"
+cp2fs::sun-jre
+cp2fs::sun-jdk
+cp2fs::apache-ant
+cp2fs::junit"
 
 DESCRIPTION="LibreOffice is a productivity suite that is compatible with other major office suites."
 AUTHOR="The Document Foundation"

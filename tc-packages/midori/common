@@ -1,6 +1,6 @@
 PACKAGE="midori"
-VERSION="0.2.9"
-SOURCE="http://archive.xfce.org/src/apps/midori/0.2/midori-${VERSION}.tar.bz2"
+VERSION="0.3.0"
+SOURCE="http://archive.xfce.org/src/apps/midori/0.3/midori-${VERSION}.tar.bz2"
 BUILD_DEPENDS="glib2
 glib2-dev
 gtk2
@@ -21,7 +21,8 @@ python-docutils
 libxml2-bin
 gtk-doc
 librsvg
-librsvg-dev"
+librsvg-dev
+vala"
 
 DESCRIPTION="Midori is a lightweight web browser based on WebKit/GTK+."
 AUTHOR="Christian Dywan"
@@ -31,5 +32,6 @@ MAINTAINERS="Arslan S."
 COMMENTS="This extension is PPI compatible."
 CHANGELOG="2010/05/30 Original 0.2.6
 		2010/08/25 Updated to 0.2.7
-		2010/09/29 Updated to 0.2.8"
-CURRENT="Updated to 0.2.9"
+		2010/09/29 Updated to 0.2.8
+		2010/11/01 Updated to 0.2.9"
+CURRENT="Updated to $VERSION"

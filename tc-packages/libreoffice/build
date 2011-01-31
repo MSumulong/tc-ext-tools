@@ -28,23 +28,23 @@ build_configure() {
   aclocal || return 1
   autoconf --force || return 1
 
-  ./configure --prefix=/usr/local --with-distro=TinyCoreLinux \
-              --without-binsuffix --with-build-version="$VERSION for Tiny Core Linux by Arslan S." \
+  ./configure --prefix=/usr/local --with-distro=TinyCoreLinux --with-build-version="$VERSION for Tiny Core Linux" \
               --with-docdir=/usr/local/share/doc/libreoffice --mandir=/usr/local/share/man \
-              --with-installed-ooo-dirname=libreoffice --with-srcdir=${T_SRC}/additional-src \
-              --disable-odk --enable-extensions --enable-graphite --enable-evolution2 \
+              --without-binsuffix --with-installed-ooo-dirname=libreoffice --with-srcdir=${T_SRC}/additional-src \
+              --enable-odk --enable-extensions --enable-graphite --enable-evolution2 \
               --enable-cairo --disable-kde4 --disable-pam --enable-crashdump \
               --enable-ldap --enable-lockdown --enable-opengl --enable-ogltrans \
-              --enable-ext-pdfimport --enable-ext-presenter-console --enable-ext-presenter-minimizer \
-              --enable-presenter-ext-ui --enable-ext-report-builder --enable-ext-wiki-publisher \
+              --enable-pdfimport --enable-presenter-console --enable-presenter-minimizer \
+              --enable-presenter-ui --enable-report-builder --enable-wiki-publisher \
               --disable-gio --disable-mono --disable-kde --without-stlport --with-system-boost \
-              --with-gcc-speedup=ccache --with-lang="" --without-git --without-java \
+              --with-gcc-speedup=ccache --with-lang="" --without-git \
+              --with-java --with-junit=/usr/local/share/java/junit.jar --with-ant-home="/usr/local/share/java/apache-ant" \
               --with-openclipart=/usr/local/share/openclipart --with-system-unixodbc-headers --with-sun-templates \
               --with-oooblogger --with-nlpsolver --with-google-docs --with-watch-window --with-ct2n --with-diagram \
-              --disable-post-install-scripts --with-num-cpus=2 --with-drink=coffee || return 1
+              --with-num-cpus=2 --with-drink=coffee || return 1
 
    # Registering java components fails during installation. (java loader error: No mapping from java to C++ ) 
-   #--with-java --with-junit=/usr/local/share/java/junit.jar --with-ant-home="/usr/local/share/java/apache-ant"\
+   #--with-java --with-junit=/usr/local/share/java/junit.jar --with-ant-home="/usr/local/share/java/apache-ant" \
 
 }
 
@@ -91,39 +91,35 @@ build_compile() {
 
 build_install() {
 
-  ./bin/ooinstall "$I_ROOT/usr/local/libreoffice" || return 1
+  make DESTDIR="$I_ROOT" install || return 1
 
-  ln -snf /usr/local/libreoffice/basis3.3 "$I_ROOT/usr/local/libreoffice/basis-link" || return 1
-  ln -snf /usr/local/libreoffice/ure "$I_ROOT/usr/local/libreoffice/basis3.3/ure-link" || return 1
+  ln -snf /usr/local/lib/libreoffice/basis3.3 "$I_ROOT/usr/local/lib/libreoffice/basis-link" || return 1
+  ln -snf /usr/local/lib/libreoffice/ure "$I_ROOT/usr/local/lib/libreoffice/basis3.3/ure-link" || return 1
 
-  install -m 755 -d "$I_ROOT/usr/local/bin"
-  for WRAPPER in oobase  oocalc  oodraw  ooffice  ooimpress  oomath  ooweb  oowriter unopkg
-  do
-      install -m 755 "$PACKAGE_SRC/$WRAPPER" "$I_ROOT/usr/local/bin/$WRAPPER" || return 1
-  done
+  cp ${I_ROOT}/usr/local/lib/libreoffice/share/xdg/javafilter.desktop ${I_ROOT}/usr/local/share/applications/
+  cp ${I_ROOT}/usr/local/lib/libreoffice/share/xdg/qstart.desktop ${I_ROOT}/usr/local/share/applications/
 
-  ln -s /usr/local/bin/ooffice "$I_ROOT/usr/local/bin/libreoffice"
-
-  install -m 755 -d "$I_ROOT/usr/local/share/applications"
-  install -m 644 desktop/*.desktop "$I_ROOT/usr/local/share/applications" || return 1
-  mv -f "$I_ROOT/usr/local/share/applications/startcenter.desktop" "$I_ROOT/usr/local/share/applications/libreoffice.desktop"
-  rm -f "$I_ROOT/usr/local/share/applications/template.desktop"
-
-  for DIR in 16x16 22x22 24x24 32x32 48x48
-  do
-      install -m 755 -d "$I_ROOT/usr/local/share/icons/hicolor/$DIR/apps"
-      install -m 755 -d "$I_ROOT/usr/local/share/icons/hicolor/$DIR/mimetypes"
-      install -m 644 desktop/$DIR/*.png "$I_ROOT/usr/local/share/icons/hicolor/$DIR/apps" || return 1
-      install -m 644 desktop/mimetypes/$DIR/*.png "$I_ROOT/usr/local/share/icons/hicolor/$DIR/mimetypes" || return 1
-  done
-
-  install -m 755 -d "$I_ROOT"/usr/local/share/icons/hicolor/scalable/apps
-  install -m 644 desktop/scalable/*.svg "$I_ROOT"/usr/local/share/icons/hicolor/scalable/apps || return 1
-
-  install -m 755 -d "$I_ROOT"/usr/local/share/mime/packages
-  install -m 644 desktop/openoffice.xml "$I_ROOT/usr/local/share/mime/packages" || return 1
+  sed -i -e "s/3.3 Quickstarter/Quickstarter/g" ${I_ROOT}/usr/local/share/applications/qstart.desktop || return 1
+  sed -i -e "/NoDisplay=true/d" ${I_ROOT}/usr/local/share/applications/qstart.desktop || return 1
 
   rm -rf "$I_ROOT/usr/local/libreoffice/share/xdg"
+
+  install -dm755 ${I_ROOT}/usr/local/etc/libreoffice
+  install -m644 ${I_ROOT}/usr/local/lib/libreoffice/program/bootstraprc ${I_ROOT}/usr/local/etc/libreoffice/
+  install -m644 ${I_ROOT}/usr/local/lib/libreoffice/program/sofficerc ${I_ROOT}/usr/local/etc/libreoffice/
+  install -m644 ${I_ROOT}/usr/local/lib/libreoffice/basis3.3/share/psprint/psprint.conf ${I_ROOT}/usr/local/etc/libreoffice/
+
+  cd ${I_ROOT}/usr/local/lib/libreoffice/program/
+  ln -vsf /usr/local/etc/libreoffice/bootstraprc .
+  ln -vsf /usr/local/etc/libreoffice/sofficerc .
+
+  cd ${I_ROOT}/usr/local/lib/libreoffice/basis3.3/share/psprint/
+  ln -vsf /usr/local/etc/libreoffice/psprint.conf .
+
+  find ${I_ROOT} -perm 444 -exec ls -lh {} \; 
+  find ${I_ROOT} -perm 444 -exec chmod 644 {} \;
+  find ${I_ROOT} -perm 555 -exec ls -lh {} \;
+  find ${I_ROOT} -perm 555 -exec chmod 755 {} \;
 
 }
 
