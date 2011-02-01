@@ -1,5 +1,5 @@
 PACKAGE="vlc"
-VERSION="1.1.6"
+VERSION="1.1.7"
 SOURCE="http://download.videolan.org/pub/videolan/vlc/${VERSION}/vlc-${VERSION}.tar.bz2"
 BUILD_DEPENDS="ffmpeg-ffserver
 ffmpeg-ffserver-dev

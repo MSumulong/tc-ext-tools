@@ -5,7 +5,7 @@
 ### Configure
 build_configure() {
 
-   ./configure --prefix=/usr/local --enable-glx --enable-opengl \
+   ./configure --prefix=/usr/local --disable-rpath --enable-glx --enable-opengl \
        --enable-dbus --enable-dbus-control --enable-fribidi --enable-nls --enable-x264 \
        --enable-ncurses --enable-libtar --enable-skins2 --enable-mkv --enable-pulse --enable-oss --enable-alsa \
        --enable-xvideo --enable-theora --disable-caca --enable-xcb \
