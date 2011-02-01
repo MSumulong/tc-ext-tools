@@ -1,4 +1,4 @@
-ICON="/usr/local/share/icons/hicolor/48x48/apps/ooo-base.png"
+ICON="/usr/local/share/icons/hicolor/48x48/apps/ooo-gulls.png"
 DESKTOP="/usr/local/share/applications/libreoffice.desktop"
 COMMENTS="LibreOffice is a productivity suite that is compatible with other major office suites, and available
 		on a variety of platforms. The goal is to produce a vendor-independent office suite with ODF
@@ -6,18 +6,23 @@ COMMENTS="LibreOffice is a productivity suite that is compatible with other majo
 		part Libre, which means free (as in freedom) in both Spanish and French and the English word Office.
 		As free software, users are free to download, modify, use and distribute LibreOffice
 
-		Optional extensions:
+		Optional dependencies:
 			ALSA or OSS, gst-plugins-*, gst-ffmpeg, unixODBC, ImageMagick, liberation-fonts-ttf,
 			sil-gentium-ttf, sil-gentium-basic-ttf, msttcorefonts (available at forums/scripting),
 			openclipart-svg, cups, hunspell-en-us (or any other hunspell dictionary) ...
 
-		OpenOffice.org extensions are also recommended.(dictionaries,templates etc.)
+		You can install LibreOffice extensions (dictionaries,templates etc.) from
+		http://libreplanet.org/wiki/Group:OpenOfficeExtensions/List
+		Download an extension, then inside the program go to
+		Tools->Extension Manager->Add and select the extension (.oxt) file to install.
+		LibreOffice installs the user extensions into ~/.libreoffice directory.
 
-		You can install OpenOffice.org extensions from http://extensions.services.openoffice.org
-		Download any extension and Tools->Extension Manager->Add and select the extension (.oxt) file to install
+		Important Note: This version of libreoffice is compiled with java support.
+		So you need to add libreoffice.tcz to your onboot.lst and reboot your computer. If you have
+		sun-jre.tcz in your onboot.lst then you don't need to reboot.
+		Warning! Setting PATH and JAVA_HOME in a terminal does not help.
 
-		LibreOffice installs OpenOffice3 extensions into ~/.openoffice.org
-
-		This extension conflicts with openoffice3.
+		If you want to use libreoffice ondemand, load sun-jre once and
+		add etc/profile.d/sun-jre.sh to your backup list (/opt/.filetool.lst), and then reboot.
 
 		This extension is PPI compatible."

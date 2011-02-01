@@ -53,7 +53,7 @@ diff -Naur a/distro-configs/TinyCoreLinux.conf.in b/distro-configs/TinyCoreLinux
 +--disable-fontooo
 +--disable-binfilter
 +--disable-gnome-vfs
-+--disable-odk
++--enable-odk
 +--disable-qadevooo
 +--disable-pam
 +--enable-cups

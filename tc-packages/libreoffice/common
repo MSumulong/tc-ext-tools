@@ -1,5 +1,6 @@
 PACKAGE="libreoffice"
 VERSION="3.3.0.4"
+_OFFICEUPD="330"
 MIRROR="http://download.documentfoundation.org/libreoffice/src"
 SOURCE="$MIRROR/libreoffice-build-${VERSION}.tar.gz"
 ADDITIONAL_SOURCE="artwork base bootstrap calc components extensions extras filters help impress l10n libs-core libs-extern libs-extern-sys libs-gui postprocess sdk testing ure writer"
@@ -15,6 +16,7 @@ mktemp
 perl_archive_zip
 glibc_gconv
 cppunit
+coreutils
 hicolor-icon-theme
 shared-mime-info
 desktop-file-utils
@@ -78,7 +80,7 @@ cp2fs::sun-jdk
 cp2fs::apache-ant
 cp2fs::junit"
 
-DESCRIPTION="LibreOffice is a productivity suite that is compatible with other major office suites."
+DESCRIPTION="The LibreOffice Productivity Suite."
 AUTHOR="The Document Foundation"
 SITE="http://www.libreoffice.org/"
 COPYING="LGPL-3"

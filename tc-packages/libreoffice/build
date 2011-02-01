@@ -79,8 +79,6 @@ build_download() {
 
 build_compile() {
 
-  [ -e /usr/bin/python ] || sudo ln -sf /usr/local/bin/python /usr/bin/python
-
   make || return 1
 
 }
@@ -104,6 +102,8 @@ build_install() {
 
   rm -rf "$I_ROOT/usr/local/libreoffice/share/xdg"
 
+  mv "$I_ROOT/usr/local/share/applications/startcenter.desktop" "$I_ROOT/usr/local/share/applications/libreoffice.desktop"
+
   install -dm755 ${I_ROOT}/usr/local/etc/libreoffice
   install -m644 ${I_ROOT}/usr/local/lib/libreoffice/program/bootstraprc ${I_ROOT}/usr/local/etc/libreoffice/
   install -m644 ${I_ROOT}/usr/local/lib/libreoffice/program/sofficerc ${I_ROOT}/usr/local/etc/libreoffice/
@@ -116,10 +116,31 @@ build_install() {
   cd ${I_ROOT}/usr/local/lib/libreoffice/basis3.3/share/psprint/
   ln -vsf /usr/local/etc/libreoffice/psprint.conf .
 
+  # extensions
+  unzip ${S_ROOT}/build/libreoffice-${VERSION}/solver/${_OFFICEUPD}/unxlng*/bin/NLPSolver.oxt -d ${I_ROOT}/usr/local/lib/libreoffice/share/extensions/nlpsolver || return 1
+  unzip ${S_ROOT}/build/libreoffice-${VERSION}/solver/${_OFFICEUPD}/unxlng*/bin/pdfimport.oxt -d ${I_ROOT}/usr/local/lib/libreoffice/share/extensions/pdfimport || return 1
+  unzip ${S_ROOT}/build/libreoffice-${VERSION}/solver/${_OFFICEUPD}/unxlng*/bin/oooblogger.oxt -d ${I_ROOT}/usr/local/lib/libreoffice/share/extensions/oooblogger || return 1
+  unzip ${S_ROOT}/build/libreoffice-${VERSION}/solver/${_OFFICEUPD}/unxlng*/bin/Diagram.oxt -d ${I_ROOT}/usr/local/lib/libreoffice/share/extensions/diagram || return 1
+  unzip ${S_ROOT}/build/libreoffice-${VERSION}/solver/${_OFFICEUPD}/unxlng*/bin/WatchWindow.oxt -d ${I_ROOT}/usr/local/lib/libreoffice/share/extensions/watch-window || return 1
+  unzip ${S_ROOT}/build/libreoffice-${VERSION}/solver/${_OFFICEUPD}/unxlng*/bin/gdocs.oxt -d ${I_ROOT}/usr/local/lib/libreoffice/share/extensions/gdocs || return 1
+  unzip ${S_ROOT}/build/libreoffice-${VERSION}/solver/${_OFFICEUPD}/unxlng*/bin/ConvertTextToNumber-1.3.2.oxt -d ${I_ROOT}/usr/local/lib/libreoffice/share/extensions/ct2n || return 1
+  unzip ${S_ROOT}/build/libreoffice-${VERSION}/solver/${_OFFICEUPD}/unxlng*/bin/presentation-minimizer.oxt -d ${I_ROOT}/usr/local/lib/libreoffice/share/extensions/presentation-minimizer || return 1
+  unzip ${S_ROOT}/build/libreoffice-${VERSION}/solver/${_OFFICEUPD}/unxlng*/bin/presenter-screen.oxt -d ${I_ROOT}/usr/local/lib/libreoffice/share/extensions/presenter-screen || return 1
+  unzip ${S_ROOT}/build/libreoffice-${VERSION}/solver/${_OFFICEUPD}/unxlng*/bin/report-builder.oxt -d ${I_ROOT}/usr/local/lib/libreoffice/share/extensions/report-builder || return 1
+  unzip ${S_ROOT}/build/libreoffice-${VERSION}/solver/${_OFFICEUPD}/unxlng*/bin/wiki-publisher.oxt -d ${I_ROOT}/usr/local/lib/libreoffice/share/extensions/wiki-publisher || return 1
+
   find ${I_ROOT} -perm 444 -exec ls -lh {} \; 
   find ${I_ROOT} -perm 444 -exec chmod 644 {} \;
   find ${I_ROOT} -perm 555 -exec ls -lh {} \;
   find ${I_ROOT} -perm 555 -exec chmod 755 {} \;
+
+  cd ${I_ROOT}/usr/local/lib/libreoffice/basis3.3/sdk
+  for file in setsdkenv_unix.csh setsdkenv_unix.sh
+  do
+     chmod 755 $file
+  done
+
+  find examples -type f -exec chmod -x {} \;
 
 }
 
