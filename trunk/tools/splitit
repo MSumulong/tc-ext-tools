@@ -106,6 +106,7 @@ this_split() {
 
    echo ""
    echo "Creating the extension contents tarball from the include and the exclude lists."
+   echo ""
    sudo tar -T "$LIST" -X "$X_LIST" -cvpzf "$TCEXTTOOLS_BIN_TEMP/pkg.tar.gz" || return 1
 
    echo "Cleaning the package extension bin directory."
@@ -114,6 +115,7 @@ this_split() {
 
    echo ""
    echo "Extracting the extension contents tarball to the extension bin directory."
+   echo ""
    sudo mkdir -p "$TCEXTTOOLS_EXTENSION_BINDIR"
    sudo tar -C "$TCEXTTOOLS_EXTENSION_BINDIR" -pvxzf "$TCEXTTOOLS_BIN_TEMP/pkg.tar.gz" || return 1
 
@@ -148,10 +150,12 @@ this_main() {
        echo "Splitting the extension $EXTENSION_NAME ..."
        this_split
        if [ "$?" -gt 0 ]; then
+            echo ""
             echo "Error! splitting the extension $EXTENSION_NAME failed."
             sudo rm -rf "$TCEXTTOOLS_BIN_TEMP"
             return 1
        else
+            echo ""
             echo "Splitting the extension $EXTENSION_NAME successful."
        fi
    done

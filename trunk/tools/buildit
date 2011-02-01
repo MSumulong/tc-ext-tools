@@ -57,8 +57,7 @@ clean_it() {
 download_it() {
 
    if [ -f "$PACKAGE_SOURCE" ]; then
-        print_it warning "The package $PACKAGE source is already downloaded."
-        print_it warning "Run downloadit to force download."
+        print_it warning "The package $PACKAGE source is already downloaded. Run downloadit to force download."
         exit 0
    fi
 
@@ -76,8 +75,7 @@ download_it() {
 convert_it() {
 
    if [ -f "$PACKAGE_SOURCE_CONVERTED" ]; then
-        print_it warning "The package $PACKAGE source is already converted."
-        print_it warning "Run convertit to force convert."
+        print_it warning "The package $PACKAGE source is already converted. Run convertit to force convert"
         exit 0
    fi
 
@@ -289,9 +287,6 @@ build_it() {
 print_function() {
 
    case "$1" in
-        download)
-                 [ -e "$TCEXTTOOLS_DOWNLOAD_LOG" ] && { cat "$TCEXTTOOLS_DOWNLOAD_LOG" ; echo -e "${NORMAL}\c" ; }
-                 ;;
         configure)
                  [ -e "$TCEXTTOOLS_CONFIGURE_LOG" ] && { cat "$TCEXTTOOLS_CONFIGURE_LOG" ; echo -e "${NORMAL}\c" ; }
                  ;;
@@ -306,7 +301,7 @@ print_function() {
                  [ -e "$TCEXTTOOLS_MESSAGE_LOG_2" ] && { cat "$TCEXTTOOLS_MESSAGE_LOG_2" ; echo -e "${NORMAL}\c" ; }
                  ;;
         *)
-                 print_it warning "Usage: buildit print download|configure|compile|install|error|message"
+                 print_it warning "Usage: buildit print configure|compile|install|error|message"
                  ;;
    esac
 

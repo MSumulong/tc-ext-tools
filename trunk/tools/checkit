@@ -41,9 +41,11 @@ this_check() {
    echo "Cleaning the extension bin temporary directory."
    EXTENSION_BIN_TEMP="$TCEXTTOOLS_BIN_TEMP/$EXTENSION_NAME"
    [ -d "$EXTENSION_BIN_TEMP" ] && sudo rm -rf "$EXTENSION_BIN_TEMP"
+   mkdir -p "$TCEXTTOOLS_BIN_TEMP"
 
    echo ""
    echo "Extracting the extension to the extension bin temporary directory."
+   echo ""
    sudo unsquashfs -d "$EXTENSION_BIN_TEMP" "$TCEXTTOOLS_EXTENSION" || return 1
 
    echo ""
@@ -106,22 +108,24 @@ this_main() {
        set_extension || return 1
 
        echo ""
-       echo "Checking if the extension exists."
+       echo "Checking if the extension exists ..."
        if [ ! -e "$TCEXTTOOLS_EXTENSION" ]; then
               echo "Error! You must create it first!"
               return 1
        fi
 
        echo ""
-       echo "Checking the extension $EXTENSION_NAME"
+       echo "Checking the extension $EXTENSION_NAME."
        this_check
        if [ "$?" -gt 0 ]; then
-            sudo rm -rf "$EXTENSION_BIN_TEMP"
+            echo ""
             echo "Error! Checking the extension $EXTENSION_NAME failed."
+            sudo rm -rf "$EXTENSION_BIN_TEMP"
             return 1
        else
-            sudo rm -rf "$EXTENSION_BIN_TEMP"
+            echo ""
             echo "Checking the extension $EXTENSION_NAME successful."
+            sudo rm -rf "$EXTENSION_BIN_TEMP"
        fi
    done
 

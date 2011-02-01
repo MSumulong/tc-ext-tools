@@ -38,7 +38,7 @@ fi
 this_main() {
 
    echo ""
-   echo "Starting the packaging process ..."
+   echo "Starting the packaging process of the package $PACKAGE ..."
 
    echo ""
    echo "Cleaning the package temporary directory."
@@ -79,6 +79,7 @@ this_main() {
 
    echo ""
    echo "Creating the package tarball from the package temporary directory."
+   echo ""
    tar -C "$TCEXTTOOLS_PKG_TEMP" -cvjf "$TCEXTTOOLS_PACKAGE" "$PACKAGE" || return 1
 
    echo ""
@@ -86,7 +87,7 @@ this_main() {
    sudo rm -rf "$TCEXTTOOLS_PKG_TEMP"
 
    echo ""
-   echo "Packaging process completed successfully."
+   echo "Packaging the package $PACKAGE completed successfully."
 
    return 0
 

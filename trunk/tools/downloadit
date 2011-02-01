@@ -84,6 +84,7 @@ this_main() {
    else
         echo ""
         echo "Downloading the package source $SOURCE_NAME from the url $SOURCE."
+        echo ""
         wget --no-check-certificate "$SOURCE" -O "$TCEXTTOOLS_SOURCE" || return 1
    fi
 
@@ -95,7 +96,7 @@ this_main() {
 }
 
 print_it "Downloading the package $PACKAGE source ... \c"
-this_main > "$TCEXTTOOLS_DOWNLOAD_LOG" 2>&1
+this_main > "$TCEXTTOOLS_MESSAGE_LOG_2" 2>&1
 if [ "$?" -gt 0 ]; then
      print_it error "failed!"
      exit 1

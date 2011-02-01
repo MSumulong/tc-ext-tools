@@ -38,19 +38,19 @@ fi
 this_strip() {
 
    echo ""
-   echo "Getting executable list ..."
+   echo "Setting the extension executables list ..."
    EXECUTABLE_LIST=$(sudo find "$TCEXTTOOLS_EXTENSION_BINDIR" -not -type d -exec file "{}" \; | grep "executable" | grep ELF | grep "not stripped" | cut -f1 -d:)
    echo ""
    echo "EXECUTABLE_LIST = $EXECUTABLE_LIST"
 
    echo ""
-   echo "Getting shared object list ..."
+   echo "Setting the extension shared objects list ..."
    SHARED_OBJECT_LIST=$(sudo find "$TCEXTTOOLS_EXTENSION_BINDIR" -not -type d -exec file "{}" \; | grep "shared object" | grep ELF | grep "not stripped" | cut -f1 -d:)
    echo ""
    echo "SHARED_OBJECT_LIST = $SHARED_OBJECT_LIST"
 
    echo ""
-   echo "Processing the executable list ..."
+   echo "Processing the extension executables list ..."
    if [ -n "$EXECUTABLE_LIST" ]; then
         for EXECUTABLE in $EXECUTABLE_LIST
         do
@@ -58,11 +58,11 @@ this_strip() {
             sudo strip --strip-unneeded "$EXECUTABLE" || return 1
         done
    else
-        echo "Executable list is empty. Skipping ..."
+        echo "The executable list is empty. Skipping."
    fi
 
    echo ""
-   echo "Processing the shared object list ..."
+   echo "Processing the extension shared objects list ..."
    if [ -n "$SHARED_OBJECT_LIST" ]; then
         for SHARED_OBJECT in $SHARED_OBJECT_LIST
         do
@@ -70,7 +70,7 @@ this_strip() {
             sudo strip -g "$SHARED_OBJECT" || return 1
         done
    else
-        echo "Shared object list is empty. Skipping ..."
+        echo "Shared object list is empty. Skipping."
    fi
 
    return 0
