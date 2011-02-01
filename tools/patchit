@@ -100,8 +100,7 @@ this_main() {
            patch --directory="$TCEXTTOOLS_SOURCE_TOPDIR" -Np$PATCH_LEVEL -i "$TCEXTTOOLS_PATCHES/$PATCH" || return 1
         done
    else
-        echo ""
-        echo "No patch found. Skipping ..."
+        echo "No patch found. Skipping."
         return 0
    fi
 

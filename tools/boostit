@@ -76,12 +76,16 @@ fi
 
 this_main() {
 
-   if [ -d "$PACKAGE_EXTENSIONS" ]; then
-        rm -rf "$PACKAGE_EXTENSIONS"
-   fi
+   echo ""
+   echo "Boosting the package $PACKAGE inside the root directory $PACKAGE_ROOT ..."
 
+   echo ""
+   echo "Cleaning the package extensions directory."
+   [ -d "$PACKAGE_EXTENSIONS" ] && rm -rf "$PACKAGE_EXTENSIONS"
    mkdir -p "$PACKAGE_EXTENSIONS" || return 1
 
+   echo ""
+   echo "Creating the package common file."
    if [ "$VERSION" = "svn" ]; then
 
         cat > "$PACKAGE_COMMON" << _EOF
@@ -144,8 +148,12 @@ _EOF
 
    fi
 
+   echo ""
+   echo "Copying the package build sample."
    install -m 644 "$TCEXTTOOLS_ROOT/share/tc-ext-tools/build" "$PACKAGE_BUILD" || return 1
 
+   echo ""
+   echo "Creating the package extensions install and dep files."
    for EXTENSION in $EXTENSIONS
    do
        mkdir -p "$PACKAGE_EXTENSIONS/$EXTENSION" || return 1
@@ -167,6 +175,9 @@ _EOF
               echo "usr/local/include" > "$PACKAGE_EXTENSIONS/$EXTENSION/install" || return 1
        fi
    done
+
+   echo ""
+   echo "Boosting the package $PACKAGE completed successfully."
 
    return 0
 

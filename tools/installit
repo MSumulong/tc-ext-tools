@@ -44,7 +44,7 @@ if [ ! -e "$TCEXTTOOLS_SOURCE_TOPDIR" ]; then
        exit 1
 fi
 
-[ -f "$TCEXTTOOLS_INSTALL_LOG" ] || su "$TCUSER" -c "touch $TCEXTTOOLS_MESSAGE_INSTALL_LOG"
+[ -f "$TCEXTTOOLS_INSTALL_LOG" ] || su "$TCUSER" -c "touch $TCEXTTOOLS_INSTALL_LOG"
 [ -f "$TCEXTTOOLS_MESSAGE_LOG_2" ] || su "$TCUSER" -c "touch $TCEXTTOOLS_MESSAGE_LOG_2"
 
 this_main() {
@@ -67,16 +67,11 @@ this_main() {
    echo ""
    echo "Creating a list of package files."
    if [ -d "$TCEXTTOOLS_INSTALL_ROOT" ]; then
-        [ -f "$PACKAGE_FILES_LIST" ] && rm -f "$PACKAGE_FILES_LIST"
-        cd "$TCEXTTOOLS_INSTALL_ROOT"
-        for i in $(ls)
-        do
-              su "$TCUSER" -c "cd $TCEXTTOOLS_INSTALL_ROOT;sudo find \"$i\" -not -type d >> $PACKAGE_FILES_LIST" || return 1
-        done
+        su "$TCUSER" -c "cd $TCEXTTOOLS_INSTALL_ROOT;sudo find * -not -type d | sort > $PACKAGE_FILES_LIST" || return 1
    fi
 
    echo ""
-   echo "Installing the package $PACKAGE completed successfully."
+   echo "Installed the package $PACKAGE completed successfully."
 
    return 0
 

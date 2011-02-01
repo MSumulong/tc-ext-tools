@@ -37,13 +37,24 @@ fi
 
 this_create() {
 
+   echo ""
+   echo "Checking if the extension has a tce.installed script ..."
    if [ -f "$TCEXTTOOLS_EXTENSION_TCEINSTALLED" ]; then
+        echo "Yes it has, installing it with correct permissions and ownership."
         sudo install -D -m 775 "$TCEXTTOOLS_EXTENSION_TCEINSTALLED" "$TCEXTTOOLS_EXTENSION_BINDIR/usr/local/tce.installed/$EXTENSION_NAME" || return 1
         sudo chown -R root:staff "$TCEXTTOOLS_EXTENSION_BINDIR/usr/local/tce.installed" || return 1
         sudo chmod -R 775 "$TCEXTTOOLS_EXTENSION_BINDIR/usr/local/tce.installed" || return 1
+   else
+        echo "Not found."
    fi
 
+   echo ""
+   echo "Checking if the extension icon is set ..."
    if [ -n "$ICON" ]; then
+        echo "Yes it is."
+
+        echo ""
+        echo "Checking if the extension desktop file exists."
         if [ -z "$DESKTOP" ]; then
              if [ -d "$TCEXTTOOLS_EXTENSION_BINDIR/usr/share/applications" ]; then
                   DESKTOP="/usr/share/applications/${EXTENSION_NAME}.desktop"
@@ -52,38 +63,70 @@ this_create() {
              fi
         fi
 
-        if [ ! -f "$TCEXTTOOLS_EXTENSION_BINDIR/$DESKTOP" ]; then
-               print_it error "The desktop file for the package $PACKAGE extension $EXTENSION_NAME not found!"
-               return 1
-        else
-             if [ ! $(grep "X-FullPathIcon=" "$TCEXTTOOLS_EXTENSION_BINDIR/$DESKTOP") ]; then
-                    sudo sh -c "echo \"X-FullPathIcon=$ICON\" >> $TCEXTTOOLS_EXTENSION_BINDIR/$DESKTOP" || return 1
+        echo ""
+        echo "Checking if the extension desktop file exists ..."
+        if [ -f "$TCEXTTOOLS_EXTENSION_BINDIR/$DESKTOP" ]; then
+             echo "Found it. "
+
+             echo ""
+             echo "Checking if the extension desktop has an X-FullPathIcon= entry ..."
+             if [ $(grep "X-FullPathIcon=" "$TCEXTTOOLS_EXTENSION_BINDIR/$DESKTOP") ]; then
+                  echo "Yes there is. Deleting the line containing it."
+                  sudo sed -i -e "/X-FullPathIcon=/d" "$TCEXTTOOLS_EXTENSION_BINDIR/$DESKTOP"
              fi
+
+             echo ""
+             echo "Writing the extension icon entry to the extension desktop file."
+             sudo sh -c "echo \"X-FullPathIcon=$ICON\" >> $TCEXTTOOLS_EXTENSION_BINDIR/$DESKTOP" || return 1
+        else
+             echo "Error! the extension desktop file not found."
+             return 1
         fi
+   else
+        echo "Not it is not."
    fi
+
+   echo ""
+   echo "Cleaning the package bin directory from previously created extension files."
+   sudo rm -f "$TCEXTTOOLS_BIN"/*.tcz*
 
    cd "$TCEXTTOOLS_BIN"
 
-   sudo rm -f *.tcz*
-
+   echo ""
+   echo "Creating the extension tcz file."
+   echo ""
    sudo mksquashfs "$EXTENSION_NAME" "${EXTENSION_NAME}.tcz" || return 1
 
+   echo ""
+   echo "Creating the extension md5 sum."
    md5sum "${EXTENSION_NAME}.tcz" > "${EXTENSION_NAME}.tcz.md5.txt" || return 1
 
+
    cd "$TCEXTTOOLS_EXTENSION_BINDIR"
-   for i in $(ls)
-   do
-       sudo find "$i" -not -type d >> "$TCEXTTOOLS_BIN/${EXTENSION_NAME}.tcz.list"
-   done
 
-   [ -d "$TCEXTTOOLS_EXTENSION_PKGDIR" ] || mkdir -p "$TCEXTTOOLS_EXTENSION_PKGDIR"
+   echo ""
+   echo "Creating the extension list file."
+   sudo find * -not -type d | sort > "$TCEXTTOOLS_BIN/${EXTENSION_NAME}.tcz.list"
 
-   busybox cp -f "$TCEXTTOOLS_BIN/${EXTENSION_NAME}".tcz* "$TCEXTTOOLS_EXTENSION_PKGDIR" || return 1
+   echo "Cleaning the extension pkg directory."
+   [ -d "$TCEXTTOOLS_EXTENSION_PKGDIR" ] && sudo rm -rf "$TCEXTTOOLS_EXTENSION_PKGDIR"
+   mkdir -p "$TCEXTTOOLS_EXTENSION_PKGDIR"
 
-   if [ -e "$PACKAGE_EXTENSION_DEP" ]; then
+   echo ""
+   echo "Copying the fresh created extension files to the extension pkg directory."
+   cp -f "$TCEXTTOOLS_BIN/${EXTENSION_NAME}".tcz* "$TCEXTTOOLS_EXTENSION_PKGDIR" || return 1
+
+   echo ""
+   echo "Checking if the extension has a dep file."
+   if [ -f "$PACKAGE_EXTENSION_DEP" ]; then
+        echo "Yes found it. Copying it to the extension pkg directory."
         install -m 644 "$PACKAGE_EXTENSION_DEP" "$TCEXTTOOLS_EXTENSION_DEP" || return 1
+   else
+        echo "Not found."
    fi
 
+   echo ""
+   echo "Cleaning the package bin directory from previously created extension files."
    sudo rm -f "$TCEXTTOOLS_BIN"/*.tcz*
 
    return 0
@@ -92,26 +135,42 @@ this_create() {
 
 this_main() {
 
+   echo ""
+   echo "Creating the package $PACKAGE extensions ..."
+
+   echo ""
+   echo "Cleaning the package pkg directory."
    [ -d "$TCEXTTOOLS_PKG" ] && sudo rm -rf "$TCEXTTOOLS_PKG"
    mkdir -p "$TCEXTTOOLS_PKG"
 
    for EXTENSION in $EXTENSIONS
    do
+       echo ""
+       echo "Setting the extension $EXTENSION parameters."
        set_extension || return 1
 
+       echo ""
+       echo "Checking if the extension is splitted before ..."
        if [ ! -d "$TCEXTTOOLS_EXTENSION_BINDIR" ]; then
-              print_it error "You must split it first!"
-              exit 1
+              echo "Error! You must split it first!"
+              return 1
        fi
 
+       echo ""
+       echo "Creating the extension $EXTENSION_NAME ..."
        this_create
        if [ "$?" -gt 0 ]; then
-            print_it error "Creating the package $PACKAGE extension $EXTENSION_NAME failed!"
+            echo ""
+            echo "Error! Creating the extension $EXTENSION_NAME failed."
             return 1
        else
-            print_it "Creating the package $PACKAGE extension $EXTENSION_NAME successful!"
+            echo ""
+            echo "Creating the extension $EXTENSION_NAME successful."
        fi
    done
+
+   echo ""
+   echo "Created the package $PACKAGE extensions successfully."
 
    return 0
 
