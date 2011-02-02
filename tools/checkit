@@ -46,7 +46,7 @@ this_check() {
    echo ""
    echo "Extracting the extension to the extension bin temporary directory."
    echo ""
-   sudo unsquashfs -d "$EXTENSION_BIN_TEMP" "$TCEXTTOOLS_EXTENSION" || return 1
+   sudo unsquashfs -d "$EXTENSION_BIN_TEMP" "$TCEXTTOOLS_EXTENSION_TCZ" || return 1
 
    echo ""
    echo "Checking the extension files ..."
@@ -109,7 +109,7 @@ this_main() {
 
        echo ""
        echo "Checking if the extension exists ..."
-       if [ ! -e "$TCEXTTOOLS_EXTENSION" ]; then
+       if [ ! -f "$TCEXTTOOLS_EXTENSION_TCZ" ]; then
               echo "Error! You must create it first!"
               return 1
        fi

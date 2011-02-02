@@ -66,7 +66,7 @@ this_generate() {
    echo ""
    echo "CURRENT = $CURRENT"
 
-   SIZE=$(du -h "$TCEXTTOOLS_EXTENSION" | cut -f1)
+   SIZE=$(du -h "$TCEXTTOOLS_EXTENSION_TCZ" | cut -f1)
    echo ""
    echo "SIZE = $SIZE"
 
