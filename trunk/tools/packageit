@@ -59,16 +59,16 @@ this_main() {
        fi
        echo "Copying the extension $EXTENSION_NAME files to the package temporary directory."
        [ -d "$TCEXTTOOLS_PKG_TEMP/$PACKAGE/$EXTENSION_NAME" ] || mkdir -p "$TCEXTTOOLS_PKG_TEMP/$PACKAGE/$EXTENSION_NAME"
-       busybox cp -f "$TCEXTTOOLS_EXTENSION_PKGDIR"/*.tcz* "$TCEXTTOOLS_PKG_TEMP/$PACKAGE/$EXTENSION_NAME" || return 1
+       cp -f "$TCEXTTOOLS_EXTENSION_PKGDIR"/*.tcz* "$TCEXTTOOLS_PKG_TEMP/$PACKAGE/$EXTENSION_NAME" || return 1
    done
 
    echo ""
    echo "Copying the package source to the package temporary directory ..."
    if [ -f "$TCEXTTOOLS_SOURCE_CONVERTED" ]; then
         echo "Converted package source detected. Using it instead of the original source."
-        busybox cp -f "$TCEXTTOOLS_SOURCE_CONVERTED" "$TCEXTTOOLS_PKG_TEMP/$PACKAGE" || return 1
+        cp -f "$TCEXTTOOLS_SOURCE_CONVERTED" "$TCEXTTOOLS_PKG_TEMP/$PACKAGE" || return 1
    elif [ -f "$TCEXTTOOLS_SOURCE" ]; then
-        busybox cp -f "$TCEXTTOOLS_SOURCE" "$TCEXTTOOLS_PKG_TEMP/$PACKAGE" || return 1
+        cp -f "$TCEXTTOOLS_SOURCE" "$TCEXTTOOLS_PKG_TEMP/$PACKAGE" || return 1
    fi
 
    if [ -f "$TCEXTTOOLS_PACKAGE" ]; then
