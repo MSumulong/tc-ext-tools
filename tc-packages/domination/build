@@ -1,0 +1,55 @@
+
+############################################################################
+#                                                                          #
+#    package build functions: configure, compile, install, rules, etc.     #
+#                                                                          #
+############################################################################
+
+## configure
+build_configure() {
+
+   return 0
+
+}
+
+## compile
+build_compile() {
+
+   return 0
+
+}
+
+## install
+build_install() {
+
+  install -d "$I_ROOT/usr/local/share"
+  cp -r "$S_ROOT" "$I_ROOT/usr/local/share/" || return 1
+  find $I_ROOT -type d -exec chmod 755 {} \; && \
+  find $I_ROOT -type f -exec chmod 644 {} \; && \
+  find $I_ROOT -type f -name "*.sh" -exec chmod 755 {} \; || return 1
+  install -D -m755 "$P_SRC/domination.sh" "$I_ROOT/usr/local/bin/domination" || return 1
+  install -D -m755 "$P_SRC/domination.desktop" "$I_ROOT/usr/local/share/applications/domination.desktop" || return 1
+  install -D -m755 "$S_ROOT/resources/icon.png" "$I_ROOT/usr/local/share/pixmaps/domination.png" || return 1   
+
+}
+
+## rules
+build_rules() {
+
+   buildit load || exit 1
+   buildit download || exit 1
+   buildit convert || exit 1
+   buildit unpack || exit 1
+   buildit patch || exit 1
+   buildit configure || exit 1
+   buildit compile || exit 1
+   buildit install || exit 1
+   buildit split || exit 1
+   buildit strip || exit 1
+   buildit create || exit 1
+   buildit generate || exit 1
+   buildit check || exit 1
+   buildit package || exit 1
+
+}
+

@@ -8,6 +8,7 @@ BUILD_DEPENDS="zip-unzip
 bash
 tar
 bzip2
+coreutils
 autoconf
 automake
 ccache
@@ -16,7 +17,6 @@ mktemp
 perl_archive_zip
 glibc_gconv
 cppunit
-coreutils
 hicolor-icon-theme
 shared-mime-info
 desktop-file-utils

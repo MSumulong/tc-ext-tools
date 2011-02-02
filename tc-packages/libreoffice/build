@@ -43,9 +43,6 @@ build_configure() {
               --with-oooblogger --with-nlpsolver --with-google-docs --with-watch-window --with-ct2n --with-diagram \
               --with-num-cpus=2 --with-drink=coffee || return 1
 
-   # Registering java components fails during installation. (java loader error: No mapping from java to C++ ) 
-   #--with-java --with-junit=/usr/local/share/java/junit.jar --with-ant-home="/usr/local/share/java/apache-ant" \
-
 }
 
 ############################################################################ 
