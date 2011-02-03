@@ -1,5 +1,5 @@
 PACKAGE="libtorrent-rasterbar"
-VERSION="0.15.4"
+VERSION="0.15.5"
 SOURCE="http://libtorrent.googlecode.com/files/${PACKAGE}-${VERSION}.tar.gz"
 BUILD_DEPENDS="python
 python-dev
@@ -16,5 +16,6 @@ MAINTAINERS="Arslan S."
 COMMENTS="This extension is PPI compatible."
 CHANGELOG="2009/12/08 Original 0.14.7
 		2010/01/28 Updated to 0.14.8
-		2010/07/09 Updated to 0.14.10"
-CURRENT="Updated to 0.15.4"
+		2010/07/09 Updated to 0.14.10
+		2010/10/09 Updated to 0.15.4"
+CURRENT="Updated to $VERSION"

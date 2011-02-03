@@ -1,5 +1,5 @@
 PACKAGE="dhcpcd"
-VERSION="5.2.8"
+VERSION="5.2.10"
 SOURCE="http://roy.marples.name/downloads/dhcpcd/dhcpcd-${VERSION}.tar.bz2"
 BUILD_DEPENDS=""
 
@@ -9,5 +9,6 @@ SITE="http://roy.marples.name/projects/dhcpcd"
 COPYING="BSD"
 MAINTAINERS="Arslan S."
 COMMENTS="This extension is PPI compatible."
-CHANGELOG="2010/07/05 First Version 5.2.5"
-CURRENT="Updated to 5.2.8"
+CHANGELOG="2010/07/05 First Version 5.2.5
+		2010/11/06 Updated to 5.2.8"
+CURRENT="Updated to $VERSION"
