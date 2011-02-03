@@ -3,10 +3,10 @@
 main() {
 
 # update mime database
-[ -x $(which update-mime-database) ] && update-mime-database /usr/local/share/mime
+[ -x "$(which update-mime-database)" ] && update-mime-database /usr/local/share/mime
 
 # update gtk icon cache
-[ -x $(which gtk-update-icon-cache) ] && gtk-update-icon-cache -q -f -t /usr/local/share/icons/hicolor
+[ -x "$(which gtk-update-icon-cache)" ] && gtk-update-icon-cache -q -f -t /usr/local/share/icons/hicolor
 
 # allow user write to disc
 DEVICES=$(ls /mnt | cut -d/ -f1)

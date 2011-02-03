@@ -3,8 +3,8 @@
 TCUSER=$(cat /etc/sysconfig/tcuser)
 THIS=$(basename $0)
 
-[ -x $(which update-mime-database) ] && update-mime-database /usr/local/share/mime
-[ -x $(which gtk-update-icon-cache) ] && gtk-update-icon-cache -q -f -t /usr/local/share/icons/hicolor
+[ -x "$(which update-mime-database)" ] && update-mime-database /usr/local/share/mime
+[ -x "$(which gtk-update-icon-cache)" ] && gtk-update-icon-cache -q -f -t /usr/local/share/icons/hicolor
 
 if [ -d "/tmp/tcloop/$THIS" ]; then
      cd /tmp/tcloop/$THIS/usr/local/lib/virtualbox
