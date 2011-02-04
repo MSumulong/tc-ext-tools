@@ -4,10 +4,6 @@ librsvg.tcz
 libcanberra.tcz
 clutter.tcz
 clutter-gtk.tcz
-gobject-introspection.tcz
-clutter-gir.tcz
-clutter-gtk-gir.tcz
-gir-repository.tcz
 guile.tcz
 pyopengl.tcz
 python-gtkglext.tcz

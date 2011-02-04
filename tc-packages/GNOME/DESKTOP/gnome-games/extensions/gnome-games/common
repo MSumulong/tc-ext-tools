@@ -1,3 +1,7 @@
-COMMENTS="Optional dependency: gnome-games-extra-data
+COMMENTS="To complete installation please do the following:
+		1-) sudo update-gconf-database register-extension gnome-games
+		2-) echo usr/local/etc/gconf/gconf.xml.defaults >> /opt/.filetool.lst
+
+		Optional dependency: gnome-games-extra-data
 
 		This extension is PPI compatible."
