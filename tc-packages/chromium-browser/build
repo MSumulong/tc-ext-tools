@@ -9,7 +9,6 @@ build_configure() {
 
   build/gyp_chromium -f make build/all.gyp --depth=. \
     -Dgcc_version=44 \
-    -Dtarget_arch=ia32 \
     -Ddisable_sse2=1 \
     -Dno_strict_aliasing=1 \
     -Dwerror= \
@@ -81,7 +80,7 @@ build_rules() {
   buildit compile || exit 1
   buildit install || exit 1
   buildit split || exit 1
-   buildit strip || exit 1
+  buildit strip || exit 1
   buildit create || exit 1
   buildit generate || exit 1
   buildit check || exit 1

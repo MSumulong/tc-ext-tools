@@ -3,7 +3,7 @@
 CHROMIUM_APP=chromium-browser
 CHROMIUM_ROOT=/usr/local/chromium-browser
 CHROME_DESKTOP=chromium-browser.desktop
-CHROME_WRAPPER=true
+CHROME_WRAPPER="$CHROMIUM_ROOT/$CHROMIUM_APP"
 PATH="$CHROMIUM_ROOT:$PATH"
 CHROME_VERSION_EXTRA="Tiny Core Linux"
 
