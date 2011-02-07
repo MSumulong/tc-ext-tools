@@ -45,8 +45,7 @@ this_main() {
    echo ""
    echo "Patching the package $PACKAGE ..."
 
-   echo ""
-   echo "Checking for the package $PACKAGE patches ..."
+   echo "Checking for the package patches."
    if [ -f "$TCEXTTOOLS_PATCHES/series" ]; then
         echo "Using the series file to detect the package patches."
         PATCHES=$(cat "$TCEXTTOOLS_PATCHES/series")
@@ -56,22 +55,18 @@ this_main() {
    fi
 
    if [ -n "$PATCHES" ]; then
-        echo ""
-        echo "Patches detected. Printing detected patches ..."
-        echo "PATCHES = $PATCHES"
+        echo "Patches detected."
 
-        echo ""
-        echo "Processing patches ..."
+        echo "Processing patches."
         for PATCH in $PATCHES
         do
-           echo "PATCH = $PATCH"
+           echo ""
            if [ -d "$TCEXTTOOLS_PATCHES/$PATCH" ]; then
                 echo "Skipping the patch $PATCH. It is a directory not a patch!"
                 continue
            fi
 
-           echo ""
-           echo "Detecting the patch level ..."
+           echo "Detecting the patch level."
            for i in $(cat $TCEXTTOOLS_PATCHES/$PATCH | grep "\-\-\-" | cut -f2 -d" " | cut -f1 -d" ")
            do
                PATCH_LEVEL=""
@@ -84,19 +79,16 @@ this_main() {
            done
 
            if [ -z "$PATCH_LEVEL" ]; then
-                echo ""
                 echo "Error! patch level for $PATCH can not be detected."
                 return 1
            fi
 
            if [ ! -f "$TCEXTTOOLS_PATCHES/$PATCH" ]; then
-                echo ""
                 echo "Error! The patch $PATCH is not a regular file."
                 return 1
            fi
 
-           echo ""
-           echo "Applying the patch $PATCH with patch level $PATCH_LEVEL ..."
+           echo "Applying the patch $PATCH with patch level $PATCH_LEVEL."
            patch --directory="$TCEXTTOOLS_SOURCE_TOPDIR" -Np$PATCH_LEVEL -i "$TCEXTTOOLS_PATCHES/$PATCH" || return 1
         done
    else
@@ -105,7 +97,7 @@ this_main() {
    fi
 
    echo ""
-   echo "Patching the package completed successfully."
+   echo "Patched the package successfully."
 
    return 0
 

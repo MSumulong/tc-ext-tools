@@ -37,20 +37,15 @@ fi
 
 this_strip() {
 
-   echo ""
-   echo "Setting the extension executables list ..."
+   echo "Setting the extension executables list."
    EXECUTABLE_LIST=$(sudo find "$TCEXTTOOLS_EXTENSION_BINDIR" -not -type d -exec file "{}" \; | grep "executable" | grep ELF | grep "not stripped" | cut -f1 -d:)
-   echo ""
    echo "EXECUTABLE_LIST = $EXECUTABLE_LIST"
 
-   echo ""
-   echo "Setting the extension shared objects list ..."
+   echo "Setting the extension shared objects list."
    SHARED_OBJECT_LIST=$(sudo find "$TCEXTTOOLS_EXTENSION_BINDIR" -not -type d -exec file "{}" \; | grep "shared object" | grep ELF | grep "not stripped" | cut -f1 -d:)
-   echo ""
    echo "SHARED_OBJECT_LIST = $SHARED_OBJECT_LIST"
 
-   echo ""
-   echo "Processing the extension executables list ..."
+   echo "Processing the extension executables list."
    if [ -n "$EXECUTABLE_LIST" ]; then
         for EXECUTABLE in $EXECUTABLE_LIST
         do
@@ -61,8 +56,7 @@ this_strip() {
         echo "The executable list is empty. Skipping."
    fi
 
-   echo ""
-   echo "Processing the extension shared objects list ..."
+   echo "Processing the extension shared objects list."
    if [ -n "$SHARED_OBJECT_LIST" ]; then
         for SHARED_OBJECT in $SHARED_OBJECT_LIST
         do
@@ -80,22 +74,20 @@ this_strip() {
 this_main() {
 
    echo ""
-   echo "Starting the stripping process for the package $PACKAGE extensions."
+   echo "Stripping the package $PACKAGE extensions ..."
    for EXTENSION in $EXTENSIONS
    do
        echo ""
        echo "Setting the extension $EXTENSION parameters."
        set_extension || return 1
 
-       echo ""
-       echo "Checking if extension is splitted before."
+       echo "Checking if the extension is splitted before."
        if [ ! -d "$TCEXTTOOLS_EXTENSION_BINDIR" ]; then
               echo "Error! You must split the package extensions first."
               return 1
        fi
 
-       echo ""
-       echo "Stripping the extension $EXTENSION_NAME ..."
+       echo "Stripping the extension $EXTENSION_NAME."
        this_strip
        if [ "$?" -gt 0 ]; then
             echo "Error! Stripping the extension $EXTENSION_NAME failed."

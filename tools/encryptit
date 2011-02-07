@@ -43,18 +43,18 @@ fi
 this_main() {
 
    echo "" > "$TCEXTTOOLS_MESSAGE_LOG_2"
+   echo "Encrypting the package $PACKAGE ..." >> "$TCEXTTOOLS_MESSAGE_LOG_2"
 
    if [ -f "$TCEXTTOOLS_PACKAGE_ENCRYPTED" ]; then
         echo "The package tarball encrypted detected. Deleting it..." >> "$TCEXTTOOLS_MESSAGE_LOG_2"
         sudo rm -f "$TCEXTTOOLS_PACKAGE_ENCRYPTED"
    fi
 
-   echo "" >> "$TCEXTTOOLS_MESSAGE_LOG_2"
-   echo "Encrypting the package tarball ..." >> "$TCEXTTOOLS_MESSAGE_LOG_2"
    print_it "Please enter the encryption key: \c"
    print_it hilight "$TCEXTTOOLS_ENCRYPTION_KEY"
    bcrypt "$TCEXTTOOLS_PACKAGE" || return 1
-   echo "Encrypted the package tarball successfully." >> "$TCEXTTOOLS_MESSAGE_LOG_2"
+
+   echo "Encrypted the package $PACKAGE successfully." >> "$TCEXTTOOLS_MESSAGE_LOG_2"
 
    return 0
 

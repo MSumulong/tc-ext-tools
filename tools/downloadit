@@ -38,18 +38,15 @@ fi
 this_main() {
 
    echo ""
-   echo "Starting the download process of the package source ..."
+   echo "Downloading the package $PACKAGE source ..."
 
-   echo ""
    echo "Cleaning the package source directory."
    [ -d "$TCEXTTOOLS_SRC" ] && sudo rm -rf "$TCEXTTOOLS_SRC"
    mkdir -p "$TCEXTTOOLS_SRC" || return 1
 
    if [ -n "$SOURCE_URL_TYPE" ]; then
-        echo ""
         echo "Source url type is set to $SOURCE_URL_TYPE."
 
-        echo ""
         echo "Cleaning the temporary source directory."
         [ -d "$TCEXTTOOLS_SRC_TEMP" ] && sudo rm -rf "$TCEXTTOOLS_SRC_TEMP"
         mkdir -p "$TCEXTTOOLS_SRC_TEMP"
@@ -57,39 +54,31 @@ this_main() {
         cd "$TCEXTTOOLS_SRC_TEMP"
 
         if [ "$SOURCE_URL_TYPE" = "svn" ]; then
-             echo ""
-             echo "Checking out the svn repository."
+             echo "Checking out the svn repository $SOURCE"
              svn --non-interactive --trust-server-cert co "$SOURCE" "$TCEXTTOOLS_SOURCE_TOPDIR" || return 1
 
-             echo ""
              echo "Creating a tarball from the source."
              tar --exclude-vcs -cvJf "$SOURCE_NAME" "$SOURCE_TOPDIR" || return 1
 
-             echo ""
              echo "Moving the tarball to the package source directory."
              mv -f "$SOURCE_NAME" "$TCEXTTOOLS_SRC" || return 1
         elif [ "$SOURCE_URL_TYPE" = "git" ]; then
-             echo ""
-             echo "Cloning the git repository."
+             echo "Cloning the git repository $SOURCE"
              git clone "$SOURCE" "$TCEXTTOOLS_SOURCE_TOPDIR" || return 1
 
-             echo ""
              echo "Creating a tarball from the source."
              tar --exclude-vcs -cvJf "$SOURCE_NAME" "$SOURCE_TOPDIR" || return 1
 
-             echo ""
              echo "Moving the tarball to the package source directory."
              mv -f "$SOURCE_NAME" "$TCEXTTOOLS_SRC" || return 1
         fi
    else
-        echo ""
-        echo "Downloading the package source $SOURCE_NAME from the url $SOURCE."
-        echo ""
+        echo "Downloading the package source $SOURCE_NAME from the url $SOURCE"
         wget --no-check-certificate "$SOURCE" -O "$TCEXTTOOLS_SOURCE" || return 1
    fi
 
    echo ""
-   echo "Completed the download process with success."
+   echo "Downloaded the package $PACKAGE source successfully."
 
    return 0
 

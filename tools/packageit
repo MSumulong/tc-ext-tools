@@ -38,7 +38,7 @@ fi
 this_main() {
 
    echo ""
-   echo "Starting the packaging process of the package $PACKAGE ..."
+   echo "Packaging the package $PACKAGE ..."
 
    echo ""
    echo "Cleaning the package temporary directory."
@@ -51,8 +51,7 @@ this_main() {
        echo "Setting the extension $EXTENSION parameters."
        set_extension || return 1
 
-       echo ""
-       echo "Processing the extension $EXTENSION_NAME ..."
+       echo "Checking if the extension $EXTENSION_NAME exists."
        if [ ! -d "$TCEXTTOOLS_EXTENSION_PKGDIR" ]; then
               echo "You must create the package extensions first!"
               exit 1
@@ -62,8 +61,7 @@ this_main() {
        cp -f "$TCEXTTOOLS_EXTENSION_PKGDIR"/*.tcz* "$TCEXTTOOLS_PKG_TEMP/$PACKAGE/$EXTENSION_NAME" || return 1
    done
 
-   echo ""
-   echo "Copying the package source to the package temporary directory ..."
+   echo "Copying the package source to the package temporary directory."
    if [ -f "$TCEXTTOOLS_SOURCE_CONVERTED" ]; then
         echo "Converted package source detected. Using it instead of the original source."
         cp -f "$TCEXTTOOLS_SOURCE_CONVERTED" "$TCEXTTOOLS_PKG_TEMP/$PACKAGE" || return 1
@@ -72,22 +70,18 @@ this_main() {
    fi
 
    if [ -f "$TCEXTTOOLS_PACKAGE" ]; then
-        echo ""
-        echo "The package tarball detected. Deleting it."
+        echo "Previously created package tarball detected, deleting it."
         sudo rm -f "$TCEXTTOOLS_PACKAGE"
    fi
 
-   echo ""
-   echo "Creating the package tarball from the package temporary directory."
-   echo ""
+   echo "Creating the package tarball."
    tar -C "$TCEXTTOOLS_PKG_TEMP" -cvjf "$TCEXTTOOLS_PACKAGE" "$PACKAGE" || return 1
 
-   echo ""
    echo "Cleaning the package temporary directory."
    sudo rm -rf "$TCEXTTOOLS_PKG_TEMP"
 
    echo ""
-   echo "Packaging the package $PACKAGE completed successfully."
+   echo "Packaged the package $PACKAGE successfully."
 
    return 0
 

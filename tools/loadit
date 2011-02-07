@@ -37,8 +37,7 @@ fi
 
 this_load() {
 
-   echo ""
-   echo "Checking if the extension is commented out ..."
+   echo "Checking if the extension is commented out."
    if [ "${EXTENSION#\#}" != "$EXTENSION" ]; then
         echo "The extension $EXTENSION is commented out."
         return 0
@@ -54,8 +53,7 @@ this_load() {
    EXTENSION_TCZ="${EXTENSION%.tcz}.tcz"
    EXTENSION_NAME="${EXTENSION_TCZ%.tcz}"
 
-   echo ""
-   echo "Checking if the extension is installed ..."
+   echo "Checking if the extension is installed."
    if [ -e "/usr/local/tce.installed/$EXTENSION_NAME" ]; then
         echo "The extension $EXTENSION_NAME is already installed."
         if [ "$COMMAND" = "cp2fs" -a -d "$TCLOOP/$EXTENSION_NAME" ]; then
@@ -64,8 +62,7 @@ this_load() {
         return 0
    fi
 
-   echo ""
-   echo "Checking if the extension exists ..."
+   echo "Checking if the extension exists."
    if [ ! -e "$TCE_DIR/optional/$EXTENSION_TCZ" ]; then
           echo "Downloading the extension $EXTENSION_NAME."
           tce-load -w "$EXTENSION_TCZ" || return 1
@@ -73,15 +70,12 @@ this_load() {
        echo "The extension $EXTENSION_NAME is available."
    fi
 
-   echo ""
-   echo "Executing the extension load command ..."
-   echo ""
+   echo "Executing the extension load command."
    case "$COMMAND" in
        cp2fs) tce-load -i -c "$EXTENSION_TCZ" || return 1 ;;
        *) tce-load -i "$EXTENSION_TCZ" || return 1 ;;
    esac
 
-   echo ""
    echo "The extension $EXTENSION_NAME is loaded successfully."
 
    return 0
@@ -91,7 +85,7 @@ this_load() {
 this_main() {
 
    echo ""
-   echo "Loading the package build dependencies ..."
+   echo "Loading the package $PACKAGE build dependencies ..."
 
    if [ -n "$BUILD_DEPENDS" ]; then
         BUILD_DEPENDS="$TCEXTTOOLS_DEPENDS
@@ -113,7 +107,7 @@ $BUILD_DEPENDS"
    done
 
    echo ""
-   echo "Loaded the package build dependencies successfully."
+   echo "Loaded the package $PACKAGE build dependencies successfully."
 
    return 0
 
