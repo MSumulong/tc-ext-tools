@@ -6,8 +6,7 @@
 build_configure() {
 
   ./configure --prefix=/usr/local \
-              --without-libiconv-prefix \
-              --with-enchant || return 1
+       --with-enchant || return 1
 
 }
 ##

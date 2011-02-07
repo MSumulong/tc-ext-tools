@@ -1,9 +1,8 @@
 PACKAGE="lyx"
-VERSION="1.6.8"
+VERSION="1.6.9"
 SOURCE="ftp://ftp.devel.lyx.org/pub/lyx/stable/lyx-${VERSION}.tar.bz2"
 BUILD_DEPENDS="qt-4.x-base
 qt-4.x-dev
-glibc_gconv
 fontconfig
 fontconfig-dev
 Xorg-7.5-lib
@@ -11,7 +10,9 @@ Xorg-7.5-dev
 aiksaurus
 python
 enchant
-enchant-dev"
+enchant-dev
+libiconv
+libiconv-dev"
 
 DESCRIPTION="LyX is a document processor."
 AUTHOR="LyX Team"
@@ -21,5 +22,6 @@ MAINTAINERS="Arslan S."
 COMMENTS="This extension is PPI compatible."
 CHANGELOG="2009/10/29 First Version
 		2009/12/13 Updated to 1.6.5
-		2010/08/26 Updated to 1.6.7"
-CURRENT="Updated to 1.6.8"
+		2010/08/26 Updated to 1.6.7
+		2010/11/16 Updated to 1.6.8"
+CURRENT="Updated to $VERSION"
