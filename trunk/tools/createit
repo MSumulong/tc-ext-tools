@@ -37,8 +37,7 @@ fi
 
 this_create() {
 
-   echo ""
-   echo "Checking if the extension has a tce.installed script ..."
+   echo "Checking if the extension has a tce.installed script."
    if [ -f "$TCEXTTOOLS_EXTENSION_TCEINSTALLED" ]; then
         echo "Yes it has, installing it with correct permissions and ownership."
         sudo install -D -m 775 "$TCEXTTOOLS_EXTENSION_TCEINSTALLED" "$TCEXTTOOLS_EXTENSION_BINDIR/usr/local/tce.installed/$EXTENSION_NAME" || return 1
@@ -48,13 +47,11 @@ this_create() {
         echo "Not found."
    fi
 
-   echo ""
-   echo "Checking if the extension icon is set ..."
+   echo "Checking if the extension icon is set."
    if [ -n "$ICON" ]; then
         echo "Yes it is."
 
-        echo ""
-        echo "Checking if the extension desktop file exists."
+        echo "Setting the extension desktop file."
         if [ -z "$DESKTOP" ]; then
              if [ -d "$TCEXTTOOLS_EXTENSION_BINDIR/usr/share/applications" ]; then
                   DESKTOP="/usr/share/applications/${EXTENSION_NAME}.desktop"
@@ -63,19 +60,16 @@ this_create() {
              fi
         fi
 
-        echo ""
         echo "Checking if the extension desktop file exists ..."
         if [ -f "$TCEXTTOOLS_EXTENSION_BINDIR/$DESKTOP" ]; then
-             echo "Found it. "
+             echo "Yes, it is found. "
 
-             echo ""
-             echo "Checking if the extension desktop has an X-FullPathIcon= entry ..."
+             echo "Checking if the extension desktop has X-FullPathIcon."
              if [ $(grep "X-FullPathIcon=" "$TCEXTTOOLS_EXTENSION_BINDIR/$DESKTOP") ]; then
-                  echo "Yes there is. Deleting the line containing it."
+                  echo "Yes, it has. Deleting the line containing it."
                   sudo sed -i -e "/X-FullPathIcon=/d" "$TCEXTTOOLS_EXTENSION_BINDIR/$DESKTOP"
              fi
 
-             echo ""
              echo "Writing the extension icon entry to the extension desktop file."
              sudo sh -c "echo \"X-FullPathIcon=$ICON\" >> $TCEXTTOOLS_EXTENSION_BINDIR/$DESKTOP" || return 1
         else
@@ -83,28 +77,23 @@ this_create() {
              return 1
         fi
    else
-        echo "Not it is not."
+        echo "No, it is not."
    fi
 
-   echo ""
    echo "Cleaning the package bin directory from previously created extension files."
    sudo rm -f "$TCEXTTOOLS_BIN"/*.tcz*
 
    cd "$TCEXTTOOLS_BIN"
 
-   echo ""
    echo "Creating the extension tcz file."
-   echo ""
    sudo mksquashfs "$EXTENSION_NAME" "${EXTENSION_NAME}.tcz" || return 1
 
-   echo ""
    echo "Creating the extension md5 sum."
    md5sum "${EXTENSION_NAME}.tcz" > "${EXTENSION_NAME}.tcz.md5.txt" || return 1
 
 
    cd "$TCEXTTOOLS_EXTENSION_BINDIR"
 
-   echo ""
    echo "Creating the extension list file."
    sudo find * -not -type d | sort > "$TCEXTTOOLS_BIN/${EXTENSION_NAME}.tcz.list"
 
@@ -112,20 +101,17 @@ this_create() {
    [ -d "$TCEXTTOOLS_EXTENSION_PKGDIR" ] && sudo rm -rf "$TCEXTTOOLS_EXTENSION_PKGDIR"
    mkdir -p "$TCEXTTOOLS_EXTENSION_PKGDIR"
 
-   echo ""
-   echo "Copying the fresh created extension files to the extension pkg directory."
+   echo "Copying the freshly created extension files to the extension pkg directory."
    cp -f "$TCEXTTOOLS_BIN/${EXTENSION_NAME}".tcz* "$TCEXTTOOLS_EXTENSION_PKGDIR" || return 1
 
-   echo ""
    echo "Checking if the extension has a dep file."
    if [ -f "$PACKAGE_EXTENSION_DEP" ]; then
-        echo "Yes found it. Copying it to the extension pkg directory."
+        echo "Yes, it does. Copying it to the extension pkg directory."
         install -m 644 "$PACKAGE_EXTENSION_DEP" "$TCEXTTOOLS_EXTENSION_DEP" || return 1
    else
-        echo "Not found."
+        echo "No, it does not."
    fi
 
-   echo ""
    echo "Cleaning the package bin directory from previously created extension files."
    sudo rm -f "$TCEXTTOOLS_BIN"/*.tcz*
 
@@ -149,22 +135,18 @@ this_main() {
        echo "Setting the extension $EXTENSION parameters."
        set_extension || return 1
 
-       echo ""
-       echo "Checking if the extension is splitted before ..."
+       echo "Checking if the extension is splitted before."
        if [ ! -d "$TCEXTTOOLS_EXTENSION_BINDIR" ]; then
               echo "Error! You must split it first!"
               return 1
        fi
 
-       echo ""
-       echo "Creating the extension $EXTENSION_NAME ..."
+       echo "Creating the extension $EXTENSION_NAME."
        this_create
        if [ "$?" -gt 0 ]; then
-            echo ""
             echo "Error! Creating the extension $EXTENSION_NAME failed."
             return 1
        else
-            echo ""
             echo "Creating the extension $EXTENSION_NAME successful."
        fi
    done

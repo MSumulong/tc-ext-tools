@@ -35,7 +35,7 @@ else
      exit 1
 fi
 
-if [ ! -e "$TCEXTTOOLS_SOURCE_TOPDIR" ]; then
+if [ ! -d "$TCEXTTOOLS_SOURCE_TOPDIR" ]; then
        print_it error "You must configure it first!"
        exit 1
 fi
