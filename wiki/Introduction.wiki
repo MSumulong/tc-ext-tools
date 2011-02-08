@@ -11,7 +11,7 @@ TC-EXT-TOOLS is an extension build system developed for Tiny Core Linux. The mai
  * Minimize initial packaging time.
  * Each package has a source, and source is a tarball or vcs repository.
  * Extensions are created from packages.
- * All the information to build the packages is hosted under an svn repository and it is available to everyone publicly.
+ * All the information to build the packages is hosted at an svn repository and is available to everyone.
  * Support for Tiny Core Linux specific features (tce.installed, wbar icon etc.).
  * Error handling.
 
@@ -32,7 +32,7 @@ _Note: There will be stable and preview tarball releases in the future._
 {{{
 mkdir package
 cd package
-boostit package version "extension1 extension2 ..."
+boostit <package> <version> "extension1 extension2 ..."
 }}}
 _Hint: version can be a number, "svn" or "git"._
 
@@ -49,22 +49,22 @@ buildit
 }}}
   * When creating a package for the first time you better advance step by step.
 {{{
-buildit load|download|convert|unpack|configure|compile|install|strip|split|create|check|generate|package|compress|encrypt
+buildit load|download|convert|unpack|patch|configure|compile|install|split|strip|create|check|generate|package|encrypt
 }}}
-  * There is also custom build function which can be used for general purposes.
+  * There is also custom build function support which can be used for defining custom functions.
 {{{
-buildit custom
+buildit custom <function>
 }}}
-_Hint: You need to define build_custom function in the package build file._
-  * If you want to see download, configure, compile, install output messages.
+_Hint: You need to define build_<function> in the package build file._
+  * If you want to see configure, compile, install output messages.
 {{{
-buildit show download|configure|compile|install
+buildit print configure|compile|install
 }}}
-  * If an error occured you can see the details about the error.
+  * If an error occurs you can see the details about the error.
 {{{
-buildit show error
+buildit print error
 }}}
-* See available packages for more
+* See available packages for more.
 {{{
 svn checkout http://tc-ext-tools.googlecode.com/svn/tc-packages/
 }}}
