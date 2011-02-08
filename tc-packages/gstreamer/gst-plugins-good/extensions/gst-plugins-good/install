@@ -1,3 +1,2 @@
-usr/local/etc
-usr/local/lib
-usr/local/share/gstreamer-0.10
+usr/local
+x-usr/local/share/locale

@@ -1,5 +1,5 @@
 PACKAGE="gst-plugins-good"
-VERSION="0.10.26"
+VERSION="0.10.27"
 SOURCE="http://gstreamer.freedesktop.org/src/${PACKAGE}/${PACKAGE}-${VERSION}.tar.bz2"
 BUILD_DEPENDS="gstreamer
 gstreamer-dev
@@ -7,6 +7,8 @@ gst-plugins-base
 gst-plugins-base-dev
 libraw1394
 libraw1394-dev
+libdc1394
+libdc1394-dev
 libv4l
 libv4l-dev
 gudev-lib
@@ -62,12 +64,18 @@ libgnome-keyring
 libgnome-keyring-dev
 libxcb
 libxcb-dev
+libxcb-util
+libxcb-util-dev
 dbus
 dbus-dev
 dbus-glib
 dbus-glib-dev
 libgdbm
-libgdbm-dev"
+libgdbm-dev
+liborc
+liborc-dev
+hal
+hal-dev"
 
 DESCRIPTION="GStreamer Good Plugins."
 AUTHOR="various"
@@ -80,5 +88,6 @@ CHANGELOG="2009/11/08 First version by Juanito
 		2010/03/16 Updated to 0.10.21 (Arslan S.)
 		2010/04/11 Added pulseaudio module by juanito
 		2010/07/19 Updated to 0.10.24 by Arslan S.
-		2010/10/22 Updated to 0.10.25 by juanito (fixes jpeg bug)"
+		2010/10/22 Updated to 0.10.25 by juanito (fixes jpeg bug)
+		2010/12/08 Updated to 0.10.26 by Arslan S."
 CURRENT="Updated to $VERSION by Arslan S."

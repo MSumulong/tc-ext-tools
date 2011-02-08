@@ -6,7 +6,9 @@
 build_configure() {
 
   ./configure --prefix=/usr/local --localstatedir=/var \
-       --disable-static || return 1
+      --disable-static --enable-experimental \
+      --with-package-name="GStreamer Good Plugins (Tiny Core Linux)" \
+      --with-package-origin="www.tinycorelinux.com" || return 1
 
 }
 
@@ -36,7 +38,7 @@ build_rules() {
   buildit compile || exit 1
   buildit install || exit 1
   buildit split || exit 1
-   buildit strip || exit 1
+  buildit strip || exit 1
   buildit create || exit 1
   buildit generate || exit 1
   buildit check || exit 1

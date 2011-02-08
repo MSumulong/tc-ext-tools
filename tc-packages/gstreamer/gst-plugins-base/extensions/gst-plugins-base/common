@@ -1,2 +1,4 @@
-COMMENTS="Optional dependencies: libv4l, perl5, gnome-vfs
+COMMENTS="Optional dependencies: libv4l, perl5
+		Important note: If the optional plugins are blacklisted then you need to remove ~/.gstreamer-0.10/registry.i686.bin
+		To see the list of blacklisted plugins: gst-inspect -b
 		This extension is PPI compatible." 

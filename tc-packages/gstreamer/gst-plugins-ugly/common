@@ -1,5 +1,5 @@
 PACKAGE="gst-plugins-ugly"
-VERSION="0.10.16"
+VERSION="0.10.17"
 SOURCE="http://gstreamer.freedesktop.org/src/${PACKAGE}/${PACKAGE}-${VERSION}.tar.bz2"
 BUILD_DEPENDS="gstreamer
 gstreamer-dev
@@ -17,11 +17,12 @@ libmad
 libmad-dev
 libmpeg2
 libmpeg2-dev
-liboil
 x264
 x264-dev
 lame
-lame-dev"
+lame-dev
+liborc
+liborc-dev"
 
 DESCRIPTION="GStreamer Ugly Plugins."
 AUTHOR="various"
@@ -36,5 +37,6 @@ CHANGELOG="2009/11/08 First Version by juanito
 			-Added mpeg2 decoder
 		2010/01/18 Rebuild with libdvdread (Arslan S.)
 		2010/03/16 Updated to 0.10.14 (Arslan S.)
-		2010/07/19 Updated to 0.10.15 by Arslan S."
+		2010/07/19 Updated to 0.10.15 by Arslan S.
+		2010/12/08 Updated to 0.10.16 by Arslan S."
 CURRENT="Updated to $VERSION by Arslan S."
