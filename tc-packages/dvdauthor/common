@@ -1,5 +1,5 @@
 PACKAGE="dvdauthor"
-VERSION="0.6.18"
+VERSION="0.7.0"
 SOURCE="http://downloads.sourceforge.net/project/dvdauthor/dvdauthor/${VERSION}/dvdauthor-${VERSION}.tar.gz"
 BUILD_DEPENDS="ImageMagick
 ImageMagick-dev
@@ -26,5 +26,6 @@ SITE="http://dvdauthor.sourceforge.net/"
 COPYING="GPL-2"
 MAINTAINERS="Arslan S."
 COMMENTS="This extension is PPI compatible."
-CHANGELOG="2010/01/23 First Version 0.6.14"
-CURRENT="Updated to 0.6.18"
+CHANGELOG="2010/01/23 First Version 0.6.14
+		2010/09/13 Updated to 0.6.18"
+CURRENT="Updated to $VERSION"

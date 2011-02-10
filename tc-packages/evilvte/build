@@ -7,9 +7,6 @@ build_configure() {
 
   ./configure --prefix=/usr/local || return 1
 
-  # Hide the tab bar if only one tab is opened:
-  sed -i "s/\/\/ \(#define TABBAR_AUTOHIDE\)/\1   /" src/config.h
-
 }
 
 # Compile
@@ -38,7 +35,7 @@ build_rules() {
   buildit compile || exit 1
   buildit install || exit 1
   buildit split || exit 1
-   buildit strip || exit 1
+  buildit strip || exit 1
   buildit create || exit 1
   buildit generate || exit 1
   buildit check || exit 1
