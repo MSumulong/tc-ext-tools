@@ -1,0 +1,87 @@
+#!/bin/sh
+
+############################################################################
+#                                                                          #
+#                      installit: installs the package                     #
+#                                                                          #
+############################################################################
+
+#
+#  This program is free software; you can redistribute it and/or modify
+#  it under the terms of the GNU General Public License as published by
+#  the Free Software Foundation; either version 2 of the License, or
+#  (at your option) any later version.
+#
+#  This program is distributed in the hope that it will be useful,
+#  but WITHOUT ANY WARRANTY; without even the implied warranty of
+#  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+#  GNU General Public License for more details.
+#
+#  You should have received a copy of the GNU General Public License along
+#  with this program; if not, write to the Free Software Foundation, Inc.,
+#  51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
+#
+#  (C) Copyright 2011 Sercan Arslan
+#
+
+. /etc/init.d/tc-functions
+
+TCEXTTOOLS_ROOT="$(dirname $0)/.."
+
+if [ -f "$TCEXTTOOLS_ROOT/etc/init.d/tc-ext-tools.sh" ]; then
+     . "$TCEXTTOOLS_ROOT/etc/init.d/tc-ext-tools.sh"
+else
+     echo "${RED}$(basename $0):${BLUE} tc-ext-tools functions file not found!${NORMAL}"
+     exit 1
+fi
+
+if [ "$SOURCE_TYPE" = "none" ]; then
+     mkdir -p "$TCEXTTOOLS_SOURCE_TOPDIR"
+fi
+
+if [ ! -e "$TCEXTTOOLS_SOURCE_TOPDIR" ]; then
+       print_it error "You must compile it first!"
+       exit 1
+fi
+
+[ -f "$TCEXTTOOLS_INSTALL_LOG" ] || su "$TCUSER" -c "touch $TCEXTTOOLS_INSTALL_LOG"
+[ -f "$TCEXTTOOLS_MESSAGE_LOG_2" ] || su "$TCUSER" -c "touch $TCEXTTOOLS_MESSAGE_LOG_2"
+
+this_main() {
+
+   echo ""
+   echo "Installing the package $PACKAGE ..."
+
+   echo ""
+   echo "Cleaning the package install root directory."
+   [ -d "$TCEXTTOOLS_INSTALL_ROOT" ] && rm -rf "$TCEXTTOOLS_INSTALL_ROOT"
+
+   echo "Executing the function build install."
+
+   cd "$TCEXTTOOLS_SOURCE_TOPDIR"
+   build_install > "$TCEXTTOOLS_INSTALL_LOG" 2>&1 || return 1
+
+   echo "Installed the package $PACKAGE successfully."
+
+   echo "Creating the package files list."
+   if [ -d "$TCEXTTOOLS_INSTALL_ROOT" ]; then
+        su "$TCUSER" -c "cd $TCEXTTOOLS_INSTALL_ROOT;sudo find * -not -type d | sort > $PACKAGE_FILES_LIST" || return 1
+   fi
+
+   echo ""
+   echo "Installed the package $PACKAGE successfully."
+
+   return 0
+
+}
+
+print_it "Installing the package $PACKAGE ... \c"
+this_main > "$TCEXTTOOLS_MESSAGE_LOG_2" 2>&1
+if [ "$?" -gt 0 ]; then
+     print_it error "failed!"
+     exit 1
+fi
+print_it hilight "successful!"
+
+exit 0
+

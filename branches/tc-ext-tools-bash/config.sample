@@ -1,0 +1,13 @@
+
+############################################################################
+#                                                                          #
+#                   tc-ext-tools user configuration file                   #
+#                                                                          #
+############################################################################
+
+# package maintainer
+PACKAGE_MAINTAINER="User"
+
+# tc-ext-tools storage directory where the package files are stored
+TCEXTTOOLS_STORAGE="${HOME}/tc-ext-tools"
+

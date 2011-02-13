@@ -1,0 +1,318 @@
+
+############################################################################
+#                                                                          #
+#              tc-ext-tools common functions and definitions               #
+#                                                                          #
+############################################################################
+
+#
+#  This program is free software; you can redistribute it and/or modify
+#  it under the terms of the GNU General Public License as published by
+#  the Free Software Foundation; either version 2 of the License, or
+#  (at your option) any later version.
+#
+#  This program is distributed in the hope that it will be useful,
+#  but WITHOUT ANY WARRANTY; without even the implied warranty of
+#  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+#  GNU General Public License for more details.
+#
+#  You should have received a copy of the GNU General Public License along
+#  with this program; if not, write to the Free Software Foundation, Inc.,
+#  51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
+#
+#  (C) Copyright 2011 Sercan Arslan
+#
+
+THIS=$(basename $0)
+
+if [ $(id -u) = 0 ] ; then
+     if [ "$THIS" != "installit" ]; then
+          echo "${RED}Do not run ${THIS} as root!${NORMAL}"
+          exit 1
+     fi
+else
+     if [ "$THIS" = "installit" ]; then
+          echo "${RED}You need to run ${THIS} as root!${NORMAL}"
+          exit 1
+     fi
+fi
+
+# default configuration
+if [ -f "$TCEXTTOOLS_ROOT/etc/conf.d/tc-ext-tools.conf" ]; then
+     . "$TCEXTTOOLS_ROOT/etc/conf.d/tc-ext-tools.conf"
+else
+     echo "${RED}${THIS}: default configuration file not found !${NORMAL}"
+     exit 1
+fi
+
+# user configuration
+if [ -f "$HOME/.config/tc-ext-tools.conf" ]; then
+     . "$HOME/.config/tc-ext-tools.conf"
+else
+    echo "${RED}${THIS}: user configuration file not found !${NORMAL}"
+    exit 1
+fi
+
+# message print function
+print_it() {
+
+  case  "$1" in
+        error)
+                [ -z "$2" ] && echo -e "${TCEXTTOOLS_MESSAGE_COLOR}${1}${NORMAL}"
+                echo -e "${TCEXTTOOLS_ERROR_COLOR}${2}${NORMAL}"
+                ;;
+        warning)   
+                [ -z "$2" ] && echo -e "${TCEXTTOOLS_MESSAGE_COLOR}${1}${NORMAL}"
+                echo -e "${TCEXTTOOLS_WARNING_COLOR}${2}${NORMAL}"
+                ;;
+        hilight)   
+                [ -z "$2" ] && echo -e "${TCEXTTOOLS_MESSAGE_COLOR}${1}${NORMAL}"
+                echo -e "${TCEXTTOOLS_HILIGHT_COLOR}${2}${NORMAL}"
+                ;;
+        *)
+                echo -e "${TCEXTTOOLS_MESSAGE_COLOR}${1}${NORMAL}"
+                ;;
+  esac
+
+}
+
+# sets the variables related with the package source
+set_source() {
+
+     SOURCE_URL_TYPE="${SOURCE%%::*}"
+     if [ "$SOURCE_URL_TYPE" = "$SOURCE" ]; then
+          SOURCE_URL_TYPE=""
+     else
+          SOURCE=${SOURCE#*::}
+          SOURCE_NAME=${PACKAGE}-${VERSION}.tar.xz
+          SOURCE_TOPDIR=${PACKAGE}-${VERSION}     
+     fi
+
+     if [ -z "$SOURCE_NAME" ]; then
+          SOURCE_NAME=${SOURCE##*/}
+     fi
+
+     if [ ! "${SOURCE_NAME%.bz2}" = "$SOURCE_NAME" ]; then
+            SOURCE_TYPE="bz2"
+            SOURCE_NAME_CONVERTED="${SOURCE_NAME%.bz2}.xz"
+     elif [ ! "${SOURCE_NAME%.gz}" = "$SOURCE_NAME" ]; then
+            SOURCE_TYPE="gz"
+            SOURCE_NAME_CONVERTED="${SOURCE_NAME%.gz}.xz"
+     elif [ ! "${SOURCE_NAME%.tgz}" = "$SOURCE_NAME" ]; then
+            SOURCE_NAME_CONVERTED="${SOURCE_NAME%.tgz}.tar.xz"
+            SOURCE_TYPE="tgz"
+     elif [ ! "${SOURCE_NAME%.tbz2}" = "$SOURCE_NAME" ]; then
+            SOURCE_NAME_CONVERTED="${SOURCE_NAME%.tbz2}.tar.xz"
+            SOURCE_TYPE="tbz2"
+     elif [ ! "${SOURCE_NAME%.zip}" = "$SOURCE_NAME" ]; then
+            SOURCE_TYPE="zip"
+            SOURCE_NAME_CONVERTED="${SOURCE_NAME%.zip}.tar.xz"
+     elif [ ! "${SOURCE_NAME%.xz}" = "$SOURCE_NAME" ]; then
+            SOURCE_TYPE="xz"
+            SOURCE_NAME_CONVERTED="$SOURCE_NAME"
+     elif [ ! "${SOURCE_NAME%.txz}" = "$SOURCE_NAME" ]; then
+            SOURCE_TYPE="txz"
+            SOURCE_NAME_CONVERTED="$SOURCE_NAME"
+     elif [ ! "${SOURCE_NAME%.tar}" = "$SOURCE_NAME" ]; then
+            SOURCE_TYPE="tar"
+            SOURCE_NAME_CONVERTED="${SOURCE_NAME%.tar}.tar.xz"
+     else
+            if [ -z "$SOURCE" ]; then
+                 SOURCE_TYPE=none
+            else
+                 SOURCE_TYPE="custom"
+                 [ -z "$SOURCE_NAME_CONVERTED" ] && SOURCE_NAME_CONVERTED="${SOURCE_NAME%.*}.tar.xz"
+            fi
+     fi
+
+     if [ -z "$SOURCE_TOPDIR" ]; then
+          [ -d "$TCEXTTOOLS_SRC_TEMP" ] && SOURCE_TOPDIR=$(ls $TCEXTTOOLS_SRC_TEMP)
+          [ -z "$SOURCE_TOPDIR" ] && SOURCE_TOPDIR=${PACKAGE}-${VERSION}
+     fi
+
+}
+ 
+# sets the package extensions
+set_extensions() {
+
+     unset EXTENSIONS
+
+     if [ -d "$PACKAGE_EXTENSIONS" ]; then
+          for i in $(find "$PACKAGE_EXTENSIONS" -type f -name install)
+          do
+              EXTENSION=$(basename ${i%/install})
+              if [ -z "$EXTENSIONS" ]; then
+                   EXTENSIONS="$EXTENSION"
+              else
+                   EXTENSIONS="$EXTENSIONS $EXTENSION"
+              fi
+          done
+     fi
+
+}
+
+# sets the package extension
+set_extension() {
+
+      if [ -z "$EXTENSION" ]; then
+           print_it error "EXTENSION is not set!"
+           return 1
+      fi
+
+      PACKAGE_EXTENSION_COMMON="$PACKAGE_EXTENSIONS/$EXTENSION/common"
+      PACKAGE_EXTENSION_INSTALL="$PACKAGE_EXTENSIONS/$EXTENSION/install"
+      PACKAGE_EXTENSION_DEP="$PACKAGE_EXTENSIONS/$EXTENSION/dep"
+      PACKAGE_EXTENSION_TCEINSTALLED="$PACKAGE_EXTENSIONS/$EXTENSION/tce.installed"
+
+      TCEXTTOOLS_EXTENSION_COMMON="$PACKAGE_EXTENSION_COMMON"
+      TCEXTTOOLS_EXTENSION_INSTALL="$PACKAGE_EXTENSION_INSTALL"
+      TCEXTTOOLS_EXTENSION_TCEINSTALLED="$PACKAGE_EXTENSION_TCEINSTALLED"
+
+      unset NAME ICON DESKTOP
+
+       . "$PACKAGE_COMMON"
+
+      if [ -f "$PACKAGE_EXTENSION_COMMON" ]; then
+           . "$PACKAGE_EXTENSION_COMMON"
+      fi
+
+      if [ -z "$NAME" ]; then
+           EXTENSION_NAME="$EXTENSION"
+      else
+           EXTENSION_NAME="$NAME"
+      fi
+
+      if [ -n "$(echo $EXTENSION_NAME | grep KERNEL)" ]; then
+           EXTENSION_NAME=$(echo $EXTENSION_NAME | sed "s/KERNEL/${KERNEL}/")
+      fi
+
+      TCEXTTOOLS_EXTENSION_BINDIR="$TCEXTTOOLS_BIN/$EXTENSION_NAME"
+      TCEXTTOOLS_EXTENSION_PKGDIR="$TCEXTTOOLS_PKG/$EXTENSION_NAME"
+      TCEXTTOOLS_EXTENSION_TCZ="$TCEXTTOOLS_EXTENSION_PKGDIR/${EXTENSION_NAME}.tcz"
+      TCEXTTOOLS_EXTENSION_INFO="$TCEXTTOOLS_EXTENSION_PKGDIR/${EXTENSION_NAME}.tcz.info"
+      TCEXTTOOLS_EXTENSION_DEP="$TCEXTTOOLS_EXTENSION_PKGDIR/${EXTENSION_NAME}.tcz.dep"
+      TCEXTTOOLS_EXTENSION_LIST="$TCEXTTOOLS_EXTENSION_PKGDIR/${EXTENSION_NAME}.tcz.list"
+      TCEXTTOOLS_EXTENSION_MD5SUM="$TCEXTTOOLS_EXTENSION_PKGDIR/${EXTENSION_NAME}.tcz.md5.txt"
+
+      PACKAGE_EXTENSION_BINDIR="$TCEXTTOOLS_EXTENSION_BINDIR"
+      PACKAGE_EXTENSION_PKGDIR="$TCEXTTOOLS_EXTENSION_PKGDIR"
+      PACKAGE_EXTENSION_TCZ="$TCEXTTOOLS_EXTENSION_TCZ"
+      PACKAGE_EXTENSION_INFO="$TCEXTTOOLS_EXTENSION_INFO"
+      PACKAGE_EXTENSION_LIST="$TCEXTTOOLS_EXTENSION_LIST"
+      PACKAGE_EXTENSION_MD5SUM="$TCEXTTOOLS_EXTENSION_MD5SUM"
+
+}
+
+# sets the date, time, and seconds
+set_date() {
+
+    DATE=$(date +%Y/%m/%d)
+    TIME=$(date +%H:%M:%S)
+    SECONDS=$(date +%s)
+
+}
+
+set_date
+
+# tc system
+TCUSER=$(cat /etc/sysconfig/tcuser)
+TCE_DIR=$(cat /opt/.tce_dir)
+TCLOOP=/tmp/tcloop
+KERNEL=$(uname -r)
+
+# package variables
+PACKAGE_ROOT="$PWD"
+PACKAGE_COMMON="$PACKAGE_ROOT/common"
+PACKAGE_BUILD="$PACKAGE_ROOT/build"
+PACKAGE_EXTENSIONS="$PACKAGE_ROOT/extensions"
+PACKAGE_FILES_LIST="$PACKAGE_EXTENSIONS/list"
+PACKAGE_SRC="$PACKAGE_ROOT/src"
+PACKAGE_PATCHES="$PACKAGE_SRC/patches"
+TCEXTTOOLS_PATCHES="$PACKAGE_PATCHES"
+
+if [ -f "$PACKAGE_COMMON" ]; then
+     . "$PACKAGE_COMMON"
+
+     _TCEXTTOOLS_ROOT="$TCEXTTOOLS_STORAGE/$PACKAGE"
+     TCEXTTOOLS_BIN="$_TCEXTTOOLS_ROOT/bin"
+     TCEXTTOOLS_SRC="$_TCEXTTOOLS_ROOT/src"
+     TCEXTTOOLS_LOG="$_TCEXTTOOLS_ROOT/log"
+     TCEXTTOOLS_PKG="$_TCEXTTOOLS_ROOT/pkg"
+     TCEXTTOOLS_BIN_TEMP="$TCEXTTOOLS_BIN/temp"
+     TCEXTTOOLS_SRC_TEMP="$TCEXTTOOLS_SRC/temp"
+     TCEXTTOOLS_PKG_TEMP="$TCEXTTOOLS_PKG/temp"
+     TCEXTTOOLS_CONFIGURE_LOG="$TCEXTTOOLS_LOG/configure.txt"
+     TCEXTTOOLS_COMPILE_LOG="$TCEXTTOOLS_LOG/compile.txt"
+     TCEXTTOOLS_INSTALL_LOG="$TCEXTTOOLS_LOG/install.txt"
+     TCEXTTOOLS_BUILD_LOG="$TCEXTTOOLS_LOG/build.txt"
+     TCEXTTOOLS_MESSAGE_LOG="$TCEXTTOOLS_LOG/message.txt"
+     TCEXTTOOLS_MESSAGE_LOG_2="$TCEXTTOOLS_LOG/message2.txt"
+     TCEXTTOOLS_INSTALL_ROOT="$TCEXTTOOLS_BIN/root"
+     TCEXTTOOLS_PACKAGE="$TCEXTTOOLS_PKG/${PACKAGE}.tar.bz2"
+     TCEXTTOOLS_PACKAGE_ENCRYPTED="$TCEXTTOOLS_PKG/${PACKAGE}.tar.bz2.bfe"
+
+     PACKAGE_BIN="$TCEXTTOOLS_BIN"
+     PACKAGE_PKG="$TCEXTTOOLS_PKG"
+     PACKAGE_PACKAGE="$TCEXTTOOLS_PACKAGE"
+     PACKAGE_PACKAGE_ENCRYPTED="$TCEXTTOOLS_PACKAGE_ENCRYPTED"
+     PACKAGE_INSTALL_ROOT="$TCEXTTOOLS_INSTALL_ROOT"
+
+     INSTALL_ROOT="$PACKAGE_INSTALL_ROOT"
+     PREFIX=/usr/local
+
+     set_source
+
+     if [ -n "$SOURCE_TOPDIR" ]; then
+          TCEXTTOOLS_SOURCE_TOPDIR="$TCEXTTOOLS_SRC_TEMP/$SOURCE_TOPDIR"
+          PACKAGE_SOURCE_TOPDIR="$TCEXTTOOLS_SOURCE_TOPDIR"
+     fi
+
+     set_extensions
+
+     if [ "$SOURCE_TYPE" != "none" ]; then
+          TCEXTTOOLS_SOURCE="$TCEXTTOOLS_SRC/$SOURCE_NAME"
+          TCEXTTOOLS_SOURCE_CONVERTED="$TCEXTTOOLS_SRC/$SOURCE_NAME_CONVERTED"
+          PACKAGE_SOURCE="$TCEXTTOOLS_SOURCE"
+          PACKAGE_SOURCE_CONVERTED="$TCEXTTOOLS_SOURCE_CONVERTED"
+     fi
+
+     # shortened variables for use in package build
+     P_ROOT="$PACKAGE_ROOT"
+     T_ROOT="$_TCEXTTOOLS_ROOT"
+     P_NAME="$PACKAGE"
+     P_VER="$VERSION"
+     P_SRC="$PACKAGE_SRC"
+     T_SRC="$TCEXTTOOLS_SRC"
+     P_BIN="$PACKAGE_BIN"
+     T_BIN="$TCEXTTOOLS_BIN"
+     S_SRC="$T_SRC"
+     S_TOP="$SOURCE_TOPDIR"
+     S_ROOT="$PACKAGE_SOURCE_TOPDIR"
+     I_ROOT="$INSTALL_ROOT"
+
+     # create directories
+     [ -d "$TCEXTTOOLS_STORAGE" ] || sudo install -m 755 -d -o "$TCUSER" -g staff "$TCEXTTOOLS_STORAGE"
+     [ -d "$TCEXTTOOLS_BIN" ] || install -m 755 -d "$TCEXTTOOLS_BIN"
+     [ -d "$TCEXTTOOLS_SRC" ] || install -m 755 -d "$TCEXTTOOLS_SRC"
+     [ -d "$TCEXTTOOLS_PKG" ] || install -m 755 -d "$TCEXTTOOLS_PKG"
+     [ -d "$TCEXTTOOLS_LOG" ] || install -m 755 -d "$TCEXTTOOLS_LOG"
+
+elif [ "$THIS" != "boostit" ]; then
+     print_it error "You must boost it first!"
+     exit 1
+fi
+
+[ -z "$CFLAGS" ] && export CFLAGS="$TCEXTTOOLS_CFLAGS"
+[ -z "$CXXFLAGS" ] && export CXXFLAGS="$TCEXTTOOLS_CXXFLAGS"
+[ -z "$LDFLAGS" ] && export LDFLAGS="$TCEXTTOOLS_LDFLAGS"
+
+# package build
+if [ "$THIS" != "boostit" ]; then
+     if [ -f "$PACKAGE_BUILD" ]; then
+          . "$PACKAGE_BUILD"
+     else
+          print_it error "You must boost it first!"
+          exit 1
+     fi
+fi
+

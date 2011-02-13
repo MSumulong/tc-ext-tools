@@ -1,0 +1,59 @@
+
+############################################################################
+#                                                                          #
+#               tc-ext-tools default configuration file                    #
+#                                                                          #
+############################################################################
+
+#
+#  This program is free software; you can redistribute it and/or modify
+#  it under the terms of the GNU General Public License as published by
+#  the Free Software Foundation; either version 2 of the License, or
+#  (at your option) any later version.
+#
+#  This program is distributed in the hope that it will be useful,
+#  but WITHOUT ANY WARRANTY; without even the implied warranty of
+#  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+#  GNU General Public License for more details.
+#
+#  You should have received a copy of the GNU General Public License along
+#  with this program; if not, write to the Free Software Foundation, Inc.,
+#  51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
+#
+#  (C) Copyright 2011 Sercan Arslan
+#
+
+# tc-ext-tools message colors
+TCEXTTOOLS_MESSAGE_COLOR="${BLUE}"
+TCEXTTOOLS_WARNING_COLOR="${MAGENTA}"
+TCEXTTOOLS_ERROR_COLOR="${RED}"
+TCEXTTOOLS_HILIGHT_COLOR="${CYAN}"
+
+# tc-ext-tools dependencies
+TCEXTTOOLS_DEPENDS="compiletc
+squashfs-tools-4.x
+tar
+git
+svn
+wget
+xz
+zip-unzip
+bzip2
+gzip
+intltool
+perl5
+perl_xml_parser
+gettext
+libtool
+libtool-dev
+autoconf
+automake"
+
+# tc-ext-tools default encryption key
+TCEXTTOOLS_ENCRYPTION_KEY="tinycore"
+
+# tc-ext-tools compiler and linker flags
+TCEXTTOOLS_CFLAGS="-march=i486 -mtune=i686 -Os -pipe"
+TCEXTTOOLS_CXXFLAGS="-march=i486 -mtune=i686 -Os -pipe"
+TCEXTTOOLS_LDFLAGS="-Wl,-O1"
+

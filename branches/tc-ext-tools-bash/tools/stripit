@@ -1,0 +1,117 @@
+#!/bin/sh
+
+############################################################################
+#                                                                          #
+#           stripit: Strips the unneccessary debugging symbols             #
+#                                                                          #
+############################################################################
+
+#
+#  This program is free software; you can redistribute it and/or modify
+#  it under the terms of the GNU General Public License as published by
+#  the Free Software Foundation; either version 2 of the License, or
+#  (at your option) any later version.
+#
+#  This program is distributed in the hope that it will be useful,
+#  but WITHOUT ANY WARRANTY; without even the implied warranty of
+#  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+#  GNU General Public License for more details.
+#
+#  You should have received a copy of the GNU General Public License along
+#  with this program; if not, write to the Free Software Foundation, Inc.,
+#  51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
+#
+#  (C) Copyright 2011 Sercan Arslan
+#
+
+. /etc/init.d/tc-functions
+
+TCEXTTOOLS_ROOT="$(dirname $0)/.."
+
+if [ -f "$TCEXTTOOLS_ROOT/etc/init.d/tc-ext-tools.sh" ]; then
+     . "$TCEXTTOOLS_ROOT/etc/init.d/tc-ext-tools.sh"
+else
+     echo "${RED}$(basename $0):${BLUE} tc-ext-tools functions file not found!${NORMAL}"
+     exit 1
+fi
+
+this_strip() {
+
+   echo "Setting the extension executables list."
+   EXECUTABLE_LIST=$(sudo find "$TCEXTTOOLS_EXTENSION_BINDIR" -not -type d -exec file "{}" \; | grep "executable" | grep ELF | grep "not stripped" | cut -f1 -d:)
+   echo "EXECUTABLE_LIST = $EXECUTABLE_LIST"
+
+   echo "Setting the extension shared objects list."
+   SHARED_OBJECT_LIST=$(sudo find "$TCEXTTOOLS_EXTENSION_BINDIR" -not -type d -exec file "{}" \; | grep "shared object" | grep ELF | grep "not stripped" | cut -f1 -d:)
+   echo "SHARED_OBJECT_LIST = $SHARED_OBJECT_LIST"
+
+   echo "Processing the extension executables list."
+   if [ -n "$EXECUTABLE_LIST" ]; then
+        for EXECUTABLE in $EXECUTABLE_LIST
+        do
+            echo "Stripping the executable $EXECUTABLE" 
+            sudo strip --strip-unneeded "$EXECUTABLE" || return 1
+        done
+   else
+        echo "The executable list is empty. Skipping."
+   fi
+
+   echo "Processing the extension shared objects list."
+   if [ -n "$SHARED_OBJECT_LIST" ]; then
+        for SHARED_OBJECT in $SHARED_OBJECT_LIST
+        do
+            echo "Stripping the shared object $SHARED_OBJECT" 
+            sudo strip -g "$SHARED_OBJECT" || return 1
+        done
+   else
+        echo "Shared object list is empty. Skipping."
+   fi
+
+   return 0
+
+}
+
+this_main() {
+
+   echo ""
+   echo "Stripping the package $PACKAGE extensions ..."
+   for EXTENSION in $EXTENSIONS
+   do
+       echo ""
+       echo "Setting the extension $EXTENSION parameters."
+       set_extension || return 1
+
+       echo "Checking if the extension is splitted before."
+       if [ ! -d "$TCEXTTOOLS_EXTENSION_BINDIR" ]; then
+              echo "Error! You must split the package extensions first."
+              return 1
+       fi
+
+       echo "Stripping the extension $EXTENSION_NAME."
+       this_strip
+       if [ "$?" -gt 0 ]; then
+            echo "Error! Stripping the extension $EXTENSION_NAME failed."
+            sudo rm -rf "$TMP_DIR"
+            return 1
+       else
+            echo "Stripping the extension $EXTENSION_NAME successful."
+       fi
+   done
+
+   echo ""
+   echo "Stripped the package $PACKAGE extensions successfully."
+
+   return 0
+
+}
+
+print_it "Stripping the package $PACKAGE extensions ... \c"
+this_main > "$TCEXTTOOLS_MESSAGE_LOG_2" 2>&1
+if [ "$?" -gt 0 ]; then
+     print_it error "failed!"
+     exit 1
+fi
+print_it hilight "successful!"
+
+exit 0
+
