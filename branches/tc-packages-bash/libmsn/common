@@ -1,9 +1,7 @@
-PACKAGE="libmsn"
-VERSION="4.1"
-SOURCE="http://downloads.sourceforge.net/libmsn/libmsn-${VERSION}.tar.bz2"
-BUILD_DEPENDS="cmake
-openssl-0.9.8
-openssl-0.9.8-dev"
+PACKAGE=libmsn
+VERSION=4.1
+SOURCE=( "http://downloads.sourceforge.net/libmsn/libmsn-${VERSION}.tar.bz2" )
+BUILD_DEPENDS=( 'cmake' 'openssl-0.9.8' 'openssl-0.9.8-dev' )
 
 DESCRIPTION="A reusable, open-source, fully documented library for connecting to Microsoft's MSN Messenger service."
 AUTHOR="Mark Rowe, Tiago Salem Herrmann"
