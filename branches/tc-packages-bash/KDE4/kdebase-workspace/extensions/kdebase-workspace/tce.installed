@@ -1,0 +1,4 @@
+#!/bin/sh
+[ -e /etc/ksysguarddrc ] || ln -s /usr/local/etc/ksysguarddrc /etc/ksysguarddrc
+[ -d /usr/local/share/config/kdm/sessions ] || mkdir -p /usr/local/share/config/kdm/sessions
+

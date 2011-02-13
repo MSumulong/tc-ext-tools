@@ -1,0 +1,14 @@
+PACKAGE="pyxml"
+VERSION="0.8.4"
+SOURCE="http://downloads.sourceforge.net/sourceforge/pyxml/PyXML-${VERSION}.tar.gz"
+BUILD_DEPENDS="python
+python-dev"
+
+DESCRIPTION="Python XML parsing library."
+AUTHOR="various"
+SITE="http://sourceforge.net/projects/pyxml/"
+COPYING="custom"
+MAINTAINERS="Arslan S."
+COMMENTS="This extension is PPI compatible."
+CHANGELOG="---"
+CURRENT="First Version"

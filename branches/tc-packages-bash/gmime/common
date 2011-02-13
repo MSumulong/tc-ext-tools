@@ -1,0 +1,20 @@
+PACKAGE="gmime"
+VERSION="2.4.21"
+SOURCE="http://ftp.gnome.org/pub/GNOME/sources/gmime/2.4/gmime-${VERSION}.tar.bz2"
+BUILD_DEPENDS="glib2
+glib2-dev
+mono
+mono-dev
+gtk-sharp
+gtk-sharp-dev
+glibc_gconv"
+
+DESCRIPTION="C/C++ MIME lib."
+AUTHOR="see list of sites below"
+SITE="see list of sites below"
+COPYING="see list of sites below"
+MAINTAINERS=" juanito, Arslan S."
+COMMENTS="This extension is PPI compatible."
+CHANGELOG="2009/11/08 First Version 2.4.10 by juanito
+		2010/06/19 Updated to 2.4.17 by Arslan S."
+CURRENT="Updated to $VERSION by Arslan S."

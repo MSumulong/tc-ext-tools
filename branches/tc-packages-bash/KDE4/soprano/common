@@ -1,0 +1,29 @@
+PACKAGE="soprano"
+VERSION="2.5.2"
+
+
+SOURCE="http://downloads.sourceforge.net/soprano/soprano-${VERSION}.tar.bz2"
+BUILD_DEPENDS="cmake
+clucene
+clucene-dev
+qt-4.x-base
+qt-4.x-dbus
+qt-4.x-xml
+qt-4.x-dev
+Xorg-7.5-lib
+Xorg-7.5-dev
+libiodbc
+libiodbc-dev
+redland
+redland-dev"
+
+
+DESCRIPTION="Qt interface for RDF storage solutions."
+AUTHOR="Daniele Galdi, Sebastian Trueg"
+SITE="http://sourceforge.net/projects/soprano/"
+COPYING="GPL/LGPL"
+MAINTAINERS="robc, Arslan S."
+COMMENTS="This extension is PPI compatible."
+CHANGELOG="2010/01/26 Original 2.3.1 by robc
+		2010/07/01 Updated to 2.4.4 & added raptor, virtuoso, redland backends by Arslan S."
+CURRENT="Updated to 2.5.2 by Arslan S."

@@ -1,0 +1,8 @@
+usr/local/bin
+usr/local/lib
+x-usr/local/lib/monodoc
+x-usr/local/lib/banshee-1/*.mdb
+x-usr/local/lib/banshee-1/*/*.mdb
+usr/local/share
+x-usr/local/share/locale
+

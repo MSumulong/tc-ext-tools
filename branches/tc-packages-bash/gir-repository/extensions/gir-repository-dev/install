@@ -1,0 +1,4 @@
+usr/local/lib/*.la
+usr/local/lib/*.a
+usr/local/share/gir-1.0
+

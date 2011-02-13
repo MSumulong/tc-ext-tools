@@ -1,0 +1,27 @@
+PACKAGE="alienarena"
+VERSION="7.50"
+_VERSION=20101214
+SOURCE="http://icculus.org/alienarena/Files/alienarena-7_50-linux${_VERSION}.tar.gz"
+BUILD_DEPENDS="curl
+curl-dev
+Xorg-7.5
+Xorg-7.5-dev
+libxcb
+libxcb-dev
+libvorbis
+libvorbis-dev
+ode
+ode-dev
+SDL
+SDL-dev
+libopenal
+libopenal-dev"
+
+DESCRIPTION="Multiplayer retro sci-fi deathmatch game."
+AUTHOR="various"
+SITE="http://icculus.org/alienarena/rpa/"
+COPYING="GPL-2"
+MAINTAINERS="Arslan S."
+COMMENTS="This extension is PPI compatible."
+CHANGELOG="---"
+CURRENT="First Version"

@@ -1,0 +1,37 @@
+PACKAGE="clementine"
+VERSION="0.6"
+SOURCE="http://clementine-player.googlecode.com/files/clementine-${VERSION}.tar.gz"
+BUILD_DEPENDS="cmake
+boost
+boost-dev
+taglib
+taglib-dev
+liblastfm
+liblastfm-dev
+glew
+libgpod
+libgpod-dev
+libmtp
+libmtp-dev
+libusb
+libusb-dev
+gtk2
+gtk2-dev
+gstreamer
+gstreamer-dev
+qt-4.x-base
+qt-4.x-xml
+qt-4.x-sql
+qt-4.x-dbus
+qt-4.x-opengl
+qt-4.x-webkit
+qt-4.x-dev"
+
+DESCRIPTION="Clementine is a modern music player and library organiser."
+AUTHOR="David Sansome, John Maguire"
+SITE="http://code.google.com/p/clementine-player/"
+COPYING="GPL-3"
+MAINTAINERS="Arslan S."
+COMMENTS="This extension is PPI compatible."
+CHANGELOG="---"
+CURRENT="First Version"

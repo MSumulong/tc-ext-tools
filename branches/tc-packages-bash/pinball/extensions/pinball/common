@@ -1,0 +1,11 @@
+ICON="/usr/local/share/pixmaps/pinball.xpm"
+DESKTOP="/usr/local/share/applications/pinball.desktop"
+COMMENTS="The Emilia Pinball project is an open source pinball simulator
+		intended for linux machines by Henrik Enqvist.
+
+		If you want your scores to be persistent add var/games/pinball
+		to your backup list (/opt/.filetool.lst)
+
+		You need OSS or ALSA for sound.
+
+		This extension is PPI compatible." 

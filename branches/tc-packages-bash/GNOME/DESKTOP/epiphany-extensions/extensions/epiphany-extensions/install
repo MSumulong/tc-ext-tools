@@ -1,0 +1,4 @@
+usr/local/lib
+usr/local/share/epiphany*
+usr/local/share/gnome/help/*/C
+usr/local/share/omf/*/*-C.omf

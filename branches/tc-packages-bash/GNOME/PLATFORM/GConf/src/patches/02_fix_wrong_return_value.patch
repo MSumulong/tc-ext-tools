@@ -1,0 +1,17 @@
+Description: fix wrong return value
+Bug: http://bugzilla.gnome.org/show_bug.cgi?id=582865
+Bug-Debian: http://bugs.debian.org/cgi-bin/bugreport.cgi?bug=532119
+
+Index: gconf-2.31.4/gconf/gconf-client.c
+===================================================================
+--- gconf-2.31.4.orig/gconf/gconf-client.c	2010-05-25 05:25:31.000000000 +0200
++++ gconf-2.31.4/gconf/gconf-client.c	2010-06-22 14:17:41.000000000 +0200
+@@ -2036,7 +2036,7 @@
+     {
+       g_free (dir);
+       trace ("Negative cache hit on %s", key);
+-      return TRUE;
++      return FALSE;
+     }
+ 
+     g_free (dir);

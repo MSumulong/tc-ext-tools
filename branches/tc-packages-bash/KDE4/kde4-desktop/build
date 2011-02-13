@@ -1,0 +1,43 @@
+#
+# tc-ext-tools build functions: configure, compile, install, rules
+#
+
+build_configure() {
+
+   return 0
+
+}
+
+build_compile() {
+
+   return 0
+
+}
+
+build_install() {
+
+  install -m 755 -d "$INSTALL_ROOT/usr/local/etc/conf.d"
+  install -m 755 -d "$INSTALL_ROOT/usr/local/sbin"
+  install -m 755 -d "$INSTALL_ROOT/usr/local/share/applications"
+  install -m 755 -d "$INSTALL_ROOT/usr/local/share/doc/kde4-desktop"
+
+  install -m 644 "$PACKAGE_SRC/kde4-desktop.conf" "$INSTALL_ROOT/usr/local/etc/conf.d/kde4-desktop.conf" || return 1
+  install -m 644 "$PACKAGE_SRC/exittc.desktop" "$INSTALL_ROOT/usr/local/share/applications/exittc.desktop" || return 1
+  install -m 755 "$PACKAGE_SRC/start-kde4" "$INSTALL_ROOT/usr/local/sbin/start-kde4" || return 1
+  install -m 755 "$PACKAGE_SRC/kde4-desktop-setup" "$INSTALL_ROOT/usr/local/sbin/kde4-desktop-setup" || return 1
+  install -m 644 "$PACKAGE_SRC/COPYING" "$INSTALL_ROOT/usr/local/share/doc/kde4-desktop/COPYING" || return 1
+
+}
+
+build_rules() {
+
+  buildit load || exit 1
+  buildit install || exit 1
+  buildit split || exit 1
+  buildit create || exit 1
+  buildit generate || exit 1
+  buildit check || exit 1
+  buildit package || exit 1
+
+}
+

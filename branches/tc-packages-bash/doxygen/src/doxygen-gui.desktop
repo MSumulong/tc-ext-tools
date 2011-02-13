@@ -1,0 +1,8 @@
+[Desktop Entry]
+Encoding=UTF-8
+Name=DoxyWizard
+Comment=GUI Frontend to Doxygen
+Exec=doxywizard
+Terminal=false
+Type=Application
+Categories=Application;Development;

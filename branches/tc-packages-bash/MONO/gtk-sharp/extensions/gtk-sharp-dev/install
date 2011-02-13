@@ -1,0 +1,3 @@
+usr/local/lib/pkgconfig
+usr/local/lib/*.la
+usr/local/share

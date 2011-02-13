@@ -1,0 +1,16 @@
+Debian #554057
+GNOME #600591 (upstream refuses to include the fix)
+
+Index: brasero-2.31.92/configure.in
+===================================================================
+--- brasero-2.31.92.orig/configure.in	2010-09-14 09:31:10.304625701 +0200
++++ brasero-2.31.92/configure.in	2010-09-14 09:31:10.484625702 +0200
+@@ -213,7 +213,7 @@
+ AC_SUBST(BRASERO_GMODULE_EXPORT_LIBS)
+ 
+ PKG_CHECK_MODULES(BRASERO_SM,			\
+-	sm)
++	ice sm)
+ 
+ AC_SUBST(BRASERO_SM_CFLAGS)
+ AC_SUBST(BRASERO_SM_LIBS)

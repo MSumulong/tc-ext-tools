@@ -1,0 +1,17 @@
+PACKAGE="evilvte"
+VERSION="0.4.8~pre3"
+SOURCE="http://www.calno.com/evilvte/evilvte-${VERSION}.tar.gz"
+BUILD_DEPENDS="gtk2
+gtk2-dev
+vte
+vte-dev"
+
+DESCRIPTION="VTE based, highly customizable terminal emulator."
+AUTHOR="Wen-Yen Chuang"
+SITE="http://www.calno.com/evilvte/"
+COPYING="GPL-2"
+MAINTAINERS="Arslan S."
+COMMENTS="This extension is PPI compatible."
+CHANGELOG="2009/12/08 First Version 0.4.5
+		2010/05/22 Updated to 0.4.6"
+CURRENT="Updated to $VERSION"

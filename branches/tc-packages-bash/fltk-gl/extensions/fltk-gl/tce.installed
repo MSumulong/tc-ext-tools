@@ -1,0 +1,6 @@
+#!/bin/sh
+
+tar -xzf /usr/local/share/fltk-gl/fltk-gl.tar.gz -C /
+
+ldconfig
+

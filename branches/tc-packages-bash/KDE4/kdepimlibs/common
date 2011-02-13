@@ -1,0 +1,47 @@
+PACKAGE="kdepimlibs"
+VERSION="4.5.5"
+SOURCE="ftp://ftp.kde.org/pub/kde/stable/${VERSION}/src/${PACKAGE}-${VERSION}.tar.bz2"
+BUILD_DEPENDS="cmake
+libxml2
+libxml2-dev
+libxml2-bin
+kdelibs
+kdelibs-dev
+gpgme
+gpgme-dev
+cyrus-sasl
+cyrus-sasl-dev
+openldap
+openldap-dev
+boost
+boost-dev
+akonadi
+akonadi-dev
+libical
+libical-dev
+qt-4.x-base
+qt-4.x-xml
+qt-4.x-dbus
+qt-4.x-sql
+qt-4.x-script
+qt-4.x-designer
+qt-4.x-qt3support
+qt-4.x-webkit
+qt-4.x-extended
+qt-4.x-opengl
+qt-4.x-dev
+Xorg-7.5
+Xorg-7.5-dev
+shared-desktop-ontologies
+shared-mime-info
+docbook_xsl"
+
+DESCRIPTION="KDE PIM libraries."
+AUTHOR="KDE development team"
+SITE="http://www.kde.org"
+COPYING="GPL/LGPL/BSD"
+MAINTAINERS="Arslan S."
+COMMENTS="This extension is PPI compatible."
+CHANGELOG="2010/07/18 First Version 4.4.5
+		2010/10/07 Updated to 4.5.2"
+CURRENT="Updated to $VERSION"

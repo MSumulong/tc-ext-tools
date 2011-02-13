@@ -1,0 +1,47 @@
+PACKAGE="gvfs"
+VERSION="1.6.6"
+SOURCE="http://ftp.gnome.org/pub/GNOME/sources/gvfs/1.6/gvfs-${VERSION}.tar.bz2"
+BUILD_DEPENDS="glib2
+glib2-dev
+#fuse
+dbus-glib
+expat2
+expat2-dev
+samba3
+gudev-lib
+gudev-dev
+libsoup-gnome
+libsoup-gnome-dev
+libgcrypt-dev
+avahi-2.7
+avahi-2.7-dev
+GConf
+GConf-dev
+libgphoto2
+libusb-dev
+libexif-dev
+libgnome-keyring
+libgnome-keyring-dev
+libxml2
+libxml2-dev
+gnome-disk-utility
+gnome-disk-utility-dev
+libarchive
+libarchive-dev
+bluez
+libltdl
+libtool-dev
+openssh
+libcdio
+libcdio-dev"
+
+DESCRIPTION="Userspace virtual filesystem."
+AUTHOR="various"
+SITE="http://www.gnome.org"
+COPYING="LGPL"
+MAINTAINERS="Arslan S."
+COMMENTS="This extension is PPI compatible."
+CHANGELOG="2010/03/06 Original 1.4.3
+		2010/07/28 Updated to 1.6.3 & replaced hal backend with gdu backend
+		2010/08/03 Rebuilt without fuse"
+CURRENT="Updated to $VERSION"

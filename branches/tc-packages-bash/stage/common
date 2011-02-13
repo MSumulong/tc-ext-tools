@@ -1,0 +1,25 @@
+PACKAGE="stage"
+VERSION="3.2.2"
+SOURCE="http://garr.dl.sourceforge.net/project/playerstage/Stage/${VERSION}/Stage-${VERSION}-Source.tar.gz"
+# latest version looks quite unstable to me
+#VERSION="4.0.0"
+#SOURCE="http://cloud.github.com/downloads/rtv/Stage/Stage-${VERSION}-src.tar.gz"
+BUILD_DEPENDS="cmake
+robot-player
+robot-player-dev
+libxcb
+libxcb-dev
+fltk-gl
+Xorg-7.5
+Xorg-7.5-dev
+libxft
+libxft-dev"
+
+DESCRIPTION="Stage is a robot simulator."
+AUTHOR="Richard Vaughan"
+SITE="http://playerstage.sourceforge.net"
+COPYING="GPL"
+MAINTAINERS="Arslan S."
+COMMENTS="This extension is PPI compatible."
+CHANGELOG="---"
+CURRENT="First Version"

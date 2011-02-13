@@ -1,0 +1,13 @@
+PACKAGE="perl_YAML"
+VERSION="0.72"
+SOURCE="http://www.cpan.org/authors/id/A/AD/ADAMK/YAML-${VERSION}.tar.gz"
+BUILD_DEPENDS="perl5"
+
+DESCRIPTION="Perl module YAML, YAML Ain't Markup Language (tm)."
+AUTHOR="various"
+SITE="http://search.cpan.org/dist/YAML/"
+COPYING="GPL/PerlArtistic"
+MAINTAINERS="Arslan S."
+COMMENTS="This extension is PPI compatible."
+CHANGELOG="---"
+CURRENT="First Version"

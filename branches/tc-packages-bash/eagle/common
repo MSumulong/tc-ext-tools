@@ -1,0 +1,24 @@
+PACKAGE="eagle"
+VERSION="5.11.0"
+SOURCE="ftp://ftp.cadsoft.de/eagle/program/${VERSION%.*}/eagle-lin-${VERSION}.run"
+BUILD_DEPENDS="fontconfig
+fontconfig-dev
+Xorg-7.5-lib
+Xorg-7.5-dev
+libxcb
+libxcb-dev"
+
+DESCRIPTION="Easily Applicable Graphical Layout Editor for designing printed circuit boards (PCBs)."
+AUTHOR="CadSoft"
+SITE="http://www.cadsoft.de/"
+COPYING="Proprietary"
+MAINTAINERS="Arslan S."
+COMMENTS="You can use this software as a Freeware for educational non-profit purposes.
+		When you first run the program it will ask for license.
+		If you choose freeware a key will be created.
+		For persistency you need to add this file to your backup list (/opt/.filetool.lst)
+			usr/local/eagle/bin/eagle.key
+
+		This extension is PPI compatible."
+CHANGELOG="---"
+CURRENT="First Version"

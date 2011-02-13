@@ -1,0 +1,12 @@
+[Desktop Entry]
+Version=1.0
+Name=EAGLE
+Comment=Easily Applicable Graphical Layout Editor
+GenericName=PCB Layout Editor
+Exec=eagle
+Icon=eagle
+Terminal=false
+Type=Application
+Categories=Development
+StartupNotify=false
+X-FullPathIcon=/usr/local/share/pixmaps/eagle.png

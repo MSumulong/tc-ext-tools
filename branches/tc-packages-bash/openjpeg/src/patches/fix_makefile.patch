@@ -1,0 +1,29 @@
+--- a/Makefile	2007-12-21 10:39:41.000000000 +0000
++++ b/Makefile	2010-09-05 18:02:45.000000000 +0000
+@@ -11,15 +11,14 @@
+ CC = gcc
+ AR = ar
+ 
+-PREFIX = /usr
++PREFIX = /usr/local
+ INSTALL_LIBDIR = $(PREFIX)/lib
+ INSTALL_INCLUDE = $(PREFIX)/include
+ 
+ # Converts cr/lf to just lf
+ DOS2UNIX = dos2unix
+ 
+-COMPILERFLAGS = -Wall -O3 -ffast-math -std=c99 -fPIC
+-LIBRARIES = -lstdc++
++COMPILERFLAGS = -Wall -O3 -ffast-math -std=c99 -fPIC -g $(EXTRA_CFLAGS)
+ 
+ MODULES = $(SRCS:.c=.o)
+ CFLAGS = $(COMPILERFLAGS) $(INCLUDE)
+@@ -54,7 +53,7 @@
+ 	$(AR) r $@ $(MODULES)
+ 
+ $(SHAREDLIB): $(MODULES)
+-	$(CC) -s -shared -Wl,-soname,$(LIBNAME) -o $@ $(MODULES) $(LIBRARIES)
++	$(CC) -shared -Wl,-soname,$(LIBNAME) -o $@ $(MODULES) -lm
+ 
+ install: OpenJPEG
+ 	install -d '$(DESTDIR)$(INSTALL_LIBDIR)' '$(DESTDIR)$(INSTALL_INCLUDE)'

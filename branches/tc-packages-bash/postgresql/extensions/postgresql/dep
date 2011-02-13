@@ -1,0 +1,10 @@
+openssl-0.9.8.tcz
+readline.tcz
+openldap.tcz
+tzdata.tcz
+krb5.tcz
+libxml2.tcz
+libxslt.tcz
+Linux-PAM.tcz
+postgresql-lib.tcz
+

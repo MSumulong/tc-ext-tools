@@ -1,0 +1,69 @@
+#
+# tc-ext-tools build functions: configure, compile, install, rules
+#
+
+### Configure
+build_configure() {
+
+  # fix for vte-dev missing pyvte.pc
+  if [ ! -e /usr/local/lib/pkgconfig/pyvte.pc ]
+  then
+         cat >> /tmp/pyvte.pc << _EOF
+prefix=/usr/local
+exec_prefix=\${prefix}
+includedir=\${prefix}/include
+datarootdir=\${prefix}/share
+datadir=\${datarootdir}
+
+Name: PyVte
+Description: Python bindings for the Vte terminal widget.
+Requires: vte
+Version: $(pkg-config --modversion vte)
+
+_EOF
+
+  sudo mv /tmp/pyvte.pc /usr/local/lib/pkgconfig/pyvte.pc
+
+  fi
+
+  ./configure --prefix=/usr/local --with-plugins=all || return 1
+
+}
+##
+
+### Compile
+build_compile() {
+
+  make || return 1
+
+}
+##
+
+### Install
+build_install() {
+
+  make DESTDIR="$INSTALL_ROOT" install || return 1
+
+}
+##
+
+### Rules
+build_rules() {
+
+  buildit load || exit 1
+  buildit download || exit 1
+  buildit convert || exit 1
+  buildit unpack || exit 1
+  buildit patch || exit 1
+  buildit configure || exit 1
+  buildit compile || exit 1
+  buildit install || exit 1
+  buildit split || exit 1
+   buildit strip || exit 1
+  buildit create || exit 1
+  buildit generate || exit 1
+  buildit check || exit 1
+  buildit package || exit 1
+
+}
+##

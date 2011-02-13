@@ -1,0 +1,11 @@
+usr/local/share/doc/thunarx-python/documentation.py
+usr/local/share/doc/thunarx-python/examples/thunarx-preferences-plugin.py
+usr/local/share/doc/thunarx-python/examples/thunarx-property-page-plugin.py
+usr/local/share/doc/thunarx-python/examples/thunarx-submenu-plugin.py
+usr/local/share/doc/thunarx-python/examples/thunarx-renamer-plugin.py
+usr/local/share/doc/thunarx-python/examples/thunarx-menu-plugin.py
+usr/local/share/doc/thunarx-python/README
+usr/local/lib/thunarx-1/thunarx-python.la
+usr/local/lib/thunarx-1/thunarx-python.so
+usr/local/lib/thunarx-python/thunarx.so
+usr/local/lib/thunarx-python/thunarx.la

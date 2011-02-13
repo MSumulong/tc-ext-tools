@@ -1,0 +1,38 @@
+diff -Naur a/cherrytree b/cherrytree
+--- a/cherrytree	2010-12-28 21:34:14.000000000 +0000
++++ b/cherrytree	2011-01-03 21:59:00.581885567 +0000
+@@ -23,7 +23,7 @@
+ import sys, os, gtk, gettext
+ 
+ if os.path.isdir('modules'): MODULES_PATH = os.path.join(os.curdir, 'modules')
+-else: MODULES_PATH = '/usr/share/cherrytree/modules/'
++else: MODULES_PATH = '/usr/local/share/cherrytree/modules/'
+ 
+ sys.path.append(MODULES_PATH)
+ 
+diff -Naur a/linux/cherrytree.desktop b/linux/cherrytree.desktop
+--- a/linux/cherrytree.desktop	2010-12-30 20:28:37.000000000 +0000
++++ b/linux/cherrytree.desktop	2011-01-03 22:03:09.547713295 +0000
+@@ -5,7 +5,7 @@
+ Comment[ru]=Записная книжка с иерархической структурой
+ Comment[es]=Gestor de notas jerárquico
+ Exec=cherrytree %f
+-Icon=/usr/share/icons/hicolor/scalable/apps/cherrytree.svg
++Icon=cherrytree
+ MimeType=text/cherrytree-ctd;text/cherrytree-ctz;
+ Terminal=false
+ Type=Application
+diff -Naur a/modules/cons.py b/modules/cons.py
+--- a/modules/cons.py	2010-12-31 23:03:00.000000000 +0000
++++ b/modules/cons.py	2011-01-03 21:58:37.491887382 +0000
+@@ -41,8 +41,8 @@
+       GLADE_PATH = 'glade/'
+       LOCALE_PATH = 'locale/'
+    else:
+-      GLADE_PATH = '/usr/share/cherrytree/glade/'
+-      LOCALE_PATH = '/usr/share/locale/'
++      GLADE_PATH = '/usr/local/share/cherrytree/glade/'
++      LOCALE_PATH = '/usr/local/share/locale/'
+ AVAILABLE_LANGS = ['default', 'cs', 'de', 'en', 'es', 'fr', 'gl', 'it', 'pl', 'ru', 'uk']
+ SHOW_MENU_ICONS = "gconftool-2 --set /desktop/gnome/interface/menus_have_icons --type bool 1"
+ COLOR_WHITE = "#ffffffffffff"

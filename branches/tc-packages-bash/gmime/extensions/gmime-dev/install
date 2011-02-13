@@ -1,0 +1,5 @@
+usr/local/include
+usr/local/lib/pkgconfig/gmime-2.4.pc
+usr/local/lib/*.a
+usr/local/lib/*.la
+

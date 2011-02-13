@@ -1,0 +1,15 @@
+PACKAGE="ORBit2"
+VERSION="2.14.19"
+SOURCE="http://ftp.acc.umu.se/pub/GNOME/sources/ORBit2/2.14/ORBit2-${VERSION}.tar.bz2"
+BUILD_DEPENDS="libIDL
+glib2
+glib2-dev"
+
+DESCRIPTION="ORBit2 is a CORBA 2.4-compliant Object Request Broker."
+AUTHOR="GNOME maintainers"
+SITE="http://projects.gnome.org/ORBit2/"
+COPYING="GPL-2/LGPL-2"
+MAINTAINERS="Arslan S."
+COMMENTS="This extension is PPI compatible."
+CHANGELOG="2010/07/11 First Version 2.14.18"
+CURRENT="Updated to 2.14.19"

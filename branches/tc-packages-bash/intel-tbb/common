@@ -1,0 +1,13 @@
+PACKAGE="intel-tbb"
+VERSION="3.0_20101110"
+SOURCE="http://www.threadingbuildingblocks.org/uploads/77/163/3.0%20update%204/tbb30_20101110oss_src.tgz"
+BUILD_DEPENDS=""
+
+DESCRIPTION="A library to take advantage of multi-core processor performance without having to be a threading expert."
+AUTHOR="INTEL"
+SITE="http://www.threadingbuildingblocks.org"
+COPYING="GPL-2"
+MAINTAINERS="Arslan S."
+COMMENTS="This extension is PPI compatible."
+CHANGELOG="---"
+CURRENT="First Version"

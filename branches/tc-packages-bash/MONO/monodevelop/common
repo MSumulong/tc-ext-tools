@@ -1,0 +1,22 @@
+PACKAGE="monodevelop"
+VERSION="2.4.1"
+SOURCE="http://ftp.novell.com/pub/mono/sources/monodevelop/monodevelop-${VERSION}.tar.bz2"
+BUILD_DEPENDS="mono
+mono-dev
+mono-doc
+mono-addins
+gnome-sharp
+gnome-sharp-dev
+gnome-desktop-sharp
+gnome-desktop-sharp-dev
+mono-tools
+gecko-sharp-2.0"
+
+DESCRIPTION="An IDE primarily designed for C# and other .NET languages."
+AUTHOR="various"
+SITE="http://monodevelop.com/"
+COPYING="LGPL"
+MAINTAINERS="Arslan S."
+COMMENTS="This extension is PPI compatible."
+CHANGELOG="---"
+CURRENT="First Version"

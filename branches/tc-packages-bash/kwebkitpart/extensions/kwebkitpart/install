@@ -1,0 +1,4 @@
+usr/local
+x-usr/local/include
+x-usr/local/share/apps/cmake
+x-usr/local/share/locale

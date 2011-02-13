@@ -1,0 +1,7 @@
+usr/local/lib/evolution-data-server-*
+x-usr/local/lib/evolution-data-server-*/*/*.la
+usr/local/lib/*.so*
+usr/local/libexec
+usr/local/share/dbus-1
+usr/local/share/pixmaps
+usr/local/share/evolution*

@@ -1,0 +1,80 @@
+
+############################################################################
+#                                                                          #
+#  tc-ext-tools build functions: configure, compile, install, rules, etc.  #
+#                                                                          #
+############################################################################
+
+############################################################################ 
+#                            Configure                                     #
+############################################################################
+
+build_configure() {
+
+   return 0
+
+}
+
+############################################################################ 
+#                              Compile                                     #
+############################################################################
+
+build_compile() {
+
+   return 0
+
+}
+
+############################################################################ 
+#                              Install                                     #
+############################################################################
+
+build_install() {
+
+   install -d -m 755 "$INSTALL_ROOT/etc/profile.d"
+   install -m 755 "$PACKAGE_SRC/apache-ant.sh" "$INSTALL_ROOT/etc/profile.d" || return 1
+
+   source "$PACKAGE_SRC/apache-ant.sh"
+
+   install -d -m 755 "$INSTALL_ROOT/$ANT_HOME/bin"
+   install -d -m 755 "$INSTALL_ROOT/$ANT_HOME/lib"
+
+   install -m644 ./lib/*.jar "$INSTALL_ROOT/$ANT_HOME/lib" || return 1
+   cp -Rp ./etc "$INSTALL_ROOT/$ANT_HOME" || return 1
+
+   # Do not copy Windows .bat/.cmd files
+   find ./bin -type f -a ! -name \*.bat -a ! -name \*.cmd -exec install -m755 {} "$INSTALL_ROOT/$ANT_HOME/bin" \; || return 1
+
+   # symlink to junit so it's on the javac build path for ant
+   cd "$INSTALL_ROOT/$ANT_HOME/lib"
+   ln -s /usr/local/share/java/junit.jar . || return 1
+   cd - || return 1
+
+   install -dm755 "$INSTALL_ROOT/usr/local/share/licenses/apache-ant" || return 1
+   install -m644 LICENSE NOTICE "$INSTALL_ROOT/usr/local/share/licenses/apache-ant" || return 1
+
+}
+
+############################################################################ 
+#                                Rules                                     #
+############################################################################
+
+build_rules() {
+
+   buildit load || exit 1
+   buildit download || exit 1
+   buildit convert || exit 1
+   buildit unpack || exit 1
+   buildit patch || exit 1
+   buildit configure || exit 1
+   buildit compile || exit 1
+   buildit install || exit 1
+   buildit split || exit 1
+   buildit strip || exit 1
+   buildit create || exit 1
+   buildit generate || exit 1
+   buildit check || exit 1
+   buildit package || exit 1
+
+}
+

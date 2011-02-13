@@ -1,0 +1,13 @@
+PACKAGE="fastjar"
+VERSION="0.98"
+SOURCE="http://download.savannah.gnu.org/releases/fastjar/fastjar-${VERSION}.tar.gz"
+BUILD_DEPENDS="texinfo"
+
+DESCRIPTION="A jar creation program written in C."
+AUTHOR="Bryan Burns, Cory Jon Hollingsworth"
+SITE="https://savannah.nongnu.org/projects/fastjar"
+COPYING="GPL-2"
+MAINTAINERS="Arslan S."
+COMMENTS="This extension is PPI compatible."
+CHANGELOG="---"
+CURRENT="First Version"

@@ -1,0 +1,17 @@
+libxml2.tcz
+ogre.tcz
+ode.tcz
+robot-player.tcz
+fltk-gl.tcz
+libxft.tcz
+libopenal.tcz
+libxcb.tcz
+freeimage.tcz
+assimp.tcz
+libyaml.tcz
+intel-tbb.tcz
+google-perftools.tcz
+wxgtk.tcz
+gtk2.tcz
+bullet.tcz
+gdal.tcz

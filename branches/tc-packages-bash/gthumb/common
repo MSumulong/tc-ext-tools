@@ -1,0 +1,42 @@
+PACKAGE="gthumb"
+VERSION="2.12.1"
+SOURCE="http://ftp.gnome.org/pub/GNOME/sources/gthumb/2.12/gthumb-${VERSION}.tar.bz2"
+BUILD_DEPENDS="gnome-doc-utils
+rarian
+libunique
+libunique-dev
+exiv2
+exiv2-dev
+GConf
+GConf-dev
+dbus
+dbus-dev
+dbus-glib
+dbus-glib-dev
+gst-plugins-base
+gst-plugins-base-dev
+Xorg-7.5-lib
+Xorg-7.5-dev
+libxcb
+libxcb-dev
+libgnome-keyring
+libgnome-keyring-dev
+libsoup-gnome
+libsoup-gnome-dev
+gtk2
+gtk2-dev
+#brasero
+#brasero-dev
+totem-pl-parser
+totem-pl-parser-dev
+libcanberra
+libcanberra-dev"
+
+DESCRIPTION="An Image Viewer and Browser for the GNOME Desktop."
+AUTHOR="various"
+SITE="http://live.gnome.org/gthumb"
+COPYING="GPL"
+MAINTAINERS="Arslan S."
+COMMENTS="This extension is PPI compatible."
+CHANGELOG="---"
+CURRENT="First Version"

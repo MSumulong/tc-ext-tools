@@ -1,0 +1,10 @@
+gtk2.tcz
+dbus-glib.tcz
+libsexy.tcz
+libstartup-notification.tcz
+libnotify.tcz
+libxfce4util.tcz
+libxfcegui4.tcz
+shared-mime-info.tcz
+hicolor-icon-theme.tcz
+

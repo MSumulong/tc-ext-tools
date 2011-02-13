@@ -1,0 +1,35 @@
+PACKAGE="NetworkManager"
+VERSION="0.8.2"
+SOURCE="http://ftp.gnome.org/pub/GNOME/sources/NetworkManager/0.8/NetworkManager-${VERSION}.tar.bz2"
+BUILD_DEPENDS="glib2
+glib2-dev
+dbus
+dbus-glib
+pppd
+wireless_tools
+udev-lib
+udev-dev
+gudev-lib
+gudev-dev
+polkit
+polkit-dev
+nss
+nss-dev
+libnl1
+libnl1-dev
+iptables
+iproute2
+wpa_supplicant-dbus
+gtk-doc
+gnome-bluetooth
+gnome-bluetooth-dev"
+
+DESCRIPTION="Network Manager for Tiny Core Linux."
+AUTHOR="Dan Williams, Tambet Ingo"
+SITE="http://projects.gnome.org/NetworkManager/"
+COPYING="GPL-2"
+MAINTAINERS="Arslan S."
+COMMENTS="This extension is PPI compatible."
+CHANGELOG="2010/07/05 First Version 0.8.1~git100705
+		2010/08/04 Updated to 0.8.1"
+CURRENT="Updated to 0.8.2"

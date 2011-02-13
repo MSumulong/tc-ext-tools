@@ -1,0 +1,54 @@
+#
+# tc-ext-tools build functions: configure, compile, install, rules
+#
+
+# Configure
+build_configure() {
+
+  ./autogen.sh --prefix=/usr/local \
+      --enable-dbus || return 1
+
+}
+
+# Compile
+build_compile() {
+
+  make || return 1
+
+}
+
+# Install
+build_install() {
+
+  make DESTDIR="$INSTALL_ROOT" install || return 1
+
+  install -d -m 755 "$INSTALL_ROOT/usr/local/etc/init.d"
+  install -m 755 "$PACKAGE_SRC/gpsd.sh" "$INSTALL_ROOT/usr/local/etc/init.d/gpsd"
+  install -m 755 "$PACKAGE_SRC/gpsd.rc" "$INSTALL_ROOT/usr/local/etc/gpsd.rc"
+
+  sed -i 's|Id: gpsd.rules|Id: 99-gpsd-usb.rules|' gpsd.rules
+  install -D -m644 "gpsd.rules" "$INSTALL_ROOT/lib/udev/rules.d/99-gpsd-usb.rules"
+  install -D -m755 "gpsd.hotplug.wrapper" "$INSTALL_ROOT/lib/udev/gpsd.hotplug.wrapper"
+  install -D -m755 "gpsd.hotplug" "$INSTALL_ROOT/lib/udev/gpsd.hotplug"
+
+}
+
+# Rules
+build_rules() {
+
+  buildit load || exit 1
+  buildit download || exit 1
+  buildit convert || exit 1
+  buildit unpack || exit 1
+  buildit patch || exit 1
+  buildit configure || exit 1
+  buildit compile || exit 1
+  buildit install || exit 1
+  buildit split || exit 1
+  buildit strip || exit 1
+  buildit create || exit 1
+  buildit generate || exit 1
+  buildit check || exit 1
+  buildit package || exit 1
+
+}

@@ -1,0 +1,20 @@
+PACKAGE="doxygen"
+VERSION="1.7.3"
+SOURCE="ftp://ftp.stack.nl/pub/users/dimitri/${PACKAGE}-${VERSION}.src.tar.gz"
+BUILD_DEPENDS="coreutils
+qt-4.x-base
+qt-4.x-xml
+qt-4.x-dev
+graphviz
+glibc_gconv"
+
+DESCRIPTION="A documentation system for C++, C, Java, Objective-C, Python etc."
+AUTHOR="Dimitri van Heesch"
+SITE="http://www.stack.nl/~dimitri/doxygen/"
+COPYING="GPL"
+MAINTAINERS="Arslan S."
+COMMENTS="This extension is PPI compatible."
+CHANGELOG="2009/10/16 Original 1.6.1
+		2010/04/29 Updated to 1.6.3 & splitted doxygen-gui(doxywizard)
+		2010/10/10 Updated to 1.7.2"
+CURRENT="Updated to $VERSION"

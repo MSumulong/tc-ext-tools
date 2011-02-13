@@ -1,0 +1,15 @@
+PACKAGE="libmatroska"
+VERSION="1.0.0"
+SOURCE="http://dl.matroska.org/downloads/libmatroska/libmatroska-${VERSION}.tar.bz2"
+BUILD_DEPENDS="libebml
+libebml-dev"
+
+DESCRIPTION="Open standard Multimedia container."
+AUTHOR="Matroska Team"
+SITE="http://www.matroska.org/"
+COPYING="LGPL"
+MAINTAINERS="Arslan S."
+COMMENTS="This extension is PPI compatible."
+CHANGELOG="2009/11/13 Original 0.8.1
+		2010/02/20 Updated with rtti (Curaga)"
+CURRENT="Updated to $VERSION"

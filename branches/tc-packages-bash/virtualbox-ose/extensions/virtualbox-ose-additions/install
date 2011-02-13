@@ -1,0 +1,12 @@
+usr/local/bin/VBoxClient
+usr/local/bin/VBoxService
+usr/local/bin/VBoxControl
+usr/local/bin/VBoxClient-all
+usr/local/sbin/mount.vboxsf
+usr/local/etc/xdg/autostart/vboxclient.desktop
+usr/local/share/virtualbox-ose-additions
+usr/local/lib/X11/modules
+usr/local/lib/security
+usr/local/lib/VBoxOGL*.so
+lib/udev/rules.d/60-vboxguest.rules
+

@@ -1,0 +1,9 @@
+#!/bin/sh
+
+KEY=/usr/local/eagle/bin/eagle.key
+
+if [ ! -e "$KEY" ]; then
+     touch "$KEY"
+     chmod 666 "$KEY"
+fi
+

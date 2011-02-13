@@ -1,0 +1,59 @@
+PACKAGE="virtualbox-ose"
+VERSION="4.0.2"
+SOURCE="http://download.virtualbox.org/virtualbox/${VERSION}/VirtualBox-${VERSION}.tar.bz2"
+BUILD_DEPENDS="coreutils
+bzip2
+libxslt
+libxml2
+libxml2-dev
+glib2
+glib2-dev
+expat2
+expat2-dev
+fontconfig
+fontconfig-dev
+iasl
+Dev86
+libcap
+libIDL
+openssl-0.9.8
+openssl-0.9.8-dev
+curl
+curl-dev
+python
+python-dev
+libasound
+alsa-dev
+pixman
+pixman-dev
+Xorg-7.5
+Xorg-7.5-dev
+SDL
+SDL-dev
+qt-4.x-base
+qt-4.x-xml
+qt-4.x-opengl
+qt-4.x-dev
+linux-headers-2.6.33.3-tinycore
+Linux-PAM
+Linux-PAM-dev
+mkisofs-tools
+xulrunner
+xulrunner-dev
+dbus-glib
+dbus-glib-dev
+libvncserver
+libvncserver-dev
+libxft
+libxft-dev
+#makeself"
+
+DESCRIPTION="A Powerful x86 virtualization solution."
+AUTHOR="Sun Microsystems"
+SITE="http://www.virtualbox.org/"
+COPYING="GPL-2"
+MAINTAINERS="Arslan S."
+COMMENTS="This extension is PPI compatible."
+CHANGELOG="2010/10/16 First Version 3.2.10
+		2010/12/02 Updated to 3.2.12"
+CURRENT="Updated to $VERSION"

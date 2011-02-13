@@ -1,0 +1,52 @@
+PACKAGE="deadbeef"
+VERSION="0.4.4"
+SOURCE="http://downloads.sourceforge.net/project/deadbeef/deadbeef-${VERSION}.tar.bz2"
+BUILD_DEPENDS="libasound
+alsa-dev
+pulseaudio
+pulseaudio-dev
+gtk2
+gtk2-dev
+libmad
+libmad-dev
+libsamplerate
+libsamplerate-dev
+libvorbis
+libvorbis-dev
+flac
+flac-dev
+libsndfile
+libsndfile-dev
+libcdio
+libcdio-dev
+libcddb
+libcddb-dev
+faad
+faad-dev
+libmms
+libmms-dev
+wavpack
+wavpack-dev
+ffmpeg-ffserver
+ffmpeg-ffserver-dev
+curl
+openssl-0.9.8-dev
+curl-dev
+libnotify
+libnotify-dev
+dbus
+Xorg-7.5-lib
+Xorg-7.5-dev
+libiconv
+libiconv-dev"
+
+DESCRIPTION="DeaDBeeF - ultimate music player for GNU/Linux systems with X11."
+AUTHOR="Alexey Yakovenko, Viktor Semykin, Stas Akimushkin"
+SITE="http://deadbeef.sourceforge.net/"
+COPYING="GPL-2"
+MAINTAINERS="Arslan S."
+COMMENTS="This extension is PPI compatible." 
+CHANGELOG="2010/09/17 First Version 0.4.1
+		2010/10/17 Updated to 0.4.2
+		2010/11/01 Updated to 0.4.3"
+CURRENT="Updated to 0.4.4"

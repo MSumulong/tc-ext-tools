@@ -1,0 +1,11 @@
+kdelibs.tcz
+kdebase-runtime.tcz
+kdemultimedia-kioslave.tcz
+libmusicbrainz.tcz
+libasound.tcz
+phonon.tcz
+gst-plugins-bad.tcz
+gst-plugins-good.tcz
+gst-plugins-ugly.tcz
+shared-mime-info.tcz
+hicolor-icon-theme.tcz

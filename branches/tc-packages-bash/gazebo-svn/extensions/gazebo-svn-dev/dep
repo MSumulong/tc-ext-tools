@@ -1,0 +1,11 @@
+gazebo.tcz
+ode-svn-dev.tcz
+boost-dev.tcz
+robot-player-dev.tcz
+ogre-dev.tcz
+libopenal-dev.tcz
+freeimage-dev.tcz
+gtk2-dev.tcz
+wxgtk-dev.tcz
+bullet-dev.tcz
+gdal-dev.tcz

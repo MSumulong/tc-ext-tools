@@ -1,0 +1,23 @@
+PACKAGE="libgdata"
+VERSION="0.6.6"
+SOURCE="http://ftp.gnome.org/pub/GNOME/sources/libgdata/${VERSION%.*}/libgdata-${VERSION}.tar.bz2"
+BUILD_DEPENDS="libsoup-gnome
+libsoup-gnome-dev
+gobject-introspection
+gobject-introspection-dev
+GConf
+GConf-dev
+dbus
+dbus-dev
+dbus-glib
+dbus-glib-dev"
+
+DESCRIPTION="GLib-based library for accessing online service APIs using the GData protocol."
+AUTHOR="Philip Withnall"
+SITE="http://live.gnome.org/libgdata"
+COPYING="LGPL-2.1"
+MAINTAINERS="Arslan S."
+COMMENTS="This extension is PPI compatible."
+CHANGELOG="2010/01/08 Original 0.5.1
+		2010/11/23 Updated to 0.6.5"
+CURRENT="Updated to $VERSION"

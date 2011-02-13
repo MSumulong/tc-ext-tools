@@ -1,0 +1,6 @@
+usr/local/lib/gstreamer-0.10/libgstffmpeg.la
+usr/local/lib/gstreamer-0.10/libgstffmpeg.so
+usr/local/lib/gstreamer-0.10/libgstffmpegscale.la
+usr/local/lib/gstreamer-0.10/libgstffmpegscale.so
+usr/local/lib/gstreamer-0.10/libgstpostproc.la
+usr/local/lib/gstreamer-0.10/libgstpostproc.so

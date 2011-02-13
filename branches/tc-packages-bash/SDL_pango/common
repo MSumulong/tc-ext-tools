@@ -1,0 +1,24 @@
+PACKAGE="SDL_pango"
+VERSION="0.1.2"
+SOURCE="http://garr.dl.sourceforge.net/project/sdlpango/SDL_Pango/${VERSION}/SDL_Pango-${VERSION}.tar.gz"
+BUILD_DEPENDS="glib2
+glib2-dev
+fontconfig
+fontconfig-dev
+cairo
+cairo-dev
+pango
+pango-dev
+SDL
+SDL-dev
+Xorg-7.5-lib
+Xorg-7.5-dev"
+
+DESCRIPTION="Pango SDL bindings."
+AUTHOR="NAKAMURA Ken'ichi"
+SITE="http://sdlpango.sourceforge.net/"
+COPYING="LGPL"
+MAINTAINERS="Arslan S."
+COMMENTS="This extension is PPI compatible."
+CHANGELOG="---"
+CURRENT="First Version"

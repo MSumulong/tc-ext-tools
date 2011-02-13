@@ -1,0 +1,23 @@
+PACKAGE="ogre"
+VERSION="1.7.2"
+SOURCE="http://downloads.sourceforge.net/${PACKAGE}/${PACKAGE}_src_v${VERSION//./-}.tar.bz2"
+BUILD_DEPENDS="cmake
+boost
+boost-dev
+freeimage
+freeimage-dev
+Xorg-7.5
+Xorg-7.5-dev
+openexr
+openexr-dev
+zziplib
+zziplib-dev"
+
+DESCRIPTION="Object-oriented Graphics Rendering Engine."
+AUTHOR="various"
+SITE="http://www.ogre3d.org/"
+COPYING="MIT"
+MAINTAINERS="Arslan S."
+COMMENTS="This extension is PPI compatible."
+CHANGELOG="---"
+CURRENT="First Version"

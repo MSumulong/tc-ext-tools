@@ -1,0 +1,32 @@
+PACKAGE="cairo-dock"
+MAJORVERSION="2.2.0"
+SUBVERSION="4"
+VERSION="${MAJORVERSION}-${SUBVERSION}"
+SOURCE="http://launchpad.net/cairo-dock-core/2.2/${MAJORVERSION}/+download/cairo-dock-${VERSION}.tar.gz"
+BUILD_DEPENDS="cmake
+glib2
+glib2-dev
+dbus-glib
+libxml2
+libxml2-dev
+cairo
+cairo-dev
+gtk2
+gtk2-dev
+curl
+curl-dev
+librsvg
+librsvg-dev
+gtkglext
+gtkglext-dev
+Xorg-7.5
+Xorg-7.5-dev"
+
+DESCRIPTION="Cairo-Dock core package."
+AUTHOR="Cairo-Dock Team"
+SITE="https://launchpad.net/cairo-dock-core"
+COPYING="GPL-3"
+MAINTAINERS="Arslan S."
+COMMENTS="This extension is PPI compatible."
+CHANGELOG="---"
+CURRENT="First Version"

@@ -1,0 +1,36 @@
+PACKAGE="gedit"
+VERSION="2.30.4"
+SOURCE="http://ftp.gnome.org/pub/GNOME/sources/gedit/${VERSION%.*}/gedit-${VERSION}.tar.bz2"
+BUILD_DEPENDS="gnome-doc-utils
+rarian
+enchant
+enchant-dev
+iso-codes
+libattr
+attr-dev
+libxml2
+libxml2-dev
+Xorg-7.5-dev
+glib2
+glib2-dev
+gtk2
+gtk2-dev
+gtksourceview
+gtksourceview-dev
+GConf
+GConf-dev
+python
+python-dev
+pygtk-2.7
+pygtk-2.7-dev
+pygtksourceview"
+
+DESCRIPTION="gedit is a text editor for the GNOME desktop."
+AUTHOR="Paolo Maggi, Paolo Borelli, Steve Frecinaux, Jesse van den Kieboom"
+SITE="http://projects.gnome.org/gedit/"
+COPYING="GPL-2"
+MAINTAINERS="Arslan S."
+COMMENTS="This extension is PPI compatible."
+CHANGELOG="2010/04/04 Original 2.28.2
+		2010/07/30 Updated to 2.30.2"
+CURRENT="Updated to $VERSION"

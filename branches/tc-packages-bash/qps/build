@@ -1,0 +1,47 @@
+#
+# tc-ext-tools build functions: configure, compile, install, rules
+#
+
+# Configure
+build_configure() {
+
+   qmake || return 1
+
+}
+
+# Compile
+build_compile() {
+
+   make || return 1
+
+}
+
+# Install
+build_install() {
+
+   install -D -m 755 qps $INSTALL_ROOT/usr/local/bin/qps || return 1
+   install -D -m 644 qps.1 $INSTALL_ROOT/usr/local/share/man/man1/qps.1 || return 1
+   install -D -m 644 qps.desktop $INSTALL_ROOT/usr/local/share/applications/qps.desktop || return 1
+   install -D -m 644 icon/icon.xpm $INSTALL_ROOT/usr/local/share/pixmaps/qps.xpm || return 1
+
+}
+
+# Rules
+build_rules() {
+
+   buildit load || exit 1
+   buildit download || exit 1
+   buildit convert || exit 1
+   buildit unpack || exit 1
+   buildit patch || exit 1
+   buildit configure || exit 1
+   buildit compile || exit 1
+   buildit install || exit 1
+   buildit split || exit 1
+   buildit strip || exit 1
+   buildit create || exit 1
+   buildit generate || exit 1
+   buildit check || exit 1
+   buildit package || exit 1
+
+}

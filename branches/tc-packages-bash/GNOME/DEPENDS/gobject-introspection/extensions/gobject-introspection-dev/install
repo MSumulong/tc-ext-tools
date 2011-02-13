@@ -1,0 +1,5 @@
+usr/local/include
+usr/local/lib/pkgconfig
+usr/local/lib/*.la
+usr/local/share/gir-1.0
+

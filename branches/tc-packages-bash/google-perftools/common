@@ -1,0 +1,13 @@
+PACKAGE="google-perftools"
+VERSION="1.6"
+SOURCE="http://google-perftools.googlecode.com/files/google-perftools-${VERSION}.tar.gz"
+BUILD_DEPENDS=""
+
+DESCRIPTION="Fast, multi-threaded malloc() and nifty performance analysis tools."
+AUTHOR="Google Inc."
+SITE="http://code.google.com/p/google-perftools/"
+COPYING="BSD"
+MAINTAINERS="Arslan S."
+COMMENTS="This extension is PPI compatible."
+CHANGELOG="---"
+CURRENT="First Version"

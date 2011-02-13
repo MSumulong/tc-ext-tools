@@ -1,0 +1,47 @@
+PACKAGE="gnome-control-center"
+VERSION="2.32.1"
+
+SOURCE="http://ftp.gnome.org/pub/GNOME/sources/gnome-control-center/${VERSION%.*}/gnome-control-center-$VERSION.tar.bz2"
+
+BUILD_DEPENDS="gnome-doc-utils
+rarian
+metacity
+metacity-dev
+gnome-menus
+gnome-menus-dev
+gnome-settings-daemon
+gnome-settings-daemon-dev
+gtk2
+gtk2-dev
+librsvg
+librsvg-dev
+Xorg-7.5-lib
+Xorg-7.5-dev
+GConf
+GConf-dev
+libgnome-desktop
+libgnome-desktop-dev
+libunique
+libunique-dev
+libgnomekbd
+libgnomekbd-dev
+libxklavier
+libxklavier-dev
+evolution-data-server
+evolution-data-server-dev
+desktop-file-utils
+shared-mime-info
+libcanberra
+libcanberra-dev
+libgtop
+libgtop-dev"
+
+
+DESCRIPTION="GNOME's main interface for configuration of various aspects of your desktop."
+AUTHOR="Jonathan Blandford"
+SITE="http://www.gnome.org"
+COPYING="GPL-2"
+MAINTAINERS="Arslan S."
+COMMENTS="This extension is PPI compatible."
+CHANGELOG="2010/08/01 First Version 2.30.1"
+CURRENT="Updated to $VERSION"

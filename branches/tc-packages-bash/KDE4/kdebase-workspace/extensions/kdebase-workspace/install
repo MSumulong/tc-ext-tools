@@ -1,0 +1,5 @@
+usr/local
+x-usr/local/include
+x-usr/local/lib/cmake
+x-usr/local/share/apps/cmake
+

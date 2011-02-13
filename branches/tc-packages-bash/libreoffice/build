@@ -1,0 +1,167 @@
+
+############################################################################
+#                                                                          #
+#  tc-ext-tools build functions: configure, compile, install, rules, etc.  #
+#                                                                          #
+############################################################################
+
+unset J2REDIR J2SDKDIR JAVA_HOME
+
+if [ -z "${JAVA_HOME}" ]; then
+     [ -e /etc/profile.d/sun-jdk.sh ] && . /etc/profile.d/sun-jdk.sh
+fi
+
+if [ -z "${ANT_HOME}" ]; then
+     [ -e /etc/profile.d/apache-ant.sh ] && . /etc/profile.d/apache-ant.sh
+fi
+
+[ -z "${MOZ_PLUGIN_PATH}" ] && export MOZ_PLUGIN_PATH=/usr/local/lib/mozilla/plugins
+
+############################################################################ 
+#                            Configure                                     #
+############################################################################
+
+build_configure() {
+
+  sudo ln -sf /usr/local/lib/pkgconfig/mozilla-plugin.pc /usr/local/lib/pkgconfig/xulrunner-plugin.pc
+
+  aclocal || return 1
+  autoconf --force || return 1
+
+  ./configure --prefix=/usr/local --with-distro=TinyCoreLinux --with-build-version="$VERSION for Tiny Core Linux" \
+              --with-docdir=/usr/local/share/doc/libreoffice --mandir=/usr/local/share/man \
+              --without-binsuffix --with-installed-ooo-dirname=libreoffice --with-srcdir=${T_SRC}/additional-src \
+              --enable-odk --enable-extensions --enable-graphite --enable-evolution2 \
+              --enable-cairo --disable-kde4 --disable-pam --enable-crashdump \
+              --enable-ldap --enable-lockdown --enable-opengl --enable-ogltrans \
+              --enable-pdfimport --enable-presenter-console --enable-presenter-minimizer \
+              --enable-presenter-ui --enable-report-builder --enable-wiki-publisher \
+              --disable-gio --disable-mono --disable-kde --without-stlport --with-system-boost \
+              --with-gcc-speedup=ccache --with-lang="" --without-git \
+              --with-java --with-junit=/usr/local/share/java/junit.jar --with-ant-home="/usr/local/share/java/apache-ant" \
+              --with-openclipart=/usr/local/share/openclipart --with-system-unixodbc-headers --with-sun-templates \
+              --with-oooblogger --with-nlpsolver --with-google-docs --with-watch-window --with-ct2n --with-diagram \
+              --with-num-cpus=2 --with-drink=coffee || return 1
+
+}
+
+############################################################################ 
+#                               Custom                                     #
+############################################################################
+
+build_download() {
+
+  cd "$S_ROOT"
+
+  [ -d "$T_SRC/additional-src" ] || mkdir -p "$T_SRC/additional-src"
+
+  echo "Downloading additional libreoffice sources..."
+  for i in $ADDITIONAL_SOURCE
+  do
+     if [ -e "$T_SRC/additional-src/libreoffice-${i}-${VERSION}.tar.bz2" ]; then
+          echo "libreoffice-${i}-${VERSION}.tar.bz2 is already downloaded."
+     else
+          echo "Downloading libreoffice-${i}-${VERSION}.tar.bz2" 
+          wget "$MIRROR/libreoffice-${i}-${VERSION}.tar.bz2" -O "$T_SRC/additional-src/libreoffice-${i}-${VERSION}.tar.bz2" || return 1
+     fi
+  done
+
+  ./download || return 1
+
+}
+
+############################################################################ 
+#                              Compile                                     #
+############################################################################
+
+build_compile() {
+
+  make || return 1
+
+}
+
+############################################################################ 
+#                              Install                                     #
+############################################################################
+
+build_install() {
+
+  make DESTDIR="$I_ROOT" install || return 1
+
+  ln -snf /usr/local/lib/libreoffice/basis3.3 "$I_ROOT/usr/local/lib/libreoffice/basis-link" || return 1
+  ln -snf /usr/local/lib/libreoffice/ure "$I_ROOT/usr/local/lib/libreoffice/basis3.3/ure-link" || return 1
+
+  cp ${I_ROOT}/usr/local/lib/libreoffice/share/xdg/javafilter.desktop ${I_ROOT}/usr/local/share/applications/
+  cp ${I_ROOT}/usr/local/lib/libreoffice/share/xdg/qstart.desktop ${I_ROOT}/usr/local/share/applications/
+
+  sed -i -e "s/3.3 Quickstarter/Quickstarter/g" ${I_ROOT}/usr/local/share/applications/qstart.desktop || return 1
+  sed -i -e "/NoDisplay=true/d" ${I_ROOT}/usr/local/share/applications/qstart.desktop || return 1
+
+  rm -rf "$I_ROOT/usr/local/libreoffice/share/xdg"
+
+  mv "$I_ROOT/usr/local/share/applications/startcenter.desktop" "$I_ROOT/usr/local/share/applications/libreoffice.desktop"
+
+  install -dm755 ${I_ROOT}/usr/local/etc/libreoffice
+  install -m644 ${I_ROOT}/usr/local/lib/libreoffice/program/bootstraprc ${I_ROOT}/usr/local/etc/libreoffice/
+  install -m644 ${I_ROOT}/usr/local/lib/libreoffice/program/sofficerc ${I_ROOT}/usr/local/etc/libreoffice/
+  install -m644 ${I_ROOT}/usr/local/lib/libreoffice/basis3.3/share/psprint/psprint.conf ${I_ROOT}/usr/local/etc/libreoffice/
+
+  cd ${I_ROOT}/usr/local/lib/libreoffice/program/
+  ln -vsf /usr/local/etc/libreoffice/bootstraprc .
+  ln -vsf /usr/local/etc/libreoffice/sofficerc .
+
+  cd ${I_ROOT}/usr/local/lib/libreoffice/basis3.3/share/psprint/
+  ln -vsf /usr/local/etc/libreoffice/psprint.conf .
+
+  # extensions
+  unzip ${S_ROOT}/build/libreoffice-${VERSION}/solver/${_OFFICEUPD}/unxlng*/bin/NLPSolver.oxt -d ${I_ROOT}/usr/local/lib/libreoffice/share/extensions/nlpsolver || return 1
+  unzip ${S_ROOT}/build/libreoffice-${VERSION}/solver/${_OFFICEUPD}/unxlng*/bin/pdfimport.oxt -d ${I_ROOT}/usr/local/lib/libreoffice/share/extensions/pdfimport || return 1
+  unzip ${S_ROOT}/build/libreoffice-${VERSION}/solver/${_OFFICEUPD}/unxlng*/bin/oooblogger.oxt -d ${I_ROOT}/usr/local/lib/libreoffice/share/extensions/oooblogger || return 1
+  unzip ${S_ROOT}/build/libreoffice-${VERSION}/solver/${_OFFICEUPD}/unxlng*/bin/Diagram.oxt -d ${I_ROOT}/usr/local/lib/libreoffice/share/extensions/diagram || return 1
+  unzip ${S_ROOT}/build/libreoffice-${VERSION}/solver/${_OFFICEUPD}/unxlng*/bin/WatchWindow.oxt -d ${I_ROOT}/usr/local/lib/libreoffice/share/extensions/watch-window || return 1
+  unzip ${S_ROOT}/build/libreoffice-${VERSION}/solver/${_OFFICEUPD}/unxlng*/bin/gdocs.oxt -d ${I_ROOT}/usr/local/lib/libreoffice/share/extensions/gdocs || return 1
+  unzip ${S_ROOT}/build/libreoffice-${VERSION}/solver/${_OFFICEUPD}/unxlng*/bin/ConvertTextToNumber-1.3.2.oxt -d ${I_ROOT}/usr/local/lib/libreoffice/share/extensions/ct2n || return 1
+  unzip ${S_ROOT}/build/libreoffice-${VERSION}/solver/${_OFFICEUPD}/unxlng*/bin/presentation-minimizer.oxt -d ${I_ROOT}/usr/local/lib/libreoffice/share/extensions/presentation-minimizer || return 1
+  unzip ${S_ROOT}/build/libreoffice-${VERSION}/solver/${_OFFICEUPD}/unxlng*/bin/presenter-screen.oxt -d ${I_ROOT}/usr/local/lib/libreoffice/share/extensions/presenter-screen || return 1
+  unzip ${S_ROOT}/build/libreoffice-${VERSION}/solver/${_OFFICEUPD}/unxlng*/bin/report-builder.oxt -d ${I_ROOT}/usr/local/lib/libreoffice/share/extensions/report-builder || return 1
+  unzip ${S_ROOT}/build/libreoffice-${VERSION}/solver/${_OFFICEUPD}/unxlng*/bin/wiki-publisher.oxt -d ${I_ROOT}/usr/local/lib/libreoffice/share/extensions/wiki-publisher || return 1
+
+  find ${I_ROOT} -perm 444 -exec ls -lh {} \; 
+  find ${I_ROOT} -perm 444 -exec chmod 644 {} \;
+  find ${I_ROOT} -perm 555 -exec ls -lh {} \;
+  find ${I_ROOT} -perm 555 -exec chmod 755 {} \;
+
+  cd ${I_ROOT}/usr/local/lib/libreoffice/basis3.3/sdk
+  for file in setsdkenv_unix.csh setsdkenv_unix.sh
+  do
+     chmod 755 $file
+  done
+
+  find examples -type f -exec chmod -x {} \;
+
+}
+
+############################################################################ 
+#                                Rules                                     #
+############################################################################
+
+build_rules() {
+
+   buildit load || exit 1
+   buildit download || exit 1
+   buildit convert || exit 1
+   buildit unpack || exit 1
+   buildit patch || exit 1
+   buildit configure || exit 1
+   buildit custom download || exit 1
+   buildit compile || exit 1
+   buildit install || exit 1
+   buildit split || exit 1
+   buildit strip || exit 1
+   buildit create || exit 1
+   buildit generate || exit 1
+   buildit check || exit 1
+   buildit package || exit 1
+
+}
+

@@ -1,0 +1,13 @@
+--- a/modules/misc/freetype.c	2010-06-15 23:58:09.000000000 +0000
++++ b/modules/misc/freetype.c	2010-08-11 12:38:45.523777845 +0000
+@@ -67,8 +67,8 @@
+ #define DEFAULT_FONT "/usr/share/fonts/nokia/nosnb.ttf"
+ #define FC_DEFAULT_FONT "Nokia Sans Bold"
+ #else
+-#define DEFAULT_FONT "/usr/share/fonts/truetype/freefont/FreeSerifBold.ttf"
+-#define FC_DEFAULT_FONT "Serif Bold"
++#define DEFAULT_FONT "/usr/local/share/vlc/skins2/fonts/FreeSansBold.ttf"
++#define FC_DEFAULT_FONT "Sans Bold"
+ #endif
+ 
+ #if defined(HAVE_FRIBIDI)

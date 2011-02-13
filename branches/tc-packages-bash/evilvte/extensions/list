@@ -1,0 +1,7 @@
+usr/local/bin/evilvte
+usr/local/bin/showvte
+usr/local/share/applications/evilvte.desktop
+usr/local/share/gnome-control-center/default-apps/evilvte.xml
+usr/local/share/man/man1/evilvte.1
+usr/local/share/man/man1/showvte.1
+usr/local/share/pixmaps/evilvte.png

@@ -1,0 +1,27 @@
+PACKAGE="notify-osd"
+VERSION="0.9.29"
+SOURCE="http://launchpad.net/notify-osd/lucid/ubuntu-10.04-beta-2/+download/notify-osd-${VERSION}.tar.gz"
+BUILD_DEPENDS="gtk2
+gtk2-dev
+libstartup-notification
+libstartup-notification-dev
+libwnck
+libwnck-dev
+GConf
+GConf-dev
+dbus-glib
+libnotify"
+libnotify-dev
+
+DESCRIPTION="A notification daemon that displays pop-up notifications."
+AUTHOR="Mirco \"MacSlow\" Mueller, David Barth et al."
+SITE="https://launchpad.net/notify-osd"
+COPYING="GPL-3"
+MAINTAINERS="Arslan S."
+COMMENTS="Example usage:
+
+		        notify-send \"title\" \"message\" -i notification-message-im
+
+		This extension is PPI compatible."
+CHANGELOG="---"
+CURRENT="First Version"

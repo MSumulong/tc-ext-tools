@@ -1,0 +1,6 @@
+lib/udev
+usr/local/lib/*.so*
+usr/local/lib/*.prl
+usr/local/sbin
+usr/local/etc
+

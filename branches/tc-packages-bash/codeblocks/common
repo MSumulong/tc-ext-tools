@@ -1,0 +1,20 @@
+PACKAGE="codeblocks"
+VERSION="10.05"
+SOURCE="http://download.berlios.de/codeblocks/codeblocks-${VERSION}-src.tar.bz2"
+BUILD_DEPENDS="gtk2
+gtk2-dev
+wxgtk
+wxgtk-dev
+bzip2-lib
+bzip2-dev
+zip-unzip"
+
+DESCRIPTION="The open source, cross platform, free C++ IDE."
+AUTHOR="The Code::Blocks Team"
+SITE="http://www.codeblocks.org"
+COPYING="GPL-3"
+MAINTAINERS="Arslan S."
+COMMENTS="This extension is PPI compatible."
+CHANGELOG="2010/02/10 Original 8.02
+		2010/02/12 Updated to 8.02svn6155"
+CURRENT="Updated to 10.05"

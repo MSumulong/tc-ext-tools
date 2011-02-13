@@ -1,0 +1,39 @@
+PACKAGE="akonadi"
+VERSION="1.4.1"
+SOURCE="http://download.akonadi-project.org/akonadi-${VERSION}.tar.bz2"
+BUILD_DEPENDS="cmake
+qt-4.x-base
+qt-4.x-xml
+qt-4.x-dbus
+qt-4.x-sql
+qt-4.x-extended
+qt-4.x-dev
+Xorg-7.5-lib
+Xorg-7.5-dev
+boost
+boost-dev
+soprano
+soprano-dev
+mysql
+mysql-dev
+postgresql
+postgresql-dev
+shared-mime-info
+libxslt
+dbus
+dbus-dev
+automoc4
+sqlite3
+sqlite3-dev"
+
+DESCRIPTION="The PIM Storage Service."
+AUTHOR="Volker Krause, Till Adam, Tobias Koenig, Kevin Krammer"
+SITE="http://www.akonadi-project.org"
+COPYING="LGPL"
+MAINTAINERS="robc, Arslan S."
+COMMENTS="This extension is PPI compatible."
+CHANGELOG="2010/01/26 Original 1.3.0 by robc
+		2010/07/08 Updated to 1.3.1 by Arslan S.
+		2010/10/03 Updated to 1.4.0 & patched for postgresql by Arslan S."
+CURRENT="Updated to $VERSION by Arslan S."
+

@@ -1,0 +1,20 @@
+PACKAGE="gluezilla"
+VERSION="2.6"
+SOURCE="http://ftp.novell.com/pub/mono/sources/gluezilla/gluezilla-${VERSION}.tar.bz2"
+BUILD_DEPENDS="mono
+mono-dev
+gtk2
+gtk2-dev
+libxcb
+libxcb-dev
+xulrunner
+xulrunner-dev"
+
+DESCRIPTION="A simple library to embed Gecko (xulrunner) for the Mono Winforms WebControl."
+AUTHOR="Andreia Gaita, Zac Bowling"
+SITE="http://www.mono-project.com/"
+COPYING="LGPL-2"
+MAINTAINERS="Arslan S."
+COMMENTS="This extension is PPI compatible."
+CHANGELOG="2010/05/10 Original 2.6"
+CURRENT="Rebuilt"

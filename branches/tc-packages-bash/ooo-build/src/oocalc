@@ -1,0 +1,2 @@
+#!/bin/sh
+/usr/local/openoffice3/program/soffice -calc "$@"

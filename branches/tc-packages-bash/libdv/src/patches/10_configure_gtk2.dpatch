@@ -1,0 +1,32 @@
+#! /bin/sh /usr/share/dpatch/dpatch-run
+## 10_configure_gtk2.dpatch by  <bdefreese@debian2.bddebian.com>
+##
+## All lines beginning with `## DP:' are a description of the patch.
+## DP: Tweak gtk/glib requirements in configure script to build
+## DP: with version 2.0 instead of now-obsolete 1.2.
+
+@DPATCH@
+diff -urNad libdv-1.0.0~/configure libdv-1.0.0/configure
+--- libdv-1.0.0~/configure	2006-09-25 16:11:47.000000000 -0400
++++ libdv-1.0.0/configure	2009-03-24 14:34:21.000000000 -0400
+@@ -20082,7 +20082,7 @@
+ 
+ have_gtk="false"
+ if $use_gtk; then
+-	REQUIRES='glib >= 1.2.4 gtk+ >= 1.2.4'
++	REQUIRES='glib-2.0 >= 2.0.0 gtk+-2.0 >= 2.0.0'
+ 
+ 
+ if test "x$ac_cv_env_PKG_CONFIG_set" != "xset"; then
+diff -urNad libdv-1.0.0~/configure.ac libdv-1.0.0/configure.ac
+--- libdv-1.0.0~/configure.ac	2006-08-06 17:38:30.000000000 -0400
++++ libdv-1.0.0/configure.ac	2009-03-24 14:34:45.000000000 -0400
+@@ -162,7 +162,7 @@
+ dnl Checks for libraries.
+ have_gtk="false"
+ if $use_gtk; then
+-	REQUIRES='glib >= 1.2.4 gtk+ >= 1.2.4'
++	REQUIRES='glib-2.0 >= 2.0.0 gtk+-2.0 >= 2.0.0'
+ 	PKG_CHECK_MODULES(GTK,$REQUIRES,have_gtk="true",have_gtk="false")
+ 	AC_DEFINE(HAVE_GTK)
+ fi

@@ -1,0 +1,28 @@
+ICON="/usr/local/share/icons/hicolor/48x48/apps/vlc.png"
+DESKTOP="/usr/local/share/applications/vlc.desktop"
+COMMENTS="VLC media player is a highly portable multimedia player supporting most audio 
+		and video formats (H.264, Ogg, DivX, MKV, TS, MPEG-2, mp3, MPEG-4, aac, ...) 
+		from files, physical media (DVDs, VCD, Audio-CD), TV capture cards and many 
+		network streaming protocols.
+		
+		Almost all audio and video codecs supported by this build except rare ones.
+		
+		Reading dvd (with menu support via libdvdnav),vcd,audio-cd, bd, TV capture cards enabled.
+
+		To increase performance when playing hd movies:
+		Tools->Preferences, in bottom left corner click on All for Show settings then
+		Input/Codecs->Access modules->File, set Caching value to 800 ms or higher.
+		Input/Codecs->Other codecs->FFmpeg->Decoding->Skip the loop filter for H.264 , select All
+
+		VLC supports skins at http://www.videolan.org/vlc/skins.php
+		Put the ones you like in the directory ~/.local/share/vlc/skins2
+		To switch to skins ui: Tools->Preferences->Interface->Type then select Skins, and restart vlc.
+		To change skin: Right click menu->Interface->Select skin.
+		To directly load a skin file: Tools->Preferences->Interface->Interface Type->Skins menu.
+
+		You need OSS, ALSA or PULSEAUDIO for sound.
+
+		Optional dependencies: Xorg-7.5, libmtp, libv4l, libdvdcss, xulrunner, pulseaudio, alsa, jack,
+		x264, libnotify, libproxy, fribidi, librsvg, libraw1394, libdc1394, avahi
+		
+		This extension is PPI compatible."

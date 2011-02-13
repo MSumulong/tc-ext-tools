@@ -1,0 +1,9 @@
+gtk2.tcz
+librsvg.tcz
+gnome-desktop-sharp.tcz
+gnome-keyring-sharp.tcz
+mono-addins.tcz
+ndesk-dbus-glib.tcz
+notify-sharp.tcz
+shared-mime-info.tcz
+hicolor-icon-theme.tcz

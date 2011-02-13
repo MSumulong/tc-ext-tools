@@ -1,0 +1,13 @@
+PACKAGE="freeimage"
+VERSION="3.14.1"
+SOURCE="http://downloads.sourceforge.net/sourceforge/freeimage/FreeImage3141.zip"
+BUILD_DEPENDS=""
+
+DESCRIPTION="A library project for developers who would like to support popular graphics image formats."
+AUTHOR="various"
+SITE="http://sourceforge.net/projects/freeimage/"
+COPYING="GPL/FreeImage Public License - Version 1.0"
+MAINTAINERS="Arslan S."
+COMMENTS="This extension is PPI compatible."
+CHANGELOG="---"
+CURRENT="First Version"

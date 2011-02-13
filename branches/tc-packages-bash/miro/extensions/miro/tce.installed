@@ -1,0 +1,6 @@
+#!/bin/sh
+
+[ -x "$(which update-desktop-database)" ] && update-desktop-database -q
+[ -x "$(which gtk-update-icon-cache)" ] && gtk-update-icon-cache -q -f -t /usr/local/share/icons/hicolor
+[ -x "$(which update-mime-database)" ] && update-mime-database /usr/local/share/mime
+

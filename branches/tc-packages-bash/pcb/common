@@ -1,0 +1,23 @@
+PACKAGE="pcb"
+VERSION="20100929"
+SOURCE="http://downloads.sourceforge.net/pcb/pcb-${VERSION}.tar.gz"
+BUILD_DEPENDS="gtk2
+gtk2-dev
+Xorg-7.5-lib
+Xorg-7.5-dev
+libxcb
+libxcb-dev
+dbus
+dbus-dev
+libgd
+tk
+tk-dev"
+
+DESCRIPTION="An interactive printed circuit board editor."
+AUTHOR="various"
+SITE="http://pcb.gpleda.org/"
+COPYING="GPL"
+MAINTAINERS="Arslan S."
+COMMENTS="This extension is PPI compatible."
+CHANGELOG="---"
+CURRENT="First Version"

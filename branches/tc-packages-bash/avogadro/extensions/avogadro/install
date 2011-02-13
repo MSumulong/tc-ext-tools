@@ -1,0 +1,6 @@
+usr/local
+x-usr/local/include
+x-usr/local/lib/avogadro/1_0/*.cmake
+x-usr/local/lib/avogadro/*.cmake
+x-usr/local/share/cmake-2.8
+x-usr/local/mkspecs

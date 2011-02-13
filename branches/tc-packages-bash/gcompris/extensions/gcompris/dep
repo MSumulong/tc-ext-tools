@@ -1,0 +1,11 @@
+gtk2.tcz
+sqlite3.tcz
+gnet.tcz
+gst-plugins-base.tcz
+gst-plugins-good.tcz
+librsvg.tcz
+pygtk-2.7.tcz
+pyxml.tcz
+pysqlite2.tcz
+shared-mime-info.tcz
+

@@ -1,0 +1,5 @@
+usr/local/bin
+usr/local/lib/gtk-sharp-2.0
+usr/local/lib/mono
+x-usr/local/lib/mono/gac/*/*/*.mdb
+usr/local/lib/*.so*

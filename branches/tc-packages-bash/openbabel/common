@@ -1,0 +1,22 @@
+PACKAGE="openbabel"
+VERSION="2.3.0"
+SOURCE="http://downloads.sourceforge.net/openbabel/openbabel-${VERSION}.tar.gz"
+BUILD_DEPENDS="cmake
+eigen
+libxml2
+libxml2-dev
+wxgtk
+wxgtk-dev
+gtk2
+gtk2-dev
+python
+python-dev"
+
+DESCRIPTION="The Open Source Chemistry Toolbox."
+AUTHOR="various"
+SITE="http://openbabel.org/wiki/Main_Page"
+COPYING="GPL"
+MAINTAINERS="Arslan S."
+COMMENTS="This extension is PPI compatible."
+CHANGELOG="---"
+CURRENT="First Version"

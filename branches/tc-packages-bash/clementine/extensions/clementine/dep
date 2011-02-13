@@ -1,0 +1,15 @@
+libusb.tcz
+libmtp.tcz
+libgpod.tcz
+liblastfm.tcz
+glew.tcz
+taglib.tcz
+gstreamer.tcz
+gst-plugins-base.tcz
+qt-4.x-base.tcz
+qt-4.x-xml.tcz
+qt-4.x-sql.tcz
+qt-4.x-dbus.tcz
+qt-4.x-opengl.tcz
+qt-4.x-webkit.tcz
+

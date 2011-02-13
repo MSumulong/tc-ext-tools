@@ -1,0 +1,34 @@
+PACKAGE="gnome-system-monitor"
+VERSION="2.28.2"
+
+SOURCE="http://ftp.gnome.org/pub/GNOME/sources/gnome-system-monitor/${VERSION%.*}/gnome-system-monitor-${VERSION}.tar.bz2"
+
+BUILD_DEPENDS="gnome-doc-utils
+rarian
+gtk2
+gtk2-dev
+GConf
+GConf-dev
+libgtop
+libgtop-dev
+libstartup-notification
+libstartup-notification-dev
+libwnck
+libwnck-dev
+gnome-icon-theme
+glibmm
+glibmm-dev
+gtkmm
+gtkmm-dev
+librsvg
+librsvg-dev"
+
+
+DESCRIPTION="GNOME system monitor."
+AUTHOR="GNOME Maintainers"
+SITE="http://www.gnome.org"
+COPYING="GPL"
+MAINTAINERS="Arslan S."
+COMMENTS="This extension is PPI compatible."
+CHANGELOG="2010/07/31 First Version 2.28.1"
+CURRENT="Updated to $VERSION"

@@ -1,0 +1,17 @@
+PACKAGE="polkit-gnome"
+VERSION="0.99"
+SOURCE="http://hal.freedesktop.org/releases/polkit-gnome-${VERSION}.tar.bz2"
+BUILD_DEPENDS="polkit
+polkit-dev
+gtk2
+gtk2-dev"
+
+DESCRIPTION="D-Bus service to bring up authentication dialogs."
+AUTHOR="David Zeuthen"
+SITE="http://www.freedesktop.org/wiki/Software/PolicyKit"
+COPYING="LGPL"
+MAINTAINERS="Arslan S."
+COMMENTS="This extension is PPI compatible."
+CHANGELOG="2010/03/06 Original 0.96
+		2010/07/23 Rebuilt"
+CURRENT="Updated to 0.99 & renamed policykit-gnome --> polkit-gnome"

@@ -1,0 +1,26 @@
+DESCRIPTION="NVIDIA Linux Drivers, Xorg driver."
+COMMENTS="Installation:
+		1) load nvidia-glx.tcz
+		2) exit to prompt
+		3) create xorg.conf
+			sudo Xorg -configure
+		4) move new config file to /etc/X11/ and name it to xorg.conf
+			sudo mv xorg.conf.new /etc/X11/xorg.conf
+		5) sudo nvidia-xconfig
+		6) startx
+		7) add etc/X11/xorg.conf to backup (/opt/.filetool.lst)
+
+		If you already have Xorg installed and have xorg.conf skip steps 3-4.
+
+		If you don't have xorg.conf then you can skip steps 3-4 if you load pkg-config and procps extensions for once only.
+
+		For testing your installation you can run glxgears.
+		
+		For more information please refer to nvidia-glx-doc extension (index.html).
+
+		Please read /usr/local/share/doc/nvidia-glx/LICENSE. If you do not agree with
+		the terms of NVIDIA Proprietary License then uninstall the extension from your computer.
+		You can also read the License online before downloading the extension
+		http://www.nvidia.com/content/DriverDownload-March2009/licence.php?lang=us
+
+		This extension is PPI compatible."

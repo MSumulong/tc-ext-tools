@@ -1,0 +1,17 @@
+PACKAGE="oxygen-gtk"
+VERSION="1.0.0"
+SOURCE="ftp://ftp.kde.org/pub/kde/stable/oxygen-gtk/${VERSION}/src/oxygen-gtk-${VERSION}.tar.bz2"
+BUILD_DEPENDS="cmake
+gtk2
+gtk2-dev
+libxcb
+libxcb-dev"
+
+DESCRIPTION="Oxygen-Gtk is a port of the default KDE widget theme (Oxygen), to gtk."
+AUTHOR="various"
+SITE="http://kde-look.org/content/show.php/?content=136216"
+COPYING="LGPL"
+MAINTAINERS="Arslan S."
+COMMENTS="This extension is PPI compatible."
+CHANGELOG="---"
+CURRENT="First Version"

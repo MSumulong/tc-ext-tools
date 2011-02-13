@@ -1,0 +1,4 @@
+usr/local/bin/jsc
+usr/local/lib/*.so*
+usr/local/share/webkit-1.0
+usr/local/share/licenses

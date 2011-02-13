@@ -1,0 +1,42 @@
+diff -Naur a/src/VBox/Additions/x11/Installer/98vboxadd-xclient b/src/VBox/Additions/x11/Installer/98vboxadd-xclient
+--- a/src/VBox/Additions/x11/Installer/98vboxadd-xclient	2011-01-14 20:15:34.000000000 +0000
++++ b/src/VBox/Additions/x11/Installer/98vboxadd-xclient	2011-01-28 22:30:07.833114264 +0000
+@@ -40,9 +40,9 @@
+     no_display=1
+ fi
+ 
+-/usr/bin/VBoxClient --clipboard
+-/usr/bin/VBoxClient --checkhostversion
++/usr/local/bin/VBoxClient --clipboard
++/usr/local/bin/VBoxClient --checkhostversion
+ test -z "$no_display" &&
+-    /usr/bin/VBoxClient --display
++    /usr/local/bin/VBoxClient --display
+ test -z "$no_display" &&
+-    /usr/bin/VBoxClient --seamless
++    /usr/local/bin/VBoxClient --seamless
+diff -Naur a/src/VBox/Additions/x11/Installer/vboxclient.desktop b/src/VBox/Additions/x11/Installer/vboxclient.desktop
+--- a/src/VBox/Additions/x11/Installer/vboxclient.desktop	2011-01-14 20:15:34.000000000 +0000
++++ b/src/VBox/Additions/x11/Installer/vboxclient.desktop	2011-01-28 22:31:08.833108024 +0000
+@@ -8,6 +8,6 @@
+ Comment=VirtualBox User Session Services
+ Comment[it]=Servizi di sessione utente di VirtualBox
+ Comment[pl]=Usługi sesji użytkownika VirtualBox
+-Exec=/usr/bin/VBoxClient-all
++Exec=/usr/local/bin/VBoxClient-all
+ X-GNOME-Autostart-enabled=true
+ X-KDE-autostart-after=panel
+diff -Naur a/src/VBox/Installer/linux/VBox.sh b/src/VBox/Installer/linux/VBox.sh
+--- a/src/VBox/Installer/linux/VBox.sh	2011-01-14 20:15:23.000000000 +0000
++++ b/src/VBox/Installer/linux/VBox.sh	2011-01-28 22:28:44.488955132 +0000
+@@ -13,8 +13,8 @@
+ # hope that it will be useful, but WITHOUT ANY WARRANTY of any kind.
+ #
+ 
+-PATH="/usr/bin:/bin:/usr/sbin:/sbin"
+-CONFIG="/etc/vbox/vbox.cfg"
++PATH="/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin"
++CONFIG="/usr/local/etc/vbox/vbox.cfg"
+ 
+ if [ ! -r "$CONFIG" ]; then
+     echo "Could not find VirtualBox installation. Please reinstall."

@@ -1,0 +1,13 @@
+PACKAGE="nvidia"
+VERSION="260.19.21"
+SOURCE="ftp://download.nvidia.com/XFree86/Linux-x86/${VERSION}/NVIDIA-Linux-x86-${VERSION}.run"
+BUILD_DEPENDS="linux-headers-2.6.33.3-tinycore"
+
+DESCRIPTION="NVIDIA Linux Drivers."
+AUTHOR="NVIDIA"
+SITE="http://www.nvidia.com"
+COPYING="Proprietary"
+MAINTAINERS="Arslan S."
+COMMENTS="This extension is PPI compatible."
+CHANGELOG="2010/05/24 Original 195.36.24"
+CURRENT="Updated to 260.19.21"

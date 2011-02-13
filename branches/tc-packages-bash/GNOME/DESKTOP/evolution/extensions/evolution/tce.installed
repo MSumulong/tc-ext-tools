@@ -1,0 +1,6 @@
+#!/bin/sh
+
+[ -x "$(which update-gconf-database)" ] && update-gconf-database register-extension evolution > /dev/null 2>&1
+[ -x "$(which gtk-update-icon-cache)" ] && gtk-update-icon-cache -q -f -t /usr/local/share/icons/hicolor > /dev/null 2>&1
+
+

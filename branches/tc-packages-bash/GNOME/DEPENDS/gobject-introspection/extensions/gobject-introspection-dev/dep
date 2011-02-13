@@ -1,0 +1,6 @@
+gobject-introspection.tcz
+libffi-dev.tcz
+glib2-dev.tcz
+cairo-dev.tcz
+Xorg-7.5-dev.tcz
+

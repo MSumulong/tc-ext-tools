@@ -1,0 +1,14 @@
+glib2.tcz
+libxml2.tcz
+pango.tcz
+gtk2.tcz
+dbus-glib.tcz
+GConf.tcz
+libexif.tcz
+libexempi.tcz
+libunique.tcz
+libgnome-desktop.tcz
+libnautilus-extension.tcz
+shared-mime-info.tcz
+hicolor-icon-theme.tcz
+gnome-icon-theme.tcz

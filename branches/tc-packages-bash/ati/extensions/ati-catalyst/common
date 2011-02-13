@@ -1,0 +1,3 @@
+DESCRIPTION="AMD/ATI Linux drivers, Catalyst Control Center."
+ICON="/usr/local/share/pixmaps/ccc_large.xpm"
+DESKTOP="/usr/local/share/applications/ati-catalyst.desktop"

@@ -1,0 +1,23 @@
+PACKAGE="ConsoleKit"
+VERSION="0.4.1"
+SOURCE="http://www.freedesktop.org/software/ConsoleKit/dist/ConsoleKit-${VERSION}.tar.bz2"
+BUILD_DEPENDS="Xorg-7.5
+Xorg-7.5-dev
+polkit
+polkit-dev
+Linux-PAM
+Linux-PAM-dev
+dbus-glib
+glib2
+glib2-dev
+expat2
+expat2-dev"
+
+DESCRIPTION="ConsoleKit  is a framework for defining and tracking users, login sessions, and seats."
+AUTHOR="William Jon McCann"
+SITE="http://www.freedesktop.org/wiki/Software/ConsoleKit"
+COPYING="GPL-2"
+MAINTAINERS="Arslan S."
+COMMENTS="This extension is PPI compatible."
+CHANGELOG="2010/02/13 Original 0.4.1"
+CURRENT="Rebuilt with patches"

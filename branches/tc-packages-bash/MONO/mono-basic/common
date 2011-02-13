@@ -1,0 +1,14 @@
+PACKAGE="mono-basic"
+VERSION="2.8"
+SOURCE="http://ftp.novell.com/pub/mono/sources/mono-basic/mono-basic-${VERSION}.tar.bz2"
+BUILD_DEPENDS="mono
+mono-dev"
+
+DESCRIPTION="Visual Basic Compiler and Runtime."
+AUTHOR="Rolf Bjarne Kvinge, Wade Berrier"
+SITE="ttp://www.mono-project.com/"
+COPYING="LGPL-2"
+MAINTAINERS="Arslan S."
+COMMENTS="This extension is PPI compatible."
+CHANGELOG="2010/05/11 Original 2.6.2"
+CURRENT="Updated to $VERSION"

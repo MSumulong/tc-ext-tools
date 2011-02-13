@@ -1,0 +1,7 @@
+#!/bin/sh
+PREFIX=/usr/local
+[ ! -d $PREFIX/etc/ConsoleKit/run-seat.d ] && mkdir -p $PREFIX/etc/ConsoleKit/run-seat.d
+[ ! -d $PREFIX/etc/ConsoleKit/run-session.d ] && mkdir -p $PREFIX/etc/ConsoleKit/run-session.d
+[ ! -d /var/log/ConsoleKit ] && mkdir -p /var/log/ConsoleKit
+[ ! -d /var/run/ConsoleKit ] && mkdir -p /var/run/ConsoleKit
+[ ! -d $PREFIX/lib/ConsoleKit/run-seats.d ] && mkdir -p $PREFIX/lib/ConsoleKit/run-seats.d

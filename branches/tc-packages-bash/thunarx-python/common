@@ -1,0 +1,18 @@
+PACKAGE="thunarx-python"
+VERSION="0.2.1"
+SOURCE="http://github.com/downloads/adamplumb/thunarx-python/thunarx-python-${VERSION}.tar.gz"
+BUILD_DEPENDS="Thunar
+Thunar-dev
+pygtk-2.7
+pygtk-2.7-dev
+gnome-python
+gnome-python-dev"
+
+DESCRIPTION="Thunar Python Bindings."
+AUTHOR="Adam Plumb"
+SITE="http://github.com/adamplumb/thunarx-python"
+COPYING="GPL-2"
+MAINTAINERS="Arslan S."
+COMMENTS="This extension is PPI compatible."
+CHANGELOG="2010/06/20 Original"
+CURRENT="Rebuilt against python 2.7"

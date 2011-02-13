@@ -1,0 +1,28 @@
+PACKAGE="libgnome"
+VERSION="2.32.0"
+SOURCE="http://ftp.gnome.org/pub/GNOME/sources/libgnome/${VERSION%.*}/libgnome-${VERSION}.tar.bz2"
+BUILD_DEPENDS="glib2
+glib2-dev
+ORBit2
+ORBit2-dev
+GConf
+GConf-dev
+gnome-vfs
+gnome-vfs-dev
+libbonobo
+libbonobo-dev
+libcanberra
+libcanberra-dev
+popt
+popt-dev"
+
+DESCRIPTION="The GNOME library."
+AUTHOR="GNOME Maintainers"
+SITE="http://www.gnome.org"
+COPYING="LGPL"
+MAINTAINERS="juanito, Arslan S."
+COMMENTS="This extension is PPI compatible."
+CHANGELOG="2009/11/08 First Version by juanito
+		2010/03/06 Rebuilt with more options & separated dev by Arslan S.
+		2010/07/18 Updated to 2.30.0 by Arslan S."
+CURRENT="Updated to 2.32.0 by Arslan S."

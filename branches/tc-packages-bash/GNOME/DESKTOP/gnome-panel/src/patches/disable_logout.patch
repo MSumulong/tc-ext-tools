@@ -1,0 +1,11 @@
+--- a/gnome-panel/panel-global.schemas.in
++++ b/gnome-panel/panel-global.schemas.in
+@@ -247,7 +247,7 @@
+         <applyto>/apps/panel/global/disable_log_out</applyto>
+         <owner>panel</owner>
+         <type>bool</type>
+-        <default>false</default>
++        <default>true</default>
+         <locale name="C">
+           <short>Disable Logging Out</short>
+           <long>If true, the panel will not allow a user to log out,

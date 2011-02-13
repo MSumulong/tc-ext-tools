@@ -1,0 +1,27 @@
+PACKAGE="gtkhtml"
+VERSION="3.32.1"
+SOURCE="http://ftp.gnome.org/pub/GNOME/sources/gtkhtml/${VERSION%.*}/gtkhtml-${VERSION}.tar.bz2"
+BUILD_DEPENDS="gtk2
+gtk2-dev
+ORBit2
+ORBit2-dev
+GConf
+GConf-dev
+enchant
+enchant-dev
+libsoup
+libsoup-dev
+libgnomeui
+libgnomeui-dev
+iso-codes
+gnome-icon-theme"
+
+DESCRIPTION="A lightweight HTML rendering/printing/editing engine."
+AUTHOR="GNOME Maintainers"
+SITE="http://www.gnome.org/"
+COPYING="GPL"
+MAINTAINERS="Arslan S."
+COMMENTS="This extension is PPI compatible."
+CHANGELOG="2010/03/28 Original 3.28.2
+		2010/07/23 Updated to 3.30.2"
+CURRENT="Updated to 3.32.1"

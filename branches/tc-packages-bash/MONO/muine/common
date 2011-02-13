@@ -1,0 +1,26 @@
+PACKAGE="muine"
+VERSION="0.8.11"
+SOURCE="http://ftp.gnome.org/pub/gnome/sources/muine/0.8/muine-${VERSION}.tar.bz2"
+BUILD_DEPENDS="gtk2
+gtk2-dev
+GConf
+GConf-dev
+mono
+mono-dev
+gnome-sharp
+gnome-sharp-dev
+taglib-sharp
+ndesk-dbus-glib
+gst-plugins-base
+gst-plugins-base-dev
+libgdbm
+libgdbm-dev"
+
+DESCRIPTION="Muine is an innovative music player, featuring a simple, intuitive interface."
+AUTHOR="various"
+SITE="http://muine.gooeylinux.org/"
+COPYING="GPL-2"
+MAINTAINERS="Arslan S."
+COMMENTS="This extension is PPI compatible."
+CHANGELOG="---"
+CURRENT="First Version"

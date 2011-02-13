@@ -1,0 +1,11 @@
+usr/local/bin
+usr/local/etc
+usr/local/lib/gedit-2
+x-usr/local/lib/gedit-2/*/*.la
+usr/local/libexec
+usr/local/share/applications
+usr/local/share/gedit-2
+usr/local/share/pixmaps
+usr/local/share/man
+usr/local/share/gnome/help/gedit/C
+usr/local/share/omf/gedit/gedit-C.omf

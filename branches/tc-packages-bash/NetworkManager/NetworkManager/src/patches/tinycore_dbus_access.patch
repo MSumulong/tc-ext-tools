@@ -1,0 +1,54 @@
+--- NetworkManager-0.8.1~git100705/src/NetworkManager.conf	2010-07-05 08:01:29.000000000 +0000
++++ NetworkManager-0.8.1~git100705_tinycore/src/NetworkManager.conf	2010-07-05 18:54:33.419946486 +0000
+@@ -12,6 +12,51 @@
+                 <allow send_destination="org.freedesktop.NetworkManager"
+                        send_interface="org.freedesktop.NetworkManager.PPP"/>
+         </policy>
++        <policy group="staff">
++                <allow send_destination="org.freedesktop.NetworkManager"/>
++
++                <allow send_destination="org.freedesktop.NetworkManager"
++                       send_interface="org.freedesktop.DBus.Introspectable"/>
++
++                <allow send_destination="org.freedesktop.NetworkManager"
++                       send_interface="org.freedesktop.DBus.Properties"/>
++
++                <allow send_destination="org.freedesktop.NetworkManager"
++                       send_interface="org.freedesktop.NetworkManager"/>
++
++                <allow send_destination="org.freedesktop.NetworkManager"
++                       send_interface="org.freedesktop.NetworkManager.AccessPoint"/>
++
++                <allow send_destination="org.freedesktop.NetworkManager"
++                       send_interface="org.freedesktop.NetworkManager.Connection.Active"/>
++
++                <allow send_destination="org.freedesktop.NetworkManager"
++                       send_interface="org.freedesktop.NetworkManager.Device.Cdma"/>
++
++                <allow send_destination="org.freedesktop.NetworkManager"
++                       send_interface="org.freedesktop.NetworkManager.Device.Wired"/>
++
++                <allow send_destination="org.freedesktop.NetworkManager"
++                       send_interface="org.freedesktop.NetworkManager.Device.Gsm"/>
++
++                <allow send_destination="org.freedesktop.NetworkManager"
++                       send_interface="org.freedesktop.NetworkManager.Device.Serial"/>
++
++                <allow send_destination="org.freedesktop.NetworkManager"
++                       send_interface="org.freedesktop.NetworkManager.Device.Wireless"/>
++
++                <allow send_destination="org.freedesktop.NetworkManager"
++                       send_interface="org.freedesktop.NetworkManager.Device"/>
++
++                <allow send_destination="org.freedesktop.NetworkManager"
++                       send_interface="org.freedesktop.NetworkManager.DHCP4Config"/>
++
++                <allow send_destination="org.freedesktop.NetworkManager"
++                       send_interface="org.freedesktop.NetworkManager.IP4Config"/>
++
++                <allow send_destination="org.freedesktop.NetworkManager"
++                       send_interface="org.freedesktop.NetworkManager.VPN.Connection"/>
++        </policy>
+         <policy at_console="true">
+                 <allow send_destination="org.freedesktop.NetworkManager"/>
+ 

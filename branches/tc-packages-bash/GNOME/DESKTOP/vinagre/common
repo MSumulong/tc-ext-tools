@@ -1,0 +1,32 @@
+PACKAGE="vinagre"
+VERSION="2.30.2"
+SOURCE="http://ftp.gnome.org/pub/GNOME/sources/vinagre/2.30/vinagre-${VERSION}.tar.bz2"
+BUILD_DEPENDS="gnome-doc-utils
+rarian
+gtk2
+gtk2-dev
+GConf
+GConf-dev
+libgnome-keyring
+libgnome-keyring-dev
+vte
+vte-dev
+gtk-vnc
+cyrus-sasl-dev
+gnutls-dev
+gtk-vnc-dev
+libpanel-applet
+libpanel-applet-dev
+telepathy-glib
+telepathy-glib-dev
+Xorg-7.5-lib
+Xorg-7.5-dev"
+
+DESCRIPTION="A VNC Client for the GNOME Desktop."
+AUTHOR="Jonh Wendell"
+SITE="http://projects.gnome.org/vinagre/"
+COPYING="GPL-3"
+MAINTAINERS="Arslan S."
+COMMENTS="This extension is PPI compatible."
+CHANGELOG="2010/03/31 Original 2.28.1"
+CURRENT="Updated to 2.30.2"

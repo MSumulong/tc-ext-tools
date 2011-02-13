@@ -1,0 +1,8 @@
+usr/local/etc
+usr/local/lib/*.so*
+usr/local/lib/bonobo
+usr/local/lib/gtk-2.0/modules/*.so
+usr/local/lib/orbit-2.0/*.so
+usr/local/libexec
+usr/local/share/idl
+

@@ -1,0 +1,18 @@
+PACKAGE="xye"
+VERSION="0.9.2"
+SOURCE="http://garr.dl.sourceforge.net/project/xye/xye/${VERSION}/xye-${VERSION}.tar.gz"
+BUILD_DEPENDS="SDL
+SDL-dev
+Xorg-7.5-lib
+Xorg-7.5-dev
+libxcb
+libxcb-dev"
+
+DESCRIPTION="Xye is a puzzle game."
+AUTHOR="Victor Hugo Soliz Kuncar"
+SITE="http://xye.sourceforge.net/"
+COPYING="ZLIB"
+MAINTAINERS="Arslan S."
+COMMENTS="This extension is PPI compatible."
+CHANGELOG="---"
+CURRENT="First Version"

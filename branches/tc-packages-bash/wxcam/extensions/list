@@ -1,0 +1,15 @@
+usr/local/bin/wxcam
+usr/local/doc/wxcam/COPYING
+usr/local/doc/wxcam/ChangeLog
+usr/local/doc/wxcam/AUTHORS
+usr/local/doc/wxcam/NEWS
+usr/local/doc/wxcam/README
+usr/local/doc/wxcam/INSTALL
+usr/local/share/pixmaps/wxcam.png
+usr/local/share/applications/wxcam.desktop
+usr/local/share/locale/es/LC_MESSAGES/wxcam.mo
+usr/local/share/locale/tr/LC_MESSAGES/wxcam.mo
+usr/local/share/locale/it/LC_MESSAGES/wxcam.mo
+usr/local/share/locale/hu/LC_MESSAGES/wxcam.mo
+usr/local/share/locale/pt_BR/LC_MESSAGES/wxcam.mo
+usr/local/share/locale/fr/LC_MESSAGES/wxcam.mo

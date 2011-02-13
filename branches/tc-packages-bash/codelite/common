@@ -1,0 +1,18 @@
+PACKAGE="codelite"
+VERSION="2.9.0.4684"
+SOURCE="http://garr.dl.sourceforge.net/project/codelite/Releases/codelite-2.9/codelite-${VERSION}.tar.gz"
+BUILD_DEPENDS="wxgtk
+wxgtk-dev
+gtk2
+gtk2-dev
+curl
+curl-dev"
+
+DESCRIPTION="A Cross Platform Open Source C/C++ IDE."
+AUTHOR="Eran Ifrah, Scott Dolim"
+SITE="http://codelite.org/"
+COPYING="GPL-2"
+MAINTAINERS="Arslan S."
+COMMENTS="This extension is PPI compatible."
+CHANGELOG="---"
+CURRENT="First Version"

@@ -1,0 +1,7 @@
+usr/local/bin
+usr/local/etc
+usr/local/lib/*.so*
+usr/local/lib/libcanberra-*/*.so
+usr/local/lib/gtk-2.0/modules/*.so
+usr/local/share/gdm
+usr/local/share/gnome

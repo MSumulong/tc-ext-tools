@@ -1,0 +1,39 @@
+PACKAGE="GConf"
+VERSION="2.32.0"
+SOURCE="http://ftp.gnome.org/pub/GNOME/sources/GConf/2.32/GConf-${VERSION}.tar.bz2"
+BUILD_DEPENDS="dbus
+dbus-dev
+dbus-glib
+dbus-glib-dev
+ORBit2
+ORBit2-dev
+libxml2
+libxml2-dev
+gtk2
+gtk2-dev
+polkit
+polkit-dev
+openldap
+openldap-dev
+libgpg-error-dev
+libgcrypt-dev
+gnutls-dev
+cyrus-sasl-dev
+gobject-introspection
+gobject-introspection-dev"
+
+DESCRIPTION="GNOME configuration database system for storing application preferences."
+AUTHOR="Havoc Pennington"
+SITE="http://projects.gnome.org/gconf"
+COPYING="LGPL-2"
+MAINTAINERS="Arslan S."
+COMMENTS="This extension is PPI compatible."
+CHANGELOG="2009/05/26 First Version 2.18.0.1 by jpeters
+		2009/10/29 Updated to 2.22.0.1 by jpeters
+		2010/01/28 Updated to 2.28.0
+		2010/05/18 Updated to 2.28.1
+			-added evoldap backend
+			-added a script: update-gconf-database to properly install schemas
+		2010/07/15 Rebuilt with patches & updated script: update-gconf-database
+		2010/11/19 Updated to 2.32.0"
+CURRENT="Updated to $VERSION"

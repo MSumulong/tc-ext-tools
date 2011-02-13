@@ -1,0 +1,61 @@
+
+############################################################################
+#                                                                          #
+#  tc-ext-tools build functions: configure, compile, install, rules, etc.  #
+#                                                                          #
+############################################################################
+
+############################################################################ 
+#                            Configure                                     #
+############################################################################
+
+build_configure() {
+
+   perl Build.PL installdirs=vendor destdir="$INSTALL_ROOT" \
+                --config man1ext=1p --config man3ext=3pm || return 1
+
+}
+
+############################################################################ 
+#                              Compile                                     #
+############################################################################
+
+build_compile() {
+
+   perl Build || return 1
+
+}
+
+############################################################################ 
+#                              Install                                     #
+############################################################################
+
+build_install() {
+
+   perl Build install || return 1
+
+}
+
+############################################################################ 
+#                                Rules                                     #
+############################################################################
+
+build_rules() {
+
+   buildit load || exit 1
+   buildit download || exit 1
+   buildit convert || exit 1
+   buildit unpack || exit 1
+   buildit patch || exit 1
+   buildit configure || exit 1
+   buildit compile || exit 1
+   buildit install || exit 1
+   buildit split || exit 1
+   buildit strip || exit 1
+   buildit create || exit 1
+   buildit generate || exit 1
+   buildit check || exit 1
+   buildit package || exit 1
+
+}
+

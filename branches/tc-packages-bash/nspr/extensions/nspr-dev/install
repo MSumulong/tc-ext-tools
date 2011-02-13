@@ -1,0 +1,6 @@
+usr/local/bin/nspr-config
+usr/local/include
+usr/local/lib/pkgconfig
+usr/local/lib/*.a
+usr/local/share/aclocal
+

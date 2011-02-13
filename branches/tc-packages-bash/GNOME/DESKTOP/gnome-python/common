@@ -1,0 +1,43 @@
+PACKAGE="gnome-python"
+VERSION="2.28.1"
+
+SOURCE="http://ftp.gnome.org/pub/GNOME/sources/gnome-python/${VERSION%.*}/gnome-python-${VERSION}.tar.bz2"
+
+BUILD_DEPENDS="glib2
+glib2-dev
+GConf
+GConf-dev
+gnome-vfs
+gnome-vfs-dev
+libbonobo
+libbonobo-dev
+libgnome
+libgnome-dev
+libbonoboui
+libbonoboui-dev
+libgnomeui
+libgnomeui-dev
+libgnomecanvas
+libgnomecanvas-dev
+libgnome-desktop
+libgnome-desktop-dev
+python
+python-dev
+pyorbit-2.7
+pygobject-2.7
+pygobject-2.7-dev
+pygtk-2.7
+pygtk-2.7-dev"
+
+
+DESCRIPTION="Python bindings to gnome libs."
+AUTHOR="GNOME Maintainers"
+SITE="http://www.gnome.org"
+COPYING="LGPL"
+MAINTAINERS="juanito, Arslan S."
+COMMENTS="This extension is PPI compatible."
+CHANGELOG="2009/11/08 first version by juanito
+		2010/03/12 Rebuilt with updated gnome libraries (Arslan S.)
+		2010/07/21 Updated to 2.28.1 and built against python 2.7 by Arslan S.
+		2010/07/30 Removed python version suffix by Arslan S."
+CURRENT="Rebuilt by Arslan S."

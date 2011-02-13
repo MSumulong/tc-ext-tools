@@ -1,0 +1,4 @@
+#!/bin/sh
+[ -d /var/lib/udisks ] || mkdir -p /var/lib/udisks
+[ -d /var/run/udisks ] || mkdir -p /var/run/udisks
+[ -x /sbin/udevadm ] && /sbin/udevadm trigger

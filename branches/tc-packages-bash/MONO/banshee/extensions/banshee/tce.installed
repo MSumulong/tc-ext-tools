@@ -1,0 +1,6 @@
+#!/bin/sh
+
+[ -x "$(which gtk-update-icon-cache)" ] && gtk-update-icon-cache -q -f -t /usr/local/share/icons/hicolor
+
+[ -d /tmp/tcloop/banshee ] && cp -a /tmp/tcloop/banshee/usr/local/bin/* /usr/local/bin
+

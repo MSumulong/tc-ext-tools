@@ -1,0 +1,24 @@
+ICON="/usr/local/share/icons/hicolor/48x48/apps/ooo-base.png"
+DESKTOP="/usr/local/share/applications/openoffice3.desktop"
+COMMENTS="Go-oo (previously called ooo-build) is a concentrated set of patches
+		for the cross-platform OpenOffice.org office suite. Go-oo is also one
+		of OpenOffice.org variants created from these patches. It has better
+		support for Office Open XML file formats than the official OpenOffice.org
+		releases produced by Sun Microsystems and other enhancements that have
+		either not yet been accepted into the upstream Sun version, or will not
+		be because of business or political reasons. Some of these changes or
+		enhancements will eventually be part of the Sun version too, given time.
+		
+		Optional extensions:
+			ALSA or OSS, gst-plugins-*,gst-ffmpeg, liberation-fonts-ttf,
+			sil-gentium-ttf, sil-gentium-basic-ttf, msttcorefonts (available at forums/scripting),
+			openclipart-svg, cups, hunspell-en-us (or any other hunspell dictionary) ...
+
+		OpenOffice.org extensions are also recommended.(dictionaries,templates etc.)
+
+		You can install OpenOffice.org extensions from http://extensions.services.openoffice.org
+		Download any extension and Tools->Extension Manager->Add and select the extension (.oxt) file to install
+
+		Note: OpenOffice3 installs your extensions into ~/.openoffice.org
+		
+		This extension is PPI compatible."

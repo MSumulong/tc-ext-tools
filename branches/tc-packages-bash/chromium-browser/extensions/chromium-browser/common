@@ -1,0 +1,21 @@
+ICON="/usr/local/share/icons/hicolor/64x64/apps/chromium-browser.png"
+DESKTOP="/usr/local/share/applications/chromium-browser.desktop"
+COMMENTS="This is Chromium, the open source project behind Google Chrome. Chrome is the official build of Google.
+		Chromium VS Chrome :
+		http://code.google.com/p/chromium/wiki/ChromiumBrowserVsGoogleChrome
+
+		dejavu-fonts-ttf, msttcorefonts, fireflysung, sil-gentium or any other font is recommended
+		for international character support (Cryllic, Greek, Hebrew, Chinese, Japanese etc.)
+
+		For Freedesktop (lxde,xfce,gnome,kde) users xdg-utils is needed for Chromium to open files
+		with your desktop preferred applications.
+
+		Chrome extensions can be installed from the main menu.
+
+		You can also install Chrome themes :
+		Preferences->Personal Stuff->Appearance and click on \"Get themes\"
+
+		You can even create your own theme for Chromium :
+		http://code.google.com/p/chromium/wiki/ThemeCreationGuide
+
+		This extension is PPI compatible."

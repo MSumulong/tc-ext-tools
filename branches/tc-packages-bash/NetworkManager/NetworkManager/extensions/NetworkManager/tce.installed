@@ -1,0 +1,8 @@
+#!/bin/sh
+
+[ -d /usr/local/etc/NetworkManager/dispatcher.d ] || mkdir -p /usr/local/etc/NetworkManager/dispatcher.d
+[ -d /usr/local/etc/NetworkManager/system-connections ] || mkdir -p /usr/local/etc/NetworkManager/system-connections
+[ -d /var/run/NetworkManager ] || mkdir -p /var/run/NetworkManager
+[ -d /var/lib/NetworkManager ] || mkdir -p /var/lib/NetworkManager
+
+/sbin/udevadm trigger

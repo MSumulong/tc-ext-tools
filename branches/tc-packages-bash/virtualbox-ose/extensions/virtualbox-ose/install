@@ -1,0 +1,16 @@
+lib/udev/rules.d/60-virtualbox.rules
+usr/local/etc/vbox/vbox.cfg
+usr/local/bin/VirtualBox
+usr/local/bin/VBoxHeadless
+usr/local/bin/VBoxSDL
+usr/local/bin/VBoxTunctl
+usr/local/bin/VBoxManage
+usr/local/bin/VBox
+usr/local/share/doc/virtualbox-ose/license
+usr/local/share/pixmaps/VBox.png
+usr/local/share/applications/virtualbox-ose.desktop
+usr/local/share/mime/packages/virtualbox.xml
+usr/local/share/icons/hicolor
+usr/local/lib/virtualbox
+usr/local/etc/init.d/vboxdrv
+

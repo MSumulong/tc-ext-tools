@@ -1,0 +1,27 @@
+PACKAGE="pinball"
+VERSION="0.3.1"
+SOURCE="http://downloads.sourceforge.net/pinball/pinball-${VERSION}.tar.gz"
+BUILD_DEPENDS="Xorg-7.5
+Xorg-7.5-dev
+libmad
+libmad-dev
+libogg
+libogg-dev
+libvorbis
+libvorbis-dev
+libasound
+alsa-dev
+SDL
+SDL-dev
+freeglut
+freeglut-dev"
+
+DESCRIPTION="A pinball simulator for Linux."
+AUTHOR="Henrik Enqvist"
+SITE="http://pinball.sourceforge.net/"
+COPYING="GPL-2"
+MAINTAINERS="Arslan S."
+COMMENTS="This extension is PPI compatible."
+CHANGELOG="2009/12/08 Original 0.3.1
+		2010/06/14 Rebuilt"
+CURRENT="Bugfix update"

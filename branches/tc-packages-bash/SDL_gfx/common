@@ -1,0 +1,16 @@
+PACKAGE="SDL_gfx"
+VERSION="2.0.22"
+SOURCE="http://www.ferzkopp.net/Software/SDL_gfx-2.0/SDL_gfx-${VERSION}.tar.gz"
+BUILD_DEPENDS="SDL
+SDL-dev
+Xorg-7.5-lib
+Xorg-7.5-dev"
+
+DESCRIPTION="SDL Graphic Primitives library."
+AUTHOR="Andreas Schiffler"
+SITE="www.ferzkopp.net/Software/SDL_gfx-2.0/"
+COPYING="LGPL-2"
+MAINTAINERS="Arslan S."
+COMMENTS="This extension is PPI compatible."
+CHANGELOG="2009/11/25 Original 2.0.20"
+CURRENT="Updated to $VERSION"

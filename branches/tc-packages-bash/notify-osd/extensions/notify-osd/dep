@@ -1,0 +1,10 @@
+gtk2.tcz
+dbus-glib.tcz
+GConf.tcz
+libnotify.tcz
+libwnck.tcz
+libstartup-notification.tcz
+librsvg.tcz
+shared-mime-info.tcz
+hicolor-icon-theme.tcz
+

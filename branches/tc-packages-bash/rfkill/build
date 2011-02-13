@@ -1,0 +1,68 @@
+
+############################################################################
+#                                                                          #
+#  tc-ext-tools build functions: configure, compile, install, rules, etc.  #
+#                                                                          #
+############################################################################
+
+############################################################################ 
+#                            Configure                                     #
+############################################################################
+
+build_configure() {
+
+   return 0
+
+}
+
+############################################################################ 
+#                              Compile                                     #
+############################################################################
+
+build_compile() {
+
+   make || return 1
+
+}
+
+############################################################################ 
+#                              Install                                     #
+############################################################################
+
+build_install() {
+
+   make PREFIX=/usr/local DESTDIR="$INSTALL_ROOT" install || return 1
+
+   # License
+   install -Dm644 COPYING "${INSTALL_ROOT}/usr/local/share/licenses/${PACKAGE}/LICENSE" || return 1
+   # Udev rule
+   install -Dm644 "${PACKAGE_SRC}/60-rfkill.rules" "${INSTALL_ROOT}/lib/udev/rules.d/60-rfkill.rules" || return 1
+   # Init script
+   install -Dm644 "${PACKAGE_SRC}/rfkill.conf.d" "${INSTALL_ROOT}/usr/local/etc/conf.d/rfkill" || return 1
+   install -Dm755 "${PACKAGE_SRC}/rfkill.init.d" "${INSTALL_ROOT}/usr/local/etc/init.d/rfkill" || return 1
+
+}
+
+############################################################################ 
+#                                Rules                                     #
+############################################################################
+
+build_rules() {
+
+   buildit load || exit 1
+   buildit download || exit 1
+   buildit convert || exit 1
+   buildit unpack || exit 1
+   buildit patch || exit 1
+   buildit configure || exit 1
+   buildit compile || exit 1
+   buildit install || exit 1
+   buildit split || exit 1
+   buildit strip || exit 1
+   buildit create || exit 1
+   buildit generate || exit 1
+   buildit check || exit 1
+   buildit package || exit 1
+
+}
+

@@ -1,0 +1,11 @@
+usr/local/bin
+usr/local/etc
+usr/local/lib/*.so*
+usr/local/share/applications
+usr/local/share/gnome-media
+usr/local/share/gnome-sound-recorder
+usr/local/share/gstreamer-properties
+usr/local/share/sounds
+usr/local/share/icons
+usr/local/share/gnome/help/*/C
+usr/local/share/omf/*/*-C.omf

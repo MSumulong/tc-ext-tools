@@ -1,0 +1,8 @@
+usr/local/bin
+usr/local/lib/*.so*
+usr/local/lib/girepository-1.0
+usr/local/lib/gobject-introspection
+usr/local/share/aclocal
+usr/local/share/gobject-introspection-1.0
+usr/local/share/man
+

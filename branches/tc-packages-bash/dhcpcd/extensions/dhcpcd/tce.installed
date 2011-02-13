@@ -1,0 +1,4 @@
+#!/bin/sh
+[ -d /var/lib/dhcpcd ] || mkdir -p /var/lib/dhcpcd
+[ -d /var/run/dhcpcd ] || mkdir -p /var/run/dhcpcd
+

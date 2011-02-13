@@ -1,0 +1,15 @@
+PACKAGE="domination"
+VERSION="1.1.0.1"
+SOURCE="http://prdownloads.sourceforge.net/domination/Domination_${VERSION}.zip"
+BUILD_DEPENDS=""
+
+DESCRIPTION="A Java version of the classic Risk board game."
+AUTHOR="Yura Mamyrin"
+SITE="http://yura.net/projects/domination"
+COPYING="GPL"
+MAINTAINERS="Arslan S."
+COMMENTS="This extension depends on java runtime and java runtime environment setup needs a reboot.
+		If you want to use this extension ondemand, then add etc/profile.d/sun-jre.sh to your backup list (/opt/.filetool.lst)
+		This extension is PPI compatible."
+CHANGELOG="---"
+CURRENT="First Version"

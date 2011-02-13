@@ -1,0 +1,50 @@
+#
+# tc-ext-tools build functions: configure, compile, install, rules
+#
+
+# Configure
+build_configure() {
+
+   echo "QMAKE_CXXFLAGS_RELEASE += $CXXFLAGS" >> dooble.pro
+
+   qmake -o Makefile dooble.pro || return 1
+
+}
+
+# Compile
+build_compile() {
+
+   make || return 1
+
+}
+
+# Install
+build_install() {
+
+   install -D -m 755 "$PACKAGE_SRC/dooble.sh" "$INSTALL_ROOT/usr/local/bin/dooble"
+   install -D -m 755 Dooble "$INSTALL_ROOT/usr/local/dooble/Dooble"
+mkdir -p $INSTALL_ROOT/usr/local/Dooble
+mkdir -p $INSTALL_ROOT/usr/local/share/pixmaps
+mkdir -p $INSTALL_ROOT/usr/local/share/applications
+
+}
+
+# Rules
+build_rules() {
+
+   buildit load || exit 1
+   buildit download || exit 1
+   buildit convert || exit 1
+   buildit unpack || exit 1
+   buildit patch || exit 1
+   buildit configure || exit 1
+   buildit compile || exit 1
+   buildit install || exit 1
+   buildit split || exit 1
+   buildit strip || exit 1
+   buildit create || exit 1
+   buildit generate || exit 1
+   buildit check || exit 1
+   buildit package || exit 1
+
+}

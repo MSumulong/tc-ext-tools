@@ -1,0 +1,11 @@
+--- a/server/src/storage/dbconfig.cpp	2010-07-31 16:12:25.000000000 +0000
++++ b/server/src/storage/dbconfig.cpp	2010-10-03 10:03:05.054801409 +0000
+@@ -62,7 +62,7 @@
+     QSettings settings( serverConfigFile, QSettings::IniFormat );
+ 
+     // determine driver to use
+-    const QString defaultDriver = QLatin1String( "QMYSQL" );
++    const QString defaultDriver = QLatin1String( "QPSQL" );
+     QString driverName = settings.value( QLatin1String( "General/Driver" ), defaultDriver ).toString();
+     if ( driverName.isEmpty() )
+       driverName = defaultDriver;

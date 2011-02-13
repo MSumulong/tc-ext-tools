@@ -1,0 +1,23 @@
+PACKAGE="libgnomekbd"
+VERSION="2.32.0"
+
+SOURCE="http://ftp.gnome.org/pub/GNOME/sources/libgnomekbd/${VERSION%.*}/libgnomekbd-${VERSION}.tar.bz2"
+
+BUILD_DEPENDS="glib2
+glib2-dev
+gtk2
+gtk2-dev
+GConf
+GConf-dev
+libxklavier
+libxklavier-dev"
+
+
+DESCRIPTION="GNOME kbd library."
+AUTHOR="various"
+SITE="http://www.gnome.org"
+COPYING="LGPL"
+MAINTAINERS="Arslan S."
+COMMENTS="This extension is PPI compatible."
+CHANGELOG="2010/07/25 First Version"
+CURRENT="Updated to $VERSION"

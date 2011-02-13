@@ -1,0 +1,13 @@
+PACKAGE="ati"
+VERSION="10.12"
+SOURCE="http://www2.ati.com/drivers/linux/ati-driver-installer-${VERSION/./-}-x86.x86_64.run"
+BUILD_DEPENDS=""
+
+DESCRIPTION="AMD/ATI Linux drivers."
+AUTHOR="AMD/ATI"
+SITE="http://www.ati.amd.com"
+COPYING="Proprietary"
+MAINTAINERS="Arslan S."
+COMMENTS="This extension is PPI compatible."
+CHANGELOG="2010/11/20 First Version 10.11"
+CURRENT="Updated to $VERSION"

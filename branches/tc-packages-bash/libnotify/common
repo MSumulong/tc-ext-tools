@@ -1,0 +1,16 @@
+PACKAGE="libnotify"
+VERSION="0.5.2"
+SOURCE="http://ftp.acc.umu.se/pub/GNOME/sources/libnotify/0.5/libnotify-${VERSION}.tar.bz2"
+BUILD_DEPENDS="dbus-glib
+dbus-glib-dev
+gtk2
+gtk2-dev"
+
+DESCRIPTION="Desktop notification library."
+AUTHOR="Christian Hammond, Mike Hearn, John Palmieri"
+SITE="http://www.galago-project.org/"
+COPYING="LGPL"
+MAINTAINERS="Daniel Barnes, Arslan S."
+COMMENTS="This extension is PPI compatible."
+CHANGELOG="2009/07/05 First Version 0.4.5 by Daniel Barnes"
+CURRENT="Updated to $VERSION and splitted into extensions by Arslan S."

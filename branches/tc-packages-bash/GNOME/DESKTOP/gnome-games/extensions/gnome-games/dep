@@ -1,0 +1,14 @@
+gtk2.tcz
+GConf.tcz
+librsvg.tcz
+libcanberra.tcz
+clutter.tcz
+clutter-gtk.tcz
+guile.tcz
+pyopengl.tcz
+python-gtkglext.tcz
+seed.tcz
+gnome-python.tcz
+pygtk-2.7.tcz
+shared-mime-info.tcz
+hicolor-icon-theme.tcz

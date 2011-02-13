@@ -1,0 +1,5 @@
+usr/local/etc
+usr/local/lib/*.so*
+usr/local/share/libgweather
+usr/local/share/icons
+

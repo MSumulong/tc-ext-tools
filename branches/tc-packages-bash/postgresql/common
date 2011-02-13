@@ -1,0 +1,35 @@
+PACKAGE="postgresql"
+VERSION="9.0.3"
+SOURCE="ftp://ftp.postgresql.org/pub/source/v${VERSION}/postgresql-${VERSION}.tar.bz2"
+BUILD_DEPENDS="libxml2
+libxml2-dev
+libxslt
+tcl
+tcl-dev
+tk
+tk-dev
+readline
+readline-dev
+openssl-0.9.8
+openssl-0.9.8-dev
+Linux-PAM
+Linux-PAM-dev
+krb5
+python
+python-dev
+openldap
+openldap-dev
+tzdata"
+
+DESCRIPTION="A powerful, open source object-relational database system."
+AUTHOR="various"
+SITE="http://www.postgresql.org/"
+COPYING="PostgreSQL License"
+MAINTAINERS="Arslan S."
+COMMENTS="This extension is PPI compatible."
+CHANGELOG="2010/07/01 First Version 8.4.4
+		2010/10/03 Updated to 9.0.0 & Splitted out libs
+		2010/10/08 Updated to 9.0.1
+		2010/12/15 Updated to 9.0.2"
+CURRENT="Updated to $VERSION"
+

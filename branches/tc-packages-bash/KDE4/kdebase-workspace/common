@@ -1,0 +1,68 @@
+PACKAGE="kdebase-workspace"
+VERSION="4.5.5"
+SOURCE="ftp://ftp.kde.org/pub/kde/stable/${VERSION}/src/${PACKAGE}-${VERSION}.tar.bz2"
+BUILD_DEPENDS="cmake
+kdelibs
+kdelibs-dev
+kdepimlibs
+kdepimlibs-dev
+akonadi
+akonadi-dev
+shared-desktop-ontologies
+boost
+boost-dev
+bluez
+bluez-dev
+ConsoleKit
+ConsoleKit-dev
+NetworkManager
+NetworkManager-dev
+Linux-PAM
+Linux-PAM-dev
+qimageblitz
+qimageblitz-dev
+lm_sensors
+lm_sensors-dev
+strigi
+strigi-dev
+libusb
+libusb-dev
+Xorg-7.5
+Xorg-7.5-dev
+fontconfig
+fontconfig-dev
+qedje
+qedje-dev
+#gpsd
+#gpsd-dev
+libxklavier
+libxklavier-dev
+google-gadgets
+google-gadgets-qt
+google-gadgets-dev
+python
+python-dev
+pyqt
+kdebindings
+kdebindings-perl
+kdebindings-dev
+kdebindings-python
+libdbusmenu-qt
+libdbusmenu-qt-dev
+libraw1394
+libraw1394-dev
+libqalculate
+libqalculate-dev
+libxft
+libxft-dev
+docbook_xsl"
+
+DESCRIPTION="KDE base workspace."
+AUTHOR="KDE development team"
+SITE="http://www.kde.org"
+COPYING="GPL/LGPL/FDL"
+MAINTAINERS="Arslan S."
+COMMENTS="This extension is PPI compatible."
+CHANGELOG="2010/07/20 First Version 4.4.5
+		2010/11/02 Updated to 4.5.2"
+CURRENT="Updated to $VERSION"

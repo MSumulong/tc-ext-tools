@@ -1,0 +1,5 @@
+usr/local/bin
+usr/local/lib/*.so*
+usr/local/lib/soprano
+usr/local/share
+

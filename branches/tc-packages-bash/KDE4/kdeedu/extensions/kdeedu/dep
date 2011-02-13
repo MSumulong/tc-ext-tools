@@ -1,0 +1,14 @@
+kdelibs.tcz
+kdebase-workspace.tcz
+kdegraphics.tcz
+readline.tcz
+libqalculate.tcz
+gsl.tcz
+libspectre.tcz
+attica.tcz
+boost.tcz
+openbabel.tcz
+avogadro.tcz
+ocaml.tcz
+facile.tcz
+cfitsio.tcz

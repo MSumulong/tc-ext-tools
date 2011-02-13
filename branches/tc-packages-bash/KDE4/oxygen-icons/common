@@ -1,0 +1,15 @@
+PACKAGE="oxygen-icons"
+VERSION="4.5.5"
+SOURCE="ftp://ftp.kde.org/pub/kde/stable/${VERSION}/src/${PACKAGE}-${VERSION}.tar.bz2"
+BUILD_DEPENDS="cmake"
+
+DESCRIPTION="The Oxygen Icon Theme."
+AUTHOR="The Oxygen Team"
+SITE="http://www.kde.org"
+COPYING="LGPL-3"
+MAINTAINERS="Arslan S."
+COMMENTS="This extension is PPI compatible."
+CHANGELOG="2010/07/17 First Version 4.4.5
+		2010/10/30 Updated to 4.5.2"
+CURRENT="Updated to $VERSION"
+

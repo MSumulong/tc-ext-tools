@@ -1,0 +1,25 @@
+PACKAGE="libarchive"
+VERSION="2.8.4"
+SOURCE="http://libarchive.googlecode.com/files/libarchive-${VERSION}.tar.gz"
+BUILD_DEPENDS="acl
+acl-dev
+bzip2-lib
+bzip2-dev
+expat2
+expat2-dev
+openssl-0.9.8
+openssl-0.9.8-dev
+xz
+xz-dev"
+
+EXTENSIONS="libarchive libarchive-dev libarchive-doc"
+DESCRIPTION="libarchive, bsdtar and bsdcpio."
+AUTHOR="Tim Kientzle"
+SITE="http://code.google.com/p/libarchive/"
+COPYING="BSD"
+MAINTAINERS="Arslan S."
+COMMENTS="This extension is PPI compatible."
+CHANGELOG="2010/02/08 Original 2.8.0
+		2010/07/22 Updated to 2.8.4"
+CURRENT="Rebuilt"
+

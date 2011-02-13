@@ -1,0 +1,57 @@
+#
+# tc-ext-tools build functions: configure, compile, install, rules
+#
+
+build_configure() {
+
+   [ -d build ] || mkdir build
+   cd build
+   cmake -DCMAKE_INSTALL_PREFIX=/usr/local \
+     -DCMAKE_BUILD_TYPE=Release -DKDE_DISTRIBUTION_TEXT="Tiny Core Linux" \
+     -DWITH_Xmms=OFF -DWITH_PolkitQt=OFF -DWITH_libgps=OFF .. || return 1
+
+}
+
+build_compile() {
+
+   cd build
+   make || return 1
+
+}
+
+build_install() {
+
+  cd build
+  make DESTDIR="$INSTALL_ROOT" install
+
+  sed -e 's/#HaltCmd=/HaltCmd=\/sbin\/poweroff/g' -i "$INSTALL_ROOT/usr/local/share/config/kdm/kdmrc" || return 1
+
+  install -m 755 -d "$INSTALL_ROOT/usr/local/etc/init.d"
+  install -m 755 "$PACKAGE_SRC/kdm.sh" "$INSTALL_ROOT/usr/local/etc/init.d/kdm"
+
+  install -m 755 -d "$INSTALL_ROOT/usr/local/etc/pam.d"
+  install -m 644 "$PACKAGE_SRC/kde.pam" "$INSTALL_ROOT/usr/local/etc/pam.d/kde"
+  install -m 644 "$PACKAGE_SRC/kde-np.pam" "$INSTALL_ROOT/usr/local/etc/pam.d/kde-np"
+  install -m 644 "$PACKAGE_SRC/kscreensaver.pam" "$INSTALL_ROOT/usr/local/etc/pam.d/kscreensaver"
+
+}
+
+build_rules() {
+
+  buildit load || exit 1
+  buildit download || exit 1
+  buildit convert || exit 1
+  buildit unpack || exit 1
+  buildit patch || exit 1
+  buildit configure || exit 1
+  buildit compile || exit 1
+  buildit install || exit 1
+  buildit split || exit 1
+   buildit strip || exit 1
+  buildit create || exit 1
+  buildit generate || exit 1
+  buildit check || exit 1
+  buildit package || exit 1
+
+}
+

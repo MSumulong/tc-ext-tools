@@ -1,0 +1,13 @@
+Index: mjpegtools-1.9.0/lavtools/png2yuv.c
+===================================================================
+--- mjpegtools-1.9.0.orig/lavtools/png2yuv.c	2009-06-28 08:35:39.000000000 +0200
++++ mjpegtools-1.9.0/lavtools/png2yuv.c	2009-06-28 08:37:26.000000000 +0200
+@@ -408,7 +408,7 @@
+     }
+ 
+   fclose(pngfile);
+-
++  png_destroy_read_struct(&png_ptr, &info_ptr, &end_info);
+   return 1;
+ }
+ 

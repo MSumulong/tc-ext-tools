@@ -1,0 +1,10 @@
+usr/local/bin
+usr/local/etc/ConsoleKit/seats.d
+usr/local/etc/dbus-1
+usr/local/lib/ConsoleKit/scripts
+usr/local/lib/ConsoleKit/run-session.d
+usr/local/lib/security/*.so
+usr/local/lib/*.so*
+usr/local/libexec
+usr/local/sbin
+usr/local/share
