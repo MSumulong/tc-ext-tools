@@ -37,12 +37,6 @@ fi
 
 this_load() {
 
-   echo "Checking if the extension is commented out."
-   if [ "${EXTENSION#\#}" != "$EXTENSION" ]; then
-        echo "The extension $EXTENSION is commented out."
-        return 0
-   fi
-
    COMMAND="${EXTENSION%%::*}"
    if [ "$COMMAND" = "$EXTENSION" ]; then
         COMMAND=""
@@ -87,21 +81,11 @@ this_main() {
    echo ""
    echo "Loading the package $PACKAGE build dependencies ..."
 
-   if [ -n "$BUILD_DEPENDS" ]; then
-        BUILD_DEPENDS="$TCEXTTOOLS_DEPENDS
-$BUILD_DEPENDS"
-   else
-        BUILD_DEPENDS="$TCEXTTOOLS_DEPENDS"
-   fi
-
-   echo ""
-   echo "$BUILD_DEPENDS"
-
-   for EXTENSION in $BUILD_DEPENDS
+   for EXTENSION in ${BUILD_DEPENDS[@]}
    do
-       if [ -n "$EXTENSION" ]; then
+       if [ -n "$EXTENSION" ] && [ "${EXTENSION#\#}" == "$EXTENSION" ]; then
             echo ""
-            echo "Loading the extension $EXTENSION ..."
+            echo "Loading the extension $EXTENSION."
             this_load || return 1
        fi
    done

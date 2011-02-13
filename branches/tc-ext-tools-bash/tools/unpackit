@@ -45,6 +45,7 @@ this_main() {
    echo ""
    echo "Unpacking the package $PACKAGE source ..."
 
+   echo ""
    echo "Cleaning the package temporary source directory."
    [ -d "$TCEXTTOOLS_SRC_TEMP" ] && sudo rm -rf "$TCEXTTOOLS_SRC_TEMP"
    mkdir -p "$TCEXTTOOLS_SRC_TEMP"

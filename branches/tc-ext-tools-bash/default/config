@@ -30,24 +30,8 @@ TCEXTTOOLS_ERROR_COLOR="${RED}"
 TCEXTTOOLS_HILIGHT_COLOR="${CYAN}"
 
 # tc-ext-tools dependencies
-TCEXTTOOLS_DEPENDS="compiletc
-squashfs-tools-4.x
-tar
-git
-svn
-wget
-xz
-zip-unzip
-bzip2
-gzip
-intltool
-perl5
-perl_xml_parser
-gettext
-libtool
-libtool-dev
-autoconf
-automake"
+TCEXTTOOLS_DEPENDS=('compiletc' 'squashfs-tools-4.x' 'tar' 'git' 'svn' 'wget' 'gzip' 'bzip2' 'xz' 'zip-unzip'
+                    'gettext' 'intltool' 'perl_xml_parser' 'libtool' 'libtool-dev' 'autoconf' 'automake')
 
 # tc-ext-tools default encryption key
 TCEXTTOOLS_ENCRYPTION_KEY="tinycore"

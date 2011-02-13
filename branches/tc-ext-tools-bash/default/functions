@@ -25,7 +25,7 @@
 
 THIS=$(basename $0)
 
-if [ $(id -u) = 0 ] ; then
+if [ $(id -u) == 0 ] ; then
      if [ "$THIS" != "installit" ]; then
           echo "${RED}Do not run ${THIS} as root!${NORMAL}"
           exit 1
@@ -41,7 +41,7 @@ fi
 if [ -f "$TCEXTTOOLS_ROOT/etc/conf.d/tc-ext-tools.conf" ]; then
      . "$TCEXTTOOLS_ROOT/etc/conf.d/tc-ext-tools.conf"
 else
-     echo "${RED}${THIS}: default configuration file not found !${NORMAL}"
+     echo "${RED}${THIS}: default configuration file not found!${NORMAL}"
      exit 1
 fi
 
@@ -49,7 +49,7 @@ fi
 if [ -f "$HOME/.config/tc-ext-tools.conf" ]; then
      . "$HOME/.config/tc-ext-tools.conf"
 else
-    echo "${RED}${THIS}: user configuration file not found !${NORMAL}"
+    echo "${RED}${THIS}: user configuration file not found!${NORMAL}"
     exit 1
 fi
 
@@ -57,26 +57,37 @@ fi
 print_it() {
 
   case  "$1" in
-        error)
-                [ -z "$2" ] && echo -e "${TCEXTTOOLS_MESSAGE_COLOR}${1}${NORMAL}"
-                echo -e "${TCEXTTOOLS_ERROR_COLOR}${2}${NORMAL}"
-                ;;
-        warning)   
-                [ -z "$2" ] && echo -e "${TCEXTTOOLS_MESSAGE_COLOR}${1}${NORMAL}"
-                echo -e "${TCEXTTOOLS_WARNING_COLOR}${2}${NORMAL}"
-                ;;
-        hilight)   
-                [ -z "$2" ] && echo -e "${TCEXTTOOLS_MESSAGE_COLOR}${1}${NORMAL}"
-                echo -e "${TCEXTTOOLS_HILIGHT_COLOR}${2}${NORMAL}"
-                ;;
-        *)
-                echo -e "${TCEXTTOOLS_MESSAGE_COLOR}${1}${NORMAL}"
-                ;;
+     error)
+           [ -z "$2" ] && echo -e "${TCEXTTOOLS_MESSAGE_COLOR}${1}${NORMAL}"
+           echo -e "${TCEXTTOOLS_ERROR_COLOR}${2}${NORMAL}"
+           ;;
+     warning)
+           [ -z "$2" ] && echo -e "${TCEXTTOOLS_MESSAGE_COLOR}${1}${NORMAL}"
+           echo -e "${TCEXTTOOLS_WARNING_COLOR}${2}${NORMAL}"
+           ;;
+     hilight)
+           [ -z "$2" ] && echo -e "${TCEXTTOOLS_MESSAGE_COLOR}${1}${NORMAL}"
+           echo -e "${TCEXTTOOLS_HILIGHT_COLOR}${2}${NORMAL}"
+           ;;
+     *)
+           echo -e "${TCEXTTOOLS_MESSAGE_COLOR}${1}${NORMAL}"
+           ;;
   esac
 
 }
 
-# sets the variables related with the package source
+# sets the package build dependencies
+set_depends() {
+
+   if [ -n "${BUILD_DEPENDS[*]}" ]; then
+        BUILD_DEPENDS=( ${TCEXTTOOLS_DEPENDS[@]} ${BUILD_DEPENDS[@]} )
+   else
+        BUILD_DEPENDS=( ${TCEXTTOOLS_DEPENDS[@]} )
+   fi
+
+}
+
+# sets the package source variables
 set_source() {
 
      SOURCE_URL_TYPE="${SOURCE%%::*}"
@@ -260,14 +271,16 @@ if [ -f "$PACKAGE_COMMON" ]; then
      INSTALL_ROOT="$PACKAGE_INSTALL_ROOT"
      PREFIX=/usr/local
 
+     set_depends
+
      set_source
+
+     set_extensions
 
      if [ -n "$SOURCE_TOPDIR" ]; then
           TCEXTTOOLS_SOURCE_TOPDIR="$TCEXTTOOLS_SRC_TEMP/$SOURCE_TOPDIR"
           PACKAGE_SOURCE_TOPDIR="$TCEXTTOOLS_SOURCE_TOPDIR"
      fi
-
-     set_extensions
 
      if [ "$SOURCE_TYPE" != "none" ]; then
           TCEXTTOOLS_SOURCE="$TCEXTTOOLS_SRC/$SOURCE_NAME"
