@@ -1,0 +1,7 @@
+#!/bin/sh
+
+mkdir -p /usr/local/etc/tuxtype
+
+mkdir -p /var/tuxtype/words
+chown -R root:staff /var/tuxtype
+
