@@ -61,8 +61,8 @@ this_main() {
    cd "$TCEXTTOOLS_SOURCE_TOPDIR"
    build_install > "$TCEXTTOOLS_INSTALL_LOG" 2>&1 || return 1
 
-   echo "Creating a list of the package files."
    if [ -d "$TCEXTTOOLS_INSTALL_ROOT" ]; then
+        echo "Creating a list of the package files."
         su "$TCUSER" -c "cd $TCEXTTOOLS_INSTALL_ROOT;sudo find * -not -type d | sort > $PACKAGE_FILES_LIST" || return 1
    fi
 

@@ -272,9 +272,7 @@ if [ -f "$PACKAGE_COMMON" ]; then
      PREFIX=/usr/local
 
      set_depends
-
      set_source
-
      set_extensions
 
      if [ -n "$SOURCE_TOPDIR" ]; then

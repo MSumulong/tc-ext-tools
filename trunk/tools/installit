@@ -56,15 +56,13 @@ this_main() {
    echo "Cleaning the package install root directory."
    [ -d "$TCEXTTOOLS_INSTALL_ROOT" ] && rm -rf "$TCEXTTOOLS_INSTALL_ROOT"
 
-   echo "Executing the function build install."
+   echo "Executing the package build install function."
 
    cd "$TCEXTTOOLS_SOURCE_TOPDIR"
    build_install > "$TCEXTTOOLS_INSTALL_LOG" 2>&1 || return 1
 
-   echo "Installed the package $PACKAGE successfully."
-
-   echo "Creating the package files list."
    if [ -d "$TCEXTTOOLS_INSTALL_ROOT" ]; then
+        echo "Creating a list of the package files."
         su "$TCUSER" -c "cd $TCEXTTOOLS_INSTALL_ROOT;sudo find * -not -type d | sort > $PACKAGE_FILES_LIST" || return 1
    fi
 
