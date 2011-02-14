@@ -1,0 +1,15 @@
+PACKAGE="python-distribute"
+VERSION="0.6.14"
+SOURCE="http://pypi.python.org/packages/source/d/distribute/distribute-${VERSION}.tar.gz"
+BUILD_DEPENDS="python
+python-dev"
+
+DESCRIPTION="Distribute is a fork of the Setuptools project."
+AUTHOR="various"
+SITE="http://packages.python.org/distribute"
+COPYING="PSF"
+MAINTAINERS="Arslan S."
+COMMENTS="Conflicts with python-setuptools.
+		This extension is PPI compatible."
+CHANGELOG="---"
+CURRENT="First Version"

@@ -1,0 +1,22 @@
+PACKAGE="tuxmath"
+VERSION="1.9.0"
+SOURCE="https://alioth.debian.org/frs/download.php/3470/tuxmath_w_fonts-${VERSION}.tar.gz"
+BUILD_DEPENDS="gtk2
+gtk2-dev
+librsvg
+librsvg-dev
+SDL
+SDL-dev
+SDL_pango
+SDL_pango-dev
+t4k_common
+t4k_common-dev"
+
+DESCRIPTION="TuxMath is an arcade game that helps kids practice their math facts."
+AUTHOR="various"
+SITE="http://tux4kids.alioth.debian.org/tuxmath/"
+COPYING="GPL-3"
+MAINTAINERS="Arslan S."
+COMMENTS="This extension is PPI compatible."
+CHANGELOG="---"
+CURRENT="First Version"

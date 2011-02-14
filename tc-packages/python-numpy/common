@@ -1,0 +1,18 @@
+PACKAGE="python-numpy"
+VERSION="1.5.1"
+SOURCE="http://downloads.sourceforge.net/numpy/numpy-${VERSION}.tar.gz"
+BUILD_DEPENDS="python
+python-dev
+python-distribute
+python-nose
+gfortran
+liblapack"
+
+DESCRIPTION="NumPy is the fundamental package needed for scientific computing with Python."
+AUTHOR="various"
+SITE="http://numpy.scipy.org"
+COPYING="custom"
+MAINTAINERS="Arslan S."
+COMMENTS="This extension is PPI compatible."
+CHANGELOG="---"
+CURRENT="First Version"

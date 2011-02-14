@@ -1,0 +1,15 @@
+PACKAGE="python-nose"
+VERSION="1.0.0"
+SOURCE="http://www.somethingaboutorange.com/mrl/projects/nose/nose-${VERSION}.tar.gz"
+BUILD_DEPENDS="python
+python-dev
+python-distribute"
+
+DESCRIPTION="Nose extends unittest to make testing easier."
+AUTHOR="various"
+SITE="http://www.somethingaboutorange.com/mrl/projects/nose/"
+COPYING="LGPL-2"
+MAINTAINERS="Arslan S."
+COMMENTS="This extension is PPI compatible."
+CHANGELOG="---"
+CURRENT="First Version"

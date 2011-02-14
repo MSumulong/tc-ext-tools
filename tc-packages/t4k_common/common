@@ -1,0 +1,28 @@
+PACKAGE="t4k_common"
+VERSION="0.0.3"
+SOURCE="https://alioth.debian.org/frs/download.php/3439/t4k_common-${VERSION}.tar.gz"
+BUILD_DEPENDS="SDL
+SDL-dev
+SDL_pango
+SDL_pango-dev
+librsvg
+librsvg-dev
+gtk2
+gtk2-dev
+cairo
+cairo-dev
+libxml2
+libxml2-dev
+libmad
+libmad-dev
+libvorbis
+libvorbis-dev"
+
+DESCRIPTION="A library of code shared between tuxmath and tuxtype."
+AUTHOR="various"
+SITE="http://tux4kids.alioth.debian.org/"
+COPYING="GPL-3"
+MAINTAINERS="Arslan S."
+COMMENTS="This extension is PPI compatible."
+CHANGELOG="---"
+CURRENT="First Version"
