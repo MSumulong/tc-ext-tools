@@ -7,7 +7,39 @@ build_configure() {
 
    mkdir build
    cd build
-   cmake -DCMAKE_INSTALL_PREFIX=/usr/local -DCMAKE_BUILD_TYPE=Release .. || return 1
+   cmake -DCMAKE_INSTALL_PREFIX=/usr/local \
+      -DCMAKE_BUILD_TYPE=Release \
+      -DENABLE_SSE=OFF \
+      -DENABLE_SSE2=OFF \
+      -DENABLE_SSE3=OFF \
+      -DENABLE_SSSE3=OFF \
+      -DUSE_FAST_MATH=ON \
+      -DUSE_O3=OFF \
+      -DUSE_OMIT_FRAME_POINTER=ON \
+      -DBUILD_EXAMPLES=ON \
+      -DINSTALL_C_EXAMPLES=ON \
+      -DINSTALL_OCTAVE_EXAMPLES=OFF \
+      -DINSTALL_PYTHON_EXAMPLES=ON \
+      -DBUILD_NEW_PYTHON_SUPPORT=ON \
+      -DBUILD_SWIG_PYTHON_SUPPORT=ON \
+      -DBUILD_OCTAVE_SUPPORT=OFF \
+      -DUSE_IPP=ON \
+      -DWITH_FFMPEG=OFF \
+      -DWITH_GSTREAMER=ON \
+      -DWITH_GTK=ON \
+      -DWITH_JASPER=ON \
+      -DWITH_JPEG=ON \
+      -DWITH_PNG=ON \
+      -DWITH_TIFF=ON \
+      -DWITH_PVAPI=ON \
+      -DWITH_TBB=OFF \
+      -DWITH_UNICAP=OFF \
+      -DWITH_1394=ON \
+      -DWITH_V4L=ON \
+      -DWITH_XINE=OFF \
+      -DBUILD_TESTS=OFF \
+      -DBUILD_LATEX_DOCS=OFF \
+      -DCMAKE_SKIP_RPATH=ON .. || return 1
 
 }
 

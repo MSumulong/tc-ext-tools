@@ -1,7 +1,5 @@
 gtk2.tcz
 gst-plugins-base.tcz
 libdc1394.tcz
-libavcodec.tcz
-libavformat.tcz
-libswscale.tcz
-
+libv4l.tcz
+openexr.tcz

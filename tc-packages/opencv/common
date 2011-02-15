@@ -11,18 +11,21 @@ libraw1394
 libraw1394-dev
 libdc1394
 libdc1394-dev
-python
-python-dev
-swig
-libavcodec
-libavformat
-libswscale
-ffmpeg-ffserver-dev
 liblapack
+libv4l
+libv4l-dev
+openexr
+openexr-dev
+eigen
 libxcb
 libxcb-dev
 Xorg-7.5-lib
-Xorg-7.5-dev"
+Xorg-7.5-dev
+python
+python-dev
+swig
+python-numpy
+doxygen"
 
 DESCRIPTION="A library of programming functions for real time computer vision."
 AUTHOR="various"
@@ -30,5 +33,6 @@ SITE="http://opencv.willowgarage.com"
 COPYING="BSD"
 MAINTAINERS="Arslan S."
 COMMENTS="This extension is PPI compatible."
-CHANGELOG="---"
-CURRENT="First Version"
+CHANGELOG="2010/12/10 First Version 2.2.0"
+CURRENT="Disabled ffmpeg and sse,sse2,sse3,ssse3 flags, added python bindings"
+
