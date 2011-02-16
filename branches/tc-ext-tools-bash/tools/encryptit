@@ -35,26 +35,26 @@ else
      exit 1
 fi
 
-if [ ! -f "$TCEXTTOOLS_PACKAGE" ]; then
+if [ ! -f "$PACKAGE_PACKAGE" ]; then
        print_it error "You must package it first!"
        return 1
 fi
 
 this_main() {
 
-   echo "" > "$TCEXTTOOLS_MESSAGE_LOG_2"
-   echo "Encrypting the package $PACKAGE ..." >> "$TCEXTTOOLS_MESSAGE_LOG_2"
+   echo "" > "$PACKAGE_MESSAGE_LOG_2"
+   echo "Encrypting the package $PACKAGE ..." >> "$PACKAGE_MESSAGE_LOG_2"
 
-   if [ -f "$TCEXTTOOLS_PACKAGE_ENCRYPTED" ]; then
-        echo "The package tarball encrypted detected. Deleting it..." >> "$TCEXTTOOLS_MESSAGE_LOG_2"
-        sudo rm -f "$TCEXTTOOLS_PACKAGE_ENCRYPTED"
+   if [ -f "$PACKAGE_PACKAGE_ENCRYPTED" ]; then
+        echo "The package tarball encrypted detected. Deleting it..." >> "$PACKAGE_MESSAGE_LOG_2"
+        sudo rm -f "$PACKAGE_PACKAGE_ENCRYPTED"
    fi
 
    print_it "Please enter the encryption key: \c"
-   print_it hilight "$TCEXTTOOLS_ENCRYPTION_KEY"
-   bcrypt "$TCEXTTOOLS_PACKAGE" || return 1
+   print_it hilight "$PACKAGE_ENCRYPTION_KEY"
+   bcrypt "$PACKAGE_PACKAGE" || return 1
 
-   echo "Encrypted the package $PACKAGE successfully." >> "$TCEXTTOOLS_MESSAGE_LOG_2"
+   echo "Encrypted the package $PACKAGE successfully." >> "$PACKAGE_MESSAGE_LOG_2"
 
    return 0
 

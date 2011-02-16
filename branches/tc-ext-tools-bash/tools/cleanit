@@ -40,9 +40,9 @@ this_main() {
    echo ""
    echo "Cleaning the package $PACKAGE ..."
 
-   [ -d "$TCEXTTOOLS_BIN" ] && sudo rm -rf "$TCEXTTOOLS_BIN"
-   [ -d "$TCEXTTOOLS_SRC_TEMP" ] && sudo rm -rf "$TCEXTTOOLS_SRC_TEMP"
-   [ -d "$TCEXTTOOLS_PKG_TEMP" ] && sudo rm -rf "$TCEXTTOOLS_PKG_TEMP"
+   [ -d "$PACKAGE_BIN" ] && sudo rm -rf "$PACKAGE_BIN"
+   [ -d "$PACKAGE_SRC_TEMP" ] && sudo rm -rf "$PACKAGE_SRC_TEMP"
+   [ -d "$PACKAGE_PKG_TEMP" ] && sudo rm -rf "$PACKAGE_PKG_TEMP"
 
    echo "Cleaned the package $PACKAGE successfully."
 
@@ -51,7 +51,7 @@ this_main() {
 }
 
 print_it "Cleaning the package $PACKAGE ... \c"
-this_main > "$TCEXTTOOLS_MESSAGE_LOG_2" 2>&1
+this_main > "$PACKAGE_MESSAGE_LOG_2" 2>&1
 if [ "$?" -gt 0 ]; then
      print_it error "failed!"
      exit 1

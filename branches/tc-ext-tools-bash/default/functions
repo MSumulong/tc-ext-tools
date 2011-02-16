@@ -79,11 +79,7 @@ print_it() {
 # sets the package build dependencies
 set_depends() {
 
-   if [ -n "${BUILD_DEPENDS[*]}" ]; then
-        BUILD_DEPENDS=( ${TCEXTTOOLS_DEPENDS[@]} ${BUILD_DEPENDS[@]} )
-   else
-        BUILD_DEPENDS=( ${TCEXTTOOLS_DEPENDS[@]} )
-   fi
+   BUILD_DEPENDS=( ${TCEXTTOOLS_DEPENDS[@]} ${BUILD_DEPENDS[@]} )
 
 }
 
@@ -137,80 +133,92 @@ set_source() {
      fi
 
      if [ -z "$SOURCE_TOPDIR" ]; then
-          [ -d "$TCEXTTOOLS_SRC_TEMP" ] && SOURCE_TOPDIR=$(ls $TCEXTTOOLS_SRC_TEMP)
+          [ -d "$PACKAGE_SRC_TEMP" ] && SOURCE_TOPDIR=$(ls $PACKAGE_SRC_TEMP)
           [ -z "$SOURCE_TOPDIR" ] && SOURCE_TOPDIR=${PACKAGE}-${VERSION}
      fi
 
-}
- 
-# sets the package extensions
-set_extensions() {
+     if [ -n "$SOURCE_TOPDIR" ]; then
+          PACKAGE_SOURCE_TOPDIR="$PACKAGE_SRC_TEMP/$SOURCE_TOPDIR"
+     fi
 
-     unset EXTENSIONS
-
-     if [ -d "$PACKAGE_EXTENSIONS" ]; then
-          for i in $(find "$PACKAGE_EXTENSIONS" -type f -name install)
-          do
-              EXTENSION=$(basename ${i%/install})
-              if [ -z "$EXTENSIONS" ]; then
-                   EXTENSIONS="$EXTENSION"
-              else
-                   EXTENSIONS="$EXTENSIONS $EXTENSION"
-              fi
-          done
+     if [ "$SOURCE_TYPE" != "none" ]; then
+          PACKAGE_SOURCE="$_PACKAGE_SRC/$SOURCE_NAME"
+          PACKAGE_SOURCE_CONVERTED="$_PACKAGE_SRC/$SOURCE_NAME_CONVERTED"
      fi
 
 }
 
-# sets the package extension
-set_extension() {
+# sets the package extensions
+set_extensions() {
 
-      if [ -z "$EXTENSION" ]; then
-           print_it error "EXTENSION is not set!"
-           return 1
-      fi
+   if [ -z "${EXTENSIONS[*]}" ]; then
+        if [ -d "$PACKAGE_EXTENSIONS" ]; then
+             for i in $(find "$PACKAGE_EXTENSIONS" -type f -name install)
+             do
+                 EXTENSION=$(basename ${i%/install})
+                 PACKAGE_EXTENSION=( ${PACKAGE_EXTENSION[@]} ${EXTENSION} )
+             done
+        fi
+   else
+        PACKAGE_EXTENSION=( ${EXTENSIONS[@]} )
+   fi
 
-      PACKAGE_EXTENSION_COMMON="$PACKAGE_EXTENSIONS/$EXTENSION/common"
-      PACKAGE_EXTENSION_INSTALL="$PACKAGE_EXTENSIONS/$EXTENSION/install"
-      PACKAGE_EXTENSION_DEP="$PACKAGE_EXTENSIONS/$EXTENSION/dep"
-      PACKAGE_EXTENSION_TCEINSTALLED="$PACKAGE_EXTENSIONS/$EXTENSION/tce.installed"
+   NUMBER_OF_EXTENSIONS=${#PACKAGE_EXTENSION[@]}
 
-      TCEXTTOOLS_EXTENSION_COMMON="$PACKAGE_EXTENSION_COMMON"
-      TCEXTTOOLS_EXTENSION_INSTALL="$PACKAGE_EXTENSION_INSTALL"
-      TCEXTTOOLS_EXTENSION_TCEINSTALLED="$PACKAGE_EXTENSION_TCEINSTALLED"
+   if [ "$NUMBER_OF_EXTENSIONS" == 0 ]; then
+        echo "Error! There is no extension available."
+        exit 1
+   elif [ "$NUMBER_OF_EXTENSIONS" == 1 ]; then
+        SINGLE_EXTENSION_PACKAGE=1
+   else
+        SINGLE_EXTENSION_PACKAGE=0
+   fi
 
-      unset NAME ICON DESKTOP
+   for (( i=0; i<$NUMBER_OF_EXTENSIONS; i++ ))
+   do
+       PACKAGE_EXTENSION_COMMON[$i]="$PACKAGE_EXTENSIONS/${PACKAGE_EXTENSION[$i]}/common"
+       PACKAGE_EXTENSION_INSTALL[$i]="$PACKAGE_EXTENSIONS/${PACKAGE_EXTENSION[$i]}/install"
+       PACKAGE_EXTENSION_DEP[$i]="$PACKAGE_EXTENSIONS/${PACKAGE_EXTENSION[$i]}/dep"
+       PACKAGE_EXTENSION_TCEINSTALLED[$i]="$PACKAGE_EXTENSIONS/${PACKAGE_EXTENSION[$i]}/tce.installed"
+   done
+
+   for (( i=0; i<$NUMBER_OF_EXTENSIONS; i++ ))
+   do
+       unset NAME ICON DESKTOP
 
        . "$PACKAGE_COMMON"
 
-      if [ -f "$PACKAGE_EXTENSION_COMMON" ]; then
-           . "$PACKAGE_EXTENSION_COMMON"
-      fi
+       if [ -f "${PACKAGE_EXTENSION_COMMON[$i]}" ]; then
+            . "${PACKAGE_EXTENSION_COMMON[$i]}"
+       fi
 
-      if [ -z "$NAME" ]; then
-           EXTENSION_NAME="$EXTENSION"
-      else
-           EXTENSION_NAME="$NAME"
-      fi
+       if [ -z "$NAME" ]; then
+            PACKAGE_EXTENSION_NAME[$i]=${PACKAGE_EXTENSION[$i]}
+       else
+            PACKAGE_EXTENSION_NAME[$i]="$NAME"
+       fi
 
-      if [ -n "$(echo $EXTENSION_NAME | grep KERNEL)" ]; then
-           EXTENSION_NAME=$(echo $EXTENSION_NAME | sed "s/KERNEL/${KERNEL}/")
-      fi
+       if [ -n "$(echo ${PACKAGE_EXTENSION_NAME[$i]} | grep KERNEL)" ]; then
+            PACKAGE_EXTENSION_NAME[$i]=$(echo ${PACKAGE_EXTENSION_NAME[$i]} | sed "s/KERNEL/${KERNEL}/")
+       fi
 
-      TCEXTTOOLS_EXTENSION_BINDIR="$TCEXTTOOLS_BIN/$EXTENSION_NAME"
-      TCEXTTOOLS_EXTENSION_PKGDIR="$TCEXTTOOLS_PKG/$EXTENSION_NAME"
-      TCEXTTOOLS_EXTENSION_TCZ="$TCEXTTOOLS_EXTENSION_PKGDIR/${EXTENSION_NAME}.tcz"
-      TCEXTTOOLS_EXTENSION_INFO="$TCEXTTOOLS_EXTENSION_PKGDIR/${EXTENSION_NAME}.tcz.info"
-      TCEXTTOOLS_EXTENSION_DEP="$TCEXTTOOLS_EXTENSION_PKGDIR/${EXTENSION_NAME}.tcz.dep"
-      TCEXTTOOLS_EXTENSION_LIST="$TCEXTTOOLS_EXTENSION_PKGDIR/${EXTENSION_NAME}.tcz.list"
-      TCEXTTOOLS_EXTENSION_MD5SUM="$TCEXTTOOLS_EXTENSION_PKGDIR/${EXTENSION_NAME}.tcz.md5.txt"
+       if [ -n "$ICON" ]; then
+          PACKAGE_EXTENSION_ICON[$i]="$ICON"
+          if [ -n "$DESKTOP" ]; then
+               PACKAGE_EXTENSION_DESKTOP[$i]="$DESKTOP"
+          else
+               PACKAGE_EXTENSION_DESKTOP[$i]="$PREFIX/share/applications/${PACKAGE_EXTENSION_NAME[$i]}.desktop"
+          fi
+       fi
 
-      PACKAGE_EXTENSION_BINDIR="$TCEXTTOOLS_EXTENSION_BINDIR"
-      PACKAGE_EXTENSION_PKGDIR="$TCEXTTOOLS_EXTENSION_PKGDIR"
-      PACKAGE_EXTENSION_TCZ="$TCEXTTOOLS_EXTENSION_TCZ"
-      PACKAGE_EXTENSION_INFO="$TCEXTTOOLS_EXTENSION_INFO"
-      PACKAGE_EXTENSION_LIST="$TCEXTTOOLS_EXTENSION_LIST"
-      PACKAGE_EXTENSION_MD5SUM="$TCEXTTOOLS_EXTENSION_MD5SUM"
+       PACKAGE_EXTENSION_BINDIR[$i]="$PACKAGE_BIN/${PACKAGE_EXTENSION_NAME[$i]}"
+       PACKAGE_EXTENSION_PKGDIR[$i]="$PACKAGE_PKG/${PACKAGE_EXTENSION_NAME[$i]}"
+       PACKAGE_EXTENSION_TCZ[$i]="$PACKAGE_EXTENSION_PKGDIR/${PACKAGE_EXTENSION_NAME[$i]}.tcz"
+       _PACKAGE_EXTENSION_DEP[$i]="$PACKAGE_EXTENSION_PKGDIR/${PACKAGE_EXTENSION_NAME[$i]}.tcz.dep"
+       PACKAGE_EXTENSION_MD5SUM[$i]="$PACKAGE_EXTENSION_PKGDIR/${PACKAGE_EXTENSION_NAME[$i]}.tcz.md5.txt"
+       PACKAGE_EXTENSION_INFO[$i]="$PACKAGE_EXTENSION_PKGDIR/${PACKAGE_EXTENSION_NAME[$i]}.tcz.info"
+       PACKAGE_EXTENSION_LIST[$i]="$PACKAGE_EXTENSION_PKGDIR/${PACKAGE_EXTENSION_NAME[$i]}.tcz.list"
+   done
 
 }
 
@@ -239,34 +247,27 @@ PACKAGE_EXTENSIONS="$PACKAGE_ROOT/extensions"
 PACKAGE_FILES_LIST="$PACKAGE_EXTENSIONS/list"
 PACKAGE_SRC="$PACKAGE_ROOT/src"
 PACKAGE_PATCHES="$PACKAGE_SRC/patches"
-TCEXTTOOLS_PATCHES="$PACKAGE_PATCHES"
 
 if [ -f "$PACKAGE_COMMON" ]; then
      . "$PACKAGE_COMMON"
 
-     _TCEXTTOOLS_ROOT="$TCEXTTOOLS_STORAGE/$PACKAGE"
-     TCEXTTOOLS_BIN="$_TCEXTTOOLS_ROOT/bin"
-     TCEXTTOOLS_SRC="$_TCEXTTOOLS_ROOT/src"
-     TCEXTTOOLS_LOG="$_TCEXTTOOLS_ROOT/log"
-     TCEXTTOOLS_PKG="$_TCEXTTOOLS_ROOT/pkg"
-     TCEXTTOOLS_BIN_TEMP="$TCEXTTOOLS_BIN/temp"
-     TCEXTTOOLS_SRC_TEMP="$TCEXTTOOLS_SRC/temp"
-     TCEXTTOOLS_PKG_TEMP="$TCEXTTOOLS_PKG/temp"
-     TCEXTTOOLS_CONFIGURE_LOG="$TCEXTTOOLS_LOG/configure.txt"
-     TCEXTTOOLS_COMPILE_LOG="$TCEXTTOOLS_LOG/compile.txt"
-     TCEXTTOOLS_INSTALL_LOG="$TCEXTTOOLS_LOG/install.txt"
-     TCEXTTOOLS_BUILD_LOG="$TCEXTTOOLS_LOG/build.txt"
-     TCEXTTOOLS_MESSAGE_LOG="$TCEXTTOOLS_LOG/message.txt"
-     TCEXTTOOLS_MESSAGE_LOG_2="$TCEXTTOOLS_LOG/message2.txt"
-     TCEXTTOOLS_INSTALL_ROOT="$TCEXTTOOLS_BIN/root"
-     TCEXTTOOLS_PACKAGE="$TCEXTTOOLS_PKG/${PACKAGE}.tar.bz2"
-     TCEXTTOOLS_PACKAGE_ENCRYPTED="$TCEXTTOOLS_PKG/${PACKAGE}.tar.bz2.bfe"
-
-     PACKAGE_BIN="$TCEXTTOOLS_BIN"
-     PACKAGE_PKG="$TCEXTTOOLS_PKG"
-     PACKAGE_PACKAGE="$TCEXTTOOLS_PACKAGE"
-     PACKAGE_PACKAGE_ENCRYPTED="$TCEXTTOOLS_PACKAGE_ENCRYPTED"
-     PACKAGE_INSTALL_ROOT="$TCEXTTOOLS_INSTALL_ROOT"
+     _PACKAGE_ROOT="$TCEXTTOOLS_STORAGE/$PACKAGE"
+     PACKAGE_BIN="$_PACKAGE_ROOT/bin"
+     _PACKAGE_SRC="$_PACKAGE_ROOT/src"
+     PACKAGE_LOG="$_PACKAGE_ROOT/log"
+     PACKAGE_PKG="$_PACKAGE_ROOT/pkg"
+     PACKAGE_BIN_TEMP="$PACKAGE_BIN/temp"
+     PACKAGE_SRC_TEMP="$_PACKAGE_SRC/temp"
+     PACKAGE_PKG_TEMP="$PACKAGE_PKG/temp"
+     PACKAGE_CONFIGURE_LOG="$PACKAGE_LOG/configure.txt"
+     PACKAGE_COMPILE_LOG="$PACKAGE_LOG/compile.txt"
+     PACKAGE_INSTALL_LOG="$PACKAGE_LOG/install.txt"
+     PACKAGE_BUILD_LOG="$PACKAGE_LOG/build.txt"
+     PACKAGE_MESSAGE_LOG="$PACKAGE_LOG/message.txt"
+     PACKAGE_MESSAGE_LOG_2="$PACKAGE_LOG/message2.txt"
+     PACKAGE_INSTALL_ROOT="$PACKAGE_BIN/root"
+     PACKAGE_PACKAGE="$PACKAGE_PKG/${PACKAGE}.tar.bz2"
+     PACKAGE_PACKAGE_ENCRYPTED="$PACKAGE_PKG/${PACKAGE}.tar.bz2.bfe"
 
      INSTALL_ROOT="$PACKAGE_INSTALL_ROOT"
      PREFIX=/usr/local
@@ -275,38 +276,25 @@ if [ -f "$PACKAGE_COMMON" ]; then
      set_source
      set_extensions
 
-     if [ -n "$SOURCE_TOPDIR" ]; then
-          TCEXTTOOLS_SOURCE_TOPDIR="$TCEXTTOOLS_SRC_TEMP/$SOURCE_TOPDIR"
-          PACKAGE_SOURCE_TOPDIR="$TCEXTTOOLS_SOURCE_TOPDIR"
-     fi
-
-     if [ "$SOURCE_TYPE" != "none" ]; then
-          TCEXTTOOLS_SOURCE="$TCEXTTOOLS_SRC/$SOURCE_NAME"
-          TCEXTTOOLS_SOURCE_CONVERTED="$TCEXTTOOLS_SRC/$SOURCE_NAME_CONVERTED"
-          PACKAGE_SOURCE="$TCEXTTOOLS_SOURCE"
-          PACKAGE_SOURCE_CONVERTED="$TCEXTTOOLS_SOURCE_CONVERTED"
-     fi
-
      # shortened variables for use in package build
      P_ROOT="$PACKAGE_ROOT"
-     T_ROOT="$_TCEXTTOOLS_ROOT"
+     _P_ROOT="${_PACKAGE_ROOT}"
      P_NAME="$PACKAGE"
      P_VER="$VERSION"
      P_SRC="$PACKAGE_SRC"
-     T_SRC="$TCEXTTOOLS_SRC"
+     _P_SRC="${_PACKAGE_SRC}"
+     P_SRC_TEMP="$PACKAGE_SRC_TEMP"
      P_BIN="$PACKAGE_BIN"
-     T_BIN="$TCEXTTOOLS_BIN"
-     S_SRC="$T_SRC"
      S_TOP="$SOURCE_TOPDIR"
      S_ROOT="$PACKAGE_SOURCE_TOPDIR"
      I_ROOT="$INSTALL_ROOT"
 
      # create directories
      [ -d "$TCEXTTOOLS_STORAGE" ] || sudo install -m 755 -d -o "$TCUSER" -g staff "$TCEXTTOOLS_STORAGE"
-     [ -d "$TCEXTTOOLS_BIN" ] || install -m 755 -d "$TCEXTTOOLS_BIN"
-     [ -d "$TCEXTTOOLS_SRC" ] || install -m 755 -d "$TCEXTTOOLS_SRC"
-     [ -d "$TCEXTTOOLS_PKG" ] || install -m 755 -d "$TCEXTTOOLS_PKG"
-     [ -d "$TCEXTTOOLS_LOG" ] || install -m 755 -d "$TCEXTTOOLS_LOG"
+     [ -d "$PACKAGE_BIN" ] || install -m 755 -d "$PACKAGE_BIN"
+     [ -d "${_PACKAGE_SRC}" ] || install -m 755 -d "${_PACKAGE_SRC}"
+     [ -d "$PACKAGE_PKG" ] || install -m 755 -d "$PACKAGE_PKG"
+     [ -d "$PACKAGE_LOG" ] || install -m 755 -d "$PACKAGE_LOG"
 
 elif [ "$THIS" != "boostit" ]; then
      print_it error "You must boost it first!"

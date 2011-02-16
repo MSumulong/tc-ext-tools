@@ -172,15 +172,12 @@ _EOF
             touch "$PACKAGE_EXTENSIONS/$EXTENSION/dep" || return 1
        fi
 
-       if [ ! "${EXTENSION%-locale}" = "$EXTENSION" ]; then
+       if [ "${EXTENSION%-locale}" != "$EXTENSION" ]; then
           echo "${EXTENSION%-locale}.tcz" > "$PACKAGE_EXTENSIONS/$EXTENSION/dep" || return 1
           echo "usr/local/share/locale" > "$PACKAGE_EXTENSIONS/$EXTENSION/install" || return 1
        elif [ -n "$(echo $EXTENSIONS | grep ${EXTENSION}-locale)" ]; then
           echo "usr/local" > "$PACKAGE_EXTENSIONS/$EXTENSION/install" || return 1
           echo "x-usr/local/share/locale" >> "$PACKAGE_EXTENSIONS/$EXTENSION/install" || return 1
-       elif [ ! "${EXTENSION%-dev}" = "$EXTENSION" ]; then
-          echo "${EXTENSION%-dev}.tcz" > "$PACKAGE_EXTENSIONS/$EXTENSION/dep" || return 1
-          echo "usr/local/include" > "$PACKAGE_EXTENSIONS/$EXTENSION/install" || return 1
        fi
    done
 
