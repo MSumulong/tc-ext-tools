@@ -38,46 +38,45 @@ fi
 this_check() {
 
    echo "Cleaning the extension bin temporary directory."
-   EXTENSION_BIN_TEMP="$TCEXTTOOLS_BIN_TEMP/$EXTENSION_NAME"
-   [ -d "$EXTENSION_BIN_TEMP" ] && sudo rm -rf "$EXTENSION_BIN_TEMP"
-   mkdir -p "$TCEXTTOOLS_BIN_TEMP"
+   [ -d "$PACKAGE_EXTENSION_BIN_TEMP" ] && sudo rm -rf "$PACKAGE_EXTENSION_BIN_TEMP"
+   mkdir -p "$PACKAGE_BIN_TEMP"
 
    echo "Extracting the extension to the extension bin temporary directory."
-   sudo unsquashfs -d "$EXTENSION_BIN_TEMP" "$TCEXTTOOLS_EXTENSION_TCZ" || return 1
+   sudo unsquashfs -d "$PACKAGE_EXTENSION_BIN_TEMP" "$PACKAGE_EXTENSION_TCZ" || return 1
 
-   echo "Checking the extension files ..."
-   sudo find "$EXTENSION_BIN_TEMP" -not -type d -exec file "{}" \; || return 1
+   echo "Checking the extension files."
+   sudo find "$PACKAGE_EXTENSION_BIN_TEMP" -not -type d -exec file "{}" \; || return 1
 
    echo ""
    echo "Checking the permissions and ownership of the extension tce.installed directory."
-   if [ -d "$EXTENSION_BIN_TEMP/usr/local/tce.installed" ]; then
-        OUT=$(sudo busybox ls -d -l "$EXTENSION_BIN_TEMP/usr/local/tce.installed")
+   if [ -d "$PACKAGE_EXTENSION_BIN_TEMP/usr/local/tce.installed" ]; then
+        OUT=$(sudo busybox ls -d -l "$PACKAGE_EXTENSION_BIN_TEMP/usr/local/tce.installed")
         PERM=$(echo $OUT | cut -d" " -f1)
         OWNER=$(echo $OUT | cut -d" " -f3-4)
 
         if [ "$PERM" != "drwxrwxr-x" ] && [ "$PERM" != "drwxrwsr-x" ]; then
-             echo "Error! wrong permissions on the extension $EXTENSION_NAME tce.installed directory."
+             echo "Error! Wrong permissions detected for the extension $PACKAGE_EXTENSION_NAME tce.installed directory."
              return 1
         fi
 
         if [ "$OWNER" != "root staff" ]; then
-             echo "Error! wrong ownership on the extension $EXTENSION_NAME tce.installed directory."
+             echo "Error! Wrong ownership detected for the extension $PACKAGE_EXTENSION_NAME tce.installed directory."
              return 1
         fi
 
         echo "Checking the permissions and ownership of the extension tce.installed script."
-        if [ -e "$EXTENSION_BIN_TEMP/usr/local/tce.installed/$EXTENSION_NAME" ]; then
-             OUT=$(sudo busybox ls -l "$EXTENSION_BIN_TEMP/usr/local/tce.installed/$EXTENSION_NAME")
+        if [ -e "$PACKAGE_EXTENSION_BIN_TEMP/usr/local/tce.installed/$PACKAGE_EXTENSION_NAME" ]; then
+             OUT=$(sudo busybox ls -l "$PACKAGE_EXTENSION_BIN_TEMP/usr/local/tce.installed/$PACKAGE_EXTENSION_NAME")
              PERM=$(echo $OUT | cut -d" " -f1)
              OWNER=$(echo $OUT | cut -d" " -f3-4)
 
              if [ "$PERM" != "-rwxrwxr-x" ] && [ "$PERM" != "-rwxrwsr-x" ]; then
-                  echo "Error! wrong permissions on the extension $EXTENSION_NAME tce.installed script."
+                  echo "Error! Wrong permissions detected for the extension $PACKAGE_EXTENSION_NAME tce.installed script."
                   return 1
              fi
 
              if [ "$OWNER" != "root staff" ]; then
-                  echo "Error! wrong ownership on the extension $EXTENSION_NAME tce.installed script."
+                  echo "Error! Wrong ownership detected for the extension $PACKAGE_EXTENSION_NAME tce.installed script."
                   return 1
              fi
         fi
@@ -94,25 +93,26 @@ this_main() {
 
    for EXTENSION in $EXTENSIONS
    do
-       echo ""
-       echo "Setting the extension $EXTENSION parameters."
-       set_extension || return 1
+       set_extension
 
-       echo "Checking if the extension exists."
-       if [ ! -f "$TCEXTTOOLS_EXTENSION_TCZ" ]; then
-              echo "Error! You must create it first!"
-              return 1
+       echo -e "Checking if the extension exists ... \c"
+       if [ -f "$PACKAGE_EXTENSION_TCZ" ]; then
+            echo "yes"
+       else
+            echo "no"
+            echo "Error! You must create it first!"
+            return 1
        fi
 
-       echo "Checking the extension $EXTENSION_NAME."
+       echo "Checking the extension $PACKAGE_EXTENSION_NAME."
        this_check
        if [ "$?" -gt 0 ]; then
-            echo "Error! Checking the extension $EXTENSION_NAME failed."
-            sudo rm -rf "$EXTENSION_BIN_TEMP"
+            echo "Error! Checking the extension $PACKAGE_EXTENSION_NAME failed."
+            sudo rm -rf "$PACKAGE_EXTENSION_BIN_TEMP"
             return 1
        else
-            echo "Checking the extension $EXTENSION_NAME successful."
-            sudo rm -rf "$EXTENSION_BIN_TEMP"
+            echo "Checking the extension $PACKAGE_EXTENSION_NAME successful."
+            sudo rm -rf "$PACKAGE_EXTENSION_BIN_TEMP"
        fi
    done
 
@@ -124,7 +124,7 @@ this_main() {
 }
 
 print_it "Checking the package $PACKAGE extensions ... \c"
-this_main > "$TCEXTTOOLS_MESSAGE_LOG_2" 2>&1
+this_main > "$PACKAGE_MESSAGE_LOG_2" 2>&1
 if [ "$?" -gt 0 ]; then
      print_it error "failed!"
      exit 1

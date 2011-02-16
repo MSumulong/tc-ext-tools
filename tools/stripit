@@ -37,13 +37,11 @@ fi
 
 this_strip() {
 
-   echo "Setting the extension executables list."
-   EXECUTABLE_LIST=$(sudo find "$TCEXTTOOLS_EXTENSION_BINDIR" -not -type d -exec file "{}" \; | grep "executable" | grep ELF | grep "not stripped" | cut -f1 -d:)
-   echo "EXECUTABLE_LIST = $EXECUTABLE_LIST"
+   echo "Getting the extension executables list."
+   EXECUTABLE_LIST=$(sudo find "$PACKAGE_EXTENSION_BIN" -not -type d -exec file "{}" \; | grep "executable" | grep ELF | grep "not stripped" | cut -f1 -d:)
 
-   echo "Setting the extension shared objects list."
-   SHARED_OBJECT_LIST=$(sudo find "$TCEXTTOOLS_EXTENSION_BINDIR" -not -type d -exec file "{}" \; | grep "shared object" | grep ELF | grep "not stripped" | cut -f1 -d:)
-   echo "SHARED_OBJECT_LIST = $SHARED_OBJECT_LIST"
+   echo "Getting the extension shared objects list."
+   SHARED_OBJECT_LIST=$(sudo find "$PACKAGE_EXTENSION_BIN" -not -type d -exec file "{}" \; | grep "shared object" | grep ELF | grep "not stripped" | cut -f1 -d:)
 
    echo "Processing the extension executables list."
    if [ -n "$EXECUTABLE_LIST" ]; then
@@ -52,8 +50,6 @@ this_strip() {
             echo "Stripping the executable $EXECUTABLE" 
             sudo strip --strip-unneeded "$EXECUTABLE" || return 1
         done
-   else
-        echo "The executable list is empty. Skipping."
    fi
 
    echo "Processing the extension shared objects list."
@@ -63,8 +59,6 @@ this_strip() {
             echo "Stripping the shared object $SHARED_OBJECT" 
             sudo strip -g "$SHARED_OBJECT" || return 1
         done
-   else
-        echo "Shared object list is empty. Skipping."
    fi
 
    return 0
@@ -77,24 +71,22 @@ this_main() {
    echo "Stripping the package $PACKAGE extensions ..."
    for EXTENSION in $EXTENSIONS
    do
-       echo ""
-       echo "Setting the extension $EXTENSION parameters."
-       set_extension || return 1
+       set_extension
 
        echo "Checking if the extension is splitted before."
-       if [ ! -d "$TCEXTTOOLS_EXTENSION_BINDIR" ]; then
+       if [ ! -d "$PACKAGE_EXTENSION_BIN" ]; then
               echo "Error! You must split the package extensions first."
               return 1
        fi
 
-       echo "Stripping the extension $EXTENSION_NAME."
+       echo "Stripping the extension $PACKAGE_EXTENSION_NAME."
        this_strip
        if [ "$?" -gt 0 ]; then
-            echo "Error! Stripping the extension $EXTENSION_NAME failed."
+            echo "Error! Stripping the extension $PACKAGE_EXTENSION_NAME failed."
             sudo rm -rf "$TMP_DIR"
             return 1
        else
-            echo "Stripping the extension $EXTENSION_NAME successful."
+            echo "Stripping the extension $PACKAGE_EXTENSION_NAME successful."
        fi
    done
 
@@ -106,7 +98,7 @@ this_main() {
 }
 
 print_it "Stripping the package $PACKAGE extensions ... \c"
-this_main > "$TCEXTTOOLS_MESSAGE_LOG_2" 2>&1
+this_main > "$PACKAGE_MESSAGE_LOG_2" 2>&1
 if [ "$?" -gt 0 ]; then
      print_it error "failed!"
      exit 1
