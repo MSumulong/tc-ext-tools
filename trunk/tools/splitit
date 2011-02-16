@@ -35,7 +35,7 @@ else
      exit 1
 fi
 
-if [ ! -d "$TCEXTTOOLS_INSTALL_ROOT" ]; then
+if [ ! -d "$PACKAGE_INSTALL_ROOT" ]; then
        print_it error "You must install it first!"
        exit 1
 fi
@@ -45,34 +45,37 @@ this_split() {
    echo "Getting the contents of the extension install."
    CONTENTS=$(cat $PACKAGE_EXTENSION_INSTALL)
    if [ -z "$CONTENTS" ]; then
-        echo "Error! the extension install is empty."
-        return 1
+        echo "Warning! The extension install is empty."
    fi
 
    echo "Touching install.list and x-install.list files."
-   LIST="${TCEXTTOOLS_BIN_TEMP}/install.list"
-   X_LIST="${TCEXTTOOLS_BIN_TEMP}/x-install.list"
+   LIST="${PACKAGE_BIN_TEMP}/install.list"
+   X_LIST="${PACKAGE_BIN_TEMP}/x-install.list"
    touch "$LIST"
    touch "$X_LIST"
 
    echo "Processing the extension install contents."
-   cd "$TCEXTTOOLS_INSTALL_ROOT"
-   for i in $CONTENTS
+   cd "$PACKAGE_INSTALL_ROOT"
+   for i in ${CONTENTS-.}
    do
        echo "Processing the content $i."
 
-       echo "Checking if the content is commented out."
+       echo -e "Checking if the content is commented out ... \c"
        if [ "${i#\#}" != "$i" ]; then
-            echo "The content $i is commented out. Skipping it."
+            echo "yes"
             continue
+       else
+            echo "no"
        fi
 
        echo "Evaluating the content $i."
-       i=$(eval echo $i)
+       i=$(eval echo "$i")
 
-       echo "Checking if a special wildcard used."
+       echo -e "Checking if a special wildcard used ... \c"
        if [ -n "$(echo "$i" | grep '*')" ]; then
-            echo "The wildcard * found in the content."
+            echo "yes"
+       else
+            echo "no"
        fi
 
        if [ -z "$(echo "$i" | grep '*')" ]; then
@@ -97,18 +100,18 @@ this_split() {
    done
 
    echo "Creating the extension contents tarball from the include and the exclude lists."
-   sudo tar -T "$LIST" -X "$X_LIST" -cvpzf "$TCEXTTOOLS_BIN_TEMP/pkg.tar.gz" || return 1
+   sudo tar -T "$LIST" -X "$X_LIST" -cvpzf "$PACKAGE_BIN_TEMP/pkg.tar.gz" || return 1
 
    echo "Cleaning the package extension bin directory."
-   [ -d "$TCEXTTOOLS_EXTENSION_BINDIR" ] && sudo rm -rf "$TCEXTTOOLS_EXTENSION_BINDIR"
-   sudo mkdir -p "$TCEXTTOOLS_EXTENSION_BINDIR"
+   [ -d "$PACKAGE_EXTENSION_BIN" ] && sudo rm -rf "$PACKAGE_EXTENSION_BIN"
+   sudo mkdir -p "$PACKAGE_EXTENSION_BIN"
 
    echo "Extracting the extension contents tarball to the extension bin directory."
-   sudo mkdir -p "$TCEXTTOOLS_EXTENSION_BINDIR"
-   sudo tar -C "$TCEXTTOOLS_EXTENSION_BINDIR" -pvxzf "$TCEXTTOOLS_BIN_TEMP/pkg.tar.gz" || return 1
+   sudo mkdir -p "$PACKAGE_EXTENSION_BIN"
+   sudo tar -C "$PACKAGE_EXTENSION_BIN" -pvxzf "$PACKAGE_BIN_TEMP/pkg.tar.gz" || return 1
 
    echo "Cleaning the extension bin temporary directory."
-   sudo rm -rf "$TCEXTTOOLS_BIN_TEMP"
+   sudo rm -rf "$PACKAGE_BIN_TEMP"
 
    return 0
 
@@ -121,22 +124,20 @@ this_main() {
 
    for EXTENSION in $EXTENSIONS
    do
-       echo ""
-       echo "Setting the extension $EXTENSION parameters."
-       set_extension || return 1
+       set_extension
 
        echo "Cleaning the package bin temporary directory."
-       [ -d "$TCEXTTOOLS_BIN_TEMP" ] && sudo rm -rf "$TCEXTTOOLS_BIN_TEMP"
-       mkdir -p "$TCEXTTOOLS_BIN_TEMP"
+       [ -d "$PACKAGE_BIN_TEMP" ] && sudo rm -rf "$PACKAGE_BIN_TEMP"
+       mkdir -p "$PACKAGE_BIN_TEMP"
 
-       echo "Splitting the extension $EXTENSION_NAME."
+       echo "Splitting the extension $PACKAGE_EXTENSION_NAME."
        this_split
        if [ "$?" -gt 0 ]; then
-            echo "Error! splitting the extension $EXTENSION_NAME failed."
-            sudo rm -rf "$TCEXTTOOLS_BIN_TEMP"
+            echo "Error! splitting the extension $PACKAGE_EXTENSION_NAME failed."
+            sudo rm -rf "$PACKAGE_BIN_TEMP"
             return 1
        else
-            echo "Splitting the extension $EXTENSION_NAME successful."
+            echo "Splitting the extension $PACKAGE_EXTENSION_NAME successful."
        fi
    done
 
@@ -148,7 +149,7 @@ this_main() {
 }
 
 print_it "Splitting the package $PACKAGE extensions ... \c"
-this_main > "$TCEXTTOOLS_MESSAGE_LOG_2" 2>&1
+this_main > "$PACKAGE_MESSAGE_LOG_2" 2>&1
 if [ "$?" -gt 0 ]; then
      print_it error "failed!"
      exit 1

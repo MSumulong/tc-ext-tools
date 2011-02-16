@@ -41,43 +41,40 @@ this_main() {
    echo "Downloading the package $PACKAGE source ..."
 
    echo "Cleaning the package source directory."
-   [ -d "$TCEXTTOOLS_SRC" ] && sudo rm -rf "$TCEXTTOOLS_SRC"
-   mkdir -p "$TCEXTTOOLS_SRC" || return 1
+   [ -d "$_PACKAGE_SRC" ] && sudo rm -rf "$_PACKAGE_SRC"
+   mkdir -p "$_PACKAGE_SRC" || return 1
 
    if [ -n "$SOURCE_URL_TYPE" ]; then
-        echo "Source url type is set to $SOURCE_URL_TYPE."
-
         echo "Cleaning the temporary source directory."
-        [ -d "$TCEXTTOOLS_SRC_TEMP" ] && sudo rm -rf "$TCEXTTOOLS_SRC_TEMP"
-        mkdir -p "$TCEXTTOOLS_SRC_TEMP"
+        [ -d "$PACKAGE_SRC_TEMP" ] && sudo rm -rf "$PACKAGE_SRC_TEMP"
+        mkdir -p "$PACKAGE_SRC_TEMP"
 
-        cd "$TCEXTTOOLS_SRC_TEMP"
+        cd "$PACKAGE_SRC_TEMP"
 
-        if [ "$SOURCE_URL_TYPE" = "svn" ]; then
+        if [ "$PACKAGE_SOURCE_URL_TYPE" = "svn" ]; then
              echo "Checking out the svn repository $SOURCE"
-             svn --non-interactive --trust-server-cert co "$SOURCE" "$TCEXTTOOLS_SOURCE_TOPDIR" || return 1
+             svn --non-interactive --trust-server-cert co "$SOURCE" "$PACKAGE_SOURCE_TOPDIR" || return 1
 
              echo "Creating a tarball from the source."
-             tar --exclude-vcs -cvJf "$SOURCE_NAME" "$SOURCE_TOPDIR" || return 1
+             tar --exclude-vcs -cvJf "$PACKAGE_SOURCE_NAME" "$SOURCE_TOPDIR" || return 1
 
              echo "Moving the tarball to the package source directory."
-             mv -f "$SOURCE_NAME" "$TCEXTTOOLS_SRC" || return 1
-        elif [ "$SOURCE_URL_TYPE" = "git" ]; then
+             mv -f "$PACKAGE_SOURCE_NAME" "$_PACKAGE_SRC" || return 1
+        elif [ "$PACKAGE_SOURCE_URL_TYPE" = "git" ]; then
              echo "Cloning the git repository $SOURCE"
-             git clone "$SOURCE" "$TCEXTTOOLS_SOURCE_TOPDIR" || return 1
+             git clone "$SOURCE" "$PACKAGE_SOURCE_TOPDIR" || return 1
 
              echo "Creating a tarball from the source."
-             tar --exclude-vcs -cvJf "$SOURCE_NAME" "$SOURCE_TOPDIR" || return 1
+             tar --exclude-vcs -cvJf "$PACKAGE_SOURCE_NAME" "$SOURCE_TOPDIR" || return 1
 
              echo "Moving the tarball to the package source directory."
-             mv -f "$SOURCE_NAME" "$TCEXTTOOLS_SRC" || return 1
+             mv -f "$PACKAGE_SOURCE_NAME" "$_PACKAGE_SRC" || return 1
         fi
    else
-        echo "Downloading the package source $SOURCE_NAME from the url $SOURCE"
-        wget --no-check-certificate "$SOURCE" -O "$TCEXTTOOLS_SOURCE" || return 1
+        echo "Downloading the package source $PACKAGE_SOURCE_NAME from $SOURCE"
+        wget --no-check-certificate "$SOURCE" -O "$PACKAGE_SOURCE" || return 1
    fi
 
-   echo ""
    echo "Downloaded the package $PACKAGE source successfully."
 
    return 0
@@ -85,7 +82,7 @@ this_main() {
 }
 
 print_it "Downloading the package $PACKAGE source ... \c"
-this_main > "$TCEXTTOOLS_MESSAGE_LOG_2" 2>&1
+this_main > "$PACKAGE_MESSAGE_LOG_2" 2>&1
 if [ "$?" -gt 0 ]; then
      print_it error "failed!"
      exit 1

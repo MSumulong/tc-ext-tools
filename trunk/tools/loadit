@@ -47,24 +47,27 @@ this_load() {
    EXTENSION_TCZ="${EXTENSION%.tcz}.tcz"
    EXTENSION_NAME="${EXTENSION_TCZ%.tcz}"
 
-   echo "Checking if the extension is installed."
+   echo -e "Checking if the extension is installed ... \c"
    if [ -e "/usr/local/tce.installed/$EXTENSION_NAME" ]; then
-        echo "The extension $EXTENSION_NAME is already installed."
+        echo "yes"
         if [ "$COMMAND" = "cp2fs" -a -d "$TCLOOP/$EXTENSION_NAME" ]; then
-             echo "Warning! cp2fs command issued for $EXTENSION_NAME but it is mounted before."
+             echo "Warning! cp2fs command issued for the extension $EXTENSION_NAME but it is mounted."
         fi
         return 0
-   fi
-
-   echo "Checking if the extension exists."
-   if [ ! -e "$TCE_DIR/optional/$EXTENSION_TCZ" ]; then
-          echo "Downloading the extension $EXTENSION_NAME."
-          tce-load -w "$EXTENSION_TCZ" || return 1
    else
-       echo "The extension $EXTENSION_NAME is available."
+        echo "no"
    fi
 
-   echo "Executing the extension load command."
+   echo -e "Checking if the extension exists ... \c"
+   if [ -f "$TCE_DIR/optional/$EXTENSION_TCZ" ]; then
+        echo "yes"
+   else
+        echo "no"
+        echo "Downloading the extension $EXTENSION_NAME."
+        tce-load -w "$EXTENSION_TCZ" || return 1
+   fi
+
+   echo "Loading the extension."
    case "$COMMAND" in
        cp2fs) tce-load -i -c "$EXTENSION_TCZ" || return 1 ;;
        *) tce-load -i "$EXTENSION_TCZ" || return 1 ;;
@@ -81,11 +84,11 @@ this_main() {
    echo ""
    echo "Loading the package $PACKAGE build dependencies ..."
 
-   for EXTENSION in $BUILD_DEPENDS
+   for EXTENSION in $PACKAGE_BUILD_DEPENDS
    do
        if [ -n "$EXTENSION" ] && [ "${EXTENSION#\#}" == "$EXTENSION" ]; then
             echo ""
-            echo "Loading the extension $EXTENSION."
+            echo "Loading the extension $EXTENSION"
             this_load || return 1
        fi
    done
@@ -98,7 +101,7 @@ this_main() {
 }
 
 print_it "Loading the package $PACKAGE build dependencies ... \c"
-this_main > "$TCEXTTOOLS_MESSAGE_LOG_2" 2>&1
+this_main > "$PACKAGE_MESSAGE_LOG_2" 2>&1
 if [ "$?" -gt 0 ]; then
      print_it error "failed!"
      exit 1

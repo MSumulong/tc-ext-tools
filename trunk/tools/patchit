@@ -35,7 +35,7 @@ else
      exit 1
 fi
 
-if [ -z "$TCEXTTOOLS_SOURCE_TOPDIR" ]; then
+if [ ! -d "$PACKAGE_SOURCE_TOPDIR" ]; then
      print_it error "You must unpack it first!"
      exit 1
 fi
@@ -45,32 +45,34 @@ this_main() {
    echo ""
    echo "Patching the package $PACKAGE ..."
 
-   echo "Checking for the package patches."
-   if [ -f "$TCEXTTOOLS_PATCHES/series" ]; then
-        echo "Using the series file to detect the package patches."
-        PATCHES=$(cat "$TCEXTTOOLS_PATCHES/series")
-   elif [ -d "$TCEXTTOOLS_PATCHES" ]; then
-        echo "No series file, getting the list of patches from the package patches directory contents."
-        PATCHES=$(ls "$TCEXTTOOLS_PATCHES")
+   echo -e "Checking if the package patches series file exists ... \c"
+   if [ -f "$PACKAGE_PATCHES/series" ]; then
+        echo "yes"
+        PATCHES=$(cat "$PACKAGE_PATCHES/series")
+   else
+        echo "no"
+        if [ -d "$PACKAGE_PATCHES" ]; then
+             echo "Getting the list of patches from the package patches directory contents."
+             PATCHES=$(ls "$PACKAGE_PATCHES")
+        fi
    fi
 
    if [ -n "$PATCHES" ]; then
-        echo "Patches detected."
-
-        echo "Processing patches."
+        echo "Patches found, applying patches."
         for PATCH in $PATCHES
         do
            echo ""
-           if [ -d "$TCEXTTOOLS_PATCHES/$PATCH" ]; then
-                echo "Skipping the patch $PATCH. It is a directory not a patch!"
+           echo "Processing the patch $PATCH"
+           if [ -d "$PACKAGE_PATCHES/$PATCH" ]; then
+                echo "Skipping the patch $PATCH because it is a directory!"
                 continue
            fi
 
            echo "Detecting the patch level."
-           for i in $(cat $TCEXTTOOLS_PATCHES/$PATCH | grep "\-\-\-" | cut -f2 -d" " | cut -f1 -d" ")
+           for i in $(cat $PACKAGE_PATCHES/$PATCH | grep "\-\-\-" | cut -f2 -d" " | cut -f1 -d" ")
            do
                PATCH_LEVEL=""
-               if [ -f "$TCEXTTOOLS_SOURCE_TOPDIR/$i" ]; then
+               if [ -f "$PACKAGE_SOURCE_TOPDIR/$i" ]; then
                     PATCH_LEVEL=0
                else
                     PATCH_LEVEL=1
@@ -83,13 +85,13 @@ this_main() {
                 return 1
            fi
 
-           if [ ! -f "$TCEXTTOOLS_PATCHES/$PATCH" ]; then
+           if [ ! -f "$PACKAGE_PATCHES/$PATCH" ]; then
                 echo "Error! The patch $PATCH is not a regular file."
                 return 1
            fi
 
            echo "Applying the patch $PATCH with patch level $PATCH_LEVEL."
-           patch --directory="$TCEXTTOOLS_SOURCE_TOPDIR" -Np$PATCH_LEVEL -i "$TCEXTTOOLS_PATCHES/$PATCH" || return 1
+           patch --directory="$PACKAGE_SOURCE_TOPDIR" -Np$PATCH_LEVEL -i "$PACKAGE_PATCHES/$PATCH" || return 1
         done
    else
         echo "No patch found. Skipping."
@@ -97,14 +99,14 @@ this_main() {
    fi
 
    echo ""
-   echo "Patched the package successfully."
+   echo "Patched the package $PACKAGE successfully."
 
    return 0
 
 }
 
 print_it "Patching the package $PACKAGE source ... \c"
-this_main > "$TCEXTTOOLS_MESSAGE_LOG_2" 2>&1
+this_main > "$PACKAGE_MESSAGE_LOG_2" 2>&1
 if [ "$?" -gt 0 ]; then
      print_it error "failed!"
      exit 1

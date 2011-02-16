@@ -42,43 +42,45 @@ this_main() {
 
    echo ""
    echo "Cleaning the package temporary directory."
-   [ -d "$TCEXTTOOLS_PKG_TEMP" ] && sudo rm -rf "$TCEXTTOOLS_PKG_TEMP"
-   mkdir -p "$TCEXTTOOLS_PKG_TEMP"
+   [ -d "$PACKAGE_PKG_TEMP" ] && sudo rm -rf "$PACKAGE_PKG_TEMP"
+   mkdir -p "$PACKAGE_PKG_TEMP"
 
    for EXTENSION in $EXTENSIONS
    do
-       echo ""
-       echo "Setting the extension $EXTENSION parameters."
-       set_extension || return 1
+       set_extension
 
-       echo "Checking if the extension $EXTENSION_NAME exists."
-       if [ ! -d "$TCEXTTOOLS_EXTENSION_PKGDIR" ]; then
-              echo "You must create the package extensions first!"
-              exit 1
+       echo -e "Checking if the extension $PACKAGE_EXTENSION_NAME exists ... \c"
+       if [ -f "$PACKAGE_EXTENSION_TCZ" ]; then
+            echo "yes"
+       else
+            echo "no"
+            echo "You must create it first!"
+            return 1
        fi
-       echo "Copying the extension $EXTENSION_NAME files to the package temporary directory."
-       [ -d "$TCEXTTOOLS_PKG_TEMP/$PACKAGE/$EXTENSION_NAME" ] || mkdir -p "$TCEXTTOOLS_PKG_TEMP/$PACKAGE/$EXTENSION_NAME"
-       cp -f "$TCEXTTOOLS_EXTENSION_PKGDIR"/*.tcz* "$TCEXTTOOLS_PKG_TEMP/$PACKAGE/$EXTENSION_NAME" || return 1
+
+       echo "Copying the extension $PACKAGE_EXTENSION_NAME files to the package temporary directory."
+       [ -d "$PACKAGE_EXTENSION_PKG_TEMP" ] || mkdir -p "$PACKAGE_EXTENSION_PKG_TEMP"
+       cp -f "$PACKAGE_EXTENSION_PKG"/*.tcz* "$PACKAGE_EXTENSION_PKG_TEMP" || return 1
    done
 
    echo "Copying the package source to the package temporary directory."
-   if [ -f "$TCEXTTOOLS_SOURCE_CONVERTED" ]; then
+   if [ -f "$PACKAGE_SOURCE_CONVERTED" ]; then
         echo "Converted package source detected. Using it instead of the original source."
-        cp -f "$TCEXTTOOLS_SOURCE_CONVERTED" "$TCEXTTOOLS_PKG_TEMP/$PACKAGE" || return 1
-   elif [ -f "$TCEXTTOOLS_SOURCE" ]; then
-        cp -f "$TCEXTTOOLS_SOURCE" "$TCEXTTOOLS_PKG_TEMP/$PACKAGE" || return 1
+        cp -f "$PACKAGE_SOURCE_CONVERTED" "$PACKAGE_PKG_TEMP/$PACKAGE" || return 1
+   elif [ -f "$PACKAGE_SOURCE" ]; then
+        cp -f "$PACKAGE_SOURCE" "$PACKAGE_PKG_TEMP/$PACKAGE" || return 1
    fi
 
-   if [ -f "$TCEXTTOOLS_PACKAGE" ]; then
+   if [ -f "$PACKAGE_PACKAGE" ]; then
         echo "Previously created package tarball detected, deleting it."
-        sudo rm -f "$TCEXTTOOLS_PACKAGE"
+        sudo rm -f "$PACKAGE_PACKAGE"
    fi
 
    echo "Creating the package tarball."
-   tar -C "$TCEXTTOOLS_PKG_TEMP" -cvjf "$TCEXTTOOLS_PACKAGE" "$PACKAGE" || return 1
+   tar -C "$PACKAGE_PKG_TEMP" -cvjf "$PACKAGE_PACKAGE" "$PACKAGE" || return 1
 
    echo "Cleaning the package temporary directory."
-   sudo rm -rf "$TCEXTTOOLS_PKG_TEMP"
+   sudo rm -rf "$PACKAGE_PKG_TEMP"
 
    echo ""
    echo "Packaged the package $PACKAGE successfully."
@@ -88,7 +90,7 @@ this_main() {
 }
 
 print_it "Packaging the package $PACKAGE ... \c"
-this_main > "$TCEXTTOOLS_MESSAGE_LOG_2" 2>&1
+this_main > "$PACKAGE_MESSAGE_LOG_2" 2>&1
 if [ "$?" -gt 0 ]; then
      print_it error "failed!"
      exit 1

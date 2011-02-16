@@ -158,7 +158,7 @@ _EOF
 
    fi
 
-   echo "Copying the package build sample."
+   echo "Installing the package build sample."
    install -m 644 "$TCEXTTOOLS_ROOT/share/tc-ext-tools/build" "$PACKAGE_BUILD" || return 1
 
    echo "Creating the package extensions install and dep files."
@@ -172,15 +172,12 @@ _EOF
             touch "$PACKAGE_EXTENSIONS/$EXTENSION/dep" || return 1
        fi
 
-       if [ ! "${EXTENSION%-locale}" = "$EXTENSION" ]; then
+       if [ "${EXTENSION%-locale}" != "$EXTENSION" ]; then
           echo "${EXTENSION%-locale}.tcz" > "$PACKAGE_EXTENSIONS/$EXTENSION/dep" || return 1
           echo "usr/local/share/locale" > "$PACKAGE_EXTENSIONS/$EXTENSION/install" || return 1
        elif [ -n "$(echo $EXTENSIONS | grep ${EXTENSION}-locale)" ]; then
           echo "usr/local" > "$PACKAGE_EXTENSIONS/$EXTENSION/install" || return 1
           echo "x-usr/local/share/locale" >> "$PACKAGE_EXTENSIONS/$EXTENSION/install" || return 1
-       elif [ ! "${EXTENSION%-dev}" = "$EXTENSION" ]; then
-          echo "${EXTENSION%-dev}.tcz" > "$PACKAGE_EXTENSIONS/$EXTENSION/dep" || return 1
-          echo "usr/local/include" > "$PACKAGE_EXTENSIONS/$EXTENSION/install" || return 1
        fi
    done
 

@@ -44,7 +44,7 @@ print_usage(){
 clean_it() {
 
    print_it "Cleaning the package $PACKAGE ... \c"
-   cleanit > "$TCEXTTOOLS_MESSAGE_LOG" 2>&1
+   cleanit > "$PACKAGE_MESSAGE_LOG" 2>&1
    if [ "$?" -gt 0 ]; then
         print_it error "failed!"
         print_it warning "For details: buildit print error"
@@ -62,7 +62,7 @@ download_it() {
    fi
 
    print_it "Downloading the package $PACKAGE source ... \c"
-   downloadit > "$TCEXTTOOLS_MESSAGE_LOG" 2>&1
+   downloadit > "$PACKAGE_MESSAGE_LOG" 2>&1
    if [ "$?" -gt 0 ]; then
         print_it error "failed!"
         print_it warning "For details: buildit print download"
@@ -80,7 +80,7 @@ convert_it() {
    fi
 
    print_it "Converting the package $PACKAGE source ... \c"
-   convertit > "$TCEXTTOOLS_MESSAGE_LOG" 2>&1
+   convertit > "$PACKAGE_MESSAGE_LOG" 2>&1
    if [ "$?" -gt 0 ]; then
         print_it error "failed!"
         print_it warning "For details: buildit print error"
@@ -93,7 +93,7 @@ convert_it() {
 unpack_it() {
 
    print_it "Unpacking the package $PACKAGE source ... \c"
-   unpackit > "$TCEXTTOOLS_MESSAGE_LOG" 2>&1
+   unpackit > "$PACKAGE_MESSAGE_LOG" 2>&1
    if [ "$?" -gt 0 ]; then
         print_it error "failed!"
         print_it warning "For details: buildit print error"
@@ -106,7 +106,7 @@ unpack_it() {
 load_it() {
 
    print_it "Loading the package $PACKAGE build dependencies ... \c"
-   loadit > "$TCEXTTOOLS_MESSAGE_LOG" 2>&1
+   loadit > "$PACKAGE_MESSAGE_LOG" 2>&1
    if [ "$?" -gt 0 ]; then
         print_it error "failed!"
         print_it warning "For details: buildit print error"
@@ -119,7 +119,7 @@ load_it() {
 patch_it() {
 
    print_it "Patching the package $PACKAGE source ... \c"
-   patchit > "$TCEXTTOOLS_MESSAGE_LOG" 2>&1
+   patchit > "$PACKAGE_MESSAGE_LOG" 2>&1
    if [ "$?" -gt 0 ]; then
         print_it error "failed!"
         print_it warning "For details: buildit print error"
@@ -132,7 +132,7 @@ patch_it() {
 configure_it() {
 
    print_it "Configuring the package $PACKAGE ... \c"
-   configureit > "$TCEXTTOOLS_MESSAGE_LOG" 2>&1
+   configureit > "$PACKAGE_MESSAGE_LOG" 2>&1
    if [ "$?" -gt 0 ]; then
         print_it error "failed!"
         print_it warning "For details: buildit print configure"
@@ -145,7 +145,7 @@ configure_it() {
 compile_it() {
 
    print_it "Compiling the package $PACKAGE ... \c"
-   compileit > "$TCEXTTOOLS_MESSAGE_LOG" 2>&1
+   compileit > "$PACKAGE_MESSAGE_LOG" 2>&1
    if [ "$?" -gt 0 ]; then
         print_it error "failed!"
         print_it warning "For details: buildit print compile"
@@ -158,7 +158,7 @@ compile_it() {
 install_it() {
 
    print_it "Installing the package $PACKAGE ... \c"
-   sudo installit > "$TCEXTTOOLS_MESSAGE_LOG" 2>&1
+   sudo installit > "$PACKAGE_MESSAGE_LOG" 2>&1
    if [ "$?" -gt 0 ]; then
         print_it error "failed!"
         print_it warning "For details: buildit print install"
@@ -171,7 +171,7 @@ install_it() {
 split_it() {
 
    print_it "Splitting the package $PACKAGE extensions ... \c"
-   splitit > "$TCEXTTOOLS_MESSAGE_LOG" 2>&1
+   splitit > "$PACKAGE_MESSAGE_LOG" 2>&1
    if [ "$?" -gt 0 ]; then
         print_it error "failed!"
         print_it warning "For details: buildit print error"
@@ -184,7 +184,7 @@ split_it() {
 strip_it() {
 
    print_it "Stripping the package $PACKAGE extensions ... \c"
-   stripit > "$TCEXTTOOLS_MESSAGE_LOG" 2>&1
+   stripit > "$PACKAGE_MESSAGE_LOG" 2>&1
    if [ "$?" -gt 0 ]; then
         print_it error "failed!"
         print_it warning "For details: buildit print error"
@@ -197,7 +197,7 @@ strip_it() {
 create_it() {
 
    print_it "Creating the package $PACKAGE extensions ... \c"
-   createit > "$TCEXTTOOLS_MESSAGE_LOG" 2>&1
+   createit > "$PACKAGE_MESSAGE_LOG" 2>&1
    if [ "$?" -gt 0 ]; then
         print_it error "failed!"
         print_it warning "For details: buildit print error"
@@ -210,7 +210,7 @@ create_it() {
 generate_it() {
 
    print_it "Generating the package $PACKAGE extension info files ... \c"
-   generateit > "$TCEXTTOOLS_MESSAGE_LOG" 2>&1
+   generateit > "$PACKAGE_MESSAGE_LOG" 2>&1
    if [ "$?" -gt 0 ]; then
         print_it error "failed!"
         print_it warning "For details: buildit print error"
@@ -223,7 +223,7 @@ generate_it() {
 check_it() {
 
    print_it "Checking the package $PACKAGE extensions ... \c"
-   checkit > "$TCEXTTOOLS_MESSAGE_LOG" 2>&1
+   checkit > "$PACKAGE_MESSAGE_LOG" 2>&1
    if [ "$?" -gt 0 ]; then
         print_it error "failed!"
         print_it warning "For details: buildit print error"
@@ -236,7 +236,7 @@ check_it() {
 package_it() {
 
    print_it "Packaging the package $PACKAGE ... \c"
-   packageit > "$TCEXTTOOLS_MESSAGE_LOG" 2>&1
+   packageit > "$PACKAGE_MESSAGE_LOG" 2>&1
    if [ "$?" -gt 0 ]; then
         print_it error "failed!"
         print_it warning "For details: buildit print error"
@@ -262,7 +262,7 @@ custom_function() {
    fi
 
    print_it "Executing the package $PACKAGE custom build function $FUNCTION ... \c"
-   build_${FUNCTION} > "$TCEXTTOOLS_MESSAGE_LOG_2" 2>&1
+   build_${FUNCTION} > "$PACKAGE_MESSAGE_LOG_2" 2>&1
    if [ "$?" -gt 0 ]; then
         print_it error "failed!"
         print_it warning "For details: buildit print error"
@@ -288,17 +288,17 @@ print_function() {
 
    case "$1" in
         configure)
-                 [ -e "$TCEXTTOOLS_CONFIGURE_LOG" ] && { cat "$TCEXTTOOLS_CONFIGURE_LOG" ; echo -e "${NORMAL}\c" ; }
+                 [ -e "$PACKAGE_CONFIGURE_LOG" ] && { cat "$PACKAGE_CONFIGURE_LOG" ; echo -e "${NORMAL}\c" ; }
                  ;;
         compile)
-                 [ -e "$TCEXTTOOLS_COMPILE_LOG" ] && { cat "$TCEXTTOOLS_COMPILE_LOG" ; echo -e "${NORMAL}\c" ; }
+                 [ -e "$PACKAGE_COMPILE_LOG" ] && { cat "$PACKAGE_COMPILE_LOG" ; echo -e "${NORMAL}\c" ; }
                  ;;
         install)
-                 [ -e "$TCEXTTOOLS_INSTALL_LOG" ] && { cat "$TCEXTTOOLS_INSTALL_LOG" ; echo -e "${NORMAL}\c" ; }
+                 [ -e "$PACKAGE_INSTALL_LOG" ] && { cat "$PACKAGE_INSTALL_LOG" ; echo -e "${NORMAL}\c" ; }
                  ;;
         error|message)
-                 [ -e "$TCEXTTOOLS_MESSAGE_LOG" ] && { cat "$TCEXTTOOLS_MESSAGE_LOG" ; echo -e "${NORMAL}\c" ; }
-                 [ -e "$TCEXTTOOLS_MESSAGE_LOG_2" ] && { cat "$TCEXTTOOLS_MESSAGE_LOG_2" ; echo -e "${NORMAL}\c" ; }
+                 [ -e "$PACKAGE_MESSAGE_LOG" ] && { cat "$PACKAGE_MESSAGE_LOG" ; echo -e "${NORMAL}\c" ; }
+                 [ -e "$PACKAGE_MESSAGE_LOG_2" ] && { cat "$PACKAGE_MESSAGE_LOG_2" ; echo -e "${NORMAL}\c" ; }
                  ;;
         *)
                  print_it warning "Usage: buildit print configure|compile|install|error|message"
