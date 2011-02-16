@@ -1,0 +1,9 @@
+DESCRIPTION="A Lightweight SQL Database for Cloud Infrastructure and Web Applications, server."
+COMMENTS="Usage:
+			sudo /usr/local/etc/init.d/drizzle start|stop|status|restart
+
+		Drizzle home is /var/lib/drizzle, and daemon is run as user drizzle of group drizzle.
+
+		Optional dependencies: openldap, Linux-PAM
+
+		This extension is PPI compatible."

@@ -1,0 +1,53 @@
+
+############################################################################
+#                                                                          #
+#    package build functions: configure, compile, install, rules, etc.     #
+#                                                                          #
+############################################################################
+
+## configure
+build_configure() {
+
+   ./configure --prefix=/usr/local --sysconfdir=/etc --localstatedir=/var || return 1
+
+}
+
+## compile
+build_compile() {
+
+   make || return 1
+
+}
+
+## install
+build_install() {
+
+   make DESTDIR="$I_ROOT" install || return 1
+
+   install -Dm755 "$P_SRC/drizzle-server.sh" "$I_ROOT/usr/local/etc/init.d/drizzle-server" || return 1
+
+   install -dm755 "$I_ROOT/usr/local/share/drizzle"
+   install -m644 COPYING COPYING.BSD README "$I_ROOT/usr/local/share/drizzle"
+
+}
+
+## rules
+build_rules() {
+
+   buildit load || exit 1
+   buildit download || exit 1
+   buildit convert || exit 1
+   buildit unpack || exit 1
+   buildit patch || exit 1
+   buildit configure || exit 1
+   buildit compile || exit 1
+   buildit install || exit 1
+   buildit split || exit 1
+   buildit strip || exit 1
+   buildit create || exit 1
+   buildit generate || exit 1
+   buildit check || exit 1
+   buildit package || exit 1
+
+}
+

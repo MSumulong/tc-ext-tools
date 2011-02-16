@@ -1,0 +1,14 @@
+drizzle-server.tcz
+libdrizzle-dev.tcz
+boost-dev.tcz
+util-linux-ng-dev.tcz
+Linux-PAM-dev.tcz
+curl-dev.tcz
+libgcrypt-dev.tcz
+pcre-dev.tcz
+readline-dev.tcz
+ncurses-dev.tcz
+libmemcache-dev.tcz
+openldap-dev.tcz
+libevent-dev.tcz
+python.tcz

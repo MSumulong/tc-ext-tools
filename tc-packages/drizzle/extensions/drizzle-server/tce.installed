@@ -1,0 +1,29 @@
+#!/bin/sh
+
+DATADIR=/var/lib/drizzle
+LOGDIR=/var/log/drizzle
+
+# creating drizzle group if it isn't already there
+if ! getent group drizzle >/dev/null; then
+        # Adding system group: drizzle.
+        addgroup -S drizzle >/dev/null
+fi
+
+# creating drizzle user if it isn't already there
+if ! getent passwd drizzle >/dev/null; then
+        # Adding system user: drizzle.
+        adduser \
+          -S \
+          -G drizzle \
+          -h $DATADIR \
+          -g "Drizzle Server" \
+          -s /bin/false \
+          drizzle  >/dev/null
+fi
+
+if [ ! -d $LOGDIR ]; then
+  mkdir $LOGDIR
+  chown drizzle:drizzle $LOGDIR
+fi
+
+exit 0

@@ -1,0 +1,41 @@
+PACKAGE="drizzle"
+VERSION="2011.02.10"
+SOURCE="http://launchpad.net/drizzle/elliott/2011-02-14/+download/drizzle7-${VERSION}.tar.gz"
+BUILD_DEPENDS="python
+python-dev
+protobuf
+protobuf-dev
+libevent
+libevent-dev
+boost
+boost-dev
+icu
+icu-dev
+util-linux-ng
+util-linux-ng-dev
+Linux-PAM
+Linux-PAM-dev
+curl
+curl-dev
+libgcrypt
+libgcrypt-dev
+pcre
+pcre-dev
+readline
+readline-dev
+ncurses
+ncurses-dev
+libmemcache
+libmemcache-dev
+openldap
+openldap-dev
+doxygen"
+
+DESCRIPTION="A Lightweight SQL Database for Cloud Infrastructure and Web Applications."
+AUTHOR="Drizzle-developers"
+SITE="http://drizzle.org/"
+COPYING="GPL-2/BSD"
+MAINTAINERS="Arslan S."
+COMMENTS="This extension is PPI compatible."
+CHANGELOG="---"
+CURRENT="First Version"
