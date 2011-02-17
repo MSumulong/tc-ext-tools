@@ -30,17 +30,17 @@ build_compile() {
 
   [ -e /usr/bin/python ] || sudo ln -sf /usr/local/bin/python /usr/bin/python
 
-  if [ -d "$TCEXTTOOLS_SRC"/download-src ]; then
-       busybox cp -rf "$TCEXTTOOLS_SRC"/download-src/* src/
+  if [ -d "$_P_SRC"/download-src ]; then
+       busybox cp -rf "$_P_SRC"/download-src/* src/
        ./download || return 1
   else
        ./download || return 1
-       mkdir -p "$TCEXTTOOLS_SRC"/download-src || return 1
+       mkdir -p "$_P_SRC"/download-src || return 1
 
-       busybox cp -f src/*.gz "$TCEXTTOOLS_SRC"/download-src || return 1
-       busybox cp -f src/*.bz2 "$TCEXTTOOLS_SRC"/download-src || return 1
-       busybox cp -f src/*.oxt "$TCEXTTOOLS_SRC"/download-src || return 1
-       busybox cp -rf src/clone "$TCEXTTOOLS_SRC"/download-src || return 1
+       busybox cp -f src/*.gz "$_P_SRC"/download-src || return 1
+       busybox cp -f src/*.bz2 "$_P_SRC"/download-src || return 1
+       busybox cp -f src/*.oxt "$_P_SRC"/download-src || return 1
+       busybox cp -rf src/clone "$_P_SRC"/download-src || return 1
   fi
 
   make || return 1

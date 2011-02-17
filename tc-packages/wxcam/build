@@ -6,8 +6,8 @@
 build_configure() {
 
     # CImg is only required for building wxcam
-    [ -e "$TCEXTTOOLS_SRC/CImg-1.3.4.zip" ] || wget http://downloads.sourceforge.net/cimg/CImg-1.3.4.zip -P "$TCEXTTOOLS_SRC"
-    unzip "$TCEXTTOOLS_SRC/CImg-1.3.4.zip"
+    [ -e "$_P_SRC/CImg-1.3.4.zip" ] || wget http://downloads.sourceforge.net/cimg/CImg-1.3.4.zip -P "$_P_SRC"
+    unzip "$_P_SRC/CImg-1.3.4.zip"
     cp CImg-1.3.4/CImg.h . || return 1
 
    ./configure --prefix=/usr/local || return 1

@@ -30,7 +30,7 @@ build_configure() {
 
   ./configure --prefix=/usr/local --with-distro=TinyCoreLinux --with-build-version="$VERSION for Tiny Core Linux" \
               --with-docdir=/usr/local/share/doc/libreoffice --mandir=/usr/local/share/man \
-              --without-binsuffix --with-installed-ooo-dirname=libreoffice --with-srcdir=${T_SRC}/additional-src \
+              --without-binsuffix --with-installed-ooo-dirname=libreoffice --with-srcdir=${_P_SRC}/additional-src \
               --enable-odk --enable-extensions --enable-graphite --enable-evolution2 \
               --enable-cairo --disable-kde4 --disable-pam --enable-crashdump \
               --enable-ldap --enable-lockdown --enable-opengl --enable-ogltrans \
@@ -53,16 +53,16 @@ build_download() {
 
   cd "$S_ROOT"
 
-  [ -d "$T_SRC/additional-src" ] || mkdir -p "$T_SRC/additional-src"
+  [ -d "$_P_SRC/additional-src" ] || mkdir -p "$_P_SRC/additional-src"
 
   echo "Downloading additional libreoffice sources..."
   for i in $ADDITIONAL_SOURCE
   do
-     if [ -e "$T_SRC/additional-src/libreoffice-${i}-${VERSION}.tar.bz2" ]; then
+     if [ -e "$_P_SRC/additional-src/libreoffice-${i}-${VERSION}.tar.bz2" ]; then
           echo "libreoffice-${i}-${VERSION}.tar.bz2 is already downloaded."
      else
           echo "Downloading libreoffice-${i}-${VERSION}.tar.bz2" 
-          wget "$MIRROR/libreoffice-${i}-${VERSION}.tar.bz2" -O "$T_SRC/additional-src/libreoffice-${i}-${VERSION}.tar.bz2" || return 1
+          wget "$MIRROR/libreoffice-${i}-${VERSION}.tar.bz2" -O "$_P_SRC/additional-src/libreoffice-${i}-${VERSION}.tar.bz2" || return 1
      fi
   done
 
