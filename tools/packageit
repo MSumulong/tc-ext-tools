@@ -37,11 +37,15 @@ fi
 
 this_main() {
 
+   echo "---------------------------------------------------------------"
    echo ""
    echo "Packaging the package $PACKAGE ..."
-
    echo ""
-   echo "Cleaning the package temporary directory."
+   echo "---------------------------------------------------------------"
+
+   echo "---------------------------------------------------------------"
+   echo "Cleaning the package pkg temporary directory."
+   echo "---------------------------------------------------------------"
    [ -d "$PACKAGE_PKG_TEMP" ] && sudo rm -rf "$PACKAGE_PKG_TEMP"
    mkdir -p "$PACKAGE_PKG_TEMP"
 
@@ -49,7 +53,11 @@ this_main() {
    do
        set_extension
 
-       echo -e "Checking if the extension $PACKAGE_EXTENSION_NAME exists ... \c"
+       echo "---------------------------------------------------------------"
+       echo "Packaging the package extension $PACKAGE_EXTENSION_NAME"
+       echo "---------------------------------------------------------------"
+
+       echo -e "Checking if the package extension $PACKAGE_EXTENSION_NAME is created before ... \c"
        if [ -f "$PACKAGE_EXTENSION_TCZ" ]; then
             echo "yes"
        else
@@ -58,32 +66,55 @@ this_main() {
             return 1
        fi
 
-       echo "Copying the extension $PACKAGE_EXTENSION_NAME files to the package temporary directory."
+       echo "Copying the package extension $PACKAGE_EXTENSION_NAME files to the package extension temporary directory."
        [ -d "$PACKAGE_EXTENSION_PKG_TEMP" ] || mkdir -p "$PACKAGE_EXTENSION_PKG_TEMP"
        cp -f "$PACKAGE_EXTENSION_PKG"/*.tcz* "$PACKAGE_EXTENSION_PKG_TEMP" || return 1
    done
 
+   echo "---------------------------------------------------------------"
    echo "Copying the package source to the package temporary directory."
+   echo "---------------------------------------------------------------"
+
+   echo -e "Checking if the package source converted exists ... \c"
    if [ -f "$PACKAGE_SOURCE_CONVERTED" ]; then
-        echo "Converted package source detected. Using it instead of the original source."
+        echo "yes"
+        echo "Packaging it instead of the original source."
         cp -f "$PACKAGE_SOURCE_CONVERTED" "$PACKAGE_PKG_TEMP/$PACKAGE" || return 1
-   elif [ -f "$PACKAGE_SOURCE" ]; then
-        cp -f "$PACKAGE_SOURCE" "$PACKAGE_PKG_TEMP/$PACKAGE" || return 1
+   else
+        echo "no"
+        echo -e "Checking if the package source exists ... \c"
+        if [ -f "$PACKAGE_SOURCE" ]; then
+             echo "yes"
+             cp -f "$PACKAGE_SOURCE" "$PACKAGE_PKG_TEMP/$PACKAGE" || return 1
+        else
+             echo "no"
+        fi
    fi
 
+   echo -e "Checking if the package $PACKAGE tarball exists ... \c"
    if [ -f "$PACKAGE_PACKAGE" ]; then
-        echo "Previously created package tarball detected, deleting it."
+        echo "yes"
+        echo "Removing the package $PACKAGE tarball."
         sudo rm -f "$PACKAGE_PACKAGE"
+   else
+        echo "no"
    fi
 
-   echo "Creating the package tarball."
+   echo "---------------------------------------------------------------"
+   echo "Creating the package $PACKAGE tarball."
+   echo "---------------------------------------------------------------"
    tar -C "$PACKAGE_PKG_TEMP" -cvjf "$PACKAGE_PACKAGE" "$PACKAGE" || return 1
 
-   echo "Cleaning the package temporary directory."
+   echo "---------------------------------------------------------------"
+   echo "Cleaning the package pkg temporary directory."
+   echo "---------------------------------------------------------------"
    sudo rm -rf "$PACKAGE_PKG_TEMP"
 
+   echo "---------------------------------------------------------------"
    echo ""
    echo "Packaged the package $PACKAGE successfully."
+   echo ""
+   echo "---------------------------------------------------------------"
 
    return 0
 

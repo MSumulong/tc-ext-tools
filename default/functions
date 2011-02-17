@@ -25,7 +25,7 @@
 
 THIS=$(basename $0)
 
-if [ $(id -u) == 0 ] ; then
+if [ $(id -u) = 0 ] ; then
      if [ "$THIS" != "installit" ]; then
           echo "${RED}Do not run ${THIS} as root!${NORMAL}"
           exit 1
@@ -159,10 +159,10 @@ set_extensions() {
       NUM=`expr $NUM+1`
    done
 
-   if [ "$NUM" == 0 ]; then
+   if [ "$NUM" = 0 ]; then
         echo "Error! There is no extension available."
         exit 1
-   elif [ "$NUM" == 1 ]; then
+   elif [ "$NUM" = 1 ]; then
         SINGLE_EXTENSION_PACKAGE=1
    else
         SINGLE_EXTENSION_PACKAGE=0

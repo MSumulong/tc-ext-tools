@@ -59,7 +59,7 @@ this_generate() {
    CURRENT="$DATE $CURRENT"
    SIZE=$(du -h "$PACKAGE_EXTENSION_TCZ" | cut -f1)
 
-   echo "Generating the extension info."
+   echo "Writing to the extension info."
    cat > "$PACKAGE_EXTENSION_INFO" << _EOF
 Title:		${PACKAGE_EXTENSION_NAME}.tcz
 Description:	${DESCRIPTION}
@@ -85,31 +85,49 @@ _EOF
 
 this_main() {
 
+   echo "---------------------------------------------------------------"
    echo ""
    echo "Generating the package $PACKAGE extension info files ..."
+   echo ""
+   echo "---------------------------------------------------------------"
 
    for EXTENSION in $EXTENSIONS
    do
        set_extension
 
-       if [ ! -f "$PACKAGE_EXTENSION_TCZ" ]; then
-              echo ""
-              echo "Error! You must create the package extensions first."
-              exit 1
+       echo "---------------------------------------------------------------"
+       echo "Generating the extension $PACKAGE_EXTENSION_NAME info file."
+       echo "---------------------------------------------------------------"
+
+       echo -e "Checking if the extension is created before ... \c"
+       if [ -f "$PACKAGE_EXTENSION_TCZ" ]; then
+            echo "yes"
+       else
+            echo "no"
+            echo "---------------------------------------------------------------"
+            echo "Error! You must create it first."
+            echo "---------------------------------------------------------------"
+            return 1
        fi
 
-       echo "Generating the extension $PACKAGE_EXTENSION_NAME info file."
        this_generate
        if [ "$?" -gt 0 ]; then
+            echo "---------------------------------------------------------------"
             echo "Error! Generating the extension $PACKAGE_EXTENSION_NAME info failed."
+            echo "---------------------------------------------------------------"
             return 1
        else
+            echo "---------------------------------------------------------------"
             echo "Generating the extension $PACKAGE_EXTENSION_NAME info successful!"
+            echo "---------------------------------------------------------------"
        fi
    done
 
+   echo "---------------------------------------------------------------"
    echo ""
    echo "Generated the package $PACKAGE extension info files successfully."
+   echo ""
+   echo "---------------------------------------------------------------"
 
    return 0
 

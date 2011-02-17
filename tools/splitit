@@ -42,23 +42,28 @@ fi
 
 this_split() {
 
+   echo "---------------------------------------------------------------"
    echo "Getting the contents of the extension install."
+   echo "---------------------------------------------------------------"
    CONTENTS=$(cat $PACKAGE_EXTENSION_INSTALL)
    if [ -z "$CONTENTS" ]; then
         echo "Warning! The extension install is empty."
    fi
 
-   echo "Touching install.list and x-install.list files."
+   echo "---------------------------------------------------------------"
+   echo "Creating the include list and the exclude list files."
+   echo "---------------------------------------------------------------"
    LIST="${PACKAGE_BIN_TEMP}/install.list"
    X_LIST="${PACKAGE_BIN_TEMP}/x-install.list"
    touch "$LIST"
    touch "$X_LIST"
 
-   echo "Processing the extension install contents."
    cd "$PACKAGE_INSTALL_ROOT"
    for i in ${CONTENTS-.}
    do
-       echo "Processing the content $i."
+       echo "---------------------------------------------------------------"
+       echo "Processing the content $i"
+       echo "---------------------------------------------------------------"
 
        echo -e "Checking if the content is commented out ... \c"
        if [ "${i#\#}" != "$i" ]; then
@@ -68,7 +73,7 @@ this_split() {
             echo "no"
        fi
 
-       echo "Evaluating the content $i."
+       echo "Evaluating the content $i"
        i=$(eval echo "$i")
 
        echo -e "Checking if a special wildcard used ... \c"
@@ -99,16 +104,20 @@ this_split() {
        fi
    done
 
+   echo "---------------------------------------------------------------"
    echo "Creating the extension contents tarball from the include and the exclude lists."
+   echo "---------------------------------------------------------------"
    sudo tar -T "$LIST" -X "$X_LIST" -cvpzf "$PACKAGE_BIN_TEMP/pkg.tar.gz" || return 1
 
    echo "Cleaning the package extension bin directory."
    [ -d "$PACKAGE_EXTENSION_BIN" ] && sudo rm -rf "$PACKAGE_EXTENSION_BIN"
    sudo mkdir -p "$PACKAGE_EXTENSION_BIN"
 
+   echo "---------------------------------------------------------------"
    echo "Extracting the extension contents tarball to the extension bin directory."
+   echo "---------------------------------------------------------------"
    sudo mkdir -p "$PACKAGE_EXTENSION_BIN"
-   sudo tar -C "$PACKAGE_EXTENSION_BIN" -pvxzf "$PACKAGE_BIN_TEMP/pkg.tar.gz" || return 1
+   sudo tar -C "$PACKAGE_EXTENSION_BIN" -pxzf "$PACKAGE_BIN_TEMP/pkg.tar.gz" || return 1
 
    echo "Cleaning the extension bin temporary directory."
    sudo rm -rf "$PACKAGE_BIN_TEMP"
@@ -119,30 +128,43 @@ this_split() {
 
 this_main() {
 
+   echo "---------------------------------------------------------------"
    echo ""
    echo "Splitting the package $PACKAGE extensions ..."
+   echo ""
+   echo "---------------------------------------------------------------"
 
    for EXTENSION in $EXTENSIONS
    do
        set_extension
 
+       echo "---------------------------------------------------------------"
+       echo "Splitting the package extension $PACKAGE_EXTENSION_NAME"
+       echo "---------------------------------------------------------------"
+
        echo "Cleaning the package bin temporary directory."
        [ -d "$PACKAGE_BIN_TEMP" ] && sudo rm -rf "$PACKAGE_BIN_TEMP"
        mkdir -p "$PACKAGE_BIN_TEMP"
 
-       echo "Splitting the extension $PACKAGE_EXTENSION_NAME."
        this_split
        if [ "$?" -gt 0 ]; then
-            echo "Error! splitting the extension $PACKAGE_EXTENSION_NAME failed."
+            echo "---------------------------------------------------------------"
+            echo "Error! splitting the package extension $PACKAGE_EXTENSION_NAME failed."
+            echo "---------------------------------------------------------------"
             sudo rm -rf "$PACKAGE_BIN_TEMP"
             return 1
        else
-            echo "Splitting the extension $PACKAGE_EXTENSION_NAME successful."
+            echo "---------------------------------------------------------------"
+            echo "Splitting the package extension $PACKAGE_EXTENSION_NAME successful."
+            echo "---------------------------------------------------------------"
        fi
    done
 
+   echo "---------------------------------------------------------------"
    echo ""
    echo "Splitted the package $PACKAGE extensions successfully."
+   echo ""
+   echo "---------------------------------------------------------------"
 
    return 0
 
