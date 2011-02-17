@@ -37,14 +37,24 @@ fi
 
 this_main() {
 
+   echo "---------------------------------------------------------------"
    echo ""
    echo "Cleaning the package $PACKAGE ..."
+   echo ""
+   echo "---------------------------------------------------------------"
 
+   echo "Removing the package bin directory."
    [ -d "$PACKAGE_BIN" ] && sudo rm -rf "$PACKAGE_BIN"
+   echo "Removing the package src temporary directory."
    [ -d "$PACKAGE_SRC_TEMP" ] && sudo rm -rf "$PACKAGE_SRC_TEMP"
+   echo "Removing the package pkg temporary directory."
    [ -d "$PACKAGE_PKG_TEMP" ] && sudo rm -rf "$PACKAGE_PKG_TEMP"
 
+   echo "---------------------------------------------------------------"
+   echo ""
    echo "Cleaned the package $PACKAGE successfully."
+   echo ""
+   echo "---------------------------------------------------------------"
 
    return 0
 

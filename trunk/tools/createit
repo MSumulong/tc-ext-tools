@@ -76,7 +76,7 @@ this_create() {
         echo "no"
    fi
 
-   echo "Cleaning the package bin directory from previously created extension files."
+   echo "Cleaning the package bin directory extension files."
    sudo rm -f "$PACKAGE_BIN"/*.tcz*
 
    cd "$PACKAGE_BIN"
@@ -108,7 +108,7 @@ this_create() {
         echo "no"
    fi
 
-   echo "Cleaning the package bin directory from previously created extension files."
+   echo "Cleaning the package bin directory extension files."
    sudo rm -f "$PACKAGE_BIN"/*.tcz*
 
    return 0
@@ -117,39 +117,55 @@ this_create() {
 
 this_main() {
 
+   echo "---------------------------------------------------------------"
    echo ""
    echo "Creating the package $PACKAGE extensions ..."
-
    echo ""
+   echo "---------------------------------------------------------------"
+
+   echo "---------------------------------------------------------------"
    echo "Cleaning the package pkg directory."
    [ -d "$PACKAGE_PKG" ] && sudo rm -rf "$PACKAGE_PKG"
    mkdir -p "$PACKAGE_PKG"
+   echo "---------------------------------------------------------------"
 
    for EXTENSION in $EXTENSIONS
    do
        set_extension
 
-       echo -e "Checking if the extension is splitted before ... \c"
+       echo "---------------------------------------------------------------"
+       echo "Creating the package extension $PACKAGE_EXTENSION_NAME."
+       echo "---------------------------------------------------------------"
+
+       echo -e "Checking if the package extension is splitted before ... \c"
        if [ -d "$PACKAGE_EXTENSION_BIN" ]; then
             echo "yes"
        else
             echo "no"
+            echo "---------------------------------------------------------------"
             echo "Error! You must split it first!"
+            echo "---------------------------------------------------------------"
             return 1
        fi
 
-       echo "Creating the extension $PACKAGE_EXTENSION_NAME."
        this_create
        if [ "$?" -gt 0 ]; then
-            echo "Error! Creating the extension $PACKAGE_EXTENSION_NAME failed."
+            echo "---------------------------------------------------------------"
+            echo "Error! Creating the package extension $PACKAGE_EXTENSION_NAME failed."
+            echo "---------------------------------------------------------------"
             return 1
        else
-            echo "Creating the extension $PACKAGE_EXTENSION_NAME successful."
+            echo "---------------------------------------------------------------"
+            echo "Creating the package extension $PACKAGE_EXTENSION_NAME successful."
+            echo "---------------------------------------------------------------"
        fi
    done
 
+   echo "---------------------------------------------------------------"
    echo ""
    echo "Created the package $PACKAGE extensions successfully."
+   echo ""
+   echo "---------------------------------------------------------------"
 
    return 0
 

@@ -42,8 +42,11 @@ fi
 
 this_main() {
 
+   echo "---------------------------------------------------------------"
    echo ""
    echo "Patching the package $PACKAGE ..."
+   echo ""
+   echo "---------------------------------------------------------------"
 
    echo -e "Checking if the package patches series file exists ... \c"
    if [ -f "$PACKAGE_PATCHES/series" ]; then
@@ -58,11 +61,14 @@ this_main() {
    fi
 
    if [ -n "$PATCHES" ]; then
+        echo "---------------------------------------------------------------"
         echo "Patches found, applying patches."
+        echo "---------------------------------------------------------------"
         for PATCH in $PATCHES
         do
-           echo ""
+           echo "---------------------------------------------------------------"
            echo "Processing the patch $PATCH"
+           echo "---------------------------------------------------------------"
            if [ -d "$PACKAGE_PATCHES/$PATCH" ]; then
                 echo "Skipping the patch $PATCH because it is a directory!"
                 continue
@@ -94,12 +100,17 @@ this_main() {
            patch --directory="$PACKAGE_SOURCE_TOPDIR" -Np$PATCH_LEVEL -i "$PACKAGE_PATCHES/$PATCH" || return 1
         done
    else
-        echo "No patch found. Skipping."
+        echo "---------------------------------------------------------------"
+        echo "There is no patch available for the package $PACKAGE."
+        echo "---------------------------------------------------------------"
         return 0
    fi
 
+   echo "---------------------------------------------------------------"
    echo ""
    echo "Patched the package $PACKAGE successfully."
+   echo ""
+   echo "---------------------------------------------------------------"
 
    return 0
 

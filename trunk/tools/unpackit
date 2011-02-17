@@ -42,31 +42,44 @@ fi
 
 this_main() {
 
+   echo "---------------------------------------------------------------"
    echo ""
-   echo "Unpacking the package $PACKAGE source ..."
+   echo "Unpacking the package $PACKAGE source $PACKAGE_SOURCE_NAME ..."
+   echo ""
+   echo "---------------------------------------------------------------"
 
-   echo "Cleaning the package temporary source directory."
+   echo "Cleaning the package src temporary directory."
    [ -d "$PACKAGE_SRC_TEMP" ] && sudo rm -rf "$PACKAGE_SRC_TEMP"
    mkdir -p "$PACKAGE_SRC_TEMP"
 
-   echo "Unpacking the package source $PACKAGE_SOURCE_NAME with the source type $PACKAGE_SOURCE_TYPE."
    if [ "$PACKAGE_SOURCE_TYPE" = "bz2" ] || [ "$PACKAGE_SOURCE_TYPE" = "gz" ] || [ "$PACKAGE_SOURCE_TYPE" = "tgz" ] || [ "$PACKAGE_SOURCE_TYPE" = "tbz2" ] || [ "$PACKAGE_SOURCE_TYPE" = "xz" ] || [ "$PACKAGE_SOURCE_TYPE" = "txz" ] || [ "$PACKAGE_SOURCE_TYPE" = "tar" ]; then
-        echo "Using tar to extract the package source."
-        tar -C "$PACKAGE_SRC_TEMP" -xf "$PACKAGE_SOURCE" || return 1
+        echo "---------------------------------------------------------------"
+        echo "Extracting the package source by using tar."
+        echo "---------------------------------------------------------------"
+        tar -C "$PACKAGE_SRC_TEMP" -xvf "$PACKAGE_SOURCE" || return 1
    elif [ "$PACKAGE_SOURCE_TYPE" = "zip" ]; then
-        echo "Unzipping the package source."
+        echo "---------------------------------------------------------------"
+        echo "Unzipping the package source by using unzip."
+        echo "---------------------------------------------------------------"
         unzip "$PACKAGE_SOURCE" -d "$PACKAGE_SRC_TEMP" || return 1
    elif [ "$PACKAGE_SOURCE_TYPE" = "custom" ]; then
-        echo "Executing the custom build unpack function."
+        echo "---------------------------------------------------------------"
+        echo "Executing the package build unpack function."
+        echo "---------------------------------------------------------------"
         cd "$PACKAGE_SRC_TEMP"
         build_unpack || return 1
    else
-        echo "Error! unsupported source type."
+        echo "---------------------------------------------------------------"
+        echo "Error! Unsupported source type."
+        echo "---------------------------------------------------------------"
         return 1
    fi
 
+   echo "---------------------------------------------------------------"
    echo ""
    echo "Unpacked the package $PACKAGE source successfully."
+   echo ""
+   echo "---------------------------------------------------------------"
 
    return 0
 

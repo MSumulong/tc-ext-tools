@@ -37,8 +37,11 @@ fi
 
 this_main() {
 
+   echo "---------------------------------------------------------------"
    echo ""
    echo "Downloading the package $PACKAGE source ..."
+   echo ""
+   echo "---------------------------------------------------------------"
 
    echo "Cleaning the package source directory."
    [ -d "$_PACKAGE_SRC" ] && sudo rm -rf "$_PACKAGE_SRC"
@@ -75,7 +78,11 @@ this_main() {
         wget --no-check-certificate "$SOURCE" -O "$PACKAGE_SOURCE" || return 1
    fi
 
+   echo "---------------------------------------------------------------"
+   echo ""
    echo "Downloaded the package $PACKAGE source successfully."
+   echo ""
+   echo "---------------------------------------------------------------"
 
    return 0
 

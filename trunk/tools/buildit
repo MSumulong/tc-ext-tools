@@ -65,7 +65,7 @@ download_it() {
    downloadit > "$PACKAGE_MESSAGE_LOG" 2>&1
    if [ "$?" -gt 0 ]; then
         print_it error "failed!"
-        print_it warning "For details: buildit print download"
+        print_it warning "For details: buildit print error"
         exit 1
    fi
    print_it hilight "successful!"

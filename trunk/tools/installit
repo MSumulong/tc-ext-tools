@@ -49,13 +49,18 @@ fi
 
 this_main() {
 
+   echo "---------------------------------------------------------------"
    echo ""
+   echo "Installing the package $PACKAGE ..."
+   echo ""
+   echo "---------------------------------------------------------------"
+
    echo "Cleaning the package install root directory."
    [ -d "$PACKAGE_INSTALL_ROOT" ] && rm -rf "$PACKAGE_INSTALL_ROOT"
 
-   echo ""
-   echo "Installing the package $PACKAGE ..."
-
+   echo "---------------------------------------------------------------"
+   echo "Executing the package build install function."
+   echo "---------------------------------------------------------------"
    cd "$PACKAGE_SOURCE_TOPDIR"
    build_install > "$PACKAGE_INSTALL_LOG" 2>&1 || return 1
 
@@ -64,8 +69,12 @@ this_main() {
         su "$TCUSER" -c "cd $PACKAGE_INSTALL_ROOT;sudo find * -not -type d | sort > $PACKAGE_FILES_LIST" || return 1
    fi
 
+   echo "---------------------------------------------------------------"
+   echo ""
    echo "Installed the package $PACKAGE successfully."
    echo "For details: buildit print install"
+   echo ""
+   echo "---------------------------------------------------------------"
 
    return 0
 

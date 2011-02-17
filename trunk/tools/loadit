@@ -47,7 +47,7 @@ this_load() {
    EXTENSION_TCZ="${EXTENSION%.tcz}.tcz"
    EXTENSION_NAME="${EXTENSION_TCZ%.tcz}"
 
-   echo -e "Checking if the extension is installed ... \c"
+   echo -e "Checking if the extension $EXTENSION_NAME is installed ... \c"
    if [ -e "/usr/local/tce.installed/$EXTENSION_NAME" ]; then
         echo "yes"
         if [ "$COMMAND" = "cp2fs" -a -d "$TCLOOP/$EXTENSION_NAME" ]; then
@@ -58,7 +58,7 @@ this_load() {
         echo "no"
    fi
 
-   echo -e "Checking if the extension exists ... \c"
+   echo -e "Checking if the extension $EXTENSION_NAME exists ... \c"
    if [ -f "$TCE_DIR/optional/$EXTENSION_TCZ" ]; then
         echo "yes"
    else
@@ -81,20 +81,37 @@ this_load() {
 
 this_main() {
 
+   echo "---------------------------------------------------------------"
    echo ""
    echo "Loading the package $PACKAGE build dependencies ..."
+   echo ""
+   echo "---------------------------------------------------------------"
 
    for EXTENSION in $PACKAGE_BUILD_DEPENDS
    do
-       if [ -n "$EXTENSION" ] && [ "${EXTENSION#\#}" == "$EXTENSION" ]; then
-            echo ""
-            echo "Loading the extension $EXTENSION"
-            this_load || return 1
+       if [ -n "$EXTENSION" ] && [ "${EXTENSION#\#}" = "$EXTENSION" ]; then
+            echo "---------------------------------------------------------------"
+            echo "Loading the package build dependency $EXTENSION"
+            echo "---------------------------------------------------------------"
+            this_load
+            if [ "$?" -gt 0 ]; then
+                 echo "---------------------------------------------------------------"
+                 echo "Error! Loading the package build dependency $EXTENSION failed."
+                 echo "---------------------------------------------------------------"
+                 return 1
+            else
+                 echo "---------------------------------------------------------------"
+                 echo "Loading the package build dependency $EXTENSION successful."
+                 echo "---------------------------------------------------------------"
+            fi
        fi
    done
 
+   echo "---------------------------------------------------------------"
    echo ""
    echo "Loaded the package $PACKAGE build dependencies successfully."
+   echo ""
+   echo "---------------------------------------------------------------"
 
    return 0
 
