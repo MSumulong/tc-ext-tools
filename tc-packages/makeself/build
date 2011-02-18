@@ -1,0 +1,45 @@
+
+############################################################################
+#                                                                          #
+#    package build functions: configure, compile, install, rules, etc.     #
+#                                                                          #
+############################################################################
+
+build_unpack() {
+
+   /bin/sh $_P_SRC/makeself.run || return 1
+
+}
+
+## install
+build_install() {
+
+    install -d ${I_ROOT}/usr/local/bin
+    install -d ${I_ROOT}/usr/local/share
+    install -d ${I_ROOT}/usr/local/share/${P_NAME}
+    install -d ${I_ROOT}/usr/local/share/man/man1
+
+    install makeself.lsm README ${I_ROOT}/usr/local/share/${P_NAME}
+    install -m755 makeself.sh ${I_ROOT}/usr/local/bin/makeself
+    install -m755 makeself-header.sh ${I_ROOT}/usr/local/bin
+    install -m644 makeself.1 ${I_ROOT}/usr/local/share/man/man1/
+
+}
+
+## rules
+build_rules() {
+
+   buildit load || exit 1
+   buildit download || exit 1
+   buildit unpack || exit 1
+   buildit patch || exit 1
+   buildit install || exit 1
+   buildit split || exit 1
+   buildit strip || exit 1
+   buildit create || exit 1
+   buildit generate || exit 1
+   buildit check || exit 1
+   buildit package || exit 1
+
+}
+

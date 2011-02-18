@@ -1,0 +1,5 @@
+usr/local/bin/makeself
+usr/local/bin/makeself-header.sh
+usr/local/share/makeself/README
+usr/local/share/makeself/makeself.lsm
+usr/local/share/man/man1/makeself.1
