@@ -48,6 +48,7 @@ this_split() {
    CONTENTS=$(cat $PACKAGE_EXTENSION_INSTALL)
    if [ -z "$CONTENTS" ]; then
         echo "Warning! The extension install is empty."
+        CONTENTS="."
    fi
 
    echo "---------------------------------------------------------------"
@@ -59,7 +60,7 @@ this_split() {
    touch "$X_LIST"
 
    cd "$PACKAGE_INSTALL_ROOT"
-   for i in ${CONTENTS-.}
+   for i in $CONTENTS
    do
        echo "---------------------------------------------------------------"
        echo "Processing the content $i"
