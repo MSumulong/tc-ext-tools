@@ -1,9 +1,0 @@
-usr/local/bin
-usr/local/etc
-usr/local/lib/*.so*
-usr/local/lib/bonobo/monikers/*.so
-usr/local/lib/bonobo/servers
-usr/local/share/gnome-background-properties
-usr/local/share/pixmaps
-usr/local/share/man
-

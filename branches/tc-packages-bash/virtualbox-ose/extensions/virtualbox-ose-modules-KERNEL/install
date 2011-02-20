@@ -1,4 +1,0 @@
-usr/local/lib/modules/${KERNEL}/kernel/misc/vboxdrv.ko
-usr/local/lib/modules/${KERNEL}/kernel/misc/vboxnetflt.ko
-usr/local/lib/modules/${KERNEL}/kernel/misc/vboxnetadp.ko
-

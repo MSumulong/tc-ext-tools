@@ -1,6 +1,0 @@
-usr/local/etc/openldap
-x-usr/local/etc/openldap/ldap.conf*
-usr/local/libexec
-usr/local/sbin
-var
-

@@ -1,5 +1,0 @@
-usr/local/bin/nss-config
-usr/local/include
-usr/local/lib/pkgconfig
-usr/local/lib/*.a
-

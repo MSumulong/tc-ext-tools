@@ -1,9 +1,0 @@
-usr/local/bin
-usr/local/etc
-usr/local/lib/eog
-x-usr/local/lib/eog/plugins/*.la
-usr/local/share/applications
-usr/local/share/gnome/help/eog/C
-usr/local/share/icons
-usr/local/share/eog
-usr/local/share/omf/eog/eog-C.omf

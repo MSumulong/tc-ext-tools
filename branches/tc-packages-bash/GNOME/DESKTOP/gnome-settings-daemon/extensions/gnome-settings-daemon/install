@@ -1,6 +1,0 @@
-usr/local/etc
-usr/local/lib/gnome-settings-daemon-2.0
-x-usr/local/lib/gnome-settings-daemon-2.0/*.la
-usr/local/libexec
-usr/local/share
-x-usr/local/share/locale

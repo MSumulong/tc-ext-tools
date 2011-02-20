@@ -1,5 +1,0 @@
-ICON="/usr/local/share/icons/hicolor/48x48/apps/totem.png"
-DESKTOP="/usr/local/share/applications/totem.desktop"
-COMMENTS="Optional dependencies: gst-plugins-bad, gst-plugins-ugly, bluez, gnome-icon-theme
-
-		This extension is PPI compatible."

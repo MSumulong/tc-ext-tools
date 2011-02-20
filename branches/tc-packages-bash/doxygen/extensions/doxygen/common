@@ -1,9 +1,0 @@
-COMMENTS="Doxygen is a tool for writing software reference documentation. 
-		The documentation is written within code, and is thus relatively easy to keep up to date. 
-		Doxygen can cross reference documentation and code, 
-		so that the reader of a document can easily refer to the actual code.
-
-		Online manual:
-		http://www.stack.nl/~dimitri/doxygen/manual.html
-
-		This extension is PPI compatible."

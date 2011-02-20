@@ -1,3 +1,0 @@
-usr/local/lib/mono
-usr/local/lib/*.so*
-x-usr/local/lib/mono/gac/*/*/*.mdb

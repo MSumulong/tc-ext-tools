@@ -1,3 +1,0 @@
-#!/bin/sh
-[ -d /var/lib/upower ] || mkdir -p /var/lib/upower
-[ -x /sbin/udevadm ] && /sbin/udevadm trigger

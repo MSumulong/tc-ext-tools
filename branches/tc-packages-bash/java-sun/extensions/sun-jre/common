@@ -1,4 +1,0 @@
-DESCRIPTION="Sun/Oracle's implementation of tha Java 6 specification, java runtime environment."
-COMMENTS="The sun-jre package is licensed software.
-		You MUST read and agree to the license stored in /usr/local/java-sun/jre/LICENSE before using it.
-		You need to relogin or reboot to include java in PATH."

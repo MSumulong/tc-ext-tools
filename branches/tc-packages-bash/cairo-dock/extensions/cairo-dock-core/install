@@ -1,5 +1,0 @@
-usr/local/bin
-usr/local/lib/*.so*
-usr/local/share
-x-usr/local/share/doc
-x-usr/local/share/locale

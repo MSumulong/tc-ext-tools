@@ -1,4 +1,0 @@
-usr/local/bin
-usr/local/lib/gstreamer-0.10/*.so
-usr/local/lib/*.so*
-usr/local/share/man

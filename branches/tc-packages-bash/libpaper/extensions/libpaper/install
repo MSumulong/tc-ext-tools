@@ -1,4 +1,0 @@
-usr/local/bin
-usr/local/lib/*.so*
-usr/local/sbin
-usr/local/share/man/man1/paperconf.1

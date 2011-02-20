@@ -1,9 +1,0 @@
-#!/bin/sh
-
-EXTENSION=$(basename $0)
-PREFIX=/usr/local
-
-if [ -d "/tmp/tcloop/$EXTENSION" ]; then
-	cp -a "/tmp/tcloop/$EXTENSION/$PREFIX/bin/pg_config" "$PREFIX/bin"
-fi
-

@@ -1,4 +1,0 @@
-usr/local/include
-usr/local/lib/pkgconfig
-usr/local/lib/gstreamer-0.10/*.la
-usr/local/lib/*.la

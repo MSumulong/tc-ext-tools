@@ -1,9 +1,0 @@
-#!/bin/sh
-
-[ -x "$(which update-gconf-database)" ] && update-gconf-database register-extension vino-server > /dev/null 2>&1
-
-/usr/local/etc/init.d/dbus status > /dev/null 2>&1
-if [ $? -gt 0 ]; then
-     sudo /usr/local/etc/init.d/dbus start > /dev/null 2>&1
-fi
-

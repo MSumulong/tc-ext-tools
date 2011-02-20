@@ -1,6 +1,0 @@
-usr/local/etc
-usr/local/lib
-x-usr/local/lib/security/*.la
-x-usr/local/lib/*.la
-usr/local/sbin
-

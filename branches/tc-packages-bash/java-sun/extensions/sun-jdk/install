@@ -1,8 +1,0 @@
-etc/profile.d/sun-jdk.sh
-usr/local/etc/conf.d/derby-network-server
-usr/local/etc/init.d/derby-network-server
-usr/local/java-sun
-x-usr/local/java-sun/jre
-usr/local/share/licenses/sun-jdk
-usr/local/share/pixmaps/java.png
-usr/local/share/applications

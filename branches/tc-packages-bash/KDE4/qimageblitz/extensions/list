@@ -1,8 +1,0 @@
-usr/local/bin/blitztest
-usr/local/include/qimageblitz/qimageblitz.h
-usr/local/include/qimageblitz/blitzcpu.h
-usr/local/include/qimageblitz/qimageblitz_export.h
-usr/local/lib/libqimageblitz.so
-usr/local/lib/pkgconfig/qimageblitz.pc
-usr/local/lib/libqimageblitz.so.4
-usr/local/lib/libqimageblitz.so.4.0.0

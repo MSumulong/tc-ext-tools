@@ -1,7 +1,0 @@
-usr/local/libexec
-usr/local/share
-x-usr/local/share/locale
-usr/local/lib/*.so*
-usr/local/lib/bonobo
-usr/local/lib/sensors-applet/plugins/*.so
-

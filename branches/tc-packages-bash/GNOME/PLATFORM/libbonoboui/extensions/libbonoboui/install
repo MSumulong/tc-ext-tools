@@ -1,6 +1,0 @@
-usr/local/bin
-usr/local/lib/bonobo
-usr/local/lib/bonobo-2.0
-usr/local/lib/libglade/2.0/*.so
-usr/local/lib/*.so*
-usr/local/share/gnome-2.0

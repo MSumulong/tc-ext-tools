@@ -1,6 +1,0 @@
-usr/local/bin
-usr/local/lib/*.so*
-usr/local/lib/giggle
-usr/local/share
-x-usr/local/share/locale
-

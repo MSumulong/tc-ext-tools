@@ -1,9 +1,0 @@
-COMMENTS="It supports a variety of project types as well as copying of optical media, burning of different types of images,
-		and ripping Audio CDs, Video CDs, and Video DVDs. Its convenient user interface is targeted at all audiences,
-		trying to be as simple as possible for novice users while also providing all features an advanced user might need.
-
-		Optional dependencies: vcdimager, emovix, transcode, sox
-
-		This extension is PPI compatible."
-ICON="/usr/local/share/apps/k3b/icons/oxygen/64x64/apps/k3b.png"
-DESKTOP="/usr/local/share/applications/kde4/k3b.desktop"

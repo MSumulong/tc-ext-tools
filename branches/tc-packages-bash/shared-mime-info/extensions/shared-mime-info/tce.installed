@@ -1,4 +1,0 @@
-#!/bin/sh
-
-sudo update-mime-database /usr/local/share/mime > /dev/null 2>&1
-

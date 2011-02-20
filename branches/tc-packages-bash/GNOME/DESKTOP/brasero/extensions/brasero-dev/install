@@ -1,5 +1,0 @@
-usr/local/include
-usr/local/lib/pkgconfig
-usr/local/lib/brasero/plugins/*.la
-usr/local/lib/nautilus/*/*.la
-usr/local/lib/*.la

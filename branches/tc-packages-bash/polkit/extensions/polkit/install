@@ -1,8 +1,0 @@
-usr/local/bin
-usr/local/lib/*.so*
-usr/local/lib/polkit-1/extensions/*.so
-usr/local/share/dbus-1
-usr/local/share/polkit-1
-usr/local/libexec
-usr/local/etc
-

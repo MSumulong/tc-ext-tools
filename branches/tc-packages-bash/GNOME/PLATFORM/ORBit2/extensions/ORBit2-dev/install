@@ -1,9 +1,0 @@
-usr/local/include
-usr/local/lib/pkgconfig
-usr/local/lib/orbit-2.0/*.la
-usr/local/lib/orbit-2.0/*.a
-usr/local/lib/*.la
-usr/local/lib/*.a
-usr/local/share/idl
-usr/local/share/aclocal
-

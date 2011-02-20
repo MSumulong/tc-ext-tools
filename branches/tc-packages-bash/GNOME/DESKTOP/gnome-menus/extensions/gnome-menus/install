@@ -1,9 +1,0 @@
-usr/local/bin
-usr/local/etc
-usr/local/lib/girepository-1.0
-usr/local/lib/python*
-x-usr/local/lib/python*/site-packages/*.la
-usr/local/lib/*.so*
-usr/local/share/applications
-usr/local/share/desktop-directories
-usr/local/share/gnome-menus

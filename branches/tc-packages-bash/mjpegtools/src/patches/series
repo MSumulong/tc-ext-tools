@@ -1,5 +1,0 @@
-01_cpu-detection.diff
-02_toolame.diff
-03_memory_leak.diff
-04_fix_arch_specifics.diff
-05_fix_invalid_conversion.diff

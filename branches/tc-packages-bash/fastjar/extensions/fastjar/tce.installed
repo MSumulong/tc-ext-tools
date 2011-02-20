@@ -1,6 +1,0 @@
-#!/bin/sh
-
-infodir=/usr/local/share/info
-file=fastjar.info
-
-install-info $infodir/$file $infodir/dir > /dev/null 2>&1 

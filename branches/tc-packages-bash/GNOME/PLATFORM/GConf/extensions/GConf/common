@@ -1,8 +1,0 @@
-COMMENTS="Run update-gconf-database for help
-
-		It is recommended to add to backup (/opt/.filetool.lst):
-		usr/local/etc/gconf/gconf.xml.defaults
-
-		Optional dependency: openldap (only needed for evoldap backend)
-
-		This extension is PPI compatible."

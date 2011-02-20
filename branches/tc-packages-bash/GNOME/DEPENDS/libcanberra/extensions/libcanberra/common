@@ -1,5 +1,0 @@
-COMMENTS="This extension includes libcanberra, libcanberra-gtk libs
-		and libcanberra-alsa, libcanberra-oss, libcanberra-gstreamer, 
-		libcanberra-pulse plugins
-		
-		This extension is PPI compatible." 

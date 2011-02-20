@@ -1,5 +1,0 @@
-usr/local/include
-usr/local/lib/*.a
-usr/local/lib/*.la
-usr/local/lib/sensors-applet/plugins/*.a
-usr/local/lib/sensors-applet/plugins/*.la

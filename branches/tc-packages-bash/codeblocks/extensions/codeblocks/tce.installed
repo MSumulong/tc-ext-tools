@@ -1,5 +1,0 @@
-#!/bin/sh
-
-[ -x "$(which update-mime-database)" ] && update-mime-database /usr/local/share/mime > /dev/null 2>&1
-[ -x "$(which gtk-update-icon-cache)" ] && gtk-update-icon-cache -q -f -t /usr/local/share/icons/hicolor > /dev/null 2>&1
-
