@@ -1,7 +1,7 @@
 usr/local/include/SDL_Pango.h
-usr/local/lib/libSDL_Pango.so.1.1.0
 usr/local/lib/libSDL_Pango.a
-usr/local/lib/libSDL_Pango.so.1
 usr/local/lib/libSDL_Pango.la
-usr/local/lib/pkgconfig/SDL_Pango.pc
 usr/local/lib/libSDL_Pango.so
+usr/local/lib/libSDL_Pango.so.1
+usr/local/lib/libSDL_Pango.so.1.1.0
+usr/local/lib/pkgconfig/SDL_Pango.pc

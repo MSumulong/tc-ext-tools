@@ -1,4 +1,4 @@
-usr/local/lib/python2.7/site-packages/compizconfig.so
+usr/local/lib/pkgconfig/compizconfig-python.pc
 usr/local/lib/python2.7/site-packages/compizconfig.a
 usr/local/lib/python2.7/site-packages/compizconfig.la
-usr/local/lib/pkgconfig/compizconfig-python.pc
+usr/local/lib/python2.7/site-packages/compizconfig.so

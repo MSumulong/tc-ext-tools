@@ -1,7 +1,7 @@
-usr/local/share/pygtk/2.0/defs/pynotify.defs
-usr/local/lib/python2.7/site-packages/gtk-2.0/pynotify/__init__.py
-usr/local/lib/python2.7/site-packages/gtk-2.0/pynotify/_pynotify.la
-usr/local/lib/python2.7/site-packages/gtk-2.0/pynotify/__init__.pyo
-usr/local/lib/python2.7/site-packages/gtk-2.0/pynotify/_pynotify.so
-usr/local/lib/python2.7/site-packages/gtk-2.0/pynotify/__init__.pyc
 usr/local/lib/pkgconfig/notify-python.pc
+usr/local/lib/python2.7/site-packages/gtk-2.0/pynotify/__init__.py
+usr/local/lib/python2.7/site-packages/gtk-2.0/pynotify/__init__.pyc
+usr/local/lib/python2.7/site-packages/gtk-2.0/pynotify/__init__.pyo
+usr/local/lib/python2.7/site-packages/gtk-2.0/pynotify/_pynotify.la
+usr/local/lib/python2.7/site-packages/gtk-2.0/pynotify/_pynotify.so
+usr/local/share/pygtk/2.0/defs/pynotify.defs

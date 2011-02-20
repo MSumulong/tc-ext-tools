@@ -1,11 +1,11 @@
-usr/local/share/licenses/freeimage/license-fi.txt
-usr/include/FreeImagePlus.h
 usr/include/FreeImage.h
-usr/lib/libfreeimageplus.a
-usr/lib/libfreeimage.a
+usr/include/FreeImagePlus.h
 usr/lib/libfreeimage-3.14.1.so
-usr/lib/libfreeimageplus-3.14.1.so
+usr/lib/libfreeimage.a
 usr/lib/libfreeimage.so
-usr/lib/libfreeimageplus.so
 usr/lib/libfreeimage.so.3
+usr/lib/libfreeimageplus-3.14.1.so
+usr/lib/libfreeimageplus.a
+usr/lib/libfreeimageplus.so
 usr/lib/libfreeimageplus.so.3
+usr/local/share/licenses/freeimage/license-fi.txt
