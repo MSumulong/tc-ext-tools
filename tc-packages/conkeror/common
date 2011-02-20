@@ -1,5 +1,5 @@
 PACKAGE="conkeror"
-VERSION="git101215"
+VERSION="git110220"
 SOURCE="git::git://repo.or.cz/conkeror.git"
 BUILD_DEPENDS=""
 
@@ -16,5 +16,6 @@ COMMENTS="Conkeror is a keyboard-oriented, highly-customizable,
 		This extension is PPI compatible."
 CHANGELOG="2010/06/09 First Version git100609
 		2010/08/24 Updated to git100824
-		2010/11/18 Updated to git101118"
+		2010/11/18 Updated to git101118
+		2010/12/15 Updated to git101215"
 CURRENT="Updated to $VERSION"

@@ -1,6 +1,6 @@
 PACKAGE="libmsn"
 VERSION="4.1"
-SOURCE="generic::http://downloads.sourceforge.net/libmsn/libmsn-${VERSION}.tar.bz2::dada-3.5.tar.bz2"
+SOURCE="http://downloads.sourceforge.net/libmsn/libmsn-${VERSION}.tar.bz2"
 BUILD_DEPENDS="cmake
 openssl-0.9.8
 openssl-0.9.8-dev"
