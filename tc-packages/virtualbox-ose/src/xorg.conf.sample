@@ -25,7 +25,7 @@ EndSection
 
 Section "Device"
 	Identifier  "Card0"
-	Driver      "vesa"
+	Driver      "vboxvideo"
 EndSection
 
 Section "Screen"

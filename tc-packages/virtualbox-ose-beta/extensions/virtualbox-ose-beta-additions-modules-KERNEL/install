@@ -1,4 +1,0 @@
-usr/local/lib/modules/${KERNEL}/kernel/misc/vboxguest.ko
-usr/local/lib/modules/${KERNEL}/kernel/misc/vboxsf.ko
-usr/local/lib/modules/${KERNEL}/kernel/misc/vboxvideo.ko
-

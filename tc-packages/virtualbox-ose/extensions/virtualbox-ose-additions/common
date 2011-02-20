@@ -1,1 +1,21 @@
-DESCRIPTION="A Powerful x86 virtualization solution, guest additions (TESTING)."
+DESCRIPTION="A Powerful x86 virtualization solution, guest additions."
+COMMENTS="Xorg should be able to run in confless mode, otherwise and/or you need a specific configuration
+		follow the basic installation steps given below.
+
+		Basic installation steps:
+		1-) Exit to prompt
+		2-) Copy xorg.conf.sample to /etc/X11/xorg.conf and edit for your needs (i.e keyboard layout)
+		3-) Test it by running startx
+		4-) Add etc/X11/xorg.conf to your backup list (/opt/.filetool.lst)
+
+		Xorg configuration sample is located at /usr/local/share/virtualbox-ose-additions
+
+		If you are having problems starting X(org), then
+		1-) Replace "waitforX" with "sleep x" in ~/.xsession where x is a positive real number
+			tc@box:~$ sed -i -e 's/waitforX/sleep 2/' ~/.xsession
+		2-) Backup and reboot
+			tc@box:~$ filetool.sh -b
+			tc@box:~$ sudo reboot
+
+		This extension depends on Xorg.
+		This extension is PPI compatible."

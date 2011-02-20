@@ -1,7 +1,30 @@
 #!/bin/sh
-addgroup daemon
-adduser -SDH -G daemon -s /bin/sh vboxadd
 
-chown vboxadd:daemon /dev/vbox*
-chmod 666 /dev/vboxuser
+# creating daemon group if it isn't already there
+if ! getent group daemon >/dev/null; then
+        # Adding system group: daemon
+        addgroup -S daemon >/dev/null
+fi
+
+# creating vboxadd user if it isn't already there
+if ! getent passwd vboxadd >/dev/null; then
+        # Adding system user: vboxadd
+        adduser \
+          -S \
+          -D \
+          -H \
+          -G daemon \
+          -s /bin/sh \
+          vboxadd  >/dev/null
+fi
+
+if [ -e /dev/vboxuser ]; then
+     chmod 666 /dev/vboxuser
+     chown vboxadd:daemon /dev/vboxuser
+fi
+
+if [ -e /dev/vboxguest ]; then
+     chmod 600 /dev/vboxguest
+     chown vboxadd:daemon /dev/vboxguest
+fi
 

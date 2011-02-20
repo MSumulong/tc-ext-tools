@@ -10,6 +10,7 @@ openssl-0.9.8.tcz
 qt-4.x-xml.tcz
 qt-4.x-opengl.tcz
 python.tcz
-Xorg-7.5.tcz
 procps.tcz
+glibc_apps.tcz
+Xorg-7.5.tcz
 

@@ -1,21 +1,29 @@
 #!/bin/sh
 
-TCUSER=$(cat /etc/sysconfig/tcuser)
 THIS=$(basename $0)
+TCUSER=$(cat /etc/sysconfig/tcuser)
 
+# update system databases
 [ -x "$(which update-mime-database)" ] && update-mime-database /usr/local/share/mime
 [ -x "$(which gtk-update-icon-cache)" ] && gtk-update-icon-cache -q -f -t /usr/local/share/icons/hicolor
 
-if [ -d "/tmp/tcloop/$THIS" ]; then
+# copy to file system
+if [ -d /tmp/tcloop/$THIS ]; then
      cd /tmp/tcloop/$THIS/usr/local/lib/virtualbox
      cp -a *.so *.gc *.r0 *.fd /usr/local/lib/virtualbox
      cp -a components/* /usr/local/lib/virtualbox/components/
 fi
 
-addgroup vboxusers
+# creating vboxusers group if it isn't already there
+if ! getent group vboxusers >/dev/null; then
+        # Adding system group: vboxusers
+        addgroup -S vboxusers >/dev/null
+fi
+
+# add tcuser to group vboxusers
 addgroup ${TCUSER} vboxusers
 
-ln -s /usr/local/etc/init.d/vboxdrv /etc/init.d
-
+# start vbox drivers
+ln -sf /usr/local/etc/init.d/vboxdrv /etc/init.d
 /etc/init.d/vboxdrv start
 

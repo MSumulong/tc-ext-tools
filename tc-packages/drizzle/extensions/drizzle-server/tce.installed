@@ -5,13 +5,13 @@ LOGDIR=/var/log/drizzle
 
 # creating drizzle group if it isn't already there
 if ! getent group drizzle >/dev/null; then
-        # Adding system group: drizzle.
+        # Adding system group: drizzle
         addgroup -S drizzle >/dev/null
 fi
 
 # creating drizzle user if it isn't already there
 if ! getent passwd drizzle >/dev/null; then
-        # Adding system user: drizzle.
+        # Adding system user: drizzle
         adduser \
           -S \
           -G drizzle \
@@ -27,3 +27,4 @@ if [ ! -d $LOGDIR ]; then
 fi
 
 exit 0
+

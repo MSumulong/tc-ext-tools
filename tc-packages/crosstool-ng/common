@@ -1,0 +1,18 @@
+PACKAGE="crosstool-ng"
+VERSION="1.9.3"
+SOURCE="http://ymorin.is-a-geek.org/download/crosstool-ng/crosstool-ng-${VERSION}.tar.bz2"
+BUILD_DEPENDS="bash
+texinfo
+coreutils
+cvs
+ncurses
+ncurses-dev"
+
+DESCRIPTION="A versatile (cross-)toolchain generator."
+AUTHOR="various"
+SITE="http://ymorin.is-a-geek.org/projects/crosstool"
+COPYING="GPL"
+MAINTAINERS="Arslan S."
+COMMENTS="This extension is PPI compatible."
+CHANGELOG="---"
+CURRENT="First Version"
