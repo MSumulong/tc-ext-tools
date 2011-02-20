@@ -16,11 +16,10 @@
 #  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 #  GNU General Public License for more details.
 #
-#  You should have received a copy of the GNU General Public License along
-#  with this program; if not, write to the Free Software Foundation, Inc.,
-#  51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
+#  You should have received a copy of the GNU General Public License
+#  along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #
-#  (C) Copyright 2011 Sercan Arslan
+#  Copyright (c) 2011 Sercan Arslan <arslanserc@gmail.com>
 #
 
 THIS=$(basename $0)
@@ -79,18 +78,36 @@ print_it() {
 # sets the package source variables
 set_source() {
 
-     PACKAGE_SOURCE_URL_TYPE="${SOURCE%%::*}"
-     if [ "$PACKAGE_SOURCE_URL_TYPE" = "$SOURCE" ]; then
-          PACKAGE_SOURCE_URL_TYPE=""
-     else
-          SOURCE=${SOURCE#*::}
-          PACKAGE_SOURCE_NAME=${PACKAGE}-${VERSION}.tar.xz
-          SOURCE_TOPDIR=${PACKAGE}-${VERSION}     
+     if [ -z "$SOURCE" ]; then
+          PACKAGE_SOURCE_TYPE="none"
+          PACKAGE_SOURCE_URL_TYPE="none"
      fi
 
-     if [ -z "$PACKAGE_SOURCE_NAME" ]; then
-          PACKAGE_SOURCE_NAME=${SOURCE##*/}
+     PACKAGE_SOURCE_URL_TYPE="${SOURCE%%::*}"
+     if [ "$PACKAGE_SOURCE_URL_TYPE" = "${SOURCE#*::}" ]; then
+          PACKAGE_SOURCE_URL_TYPE="generic"
      fi
+
+     PACKAGE_SOURCE_NAME="${SOURCE##*->}"
+     if [ "$PACKAGE_SOURCE_NAME" = "${SOURCE%->*}" ]; then
+          PACKAGE_SOURCE_NAME=""
+     fi
+
+     if [ "$PACKAGE_SOURCE_URL_TYPE" = "generic" ] || [ "$PACKAGE_SOURCE_URL_TYPE" = "custom" ]; then
+          if [ -z "$PACKAGE_SOURCE_NAME" ]; then
+               PACKAGE_SOURCE_NAME="${SOURCE##*/}"
+          fi
+     elif [ "$PACKAGE_SOURCE_URL_TYPE" = "svn" ] || [ "$PACKAGE_SOURCE_URL_TYPE" = "git" ]; then
+          if [ -z "$PACKAGE_SOURCE_NAME" ]; then
+               PACKAGE_SOURCE_NAME="${PACKAGE}-${VERSION}.tar.xz"
+          fi
+     elif [ "$PACKAGE_SOURCE_URL_TYPE" != "none" ]; then
+          echo "Error! Unsupported source url type."
+          exit 1
+     fi
+
+     SOURCE="${SOURCE#*::}"
+     SOURCE="${SOURCE%->*}"
 
      if [ ! "${PACKAGE_SOURCE_NAME%.bz2}" = "$PACKAGE_SOURCE_NAME" ]; then
             PACKAGE_SOURCE_TYPE="bz2"
@@ -116,17 +133,13 @@ set_source() {
      elif [ ! "${PACKAGE_SOURCE_NAME%.tar}" = "$PACKAGE_SOURCE_NAME" ]; then
             PACKAGE_SOURCE_TYPE="tar"
             PACKAGE_SOURCE_NAME_CONVERTED="${PACKAGE_SOURCE_NAME%.tar}.tar.xz"
-     else
-            if [ -z "$SOURCE" ]; then
-                 PACKAGE_SOURCE_TYPE=none
-            else
-                 PACKAGE_SOURCE_TYPE="custom"
-                 [ -z "$PACKAGE_SOURCE_NAME_CONVERTED" ] && PACKAGE_SOURCE_NAME_CONVERTED="${PACKAGE_SOURCE_NAME%.*}.tar.xz"
-            fi
+     elif [ "$PACKAGE_SOURCE_TYPE" != "none" ]; then
+            PACKAGE_SOURCE_TYPE="custom"
+            [ -z "$PACKAGE_SOURCE_NAME_CONVERTED" ] && PACKAGE_SOURCE_NAME_CONVERTED="${PACKAGE_SOURCE_NAME%.*}.tar.xz"
      fi
 
      if [ -z "$SOURCE_TOPDIR" ]; then
-          [ -d "$TCEXTTOOLS_SRC_TEMP" ] && SOURCE_TOPDIR=$(ls $TCEXTTOOLS_SRC_TEMP)
+          [ -d "$PACKAGE_SRC_TEMP" ] && SOURCE_TOPDIR=$(ls $PACKAGE_SRC_TEMP)
           [ -z "$SOURCE_TOPDIR" ] && SOURCE_TOPDIR=${PACKAGE}-${VERSION}
      fi
 
@@ -140,7 +153,7 @@ set_source() {
      fi
 
 }
- 
+
 # sets the package extensions variables
 set_extensions() {
 
@@ -153,16 +166,16 @@ set_extensions() {
         fi
    fi
 
-   NUM=0
+   NUMBER_OF_EXTENSIONS=0
    for i in $EXTENSIONS
    do
-      NUM=`expr $NUM+1`
+      NUMBER_OF_EXTENSIONS=`expr $NUMBER_OF_EXTENSIONS+1`
    done
 
-   if [ "$NUM" = 0 ]; then
+   if [ "$NUMBER_OF_EXTENSIONS" = 0 ]; then
         echo "Error! There is no extension available."
         exit 1
-   elif [ "$NUM" = 1 ]; then
+   elif [ "$NUMBER_OF_EXTENSIONS" = 1 ]; then
         SINGLE_EXTENSION_PACKAGE=1
    else
         SINGLE_EXTENSION_PACKAGE=0
@@ -174,7 +187,7 @@ set_extensions() {
 set_extension() {
 
    if [ -z "$EXTENSION" ]; then
-        echo "The variable EXTENSION must be set, skipping."
+        echo "Warning! EXTENSION must be set, skipping."
         return 0
    fi
 
@@ -214,9 +227,9 @@ set_extension() {
    if [ -n "$ICON" ]; then
         PACKAGE_EXTENSION_ICON="$ICON"
         if [ -n "$DESKTOP" ]; then
-             PACKAGE_EXTENSION_DESKTOP="$PACKAGE_BIN/$DESKTOP"
+             PACKAGE_EXTENSION_DESKTOP="$PACKAGE_EXTENSION_BIN/$DESKTOP"
         else
-             PACKAGE_EXTENSION_DESKTOP="$PACKAGE_BIN/usr/local/share/applications/${PACKAGE_EXTENSION_NAME}.desktop"
+             PACKAGE_EXTENSION_DESKTOP="$PACKAGE_EXTENSION_BIN/usr/local/share/applications/${PACKAGE_EXTENSION_NAME}.desktop"
         fi
    fi
 

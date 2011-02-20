@@ -17,11 +17,10 @@
 #  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 #  GNU General Public License for more details.
 #
-#  You should have received a copy of the GNU General Public License along
-#  with this program; if not, write to the Free Software Foundation, Inc.,
-#  51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
+#  You should have received a copy of the GNU General Public License
+#  along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #
-#  (C) Copyright 2011 Sercan Arslan
+#  Copyright (c) 2011 Sercan Arslan <arslanserc@gmail.com>
 #
 
 . /etc/init.d/tc-functions
@@ -43,16 +42,16 @@ fi
 this_split() {
 
    echo "---------------------------------------------------------------"
-   echo "Getting the contents of the extension install."
+   echo "Getting the contents of the package extension install."
    echo "---------------------------------------------------------------"
    CONTENTS=$(cat $PACKAGE_EXTENSION_INSTALL)
    if [ -z "$CONTENTS" ]; then
-        echo "Warning! The extension install is empty."
+        echo "Warning! The package extension install is empty."
         CONTENTS="."
    fi
 
    echo "---------------------------------------------------------------"
-   echo "Creating the include list and the exclude list files."
+   echo "Creating the include and the exclude lists."
    echo "---------------------------------------------------------------"
    LIST="${PACKAGE_BIN_TEMP}/install.list"
    X_LIST="${PACKAGE_BIN_TEMP}/x-install.list"
@@ -74,16 +73,7 @@ this_split() {
             echo "no"
        fi
 
-       echo "Evaluating the content $i"
        i=$(eval echo "$i")
-
-       echo -e "Checking if a special wildcard used ... \c"
-       if [ -n "$(echo "$i" | grep '*')" ]; then
-            echo "yes"
-       else
-            echo "no"
-       fi
-
        if [ -z "$(echo "$i" | grep '*')" ]; then
             if [ "${i#x-}" = "$i" ]; then
                  echo "Putting the files in the content to the include list."
@@ -106,11 +96,13 @@ this_split() {
    done
 
    echo "---------------------------------------------------------------"
-   echo "Creating the extension contents tarball from the include and the exclude lists."
+   echo "Creating the extension contents tarball using the include and the exclude lists."
    echo "---------------------------------------------------------------"
    sudo tar -T "$LIST" -X "$X_LIST" -cvpzf "$PACKAGE_BIN_TEMP/pkg.tar.gz" || return 1
 
+   echo "---------------------------------------------------------------"
    echo "Cleaning the package extension bin directory."
+   echo "---------------------------------------------------------------"
    [ -d "$PACKAGE_EXTENSION_BIN" ] && sudo rm -rf "$PACKAGE_EXTENSION_BIN"
    sudo mkdir -p "$PACKAGE_EXTENSION_BIN"
 

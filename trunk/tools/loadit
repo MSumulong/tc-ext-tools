@@ -17,11 +17,10 @@
 #  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 #  GNU General Public License for more details.
 #
-#  You should have received a copy of the GNU General Public License along
-#  with this program; if not, write to the Free Software Foundation, Inc.,
-#  51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
+#  You should have received a copy of the GNU General Public License
+#  along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #
-#  (C) Copyright 2011 Sercan Arslan
+#  Copyright (c) 2011 Sercan Arslan <arslanserc@gmail.com>
 #
 
 . /etc/init.d/tc-functions
@@ -67,7 +66,7 @@ this_load() {
         tce-load -w "$EXTENSION_TCZ" || return 1
    fi
 
-   echo "Loading the extension."
+   echo "Loading the extension $EXTENSION_NAME"
    case "$COMMAND" in
        cp2fs) tce-load -i -c "$EXTENSION_TCZ" || return 1 ;;
        *) tce-load -i "$EXTENSION_TCZ" || return 1 ;;

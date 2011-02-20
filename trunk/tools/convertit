@@ -17,11 +17,10 @@
 #  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 #  GNU General Public License for more details.
 #
-#  You should have received a copy of the GNU General Public License along
-#  with this program; if not, write to the Free Software Foundation, Inc.,
-#  51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
+#  You should have received a copy of the GNU General Public License
+#  along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #
-#  (C) Copyright 2011 Sercan Arslan
+#  Copyright (c) 2011 Sercan Arslan <arslanserc@gmail.com>
 #
 
 . /etc/init.d/tc-functions
@@ -52,7 +51,6 @@ this_main() {
    [ -d "$PACKAGE_SRC_TEMP" ] && sudo rm -rf "$PACKAGE_SRC_TEMP"
    mkdir -p "$PACKAGE_SRC_TEMP"
 
-   echo "The package source type is set to $PACKAGE_SOURCE_TYPE."
    if [ "$PACKAGE_SOURCE_TYPE" = "bz2" ]; then
         echo "Decompressing the package source with bzip2."
         bzip2 -d -c "$PACKAGE_SOURCE" > "$PACKAGE_SRC_TEMP/${PACKAGE_SOURCE_NAME%.bz2}" || return 1
@@ -108,7 +106,7 @@ this_main() {
         echo "Moving the converted source to the package source directory."
         mv -f "$PACKAGE_SRC_TEMP/${PACKAGE_SOURCE_NAME%.zip}.tar.xz" "$_PACKAGE_SRC" || return 1
    elif [ "$PACKAGE_SOURCE_TYPE" = "custom" ]; then
-        echo "Executing the custom build convert function."
+        echo "Executing the package build convert function."
         cd "$PACKAGE_SRC_TEMP"
         build_convert || return 1
    else
