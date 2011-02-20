@@ -11,7 +11,7 @@ COMMENTS="Xorg should be able to run in confless mode, otherwise and/or you need
 		Xorg configuration sample is located at /usr/local/share/virtualbox-ose-additions
 
 		If you are having problems starting X(org), then
-		1-) Replace "waitforX" with "sleep x" in ~/.xsession where x is a positive real number
+		1-) Replace 'waitforX' with 'sleep x' in ~/.xsession where x is a positive real number
 			tc@box:~$ sed -i -e 's/waitforX/sleep 2/' ~/.xsession
 		2-) Backup and reboot
 			tc@box:~$ filetool.sh -b

@@ -5,8 +5,6 @@
 ### Configure
 build_configure() {
 
-  [ -e /usr/bin/python ] || sudo ln -s /usr/local/bin/python /usr/bin/python
-
   build/gyp_chromium -f make build/all.gyp --depth=. \
     -Dgcc_version=44 \
     -Ddisable_sse2=1 \
