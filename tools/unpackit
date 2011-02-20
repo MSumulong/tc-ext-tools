@@ -17,11 +17,10 @@
 #  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 #  GNU General Public License for more details.
 #
-#  You should have received a copy of the GNU General Public License along
-#  with this program; if not, write to the Free Software Foundation, Inc.,
-#  51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
+#  You should have received a copy of the GNU General Public License
+#  along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #
-#  (C) Copyright 2011 Sercan Arslan
+#  Copyright (c) 2011 Sercan Arslan <arslanserc@gmail.com>
 #
 
 . /etc/init.d/tc-functions
@@ -59,7 +58,7 @@ this_main() {
         tar -C "$PACKAGE_SRC_TEMP" -xvf "$PACKAGE_SOURCE" || return 1
    elif [ "$PACKAGE_SOURCE_TYPE" = "zip" ]; then
         echo "---------------------------------------------------------------"
-        echo "Unzipping the package source by using unzip."
+        echo "Unzipping the package source."
         echo "---------------------------------------------------------------"
         unzip "$PACKAGE_SOURCE" -d "$PACKAGE_SRC_TEMP" || return 1
    elif [ "$PACKAGE_SOURCE_TYPE" = "custom" ]; then
@@ -77,7 +76,7 @@ this_main() {
 
    echo "---------------------------------------------------------------"
    echo ""
-   echo "Unpacked the package $PACKAGE source successfully."
+   echo "Unpacked the package $PACKAGE source $PACKAGE_SOURCE_NAME successfully."
    echo ""
    echo "---------------------------------------------------------------"
 
