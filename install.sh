@@ -24,35 +24,47 @@
 #
 
 if [ ! -e .config ]; then
-       echo "You need to create a user config file!"
-       echo "See INSTALL for details."
-       exit 1
+  echo "You need to create a user config file!"
+  echo "See INSTALL for details."
+  exit 1
 else
-       . .config
+  . .config
 fi
 
-TCUSER=$(cat /etc/sysconfig/tcuser)
+[ -z "$DESTDIR" ] && DESTDIR=$HOME/.local
 
-[ -z "$DESTDIR" ] && DESTDIR="$HOME/.local"
+BINDIR=$DESTDIR/bin
+SYSCONFDIR=$DESTDIR/etc
+DATADIR=$DESTDIR/share
 
-BINDIR="$DESTDIR/bin"
-SYSCONFDIR="$DESTDIR/etc"
-DATADIR="$DESTDIR/share"
+[ -d "$BINDIR" ] || install -m 755 -d $BINDIR
 
-[ -d "$BINDIR" ] || install -m 755 -d "$BINDIR"
+install -m 755 tools/* $BINDIR
 
-for tool in tools/*
-do
-    install -m 755 "$tool" "$BINDIR"
-done
+install -D -m 644 default/build $DATADIR/tc-ext-tools/build
+install -D -m 644 default/config $SYSCONFDIR/conf.d/tc-ext-tools.conf
+install -D -m 755 default/functions $SYSCONFDIR/init.d/tc-ext-tools.sh
+install -D -m 755 default/ashrc $SYSCONFDIR/init.d/tetash
 
-install -D -m 644 default/config "$SYSCONFDIR/conf.d/tc-ext-tools.conf"
-install -D -m 755 default/functions "$SYSCONFDIR/init.d/tc-ext-tools.sh"
+sudo ln -sf $SYSCONFDIR/init.d/tetash /etc/init.d/tetash
 
-[ -d "$DATADIR/tc-ext-tools" ] && sudo rm -rf "$DATADIR/tc-ext-tools"
-install -m 755 -d "$DATADIR/tc-ext-tools"
+# source tc-ext-tools shell environment functions in user's ashrc
+if ! grep tetash ~/.ashrc >/dev/null; then
+  if [ `id -u` = 0 ]; then
+       su $USER -c "echo '. /etc/init.d/tetash' >> ~/.ashrc"
+  else
+       echo ". /etc/init.d/tetash" >> ~/.ashrc
+  fi
+fi
 
-install -m 644 default/build "$DATADIR/tc-ext-tools"
+# add /etc/init.d/tetash to backup list
+if ! grep tetash /opt/.filetool.lst >/dev/null; then
+  if [ `id -u` = 0 ]; then
+       su $USER -c "echo 'etc/init.d/tetash' >> /opt/.filetool.lst"
+  else
+       echo "etc/init.d/tetash" >> /opt/.filetool.lst
+  fi
+fi
 
-install -D -m 644 -o "$TCUSER" -g staff .config "$HOME/.config/tc-ext-tools.conf"
+install -D -m 644 -o $USER -g staff .config $HOME/.config/tc-ext-tools.conf
 

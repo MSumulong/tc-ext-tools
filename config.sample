@@ -8,6 +8,12 @@
 # package maintainer
 PACKAGE_MAINTAINER="User"
 
-# tc-ext-tools storage directory where the package files are stored
-TCEXTTOOLS_STORAGE="${HOME}/tc-ext-tools"
+# tc-ext-tools packages directory
+TCEXTTOOLS_PACKAGES="${HOME}/tc-ext-tools-packages"
+
+# tc-ext-tools storage directory
+TCEXTTOOLS_STORAGE="${HOME}/tc-ext-tools-storage"
+
+# tc-ext-tools packages database directory
+TCEXTTOOLS_PACKAGES_DATABASE="${HOME}/.local/share/tc-ext-tools/packages_db"
 
