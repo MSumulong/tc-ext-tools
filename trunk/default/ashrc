@@ -1,0 +1,55 @@
+
+############################################################################
+#                                                                          #
+#                       tc-ext-tools shell environment                     #
+#                                                                          #
+############################################################################
+
+#
+#  This program is free software; you can redistribute it and/or modify
+#  it under the terms of the GNU General Public License as published by
+#  the Free Software Foundation; either version 2 of the License, or
+#  (at your option) any later version.
+#
+#  This program is distributed in the hope that it will be useful,
+#  but WITHOUT ANY WARRANTY; without even the implied warranty of
+#  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+#  GNU General Public License for more details.
+#
+#  You should have received a copy of the GNU General Public License
+#  along with this program.  If not, see <http://www.gnu.org/licenses/>.
+#
+#  Copyright (c) 2011 Sercan Arslan <arslanserc@gmail.com>
+#
+
+if [ -f "$HOME/.config/tc-ext-tools.conf" ]; then
+     . "$HOME/.config/tc-ext-tools.conf"
+     export TCEXTTOOLS_PACKAGES TCEXTTOOLS_STORAGE TCEXTTOOLS_PACKAGES_DATABASE
+fi
+
+# tc-ext-tools cd: change directory to package root
+tetcd() {
+
+   if [ -z "$1" ]; then
+        cd "$TCEXTTOOLS_PACKAGES"
+        return 0
+   fi
+
+   PACKAGE="$1"
+
+   if [ -f "$HOME/.local/share/tc-ext-tools/packages_db/$PACKAGE" ]; then
+        . "$HOME/.local/share/tc-ext-tools/packages_db/$PACKAGE"
+   else
+        echo "tetcd: No such package $PACKAGE"
+        return 1
+   fi
+
+   if [ -d "$PACKAGE_ROOT" ]; then
+        cd "$PACKAGE_ROOT"
+        return 0
+   else
+        echo "tetcd: Package $PACKAGE root not found"
+        return 1
+   fi
+
+}

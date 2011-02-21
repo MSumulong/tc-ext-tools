@@ -10,8 +10,8 @@ libwnck-dev
 GConf
 GConf-dev
 dbus-glib
-libnotify"
-libnotify-dev
+libnotify
+libnotify-dev"
 
 DESCRIPTION="A notification daemon that displays pop-up notifications."
 AUTHOR="Mirco \"MacSlow\" Mueller, David Barth et al."

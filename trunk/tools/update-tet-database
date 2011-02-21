@@ -1,0 +1,70 @@
+#!/bin/sh
+
+############################################################################
+#                                                                          #
+#       update-tet-database: Updates tc-ext-tools packages database        #
+#                                                                          #
+############################################################################
+
+#
+#  This program is free software; you can redistribute it and/or modify
+#  it under the terms of the GNU General Public License as published by
+#  the Free Software Foundation; either version 2 of the License, or
+#  (at your option) any later version.
+#
+#  This program is distributed in the hope that it will be useful,
+#  but WITHOUT ANY WARRANTY; without even the implied warranty of
+#  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+#  GNU General Public License for more details.
+#
+#  You should have received a copy of the GNU General Public License
+#  along with this program.  If not, see <http://www.gnu.org/licenses/>.
+#
+#  Copyright (c) 2011 Sercan Arslan <arslanserc@gmail.com>
+#
+
+. /etc/init.d/tc-functions
+
+THIS=`basename $0`
+TCEXTTOOLS_ROOT=`dirname $0`/..
+
+if [ `id -u` = 0 ]; then
+     echo "${RED}Do not run $THIS as root!${NORMAL}"
+     exit 1
+fi
+
+if [ -f "$HOME/.config/tc-ext-tools.conf" ]; then
+     . "$HOME/.config/tc-ext-tools.conf"
+else
+    echo "${RED}${THIS}: user configuration file not found!${NORMAL}"
+    exit 1
+fi
+
+if [ -z "$TCEXTTOOLS_PACKAGES_DATABASE" ]; then
+     echo "${RED}Check your configuration file!${NORMAL}"
+     exit 1
+fi
+
+echo "${BLUE}Cleaning the packages database${NORMAL}"
+if [ -d "$TCEXTTOOLS_PACKAGES_DATABASE" ]; then
+     sudo rm -rf "$TCEXTTOOLS_PACKAGES_DATABASE"
+fi
+mkdir -p "$TCEXTTOOLS_PACKAGES_DATABASE"
+
+echo "${BLUE}Getting the packages list${NORMAL}"
+PACKAGES=`find $TCEXTTOOLS_PACKAGES -type f -name common -a -not -path "*/extensions/*/common" | sort`
+
+echo "${BLUE}Creating the packages database${NORMAL}"
+for package in $PACKAGES
+do
+   . $package
+   echo "${GREEN}Adding the package ${YELLOW}${PACKAGE}${GREEN} to the packages database${NORMAL}"
+   cat > $TCEXTTOOLS_PACKAGES_DATABASE/$PACKAGE << _EOF
+PACKAGE_NAME="$PACKAGE"
+PACKAGE_VERSION="$VERSION"
+PACKAGE_DESCRIPTION="$DESCRIPTION"
+PACKAGE_ROOT="${package%/common}"
+_EOF
+done
+
+exit 0

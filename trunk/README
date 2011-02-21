@@ -1,24 +1,24 @@
-tc-ext-tools is an extension build system programmed in linux shell for Tiny Core Linux.
+
+#
+# tc-ext-tools readme
+#
+
+# What is tc-ext-tools ?
+t(iny)c(ore)-ext(ension)-tools is a package build system programmed in ash for Tiny Core Linux.
 It is originally written by Sercan Arslan (aka Arslan S. at Tiny Core Linux).
 
-This project consists of a set of tools and an extension build system developed based on these tools.
-The aim of the project is to reduce the command line usage as much as possible and provide a high level,
-easy and fast extension maintenance system.
+# What is the aim of the project ?
+The aim of the project is to reduce the command line usage as much as possible and create a high level, easy and fast package maintenance system.
 
-The available packages provided within the project show basic usage of tc-ext-tools. You should
-be able to understand how to use the build system by examining these packages.
+# What is the design concepts behind it ?
+The package build system which is inspired by the divide and conquer philosophy has been developed based on a set of tools.
+The building process of a package is done step by step using these tools and complete control over defining each step as rule is given to the package maintainer by the build system.
 
-There is also an introduction wiki at the project hosting site.
-
+# Where is the project hosted at ?
 The project is hosted at http://code.google.com/p/tc-ext-tools/
 
-Mini FAQ:
-
-Q: What does the name tc-ext-tools stand for ?
-A: t(iny)c(ore)-ext(ension)-tools
-
-Q: Why tc-ext-tools?
-A: Because I need it! I do maintain lots of packages.
+# Where to start ?
+http://code.google.com/p/tc-ext-tools/wiki/Introduction
 
 Sercan Arslan <arslanserc@gmail.com>
 
