@@ -22,34 +22,185 @@
 #  Copyright (c) 2011 Sercan Arslan <arslanserc@gmail.com>
 #
 
-if [ -f "$HOME/.config/tc-ext-tools.conf" ]; then
-     . "$HOME/.config/tc-ext-tools.conf"
-     export TCEXTTOOLS_PACKAGES TCEXTTOOLS_STORAGE TCEXTTOOLS_PACKAGES_DATABASE
-fi
+_tet_common() {
+
+   if [ -f "$HOME/.config/tc-ext-tools.conf" ]; then
+        . "$HOME/.config/tc-ext-tools.conf"
+   else
+        echo "$tc-ext-tools user configuration not found"
+        return 1
+   fi
+
+}
+
+is_integer() {
+
+    [ "$1" -eq "$1" ] > /dev/null 2>&1
+    return $?
+
+}
 
 # tc-ext-tools cd: change directory to package root
 tetcd() {
 
-   if [ -z "$1" ]; then
+   PACKAGE="$1"
+
+   _tet_common || return 1
+
+   if [ -z "$PACKAGE" ]; then
         cd "$TCEXTTOOLS_PACKAGES"
         return 0
    fi
 
-   PACKAGE="$1"
-
-   if [ -f "$HOME/.local/share/tc-ext-tools/packages_db/$PACKAGE" ]; then
-        . "$HOME/.local/share/tc-ext-tools/packages_db/$PACKAGE"
+   if [ -f "$TCEXTTOOLS_PACKAGES_DATABASE/$PACKAGE" ]; then
+        . "$TCEXTTOOLS_PACKAGES_DATABASE/$PACKAGE"
    else
         echo "tetcd: No such package $PACKAGE"
         return 1
    fi
 
-   if [ -d "$PACKAGE_ROOT" ]; then
-        cd "$PACKAGE_ROOT"
-        return 0
-   else
-        echo "tetcd: Package $PACKAGE root not found"
+   if [ ! -d "$PACKAGE_ROOT" ]; then
+        echo "$tetcd: Package $PACKAGE root directory does not exist"
         return 1
    fi
 
+   cd "$PACKAGE_ROOT"
+
 }
+
+# tc-ext-tools ls: list package contents
+tetls() {
+
+   PACKAGE="$1"
+   ARGS="$2"
+
+   _tet_common || return 1
+
+   if [ -z "$PACKAGE" ]; then
+        ls "$TCEXTTOOLS_PACKAGES"
+        return 0
+   fi
+
+   if [ -f "$TCEXTTOOLS_PACKAGES_DATABASE/$PACKAGE" ]; then
+        . "$TCEXTTOOLS_PACKAGES_DATABASE/$PACKAGE"
+   else
+        echo "tetls: No such package $PACKAGE"
+        return 1
+   fi
+
+   ls $ARGS "$PACKAGE_ROOT"
+
+}
+
+# tc-ext-tools find: find in package
+tetfind() {
+
+   PACKAGE="$1"
+   ARGS="$2"
+
+   _tet_common || return 1
+
+   if [ -z "$PACKAGE" ]; then
+        find "$TCEXTTOOLS_PACKAGES" -not -path *.svn*
+        return 0
+   fi
+
+   if [ -f "$TCEXTTOOLS_PACKAGES_DATABASE/$PACKAGE" ]; then
+        . "$TCEXTTOOLS_PACKAGES_DATABASE/$PACKAGE"
+   else
+        echo "tetfind: No such package $PACKAGE"
+        return 1
+   fi
+
+   if [ -z "$ARGS" ]; then
+        find "$PACKAGE_ROOT" -not -path *.svn*
+   else
+        find "$PACKAGE_ROOT" $ARGS
+   fi
+
+}
+
+# tc-ext-tools edit: edit package files
+teted() {
+
+   PACKAGE="$1"
+   FILE="$2"
+
+   _tet_common || return 1
+
+   if [ -z "$PACKAGE" ]; then
+        echo "teted: package ?"
+        return 1
+   fi
+
+   if [ -f "$TCEXTTOOLS_PACKAGES_DATABASE/$PACKAGE" ]; then
+        . "$TCEXTTOOLS_PACKAGES_DATABASE/$PACKAGE"
+   else
+        echo "teted: No such package $PACKAGE"
+        return 1
+   fi
+
+   if [ -z "$TCEXTTOOLS_EDITOR" ]; then
+        echo "teted: You need to set tc-ext-tools editor"
+        return 1
+   fi
+
+   if ! which "$TCEXTTOOLS_EDITOR" >/dev/null 2>&1; then
+        echo "teted: Editor $TCEXTTOOLS_EDITOR is not in executables path"
+        return 1
+   fi
+
+   if [ -z "$FILE" ]; then
+        FILES=`find $PACKAGE_ROOT -type f -a -not -path *.svn*`
+   else
+        FILES=`find $PACKAGE_ROOT -type f -name $FILE`
+   fi
+
+   file_cnt=0
+   for i in $FILES
+   do
+      file_cnt=`expr $file_cnt + 1`
+   done
+
+   if [ $file_cnt = 0 ]; then
+        echo "teted: No such file $FILE"
+        return 1
+   elif [ $file_cnt = 1 ]; then
+        $TCEXTTOOLS_EDITOR $FILE &
+   else
+        echo "teted: More than one file found, choose one of the options below"
+        index=0
+        for i in $FILES
+        do
+            echo "[$index] ${i#$PACKAGE_ROOT/}"
+            index=`expr $index + 1`
+        done
+        echo "[$index] all above"
+        read ans
+        if ! is_integer $ans; then
+            echo "teted: invalid option"
+            return 1
+        elif [ $ans -gt $index ]; then
+            echo "teted: invalid option"
+            return 1
+        fi
+        index=0
+        for FILE in $FILES
+        do
+            if [ $index = $ans ]; then
+                 $TCEXTTOOLS_EDITOR $FILE &
+                 return 0
+            fi
+            index=`expr $index + 1`
+        done
+        if [ $index = $ans ]; then
+             for FILE in $FILES
+             do
+                 $TCEXTTOOLS_EDITOR $FILE &
+             done
+        fi
+   fi
+
+}
+
+
