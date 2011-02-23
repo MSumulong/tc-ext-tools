@@ -1,5 +1,5 @@
 PACKAGE="rabbitvcs"
-VERSION="0.14.1.1"
+VERSION="0.14.2.1"
 SOURCE="http://rabbitvcs.googlecode.com/files/rabbitvcs-${VERSION}.tar.gz"
 BUILD_DEPENDS="python
 python-dev
@@ -19,5 +19,6 @@ MAINTAINERS="Arslan S."
 COMMENTS="This extension is PPI compatible."
 CHANGELOG="2010/06/20 First Version 0.13.3
 		2010/08/15 Rebuilt against python 2.7
-		2010/10/09 Rebuilt"
+		2010/10/09 Rebuilt
+		2011/01/13 Updated to 0.14.1.1"
 CURRENT="Updated to $VERSION"

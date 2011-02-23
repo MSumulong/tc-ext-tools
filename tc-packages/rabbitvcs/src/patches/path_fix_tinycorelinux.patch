@@ -1,6 +1,6 @@
 diff -Naur a/rabbitvcs/__init__.py b/rabbitvcs/__init__.py
---- a/rabbitvcs/__init__.py	2011-01-08 21:03:47.000000000 +0000
-+++ b/rabbitvcs/__init__.py	2011-01-13 18:11:41.765823494 +0000
+--- a/rabbitvcs/__init__.py	2011-02-18 13:04:33.000000000 +0000
++++ b/rabbitvcs/__init__.py	2011-02-23 21:09:29.155866770 +0000
 @@ -36,7 +36,7 @@
  TEMP_DIR_PREFIX = "rabbitvcs-"
  LOCALE_DIR = "%s/locale" % os.path.dirname(os.path.dirname(os.path.realpath(__file__)))
@@ -12,7 +12,7 @@ diff -Naur a/rabbitvcs/__init__.py b/rabbitvcs/__init__.py
  
 diff -Naur a/rabbitvcs/ui/about.py b/rabbitvcs/ui/about.py
 --- a/rabbitvcs/ui/about.py	2010-12-10 00:06:15.000000000 +0000
-+++ b/rabbitvcs/ui/about.py	2011-01-13 18:12:40.058339491 +0000
++++ b/rabbitvcs/ui/about.py	2011-02-23 21:09:29.155866770 +0000
 @@ -60,7 +60,7 @@
          self.about.set_website("http://www.rabbitvcs.org")
          self.about.set_website_label("http://www.rabbitvcs.org")
@@ -24,7 +24,7 @@ diff -Naur a/rabbitvcs/ui/about.py b/rabbitvcs/ui/about.py
              if doc_path_regex.search(dir):
 diff -Naur a/rabbitvcs/ui/create.py b/rabbitvcs/ui/create.py
 --- a/rabbitvcs/ui/create.py	2010-12-19 14:00:23.000000000 +0000
-+++ b/rabbitvcs/ui/create.py	2011-01-13 18:15:23.198302661 +0000
++++ b/rabbitvcs/ui/create.py	2011-02-23 21:09:29.155866770 +0000
 @@ -46,7 +46,7 @@
              os.makedirs(path)
          
@@ -36,7 +36,7 @@ diff -Naur a/rabbitvcs/ui/create.py b/rabbitvcs/ui/create.py
          else:
 diff -Naur a/rabbitvcs/ui/settings.py b/rabbitvcs/ui/settings.py
 --- a/rabbitvcs/ui/settings.py	2010-12-10 00:06:15.000000000 +0000
-+++ b/rabbitvcs/ui/settings.py	2011-01-13 18:13:34.234979703 +0000
++++ b/rabbitvcs/ui/settings.py	2011-02-23 21:09:29.155866770 +0000
 @@ -291,7 +291,7 @@
  
      def on_external_diff_tool_browse_clicked(self, widget):
@@ -48,7 +48,7 @@ diff -Naur a/rabbitvcs/ui/settings.py b/rabbitvcs/ui/settings.py
          path = path.replace("file://", "")
 diff -Naur a/rabbitvcs/util/configspec/configspec.ini b/rabbitvcs/util/configspec/configspec.ini
 --- a/rabbitvcs/util/configspec/configspec.ini	2010-02-26 15:43:55.000000000 +0000
-+++ b/rabbitvcs/util/configspec/configspec.ini	2011-01-13 18:16:14.574962945 +0000
++++ b/rabbitvcs/util/configspec/configspec.ini	2011-02-23 21:09:29.155866770 +0000
 @@ -6,7 +6,7 @@
  show_debug = boolean(default=False)
  
@@ -59,20 +59,18 @@ diff -Naur a/rabbitvcs/util/configspec/configspec.ini b/rabbitvcs/util/configspe
  
  [cache]
 diff -Naur a/rabbitvcs/util/settings.py b/rabbitvcs/util/settings.py
---- a/rabbitvcs/util/settings.py	2010-12-10 00:06:15.000000000 +0000
-+++ b/rabbitvcs/util/settings.py	2011-01-13 18:14:43.828306648 +0000
-@@ -69,8 +69,8 @@
-     configspec = os.path.join(dirname(__file__), "configspec/configspec.ini")
-     if os.path.exists(configspec):
-         return configspec
--    elif os.path.exists("/usr/share/rabbitvcs/configspec.ini"):
--        return "/usr/share/rabbitvcs/configspec.ini"
-+    elif os.path.exists("/usr/local/share/rabbitvcs/configspec.ini"):
-+        return "/usr/local/share/rabbitvcs/configspec.ini"
-     else:
-         # FIXME: what if we can't find anything?
-         return None
-@@ -90,7 +90,7 @@
+--- a/rabbitvcs/util/settings.py	2011-02-10 22:25:42.000000000 +0000
++++ b/rabbitvcs/util/settings.py	2011-02-23 21:10:47.665784985 +0000
+@@ -71,7 +71,7 @@
+     configspec_paths = [
+         os.path.join(dirname(__file__), "configspec/configspec.ini"),
+         os.path.join(package_prefix(), "share/rabbitvcs/configspec.ini"),
+-        "/usr/share/rabbitvcs/configspec.ini"
++        "/usr/local/share/rabbitvcs/configspec.ini"
+     ]
+     
+     for path in configspec_paths:
+@@ -95,7 +95,7 @@
              
          Set settings:
              sm = SettingsManager()

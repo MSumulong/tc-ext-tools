@@ -2,9 +2,11 @@ usr/local/bin/rabbitvcs
 usr/local/lib/gedit-2/plugins/rabbitvcs-plugin.py
 usr/local/lib/gedit-2/plugins/rabbitvcs.gedit-plugin
 usr/local/lib/nautilus/extensions-2.0/python/RabbitVCS.py
-usr/local/lib/python2.7/site-packages/rabbitvcs-0.14.1.1-py2.7.egg-info
+usr/local/lib/python2.7/site-packages/rabbitvcs-0.14.2.1-py2.7.egg-info
 usr/local/lib/python2.7/site-packages/rabbitvcs/__init__.py
 usr/local/lib/python2.7/site-packages/rabbitvcs/__init__.pyc
+usr/local/lib/python2.7/site-packages/rabbitvcs/buildinfo.py
+usr/local/lib/python2.7/site-packages/rabbitvcs/buildinfo.pyc
 usr/local/lib/python2.7/site-packages/rabbitvcs/debug/__init__.py
 usr/local/lib/python2.7/site-packages/rabbitvcs/debug/__init__.pyc
 usr/local/lib/python2.7/site-packages/rabbitvcs/debug/ipython_view.py
