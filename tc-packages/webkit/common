@@ -1,11 +1,13 @@
 PACKAGE="webkit"
-VERSION="1.2.6"
+VERSION="1.2.7"
 SOURCE="http://webkitgtk.org/webkit-${VERSION}.tar.gz"
 BUILD_DEPENDS="gtk-doc
 gtk2
 gtk2-dev
 Xorg-7.5-lib
 Xorg-7.5-dev
+libxcb
+libxcb-dev
 libxslt
 libsoup
 libsoup-dev
@@ -34,5 +36,7 @@ CHANGELOG="2009/05/04 First Version by Roberto A. Foglietta
 		2010/05/01 Rebuilt against icu 4.4
 		2010/05/30 Updated to 1.2.1
 		2010/08/24 Updated to 1.2.3
-		2010/10/08 Updated to 1.2.5"
+		2010/10/08 Updated to 1.2.5
+		2011/01/06 Updated to 1.2.6"
 CURRENT="Updated to $VERSION"
+

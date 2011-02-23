@@ -1,0 +1,14 @@
+PACKAGE="uzbl"
+VERSION="2011.02.15"
+SOURCE="http://github.com/Dieterbe/uzbl/tarball/${VERSION}->uzbl-${VERSION}.tar.gz"
+BUILD_DEPENDS="webkit
+webkit-dev"
+
+DESCRIPTION="The uzbl web interface tools."
+AUTHOR="various"
+SITE="http://www.uzbl.org/"
+COPYING="GPL-3"
+MAINTAINERS="Arslan S."
+COMMENTS="This extension is PPI compatible."
+CHANGELOG="---"
+CURRENT="First Version"
