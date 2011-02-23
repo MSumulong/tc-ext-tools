@@ -57,9 +57,9 @@ PACKAGES=`find $TCEXTTOOLS_PACKAGES -type f -name common -a -not -path "*/extens
 echo "${BLUE}Creating the packages database${NORMAL}"
 for package in $PACKAGES
 do
-   . $package
+   . "$package"
    echo "${GREEN}Adding the package ${YELLOW}${PACKAGE}${GREEN} to the packages database${NORMAL}"
-   cat > $TCEXTTOOLS_PACKAGES_DATABASE/$PACKAGE << _EOF
+   cat > "$TCEXTTOOLS_PACKAGES_DATABASE/$PACKAGE" << _EOF
 PACKAGE_NAME="$PACKAGE"
 PACKAGE_VERSION="$VERSION"
 PACKAGE_DESCRIPTION="$DESCRIPTION"
@@ -68,3 +68,4 @@ _EOF
 done
 
 exit 0
+
