@@ -1,8 +1,6 @@
 PACKAGE="libsoup"
-VERSION="2.32.1"
-
-
-SOURCE="http://ftp.gnome.org/pub/GNOME/sources/libsoup/${VERSION%.*}/libsoup-${VERSION}.tar.bz2"
+VERSION="2.32.2"
+SOURCE="http://ftp.gnome.org/pub/GNOME/sources/libsoup/2.32/libsoup-${VERSION}.tar.bz2"
 BUILD_DEPENDS="GConf
 GConf-dev
 glib2
@@ -22,7 +20,6 @@ shared-mime-info
 gobject-introspection
 gobject-introspection-dev"
 
-
 DESCRIPTION="An HTTP client/server library for GNOME."
 AUTHOR="GNOME Maintainers"
 SITE="http://live.gnome.org/LibSoup"
@@ -34,5 +31,6 @@ CHANGELOG="2009/05/04 First version by Roberto A. Foglietta
 		2009/12/22 Updated libsoup to 2.29.4 (svn) by Arslan S.
 		2009/12/24 Updated libsoup-gnome 2.26.1 -> 2.29.4 (svn) & removed libsoup files from extension by juanito.
 		2010/07/11 Updated to 2.30.2 and merged libsoup & libsoup-gnome maintenance by Arslan S.
-		2010/09/17 Rebuilt against libproxy-2.7 by Arslan S."
-CURRENT="Updated to 2.32.1 by Arslan S."
+		2010/09/17 Rebuilt against libproxy-2.7 by Arslan S.
+		2010/11/20 Updated to 2.32.1 by Arslan S."
+CURRENT="Updated to $VERSION by Arslan S."

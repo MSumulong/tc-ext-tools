@@ -1,3 +1,2 @@
-etc
-usr/local
-x-usr/local/share/doc/fpc-*
+.
+x-usr/local/share

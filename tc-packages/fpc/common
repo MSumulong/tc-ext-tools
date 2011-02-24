@@ -1,5 +1,5 @@
 PACKAGE="fpc"
-VERSION="2.4.0"
+VERSION="2.4.2"
 SOURCE="ftp://ftp.freepascal.org/pub/fpc/dist/${VERSION}/source/fpcbuild-${VERSION}.tar.gz"
 BUILD_DEPENDS="ncurses
 ncurses-dev
@@ -11,5 +11,5 @@ SITE="http://www.freepascal.org/"
 COPYING="GPL/LGPL/Custom"
 MAINTAINERS="Arslan S."
 COMMENTS="This extension is PPI compatible."
-CHANGELOG="---"
-CURRENT="First Version"
+CHANGELOG="2010/08/31 First Version 2.4.0"
+CURRENT="Updated to $VERSION"

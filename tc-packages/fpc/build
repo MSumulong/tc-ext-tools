@@ -2,14 +2,6 @@
 # tc-ext-tools build functions: configure, compile, install, rules
 #
 
-### Configure
-build_configure() {
-
-  return 0
-
-}
-##
-
 ### Compile
 build_compile() {
 
@@ -21,17 +13,17 @@ build_compile() {
 ### Install
 build_install() {
 
-  sudo make -j1 NOGDB=1 PREFIX=${INSTALL_ROOT}/usr/local install || return 1
+  make -j1 NOGDB=1 PREFIX=${INSTALL_ROOT}/usr/local install || return 1
 
-  sudo install -m 755 -d ${INSTALL_ROOT}/usr/local/share/doc/${PACKAGE}
-  sudo install -m 644 fpcsrc/rtl/COPYING.FPC ${INSTALL_ROOT}/usr/local/share/doc/${PACKAGE}/COPYING || return 1
+  install -m 755 -d ${INSTALL_ROOT}/usr/local/share/doc/${PACKAGE}
+  install -m 644 fpcsrc/rtl/COPYING.FPC ${INSTALL_ROOT}/usr/local/share/doc/${PACKAGE}/COPYING || return 1
 
-  sudo ln -sf /usr/local/lib/fpc/${VERSION}/ppc386 ${INSTALL_ROOT}/usr/local/bin/ || return 1
- 
-  sudo mkdir -p ${INSTALL_ROOT}/etc
-  sudo ${INSTALL_ROOT}/usr/local/lib/fpc/${VERSION}/samplecfg /usr/local/lib/fpc/${VERSION} ${INSTALL_ROOT}/etc || return 1
+  ln -sf /usr/local/lib/fpc/${VERSION}/ppc386 ${INSTALL_ROOT}/usr/local/bin/ || return 1
 
-  sudo mv $INSTALL_ROOT/usr/local/man $INSTALL_ROOT/usr/local/share/ || return 1
+  mkdir -p ${INSTALL_ROOT}/etc
+  ${INSTALL_ROOT}/usr/local/lib/fpc/${VERSION}/samplecfg /usr/local/lib/fpc/${VERSION} ${INSTALL_ROOT}/etc || return 1
+
+  mv $INSTALL_ROOT/usr/local/man $INSTALL_ROOT/usr/local/share/ || return 1
 
 }
 ##
@@ -39,16 +31,15 @@ build_install() {
 ### Rules
 build_rules() {
 
+  buildit load || exit 1
   buildit download || exit 1
-  #buildit convert || exit 1
+  buildit convert || exit 1
   buildit unpack || exit 1
   buildit patch || exit 1
-  buildit load || exit 1
-  buildit configure || exit 1
   buildit compile || exit 1
   buildit install || exit 1
   buildit split || exit 1
-   buildit strip || exit 1
+  buildit strip || exit 1
   buildit create || exit 1
   buildit generate || exit 1
   buildit check || exit 1
