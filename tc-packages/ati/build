@@ -18,20 +18,6 @@ build_unpack() {
 
 }
 
-# Configure
-build_configure() {
-
-   return 0
-
-}
-
-# Compile
-build_compile() {
-
-   return 0
-
-}
-
 # Install
 build_install() {
 
@@ -65,22 +51,20 @@ build_install() {
    install -m755 -d "${INSTALL_ROOT}/usr/local/share/pixmaps"
 
    # X.org driver
-   cd "${PACKAGE_SOURCE_TOPDIR}/x750/usr/X11R6/lib/modules" || return 1
+   cd "${PACKAGE_SOURCE_TOPDIR}/xpic/usr/X11R6/lib/modules" || return 1
 
-   #install -m644 *.a "${INSTALL_ROOT}/usr/local/lib/X11/modules/" || return 1
    install -m755 *.so "${INSTALL_ROOT}/usr/local/lib/X11/modules/" || return 1
    install -m755 drivers/*.so "${INSTALL_ROOT}/usr/local/lib/X11/modules/drivers/" || return 1
    install -m755 linux/*.so "${INSTALL_ROOT}/usr/local/lib/X11/modules/linux/" || return 1
    install -m755 extensions/libglx.so "${INSTALL_ROOT}/usr/local/lib/X11/modules/extensions/libglx.so.ati" || return 1
    ln -sf libglx.so.ati "${INSTALL_ROOT}/usr/local/lib/X11/modules/extensions/libglx.so"
-   #install -m755 extensions/libdri.so "${INSTALL_ROOT}/usr/local/lib/X11/modules/extensions/libdri.ati" || return 1
 
    cd "${PACKAGE_SOURCE_TOPDIR}/arch/x86/usr" || return 1
 
    install -m755 X11R6/bin/* "${INSTALL_ROOT}/usr/local/bin/" || return 1
    install -m755 sbin/* "${INSTALL_ROOT}/usr/local/sbin/" || return 1
    install -m755 X11R6/lib/*.so* "${INSTALL_ROOT}/usr/local/lib/" || return 1
-   install -m644 X11R6/lib/*.a "${INSTALL_ROOT}/usr/local/lib/" || return 1 # really needed?
+   install -m644 X11R6/lib/*.a "${INSTALL_ROOT}/usr/local/lib/" || return 1
    install -m644 X11R6/lib/*.cap "${INSTALL_ROOT}/usr/local/lib/" || return 1
    install -m755 X11R6/lib/modules/dri/*.so "${INSTALL_ROOT}/usr/local/lib/X11/modules/dri/" || return 1
    install -m755 lib/*.so* "${INSTALL_ROOT}/usr/local/lib/" || return 1
@@ -90,8 +74,6 @@ build_install() {
    ln -sf /usr/local/lib/X11/modules/dri/fglrx_dri.so ${INSTALL_ROOT}/usr/local/lib/dri/fglrx_dri.so
    ln -sf libfglrx_dm.so.1.0 "${INSTALL_ROOT}/usr/local/lib/libfglrx_dm.so.1"
    ln -sf libfglrx_dm.so.1.0 "${INSTALL_ROOT}/usr/local/lib/libfglrx_dm.so"
-   #ln -sf libfglrx_pp.so.1.0 "${INSTALL_ROOT}/usr/local/lib/libfglrx_pp.so.1"
-   #ln -sf libfglrx_tvout.so.1.0 "${INSTALL_ROOT}/usr/local/lib/libfglrx_tvout.so.1"
    ln -sf libfglrx_gamma.so.1.0 "${INSTALL_ROOT}/usr/local/lib/libfglrx_gamma.so.1"
    ln -sf libGL.so.1.2.ati "${INSTALL_ROOT}/usr/local/lib/libGL.so.1.2"
    ln -sf libGL.so.1.2 "${INSTALL_ROOT}/usr/local/lib/libGL.so.1"
