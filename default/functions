@@ -37,8 +37,8 @@ else
 fi
 
 # default configuration
-if [ -f "$TCEXTTOOLS_ROOT/etc/conf.d/tc-ext-tools.conf" ]; then
-     . "$TCEXTTOOLS_ROOT/etc/conf.d/tc-ext-tools.conf"
+if [ -f "$TCEXTTOOLS_ROOT/etc/tc-ext-tools/config" ]; then
+     . "$TCEXTTOOLS_ROOT/etc/tc-ext-tools/config"
 else
      echo "${RED}${THIS}: default configuration file not found!${NORMAL}"
      exit 1

@@ -11,6 +11,7 @@ cp -f config.sample .config
 
 # By default tc-ext-tools will be installed to ~/.local
 # If ~/.local/bin is not in your PATH you will need to relogin or reboot
-# If you want to install somewhere else
+# If you want to install it somewhere else
 DESTDIR=/path/to/destination ./install.sh
 
+Sercan Arslan <arslanserc@gmail.com>

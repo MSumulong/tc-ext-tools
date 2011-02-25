@@ -24,7 +24,7 @@
 #
 
 if [ ! -e .config ]; then
-  echo "You need to create a user config file!"
+  echo "You need to create a user configuration file!"
   echo "See INSTALL for details."
   exit 1
 else
@@ -42,8 +42,8 @@ DATADIR=$DESTDIR/share
 install -m 755 tools/* $BINDIR
 
 install -D -m 644 default/build $DATADIR/tc-ext-tools/build
-install -D -m 644 default/config $SYSCONFDIR/conf.d/tc-ext-tools.conf
-install -D -m 755 default/functions $SYSCONFDIR/init.d/tc-ext-tools.sh
+install -D -m 644 default/config $SYSCONFDIR/tc-ext-tools/config
+install -D -m 755 default/functions $SYSCONFDIR/tc-ext-tools/functions
 install -D -m 755 default/ashrc $SYSCONFDIR/init.d/tet-functions
 
 sudo ln -sf $SYSCONFDIR/init.d/tet-functions /etc/init.d/tet-functions
