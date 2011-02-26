@@ -1,0 +1,10 @@
+#!/bin/sh
+
+IRON=$(basename $0)
+IRON_ADDONS="/usr/local/${IRON}-addons"
+IRON_PLUGINS="${IRON_ADDONS}/plugins"
+FLASHPLAYER="/usr/local/lib/mozilla/plugins/libflashplayer.so"
+
+[ -d "${IRON_PLUGINS}" ] || mkdir -p "${IRON_PLUGINS}"
+ln -sf "${FLASHPLAYER}" "${IRON_PLUGINS}"
+

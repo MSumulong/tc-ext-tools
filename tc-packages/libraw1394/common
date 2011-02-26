@@ -1,0 +1,13 @@
+PACKAGE="libraw1394"
+VERSION="2.0.5"
+SOURCE="http://downloads.sourceforge.net/project/libraw1394/libraw1394/libraw1394-${VERSION}.tar.gz"
+BUILD_DEPENDS=""
+
+DESCRIPTION="Provides an API for direct access to the Linux IEEE1394 (FireWire) driver."
+AUTHOR="Dan Dennedy, Andreas Bomb"
+SITE="http://sourceforge.net/projects/libraw1394/"
+COPYING="LGPL-2.1"
+MAINTAINERS="Arslan S."
+COMMENTS="This extension is PPI compatible."
+CHANGELOG="2010/07/16 First Version 2.0.5"
+CURRENT="Rebuilt"

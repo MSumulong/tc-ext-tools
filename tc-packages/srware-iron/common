@@ -1,0 +1,14 @@
+PACKAGE="srware-iron"
+VERSION="9.0.600.2"
+SOURCE="http://www.srware.net/downloads/iron-linux.tar.gz"
+BUILD_DEPENDS=""
+
+DESCRIPTION="A fast web browser based on chromium without Google's tracking 'features'."
+AUTHOR="SRWare"
+SITE="http://www.srware.net/en/software_srware_iron.php"
+COPYING="BSD"
+MAINTAINERS="Arslan S."
+COMMENTS="This extension conflicts with chromium-browser.
+		This extension is PPI compatible."
+CHANGELOG="---"
+CURRENT="First Version"

@@ -1,0 +1,11 @@
+#!/bin/sh
+
+THIS=`basename $0`
+VERSION=1.9.3
+
+if [ -d "/tmp/tcloop/$THIS" ]; then
+  busybox cp -a /tmp/tcloop/$THIS/usr/local/bin/ct-ng /usr/local/bin/ct-ng
+  busybox cp -a /tmp/tcloop/$THIS/usr/local/lib/ct-ng-${VERSION}/config/* /usr/local/lib/ct-ng-${VERSION}/config
+  busybox cp -a /tmp/tcloop/$THIS/usr/local/lib/ct-ng-${VERSION}/kconfig/* /usr/local/lib/ct-ng-${VERSION}/kconfig
+fi
+
