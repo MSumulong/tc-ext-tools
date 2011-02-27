@@ -53,6 +53,10 @@ usr/local/iron-addons/locales/zh-CN.pak
 usr/local/iron-addons/locales/zh-TW.pak
 usr/local/iron/chrome.pak
 usr/local/iron/iron
+usr/local/iron/libavcodec.so.52
+usr/local/iron/libavformat.so.52
+usr/local/iron/libavutil.so.50
+usr/local/iron/libffmpegsumo.so
 usr/local/iron/locales
 usr/local/iron/plugins
 usr/local/iron/resources.pak

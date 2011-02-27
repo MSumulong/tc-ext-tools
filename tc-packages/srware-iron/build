@@ -8,11 +8,8 @@ build_install() {
   install -m 755 -d "$INSTALL_ROOT/usr/local/iron" || return 1
 
   cp -a * "$INSTALL_ROOT/usr/local/iron" || return 1
-  rm -f "$INSTALL_ROOT/usr/local/iron/README"
-  rm -f "$INSTALL_ROOT/usr/local/iron/xdg-settings"
   rm -f "$INSTALL_ROOT/usr/local/iron/chrome-wrapper"
   rm -rf "$INSTALL_ROOT/usr/local/iron/locales"
-  rm -f "$INSTALL_ROOT"/usr/local/iron/*.so*
 
   find "$INSTALL_ROOT/usr/local/iron/" -type f -exec chmod 644 {} +
   find "$INSTALL_ROOT/usr/local/iron/" -type d -exec chmod 755 {} +
