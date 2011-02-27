@@ -42,30 +42,32 @@ fi
 this_split() {
 
    echo "---------------------------------------------------------------"
-   echo "Getting the contents of the package extension install."
+   echo "Getting the paths from the package extension install."
    echo "---------------------------------------------------------------"
-   CONTENTS=$(cat $PACKAGE_EXTENSION_INSTALL)
-   if [ -z "$CONTENTS" ]; then
-        echo "Warning! The package extension install is empty."
-        CONTENTS="."
+   PATHS=$(cat $PACKAGE_EXTENSION_INSTALL)
+   if [ -z "$PATHS" ]; then
+        PATHS="."
    fi
 
    echo "---------------------------------------------------------------"
-   echo "Creating the include and the exclude lists."
+   echo "Cleaning the package extension bin temporary directory."
    echo "---------------------------------------------------------------"
-   LIST="${PACKAGE_BIN_TEMP}/install.list"
-   X_LIST="${PACKAGE_BIN_TEMP}/x-install.list"
-   touch "$LIST"
-   touch "$X_LIST"
+   [ -d "$PACKAGE_EXTENSION_BIN_TEMP" ] && sudo rm -rf "$PACKAGE_EXTENSION_BIN_TEMP"
+   mkdir -p "$PACKAGE_EXTENSION_BIN_TEMP"
 
-   cd "$PACKAGE_INSTALL_ROOT"
-   for i in $CONTENTS
+   cd "$PACKAGE_EXTENSION_BIN_TEMP"
+
+   echo "---------------------------------------------------------------"
+   echo "Setting the include and the exclude paths."
+   echo "---------------------------------------------------------------"
+   unset INCLUDE_PATHS EXCLUDE_PATHS
+   for i in $PATHS
    do
        echo "---------------------------------------------------------------"
-       echo "Processing the content $i"
+       echo "Processing the path $i"
        echo "---------------------------------------------------------------"
 
-       echo -e "Checking if the content is commented out ... \c"
+       echo -e "Checking if the path is commented out ... \c"
        if [ "${i#\#}" != "$i" ]; then
             echo "yes"
             continue
@@ -73,32 +75,44 @@ this_split() {
             echo "no"
        fi
 
-       i=$(eval echo "$i")
-       if [ -z "$(echo "$i" | grep '*')" ]; then
-            if [ "${i#x-}" = "$i" ]; then
-                 echo "Putting the files in the content to the include list."
-                 sudo find "$i" -not -type d >> "$LIST" || return 1
-            else
-                 i="${i#x-}"
-                 echo "Putting the files in the content to the exclude list."
-                 sudo find "$i" -not -type d >> "$X_LIST" || return 1
-            fi
+       i="$(eval echo "$i")"
+       if [ "${i#x-}" = "$i" ]; then
+            echo "Putting the path to the include paths."
+            INCLUDE_PATHS="$INCLUDE_PATHS $i"
        else
-            if [ "${i#x-}" = "$i" ]; then
-                 echo "Putting the files in the content to the include list."
-                 sudo find $i -not -type d >> "$LIST" || return 1
-            else
-                 i="${i#x-}"
-                 echo "Putting the files in the content to the exclude list."
-                 sudo find $i -not -type d >> "$X_LIST" || return 1
-            fi
+            i="${i#x-}"
+            echo "Putting the path to the exclude paths."
+            EXCLUDE_PATHS="$EXCLUDE_PATHS $i"
        fi
    done
 
+   cd "$PACKAGE_INSTALL_ROOT"
+
    echo "---------------------------------------------------------------"
-   echo "Creating the extension contents tarball using the include and the exclude lists."
+   echo "Creating the files to include list."
    echo "---------------------------------------------------------------"
-   sudo tar -T "$LIST" -X "$X_LIST" -cvpzf "$PACKAGE_BIN_TEMP/pkg.tar.gz" || return 1
+   LIST="${PACKAGE_EXTENSION_BIN_TEMP}/install.list"
+   touch "$LIST"
+   if [ -n "$INCLUDE_PATHS" ]; then
+        sudo find $INCLUDE_PATHS -not -type d >> "$LIST" || return 1
+   fi
+   cat "$LIST"
+
+   echo "---------------------------------------------------------------"
+   echo "Creating the files to exclude list."
+   echo "---------------------------------------------------------------"
+   X_LIST="${PACKAGE_EXTENSION_BIN_TEMP}/x-install.list"
+   touch "$X_LIST"
+   if [ -n "$EXCLUDE_PATHS" ]; then
+        sudo find $EXCLUDE_PATHS -not -type d >> "$X_LIST" || return 1
+   fi
+
+   cat "$X_LIST"
+
+   echo "---------------------------------------------------------------"
+   echo "Creating the package extension files tarball using the files to include and the files to exclude lists."
+   echo "---------------------------------------------------------------"
+   sudo tar -T "$LIST" -X "$X_LIST" -cvpzf "$PACKAGE_EXTENSION_BIN_TEMP/pkg.tar.gz" || return 1
 
    echo "---------------------------------------------------------------"
    echo "Cleaning the package extension bin directory."
@@ -107,13 +121,13 @@ this_split() {
    sudo mkdir -p "$PACKAGE_EXTENSION_BIN"
 
    echo "---------------------------------------------------------------"
-   echo "Extracting the extension contents tarball to the extension bin directory."
+   echo "Extracting the package extension files tarball to the package extension bin directory."
    echo "---------------------------------------------------------------"
    sudo mkdir -p "$PACKAGE_EXTENSION_BIN"
-   sudo tar -C "$PACKAGE_EXTENSION_BIN" -pxzf "$PACKAGE_BIN_TEMP/pkg.tar.gz" || return 1
+   sudo tar -C "$PACKAGE_EXTENSION_BIN" -pxzf "$PACKAGE_EXTENSION_BIN_TEMP/pkg.tar.gz" || return 1
 
-   echo "Cleaning the extension bin temporary directory."
-   sudo rm -rf "$PACKAGE_BIN_TEMP"
+   echo "Cleaning the package extension bin temporary directory."
+   sudo rm -rf "$PACKAGE_EXTENSION_BIN_TEMP"
 
    return 0
 
@@ -144,7 +158,7 @@ this_main() {
             echo "---------------------------------------------------------------"
             echo "Error! splitting the package extension $PACKAGE_EXTENSION_NAME failed."
             echo "---------------------------------------------------------------"
-            sudo rm -rf "$PACKAGE_BIN_TEMP"
+
             return 1
        else
             echo "---------------------------------------------------------------"
