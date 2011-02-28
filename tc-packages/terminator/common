@@ -1,0 +1,20 @@
+PACKAGE="terminator"
+VERSION="0.95"
+SOURCE="https://launchpad.net/terminator/trunk/${VERSION}/+download/terminator_${VERSION}.tar.gz"
+BUILD_DEPENDS="python
+python-dev
+pygtk-2.7
+pygtk-2.7-dev
+vte
+vte-dev
+vtemodule
+desktop-file-utils"
+
+DESCRIPTION="A terminal application that provides lots of terminals in a single window."
+AUTHOR="Chris Jones and others"
+SITE="http://www.tenshu.net/terminator/"
+COPYING="GPL-2"
+MAINTAINERS="Arslan S."
+COMMENTS="This extension is PPI compatible."
+CHANGELOG="---"
+CURRENT="First Version"

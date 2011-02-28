@@ -1,0 +1,7 @@
+#!/bin/sh
+
+if which gtk-update-icon-cache >/dev/null
+then
+   gtk-update-icon-cache -q -f -t /usr/local/share/icons/hicolor
+fi
+
