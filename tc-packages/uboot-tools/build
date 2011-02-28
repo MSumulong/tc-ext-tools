@@ -1,0 +1,50 @@
+
+############################################################################
+#                                                                          #
+#    package build functions: configure, compile, install, rules, etc.     #
+#                                                                          #
+############################################################################
+
+## compile
+build_compile() {
+
+   rm -f include/config.mk
+   make CONFIG_CMD_LOADS=y tools-all || return 1
+   touch include/config.mk
+   make -C tools/easylogo TOPDIR=$PWD SRCTREE=$PWD obj=$PWD/tools/easylogo/ || return 1
+   make env || return 1
+
+}
+
+## install
+build_install() {
+
+   install -m 755 -d "$I_ROOT/usr/local/bin"
+   install -m 755 -d "$I_ROOT/etc"
+
+   cd tools
+   install -m 755 bmp_logo gen_eth_addr img2srec mkimage easylogo/easylogo env/fw_printenv "$I_ROOT/usr/local/bin" || return 1
+   ln -s fw_printenv "$I_ROOT/usr/local/bin/fw_setenv"
+   install -m 644 env/fw_env.config "$I_ROOT/etc"
+
+}
+
+## rules
+build_rules() {
+
+   buildit load || exit 1
+   buildit download || exit 1
+   buildit convert || exit 1
+   buildit unpack || exit 1
+   buildit patch || exit 1
+   buildit compile || exit 1
+   buildit install || exit 1
+   buildit split || exit 1
+   buildit strip || exit 1
+   buildit create || exit 1
+   buildit generate || exit 1
+   buildit check || exit 1
+   buildit package || exit 1
+
+}
+

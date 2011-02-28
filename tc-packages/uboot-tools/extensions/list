@@ -1,0 +1,8 @@
+etc/fw_env.config
+usr/local/bin/bmp_logo
+usr/local/bin/easylogo
+usr/local/bin/fw_printenv
+usr/local/bin/fw_setenv
+usr/local/bin/gen_eth_addr
+usr/local/bin/img2srec
+usr/local/bin/mkimage

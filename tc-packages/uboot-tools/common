@@ -1,0 +1,13 @@
+PACKAGE="uboot-tools"
+VERSION="2010.12"
+SOURCE="ftp://ftp.denx.de/pub/u-boot/u-boot-${VERSION}.tar.bz2"
+BUILD_DEPENDS=""
+
+DESCRIPTION="Utilities for working with Das U-Boot."
+AUTHOR="various"
+SITE="http://www.denx.de/wiki/U-Boot/WebHome"
+COPYING="GPL-2"
+MAINTAINERS="Arslan S."
+COMMENTS="This extension is PPI compatible."
+CHANGELOG="---"
+CURRENT="First Version"

@@ -8,7 +8,8 @@ pygtk-2.7-dev
 vte
 vte-dev
 vtemodule
-desktop-file-utils"
+desktop-file-utils
+hicolor-icon-theme"
 
 DESCRIPTION="A terminal application that provides lots of terminals in a single window."
 AUTHOR="Chris Jones and others"
