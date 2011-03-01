@@ -1,0 +1,13 @@
+PACKAGE="shared-desktop-ontologies"
+VERSION="0.6.0"
+SOURCE="http://downloads.sourceforge.net/oscaf/shared-desktop-ontologies-${VERSION}.tar.bz2"
+BUILD_DEPENDS="cmake"
+
+DESCRIPTION="The semantic web to the desktop in terms of vocabulary."
+AUTHOR="Evgeny Egorochkin, Leo Sauermann, Roberto Guido, Sebastian Trueg"
+SITE="http://sourceforge.net/apps/trac/oscaf/"
+COPYING="BSD-style/CC-BY-SA 3.0/CC-BY 3.0"
+MAINTAINERS="Arslan S."
+COMMENTS="This extension is PPI compatible."
+CHANGELOG="2010/07/11 First Version 0.5"
+CURRENT="Updated to $VERSION"

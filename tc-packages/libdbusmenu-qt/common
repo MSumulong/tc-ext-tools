@@ -1,0 +1,18 @@
+PACKAGE="libdbusmenu-qt"
+VERSION="0.8.0"
+SOURCE="http://launchpad.net/libdbusmenu-qt/trunk/${VERSION}/+download/libdbusmenu-qt-${VERSION}.tar.bz2"
+BUILD_DEPENDS="cmake
+qt-4.x-base
+qt-4.x-dbus
+qt-4.x-xml
+qt-4.x-extended
+qt-4.x-dev"
+
+DESCRIPTION="Qt implementation of the DBusMenu protocol."
+AUTHOR="Aurelien Gateau"
+SITE="https://launchpad.net/libdbusmenu-qt"
+COPYING="LGPL-2"
+MAINTAINERS="Arslan S."
+COMMENTS="This extension is PPI compatible."
+CHANGELOG="2010/07/15 First Version 0.3.3"
+CURRENT="Updated to $VERSION"
