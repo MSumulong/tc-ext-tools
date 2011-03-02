@@ -1,5 +1,5 @@
 PACKAGE="gcompris"
-VERSION="9.5"
+VERSION="9.6"
 SOURCE="http://downloads.sourceforge.net/project/gcompris/gcompris/${VERSION}/gcompris-${VERSION}.tar.gz"
 BUILD_DEPENDS="texinfo
 texi2html
@@ -26,8 +26,8 @@ sqlite3-dev"
 DESCRIPTION="Educational software suite comprising of numerous activities for children aged 2 to 10."
 AUTHOR="various"
 SITE="http://gcompris.net/"
-COPYING="GPL"
+COPYING="GPL-3"
 MAINTAINERS="Arslan S."
 COMMENTS="This extension is PPI compatible."
-CHANGELOG="---"
-CURRENT="First Version"
+CHANGELOG="2010/12/26 First Version 9.5"
+CURRENT="Updated to $VERSION"
