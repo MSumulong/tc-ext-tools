@@ -1,5 +1,5 @@
 PACKAGE="xulrunner"
-VERSION="1.9.2.13"
+VERSION="1.9.2.14"
 SOURCE="http://releases.mozilla.org/pub/mozilla.org/xulrunner/releases/${VERSION}/source/xulrunner-${VERSION}.source.tar.bz2"
 BUILD_DEPENDS="gtk2
 gtk2-dev
@@ -47,5 +47,6 @@ COMMENTS="This extension is PPI compatible."
 CHANGELOG="2010/01/30 Original 1.9.1.7
 		2010/06/09 Updated to 1.9.2
 		2010/08/24 Updated to 1.9.2.8
-		2010/11/30 Updated to 1.9.2.12"
-CURRENT="Updated to 1.9.2.13"
+		2010/11/30 Updated to 1.9.2.12
+		2010/12/12 Updated to 1.9.2.13"
+CURRENT="Updated to $VERSION"
