@@ -25,7 +25,6 @@ build_compile() {
 ### Install
 build_install() {
 
-  echo hi
   make -f client.mk DESTDIR="$INSTALL_ROOT" install || return 1
 
   ln -sf $XUL_DEVEL_DIR/lib/libxul.so $INSTALL_ROOT/usr/local/lib || return 1

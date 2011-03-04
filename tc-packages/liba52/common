@@ -1,0 +1,13 @@
+PACKAGE="liba52"
+VERSION="0.7.4"
+SOURCE="http://liba52.sourceforge.net/files/a52dec-${VERSION}.tar.gz"
+BUILD_DEPENDS=""
+
+DESCRIPTION="A free library for decoding ATSC A/52 streams."
+AUTHOR="Aaron Holtzman, Michel Lespinasse"
+SITE="http://liba52.sourceforge.net/"
+COPYING="GPL-2"
+MAINTAINERS="Arslan S."
+COMMENTS="This extension is PPI compatible."
+CHANGELOG="2009/11/06 First Version 0.7.4"
+CURRENT="Rebuilt with a52dec patch"

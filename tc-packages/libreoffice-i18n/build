@@ -7,6 +7,12 @@
 
 build_download() {
 
+   if [ ! -f $_P_SRC/${PACKAGE}-${VERSION}.stamp ]; then
+        sudo rm -rf $_P_SRC
+        mkdir -p $_P_SRC
+        touch $_P_SRC/${PACKAGE}-${VERSION}.stamp
+   fi
+
    cd $_P_SRC
    for lang in $LANG_PACKS
    do
