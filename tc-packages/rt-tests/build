@@ -1,0 +1,47 @@
+
+############################################################################
+#                                                                          #
+#    package build functions: configure, compile, install, rules, etc.     #
+#                                                                          #
+############################################################################
+
+## compile
+build_compile() {
+
+   make || return 1
+
+   cd src/backfire
+   make -C /lib/modules/${KERNEL}/build M="$PWD" modules
+
+}
+
+## install
+build_install() {
+
+   make DESTDIR="$I_ROOT" install || return 1
+
+   install -m 755 "$P_SRC/make.sh" "$I_ROOT/usr/local/src/backfire/make.sh"
+   install -m 644 src/backfire/Makefile "$I_ROOT/usr/local/src/backfire/Makefile"
+   install -Dm 755 src/backfire/backfire.ko "$I_ROOT/usr/local/lib/modules/${KERNEL}/kernel/extra/backfire.ko"
+
+}
+
+## rules
+build_rules() {
+
+   buildit load || exit 1
+   buildit download || exit 1
+   buildit convert || exit 1
+   buildit unpack || exit 1
+   buildit patch || exit 1
+   buildit compile || exit 1
+   buildit install || exit 1
+   buildit split || exit 1
+   buildit strip || exit 1
+   buildit create || exit 1
+   buildit generate || exit 1
+   buildit check || exit 1
+   buildit package || exit 1
+
+}
+

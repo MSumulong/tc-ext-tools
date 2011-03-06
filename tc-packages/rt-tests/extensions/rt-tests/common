@@ -1,0 +1,2 @@
+COMMENTS="Optional dependencies: rt-tests-backfire-KERNEL.tcz for signal latency tests, and python.tcz for hwlatdetect
+		This extension is PPI compatible."

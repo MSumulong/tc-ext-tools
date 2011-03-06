@@ -6,13 +6,38 @@ texinfo
 coreutils
 cvs
 ncurses
-ncurses-dev"
+ncurses-dev
+automake
+autoconf
+xz
+wget
+bzip2
+gzip
+binutils"
 
 DESCRIPTION="A versatile (cross-)toolchain generator."
 AUTHOR="various"
 SITE="http://ymorin.is-a-geek.org/projects/crosstool"
 COPYING="GPL"
 MAINTAINERS="Arslan S."
-COMMENTS="This extension is PPI compatible."
-CHANGELOG="---"
-CURRENT="First Version"
+COMMENTS="Example usage:
+		$ ct-ng arm-unknown-linux-gnueabi
+		$ ct-ng menuconfig
+		# set 'Local tarballs directory' in 'Paths and misc options' to a persistent location and create that directory with <user> read/write permissions
+		# you may also set destination directory where toolchain will be installed (default is: \${HOME}/x-tools/\${CT_TARGET})
+		# set 'Tuple's alias' in 'Toolchain options' to 'arm-linux'
+		# unset 'Fortran' and 'Java' in 'C compiler'
+		$ ct-ng build
+
+		For testing add the compiler to PATH and compile a hello world program
+		$ export PATH=\${HOME}/x-tools/\${CT_TARGET}/bin:\${PATH}
+		$ arm-linux-gcc -o hello hello.c
+		$ file hello
+
+		For complete list of sample configurations
+		$ ct-ng list-samples
+
+		This extension is PPI compatible."
+CHANGELOG="2011/02/24 First Version 1.9.3"
+CURRENT="Patched to prefer wget over curl"
+

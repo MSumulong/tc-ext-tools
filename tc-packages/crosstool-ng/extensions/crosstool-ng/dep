@@ -13,12 +13,10 @@ bison.tcz
 flex.tcz
 make.tcz
 gcc.tcz
-gfortran.tcz
 texinfo.tcz
 automake.tcz
 libtool.tcz
 libtool-dev.tcz
-curl.tcz
 patch.tcz
 tar.tcz
 gzip.tcz
@@ -29,4 +27,4 @@ sed.tcz
 gperf.tcz
 m4.tcz
 pkg-config.tcz
-
+wget.tcz

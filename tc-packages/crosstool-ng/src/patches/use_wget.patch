@@ -1,0 +1,36 @@
+--- a/configure	2011-01-31 23:11:19.000000000 +0000
++++ b/configure	2011-03-06 16:51:14.919955905 +0000
+@@ -358,7 +358,7 @@
+              ver='\(GNU libtool.*\) (2[[:digit:]]*\.|1\.6[[:digit:]]*\.|1\.5\.[2-9][[:digit:]]+)'   \
+              err="'libtool' 1.5.26 or above was not found"
+ has_or_abort prog=stat
+-has_or_abort prog="aria2c curl wget"
++has_or_abort prog="wget aria2c curl"
+ has_or_abort prog=cvs
+ has_or_abort prog=patch
+ has_or_abort prog=tar
+
+--- a/scripts/functions	2011-01-31 23:11:19.000000000 +0000
++++ b/scripts/functions	2011-03-06 16:59:13.375741448 +0000
+@@ -400,17 +400,17 @@
+ _curl=$(CT_Which curl)
+ 
+ # Wrapper function to call one of, in order of preference:
++#   wget
+ #   aria2
+ #   curl
+-#   wget
+ # Usage: CT_DoGetFile <URL>
+ CT_DoGetFile() {
+-    if   [ -n "${_aria2c}" -a ${CT_DOWNLOAD_MAX_CHUNKS} -gt 1 ]; then
++    if [ -n "${_wget}" ]; then
++        CT_DoGetFileWget "$1"
++    elif   [ -n "${_aria2c}" -a ${CT_DOWNLOAD_MAX_CHUNKS} -gt 1 ]; then
+         CT_DoGetFileAria2 "$1"
+     elif [ -n "${_curl}" ]; then
+         CT_DoGetFileCurl "$1"
+-    elif [ -n "${_wget}" ]; then
+-        CT_DoGetFileWget "$1"
+     else
+         CT_Abort "Could find neither wget nor curl"
+     fi
