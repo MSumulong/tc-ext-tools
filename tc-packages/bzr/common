@@ -1,0 +1,15 @@
+PACKAGE="bzr"
+VERSION="2.3.0"
+SOURCE="http://launchpad.net/bzr/${VERSION%.*}/${VERSION}/+download/bzr-${VERSION}.tar.gz"
+BUILD_DEPENDS="python
+python-dev"
+
+DESCRIPTION="Bazaar is a distributed revision control system."
+AUTHOR="The Bazaar Team"
+SITE="http://bazaar.canonical.com/"
+COPYING="GPL-2"
+MAINTAINERS="Kingdomcome, Arslan S."
+COMMENTS="This extension is PPI compatible."
+CHANGELOG="2010/03/12 First Version 2.1.0
+		2010/10/05 Using 2.6 naming"
+CURRENT="Updated to 2.3.0 and built against python 2.7 by Arslan S."
