@@ -1,0 +1,16 @@
+PACKAGE="compat-wireless"
+_VERSION="2.6.37"
+REL="4"
+VERSION="${_VERSION}-${REL}"
+SOURCE="http://www.orbit-lab.org/kernel/compat-wireless-2.6-stable/v${_VERSION}/compat-wireless-${VERSION}.tar.bz2"
+BUILD_DEPENDS="linux-headers-2.6.33.3-tinycore"
+
+DESCRIPTION="Latest Linux wireless drivers for kernels 2.6.24 and above."
+AUTHOR="---"
+SITE="http://wireless.kernel.org/en/users/Download"
+COPYING="GPL-2"
+MAINTAINERS="Arslan S."
+COMMENTS="This is useful for wireless devices that do not have driver support in current tc kernel version.
+		See http://wireless.kernel.org/en/users/Drivers for details."
+CHANGELOG="---"
+CURRENT="First Version"

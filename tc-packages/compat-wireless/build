@@ -1,0 +1,57 @@
+
+############################################################################
+#                                                                          #
+#    package build functions: configure, compile, install, rules, etc.     #
+#                                                                          #
+############################################################################
+
+## compile
+build_compile() {
+
+   make || return 1
+
+}
+
+## install
+build_install() {
+
+  make INSTALL_MOD_PATH=$I_ROOT install-modules || return 1
+
+  find $I_ROOT -type f -name "*.ko" -exec gzip {} \;
+
+  install -dm755 $I_ROOT/usr/sbin
+  install -dm755 $I_ROOT/lib/udev/rules.d
+  install -dm755 $I_ROOT/usr/lib/compat-wireless
+  install scripts/madwifi-unload	$I_ROOT/usr/sbin/
+  install scripts/athenable		$I_ROOT/usr/sbin/
+  install scripts/b43enable		$I_ROOT/usr/sbin/
+  install scripts/iwl-enable		$I_ROOT/usr/sbin/
+  install scripts/athload		$I_ROOT/usr/sbin/
+  install scripts/b43load		$I_ROOT/usr/sbin/
+  install scripts/iwl-load		$I_ROOT/usr/sbin/
+  install udev/compat_firmware.sh	$I_ROOT/lib/udev/
+  install udev/50-compat_firmware.rules $I_ROOT/lib/udev/rules.d/
+  install scripts/modlib.sh		$I_ROOT/usr/lib/compat-wireless/
+  install scripts/check_depmod  	$I_ROOT/usr/lib/compat-wireless/
+
+}
+
+## rules
+build_rules() {
+
+   buildit load || exit 1
+   buildit download || exit 1
+   buildit convert || exit 1
+   buildit unpack || exit 1
+   buildit patch || exit 1
+   buildit compile || exit 1
+   buildit install || exit 1
+   buildit split || exit 1
+   buildit strip || exit 1
+   buildit create || exit 1
+   buildit generate || exit 1
+   buildit check || exit 1
+   buildit package || exit 1
+
+}
+
