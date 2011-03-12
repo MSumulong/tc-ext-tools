@@ -18,11 +18,13 @@ COMMENTS="LibreOffice is a productivity suite that is compatible with other majo
 		LibreOffice installs the user extensions into ~/.libreoffice directory.
 
 		Important Note: This version of libreoffice is compiled with java support.
-		So you need to add libreoffice.tcz to your onboot.lst and reboot your computer. If you have
-		sun-jre.tcz in your onboot.lst then you don't need to reboot.
-		Warning! Setting PATH and JAVA_HOME in a terminal does not help.
+		So you need to add libreoffice.tcz to your onboot.lst and reboot your computer.
+		If you have sun-jre.tcz in your onboot.lst then you don't need to reboot.
+		Setting PATH and JAVA_HOME in a terminal does not help.
 
 		If you want to use libreoffice ondemand, load sun-jre once and
 		add etc/profile.d/sun-jre.sh to your backup list (/opt/.filetool.lst), and then reboot.
+		If you have mounted sun-jre don't forget to copy sun-jre.sh to root file system.
+		(sudo cp /etc/profile.d/sun-jre.sh /etc/profile.d/)
 
 		This extension is PPI compatible."

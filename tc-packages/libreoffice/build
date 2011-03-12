@@ -5,16 +5,8 @@
 #                                                                          #
 ############################################################################
 
-unset J2REDIR J2SDKDIR JAVA_HOME
-
-if [ -z "${JAVA_HOME}" ]; then
-     [ -e /etc/profile.d/sun-jdk.sh ] && . /etc/profile.d/sun-jdk.sh
-fi
-
-if [ -z "${ANT_HOME}" ]; then
-     [ -e /etc/profile.d/apache-ant.sh ] && . /etc/profile.d/apache-ant.sh
-fi
-
+[ -e /etc/profile.d/sun-jdk.sh ] && . /etc/profile.d/sun-jdk.sh
+[ -e /etc/profile.d/apache-ant.sh ] && . /etc/profile.d/apache-ant.sh
 [ -z "${MOZ_PLUGIN_PATH}" ] && export MOZ_PLUGIN_PATH=/usr/local/lib/mozilla/plugins
 
 ############################################################################ 
@@ -38,7 +30,7 @@ build_configure() {
               --enable-presenter-ui --enable-report-builder --enable-wiki-publisher \
               --disable-gio --disable-mono --disable-kde --without-stlport --with-system-boost \
               --with-gcc-speedup=ccache --with-lang="" --without-git \
-              --with-java --with-junit=/usr/local/share/java/junit.jar --with-ant-home="/usr/local/share/java/apache-ant" \
+              --with-java --with-jdk-home=/usr/local/java-sun --with-junit=/usr/local/share/java/junit.jar --with-ant-home="/usr/local/share/java/apache-ant" \
               --with-openclipart=/usr/local/share/openclipart --with-system-unixodbc-headers --with-sun-templates \
               --with-oooblogger --with-nlpsolver --with-google-docs --with-watch-window --with-ct2n --with-diagram \
               --with-num-cpus=2 --with-drink=coffee || return 1
@@ -120,7 +112,7 @@ build_install() {
   unzip ${S_ROOT}/build/libreoffice-${VERSION}/solver/${_OFFICEUPD}/unxlng*/bin/Diagram.oxt -d ${I_ROOT}/usr/local/lib/libreoffice/share/extensions/diagram || return 1
   unzip ${S_ROOT}/build/libreoffice-${VERSION}/solver/${_OFFICEUPD}/unxlng*/bin/WatchWindow.oxt -d ${I_ROOT}/usr/local/lib/libreoffice/share/extensions/watch-window || return 1
   unzip ${S_ROOT}/build/libreoffice-${VERSION}/solver/${_OFFICEUPD}/unxlng*/bin/gdocs.oxt -d ${I_ROOT}/usr/local/lib/libreoffice/share/extensions/gdocs || return 1
-  unzip ${S_ROOT}/build/libreoffice-${VERSION}/solver/${_OFFICEUPD}/unxlng*/bin/ConvertTextToNumber-1.3.2.oxt -d ${I_ROOT}/usr/local/lib/libreoffice/share/extensions/ct2n || return 1
+  unzip ${S_ROOT}/build/libreoffice-${VERSION}/solver/${_OFFICEUPD}/unxlng*/bin/ConvertTextToNumber.oxt -d ${I_ROOT}/usr/local/lib/libreoffice/share/extensions/ct2n || return 1
   unzip ${S_ROOT}/build/libreoffice-${VERSION}/solver/${_OFFICEUPD}/unxlng*/bin/presentation-minimizer.oxt -d ${I_ROOT}/usr/local/lib/libreoffice/share/extensions/presentation-minimizer || return 1
   unzip ${S_ROOT}/build/libreoffice-${VERSION}/solver/${_OFFICEUPD}/unxlng*/bin/presenter-screen.oxt -d ${I_ROOT}/usr/local/lib/libreoffice/share/extensions/presenter-screen || return 1
   unzip ${S_ROOT}/build/libreoffice-${VERSION}/solver/${_OFFICEUPD}/unxlng*/bin/report-builder.oxt -d ${I_ROOT}/usr/local/lib/libreoffice/share/extensions/report-builder || return 1

@@ -1,5 +1,4 @@
-etc
-usr/local
+.
 x-usr/local/include/libreoffice
 x-usr/local/lib/libreoffice/basis3.3/sdk
 x-usr/local/share/doc/libreoffice/sdk

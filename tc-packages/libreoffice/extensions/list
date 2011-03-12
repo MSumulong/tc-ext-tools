@@ -3081,8 +3081,8 @@ usr/local/lib/libreoffice/basis3.3/share/template/wizard/letter/zh-TW/pri-bottle
 usr/local/lib/libreoffice/basis3.3/share/template/wizard/letter/zh-TW/pri-mail_l.ott
 usr/local/lib/libreoffice/basis3.3/share/template/wizard/letter/zh-TW/pri-marine_l.ott
 usr/local/lib/libreoffice/basis3.3/share/template/wizard/letter/zh-TW/pri-redline_l.ott
-usr/local/lib/libreoffice/basis3.3/share/wordbook/en-US/oracle.dic
 usr/local/lib/libreoffice/basis3.3/share/wordbook/en-US/soffice.dic
+usr/local/lib/libreoffice/basis3.3/share/wordbook/en-US/technical.dic
 usr/local/lib/libreoffice/basis3.3/share/xslt/common/math.xsl
 usr/local/lib/libreoffice/basis3.3/share/xslt/common/measure_conversion.xsl
 usr/local/lib/libreoffice/basis3.3/share/xslt/docbook/DocBookTemplate.stw
@@ -3374,6 +3374,7 @@ usr/local/lib/libreoffice/share/extensions/nlpsolver/locale/NLPSolverCommon_ko.p
 usr/local/lib/libreoffice/share/extensions/nlpsolver/locale/NLPSolverCommon_nb.properties
 usr/local/lib/libreoffice/share/extensions/nlpsolver/locale/NLPSolverCommon_nl.properties
 usr/local/lib/libreoffice/share/extensions/nlpsolver/locale/NLPSolverCommon_pt_BR.properties
+usr/local/lib/libreoffice/share/extensions/nlpsolver/locale/NLPSolverCommon_ru.properties
 usr/local/lib/libreoffice/share/extensions/nlpsolver/locale/NLPSolverCommon_sl.properties
 usr/local/lib/libreoffice/share/extensions/nlpsolver/locale/NLPSolverCommon_zh_CN.properties
 usr/local/lib/libreoffice/share/extensions/nlpsolver/locale/NLPSolverCommon_zh_TW.properties
@@ -3389,12 +3390,14 @@ usr/local/lib/libreoffice/share/extensions/nlpsolver/locale/NLPSolverStatusDialo
 usr/local/lib/libreoffice/share/extensions/nlpsolver/locale/NLPSolverStatusDialog_fi.properties
 usr/local/lib/libreoffice/share/extensions/nlpsolver/locale/NLPSolverStatusDialog_fr.properties
 usr/local/lib/libreoffice/share/extensions/nlpsolver/locale/NLPSolverStatusDialog_hu.properties
+usr/local/lib/libreoffice/share/extensions/nlpsolver/locale/NLPSolverStatusDialog_is.properties
 usr/local/lib/libreoffice/share/extensions/nlpsolver/locale/NLPSolverStatusDialog_it.properties
 usr/local/lib/libreoffice/share/extensions/nlpsolver/locale/NLPSolverStatusDialog_ja.properties
 usr/local/lib/libreoffice/share/extensions/nlpsolver/locale/NLPSolverStatusDialog_ko.properties
 usr/local/lib/libreoffice/share/extensions/nlpsolver/locale/NLPSolverStatusDialog_nb.properties
 usr/local/lib/libreoffice/share/extensions/nlpsolver/locale/NLPSolverStatusDialog_nl.properties
 usr/local/lib/libreoffice/share/extensions/nlpsolver/locale/NLPSolverStatusDialog_pt_BR.properties
+usr/local/lib/libreoffice/share/extensions/nlpsolver/locale/NLPSolverStatusDialog_ru.properties
 usr/local/lib/libreoffice/share/extensions/nlpsolver/locale/NLPSolverStatusDialog_sl.properties
 usr/local/lib/libreoffice/share/extensions/nlpsolver/locale/NLPSolverStatusDialog_zh_CN.properties
 usr/local/lib/libreoffice/share/extensions/nlpsolver/locale/NLPSolverStatusDialog_zh_TW.properties

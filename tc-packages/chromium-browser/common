@@ -1,5 +1,5 @@
 PACKAGE="chromium-browser"
-VERSION="9.0.597.107"
+VERSION="10.0.648.127"
 SOURCE="http://build.chromium.org/buildbot/official/chromium-${VERSION}.tar.bz2"
 BUILD_DEPENDS="python
 python-dev
@@ -60,6 +60,7 @@ CHANGELOG="2009/12/17 First Version
 		2010/12/23 Updated to 8.0.552.231
 		2011/01/17 Updated to 8.0.552.237
 		2011/02/06 Updated to 9.0.597.84
-		2011/02/20 Updated to 9.0.597.94"
+		2011/02/20 Updated to 9.0.597.94
+		2011/03/02 Updated to 9.0.597.107"
 CURRENT="Updated to $VERSION"
 
