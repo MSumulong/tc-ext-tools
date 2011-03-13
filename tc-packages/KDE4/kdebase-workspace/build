@@ -34,6 +34,8 @@ build_install() {
   install -m 644 "$PACKAGE_SRC/kde-np.pam" "$INSTALL_ROOT/usr/local/etc/pam.d/kde-np"
   install -m 644 "$PACKAGE_SRC/kscreensaver.pam" "$INSTALL_ROOT/usr/local/etc/pam.d/kscreensaver"
 
+  install -Dm 755 "$PACKAGE_SRC/kdmrc" "$INSTALL_ROOT/usr/local/share/config/kdm/kdmrc"
+
 }
 
 build_rules() {

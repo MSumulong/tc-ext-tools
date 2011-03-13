@@ -1,0 +1,15 @@
+PACKAGE="iw"
+VERSION="0.9.22"
+SOURCE="http://wireless.kernel.org/download/iw/iw-${VERSION}.tar.bz2"
+BUILD_DEPENDS="libnl1
+libnl1-dev
+linux-headers-KERNEL"
+
+DESCRIPTION="nl80211 based CLI configuration utility for wireless devices."
+AUTHOR="Johannes Berg, Luis R. Rodriguez, Mike Kershaw, Andy Lutomirski"
+SITE="http://wireless.kernel.org/en/users/Documentation/iw"
+COPYING="GPL"
+MAINTAINERS="Arslan S."
+COMMENTS="This extension is PPI compatible."
+CHANGELOG="---"
+CURRENT="First Version"
