@@ -285,7 +285,7 @@ if [ -f "$PACKAGE_COMMON" ]; then
      INSTALL_ROOT="$PACKAGE_INSTALL_ROOT"
      PREFIX=/usr/local
 
-     PACKAGE_BUILD_DEPENDS="$TCEXTTOOLS_DEPENDS $BUILD_DEPENDS"
+     PACKAGE_BUILD_DEPENDS=$(echo "$TCEXTTOOLS_DEPENDS $BUILD_DEPENDS" | sed -e "s/KERNEL/${KERNEL}/")
 
      set_source
      set_extensions
