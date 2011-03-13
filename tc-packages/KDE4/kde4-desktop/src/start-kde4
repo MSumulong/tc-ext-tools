@@ -10,8 +10,8 @@
 STARTUP="startkde"
 CK_LAUNCH_SESSION=/usr/local/bin/ck-launch-session
 
-if [ -e /usr/local/etc/conf.d/kde4-desktop.conf ] ; then
-     . /usr/local/etc/conf.d/kde4-desktop.conf
+if [ -e /usr/local/etc/default/kde4-desktop ] ; then
+     . /usr/local/etc/default/kde4-desktop
 fi
 
 if [ -x "$CK_LAUNCH_SESSION" -a -z "$XDG_SESSION_COOKIE" ]; then

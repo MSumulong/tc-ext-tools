@@ -50,14 +50,15 @@ COMMENTS="Minimum System Requirements
 		If you wish to reboot or poweroff your pc with KDM "Restart" & "Shutdown" then you have to backup your data manually (filetool.sh backup) before exiting.
 		Use the Exit desktop widget If you want to exit with backup.
 
-		Optional KDE packages to extend KDE desktop: network-manager-kde, kdeartwork, kdemultimedia, kdepim, kdenetwork, kdeplasma-addons, kdegames, kdetoys, kdeedu, kdeaccessibility ...
-		KDE Applications: k3b, kdesvn, ktorrent, koffice, amarok ...
-		Other extensions that KDE can benefit from: samba3, avahi, gstreamer plugins, acpid, wicd, cpufreqd ...
+		Optional KDE packages to extend KDE desktop: network-manager-kde, kdeartwork, kdemultimedia, kdepim, kdenetwork, kdeplasma-addons, kdegames, kdetoys, kdeedu, ...
+		KDE Applications: k3b, kdesvn, ktorrent, ...
+		Other : samba3, avahi, gstreamer plugins, acpid, wicd, cpufreqd ...
 		
 		ALSA is recommended for sound.
 
 		This extension is PPI compatible."
 CHANGELOG="2010/07/21 First Version 4.4.5
 		2010/07/27 Updated
-		2010/10/31 Updated to 4.5.2"
-CURRENT="Updated to $VERSION"
+		2010/10/31 Updated to 4.5.2
+		2011/01/19 Updated to 4.5.5"
+CURRENT="Fixed kdmrc"

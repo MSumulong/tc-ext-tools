@@ -1,12 +1,13 @@
 #!/bin/sh
 
-main() {
+this_main() {
 
-[ -x "$(which update-mime-database)" ] && update-mime-database /usr/local/share/mime
-[ -x "$(which update-desktop-database)" ] && update-desktop-database
-[ -x "$(which gtk-update-icon-cache)" ] && gtk-update-icon-cache -q -f -t /usr/local/share/icons/hicolor
+[ $(which update-mime-database) ] && update-mime-database /usr/local/share/mime
+[ $(which update-desktop-database) ] && update-desktop-database
+[ $(which gtk-update-icon-cache) ] && gtk-update-icon-cache -q -f -t /usr/local/share/icons/hicolor
 
 [ -L /usr/local/share/config/kdm/kdmrc ] && cp -Lf /usr/local/share/config/kdm/kdmrc /usr/local/share/config/kdm/kdmrc
+[ -d /var/lib/kdm ] || mkdir -p /var/lib/kdm
 
 /usr/local/etc/init.d/dbus status
 if [ "$?" -gt 0 ]; then
@@ -24,5 +25,5 @@ fi
 
 }
 
-main > /dev/null 2>&1
+this_main > /dev/null 2>&1
 

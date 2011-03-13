@@ -64,5 +64,6 @@ COPYING="GPL/LGPL/FDL"
 MAINTAINERS="Arslan S."
 COMMENTS="This extension is PPI compatible."
 CHANGELOG="2010/07/20 First Version 4.4.5
-		2010/11/02 Updated to 4.5.2"
-CURRENT="Updated to $VERSION"
+		2010/11/02 Updated to 4.5.2
+		2011/01/14 Updated to 4.5.5"
+CURRENT="Fixed kdmrc"

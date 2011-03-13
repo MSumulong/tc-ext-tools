@@ -1,4 +1,4 @@
-usr/local/etc/conf.d/kde4-desktop.conf
+usr/local/etc/default/kde4-desktop
 usr/local/sbin/kde4-desktop-setup
 usr/local/sbin/start-kde4
 usr/local/share/applications/exittc.desktop
