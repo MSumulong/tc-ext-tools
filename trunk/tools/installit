@@ -34,7 +34,7 @@ else
      exit 1
 fi
 
-if [ "$SOURCE_TYPE" = "none" ]; then
+if [ "$PACKAGE_SOURCE_TYPE" = "none" ]; then
      mkdir -p "$PACKAGE_SOURCE_TOPDIR"
 fi
 
