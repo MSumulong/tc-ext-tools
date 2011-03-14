@@ -5,7 +5,9 @@
 # Configure
 build_configure() {
 
-  ./configure --prefix=/usr/local --libexecdir=/usr/local/lib/dhcpcd --dbdir=/var/lib/dhcpcd || return 1
+  ./configure --prefix=/usr/local \
+      --libexecdir=/usr/local/lib/dhcpcd \
+      --dbdir=/var/lib/dhcpcd || return 1
 
 }
 

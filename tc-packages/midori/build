@@ -7,7 +7,7 @@ build_configure() {
 
   ./configure --prefix=/usr/local --enable-addons --disable-hildon --disable-tests \
       --enable-unique --enable-libnotify --disable-libidn --enable-vala \
-      --enable-nls --enable-userdocs --enable-docs --enable-apidocs || return 1
+      --enable-nls --enable-docs --enable-apidocs || return 1
 
 }
 ##
@@ -31,11 +31,11 @@ build_install() {
 ### Rules
 build_rules() {
 
+  buildit load || exit 1
   buildit download || exit 1
   buildit convert || exit 1
   buildit unpack || exit 1
   buildit patch || exit 1
-  buildit load || exit 1
   buildit configure || exit 1
   buildit compile || exit 1
   buildit install || exit 1

@@ -1,5 +1,5 @@
 PACKAGE="qbittorrent"
-VERSION="2.6.5"
+VERSION="2.6.9"
 SOURCE="http://downloads.sourceforge.net/sourceforge/qbittorrent/${PACKAGE}-${VERSION}.tar.gz"
 BUILD_DEPENDS="glib2
 glib2-dev
@@ -35,5 +35,6 @@ CHANGELOG="2009/12/08 First Version 1.5.6
 		2010/07/09 Updated to 2.2.10
 		2010/10/09 Updated to 2.4.4
 		2010/11/09 Updated to 2.4.9
-		2010/12/15 Updated to 2.5.1"
+		2010/12/15 Updated to 2.5.1
+		2011/02/03 Updated to 2.6.5"
 CURRENT="Updated to $VERSION"
