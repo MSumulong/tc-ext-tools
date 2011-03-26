@@ -17,7 +17,6 @@ usr/local/include/matroska/KaxInfoData.h
 usr/local/include/matroska/KaxSeekHead.h
 usr/local/include/matroska/KaxSegment.h
 usr/local/include/matroska/KaxTag.h
-usr/local/include/matroska/KaxTagMulti.h
 usr/local/include/matroska/KaxTags.h
 usr/local/include/matroska/KaxTrackAudio.h
 usr/local/include/matroska/KaxTrackEntryData.h
@@ -29,4 +28,4 @@ usr/local/include/matroska/c/libmatroska.h
 usr/local/include/matroska/c/libmatroska_t.h
 usr/local/lib/libmatroska.a
 usr/local/lib/libmatroska.so
-usr/local/lib/libmatroska.so.2
+usr/local/lib/libmatroska.so.3

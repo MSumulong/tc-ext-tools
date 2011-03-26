@@ -26,4 +26,4 @@ usr/local/include/ebml/StdIOCallback.h
 usr/local/include/ebml/c/libebml_t.h
 usr/local/lib/libebml.a
 usr/local/lib/libebml.so
-usr/local/lib/libebml.so.2
+usr/local/lib/libebml.so.3
