@@ -1,0 +1,28 @@
+PACKAGE="ario"
+VERSION="1.5"
+SOURCE="http://downloads.sourceforge.net/sourceforge/ario-player/ario-${VERSION}.tar.gz"
+BUILD_DEPENDS="gtk2
+gtk2-dev
+libmpdclient
+libmpdclient-dev
+dbus-glib
+dbus-glib-dev
+libsoup
+libsoup-dev
+libunique
+libunique-dev
+libnotify
+libnotify-dev
+curl
+curl-dev
+taglib
+taglib-dev"
+
+DESCRIPTION="Ario is a GTK2 client for MPD (Music player daemon)."
+AUTHOR="Marc Pavot"
+SITE="http://ario-player.sourceforge.net/"
+COPYING="GPL-2"
+MAINTAINERS="Arslan S."
+COMMENTS="This extension is PPI compatible."
+CHANGELOG="---"
+CURRENT="First Version"
