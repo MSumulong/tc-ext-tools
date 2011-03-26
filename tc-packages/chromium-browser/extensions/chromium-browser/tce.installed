@@ -8,7 +8,7 @@ FLASHPLAYER="/usr/local/lib/mozilla/plugins/libflashplayer.so"
 [ -d "${CHROMIUM_PLUGINS}" ] || mkdir -p "${CHROMIUM_PLUGINS}"
 ln -sf "${FLASHPLAYER}" "${CHROMIUM_PLUGINS}"
 
-[ -x "$(which gtk-update-icon-cache)" ] && gtk-update-icon-cache -q -f -t /usr/local/share/icons/hicolor
+[ $(which gtk-update-icon-cache) ] && gtk-update-icon-cache -q -f -t /usr/local/share/icons/hicolor
 
 [ -d "/tmp/tcloop/${CHROMIUM}" ] && cp -a "/tmp/tcloop/${CHROMIUM}/usr/local/${CHROMIUM}/${CHROMIUM}-sandbox" "/usr/local/${CHROMIUM}/${CHROMIUM}-sandbox"
 

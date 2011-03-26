@@ -217,8 +217,6 @@ usr/local/lib/vlc/plugins/audio_filter/libaudio_format_plugin.la
 usr/local/lib/vlc/plugins/audio_filter/libaudio_format_plugin.so
 usr/local/lib/vlc/plugins/audio_filter/libaudiobargraph_a_plugin.la
 usr/local/lib/vlc/plugins/audio_filter/libaudiobargraph_a_plugin.so
-usr/local/lib/vlc/plugins/audio_filter/libbandlimited_resampler_plugin.la
-usr/local/lib/vlc/plugins/audio_filter/libbandlimited_resampler_plugin.so
 usr/local/lib/vlc/plugins/audio_filter/libchorus_flanger_plugin.la
 usr/local/lib/vlc/plugins/audio_filter/libchorus_flanger_plugin.so
 usr/local/lib/vlc/plugins/audio_filter/libconverter_fixed_plugin.la
@@ -739,6 +737,7 @@ usr/local/share/locale/ast/LC_MESSAGES/vlc.mo
 usr/local/share/locale/be/LC_MESSAGES/vlc.mo
 usr/local/share/locale/bg/LC_MESSAGES/vlc.mo
 usr/local/share/locale/bn/LC_MESSAGES/vlc.mo
+usr/local/share/locale/br/LC_MESSAGES/vlc.mo
 usr/local/share/locale/ca/LC_MESSAGES/vlc.mo
 usr/local/share/locale/ckb/LC_MESSAGES/vlc.mo
 usr/local/share/locale/co/LC_MESSAGES/vlc.mo
@@ -762,6 +761,7 @@ usr/local/share/locale/hr/LC_MESSAGES/vlc.mo
 usr/local/share/locale/hu/LC_MESSAGES/vlc.mo
 usr/local/share/locale/hy/LC_MESSAGES/vlc.mo
 usr/local/share/locale/id/LC_MESSAGES/vlc.mo
+usr/local/share/locale/is/LC_MESSAGES/vlc.mo
 usr/local/share/locale/it/LC_MESSAGES/vlc.mo
 usr/local/share/locale/ja/LC_MESSAGES/vlc.mo
 usr/local/share/locale/ka/LC_MESSAGES/vlc.mo

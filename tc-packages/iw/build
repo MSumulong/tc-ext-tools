@@ -17,6 +17,8 @@ build_install() {
 
    make PREFIX=/usr/local DESTDIR="$I_ROOT" install || return 1
 
+   install -Dm644 COPYING "${I_ROOT}/usr/local/share/licenses/${PACKAGE}/COPYING"
+
 }
 
 ## rules

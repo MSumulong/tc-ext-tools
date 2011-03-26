@@ -1,2 +1,3 @@
 usr/local/sbin/iw
+usr/local/share/licenses/iw/COPYING
 usr/local/share/man/man8/iw.8.gz
