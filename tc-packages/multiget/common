@@ -1,0 +1,18 @@
+PACKAGE="multiget"
+VERSION="svn"
+SOURCE="svn::https://multiget.svn.sourceforge.net/svnroot/multiget"
+BUILD_DEPENDS="gtk2
+gtk2-dev
+wxgtk
+wxgtk-dev
+libglade
+libglade-dev"
+
+DESCRIPTION="MultiGet is an easy-to-use GUI file downloader."
+AUTHOR="LiuBin, Wing Sun"
+SITE="http://multiget.sourceforge.net/"
+COPYING="GPL-2"
+MAINTAINERS="Arslan S."
+COMMENTS="This extension is PPI compatible."
+CHANGELOG="---"
+CURRENT="First Version"
