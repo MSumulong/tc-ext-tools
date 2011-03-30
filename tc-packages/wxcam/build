@@ -27,7 +27,7 @@ build_install() {
    make DESTDIR="$INSTALL_ROOT" install || return 1
 
    mv "$INSTALL_ROOT"/usr/share/* "$INSTALL_ROOT"/usr/local/share || return 1
-
+   rm -rf "$INSTALL_ROOT/usr/local/doc"
 }
 
 # Rules
