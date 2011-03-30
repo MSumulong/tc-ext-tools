@@ -1,0 +1,38 @@
+
+############################################################################
+#                                                                          #
+#    package build functions: configure, compile, install, rules, etc.     #
+#                                                                          #
+############################################################################
+
+## install
+build_install() {
+
+  install -d ${I_ROOT}/usr/local/share/vuze
+  cp -r * ${I_ROOT}/usr/local/share/vuze || return 1
+
+  install -Dm755 vuze ${I_ROOT}/usr/local/bin/vuze
+  sed -i 's%#PROGRAM_DIR="/home/username/apps/azureus"%PROGRAM_DIR="/usr/local/share/vuze"%' ${I_ROOT}/usr/local/bin/vuze || return 1
+
+  install -Dm644 vuze.png ${I_ROOT}/usr/local/share/pixmaps/vuze.png || return 1
+  install -Dm644 vuze.desktop  ${I_ROOT}/usr/local/share/applications/vuze.desktop || return 1
+
+}
+
+## rules
+build_rules() {
+
+   buildit load || exit 1
+   buildit download || exit 1
+   buildit convert || exit 1
+   buildit unpack || exit 1
+   buildit install || exit 1
+   buildit split || exit 1
+   buildit strip || exit 1
+   buildit create || exit 1
+   buildit generate || exit 1
+   buildit check || exit 1
+   buildit package || exit 1
+
+}
+

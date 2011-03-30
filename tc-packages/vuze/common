@@ -1,0 +1,13 @@
+PACKAGE="vuze"
+VERSION="4.6.0.2"
+SOURCE="http://downloads.sourceforge.net/project/azureus/vuze/Vuze_${VERSION//./}/Vuze_${VERSION//./}_linux.tar.bz2"
+BUILD_DEPENDS=""
+
+DESCRIPTION="A BitTorrent client with GUI, written in Java."
+AUTHOR="Vuze, Inc"
+SITE="http://www.vuze.com/"
+COPYING="GPL(program)/Proprietary(content)"
+MAINTAINERS="Arslan S."
+COMMENTS="This extension is PPI compatible."
+CHANGELOG="---"
+CURRENT="First Version"
