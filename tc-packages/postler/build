@@ -1,0 +1,49 @@
+
+############################################################################
+#                                                                          #
+#    package build functions: configure, compile, install, rules, etc.     #
+#                                                                          #
+############################################################################
+
+## configure
+build_configure() {
+
+   ./waf configure --prefix=/usr/local \
+       --disable-libindicate || return 1
+
+}
+
+## compile
+build_compile() {
+
+   ./waf build || return 1
+
+}
+
+## install
+build_install() {
+
+   ./waf install --destdir="$I_ROOT" || return 1
+
+}
+
+## rules
+build_rules() {
+
+   buildit load || exit 1
+   buildit download || exit 1
+   buildit convert || exit 1
+   buildit unpack || exit 1
+   buildit patch || exit 1
+   buildit configure || exit 1
+   buildit compile || exit 1
+   buildit install || exit 1
+   buildit split || exit 1
+   buildit strip || exit 1
+   buildit create || exit 1
+   buildit generate || exit 1
+   buildit check || exit 1
+   buildit package || exit 1
+
+}
+

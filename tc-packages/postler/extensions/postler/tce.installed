@@ -1,0 +1,4 @@
+#!/bin/sh
+
+[ "$(which gtk-update-icon-cache)" ] && gtk-update-icon-cache -q -f -t /usr/local/share/icons/hicolor
+

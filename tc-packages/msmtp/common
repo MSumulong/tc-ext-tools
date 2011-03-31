@@ -1,0 +1,16 @@
+PACKAGE="msmtp"
+VERSION="1.4.23"
+SOURCE="http://download.sourceforge.net/sourceforge/msmtp/msmtp-${VERSION}.tar.bz2"
+BUILD_DEPENDS="gnutls
+gnutls-dev
+libidn
+libidn-dev"
+
+DESCRIPTION="A mini SMTP client."
+AUTHOR="---"
+SITE="http://msmtp.sourceforge.net/"
+COPYING="GPL-3"
+MAINTAINERS="Arslan S."
+COMMENTS="This extension is PPI compatible."
+CHANGELOG="---"
+CURRENT="First Version"

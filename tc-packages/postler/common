@@ -1,0 +1,32 @@
+PACKAGE="postler"
+VERSION="0.1.1"
+SOURCE="http://mirror.space.kz/xfce/src/apps/postler/0.1/postler-${VERSION}.tar.bz2"
+BUILD_DEPENDS="#vala
+python
+gtk2
+gtk2-dev
+webkit
+webkit-dev
+libunique
+libunique-dev
+libnotify
+libnotify-dev
+libcanberra
+libcanberra-dev
+openssl-0.9.8
+openssl-0.9.8-dev
+bsddb
+bsddb-dev
+librsvg
+librsvg-dev
+msmtp
+lynx"
+
+DESCRIPTION="A simple desktop mail client built in vala."
+AUTHOR="Christian Dywan"
+SITE="https://launchpad.net/postler/"
+COPYING="GPL-2/LGPL-2.1"
+MAINTAINERS="Arslan S."
+COMMENTS="This extension is PPI compatible."
+CHANGELOG="---"
+CURRENT="First Version"

@@ -1,0 +1,5 @@
+usr/local/bin/msmtp
+usr/local/share/info/msmtp.info
+usr/local/share/locale/de/LC_MESSAGES/msmtp.mo
+usr/local/share/locale/pt_BR/LC_MESSAGES/msmtp.mo
+usr/local/share/man/man1/msmtp.1
