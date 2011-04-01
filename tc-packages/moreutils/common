@@ -1,0 +1,13 @@
+PACKAGE="moreutils"
+VERSION="0.44"
+SOURCE="http://ftp.de.debian.org/debian/pool/main/m/moreutils/moreutils_${VERSION}.tar.gz"
+BUILD_DEPENDS=""
+
+DESCRIPTION="A growing collection of the unix tools that nobody thought to write long ago when unix was young."
+AUTHOR="Joey Hess"
+SITE="http://kitenet.net/~joey/code/moreutils/"
+COPYING="GPL-2"
+MAINTAINERS="Arslan S."
+COMMENTS="This extension is PPI compatible."
+CHANGELOG="---"
+CURRENT="First Version"
