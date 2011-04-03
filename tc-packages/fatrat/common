@@ -1,0 +1,24 @@
+PACKAGE="fatrat"
+VERSION="1.1.3"
+SOURCE="http://www.dolezel.info/download/data/fatrat/fatrat-${VERSION}.tar.gz"
+BUILD_DEPENDS="cmake
+qt-4.x-base
+qt-4.x-dbus
+qt-4.x-xml
+qt-4.x-extended
+qt-4.x-webkit
+qt-4.x-script
+qt-4.x-dev
+libtorrent-rasterbar
+libtorrent-rasterbar-dev
+curl
+curl-dev"
+
+DESCRIPTION="An open source download manager for Linux."
+AUTHOR="Lubos Dolezel"
+SITE="http://fatrat.dolezel.info/"
+COPYING="GPL-2"
+MAINTAINERS="Arslan S."
+COMMENTS="This extension is PPI compatible."
+CHANGELOG="---"
+CURRENT="First Version"
