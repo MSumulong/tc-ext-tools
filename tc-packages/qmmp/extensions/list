@@ -7,6 +7,7 @@ usr/local/include/qmmp/decoderfactory.h
 usr/local/include/qmmp/effect.h
 usr/local/include/qmmp/effectfactory.h
 usr/local/include/qmmp/enginefactory.h
+usr/local/include/qmmp/eqsettings.h
 usr/local/include/qmmp/fileinfo.h
 usr/local/include/qmmp/inputsource.h
 usr/local/include/qmmp/inputsourcefactory.h
@@ -23,7 +24,6 @@ usr/local/include/qmmp/tagmodel.h
 usr/local/include/qmmp/visual.h
 usr/local/include/qmmp/visualfactory.h
 usr/local/include/qmmp/volumecontrol.h
-usr/local/include/qmmpui/abstractplaylistitem.h
 usr/local/include/qmmpui/commandlinemanager.h
 usr/local/include/qmmpui/commandlineoption.h
 usr/local/include/qmmpui/detailsdialog.h
@@ -42,14 +42,17 @@ usr/local/include/qmmpui/playlistparser.h
 usr/local/include/qmmpui/templateeditor.h
 usr/local/lib/libqmmp.so
 usr/local/lib/libqmmp.so.0
-usr/local/lib/libqmmp.so.0.4.3
+usr/local/lib/libqmmp.so.0.5.0
 usr/local/lib/libqmmpui.so
 usr/local/lib/libqmmpui.so.0
-usr/local/lib/libqmmpui.so.0.4.3
+usr/local/lib/libqmmpui.so.0.5.0
 usr/local/lib/qmmp/CommandLineOptions/libincdecvolumeoption.so
 usr/local/lib/qmmp/CommandLineOptions/libseekoption.so
+usr/local/lib/qmmp/CommandLineOptions/libstatusoption.so
+usr/local/lib/qmmp/Effect/libcrossfade.so
 usr/local/lib/qmmp/Effect/libladspa.so
 usr/local/lib/qmmp/Effect/libsrconverter.so
+usr/local/lib/qmmp/Effect/libstereo.so
 usr/local/lib/qmmp/Engines/libmplayer.so
 usr/local/lib/qmmp/FileDialogs/libqmmpfiledialog.so
 usr/local/lib/qmmp/General/libcovermanager.so
@@ -62,6 +65,7 @@ usr/local/lib/qmmp/General/libmpris.so
 usr/local/lib/qmmp/General/libnotifier.so
 usr/local/lib/qmmp/General/libscrobbler.so
 usr/local/lib/qmmp/General/libstatusicon.so
+usr/local/lib/qmmp/General/libudisks.so
 usr/local/lib/qmmp/Input/libaac.so
 usr/local/lib/qmmp/Input/libcdaudio.so
 usr/local/lib/qmmp/Input/libcue.so

@@ -1,5 +1,5 @@
 PACKAGE="qmmp"
-VERSION="0.4.3"
+VERSION="0.5.0"
 SOURCE="http://qmmp.ylsoftware.com/files/qmmp-${VERSION}.tar.bz2"
 BUILD_DEPENDS="cmake
 libmpcdec
@@ -16,6 +16,8 @@ qt-4.x-opengl
 qt-4.x-dev
 Xorg-7.5-lib
 Xorg-7.5-dev
+libxcb
+libxcb-dev
 libogg
 libogg-dev
 libvorbis
@@ -61,5 +63,6 @@ CHANGELOG="2010/02/07 Original 0.3.2
 		2010/04/06 Updated to 0.3.4-svn-r1660
 		2010/05/31 Updated to 0.4.0
 		2010/08/26 Updated to 0.4.1
-		2010/09/05 Updated to 0.4.2"
-CURRENT="Updated to 0.4.3"
+		2010/09/05 Updated to 0.4.2
+		2010/11/06 Updated to 0.4.3"
+CURRENT="Updated to $VERSION"
