@@ -5,8 +5,8 @@
 # Configure
 build_configure() {
 
+   cd trunk/browser
    echo "QMAKE_CXXFLAGS_RELEASE += $CXXFLAGS" >> dooble.pro
-
    qmake -o Makefile dooble.pro || return 1
 
 }
@@ -14,6 +14,7 @@ build_configure() {
 # Compile
 build_compile() {
 
+   cd trunk/browser
    make || return 1
 
 }
@@ -21,11 +22,15 @@ build_compile() {
 # Install
 build_install() {
 
+   cd trunk/browser
+
    install -D -m 755 "$PACKAGE_SRC/dooble.sh" "$INSTALL_ROOT/usr/local/bin/dooble"
    install -D -m 755 Dooble "$INSTALL_ROOT/usr/local/dooble/Dooble"
-mkdir -p $INSTALL_ROOT/usr/local/Dooble
-mkdir -p $INSTALL_ROOT/usr/local/share/pixmaps
-mkdir -p $INSTALL_ROOT/usr/local/share/applications
+   cp -r Icons $INSTALL_ROOT/usr/local/dooble/
+   cp -r Images $INSTALL_ROOT/usr/local/dooble/
+   cp -r Tab $INSTALL_ROOT/usr/local/dooble/
+   mkdir -p $INSTALL_ROOT/usr/local/share/pixmaps
+   mkdir -p $INSTALL_ROOT/usr/local/share/applications
 
 }
 

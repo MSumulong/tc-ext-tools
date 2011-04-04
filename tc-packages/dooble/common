@@ -1,8 +1,9 @@
 PACKAGE="dooble"
-VERSION="1.14"
-SOURCE="http://sourceforge.net/projects/dooble/files/Version%20${VERSION}/Dooble.d-${VERSION}.tar.gz/download"
+VERSION="1.20.1"
+SOURCE="http://sourceforge.net/projects/dooble/files/Version%20${VERSION}/Dooble.d.tar.gz"
 BUILD_DEPENDS="qt-4.x-base
 qt-4.x-webkit
+qt-4.x-dbus
 qt-4.x-sql
 qt-4.x-dev
 sharutils
