@@ -1,5 +1,5 @@
 PACKAGE="clementine"
-VERSION="0.6"
+VERSION="0.7.1"
 SOURCE="http://clementine-player.googlecode.com/files/clementine-${VERSION}.tar.gz"
 BUILD_DEPENDS="cmake
 boost
@@ -33,5 +33,5 @@ SITE="http://code.google.com/p/clementine-player/"
 COPYING="GPL-3"
 MAINTAINERS="Arslan S."
 COMMENTS="This extension is PPI compatible."
-CHANGELOG="---"
-CURRENT="First Version"
+CHANGELOG="2011/01/25 First Version 0.6"
+CURRENT="Updated to $VERSION"
