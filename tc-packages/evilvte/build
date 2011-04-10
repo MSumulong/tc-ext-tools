@@ -5,7 +5,8 @@
 # Configure
 build_configure() {
 
-  ./configure --prefix=/usr/local || return 1
+  ./configure --prefix=/usr/local \
+     --config=$P_SRC/config.h || return 1
 
 }
 
