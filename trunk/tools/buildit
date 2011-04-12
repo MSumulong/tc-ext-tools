@@ -36,7 +36,8 @@ fi
 
 print_usage(){
 
-   echo -e "${TCEXTTOOLS_ERROR_COLOR}${THIS} usage:\n\t${TCEXTTOOLS_MESSAGE_COLOR}${THIS} (clean|clear)|load|download|convert|unpack|patch|configure|compile|install|split|strip|create|check|generate|package|encrypt|print|custom|help${NORMAL}"
+   echo -e "${TCEXTTOOLS_ERROR_COLOR}${THIS} usage:"
+   echo -e "\n\t${TCEXTTOOLS_MESSAGE_COLOR}${THIS} (clean|clear)|load|download|convert|unpack|patch|configure|compile|install|split|strip|create|check|generate|package|encrypt|print|custom|help${NORMAL}"
 
 }
 
@@ -45,47 +46,47 @@ clean_it() {
    print_it "Cleaning the package $PACKAGE ... \c"
    cleanit > "$PACKAGE_MESSAGE_LOG" 2>&1
    if [ "$?" -gt 0 ]; then
-        print_it error "failed!"
-        print_it warning "For details: buildit print error"
+        print_it --error "failed!"
+        print_it --warning "For details: buildit print error"
         exit 1
    fi
-   print_it hilight "successful!"
+   print_it --hilight "successful!"
 
 }
 
 download_it() {
 
    if [ -f "$PACKAGE_SOURCE" ]; then
-        print_it warning "The package $PACKAGE source is already downloaded. Run downloadit to force download."
+        print_it --warning "The package $PACKAGE source is already downloaded."
         exit 0
    fi
 
    print_it "Downloading the package $PACKAGE source ... \c"
    downloadit > "$PACKAGE_MESSAGE_LOG" 2>&1
    if [ "$?" -gt 0 ]; then
-        print_it error "failed!"
-        print_it warning "For details: buildit print error"
+        print_it --error "failed!"
+        print_it --warning "For details: buildit print error"
         exit 1
    fi
-   print_it hilight "successful!"
+   print_it --hilight "successful!"
 
 }
 
 convert_it() {
 
    if [ -f "$PACKAGE_SOURCE_CONVERTED" ]; then
-        print_it warning "The package $PACKAGE source is already converted. Run convertit to force convert"
+        print_it --warning "The package $PACKAGE source is already converted."
         exit 0
    fi
 
    print_it "Converting the package $PACKAGE source ... \c"
    convertit > "$PACKAGE_MESSAGE_LOG" 2>&1
    if [ "$?" -gt 0 ]; then
-        print_it error "failed!"
-        print_it warning "For details: buildit print error"
+        print_it --error "failed!"
+        print_it --warning "For details: buildit print error"
         exit 1
    fi
-   print_it hilight "successful!"
+   print_it --hilight "successful!"
 
 }
 
@@ -94,11 +95,11 @@ unpack_it() {
    print_it "Unpacking the package $PACKAGE source ... \c"
    unpackit > "$PACKAGE_MESSAGE_LOG" 2>&1
    if [ "$?" -gt 0 ]; then
-        print_it error "failed!"
-        print_it warning "For details: buildit print error"
+        print_it --error "failed!"
+        print_it --warning "For details: buildit print error"
         exit 1
    fi
-   print_it hilight "successful!"
+   print_it --hilight "successful!"
 
 }
 
@@ -107,11 +108,11 @@ load_it() {
    print_it "Loading the package $PACKAGE build dependencies ... \c"
    loadit > "$PACKAGE_MESSAGE_LOG" 2>&1
    if [ "$?" -gt 0 ]; then
-        print_it error "failed!"
-        print_it warning "For details: buildit print error"
+        print_it --error "failed!"
+        print_it --warning "For details: buildit print error"
         exit 1
    fi
-   print_it hilight  "successful!"
+   print_it --hilight  "successful!"
 
 }
 
@@ -120,11 +121,11 @@ patch_it() {
    print_it "Patching the package $PACKAGE source ... \c"
    patchit > "$PACKAGE_MESSAGE_LOG" 2>&1
    if [ "$?" -gt 0 ]; then
-        print_it error "failed!"
-        print_it warning "For details: buildit print error"
+        print_it --error "failed!"
+        print_it --warning "For details: buildit print error"
         exit 1
    fi
-   print_it hilight "successful!"
+   print_it --hilight "successful!"
 
 }
 
@@ -133,11 +134,11 @@ configure_it() {
    print_it "Configuring the package $PACKAGE ... \c"
    configureit > "$PACKAGE_MESSAGE_LOG" 2>&1
    if [ "$?" -gt 0 ]; then
-        print_it error "failed!"
-        print_it warning "For details: buildit print configure"
+        print_it --error "failed!"
+        print_it --warning "For details: buildit print configure"
         exit 1
    fi
-   print_it hilight "successful!"
+   print_it --hilight "successful!"
 
 }
 
@@ -146,11 +147,11 @@ compile_it() {
    print_it "Compiling the package $PACKAGE ... \c"
    compileit > "$PACKAGE_MESSAGE_LOG" 2>&1
    if [ "$?" -gt 0 ]; then
-        print_it error "failed!"
-        print_it warning "For details: buildit print compile"
+        print_it --error "failed!"
+        print_it --warning "For details: buildit print compile"
         exit 1
    fi
-   print_it hilight "successful!"
+   print_it --hilight "successful!"
 
 }
 
@@ -159,11 +160,11 @@ install_it() {
    print_it "Installing the package $PACKAGE ... \c"
    sudo installit > "$PACKAGE_MESSAGE_LOG" 2>&1
    if [ "$?" -gt 0 ]; then
-        print_it error "failed!"
-        print_it warning "For details: buildit print install"
+        print_it --error "failed!"
+        print_it --warning "For details: buildit print install"
         exit 1
    fi
-   print_it hilight "successful!"
+   print_it --hilight "successful!"
 
 }
 
@@ -172,11 +173,11 @@ split_it() {
    print_it "Splitting the package $PACKAGE extensions ... \c"
    splitit > "$PACKAGE_MESSAGE_LOG" 2>&1
    if [ "$?" -gt 0 ]; then
-        print_it error "failed!"
-        print_it warning "For details: buildit print error"
+        print_it --error "failed!"
+        print_it --warning "For details: buildit print error"
         exit 1
    fi
-   print_it hilight "successful!"
+   print_it --hilight "successful!"
 
 }
 
@@ -185,11 +186,11 @@ strip_it() {
    print_it "Stripping the package $PACKAGE extensions ... \c"
    stripit > "$PACKAGE_MESSAGE_LOG" 2>&1
    if [ "$?" -gt 0 ]; then
-        print_it error "failed!"
-        print_it warning "For details: buildit print error"
+        print_it --error "failed!"
+        print_it --warning "For details: buildit print error"
         exit 1
    fi
-   print_it hilight "successful!"
+   print_it --hilight "successful!"
 
 }
 
@@ -198,11 +199,11 @@ create_it() {
    print_it "Creating the package $PACKAGE extensions ... \c"
    createit > "$PACKAGE_MESSAGE_LOG" 2>&1
    if [ "$?" -gt 0 ]; then
-        print_it error "failed!"
-        print_it warning "For details: buildit print error"
+        print_it --error "failed!"
+        print_it --warning "For details: buildit print error"
         exit 1
    fi
-   print_it hilight "successful!"
+   print_it --hilight "successful!"
 
 }
 
@@ -211,11 +212,11 @@ generate_it() {
    print_it "Generating the package $PACKAGE extension info files ... \c"
    generateit > "$PACKAGE_MESSAGE_LOG" 2>&1
    if [ "$?" -gt 0 ]; then
-        print_it error "failed!"
-        print_it warning "For details: buildit print error"
+        print_it --error "failed!"
+        print_it --warning "For details: buildit print error"
         exit 1
    fi
-   print_it hilight "successful!"
+   print_it --hilight "successful!"
 
 }
 
@@ -224,11 +225,11 @@ check_it() {
    print_it "Checking the package $PACKAGE extensions ... \c"
    checkit > "$PACKAGE_MESSAGE_LOG" 2>&1
    if [ "$?" -gt 0 ]; then
-        print_it error "failed!"
-        print_it warning "For details: buildit print error"
+        print_it --error "failed!"
+        print_it --warning "For details: buildit print error"
         exit 1
    fi
-   print_it hilight "successful!"
+   print_it --hilight "successful!"
 
 }
 
@@ -237,11 +238,11 @@ package_it() {
    print_it "Packaging the package $PACKAGE ... \c"
    packageit > "$PACKAGE_MESSAGE_LOG" 2>&1
    if [ "$?" -gt 0 ]; then
-        print_it error "failed!"
-        print_it warning "For details: buildit print error"
+        print_it --error "failed!"
+        print_it --warning "For details: buildit print error"
         exit 1
    fi
-   print_it hilight "successful!"
+   print_it --hilight "successful!"
 
 }
 
@@ -256,18 +257,18 @@ custom_function() {
    FUNCTION="$1"
 
    if [ -z "$FUNCTION" ]; then
-        print_it error "You need to specify the name of the custom function."
+        print_it --error "You need to specify the name of the custom function."
         exit 1
    fi
 
    print_it "Executing the package $PACKAGE custom build function $FUNCTION ... \c"
    build_${FUNCTION} > "$PACKAGE_MESSAGE_LOG_2" 2>&1
    if [ "$?" -gt 0 ]; then
-        print_it error "failed!"
-        print_it warning "For details: buildit print error"
+        print_it --error "failed!"
+        print_it --warning "For details: buildit print error"
         exit 1
    fi
-   print_it hilight "successful!"
+   print_it --hilight "successful!"
 
 }
 
@@ -300,7 +301,7 @@ print_function() {
                  [ -e "$PACKAGE_MESSAGE_LOG_2" ] && { cat "$PACKAGE_MESSAGE_LOG_2" ; echo -e "${NORMAL}\c" ; }
                  ;;
         *)
-                 print_it warning "Usage: buildit print configure|compile|install|error|message"
+                 print_it --warning "Usage: buildit print configure|compile|install|error|message"
                  ;;
    esac
 

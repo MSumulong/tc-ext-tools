@@ -35,7 +35,7 @@ else
 fi
 
 if [ ! -f "$PACKAGE_PACKAGE" ]; then
-       print_it error "You must package it first!"
+       print_it --error "You must package it first!"
        exit 1
 fi
 
@@ -60,7 +60,7 @@ this_main() {
    echo "Running bcrypt to encrypt the package $PACKAGE tarball."  >> "$PACKAGE_MESSAGE_LOG_2"
    echo "---------------------------------------------------------------" >> "$PACKAGE_MESSAGE_LOG_2"
    print_it "Please enter the encryption key: \c"
-   print_it hilight "$PACKAGE_ENCRYPTION_KEY"
+   print_it --hilight "$PACKAGE_ENCRYPTION_KEY"
    bcrypt "$PACKAGE_PACKAGE"
 
    if [ "$?" -gt 0 ]; then
@@ -85,7 +85,7 @@ this_main() {
 print_it "Encrypting the package $PACKAGE ..."
 this_main
 if [ "$?" -gt 0 ]; then
-     print_it error "Encrypting the package $PACKAGE failed!"
+     print_it --error "Encrypting the package $PACKAGE failed!"
      exit 1
 fi
 

@@ -94,10 +94,10 @@ this_main() {
 print_it "Downloading the package $PACKAGE source ... \c"
 this_main > "$PACKAGE_MESSAGE_LOG_2" 2>&1
 if [ "$?" -gt 0 ]; then
-     print_it error "failed!"
+     print_it --error "failed!"
      exit 1
 fi
-print_it hilight "successful!"
+print_it --hilight "successful!"
 
 exit 0
 
