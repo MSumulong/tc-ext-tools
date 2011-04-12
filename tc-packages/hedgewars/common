@@ -8,7 +8,13 @@ SDL-dev
 qt-4.x-base
 qt-4.x-dev
 Xorg-7.5
-Xorg-7.5-dev"
+Xorg-7.5-dev
+ncurses
+ncurses-dev
+readline
+readline-dev
+lua
+lua-dev"
 
 DESCRIPTION="A Worms-like turn based strategy game."
 AUTHOR="various"

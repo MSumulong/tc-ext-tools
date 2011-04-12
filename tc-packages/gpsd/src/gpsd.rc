@@ -1,4 +1,3 @@
-#!/bin/sh
 # Default settings for gpsd.
 # Setting START_DAEMON to "false" prevents the gpsd
 # daemon from being started by the init script.

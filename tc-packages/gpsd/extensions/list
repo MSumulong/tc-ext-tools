@@ -36,7 +36,7 @@ usr/local/lib/libgpsd.so.0.0.0
 usr/local/lib/pkgconfig/Qgpsmm.pc
 usr/local/lib/pkgconfig/libgps.pc
 usr/local/lib/pkgconfig/libgpsd.pc
-usr/local/lib/python2.7/site-packages/gps-make_3_.Leaving.directory._mnt_sda10_tc_ext_tools_gpsd_src_temp_gpsd_git_-py2.7.egg-info
+usr/local/lib/python2.7/site-packages/gps-2.96-py2.7.egg-info
 usr/local/lib/python2.7/site-packages/gps/__init__.py
 usr/local/lib/python2.7/site-packages/gps/__init__.pyc
 usr/local/lib/python2.7/site-packages/gps/client.py
