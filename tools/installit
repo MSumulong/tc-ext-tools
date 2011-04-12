@@ -39,7 +39,7 @@ if [ "$PACKAGE_SOURCE_TYPE" = "none" ]; then
 fi
 
 if [ ! -d "$PACKAGE_SOURCE_TOPDIR" ]; then
-       print_it error "You must compile it first!"
+       print_it --error "You must compile it first!"
        exit 1
 fi
 
@@ -82,10 +82,10 @@ this_main() {
 print_it "Installing the package $PACKAGE ... \c"
 this_main > "$PACKAGE_MESSAGE_LOG_2" 2>&1
 if [ "$?" -gt 0 ]; then
-     print_it error "failed!"
+     print_it --error "failed!"
      exit 1
 fi
-print_it hilight "successful!"
+print_it --hilight "successful!"
 
 exit 0
 

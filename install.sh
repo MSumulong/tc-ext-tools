@@ -32,7 +32,6 @@ else
 fi
 
 [ -z "$DESTDIR" ] && DESTDIR=$HOME/.local
-
 BINDIR=$DESTDIR/bin
 SYSCONFDIR=$DESTDIR/etc
 DATADIR=$DESTDIR/share
@@ -50,20 +49,12 @@ sudo ln -sf $SYSCONFDIR/init.d/tet-functions /etc/init.d/tet-functions
 
 # source tc-ext-tools shell environment functions in user's ashrc
 if ! grep tet-functions ~/.ashrc >/dev/null; then
-  if [ `id -u` = 0 ]; then
-       su $USER -c "echo '. /etc/init.d/tet-functions' >> ~/.ashrc"
-  else
-       echo ". /etc/init.d/tet-functions" >> ~/.ashrc
-  fi
+  echo ". /etc/init.d/tet-functions" >> ~/.ashrc
 fi
 
 # add /etc/init.d/tet-functions to backup list
 if ! grep tet-functions /opt/.filetool.lst >/dev/null; then
-  if [ `id -u` = 0 ]; then
-       su $USER -c "echo 'etc/init.d/tet-functions' >> /opt/.filetool.lst"
-  else
-       echo "etc/init.d/tet-functions" >> /opt/.filetool.lst
-  fi
+  echo "etc/init.d/tet-functions" >> /opt/.filetool.lst
 fi
 
 install -D -m 644 -o $USER -g staff .config $HOME/.config/tc-ext-tools.conf

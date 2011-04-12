@@ -36,7 +36,7 @@ else
      fi
 fi
 
-# default configuration
+# source default configuration
 if [ -f "$TCEXTTOOLS_ROOT/etc/tc-ext-tools/config" ]; then
      . "$TCEXTTOOLS_ROOT/etc/tc-ext-tools/config"
 else
@@ -44,7 +44,7 @@ else
      exit 1
 fi
 
-# user configuration
+# source user configuration
 if [ -f "$HOME/.config/tc-ext-tools.conf" ]; then
      . "$HOME/.config/tc-ext-tools.conf"
 else
@@ -56,16 +56,16 @@ fi
 print_it() {
 
   case  "$1" in
-     error)
-           [ -z "$2" ] && echo -e "${TCEXTTOOLS_MESSAGE_COLOR}${1}${NORMAL}"
+     -e|--error)
            echo -e "${TCEXTTOOLS_ERROR_COLOR}${2}${NORMAL}"
            ;;
-     warning)
-           [ -z "$2" ] && echo -e "${TCEXTTOOLS_MESSAGE_COLOR}${1}${NORMAL}"
+     -w|--warning)
            echo -e "${TCEXTTOOLS_WARNING_COLOR}${2}${NORMAL}"
            ;;
-     hilight)
-           [ -z "$2" ] && echo -e "${TCEXTTOOLS_MESSAGE_COLOR}${1}${NORMAL}"
+     -h|--hilight)
+           echo -e "${TCEXTTOOLS_HILIGHT_COLOR}${2}${NORMAL}"
+           ;;
+     -m|--message)
            echo -e "${TCEXTTOOLS_HILIGHT_COLOR}${2}${NORMAL}"
            ;;
      *)
@@ -311,7 +311,7 @@ if [ -f "$PACKAGE_COMMON" ]; then
      [ -d "$PACKAGE_LOG" ] || install -m 755 -d "$PACKAGE_LOG"
 
 elif [ "$THIS" != "boostit" ]; then
-     print_it error "You must boost it first!"
+     print_it --error "You must boost it first!"
      exit 1
 fi
 
@@ -324,7 +324,7 @@ if [ "$THIS" != "boostit" ]; then
      if [ -f "$PACKAGE_BUILD" ]; then
           . "$PACKAGE_BUILD"
      else
-          print_it error "You must boost it first!"
+          print_it --error "You must boost it first!"
           exit 1
      fi
 fi
