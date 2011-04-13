@@ -1,6 +1,6 @@
 PACKAGE="sqlite3"
-VERSION="3.7.5"
-_VERSION="3070500"
+VERSION="3.7.6"
+_VERSION="3070600"
 SOURCE="http://www.sqlite.org/sqlite-autoconf-${_VERSION}.tar.gz"
 BUILD_DEPENDS="readline
 readline-dev
@@ -20,9 +20,10 @@ CHANGELOG="2008/12/24 First version 3.6.7 by stevens
 		2010/07/24 Updated to 3.7.0
 		2010/08/24 Updated to 3.7.2
 			-removed sqlite3-doc extension, and added sqlite3-bin extension
-			-moved sqlite3 shell tool to sqlite3-bin
+			-moved sqlite3 shell tool to sqlite3-bin extension
 			-sqlite3 shell tool compiled with readline support
 		2010/10/08 Updated to 3.7.3
 		2010/12/08 Updated to 3.7.4
-		2010/12/12 Rebuilt with -DSQLITE_SECURE_DELETE"
+		2010/12/12 Added SQLITE_SECURE_DELETE
+		2011/02/01 Updated to 3.7.5"
 CURRENT="Updated to $VERSION"
