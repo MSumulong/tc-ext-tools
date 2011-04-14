@@ -41,41 +41,41 @@ fi
 
 this_main() {
 
-   echo "---------------------------------------------------------------" > "$PACKAGE_MESSAGE_LOG_2"
-   echo "" >> "$PACKAGE_MESSAGE_LOG_2"
-   echo "Encrypting the package $PACKAGE ..." >> "$PACKAGE_MESSAGE_LOG_2"
-   echo "" >> "$PACKAGE_MESSAGE_LOG_2"
-   echo "---------------------------------------------------------------" >> "$PACKAGE_MESSAGE_LOG_2"
+   echo "---------------------------------------------------------------" > "$PACKAGE_MESSAGE_LOG"
+   echo "" >> "$PACKAGE_MESSAGE_LOG"
+   echo "Encrypting the package $PACKAGE ..." >> "$PACKAGE_MESSAGE_LOG"
+   echo "" >> "$PACKAGE_MESSAGE_LOG"
+   echo "---------------------------------------------------------------" >> "$PACKAGE_MESSAGE_LOG"
 
-   echo -e "Checking if the package $PACKAGE tarball encrypted exists ... \c" >> "$PACKAGE_MESSAGE_LOG_2"
+   echo -e "Checking if the package $PACKAGE tarball encrypted exists ... \c" >> "$PACKAGE_MESSAGE_LOG"
    if [ -f "$PACKAGE_PACKAGE_ENCRYPTED" ]; then
-        echo "yes" >> "$PACKAGE_MESSAGE_LOG_2"
-        echo "Removing the package $PACKAGE tarball encrypted." >> "$PACKAGE_MESSAGE_LOG_2"
+        echo "yes" >> "$PACKAGE_MESSAGE_LOG"
+        echo "Removing the package $PACKAGE tarball encrypted." >> "$PACKAGE_MESSAGE_LOG"
         sudo rm -f "$PACKAGE_PACKAGE_ENCRYPTED"
    else
-        echo "no" >> "$PACKAGE_MESSAGE_LOG_2"
+        echo "no" >> "$PACKAGE_MESSAGE_LOG"
    fi
 
-   echo "---------------------------------------------------------------" >> "$PACKAGE_MESSAGE_LOG_2"
-   echo "Running bcrypt to encrypt the package $PACKAGE tarball."  >> "$PACKAGE_MESSAGE_LOG_2"
-   echo "---------------------------------------------------------------" >> "$PACKAGE_MESSAGE_LOG_2"
+   echo "---------------------------------------------------------------" >> "$PACKAGE_MESSAGE_LOG"
+   echo "Running bcrypt to encrypt the package $PACKAGE tarball."  >> "$PACKAGE_MESSAGE_LOG"
+   echo "---------------------------------------------------------------" >> "$PACKAGE_MESSAGE_LOG"
    print_it "Please enter the encryption key: \c"
    print_it --hilight "$PACKAGE_ENCRYPTION_KEY"
    bcrypt "$PACKAGE_PACKAGE"
 
    if [ "$?" -gt 0 ]; then
-        echo "---------------------------------------------------------------" >> "$PACKAGE_MESSAGE_LOG_2"
-        echo "" >> "$PACKAGE_MESSAGE_LOG_2"
-        echo "Encrypting the package $PACKAGE failed." >> "$PACKAGE_MESSAGE_LOG_2"
-        echo "" >> "$PACKAGE_MESSAGE_LOG_2"
-        echo "---------------------------------------------------------------" >> "$PACKAGE_MESSAGE_LOG_2"
+        echo "---------------------------------------------------------------" >> "$PACKAGE_MESSAGE_LOG"
+        echo "" >> "$PACKAGE_MESSAGE_LOG"
+        echo "Encrypting the package $PACKAGE failed." >> "$PACKAGE_MESSAGE_LOG"
+        echo "" >> "$PACKAGE_MESSAGE_LOG"
+        echo "---------------------------------------------------------------" >> "$PACKAGE_MESSAGE_LOG"
         return 1
    else
-        echo "---------------------------------------------------------------" >> "$PACKAGE_MESSAGE_LOG_2"
-        echo "" >> "$PACKAGE_MESSAGE_LOG_2"
-        echo "Encrypted the package $PACKAGE successfully." >> "$PACKAGE_MESSAGE_LOG_2"
-        echo "" >> "$PACKAGE_MESSAGE_LOG_2"
-        echo "---------------------------------------------------------------" >> "$PACKAGE_MESSAGE_LOG_2"
+        echo "---------------------------------------------------------------" >> "$PACKAGE_MESSAGE_LOG"
+        echo "" >> "$PACKAGE_MESSAGE_LOG"
+        echo "Encrypted the package $PACKAGE successfully." >> "$PACKAGE_MESSAGE_LOG"
+        echo "" >> "$PACKAGE_MESSAGE_LOG"
+        echo "---------------------------------------------------------------" >> "$PACKAGE_MESSAGE_LOG"
    fi
 
    return 0
