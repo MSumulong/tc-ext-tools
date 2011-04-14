@@ -83,14 +83,16 @@ set_source() {
           PACKAGE_SOURCE_URL_TYPE="none"
      fi
 
-     PACKAGE_SOURCE_URL_TYPE="${SOURCE%%::*}"
-     if [ "$PACKAGE_SOURCE_URL_TYPE" = "${SOURCE#*::}" ]; then
+     if [ "${SOURCE%%::*}" = "${SOURCE#*::}" ]; then
           PACKAGE_SOURCE_URL_TYPE="generic"
+     else
+          PACKAGE_SOURCE_URL_TYPE="${SOURCE%%::*}"
      fi
 
-     PACKAGE_SOURCE_NAME="${SOURCE##*->}"
-     if [ "$PACKAGE_SOURCE_NAME" = "${SOURCE%->*}" ]; then
+     if [ "${SOURCE##*->}" = "${SOURCE%->*}" ]; then
           PACKAGE_SOURCE_NAME=""
+     else
+          PACKAGE_SOURCE_NAME="${SOURCE##*->}"
      fi
 
      if [ "$PACKAGE_SOURCE_URL_TYPE" = "generic" ] || [ "$PACKAGE_SOURCE_URL_TYPE" = "custom" ]; then
@@ -102,8 +104,10 @@ set_source() {
                PACKAGE_SOURCE_NAME="${PACKAGE}-${VERSION}.tar.xz"
           fi
      elif [ "$PACKAGE_SOURCE_URL_TYPE" != "none" ]; then
-          echo "Error! Unsupported source url type."
-          exit 1
+          PACKAGE_SOURCE_URL_TYPE="custom"
+          if [ -z "$PACKAGE_SOURCE_NAME" ]; then
+               PACKAGE_SOURCE_NAME="${SOURCE##*/}"
+          fi
      fi
 
      SOURCE="${SOURCE#*::}"
@@ -135,7 +139,7 @@ set_source() {
             PACKAGE_SOURCE_NAME_CONVERTED="${PACKAGE_SOURCE_NAME%.tar}.tar.xz"
      elif [ "$PACKAGE_SOURCE_TYPE" != "none" ]; then
             PACKAGE_SOURCE_TYPE="custom"
-            [ -z "$PACKAGE_SOURCE_NAME_CONVERTED" ] && PACKAGE_SOURCE_NAME_CONVERTED="${PACKAGE_SOURCE_NAME%.*}.tar.xz"
+            PACKAGE_SOURCE_NAME_CONVERTED="${PACKAGE_SOURCE_NAME%.*}.tar.xz"
      fi
 
      if [ -z "$SOURCE_TOPDIR" ]; then
@@ -277,7 +281,6 @@ if [ -f "$PACKAGE_COMMON" ]; then
      PACKAGE_INSTALL_LOG="$PACKAGE_LOG/install.txt"
      PACKAGE_BUILD_LOG="$PACKAGE_LOG/build.txt"
      PACKAGE_MESSAGE_LOG="$PACKAGE_LOG/message.txt"
-     PACKAGE_MESSAGE_LOG_2="$PACKAGE_LOG/message2.txt"
      PACKAGE_INSTALL_ROOT="$PACKAGE_BIN/root"
      PACKAGE_PACKAGE="$PACKAGE_PKG/${PACKAGE}.tar.bz2"
      PACKAGE_PACKAGE_ENCRYPTED="$PACKAGE_PKG/${PACKAGE}.tar.bz2.bfe"
@@ -309,6 +312,13 @@ if [ -f "$PACKAGE_COMMON" ]; then
      [ -d "$_PACKAGE_SRC" ] || install -m 755 -d "$_PACKAGE_SRC"
      [ -d "$PACKAGE_PKG" ] || install -m 755 -d "$PACKAGE_PKG"
      [ -d "$PACKAGE_LOG" ] || install -m 755 -d "$PACKAGE_LOG"
+
+     # touch log files
+     [ -f "$PACKAGE_CONFIGURE_LOG" ] || touch "$PACKAGE_CONFIGURE_LOG"
+     [ -f "$PACKAGE_COMPILE_LOG" ] || touch "$PACKAGE_COMPILE_LOG"
+     [ -f "$PACKAGE_INSTALL_LOG" ] || touch "$PACKAGE_INSTALL_LOG"
+     [ -f "$PACKAGE_BUILD_LOG" ] || touch "$PACKAGE_BUILD_LOG"
+     [ -f "$PACKAGE_MESSAGE_LOG" ] || touch "$PACKAGE_MESSAGE_LOG"
 
 elif [ "$THIS" != "boostit" ]; then
      print_it --error "You must boost it first!"

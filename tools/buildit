@@ -37,14 +37,14 @@ fi
 print_usage(){
 
    echo -e "${TCEXTTOOLS_ERROR_COLOR}${THIS} usage:"
-   echo -e "\n\t${TCEXTTOOLS_MESSAGE_COLOR}${THIS} (clean|clear)|load|download|convert|unpack|patch|configure|compile|install|split|strip|create|check|generate|package|encrypt|print|custom|help${NORMAL}"
+   echo -e "\n\t${TCEXTTOOLS_MESSAGE_COLOR}${THIS} clean|load|download|convert|unpack|patch|configure|compile|install|split|strip|create|check|generate|package|encrypt|print|custom|help${NORMAL}"
 
 }
 
 clean_it() {
 
    print_it "Cleaning the package $PACKAGE ... \c"
-   cleanit > "$PACKAGE_MESSAGE_LOG" 2>&1
+   cleanit > "$PACKAGE_BUILD_LOG" 2>&1
    if [ "$?" -gt 0 ]; then
         print_it --error "failed!"
         print_it --warning "For details: buildit print error"
@@ -62,7 +62,7 @@ download_it() {
    fi
 
    print_it "Downloading the package $PACKAGE source ... \c"
-   downloadit > "$PACKAGE_MESSAGE_LOG" 2>&1
+   downloadit > "$PACKAGE_BUILD_LOG" 2>&1
    if [ "$?" -gt 0 ]; then
         print_it --error "failed!"
         print_it --warning "For details: buildit print error"
@@ -80,7 +80,7 @@ convert_it() {
    fi
 
    print_it "Converting the package $PACKAGE source ... \c"
-   convertit > "$PACKAGE_MESSAGE_LOG" 2>&1
+   convertit > "$PACKAGE_BUILD_LOG" 2>&1
    if [ "$?" -gt 0 ]; then
         print_it --error "failed!"
         print_it --warning "For details: buildit print error"
@@ -93,7 +93,7 @@ convert_it() {
 unpack_it() {
 
    print_it "Unpacking the package $PACKAGE source ... \c"
-   unpackit > "$PACKAGE_MESSAGE_LOG" 2>&1
+   unpackit > "$PACKAGE_BUILD_LOG" 2>&1
    if [ "$?" -gt 0 ]; then
         print_it --error "failed!"
         print_it --warning "For details: buildit print error"
@@ -106,7 +106,7 @@ unpack_it() {
 load_it() {
 
    print_it "Loading the package $PACKAGE build dependencies ... \c"
-   loadit > "$PACKAGE_MESSAGE_LOG" 2>&1
+   loadit > "$PACKAGE_BUILD_LOG" 2>&1
    if [ "$?" -gt 0 ]; then
         print_it --error "failed!"
         print_it --warning "For details: buildit print error"
@@ -119,7 +119,7 @@ load_it() {
 patch_it() {
 
    print_it "Patching the package $PACKAGE source ... \c"
-   patchit > "$PACKAGE_MESSAGE_LOG" 2>&1
+   patchit > "$PACKAGE_BUILD_LOG" 2>&1
    if [ "$?" -gt 0 ]; then
         print_it --error "failed!"
         print_it --warning "For details: buildit print error"
@@ -132,7 +132,7 @@ patch_it() {
 configure_it() {
 
    print_it "Configuring the package $PACKAGE ... \c"
-   configureit > "$PACKAGE_MESSAGE_LOG" 2>&1
+   configureit > "$PACKAGE_BUILD_LOG" 2>&1
    if [ "$?" -gt 0 ]; then
         print_it --error "failed!"
         print_it --warning "For details: buildit print configure"
@@ -145,7 +145,7 @@ configure_it() {
 compile_it() {
 
    print_it "Compiling the package $PACKAGE ... \c"
-   compileit > "$PACKAGE_MESSAGE_LOG" 2>&1
+   compileit > "$PACKAGE_BUILD_LOG" 2>&1
    if [ "$?" -gt 0 ]; then
         print_it --error "failed!"
         print_it --warning "For details: buildit print compile"
@@ -158,7 +158,7 @@ compile_it() {
 install_it() {
 
    print_it "Installing the package $PACKAGE ... \c"
-   sudo installit > "$PACKAGE_MESSAGE_LOG" 2>&1
+   sudo installit > "$PACKAGE_BUILD_LOG" 2>&1
    if [ "$?" -gt 0 ]; then
         print_it --error "failed!"
         print_it --warning "For details: buildit print install"
@@ -171,7 +171,7 @@ install_it() {
 split_it() {
 
    print_it "Splitting the package $PACKAGE extensions ... \c"
-   splitit > "$PACKAGE_MESSAGE_LOG" 2>&1
+   splitit > "$PACKAGE_BUILD_LOG" 2>&1
    if [ "$?" -gt 0 ]; then
         print_it --error "failed!"
         print_it --warning "For details: buildit print error"
@@ -184,7 +184,7 @@ split_it() {
 strip_it() {
 
    print_it "Stripping the package $PACKAGE extensions ... \c"
-   stripit > "$PACKAGE_MESSAGE_LOG" 2>&1
+   stripit > "$PACKAGE_BUILD_LOG" 2>&1
    if [ "$?" -gt 0 ]; then
         print_it --error "failed!"
         print_it --warning "For details: buildit print error"
@@ -197,7 +197,7 @@ strip_it() {
 create_it() {
 
    print_it "Creating the package $PACKAGE extensions ... \c"
-   createit > "$PACKAGE_MESSAGE_LOG" 2>&1
+   createit > "$PACKAGE_BUILD_LOG" 2>&1
    if [ "$?" -gt 0 ]; then
         print_it --error "failed!"
         print_it --warning "For details: buildit print error"
@@ -210,7 +210,7 @@ create_it() {
 generate_it() {
 
    print_it "Generating the package $PACKAGE extension info files ... \c"
-   generateit > "$PACKAGE_MESSAGE_LOG" 2>&1
+   generateit > "$PACKAGE_BUILD_LOG" 2>&1
    if [ "$?" -gt 0 ]; then
         print_it --error "failed!"
         print_it --warning "For details: buildit print error"
@@ -223,7 +223,7 @@ generate_it() {
 check_it() {
 
    print_it "Checking the package $PACKAGE extensions ... \c"
-   checkit > "$PACKAGE_MESSAGE_LOG" 2>&1
+   checkit > "$PACKAGE_BUILD_LOG" 2>&1
    if [ "$?" -gt 0 ]; then
         print_it --error "failed!"
         print_it --warning "For details: buildit print error"
@@ -236,7 +236,7 @@ check_it() {
 package_it() {
 
    print_it "Packaging the package $PACKAGE ... \c"
-   packageit > "$PACKAGE_MESSAGE_LOG" 2>&1
+   packageit > "$PACKAGE_BUILD_LOG" 2>&1
    if [ "$?" -gt 0 ]; then
         print_it --error "failed!"
         print_it --warning "For details: buildit print error"
@@ -262,7 +262,7 @@ custom_function() {
    fi
 
    print_it "Executing the package $PACKAGE custom build function $FUNCTION ... \c"
-   build_${FUNCTION} > "$PACKAGE_MESSAGE_LOG_2" 2>&1
+   build_${FUNCTION} > "$PACKAGE_BUILD_LOG" 2>&1
    if [ "$?" -gt 0 ]; then
         print_it --error "failed!"
         print_it --warning "For details: buildit print error"
@@ -287,33 +287,50 @@ build_it() {
 print_function() {
 
    case "$1" in
-        configure)
-                 [ -e "$PACKAGE_CONFIGURE_LOG" ] && { cat "$PACKAGE_CONFIGURE_LOG" ; echo -e "${NORMAL}\c" ; }
-                 ;;
-        compile)
-                 [ -e "$PACKAGE_COMPILE_LOG" ] && { cat "$PACKAGE_COMPILE_LOG" ; echo -e "${NORMAL}\c" ; }
-                 ;;
-        install)
-                 [ -e "$PACKAGE_INSTALL_LOG" ] && { cat "$PACKAGE_INSTALL_LOG" ; echo -e "${NORMAL}\c" ; }
-                 ;;
-        error|message)
-                 [ -e "$PACKAGE_MESSAGE_LOG" ] && { cat "$PACKAGE_MESSAGE_LOG" ; echo -e "${NORMAL}\c" ; }
-                 [ -e "$PACKAGE_MESSAGE_LOG_2" ] && { cat "$PACKAGE_MESSAGE_LOG_2" ; echo -e "${NORMAL}\c" ; }
-                 ;;
-        *)
-                 print_it --warning "Usage: buildit print configure|compile|install|error|message"
-                 ;;
+       configure)
+                if [ -f "$PACKAGE_CONFIGURE_LOG" ]; then
+                     cat "$PACKAGE_CONFIGURE_LOG"
+                fi
+                ;;
+       compile)
+                if [ -f "$PACKAGE_COMPILE_LOG" ]; then
+                     cat "$PACKAGE_COMPILE_LOG"
+                fi
+                ;;
+       install)
+                if [ -f "$PACKAGE_INSTALL_LOG" ]; then
+                     cat "$PACKAGE_INSTALL_LOG"
+                fi
+                ;;
+       build)
+                if [ -f "$PACKAGE_BUILD_LOG" ]; then
+                     cat "$PACKAGE_BUILD_LOG"
+                     echo -e "${NORMAL}\c"
+                fi
+                ;;
+       message)
+                if [ -f "$PACKAGE_MESSAGE_LOG" ]; then
+                     cat "$PACKAGE_MESSAGE_LOG"
+                     echo -e "${NORMAL}\c"
+                fi
+                ;;
+       *)
+                print_it --warning "Usage: buildit print configure|compile|install|build|message"
+                ;;
    esac
 
 }
 
 if [ -z "$1" ]; then
-     build_it || exit 1
-     exit 0
+     if build_it; then
+        exit 0
+     else
+        exit 1
+     fi
 fi
 
 case "$1" in
-	clean|clear)
+	clean)
 		  clean_it
 		  ;;
 	download)

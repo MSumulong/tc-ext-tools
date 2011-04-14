@@ -65,7 +65,7 @@ this_main() {
 }
 
 print_it "Configuring the package $PACKAGE ... \c"
-this_main > "$PACKAGE_MESSAGE_LOG_2" 2>&1
+this_main > "$PACKAGE_MESSAGE_LOG" 2>&1
 if [ "$?" -gt 0 ]; then
      print_it --error "failed!"
      exit 1

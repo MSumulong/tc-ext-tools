@@ -43,9 +43,6 @@ if [ ! -d "$PACKAGE_SOURCE_TOPDIR" ]; then
        exit 1
 fi
 
-[ -f "$PACKAGE_INSTALL_LOG" ] || su "$TCUSER" -c "touch $PACKAGE_INSTALL_LOG"
-[ -f "$PACKAGE_MESSAGE_LOG_2" ] || su "$TCUSER" -c "touch $PACKAGE_MESSAGE_LOG_2"
-
 this_main() {
 
    echo "---------------------------------------------------------------"
@@ -80,7 +77,7 @@ this_main() {
 }
 
 print_it "Installing the package $PACKAGE ... \c"
-this_main > "$PACKAGE_MESSAGE_LOG_2" 2>&1
+this_main > "$PACKAGE_MESSAGE_LOG" 2>&1
 if [ "$?" -gt 0 ]; then
      print_it --error "failed!"
      exit 1
