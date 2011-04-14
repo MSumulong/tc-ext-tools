@@ -153,5 +153,6 @@ CHANGELOG="2009/11/05 First Version
 			-Most of the dependencies are now dynamic linked while there are still some static linked ones
 		2010/08/24 Updated to 1.1.3
 		2010/11/17 Updated to 1.1.5
-		2011/02/01 Updated to 1.1.7"
+		2011/02/01 Updated to 1.1.7
+		2011/03/26 Updated to 1.1.8"
 CURRENT="Updated to $VERSION"
