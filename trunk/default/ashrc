@@ -31,6 +31,15 @@ _tet_common() {
         return 1
    fi
 
+   if [ -f common ]; then
+        . common
+        ARGS="$@"
+   else
+        PACKAGE="$1"
+        shift
+        ARGS="$@"
+   fi
+
 }
 
 is_integer() {
@@ -43,9 +52,7 @@ is_integer() {
 # tc-ext-tools cd: change directory to package root
 tetcd() {
 
-   PACKAGE="$1"
-
-   _tet_common || return 1
+   _tet_common $@ || return 1
 
    if [ -z "$PACKAGE" ]; then
         cd "$TCEXTTOOLS_PACKAGES"
@@ -71,10 +78,7 @@ tetcd() {
 # tc-ext-tools ls: list package contents
 tetls() {
 
-   PACKAGE="$1"
-   ARGS="$2"
-
-   _tet_common || return 1
+   _tet_common $@ || return 1
 
    if [ -z "$PACKAGE" ]; then
         ls "$TCEXTTOOLS_PACKAGES"
@@ -88,17 +92,16 @@ tetls() {
         return 1
    fi
 
-   ls $ARGS "$PACKAGE_ROOT"
+   cd "$PACKAGE_ROOT"
+   ls $ARGS
+   cd - > /dev/null
 
 }
 
 # tc-ext-tools find: find in package
 tetfind() {
 
-   PACKAGE="$1"
-   ARGS="$2"
-
-   _tet_common || return 1
+   _tet_common $@ || return 1
 
    if [ -z "$PACKAGE" ]; then
         find "$TCEXTTOOLS_PACKAGES" -not -path *.svn*
@@ -112,21 +115,16 @@ tetfind() {
         return 1
    fi
 
-   if [ -z "$ARGS" ]; then
-        find "$PACKAGE_ROOT" -not -path *.svn*
-   else
-        find "$PACKAGE_ROOT" $ARGS
-   fi
+   cd "$PACKAGE_ROOT"
+   find $ARGS -not -path *.svn*
+   cd - > /dev/null
 
 }
 
 # tc-ext-tools edit: edit package files
 teted() {
 
-   PACKAGE="$1"
-   FILE="$2"
-
-   _tet_common || return 1
+   _tet_common $@ || return 1
 
    if [ -z "$PACKAGE" ]; then
         echo "teted: package ?"
@@ -146,14 +144,18 @@ teted() {
    fi
 
    if ! which "$TCEXTTOOLS_EDITOR" >/dev/null 2>&1; then
-        echo "teted: Editor $TCEXTTOOLS_EDITOR is not in executables path"
+        echo "teted: Editor $TCEXTTOOLS_EDITOR not found"
         return 1
    fi
 
-   if [ -z "$FILE" ]; then
+   if [ -z "$ARGS" ]; then
         FILES=`find $PACKAGE_ROOT -type f -a -not -path *.svn*`
    else
-        FILES=`find $PACKAGE_ROOT -type f -name $FILE`
+        unset FILES
+        for FILE in $ARGS
+        do
+           FILES="$(find $PACKAGE_ROOT -type f -a -not -path *.svn* -name $FILE) $FILES"
+        done
    fi
 
    file_cnt=0
@@ -163,36 +165,42 @@ teted() {
    done
 
    if [ $file_cnt = 0 ]; then
-        echo "teted: No such file $FILE"
+        echo "teted: No such file(s)"
         return 1
    elif [ $file_cnt = 1 ]; then
-        $TCEXTTOOLS_EDITOR $FILE &
+        $TCEXTTOOLS_EDITOR $FILES &
    else
-        echo "teted: More than one file found, choose one of the options below"
+        echo "teted: More than one file found"
+        echo "Choose one of the options below"
         index=0
+        echo "[$index]: quit"
         for i in $FILES
         do
-            echo "[$index] ${i#$PACKAGE_ROOT/}"
             index=`expr $index + 1`
+            echo "[$index]: ${i#$PACKAGE_ROOT/}"
         done
-        echo "[$index] all above"
+        index=`expr $index + 1`
+        echo "[$index]: all"
+
         read ans
         if ! is_integer $ans; then
-            echo "teted: invalid option"
+            echo "teted: bad number"
             return 1
-        elif [ $ans -gt $index ]; then
+        elif [ $ans -gt $index -o $ans -lt 0 ]; then
             echo "teted: invalid option"
             return 1
         fi
+
         index=0
         for FILE in $FILES
         do
+            index=`expr $index + 1`
             if [ $index = $ans ]; then
                  $TCEXTTOOLS_EDITOR $FILE &
                  return 0
             fi
-            index=`expr $index + 1`
         done
+        index=`expr $index + 1`
         if [ $index = $ans ]; then
              for FILE in $FILES
              do

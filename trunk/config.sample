@@ -6,7 +6,7 @@
 ############################################################################
 
 # package maintainer
-PACKAGE_MAINTAINER="User"
+PACKAGE_MAINTAINER="${USER}"
 
 # tc-ext-tools packages directory
 TCEXTTOOLS_PACKAGES="${HOME}/tc-ext-tools/packages"
