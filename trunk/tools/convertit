@@ -34,7 +34,7 @@ else
      exit 1
 fi
 
-if [ ! -f "$PACKAGE_SOURCE" ]; then
+if [ ! -f "$PACKAGE_SOURCE_ORIG" ]; then
        print_it --error "You must download it first!"
        exit 1
 fi
@@ -53,7 +53,7 @@ this_main() {
 
    if [ "$PACKAGE_SOURCE_TYPE" = "bz2" ]; then
         echo "Decompressing the package source with bzip2."
-        bzip2 -d -c "$PACKAGE_SOURCE" > "$PACKAGE_SRC_TEMP/${PACKAGE_SOURCE_NAME%.bz2}" || return 1
+        bzip2 -d -c "$PACKAGE_SOURCE_ORIG" > "$PACKAGE_SRC_TEMP/${PACKAGE_SOURCE_NAME%.bz2}" || return 1
 
         echo "Compressing the package source with xz."
         xz "$PACKAGE_SRC_TEMP/${PACKAGE_SOURCE_NAME%.bz2}" || return 1
@@ -62,7 +62,7 @@ this_main() {
         mv -f "$PACKAGE_SRC_TEMP/${PACKAGE_SOURCE_NAME%.bz2}.xz" "$_PACKAGE_SRC" || return 1
    elif [ "$PACKAGE_SOURCE_TYPE" = "gz" ]; then
         echo "Decompressing the package source with gzip."
-        gzip -d -c "$PACKAGE_SOURCE" > "$PACKAGE_SRC_TEMP/${PACKAGE_SOURCE_NAME%.gz}" || return 1
+        gzip -d -c "$PACKAGE_SOURCE_ORIG" > "$PACKAGE_SRC_TEMP/${PACKAGE_SOURCE_NAME%.gz}" || return 1
 
         echo "Compressing the package source with xz."
         xz "$PACKAGE_SRC_TEMP/${PACKAGE_SOURCE_NAME%.gz}" || return 1
@@ -71,7 +71,7 @@ this_main() {
         mv -f "$PACKAGE_SRC_TEMP/${PACKAGE_SOURCE_NAME%.gz}.xz" "$_PACKAGE_SRC" || return 1
    elif [ "$PACKAGE_SOURCE_TYPE" = "tgz" ]; then
         echo "Decompressing the package source with gzip."
-        gzip -d -c "$PACKAGE_SOURCE" > "$PACKAGE_SRC_TEMP/${PACKAGE_SOURCE_NAME%.tgz}.tar" || return 1
+        gzip -d -c "$PACKAGE_SOURCE_ORIG" > "$PACKAGE_SRC_TEMP/${PACKAGE_SOURCE_NAME%.tgz}.tar" || return 1
 
         echo "Compressing the package source with xz."
         xz "$PACKAGE_SRC_TEMP/${PACKAGE_SOURCE_NAME%.tgz}.tar" || return 1
@@ -80,7 +80,7 @@ this_main() {
         mv -f "$PACKAGE_SRC_TEMP/${PACKAGE_SOURCE_NAME%.tgz}.tar.xz" "$_PACKAGE_SRC" || return 1
    elif [ "$PACKAGE_SOURCE_TYPE" = "tbz2" ]; then
         echo "Decompressing the package source with bzip2."
-        bzip2 -d -c "$PACKAGE_SOURCE" > "$PACKAGE_SRC_TEMP/${PACKAGE_SOURCE_NAME%.tbz2}.tar" || return 1
+        bzip2 -d -c "$PACKAGE_SOURCE_ORIG" > "$PACKAGE_SRC_TEMP/${PACKAGE_SOURCE_NAME%.tbz2}.tar" || return 1
 
         echo "Compressing the package source with xz."
         xz "$PACKAGE_SRC_TEMP/${PACKAGE_SOURCE_NAME%.tbz2}.tar" || return 1
@@ -89,7 +89,7 @@ this_main() {
         mv -f "$PACKAGE_SRC_TEMP/${PACKAGE_SOURCE_NAME%.tbz2}.tar.xz" "$_PACKAGE_SRC" || return 1
    elif [ "$PACKAGE_SOURCE_TYPE" = "tar" ]; then
         echo "Copying the package source to the temporary source directory."
-        cp "$PACKAGE_SOURCE" "$PACKAGE_SRC_TEMP" || return 1
+        cp "$PACKAGE_SOURCE_ORIG" "$PACKAGE_SRC_TEMP" || return 1
 
         echo "Compressing the package source with xz."
         xz "$PACKAGE_SRC_TEMP/${PACKAGE_SOURCE_NAME%.tar}.tar" || return 1
@@ -98,7 +98,7 @@ this_main() {
         mv -f "$PACKAGE_SRC_TEMP/${PACKAGE_SOURCE_NAME%.tar}.tar.xz" "$_PACKAGE_SRC" || return 1
    elif [ "$PACKAGE_SOURCE_TYPE" = "zip" ]; then
         echo "Unzipping the package source to the temporary source directory."
-        unzip "$PACKAGE_SOURCE" -d "$PACKAGE_SRC_TEMP" || return 1
+        unzip "$PACKAGE_SOURCE_ORIG" -d "$PACKAGE_SRC_TEMP" || return 1
 
         echo "Creating a tarball from the unzipped source."
         tar -C "$PACKAGE_SRC_TEMP" -cJf "$PACKAGE_SRC_TEMP/${PACKAGE_SOURCE_NAME%.zip}.tar.xz" "$(ls $PACKAGE_SRC_TEMP)" || return 1

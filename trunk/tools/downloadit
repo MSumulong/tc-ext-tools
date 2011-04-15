@@ -74,7 +74,7 @@ this_main() {
         fi
    elif [ "$PACKAGE_SOURCE_URL_TYPE" = "generic" ]; then
         echo "Downloading the package source $PACKAGE_SOURCE_NAME from $SOURCE"
-        wget --no-check-certificate "$SOURCE" -O "$PACKAGE_SOURCE" || return 1
+        wget --no-check-certificate "$SOURCE" -O "$PACKAGE_SOURCE_ORIG" || return 1
    elif [ "$PACKAGE_SOURCE_URL_TYPE" = "custom" ]; then
         echo "Executing the package build download function."
         cd $_PACKAGE_SRC
