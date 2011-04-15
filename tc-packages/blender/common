@@ -1,0 +1,41 @@
+PACKAGE="blender"
+VERSION="2.56.1b"
+SOURCE="http://download.blender.org/source/blender-${VERSION}.tar.gz"
+BUILD_DEPENDS="python
+python-dev
+librsvg
+librsvg-dev
+Xorg-7.5
+Xorg-7.5-dev
+freeglut
+freeglut-dev
+graphics-libs-1
+graphics-libs-1-dev
+libopenal
+libopenal-dev
+openexr
+openexr-dev
+SDL
+SDL-dev
+ftgl
+ftgl-dev
+glew
+fftw
+fftw-dev
+xz
+xz-dev
+libsndfile
+libsndfile-dev
+libsamplerate
+libsamplerate-dev
+freealut
+freealut-dev"
+
+DESCRIPTION="A fully integrated 3D graphics creation suite."
+AUTHOR="---"
+SITE="http://www.blender.org"
+COPYING="GPL"
+MAINTAINERS="Arslan S."
+COMMENTS="This extension is PPI compatible."
+CHANGELOG="---"
+CURRENT="First Version"
