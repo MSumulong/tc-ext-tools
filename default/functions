@@ -143,8 +143,21 @@ set_source() {
      fi
 
      if [ -z "$SOURCE_TOPDIR" ]; then
-          [ -d "$PACKAGE_SRC_TEMP" ] && SOURCE_TOPDIR=$(ls $PACKAGE_SRC_TEMP)
-          [ -z "$SOURCE_TOPDIR" ] && SOURCE_TOPDIR=${PACKAGE}-${VERSION}
+          if [ -d "$PACKAGE_SRC_TEMP" ]; then
+               LIST=$(ls $PACKAGE_SRC_TEMP)
+               cnt=0
+               for i in $LIST
+               do
+                   cnt=`expr $cnt + 1`
+               done
+               if [ $cnt -eq 0 ]; then
+                    SOURCE_TOPDIR=${PACKAGE}-${VERSION}
+               elif [ $cnt -eq 1 ]; then
+                    SOURCE_TOPDIR="$LIST"
+               elif [ $cnt -gt 1 ]; then
+                    SOURCE_TOPDIR="./"
+               fi
+          fi
      fi
 
      if [ -n "$SOURCE_TOPDIR" ]; then
@@ -152,8 +165,13 @@ set_source() {
      fi
 
      if [ "$PACKAGE_SOURCE_TYPE" != "none" ]; then
-          PACKAGE_SOURCE="$_PACKAGE_SRC/$PACKAGE_SOURCE_NAME"
-          PACKAGE_SOURCE_CONVERTED="$_PACKAGE_SRC/$PACKAGE_SOURCE_NAME_CONVERTED"
+          PACKAGE_SOURCE_ORIG="$_PACKAGE_SRC/$PACKAGE_SOURCE_NAME"
+          PACKAGE_SOURCE_CONV="$_PACKAGE_SRC/$PACKAGE_SOURCE_NAME_CONVERTED"
+          if [ -f "$PACKAGE_SOURCE_CONV" ]; then
+               PACKAGE_SOURCE="$PACKAGE_SOURCE_CONV"
+          else
+               PACKAGE_SOURCE="$PACKAGE_SOURCE_ORIG"
+          fi
      fi
 
 }

@@ -56,8 +56,8 @@ clean_it() {
 
 download_it() {
 
-   if [ -f "$PACKAGE_SOURCE" ]; then
-        print_it --warning "The package $PACKAGE source is already downloaded."
+   if [ -f "$PACKAGE_SOURCE_ORIG" -o -f "$PACKAGE_SOURCE_CONV" ]; then
+        print_it --warning "The package $PACKAGE source already exists."
         exit 0
    fi
 
@@ -74,8 +74,8 @@ download_it() {
 
 convert_it() {
 
-   if [ -f "$PACKAGE_SOURCE_CONVERTED" ]; then
-        print_it --warning "The package $PACKAGE source is already converted."
+   if [ -f "$PACKAGE_SOURCE_CONV" ]; then
+        print_it --warning "The package $PACKAGE source converted already exists."
         exit 0
    fi
 
