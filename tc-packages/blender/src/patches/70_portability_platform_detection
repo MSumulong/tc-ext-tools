@@ -1,0 +1,84 @@
+--- a/extern/bullet2/src/SConscript
++++ b/extern/bullet2/src/SConscript
+@@ -14,7 +14,7 @@ if env['OURPLATFORM']=='win32-vc':
+ elif env['OURPLATFORM']=='win32-mingw':
+     defs += ' NDEBUG'
+     cflags += ['-O2']
+-elif sys.platform=='linux2' or sys.platform=='linux-i386' or sys.platform=='freebsd4' or sys.platform=='freebsd5':
++elif sys.platform=='linux2' or sys.platform=='linux-i386' or sys.platform=='freebsd4' or sys.platform=='freebsd5' or sys.platform.startswith('linux2') or sys.platform.startswith('gnukfreebsd'):
+     defs += ' NDEBUG'
+     cflags += ['-O2']
+ elif sys.platform=='darwin':
+--- a/extern/qhull/SConscript
++++ b/extern/qhull/SConscript
+@@ -5,7 +5,7 @@ import os
+ Import('env')
+ defs = ''
+ cflags = []
+-if sys.platform=='linux2' or sys.platform=='linux-i386':
++if sys.platform=='linux2' or sys.platform=='linux-i386' or sys.platform.startswith('linux2') or sys.platform.startswith('gnukfreebsd'):
+    cflags += ['-O2','-ansi']
+ elif env['OURPLATFORM']=='win32-vc':
+    cflags += ['/O2']
+--- a/extern/solid/SConscript
++++ b/extern/solid/SConscript
+@@ -12,7 +12,7 @@ if env['OURPLATFORM']=='win32-vc':
+ elif env['OURPLATFORM']=='win32-mingw':
+     defs += ' NDEBUG'
+     cflags += ['-O2']
+-elif sys.platform=='linux2' or sys.platform=='linux-i386' or sys.platform=='freebsd4' or sys.platform=='freebsd5' or sys.platform=='openbsd3' or sys.platform=='sunos5':
++elif sys.platform=='linux2' or sys.platform=='linux-i386' or sys.platform=='freebsd4' or sys.platform=='freebsd5' or sys.platform=='openbsd3' or sys.platform=='sunos5' or sys.platform.startswith('linux2') or sys.platform.startswith('gnukfreebsd'):
+     defs += ' NDEBUG'
+     cflags += ['-O2']
+ elif sys.platform=='darwin' :
+--- a/config/linux2-config.py
++++ b/config/linux2-config.py
+@@ -169,8 +169,11 @@ BF_REDCODE_LIBPATH='${BF_REDCODE}/lib'
+ 
+ BF_FFMPEG_LIB = commands.getoutput('pkg-config --libs libavcodec libavformat vorbisenc libswscale') + ' -lgsm'
+ 
++# Note: While linux2* and gnukfreebsd* share a lot, that particular case is
++# really Linux-specific, which is why there's not test on sys.platform starting
++# with 'gnukfreebsd' here.
+ import sys
+-if sys.platform == 'linux2':
++if sys.platform == 'linux2' or sys.platform.startswith('linux2'):
+     BF_FFMPEG_LIB += ' ' + commands.getoutput('pkg-config --libs libdc1394-2')
+ 
+ # Mesa Libs should go here if your using them as well....
+--- a/SConstruct
++++ b/SConstruct
+@@ -146,6 +146,13 @@ if crossbuild and platform!='win32':
+ 
+ env['OURPLATFORM'] = platform
+ 
++# Fake being on a linux2 platform when on linux2-* (see arch-specific
++# modifications in just-before-lenny python uploads), as well as when
++# on gnukfreebsd* (which, for a blender point of view, has the same
++# userland as linux2*).
++if platform.startswith('linux2') or platform.startswith('gnukfreebsd'):
++    env['OURPLATFORM']='linux2'
++
+ configfile = 'config'+os.sep+platform+'-config.py'
+ 
+ if os.path.exists(configfile):
+@@ -222,7 +229,7 @@ if env['OURPLATFORM'] == 'linux2' :
+ 		"""
+ 
+ 		def CheckFreeAlut(context,env):
+-			context.Message( B.bc.OKGREEN + "Linux platform detected:\n  checking for FreeAlut... " + B.bc.ENDC )
++			context.Message( B.bc.OKGREEN + "Linux(-like) platform detected:\n  checking for FreeAlut... " + B.bc.ENDC )
+ 			env['LIBS'] = 'alut'
+ 			result = context.TryLink(mylib_test_source_file, '.c')
+ 			context.Result(result)
+--- a/release/scripts/bpymodules/colladaImEx/cutils.py
++++ b/release/scripts/bpymodules/colladaImEx/cutils.py
+@@ -289,7 +289,7 @@ def AddEuler(euler1, euler2):
+ 
+ # Clear the console
+ def ClearConsole():
+-	if sys.platform == 'linux-i386' or sys.platform == 'linux2':
++	if sys.platform == 'linux-i386' or sys.platform == 'linux2' or sys.platform.startswith('linux2'):
+ 		sysCommand = 'clear'
+ 	elif sys.platform == 'win32' or sys.platform == 'dos' or sys.platform[0:5] == 'ms-dos' :
+ 		sysCommand = 'cls'

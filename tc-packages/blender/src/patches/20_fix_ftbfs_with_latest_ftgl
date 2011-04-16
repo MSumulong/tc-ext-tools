@@ -1,0 +1,11 @@
+--- a/source/blender/ftfont/intern/FTF_TTFont.cpp
++++ b/source/blender/ftfont/intern/FTF_TTFont.cpp
+@@ -41,6 +41,8 @@
+ #include "BKE_utildefines.h"
+ #endif
+ 
++#include <GL/gl.h>
++
+ #define DOMAIN_NAME "blender"
+ 
+ #define SYSTEM_ENCODING_DEFAULT "UTF-8"

@@ -1,0 +1,66 @@
+--- a/config/linux2-config.py
++++ b/config/linux2-config.py
+@@ -1,4 +1,7 @@
+-LCGDIR = '../lib/linux2'
++# Needed for pkg-config calls.
++import commands
++
++LCGDIR = './lib/linux2'
+ LIBDIR = "${LCGDIR}"
+ 
+ WITH_BF_VERSE = False
+@@ -73,13 +76,14 @@ WITH_BF_INTERNATIONAL = True
+ 
+ BF_GETTEXT = '/usr'
+ BF_GETTEXT_INC = '${BF_GETTEXT}/include'
+-BF_GETTEXT_LIB = 'gettextlib'
++BF_GETTEXT_LIB = 'gettextpo'
+ BF_GETTEXT_LIBPATH = '${BF_GETTEXT}/lib'
+ 
+ WITH_BF_FTGL = True
+-BF_FTGL = '#extern/bFTGL'
+-BF_FTGL_INC = '${BF_FTGL}/include'
+-BF_FTGL_LIB = 'extern_ftgl'
++# Hardcode the include path since scons would probably get confused as
++# "pkg-config --cflags ftgl" returns "-Ifoo -Ibar"
++BF_FTGL_INC = '${BF_FTGL}/include/FTGL'
++BF_FTGL_LIB = commands.getoutput('pkg-config --libs ftgl')
+ 
+ WITH_BF_GAMEENGINE = True
+ WITH_BF_PLAYER = True
+@@ -163,6 +167,12 @@ BF_REDCODE_LIB = ''
+ BF_REDCODE_INC = '${BF_REDCODE}/../' #C files request "libredcode/format.h" which is in "#extern/libredcode/format.h", stupid but compiles for now.
+ BF_REDCODE_LIBPATH='${BF_REDCODE}/lib'
+ 
++BF_FFMPEG_LIB = commands.getoutput('pkg-config --libs libavcodec libavformat vorbisenc libswscale libavdevice') + ' -lgsm' + ' -lopenjpeg'
++
++import sys
++if sys.platform == 'linux2':
++    BF_FFMPEG_LIB += ' ' + commands.getoutput('pkg-config --libs libdc1394-2')
++
+ # Mesa Libs should go here if your using them as well....
+ WITH_BF_STATICOPENGL = False
+ BF_OPENGL = '/usr'
+@@ -195,7 +205,8 @@ CC_WARN = ['-Wall']
+ 
+ ##FIX_STUBS_WARNINGS = -Wno-unused
+ 
+-LLIBS = ['util', 'c', 'm', 'dl', 'pthread', 'stdc++']
++LINK = CXX
++LLIBS = ['util', 'c', 'm', 'dl', 'pthread']
+ ##LOPTS = --dynamic
+ ##DYNLDFLAGS = -shared $(LDFLAGS)
+ 
+@@ -206,9 +217,9 @@ BF_PROFILE_LINKFLAGS = ['-pg']
+ BF_DEBUG = False
+ BF_DEBUG_CCFLAGS = ['-g']
+ 
+-BF_BUILDDIR = '../build/linux2'
+-BF_INSTALLDIR='../install/linux2'
+-BF_DOCDIR='../install/doc'
++BF_BUILDDIR = './build/linux2'
++BF_INSTALLDIR='./install/linux2'
++BF_DOCDIR='./install/doc'
+ 
+ 
+ #Link against pthread

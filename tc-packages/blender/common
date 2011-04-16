@@ -1,5 +1,5 @@
 PACKAGE="blender"
-VERSION="2.56.1b"
+VERSION="2.49b"
 SOURCE="http://download.blender.org/source/blender-${VERSION}.tar.gz"
 BUILD_DEPENDS="python
 python-dev
@@ -15,21 +15,26 @@ libopenal
 libopenal-dev
 openexr
 openexr-dev
+libvorbis
+libvorbis-dev
 SDL
 SDL-dev
 ftgl
 ftgl-dev
-glew
-fftw
-fftw-dev
-xz
-xz-dev
-libsndfile
-libsndfile-dev
-libsamplerate
-libsamplerate-dev
+#glew
+#fftw
+#fftw-dev
+#xz
+#xz-dev
+#libsndfile
+#libsndfile-dev
+#libsamplerate
+#libsamplerate-dev
 freealut
-freealut-dev"
+freealut-dev
+openjpeg
+openjpeg-dev
+#scons"
 
 DESCRIPTION="A fully integrated 3D graphics creation suite."
 AUTHOR="---"

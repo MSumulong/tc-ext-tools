@@ -11,13 +11,7 @@
 
 build_configure() {
 
-   mkdir build
-   cd build
-   cmake -DCMAKE_INSTALL_PREFIX=/usr/local -DCMAKE_BUILD_TYPE=Release \
-      -DCMAKE_SKIP_RPATH=ON -DCMAKE_VERBOSE_MAKEFILE=OFF \
-      -DWITH_FFMPEG=OFF -DSNDFILE=ON -DWITH_OPENJPEG=ON \
-      -DWITH_FFTW3=ON -DWITH_JACK=ON -DWITH_PLAYER=ON \
-      -DPYTHON_LIB=/usr/local/lib/libpython2.7.so -DPYTHON_INC=/usr/local/include/python2.7 .. || return 1
+   return 0
 
 }
 
@@ -27,8 +21,15 @@ build_configure() {
 
 build_compile() {
 
-   cd build
-   make || return 1
+   cp -f $PACKAGE_SRC/user-config.py .
+
+   scons WITH_BF_PLAYER=1 BF_FANCY=0 CFLAGS="$CFLAGS" CPPFLAGS="$CXXFLAGS" || return 1
+
+   # Build plugins by hand
+   ln -sf ../../../source/blender/blenpluginapi \
+        install/linux2/plugins/include
+   chmod +x install/linux2/plugins/bmake
+   make -C install/linux2/plugins || return 1
 
 }
 
@@ -38,8 +39,49 @@ build_compile() {
 
 build_install() {
 
-   cd build
-   make DESTDIR="$INSTALL_ROOT" install || return 1
+   install -Dm644 release/freedesktop/blender.desktop /usr/local/share/applications/blender.desktop
+
+   ### Freedesktop icons
+   #release/freedesktop/icons/16x16/blender.png	/usr/share/icons/hicolor/16x16/apps
+   #release/freedesktop/icons/22x22/blender.png	/usr/share/icons/hicolor/22x22/apps
+   #release/freedesktop/icons/32x32/blender.png	/usr/share/icons/hicolor/32x32/apps
+   #release/freedesktop/icons/scalable/blender.svg	/usr/share/icons/hicolor/scalable/apps
+
+   ### Plugins
+   install/linux2/plugins/sequence/*.so	/usr/lib/blender/plugins/sequence
+   #install/linux2/plugins/texture/*.so	/usr/lib/blender/plugins/texture
+
+   ### Misc. files
+   #release/scripts/bpydata			/usr/share/blender
+   #release/scripts/bpymodules		/usr/share/blender/scripts
+   #release/scripts				/usr/share/blender/scripts
+   #release/VERSION				/usr/share/blender
+   #install/linux2/.blender/locale		/usr/share
+   #install/linux2/.blender/.Blanguages	/usr/share/blender
+
+   # Additional commands to handle the binaries
+   #install -d $(BINARY)/usr/bin
+   #install -m 755 install/linux2/blender       $(BINARY)/usr/bin/blender-bin
+   #install -m 755 debian/blender-wrapper       $(BINARY)/usr/bin/blender
+   #install -m 755 install/linux2/blenderplayer $(BINARY)/usr/bin/blenderplayer
+
+   # Rename some files to make them either visible or more meaningful
+   #mv $(BINARY)/usr/share/blender/.Blanguages $(BINARY)/usr/share/blender/Blanguages
+   #mv $(BINARY)/usr/share/blender/scripts/scripts \
+   #   $(BINARY)/usr/share/blender/scripts/blender
+
+   # Remove duplicates due to the new layout (scripts/<package>)
+   #rm -rf $(BINARY)/usr/share/blender/scripts/blender/bpydata
+   #rm -rf $(BINARY)/usr/share/blender/scripts/blender/bpymodules
+
+   ## Remove exec permission from python scripts
+   #find $(BINARY)/usr/share/blender/scripts/ \
+   #     -name '*.py' -exec chmod a-x {} ';'
+
+   # Link to ttf-bitstream-vera instead of shipping a duplicate...
+     # ... updated to use DejaVu instead (#463749).
+   #dh_link /usr/share/fonts/truetype/ttf-dejavu/DejaVuSans.ttf \
+       #/usr/share/blender/bfont.ttf
 
 }
 

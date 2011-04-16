@@ -1,0 +1,22 @@
+--- a/source/blender/blenlib/intern/util.c
++++ b/source/blender/blenlib/intern/util.c
+@@ -1796,6 +1796,19 @@
+ 		/* add a trailing slash if needed */
+ 		BLI_add_slash(fullname);
+ 	}
++
++	/* don't use /tmp since no special care is taken about
++	 * handling temporary files, rather use $HOME/.blender/
++	 * instead.
++	 */
++	if (strcmp(fullname, "/tmp/")==0) {
++		char *home = getenv("HOME");
++		if (home && BLI_exists(home)) {
++			strcpy(fullname, home);
++			strcat(fullname, "/.blender/");
++		}
++	}
++
+ }
+ 
+ /* 

@@ -1,0 +1,36 @@
+--- a/tools/Blender.py
++++ b/tools/Blender.py
+@@ -189,6 +189,8 @@ def setup_syslibs(lenv):
+ 		syslibs += Split(lenv['BF_OPENGL_LIB'])
+ 	if lenv['OURPLATFORM'] in ('win32-vc', 'win32-mingw','linuxcross'):
+ 		syslibs += Split(lenv['BF_PTHREADS_LIB'])
++	if lenv['WITH_BF_FTGL']:
++		syslibs += Split(lenv['BF_FTGL_LIB'])
+ 
+ 	syslibs += lenv['LLIBS']
+ 
+--- a/extern/SConscript
++++ b/extern/SConscript
+@@ -12,7 +12,9 @@ if env['WITH_BF_BULLET']:
+     SConscript(['bullet2/src/SConscript'])
+ 
+ if env['WITH_BF_INTERNATIONAL']:
+-    SConscript(['bFTGL/SConscript'])
++    # Only if the internal copy is used.
++    if env['BF_FTGL'].startswith('#extern'):
++        SConscript(['bFTGL/SConscript'])
+ 
+ if env['WITH_BF_VERSE']:
+     SConscript(['verse/dist/SConstruct'])
+--- a/source/blender/ftfont/intern/FTF_TTFont.h
++++ b/source/blender/ftfont/intern/FTF_TTFont.h
+@@ -34,8 +34,7 @@
+ #ifndef __FTF_TRUETYPE_FONT_H
+ #define __FTF_TRUETYPE_FONT_H
+ 
+-#include "FTGLPixmapFont.h"
+-#include "FTGLTextureFont.h"
++#include <FTGL/ftgl.h>
+ 
+ #include <stdio.h>
+ //#include <iconv.h>

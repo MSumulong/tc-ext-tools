@@ -1,0 +1,133 @@
+#!/bin/sh
+#
+# A wrapper script for Blender
+#
+
+# In case user's home directory doesn't contain ~/.blender, copy it
+# from /usr/local/share/blender
+if [ ! -d ~/.blender ]; then
+    # Top-level directory
+    mkdir -p ~/.blender
+
+    # Various files
+    ln -s /usr/local/share/blender/Blanguages ~/.blender/.Blanguages
+    ln -s /usr/local/share/blender/bfont.ttf  ~/.blender/.bfont.ttf
+    cp -a /usr/local/share/blender/bpydata ~/.blender
+    cp    /usr/local/share/blender/VERSION ~/.blender
+
+    # Plugins, scripts
+    mkdir -p ~/.blender/plugins/sequence
+    mkdir -p ~/.blender/plugins/texture
+    mkdir -p ~/.blender/scripts
+
+    # Absolute path apparently needed
+    ln -s ~/.blender/bpydata ~/.blender/scripts/bpydata
+fi
+
+# In case the user's ~/.blender came from older versions, some files
+# should be reinstalled.
+
+if [ -f ~/.blender/VERSION ]; then
+    OLD_VERSION=$(cat ~/.blender/VERSION)
+fi
+
+# An empty string can be returned in some cases (e.g. delayed writes
+# over NFS).
+if [ -z "$OLD_VERSION" ]; then
+    OLD_VERSION="old"
+fi
+
+if [ $OLD_VERSION != $(cat /usr/local/share/blender/VERSION) ]; then
+    # Create a backup of user's files, just in case.
+    mkdir -p ~/.blender/bpydata-$OLD_VERSION
+    mv ~/.blender/bpydata/* ~/.blender/bpydata-$OLD_VERSION
+
+    # And now replace with updated data.
+    rmdir ~/.blender/bpydata
+    cp -a /usr/local/share/blender/bpydata ~/.blender
+    cp    /usr/local/share/blender/VERSION ~/.blender
+fi
+
+
+# A transition happened from 2.45-1 to 2.45-2. Scripts are symlinked
+# per package directory rather than individually. Old scripts should
+# be removed to avoid possible duplicates, and so as to clean this
+# directory. To do so, checking that they are symlinks, and point to
+# /usr/local/lib/blender/..., the previous location. To avoid checking
+# everything each time the scripts/ directory, the current blender
+# revision is stored, and the cleanup triggered conditionally.
+
+# Fetch last run's revision number
+if [ -f ~/.blender/REVISION ]; then
+    REVISION=$(cat ~/.blender/REVISION)
+fi
+
+# An empty string can be returned in some cases (e.g. delayed writes
+# over NFS).
+if [ -z "$REVISION" ]; then
+    # Ensure a transition check happens.
+    REVISION=0
+fi
+
+# 2.45-2 transition, continued in 2.45-3.
+if dpkg --compare-versions $REVISION lt 2.45-3 ; then
+    # Check every symlink, and remove the old ones that were installed
+    # by this script. Check /usr/local/lib as well as /usr/local/share to deal
+    # with test packages that had scripts shipped under /usr/local/share.
+    for i in ~/.blender/scripts/*; do
+        if [ -L $i ]; then
+            # -m is needed to handle broken symlinks
+            case $(readlink -f -m $i) in
+                /usr/local/lib/blender/scripts/*)
+                    rm $i ;;
+                /usr/local/share/blender/scripts/*)
+                    rm $i ;;
+            esac
+        fi
+    done
+
+    # Make sure the scripts directory exists (one never knows).
+    mkdir -p ~/.blender/scripts
+
+    # They were living in /usr/local/lib previously. No problem by replacing
+    # them since they were hidden.
+    ln -sf /usr/local/share/blender/Blanguages ~/.blender/.Blanguages
+    ln -sf /usr/local/share/blender/bfont.ttf  ~/.blender/.bfont.ttf
+
+    # It looks like bpydata has to be under scripts/ as well.
+    ln -sf ~/.blender/bpydata ~/.blender/scripts
+
+    # The locale link is no longer needed. Only remove if it points to
+    # the old location (a user could have changed this link).
+    if [ -L ~/.blender/locale ]; then
+        if [ $(readlink -f -m ~/.blender/locale) = "/usr/local/lib/blender/locale" ]; then
+            rm ~/.blender/locale
+        fi
+    fi
+fi
+
+# Store the current revision for future transitions.
+CURRENT_REVISION=$(dpkg -l blender | grep ^ii | awk '{print $3}')
+
+# But only do that when that's a new revision, be gentle to people
+# working on NFS shares
+if [ $CURRENT_REVISION != $REVISION ]; then
+    echo $CURRENT_REVISION > ~/.blender/REVISION
+fi
+
+# Symlink the directories only. Not symlinking scripts/ directly since
+# the user probably want a real directory to be able to add scripts
+# inside w/o having to install them system-wide.
+for path in /usr/local/share/blender/scripts/* ; do
+    package=$(basename $path)
+
+    # Only create if inexistent. That prevents creating symlinks in
+    # directories having the same name, that could be present (like
+    # ~/.blender/scripts/foo/foo -> /usr/local/share/blender/scripts/foo if
+    # ~/.blender/scripts/foo exists already).
+    if [ ! -e ~/.blender/scripts/$package ]; then
+        ln -sf $path ~/.blender/scripts/$package
+    fi
+done
+
+blender-bin "$@"
