@@ -13,7 +13,8 @@ build_configure() {
 
    mkdir build
    cd build
-   cmake -DCMAKE_INSTALL_PREFIX=/usr/local -DCMAKE_BUILD_TYPE=Release .. || return 1
+   cmake -DCMAKE_INSTALL_PREFIX=/usr/local -DCMAKE_BUILD_TYPE=Release \
+     -DWITH_QZeitgeist=OFF .. || return 1
 
 }
 

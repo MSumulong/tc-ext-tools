@@ -1,0 +1,18 @@
+PACKAGE="minitube"
+VERSION="1.4.2"
+SOURCE="http://flavio.tordini.org/files/minitube/minitube-${VERSION}.tar.gz"
+BUILD_DEPENDS="qt-4.x-base
+qt-4.x-xml
+qt-4.x-dbus
+qt-4.x-dev
+phonon
+phonon-dev"
+
+DESCRIPTION="Minitube is a YouTube desktop application."
+AUTHOR="Flavio Tordini"
+SITE="http://flavio.tordini.org/minitube"
+COPYING="GPL-3"
+MAINTAINERS="Arslan S."
+COMMENTS="This extension is PPI compatible."
+CHANGELOG="---"
+CURRENT="First Version"

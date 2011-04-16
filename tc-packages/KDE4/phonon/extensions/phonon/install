@@ -1,3 +1,2 @@
-usr/local/lib/kde4
 usr/local/lib/*.so*
-usr/local/share
+usr/local/share/dbus-1

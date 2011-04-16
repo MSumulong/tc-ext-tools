@@ -1,0 +1,3 @@
+ICON="/usr/local/share/icons/hicolor/64x64/apps/minitube.png"
+COMMENTS="You also need gstreamer and gst-plugins-* or phonon-backend-vlc.
+		This extension is PPI compatible."

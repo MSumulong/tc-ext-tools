@@ -1,33 +1,24 @@
 PACKAGE="phonon"
-VERSION="4.4.3"
-SOURCE="ftp://ftp.kde.org/pub/kde/stable/phonon/${VERSION}/phonon-${VERSION}.tar.bz2"
+VERSION="4.5.0"
+SOURCE="ftp://ftp.kde.org/pub/kde/stable/phonon/${VERSION}/src/phonon-${VERSION}.tar.bz2"
 BUILD_DEPENDS="cmake
 automoc4
 qt-4.x-base
 qt-4.x-dbus
 qt-4.x-extended
 qt-4.x-dev
-libasound
-alsa-dev
 glib2
 glib2-dev
 Xorg-7.5
-Xorg-7.5-dev
-qt-4.x-opengl
-libxml2
-libxml2-dev
-gstreamer
-gstreamer-dev
-gst-plugins-base
-gst-plugins-base-dev"
+Xorg-7.5-dev"
 
 DESCRIPTION="Phonon Multimedia Framework."
 AUTHOR="Matthias Kretz, Ricardo Villalba, Ian Monroe, Nokia Corporation"
 SITE="http://www.kde.org/"
 COPYING="GPL-2/LGPL-2.1/MIT"
 MAINTAINERS="robc, Arslan S."
-COMMENTS="Optional: gstreamer & gst-plugins*
-		This extension is PPI compatible."
+COMMENTS="This extension is PPI compatible."
 CHANGELOG="2010/01/07 Original 4.3.0 by robc
-		2010/07/01 Updated to 4.4.2 & added gstreamer backend by Arslan S."
+		2010/07/01 Updated to 4.4.2 & added gstreamer backend by Arslan S.
+		2011/01/08 Updated to 4.4.3 by Arslan S."
 CURRENT="Updated to $VERSION by Arslan S."

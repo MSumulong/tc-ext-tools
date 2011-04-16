@@ -1,8 +1,6 @@
 PACKAGE="phonon-backend-vlc"
-VERSION="0.2.0"
-
-
-SOURCE="ftp://ftp.kde.org/pub/kde/stable/phonon-backend-vlc/$VERSION/src/phonon-backend-vlc-${VERSION}.tar.gz"
+VERSION="0.3.2"
+SOURCE="http://download.kde.org/stable/phonon/phonon-backend-vlc/${VERSION}/src/phonon-backend-vlc-${VERSION}.tar.bz2"
 BUILD_DEPENDS="cmake
 automoc4
 qt-4.x-base
@@ -10,8 +8,9 @@ qt-4.x-dev
 vlc
 vlc-dev
 phonon
-phonon-dev"
-
+phonon-dev
+Xorg-7.5-lib
+Xorg-7.5-dev"
 
 DESCRIPTION="Phonon VLC backend."
 AUTHOR="various"
@@ -19,5 +18,5 @@ SITE="http://www.kde.org/"
 COPYING="LGPL"
 MAINTAINERS="Arslan S."
 COMMENTS="This extension is PPI compatible."
-CHANGELOG="---"
-CURRENT="First Version 0.2.0"
+CHANGELOG="2010/10/05 First Version 0.2.0"
+CURRENT="Updated to $VERSION"
