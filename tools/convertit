@@ -51,64 +51,71 @@ this_main() {
    [ -d "$PACKAGE_SRC_TEMP" ] && sudo rm -rf "$PACKAGE_SRC_TEMP"
    mkdir -p "$PACKAGE_SRC_TEMP"
 
-   if [ "$PACKAGE_SOURCE_TYPE" = "bz2" ]; then
-        echo "Decompressing the package source with bzip2."
+   echo "---------------------------------------------------------------"
+   echo "Input source is $PACKAGE_SOURCE_NAME of type $PACKAGE_SOURCE_TYPE"
+   echo "Output source is $PACKAGE_SOURCE_NAME_CONV of type tarxz"
+   echo "---------------------------------------------------------------"
+
+   if [ "$PACKAGE_SOURCE_TYPE" = "tarbz2" ]; then
+        echo "Decompressing the package source using bzip2"
         bzip2 -d -c "$PACKAGE_SOURCE_ORIG" > "$PACKAGE_SRC_TEMP/${PACKAGE_SOURCE_NAME%.bz2}" || return 1
 
-        echo "Compressing the package source with xz."
+        echo "Compressing the package source using xz"
         xz "$PACKAGE_SRC_TEMP/${PACKAGE_SOURCE_NAME%.bz2}" || return 1
 
-        echo "Moving the converted source to the package source directory."
+        echo "Moving the converted source to the package source directory"
         mv -f "$PACKAGE_SRC_TEMP/${PACKAGE_SOURCE_NAME%.bz2}.xz" "$_PACKAGE_SRC" || return 1
-   elif [ "$PACKAGE_SOURCE_TYPE" = "gz" ]; then
-        echo "Decompressing the package source with gzip."
+   elif [ "$PACKAGE_SOURCE_TYPE" = "targz" ]; then
+        echo "Decompressing the package source using gzip"
         gzip -d -c "$PACKAGE_SOURCE_ORIG" > "$PACKAGE_SRC_TEMP/${PACKAGE_SOURCE_NAME%.gz}" || return 1
 
-        echo "Compressing the package source with xz."
+        echo "Compressing the package source using xz"
         xz "$PACKAGE_SRC_TEMP/${PACKAGE_SOURCE_NAME%.gz}" || return 1
 
-        echo "Moving the converted source to the package source directory."
+        echo "Moving the converted source to the package source directory"
         mv -f "$PACKAGE_SRC_TEMP/${PACKAGE_SOURCE_NAME%.gz}.xz" "$_PACKAGE_SRC" || return 1
    elif [ "$PACKAGE_SOURCE_TYPE" = "tgz" ]; then
-        echo "Decompressing the package source with gzip."
+        echo "Decompressing the package source using gzip"
         gzip -d -c "$PACKAGE_SOURCE_ORIG" > "$PACKAGE_SRC_TEMP/${PACKAGE_SOURCE_NAME%.tgz}.tar" || return 1
 
-        echo "Compressing the package source with xz."
+        echo "Compressing the package source using xz"
         xz "$PACKAGE_SRC_TEMP/${PACKAGE_SOURCE_NAME%.tgz}.tar" || return 1
 
-        echo "Moving the converted source to the package source directory."
+        echo "Moving the converted source to the package source directory"
         mv -f "$PACKAGE_SRC_TEMP/${PACKAGE_SOURCE_NAME%.tgz}.tar.xz" "$_PACKAGE_SRC" || return 1
    elif [ "$PACKAGE_SOURCE_TYPE" = "tbz2" ]; then
-        echo "Decompressing the package source with bzip2."
+        echo "Decompressing the package source using bzip2"
         bzip2 -d -c "$PACKAGE_SOURCE_ORIG" > "$PACKAGE_SRC_TEMP/${PACKAGE_SOURCE_NAME%.tbz2}.tar" || return 1
 
-        echo "Compressing the package source with xz."
+        echo "Compressing the package source using xz"
         xz "$PACKAGE_SRC_TEMP/${PACKAGE_SOURCE_NAME%.tbz2}.tar" || return 1
 
-        echo "Moving the converted source to the package source directory."
+        echo "Moving the converted source to the package source directory"
         mv -f "$PACKAGE_SRC_TEMP/${PACKAGE_SOURCE_NAME%.tbz2}.tar.xz" "$_PACKAGE_SRC" || return 1
    elif [ "$PACKAGE_SOURCE_TYPE" = "tar" ]; then
-        echo "Copying the package source to the temporary source directory."
+        echo "Copying the package source to the temporary source directory"
         cp "$PACKAGE_SOURCE_ORIG" "$PACKAGE_SRC_TEMP" || return 1
 
-        echo "Compressing the package source with xz."
+        echo "Compressing the package source using xz"
         xz "$PACKAGE_SRC_TEMP/${PACKAGE_SOURCE_NAME%.tar}.tar" || return 1
 
-        echo "Moving the converted source to the package source directory."
+        echo "Moving the converted source to the package source directory"
         mv -f "$PACKAGE_SRC_TEMP/${PACKAGE_SOURCE_NAME%.tar}.tar.xz" "$_PACKAGE_SRC" || return 1
    elif [ "$PACKAGE_SOURCE_TYPE" = "zip" ]; then
-        echo "Unzipping the package source to the temporary source directory."
+        echo "Extracting the package source to the temporary source directory using unzip"
         unzip "$PACKAGE_SOURCE_ORIG" -d "$PACKAGE_SRC_TEMP" || return 1
 
-        echo "Creating a tarball from the unzipped source."
+        echo "Creating a tarball of the extracted source"
         tar -C "$PACKAGE_SRC_TEMP" -cJf "$PACKAGE_SRC_TEMP/${PACKAGE_SOURCE_NAME%.zip}.tar.xz" "$(ls $PACKAGE_SRC_TEMP)" || return 1
 
-        echo "Moving the converted source to the package source directory."
+        echo "Moving the converted source to the package source directory"
         mv -f "$PACKAGE_SRC_TEMP/${PACKAGE_SOURCE_NAME%.zip}.tar.xz" "$_PACKAGE_SRC" || return 1
    elif [ "$PACKAGE_SOURCE_TYPE" = "custom" ]; then
-        echo "Executing the package build convert function."
+        echo "Executing the package build convert function"
         cd "$PACKAGE_SRC_TEMP"
         build_convert || return 1
+   elif [ "$PACKAGE_SOURCE_TYPE" = "tarxz" ] || [ "$PACKAGE_SOURCE_TYPE" = "txz" ]; then
+        echo "No need to convert the source of this type"
    else
         echo "Error! Unsupported source type."
         return 1
