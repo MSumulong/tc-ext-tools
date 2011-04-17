@@ -104,47 +104,45 @@ set_source() {
                PACKAGE_SOURCE_NAME="${PACKAGE}-${VERSION}.tar.xz"
           fi
      elif [ "$PACKAGE_SOURCE_URL_TYPE" != "none" ]; then
-          PACKAGE_SOURCE_URL_TYPE="custom"
-          if [ -z "$PACKAGE_SOURCE_NAME" ]; then
-               PACKAGE_SOURCE_NAME="${SOURCE##*/}"
-          fi
+          echo "Error! Unsupported source url type."
+          exit 1
      fi
 
      SOURCE="${SOURCE#*::}"
      SOURCE="${SOURCE%->*}"
 
-     if [ ! "${PACKAGE_SOURCE_NAME%.bz2}" = "$PACKAGE_SOURCE_NAME" ]; then
-            PACKAGE_SOURCE_TYPE="bz2"
-            PACKAGE_SOURCE_NAME_CONVERTED="${PACKAGE_SOURCE_NAME%.bz2}.xz"
-     elif [ ! "${PACKAGE_SOURCE_NAME%.gz}" = "$PACKAGE_SOURCE_NAME" ]; then
-            PACKAGE_SOURCE_TYPE="gz"
-            PACKAGE_SOURCE_NAME_CONVERTED="${PACKAGE_SOURCE_NAME%.gz}.xz"
-     elif [ ! "${PACKAGE_SOURCE_NAME%.tgz}" = "$PACKAGE_SOURCE_NAME" ]; then
-            PACKAGE_SOURCE_NAME_CONVERTED="${PACKAGE_SOURCE_NAME%.tgz}.tar.xz"
-            PACKAGE_SOURCE_TYPE="tgz"
-     elif [ ! "${PACKAGE_SOURCE_NAME%.tbz2}" = "$PACKAGE_SOURCE_NAME" ]; then
-            PACKAGE_SOURCE_NAME_CONVERTED="${PACKAGE_SOURCE_NAME%.tbz2}.tar.xz"
-            PACKAGE_SOURCE_TYPE="tbz2"
-     elif [ ! "${PACKAGE_SOURCE_NAME%.zip}" = "$PACKAGE_SOURCE_NAME" ]; then
-            PACKAGE_SOURCE_TYPE="zip"
-            PACKAGE_SOURCE_NAME_CONVERTED="${PACKAGE_SOURCE_NAME%.zip}.tar.xz"
-     elif [ ! "${PACKAGE_SOURCE_NAME%.xz}" = "$PACKAGE_SOURCE_NAME" ]; then
-            PACKAGE_SOURCE_TYPE="xz"
-            PACKAGE_SOURCE_NAME_CONVERTED="$PACKAGE_SOURCE_NAME"
-     elif [ ! "${PACKAGE_SOURCE_NAME%.txz}" = "$PACKAGE_SOURCE_NAME" ]; then
-            PACKAGE_SOURCE_TYPE="txz"
-            PACKAGE_SOURCE_NAME_CONVERTED="$PACKAGE_SOURCE_NAME"
-     elif [ ! "${PACKAGE_SOURCE_NAME%.tar}" = "$PACKAGE_SOURCE_NAME" ]; then
-            PACKAGE_SOURCE_TYPE="tar"
-            PACKAGE_SOURCE_NAME_CONVERTED="${PACKAGE_SOURCE_NAME%.tar}.tar.xz"
+     if [ "${PACKAGE_SOURCE_NAME%.tar.bz2}" != "$PACKAGE_SOURCE_NAME" ]; then
+          PACKAGE_SOURCE_TYPE="tarbz2"
+          PACKAGE_SOURCE_NAME_CONV="${PACKAGE_SOURCE_NAME%.bz2}.xz"
+     elif [ "${PACKAGE_SOURCE_NAME%.tar.gz}" != "$PACKAGE_SOURCE_NAME" ]; then
+          PACKAGE_SOURCE_TYPE="targz"
+          PACKAGE_SOURCE_NAME_CONV="${PACKAGE_SOURCE_NAME%.gz}.xz"
+     elif [ "${PACKAGE_SOURCE_NAME%.tgz}" != "$PACKAGE_SOURCE_NAME" ]; then
+          PACKAGE_SOURCE_NAME_CONV="${PACKAGE_SOURCE_NAME%.tgz}.tar.xz"
+          PACKAGE_SOURCE_TYPE="tgz"
+     elif [ "${PACKAGE_SOURCE_NAME%.tbz2}" != "$PACKAGE_SOURCE_NAME" ]; then
+          PACKAGE_SOURCE_NAME_CONV="${PACKAGE_SOURCE_NAME%.tbz2}.tar.xz"
+          PACKAGE_SOURCE_TYPE="tbz2"
+     elif [ "${PACKAGE_SOURCE_NAME%.tar.xz}" != "$PACKAGE_SOURCE_NAME" ]; then
+          PACKAGE_SOURCE_TYPE="tarxz"
+          PACKAGE_SOURCE_NAME_CONV="$PACKAGE_SOURCE_NAME"
+     elif [ "${PACKAGE_SOURCE_NAME%.txz}" != "$PACKAGE_SOURCE_NAME" ]; then
+          PACKAGE_SOURCE_TYPE="txz"
+          PACKAGE_SOURCE_NAME_CONV="$PACKAGE_SOURCE_NAME"
+     elif [ "${PACKAGE_SOURCE_NAME%.tar}" != "$PACKAGE_SOURCE_NAME" ]; then
+          PACKAGE_SOURCE_TYPE="tar"
+          PACKAGE_SOURCE_NAME_CONV="${PACKAGE_SOURCE_NAME%.tar}.tar.xz"
+     elif [ "${PACKAGE_SOURCE_NAME%.zip}" != "$PACKAGE_SOURCE_NAME" ]; then
+          PACKAGE_SOURCE_TYPE="zip"
+          PACKAGE_SOURCE_NAME_CONV="${PACKAGE_SOURCE_NAME%.zip}.tar.xz"
      elif [ "$PACKAGE_SOURCE_TYPE" != "none" ]; then
-            PACKAGE_SOURCE_TYPE="custom"
-            PACKAGE_SOURCE_NAME_CONVERTED="${PACKAGE_SOURCE_NAME%.*}.tar.xz"
+          PACKAGE_SOURCE_TYPE="custom"
+          PACKAGE_SOURCE_NAME_CONV="${PACKAGE}-${VERSION}.tar.xz"
      fi
 
      if [ -z "$SOURCE_TOPDIR" ]; then
           if [ -d "$PACKAGE_SRC_TEMP" ]; then
-               LIST=$(ls $PACKAGE_SRC_TEMP)
+               LIST=`ls $PACKAGE_SRC_TEMP`
                cnt=0
                for i in $LIST
                do
@@ -166,7 +164,7 @@ set_source() {
 
      if [ "$PACKAGE_SOURCE_TYPE" != "none" ]; then
           PACKAGE_SOURCE_ORIG="$_PACKAGE_SRC/$PACKAGE_SOURCE_NAME"
-          PACKAGE_SOURCE_CONV="$_PACKAGE_SRC/$PACKAGE_SOURCE_NAME_CONVERTED"
+          PACKAGE_SOURCE_CONV="$_PACKAGE_SRC/$PACKAGE_SOURCE_NAME_CONV"
           if [ -f "$PACKAGE_SOURCE_CONV" ]; then
                PACKAGE_SOURCE="$PACKAGE_SOURCE_CONV"
           else
