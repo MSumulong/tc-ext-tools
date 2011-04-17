@@ -1,0 +1,13 @@
+PACKAGE="mxml"
+VERSION="2.6"
+SOURCE="http://ftp.easysw.com/pub/mxml/${VERSION}/mxml-${VERSION}.tar.gz"
+BUILD_DEPENDS=""
+
+DESCRIPTION="Mini-XML is a small XML library."
+AUTHOR="---"
+SITE="http://www.minixml.org/"
+COPYING="Mini-XML License (LGPL with a few exceptions)"
+MAINTAINERS="Arslan S."
+COMMENTS="This extension is PPI compatible."
+CHANGELOG="2010/01/08 First Version 2.6"
+CURRENT="Rebuild"
