@@ -104,7 +104,7 @@ set_source() {
                PACKAGE_SOURCE_NAME="${PACKAGE}-${VERSION}.tar.xz"
           fi
      elif [ "$PACKAGE_SOURCE_URL_TYPE" != "none" ]; then
-          echo "Error! Unsupported source url type."
+          echo "Error, unsupported source url type !"
           exit 1
      fi
 
@@ -186,19 +186,18 @@ set_extensions() {
         fi
    fi
 
-   NUMBER_OF_EXTENSIONS=0
+   cnt=0
    for i in $EXTENSIONS
    do
-      NUMBER_OF_EXTENSIONS=`expr $NUMBER_OF_EXTENSIONS+1`
+      cnt=`expr $cnt+1`
    done
-
-   if [ "$NUMBER_OF_EXTENSIONS" = 0 ]; then
-        echo "Error! There is no extension available."
+   if [ $cnt = 0 ]; then
+        echo "Error, there is no extension available !"
         exit 1
-   elif [ "$NUMBER_OF_EXTENSIONS" = 1 ]; then
-        SINGLE_EXTENSION_PACKAGE=1
+   elif [ $cnt = 1 ]; then
+        SINGLE_EXTENSION=1
    else
-        SINGLE_EXTENSION_PACKAGE=0
+        SINGLE_EXTENSION=0
    fi
 
 }
@@ -207,7 +206,6 @@ set_extensions() {
 set_extension() {
 
    if [ -z "$EXTENSION" ]; then
-        echo "Warning! EXTENSION must be set, skipping."
         return 0
    fi
 
@@ -230,7 +228,7 @@ set_extension() {
         PACKAGE_EXTENSION_NAME="$NAME"
    fi
 
-   if [ -n "$(echo $PACKAGE_EXTENSION_NAME | grep KERNEL)" ]; then
+   if [ "$(echo $PACKAGE_EXTENSION_NAME | grep KERNEL)" ]; then
         PACKAGE_EXTENSION_NAME=$(echo $PACKAGE_EXTENSION_NAME | sed "s/KERNEL/${KERNEL}/")
    fi
 
