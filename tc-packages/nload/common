@@ -1,0 +1,14 @@
+PACKAGE="nload"
+VERSION="0.7.2"
+SOURCE="http://www.roland-riegel.de/nload/nload-${VERSION}.tar.gz"
+BUILD_DEPENDS="ncurses
+ncurses-dev"
+
+DESCRIPTION="A console application which monitors network traffic and bandwidth usage in real time."
+AUTHOR="Roland Riegel"
+SITE="http://www.roland-riegel.de/nload/index.html"
+COPYING="GPL-2"
+MAINTAINERS="Arslan S."
+COMMENTS="This extension is PPI compatible."
+CHANGELOG="---"
+CURRENT="First Version"

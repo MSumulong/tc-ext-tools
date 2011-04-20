@@ -1,0 +1,13 @@
+PACKAGE="libzip"
+VERSION="0.10"
+SOURCE="http://www.nih.at/libzip/libzip-${VERSION}.tar.bz2"
+BUILD_DEPENDS=""
+
+DESCRIPTION="A C library for reading, creating, and modifying zip archives."
+AUTHOR="Dieter Baron, Thomas Klausner"
+SITE="http://nih.at/libzip/"
+COPYING="BSD"
+MAINTAINERS="Arslan S."
+COMMENTS="This extension is PPI compatible."
+CHANGELOG="2010/07/15 First Version 0.9.3"
+CURRENT="Updated to $VERSION"
