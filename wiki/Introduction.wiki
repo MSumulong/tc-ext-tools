@@ -36,7 +36,7 @@ cp config.sample .config
 
 = Usage =
 
-* Hello World *
+== Hello World ==
   * See how easy it is to build it!
 {{{
 svn checkout http://tc-ext-tools.googlecode.com/svn/tc-packages/libdvbpsi
@@ -44,7 +44,7 @@ cd libdvbpsi
 buildit
 }}}
 
-* Creating a new package *
+== Creating a new package ==
   * First boost the package with boostit
 {{{
 mkdir package
@@ -77,49 +77,55 @@ _Hint: You need to define `build_<function>` in the package build file._
 {{{
 buildit print configure|compile|install
 }}}
-  * If an error occurs you can see the details about the error.
+  * If an error occurs or you want to see low level messages.
 {{{
-buildit print error
+buildit print message
 }}}
-* See available packages for more. *
+
+=== See available packages for more. ===
 {{{
 svn checkout http://tc-ext-tools.googlecode.com/svn/tc-packages/
 }}}
 
-* tc-ext-tools packages database *
-  * When you have lots of packages inside your packages directory, it is a must to have a database. This is done by update-tet-database. It simply creates a database from packages found in the packages directory.
+== tc-ext-tools shell environment ==
+
+The shell environment is to make your life easier by implementing special shell functions such as changing parent's directory to a package's root directory, searching in the package, listing the contents of a package or even editing the package files.
+
+_Note: A reboot or relogin is required for tc-ext-tools shell functions to be available for the first time installation._
+
+=== update-tet-database ===
+  * Create a database from packages found in the packages directory.
 {{{
 update-tet-database
 }}}
 
-* tc-ext-tools shell environment *
-
-The shell environment is to make your life easier by implementing special shell functions such as changing parent's directory to a package root, listing the contents of a package or even editing the package files.
+=== tetls ===
   * List the contents of a package
 {{{
 tetls <package>
 }}}
 _Hint: If `<package>` is left blank, tetls lists all available packages._
 
+=== tetcd ===
   * Change directory to a package's root
 {{{
 tetcd <package>
 }}}
 _Hint: If `<package>` is left blank, tetcd changes directory to packages directory._
 
+=== tetfind ===
   * Find files in the package
 {{{
 tetfind <package> <file>
 }}}
 _Hint: If no argument is given, tetfind finds all the files in the packages directory. If only `<file>` is left blank, tetfind finds all the files in the package._
 
+=== teted ===
   * Edit the files of a package
 {{{
 teted <package> <file>
 }}}
-_Hint: If `<file>` is left blank, teted opens all the files in the package with your favorite text editor. If a file name is specified it searches for the files with the name in the package, and if more than one file is found with the same name it asks you which one to open. If the search matches only one file it opens the file._
-
-_Note: A reboot or relogin is required for tc-ext-tools shell functions to be available for the first time installation._
+_Hint: If `<file>` is left blank, teted lists all the files in the package and asks you which one to open. If a file name is specified it searches for the files with the name in the package, and if more than one file is found with the same name it asks you which one to open. If the search matches only one file it opens the file._
 
 *Important Note: This project is still under development and is in alpha stage. So any suggestion or critiques welcome.*
 
