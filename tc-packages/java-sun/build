@@ -10,7 +10,7 @@ build_unpack() {
    mkdir java-sun
    cd java-sun
 
-   wget --no-check-certificate https://jdk-distros.dev.java.net/source/browse/*checkout*/jdk-distros/trunk/utils/construct.sh || return 1
+   wget --no-check-certificate http://java.net/projects/jdk-distros/sources/svn/content/trunk/utils/construct.sh?raw=true -O construct.sh || return 1
    chmod +x construct.sh
 
    mkdir unbundle-jdk
@@ -18,26 +18,6 @@ build_unpack() {
    sh "$PACKAGE_SOURCE" --accept-license
    cd ..
    ./construct.sh unbundle-jdk linux-jdk linux-jre || return 1
-
-}
-
-############################################################################ 
-#                            Configure                                     #
-############################################################################
-
-build_configure() {
-
-   return 0
-
-}
-
-############################################################################ 
-#                              Compile                                     #
-############################################################################
-
-build_compile() {
-
-   return 0
 
 }
 
@@ -63,10 +43,6 @@ build_install() {
   install -m644 ${INSTALL_ROOT}/usr/local/java-sun/jre/COPYRIGHT ${INSTALL_ROOT}/usr/local/share/licenses/sun-jre
   install -m644 ${INSTALL_ROOT}/usr/local/java-sun/jre/LICENSE ${INSTALL_ROOT}/usr/local/share/licenses/sun-jre
   install -m644 ${INSTALL_ROOT}/usr/local/java-sun/jre/THIRDPARTYLICENSEREADME.txt ${INSTALL_ROOT}/usr/local/share/licenses/sun-jre
-
-  # Fix system prefs folder (FS#18872)
-  mkdir -p ${INSTALL_ROOT}/etc/.java/.systemPrefs
-  touch ${INSTALL_ROOT}/etc/.java/.systemPrefs/emptyfile
 
   #copy icon
   install -D -m644 ${PACKAGE_SOURCE_TOPDIR}/linux-jdk/jre/lib/desktop/icons/hicolor/48x48/apps/sun-java.png ${INSTALL_ROOT}/usr/local/share/pixmaps/java.png

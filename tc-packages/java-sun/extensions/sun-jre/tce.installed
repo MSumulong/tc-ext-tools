@@ -11,3 +11,5 @@ if [ -d "/tmp/tcloop/$THIS" ]; then
      done
 fi
 
+[ -d /etc/.java/.systemPrefs ] || mkdir -d /etc/.java/.systemPrefs
+
