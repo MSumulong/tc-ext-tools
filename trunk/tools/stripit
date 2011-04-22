@@ -46,7 +46,7 @@ this_strip() {
    if [ -n "$EXECUTABLE_LIST" ]; then
         for EXECUTABLE in $EXECUTABLE_LIST
         do
-            echo "Stripping the package extension executable $EXECUTABLE" 
+            echo "Stripping the package extension executable ${EXECUTABLE#$PACKAGE_EXTENSION_BIN}" 
             sudo strip --strip-unneeded "$EXECUTABLE" || return 1
         done
    fi
@@ -55,7 +55,7 @@ this_strip() {
    if [ -n "$SHARED_OBJECT_LIST" ]; then
         for SHARED_OBJECT in $SHARED_OBJECT_LIST
         do
-            echo "Stripping the package extension shared object $SHARED_OBJECT" 
+            echo "Stripping the package extension shared object ${SHARED_OBJECT#$PACKAGE_EXTENSION_BIN}" 
             sudo strip -g "$SHARED_OBJECT" || return 1
         done
    fi

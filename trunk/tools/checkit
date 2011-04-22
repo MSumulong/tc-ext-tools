@@ -44,7 +44,9 @@ this_check() {
    sudo unsquashfs -d "$PACKAGE_EXTENSION_BIN_TEMP" "$PACKAGE_EXTENSION_TCZ" || return 1
 
    echo "Checking the package extension files."
-   sudo find "$PACKAGE_EXTENSION_BIN_TEMP" -not -type d -exec file "{}" \; || return 1
+   cd "$PACKAGE_EXTENSION_BIN_TEMP"
+   sudo find -not -type d -exec file "{}" \; || return 1
+   cd -
 
    echo "Checking the permissions and ownership of the package extension tce.installed directory."
    if [ -d "$PACKAGE_EXTENSION_BIN_TEMP/usr/local/tce.installed" ]; then
@@ -105,7 +107,7 @@ this_main() {
             echo "yes"
        else
             echo "no"
-            echo "Error! You must create it first!"
+            echo "Error! You must create it first."
             return 1
        fi
 

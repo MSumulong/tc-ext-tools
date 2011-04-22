@@ -17,8 +17,8 @@ build_configure() {
 	--enable-overlays=mod \
 	--disable-ndb \
 	--enable-slp \
-	--enable-bdb --enable-ldbm-api=berkeley \
-	--enable-slapd --enable-slurpd \
+	--enable-bdb \
+	--enable-slapd \
 	--enable-ldap \
 	--enable-rewrite \
 	--enable-cleartext --enable-slapi \

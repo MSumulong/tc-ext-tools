@@ -523,8 +523,6 @@ usr/local/lib/vlc/plugins/packetizer/libpacketizer_mpegvideo_plugin.la
 usr/local/lib/vlc/plugins/packetizer/libpacketizer_mpegvideo_plugin.so
 usr/local/lib/vlc/plugins/packetizer/libpacketizer_vc1_plugin.la
 usr/local/lib/vlc/plugins/packetizer/libpacketizer_vc1_plugin.so
-usr/local/lib/vlc/plugins/services_discovery/libbonjour_plugin.la
-usr/local/lib/vlc/plugins/services_discovery/libbonjour_plugin.so
 usr/local/lib/vlc/plugins/services_discovery/libmediadirs_plugin.la
 usr/local/lib/vlc/plugins/services_discovery/libmediadirs_plugin.so
 usr/local/lib/vlc/plugins/services_discovery/libmtp_plugin.la
@@ -715,9 +713,6 @@ usr/local/lib/vlc/plugins/visualization/libvisual_plugin.la
 usr/local/lib/vlc/plugins/visualization/libvisual_plugin.so
 usr/local/lib/vlc/vlc-cache-gen
 usr/local/share/applications/vlc.desktop
-usr/local/share/apps/solid/actions/vlc-opencda.desktop
-usr/local/share/apps/solid/actions/vlc-opendvd.desktop
-usr/local/share/apps/solid/actions/vlc-openvcd.desktop
 usr/local/share/doc/vlc/bugreport-howto.txt
 usr/local/share/doc/vlc/fortunes.txt
 usr/local/share/doc/vlc/intf-vcd.txt
@@ -731,6 +726,9 @@ usr/local/share/icons/hicolor/32x32/apps/vlc.png
 usr/local/share/icons/hicolor/32x32/apps/vlc.xpm
 usr/local/share/icons/hicolor/48x48/apps/vlc-christmas.png
 usr/local/share/icons/hicolor/48x48/apps/vlc.png
+usr/local/share/kde4/apps/solid/actions/vlc-opencda.desktop
+usr/local/share/kde4/apps/solid/actions/vlc-opendvd.desktop
+usr/local/share/kde4/apps/solid/actions/vlc-openvcd.desktop
 usr/local/share/locale/af/LC_MESSAGES/vlc.mo
 usr/local/share/locale/ar/LC_MESSAGES/vlc.mo
 usr/local/share/locale/ast/LC_MESSAGES/vlc.mo
@@ -768,6 +766,7 @@ usr/local/share/locale/ka/LC_MESSAGES/vlc.mo
 usr/local/share/locale/kk/LC_MESSAGES/vlc.mo
 usr/local/share/locale/km/LC_MESSAGES/vlc.mo
 usr/local/share/locale/ko/LC_MESSAGES/vlc.mo
+usr/local/share/locale/lg/LC_MESSAGES/vlc.mo
 usr/local/share/locale/lt/LC_MESSAGES/vlc.mo
 usr/local/share/locale/lv/LC_MESSAGES/vlc.mo
 usr/local/share/locale/mk/LC_MESSAGES/vlc.mo
