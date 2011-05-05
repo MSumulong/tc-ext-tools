@@ -1,0 +1,14 @@
+PACKAGE="blobwars"
+VERSION="1.19"
+SOURCE="http://downloads.sourceforge.net/project/blobwars/blobwars-${VERSION}.tar.gz"
+BUILD_DEPENDS="SDL
+SDL-dev"
+
+DESCRIPTION="Blob Wars:Metal Blob Solid is a 2D platform game."
+AUTHOR="Parallel Realities"
+SITE="http://sourceforge.net/projects/blobwars/"
+COPYING="GPL-2"
+MAINTAINERS="Arslan S."
+COMMENTS="---"
+CHANGELOG="2009/11/15 Original 1.14"
+CURRENT="Updated to $VERSION"

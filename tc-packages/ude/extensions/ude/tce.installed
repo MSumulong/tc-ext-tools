@@ -1,0 +1,2 @@
+#!/bin/sh
+echo uwm > /etc/sysconfig/desktop

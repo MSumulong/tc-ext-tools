@@ -1,0 +1,14 @@
+PACKAGE="ude"
+VERSION="0.2.10a"
+SOURCE="http://downloads.sourceforge.net/udeproject/uwm-${VERSION}.tar.gz"
+BUILD_DEPENDS="Xorg-7.5-lib
+Xorg-7.5-dev"
+
+DESCRIPTION="Unix Desktop Environment is a GUI desktop environment."
+AUTHOR="---"
+SITE="http://udeproject.sourceforge.net/index.shtml"
+COPYING="GPL-2"
+MAINTAINERS="Arslan S."
+COMMENTS="This extension is PPI compatible."
+CHANGELOG="---"
+CURRENT="First Version"
