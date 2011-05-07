@@ -1,0 +1,14 @@
+PACKAGE="gsettings-desktop-schemas"
+VERSION="3.0.1"
+SOURCE="http://ftp.gnome.org/pub/gnome/sources/${PACKAGE}/3.0/${PACKAGE}-${VERSION}.tar.bz2"
+BUILD_DEPENDS="glib2
+glib2-dev"
+
+DESCRIPTION="Shared GSettings schemas for the desktop."
+AUTHOR="---"
+SITE="http://live.gnome.org/"
+COPYING="GPL-2"
+MAINTAINERS="Arslan S."
+COMMENTS="This extension is PPI compatible."
+CHANGELOG="---"
+CURRENT="First Version"

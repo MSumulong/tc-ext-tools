@@ -1,0 +1,4 @@
+#!/bin/sh
+
+[ "$(which gio-querymodules)" ] && gio-querymodules /usr/local/lib/gio/modules > /dev/null 2>&1
+
