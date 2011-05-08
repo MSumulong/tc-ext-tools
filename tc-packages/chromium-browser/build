@@ -24,7 +24,8 @@ build_configure() {
     -Duse_system_libpng=1 \
     -Duse_system_libevent=1 \
     -Duse_system_ssl=0 \
-    -Duse_system_ffmpeg=0 || return 1
+    -Duse_system_ffmpeg=0 \
+    -Duse_gconf=0 || return 1
 
 }
 ##

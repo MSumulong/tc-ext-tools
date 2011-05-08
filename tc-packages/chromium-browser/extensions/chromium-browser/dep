@@ -1,5 +1,5 @@
 gtk2.tcz
-GConf.tcz
+dbus-glib.tcz
 bzip2-lib.tcz
 libasound.tcz
 nss.tcz
