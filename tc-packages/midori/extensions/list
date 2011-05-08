@@ -11,7 +11,6 @@ usr/local/lib/midori/libfeed-panel.so
 usr/local/lib/midori/libformhistory.so
 usr/local/lib/midori/libhistory-list.so
 usr/local/lib/midori/libmouse-gestures.so
-usr/local/lib/midori/libpage-holder.so
 usr/local/lib/midori/libshortcuts.so
 usr/local/lib/midori/libstatus-clock.so
 usr/local/lib/midori/libstatusbar-features.so
@@ -89,6 +88,5 @@ usr/local/share/midori/res/error.html
 usr/local/share/midori/res/logo-shade.png
 usr/local/share/midori/res/mootools.js
 usr/local/share/midori/res/speeddial-head.html
-usr/local/share/midori/res/speeddial.json
 usr/local/share/vala/vapi/history-list.deps
 usr/local/share/vala/vapi/history-list.vapi

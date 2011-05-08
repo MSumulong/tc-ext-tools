@@ -1,5 +1,5 @@
 PACKAGE="midori"
-VERSION="0.3.3"
+VERSION="0.3.5"
 SOURCE="http://archive.xfce.org/src/apps/midori/0.3/midori-${VERSION}.tar.bz2"
 BUILD_DEPENDS="glib2
 glib2-dev
@@ -15,8 +15,8 @@ libunique
 libunique-dev
 libnotify
 libnotify-dev
-webkit
-webkit-dev
+webkitgtk-1.0-0
+webkitgtk-1.0-0-dev
 python-docutils
 libxml2-bin
 gtk-doc
@@ -37,5 +37,6 @@ CHANGELOG="2010/05/30 Original 0.2.6
 		2010/09/29 Updated to 0.2.8
 		2010/11/01 Updated to 0.2.9
 		2011/01/31 Updated to 0.3.0
-		2011/02/20 Updated to 0.3.2"
+		2011/02/20 Updated to 0.3.2
+		2011/03/14 Updated to 0.3.3"
 CURRENT="Updated to $VERSION"
