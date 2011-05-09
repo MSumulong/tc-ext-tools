@@ -1,5 +1,5 @@
 PACKAGE="srware-iron"
-VERSION="10.0.650.0"
+VERSION="11.0.700.2"
 SOURCE="http://www.srware.net/downloads/iron-linux.tar.gz->srware-iron-${VERSION}.tar.gz"
 BUILD_DEPENDS=""
 
@@ -9,5 +9,6 @@ SITE="http://www.srware.net/en/software_srware_iron.php"
 COPYING="BSD"
 MAINTAINERS="Arslan S."
 COMMENTS="This extension is PPI compatible."
-CHANGELOG="2011/02/27 First Version 9.0.600.2"
+CHANGELOG="2011/02/27 First Version 9.0.600.2
+		2011/03/11 Updated to 10.0.650.0"
 CURRENT="Updated to $VERSION"

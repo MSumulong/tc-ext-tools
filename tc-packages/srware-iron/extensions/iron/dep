@@ -1,6 +1,7 @@
 gtk2.tcz
 GConf.tcz
 bzip2-lib.tcz
+libgcrypt.tcz
 libcups.tcz
 libasound.tcz
 nss.tcz
