@@ -62,13 +62,13 @@ build_unpack() {
 ## rules
 build_rules() {
 
-   buildit load || exit 1
-   buildit custom download || exit 1
-   buildit custom unpack || exit 1
-   buildit create || exit 1
-   buildit generate || exit 1
-   buildit check || exit 1
-   buildit package || exit 1
+   tet_load
+   tet_custom download
+   tet_custom unpack
+   tet_create
+   tet_generate
+   tet_check
+   tet_package
 
 }
 

@@ -19,13 +19,13 @@ build_install() {
 
 build_rules() {
 
-  buildit load || exit 1
-  buildit install || exit 1
-  buildit split || exit 1
-  buildit create || exit 1
-  buildit check || exit 1
-  buildit generate || exit 1
-  buildit package || exit 1
+  tet_load
+  tet_install
+  tet_split
+  tet_create
+  tet_check
+  tet_generate
+  tet_package
 
 }
 

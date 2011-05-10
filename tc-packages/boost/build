@@ -66,19 +66,19 @@ build_install() {
 
 build_rules() {
 
-   buildit load || exit 1
-   buildit download || exit 1
-   buildit convert || exit 1
-   buildit unpack || exit 1
-   buildit patch || exit 1
-   buildit compile || exit 1
-   buildit install || exit 1
-   buildit split || exit 1
-   buildit strip || exit 1
-   buildit create || exit 1
-   buildit generate || exit 1
-   buildit check || exit 1
-   buildit package || exit 1
+   tet_load
+   tet_download
+   tet_convert
+   tet_unpack
+   tet_patch
+   tet_compile
+   tet_install
+   tet_split
+   tet_strip
+   tet_create
+   tet_generate
+   tet_check
+   tet_package
 
 }
 
