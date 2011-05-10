@@ -47,7 +47,7 @@ clean_it() {
    cleanit > "$PACKAGE_BUILD_LOG" 2>&1
    if [ "$?" -gt 0 ]; then
         print_it --error "failed!"
-        print_it --warning "For details: buildit print error"
+        print_it --warning "For details: buildit print message"
         exit 1
    fi
    print_it --hilight "successful!"
@@ -65,7 +65,7 @@ download_it() {
    downloadit > "$PACKAGE_BUILD_LOG" 2>&1
    if [ "$?" -gt 0 ]; then
         print_it --error "failed!"
-        print_it --warning "For details: buildit print error"
+        print_it --warning "For details: buildit print message"
         exit 1
    fi
    print_it --hilight "successful!"
@@ -83,7 +83,7 @@ convert_it() {
    convertit > "$PACKAGE_BUILD_LOG" 2>&1
    if [ "$?" -gt 0 ]; then
         print_it --error "failed!"
-        print_it --warning "For details: buildit print error"
+        print_it --warning "For details: buildit print message"
         exit 1
    fi
    print_it --hilight "successful!"
@@ -96,7 +96,7 @@ unpack_it() {
    unpackit > "$PACKAGE_BUILD_LOG" 2>&1
    if [ "$?" -gt 0 ]; then
         print_it --error "failed!"
-        print_it --warning "For details: buildit print error"
+        print_it --warning "For details: buildit print message"
         exit 1
    fi
    print_it --hilight "successful!"
@@ -109,7 +109,7 @@ load_it() {
    loadit > "$PACKAGE_BUILD_LOG" 2>&1
    if [ "$?" -gt 0 ]; then
         print_it --error "failed!"
-        print_it --warning "For details: buildit print error"
+        print_it --warning "For details: buildit print message"
         exit 1
    fi
    print_it --hilight  "successful!"
@@ -122,7 +122,7 @@ patch_it() {
    patchit > "$PACKAGE_BUILD_LOG" 2>&1
    if [ "$?" -gt 0 ]; then
         print_it --error "failed!"
-        print_it --warning "For details: buildit print error"
+        print_it --warning "For details: buildit print message"
         exit 1
    fi
    print_it --hilight "successful!"
@@ -174,7 +174,7 @@ split_it() {
    splitit > "$PACKAGE_BUILD_LOG" 2>&1
    if [ "$?" -gt 0 ]; then
         print_it --error "failed!"
-        print_it --warning "For details: buildit print error"
+        print_it --warning "For details: buildit print message"
         exit 1
    fi
    print_it --hilight "successful!"
@@ -187,7 +187,7 @@ strip_it() {
    stripit > "$PACKAGE_BUILD_LOG" 2>&1
    if [ "$?" -gt 0 ]; then
         print_it --error "failed!"
-        print_it --warning "For details: buildit print error"
+        print_it --warning "For details: buildit print message"
         exit 1
    fi
    print_it --hilight "successful!"
@@ -200,7 +200,7 @@ create_it() {
    createit > "$PACKAGE_BUILD_LOG" 2>&1
    if [ "$?" -gt 0 ]; then
         print_it --error "failed!"
-        print_it --warning "For details: buildit print error"
+        print_it --warning "For details: buildit print message"
         exit 1
    fi
    print_it --hilight "successful!"
@@ -213,7 +213,7 @@ generate_it() {
    generateit > "$PACKAGE_BUILD_LOG" 2>&1
    if [ "$?" -gt 0 ]; then
         print_it --error "failed!"
-        print_it --warning "For details: buildit print error"
+        print_it --warning "For details: buildit print message"
         exit 1
    fi
    print_it --hilight "successful!"
@@ -226,7 +226,7 @@ check_it() {
    checkit > "$PACKAGE_BUILD_LOG" 2>&1
    if [ "$?" -gt 0 ]; then
         print_it --error "failed!"
-        print_it --warning "For details: buildit print error"
+        print_it --warning "For details: buildit print message"
         exit 1
    fi
    print_it --hilight "successful!"
@@ -239,7 +239,7 @@ package_it() {
    packageit > "$PACKAGE_BUILD_LOG" 2>&1
    if [ "$?" -gt 0 ]; then
         print_it --error "failed!"
-        print_it --warning "For details: buildit print error"
+        print_it --warning "For details: buildit print message"
         exit 1
    fi
    print_it --hilight "successful!"
@@ -265,10 +265,100 @@ custom_function() {
    build_${FUNCTION} > "$PACKAGE_BUILD_LOG" 2>&1
    if [ "$?" -gt 0 ]; then
         print_it --error "failed!"
-        print_it --warning "For details: buildit print error"
+        print_it --warning "For details: buildit print message"
         exit 1
    fi
    print_it --hilight "successful!"
+
+}
+
+tet_load() {
+
+   buildit load || exit 1
+
+}
+
+tet_download() {
+
+   buildit download || exit 1
+
+}
+
+tet_convert() {
+
+   buildit convert || exit 1
+
+}
+
+tet_unpack() {
+
+   buildit unpack || exit 1
+
+}
+
+tet_patch() {
+
+   buildit patch || exit 1
+
+}
+
+tet_configure() {
+
+   buildit configure || exit 1
+
+}
+
+tet_compile() {
+
+   buildit compile || exit 1
+
+}
+
+tet_install() {
+
+   buildit install || exit 1
+
+}
+
+tet_split() {
+
+   buildit split || exit 
+
+}
+
+tet_strip() {
+
+   buildit strip || exit 1
+
+}
+
+tet_create() {
+
+   buildit create || exit 11
+
+}
+
+tet_generate() {
+
+   buildit generate || exit 1
+
+}
+
+tet_check() {
+
+   buildit check || exit 1
+
+}
+
+tet_package() {
+
+   buildit package || exit 1
+
+}
+
+tet_custom() {
+
+   buildit custom "$1" || exit 1
 
 }
 
