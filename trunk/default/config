@@ -32,13 +32,8 @@ TCEXTTOOLS_HILIGHT_COLOR="${CYAN}"
 TCEXTTOOLS_DEPENDS="compiletc
                     squashfs-tools-4.x
                     tar
-                    git
-                    svn
                     wget
                     xz
-                    zip-unzip
-                    bzip2
-                    gzip
                     intltool
                     perl_xml_parser
                     gettext
