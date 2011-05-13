@@ -127,7 +127,7 @@ _EOF
 
         cat > "$PACKAGE_COMMON" << _EOF
 PACKAGE="${PACKAGE}"
-VERSION="git\${YEAR}\${MONTH}\${DAY}"
+VERSION="git"
 SOURCE="git::"
 BUILD_DEPENDS=""
 
