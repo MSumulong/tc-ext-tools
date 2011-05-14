@@ -31,6 +31,11 @@ _tet_common() {
         return 1
    fi
 
+   if [ ! -d "$TCEXTTOOLS_PACKAGES_DATABASE" ]; then
+        echo "You need to run update-tet-database at least once before using tet functions"
+        return 1
+   fi
+
    if [ -f common ]; then
         . common
         ARGS="$@"
@@ -81,7 +86,7 @@ tetls() {
    _tet_common $@ || return 1
 
    if [ -z "$PACKAGE" ]; then
-        ls "$TCEXTTOOLS_PACKAGES"
+        ls "$TCEXTTOOLS_PACKAGES_DATABASE"
         return 0
    fi
 

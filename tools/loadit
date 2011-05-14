@@ -120,6 +120,7 @@ print_it "Loading the package $PACKAGE build dependencies ... \c"
 this_main > "$PACKAGE_MESSAGE_LOG" 2>&1
 if [ "$?" -gt 0 ]; then
      print_it --error "failed!"
+     print_it --warning "For details: buildit print message"
      exit 1
 fi
 print_it --hilight "successful!"

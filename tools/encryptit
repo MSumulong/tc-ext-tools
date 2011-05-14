@@ -86,6 +86,7 @@ print_it "Encrypting the package $PACKAGE ..."
 this_main
 if [ "$?" -gt 0 ]; then
      print_it --error "Encrypting the package $PACKAGE failed!"
+     print_it --warning "For details: buildit print message"
      exit 1
 fi
 

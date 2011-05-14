@@ -37,20 +37,15 @@ fi
 print_usage(){
 
    echo -e "${TCEXTTOOLS_ERROR_COLOR}${THIS} usage:"
-   echo -e "\n\t${TCEXTTOOLS_MESSAGE_COLOR}${THIS} clean|load|download|convert|unpack|patch|configure|compile|install|split|strip|create|check|generate|package|encrypt|print|custom|help${NORMAL}"
+   echo -e "\n\t${TCEXTTOOLS_MESSAGE_COLOR}${THIS} clean|load|download|convert|unpack|patch|configure|compile|install|split|strip|create|check|generate|package|custom|encrypt|print|help${NORMAL}"
+
+   exit 0
 
 }
 
 clean_it() {
 
-   print_it "Cleaning the package $PACKAGE ... \c"
-   cleanit > "$PACKAGE_BUILD_LOG" 2>&1
-   if [ "$?" -gt 0 ]; then
-        print_it --error "failed!"
-        print_it --warning "For details: buildit print message"
-        exit 1
-   fi
-   print_it --hilight "successful!"
+   cleanit || exit 1
 
 }
 
@@ -61,14 +56,7 @@ download_it() {
         exit 0
    fi
 
-   print_it "Downloading the package $PACKAGE source ... \c"
-   downloadit > "$PACKAGE_BUILD_LOG" 2>&1
-   if [ "$?" -gt 0 ]; then
-        print_it --error "failed!"
-        print_it --warning "For details: buildit print message"
-        exit 1
-   fi
-   print_it --hilight "successful!"
+   downloadit || exit 1
 
 }
 
@@ -79,170 +67,79 @@ convert_it() {
         exit 0
    fi
 
-   print_it "Converting the package $PACKAGE source ... \c"
-   convertit > "$PACKAGE_BUILD_LOG" 2>&1
-   if [ "$?" -gt 0 ]; then
-        print_it --error "failed!"
-        print_it --warning "For details: buildit print message"
-        exit 1
-   fi
-   print_it --hilight "successful!"
+   convertit || exit 1
 
 }
 
 unpack_it() {
 
-   print_it "Unpacking the package $PACKAGE source ... \c"
-   unpackit > "$PACKAGE_BUILD_LOG" 2>&1
-   if [ "$?" -gt 0 ]; then
-        print_it --error "failed!"
-        print_it --warning "For details: buildit print message"
-        exit 1
-   fi
-   print_it --hilight "successful!"
+   unpackit || exit 1
 
 }
 
 load_it() {
 
-   print_it "Loading the package $PACKAGE build dependencies ... \c"
-   loadit > "$PACKAGE_BUILD_LOG" 2>&1
-   if [ "$?" -gt 0 ]; then
-        print_it --error "failed!"
-        print_it --warning "For details: buildit print message"
-        exit 1
-   fi
-   print_it --hilight  "successful!"
+   loadit || exit 1
 
 }
 
 patch_it() {
 
-   print_it "Patching the package $PACKAGE source ... \c"
-   patchit > "$PACKAGE_BUILD_LOG" 2>&1
-   if [ "$?" -gt 0 ]; then
-        print_it --error "failed!"
-        print_it --warning "For details: buildit print message"
-        exit 1
-   fi
-   print_it --hilight "successful!"
+   patchit || exit 1
 
 }
 
 configure_it() {
 
-   print_it "Configuring the package $PACKAGE ... \c"
-   configureit > "$PACKAGE_BUILD_LOG" 2>&1
-   if [ "$?" -gt 0 ]; then
-        print_it --error "failed!"
-        print_it --warning "For details: buildit print configure"
-        exit 1
-   fi
-   print_it --hilight "successful!"
+   configureit || exit 1
 
 }
 
 compile_it() {
 
-   print_it "Compiling the package $PACKAGE ... \c"
-   compileit > "$PACKAGE_BUILD_LOG" 2>&1
-   if [ "$?" -gt 0 ]; then
-        print_it --error "failed!"
-        print_it --warning "For details: buildit print compile"
-        exit 1
-   fi
-   print_it --hilight "successful!"
+   compileit || exit 1
 
 }
 
 install_it() {
 
-   print_it "Installing the package $PACKAGE ... \c"
-   sudo installit > "$PACKAGE_BUILD_LOG" 2>&1
-   if [ "$?" -gt 0 ]; then
-        print_it --error "failed!"
-        print_it --warning "For details: buildit print install"
-        exit 1
-   fi
-   print_it --hilight "successful!"
+   sudo installit || exit 1
 
 }
 
 split_it() {
 
-   print_it "Splitting the package $PACKAGE extensions ... \c"
-   splitit > "$PACKAGE_BUILD_LOG" 2>&1
-   if [ "$?" -gt 0 ]; then
-        print_it --error "failed!"
-        print_it --warning "For details: buildit print message"
-        exit 1
-   fi
-   print_it --hilight "successful!"
+   splitit || exit 1
 
 }
 
 strip_it() {
 
-   print_it "Stripping the package $PACKAGE extensions ... \c"
-   stripit > "$PACKAGE_BUILD_LOG" 2>&1
-   if [ "$?" -gt 0 ]; then
-        print_it --error "failed!"
-        print_it --warning "For details: buildit print message"
-        exit 1
-   fi
-   print_it --hilight "successful!"
+   stripit || exit 1
 
 }
 
 create_it() {
 
-   print_it "Creating the package $PACKAGE extensions ... \c"
-   createit > "$PACKAGE_BUILD_LOG" 2>&1
-   if [ "$?" -gt 0 ]; then
-        print_it --error "failed!"
-        print_it --warning "For details: buildit print message"
-        exit 1
-   fi
-   print_it --hilight "successful!"
+   createit || exit 1
 
 }
 
 generate_it() {
 
-   print_it "Generating the package $PACKAGE extension info files ... \c"
-   generateit > "$PACKAGE_BUILD_LOG" 2>&1
-   if [ "$?" -gt 0 ]; then
-        print_it --error "failed!"
-        print_it --warning "For details: buildit print message"
-        exit 1
-   fi
-   print_it --hilight "successful!"
+   generateit || exit 1
 
 }
 
 check_it() {
 
-   print_it "Checking the package $PACKAGE extensions ... \c"
-   checkit > "$PACKAGE_BUILD_LOG" 2>&1
-   if [ "$?" -gt 0 ]; then
-        print_it --error "failed!"
-        print_it --warning "For details: buildit print message"
-        exit 1
-   fi
-   print_it --hilight "successful!"
+   checkit || exit 1
 
 }
 
 package_it() {
 
-   print_it "Packaging the package $PACKAGE ... \c"
-   packageit > "$PACKAGE_BUILD_LOG" 2>&1
-   if [ "$?" -gt 0 ]; then
-        print_it --error "failed!"
-        print_it --warning "For details: buildit print message"
-        exit 1
-   fi
-   print_it --hilight "successful!"
+   packageit || exit 1
 
 }
 
@@ -262,7 +159,7 @@ custom_function() {
    fi
 
    print_it "Executing the package $PACKAGE custom build function $FUNCTION ... \c"
-   build_${FUNCTION} > "$PACKAGE_BUILD_LOG" 2>&1
+   build_${FUNCTION} > "$PACKAGE_MESSAGE_LOG" 2>&1
    if [ "$?" -gt 0 ]; then
         print_it --error "failed!"
         print_it --warning "For details: buildit print message"
@@ -334,7 +231,7 @@ tet_strip() {
 
 tet_create() {
 
-   buildit create || exit 11
+   buildit create || exit 1
 
 }
 
@@ -366,11 +263,11 @@ build_it() {
 
    set_date; SECONDS_BEFORE="$SECONDS"
    echo -e "${TCEXTTOOLS_MESSAGE_COLOR}Building the package $PACKAGE started at ${TCEXTTOOLS_HILIGHT_COLOR}$TIME${TCEXTTOOLS_MESSAGE_COLOR}"
-   clean_it || exit 1
-   build_rules || exit 1
+   clean_it
+   build_rules
    set_date; SECONDS_AFTER="$SECONDS"; SECONDS_ELAPSED=`expr $SECONDS_AFTER - $SECONDS_BEFORE`
    echo -e "${TCEXTTOOLS_MESSAGE_COLOR}Building the package $PACKAGE finished at ${TCEXTTOOLS_HILIGHT_COLOR}$TIME${TCEXTTOOLS_MESSAGE_COLOR} in ${TCEXTTOOLS_HILIGHT_COLOR}${SECONDS_ELAPSED}${TCEXTTOOLS_MESSAGE_COLOR} seconds${NORMAL}"
-   encrypt_it || exit 1
+   encrypt_it
 
 }
 
@@ -412,7 +309,7 @@ print_function() {
 }
 
 if [ -z "$1" ]; then
-     if build_it; then
+     if build_it | tee "$PACKAGE_BUILD_LOG"; then
         exit 0
      else
         exit 1
