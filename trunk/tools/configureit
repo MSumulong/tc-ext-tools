@@ -68,6 +68,7 @@ print_it "Configuring the package $PACKAGE ... \c"
 this_main > "$PACKAGE_MESSAGE_LOG" 2>&1
 if [ "$?" -gt 0 ]; then
      print_it --error "failed!"
+     print_it --warning "For details: buildit print configure"
      exit 1
 fi
 print_it --hilight "successful!"
