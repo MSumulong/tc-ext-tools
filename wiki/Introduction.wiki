@@ -37,7 +37,7 @@ cp config.sample .config
 = Usage =
 
 == Hello World ==
-  * See how easy it is to build it!
+  * See how easy it is to build a package
 {{{
 svn checkout http://tc-ext-tools.googlecode.com/svn/tc-packages/libdvbpsi
 cd libdvbpsi
