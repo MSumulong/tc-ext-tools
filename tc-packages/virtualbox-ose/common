@@ -1,5 +1,5 @@
 PACKAGE="virtualbox-ose"
-VERSION="4.0.6"
+VERSION="4.0.8"
 SOURCE="http://download.virtualbox.org/virtualbox/${VERSION}/VirtualBox-${VERSION}.tar.bz2"
 BUILD_DEPENDS="coreutils
 bzip2
@@ -57,5 +57,6 @@ COMMENTS="This extension is PPI compatible."
 CHANGELOG="2010/10/16 First Version 3.2.10
 		2010/12/02 Updated to 3.2.12
 		2011/01/29 Updated to 4.0.2
-		2011/02/20 Updated to 4.0.4"
+		2011/02/20 Updated to 4.0.4
+		2011/04/30 Updated to 4.0.6"
 CURRENT="Updated to $VERSION"

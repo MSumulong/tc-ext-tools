@@ -1,5 +1,5 @@
 PACKAGE="midori"
-VERSION="0.3.5"
+VERSION="0.3.6"
 SOURCE="http://archive.xfce.org/src/apps/midori/0.3/midori-${VERSION}.tar.bz2"
 BUILD_DEPENDS="glib2
 glib2-dev
@@ -38,5 +38,6 @@ CHANGELOG="2010/05/30 Original 0.2.6
 		2010/11/01 Updated to 0.2.9
 		2011/01/31 Updated to 0.3.0
 		2011/02/20 Updated to 0.3.2
-		2011/03/14 Updated to 0.3.3"
+		2011/03/14 Updated to 0.3.3
+		2011/05/08 Updated to 0.3.5"
 CURRENT="Updated to $VERSION"
