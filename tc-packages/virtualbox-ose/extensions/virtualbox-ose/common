@@ -1,4 +1,7 @@
 ICON="/usr/local/share/pixmaps/VBox.png"
 DESKTOP="/usr/local/share/applications/virtualbox-ose.desktop"
-COMMENTS="This extension depends on Xorg.
+COMMENTS="For USB devices support you need to download Oracle VM VirtualBox Extension Pack and install it
+		sudo VBoxManage extpack install Oracle_VM_VirtualBox_Extension_Pack.vbox-extpack
+
+		This extension depends on Xorg.
 		This extension is PPI compatible."

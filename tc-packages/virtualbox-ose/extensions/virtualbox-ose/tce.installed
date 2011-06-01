@@ -4,14 +4,12 @@ THIS=$(basename $0)
 TCUSER=$(cat /etc/sysconfig/tcuser)
 
 # update system databases
-[ -x "$(which update-mime-database)" ] && update-mime-database /usr/local/share/mime
-[ -x "$(which gtk-update-icon-cache)" ] && gtk-update-icon-cache -q -f -t /usr/local/share/icons/hicolor
+[ "$(which update-mime-database)" ] && update-mime-database /usr/local/share/mime
+[ "$(which gtk-update-icon-cache)" ] && gtk-update-icon-cache -q -f -t /usr/local/share/icons/hicolor
 
-# copy to file system
+# copy virtualbox to file system if extension is mounted
 if [ -d /tmp/tcloop/$THIS ]; then
-     cd /tmp/tcloop/$THIS/usr/local/lib/virtualbox
-     cp -a *.so *.gc *.r0 *.fd /usr/local/lib/virtualbox
-     cp -a components/* /usr/local/lib/virtualbox/components/
+     cp -a /tmp/tcloop/$THIS/usr/local/lib/virtualbox /usr/local/lib
 fi
 
 # creating vboxusers group if it isn't already there
