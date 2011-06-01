@@ -1,0 +1,21 @@
+PACKAGE="gnuplot"
+VERSION="4.4.3"
+SOURCE="http://downloads.sourceforge.net/sourceforge/gnuplot/gnuplot-${VERSION}.tar.gz"
+BUILD_DEPENDS="gtk2
+gtk2-dev
+wxgtk
+wxgtk-dev
+ncurses
+ncurses-dev
+readline
+readline-dev
+texinfo"
+
+DESCRIPTION="Data and function plotting utility."
+AUTHOR="Thomas Williams, Colin Kelley and others."
+SITE="http://www.gnuplot.info/"
+COPYING="BSD-style"
+MAINTAINERS="Arslan S."
+COMMENTS="This extension is PPI compatible."
+CHANGELOG="2010/03/07 Original 4.2.6"
+CURRENT="Updated to $VERSION"

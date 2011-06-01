@@ -1,0 +1,61 @@
+
+############################################################################
+#                                                                          #
+#    package build functions: configure, compile, install, rules, etc.     #
+#                                                                          #
+############################################################################
+
+## configure
+build_configure() {
+
+  ./configure --prefix=/usr/local --mandir=/usr/local/share/man \
+              --infodir=/usr/local/share/info \
+              --libexecdir=/usr/local/bin \
+              --with-gihdir=/usr/local/share/gnuplot \
+              --datadir=/usr/local/share \
+              --with-readline=gnu || return 1
+
+}
+
+## compile
+build_compile() {
+
+  make pkglibexecdir=/usr/local/bin || return 1
+
+}
+
+## install
+build_install() {
+
+  make prefix=$I_ROOT/usr/local libexecdir=$I_ROOT/usr/local/bin \
+       mandir=$I_ROOT/usr/local/share/man \
+       infodir=$I_ROOT/usr/local/share/info \
+       pkglibexecdir=$I_ROOT/usr/local/bin \
+       GIHDIR=$I_ROOT/usr/local/share/gnuplot \
+       datadir=$I_ROOT/usr/local/share install || return 1
+
+  install -Dm644 lisp/dotemacs $I_ROOT/usr/local/share/emacs/site-lisp/dotemacs
+  install -Dm644 Copyright $I_ROOT/usr/local/share/licenses/$pkgname/Copyright
+
+}
+
+## rules
+build_rules() {
+
+   tet_load
+   tet_download
+   tet_convert
+   tet_unpack
+   tet_patch
+   tet_configure
+   tet_compile
+   tet_install
+   tet_split
+   tet_strip
+   tet_create
+   tet_generate
+   tet_check
+   tet_package
+
+}
+
