@@ -2,13 +2,6 @@
 # tc-ext-tools build functions: configure, compile, install, rules
 #
 
-# Configure
-build_configure() {
-
-  return 0
-
-}
-
 # Compile
 build_compile() {
 
@@ -51,11 +44,10 @@ build_rules() {
   tet_convert
   tet_unpack
   tet_patch
-  tet_configure
   tet_compile
   tet_install
   tet_split
-   tet_strip
+  tet_strip
   tet_create
   tet_generate
   tet_check

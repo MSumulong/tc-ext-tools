@@ -1,4 +1,4 @@
-ICON="/usr/local/share/pixmaps/VBox.png"
+ICON="/usr/local/share/pixmaps/virtualbox.png"
 DESKTOP="/usr/local/share/applications/virtualbox-ose.desktop"
 COMMENTS="For host USB devices support:
 		1-) Download Oracle VM VirtualBox Extension Pack and install it

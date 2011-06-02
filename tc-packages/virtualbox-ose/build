@@ -74,7 +74,7 @@ build_install() {
       install -Dm644 "icons/$i/virtualbox-vbox.png" "$INSTALL_ROOT/usr/local/share/icons/hicolor/$i/mimetypes/virtualbox-vbox.png"
       install -Dm644 "icons/$i/virtualbox-vbox-extpack.png" "$INSTALL_ROOT/usr/local/share/icons/hicolor/$i/mimetypes/virtualbox-vbox-extpack.png"
   done
-  install -D -m 0644 VBox.png "$INSTALL_ROOT/usr/local/share/pixmaps/VBox.png" || return 1
+  install -D -m 0644 VBox.png "$INSTALL_ROOT/usr/local/share/pixmaps/virtualbox.png" || return 1
   install -D -m 0644 virtualbox.xml "$INSTALL_ROOT/usr/local/share/mime/packages/virtualbox.xml" || return 1
   install -D -m 0644 virtualbox.desktop "$INSTALL_ROOT/usr/local/share/applications/virtualbox-ose.desktop" || return 1
 

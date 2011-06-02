@@ -1,5 +1,5 @@
 PACKAGE="nspr"
-VERSION="4.8.7"
+VERSION="4.8.8"
 SOURCE="ftp://ftp.mozilla.org/pub/mozilla.org/nspr/releases/v${VERSION}/src/nspr-${VERSION}.tar.gz"
 BUILD_DEPENDS=""
 
@@ -10,5 +10,6 @@ COPYING="MPL 1.1/GPL 2.0/LGPL"
 MAINTAINERS="Arslan S."
 COMMENTS="This extension is PPI compatible."
 CHANGELOG="2010/06/07 Original 4.8.4
-		2010/10/11 Updated to 4.8.6"
+		2010/10/11 Updated to 4.8.6
+		2011/01/15 Updated to 4.8.7"
 CURRENT="Updated to $VERSION"
