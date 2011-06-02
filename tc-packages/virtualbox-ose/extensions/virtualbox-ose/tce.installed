@@ -23,5 +23,5 @@ addgroup ${TCUSER} vboxusers
 
 # start vbox drivers
 ln -sf /usr/local/etc/init.d/vboxdrv /etc/init.d
-/etc/init.d/vboxdrv start
+/etc/init.d/vboxdrv start >/dev/null 2>&1
 

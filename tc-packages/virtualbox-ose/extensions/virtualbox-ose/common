@@ -1,7 +1,13 @@
 ICON="/usr/local/share/pixmaps/VBox.png"
 DESKTOP="/usr/local/share/applications/virtualbox-ose.desktop"
-COMMENTS="For USB devices support you need to download Oracle VM VirtualBox Extension Pack and install it
-		sudo VBoxManage extpack install Oracle_VM_VirtualBox_Extension_Pack.vbox-extpack
+COMMENTS="For host USB devices support:
+		1-) Download Oracle VM VirtualBox Extension Pack and install it
+			sudo VBoxManage extpack install Oracle_VM_VirtualBox_Extension_Pack.vbox-extpack
+		2-) You need to be in 'vboxusers' group. This is done automatically by install scripts
+		   but you may need to relogin or reboot for the first time installation to make sure you are in the group vboxusers.
+		3-) You need to add virtualbox-ose.tcz to your onboot.lst for automatic group handling.
+		   If you want to use virtualbox-ose ondemand then you should manually add these commands to your bootlocal.sh
+			addgroup -S vboxusers
+			addgroup <user> vboxusers # <user>=tc by default
 
-		This extension depends on Xorg.
-		This extension is PPI compatible."
+		This extension depends on Xorg."
