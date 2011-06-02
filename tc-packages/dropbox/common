@@ -1,0 +1,22 @@
+PACKAGE="dropbox"
+VERSION="1.1.35"
+SOURCE="https://dl-web.dropbox.com/u/17/dropbox-lnx.x86-${VERSION}.tar.gz"
+SOURCE_TOPDIR=".dropbox-dist"
+BUILD_DEPENDS=""
+
+DESCRIPTION="Access your Dropbox - synchronized sharing of files over Internet."
+AUTHOR="Dropbox"
+SITE="http://www.dropbox.com"
+COPYING="Approved by legal@dropbox.com"
+MAINTAINERS="Arslan S."
+COMMENTS="Works best if you have a panel where you can right click
+		on the application icon (e.g. works fine with LXDE).
+		
+		First time started a GUI shows up that assist in first
+		connection with Dropbox.
+		Subsequent activations enters daemon mode silently.
+		
+		This extension is PPI compatible."
+CHANGELOG="2010/02/01 Initial Version 0.7.97 by helander
+		2010/08/04 Updated to 0.7.110 & added a wrapper and freedesktop autostart entry"
+CURRENT="Updated to $VERSION"

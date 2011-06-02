@@ -1,0 +1,11 @@
+[Desktop Entry]
+Version=1.0
+Encoding=UTF-8
+Type=Application
+Name=Dropbox
+GenericName=Internet Folder
+Comment=Excellent file sharing tool
+Exec=dropbox
+Categories=Application;Network;
+Icon=dropbox
+X-FullPathIcon=/usr/local/share/pixmaps/dropbox.png

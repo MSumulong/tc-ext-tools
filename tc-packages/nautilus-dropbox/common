@@ -1,0 +1,25 @@
+PACKAGE="nautilus-dropbox"
+VERSION="0.6.7"
+SOURCE="https://www.dropbox.com/download?dl=packages/nautilus-dropbox-${VERSION}.tar.bz2"
+BUILD_DEPENDS="gtk2
+gtk2-dev
+libnotify
+libnotify-dev
+libnautilus-extension
+libnautilus-extension-dev
+python
+python-dev
+pygtk-2.7
+pygtk-2.7-dev
+libxcb
+libxcb-dev
+python-docutils"
+
+DESCRIPTION="The Dropbox extension for Nautilus."
+AUTHOR="Dropbox"
+SITE="http://www.dropbox.com"
+COPYING="GPL-2"
+MAINTAINERS="Arslan S."
+COMMENTS="This extension is PPI compatible."
+CHANGELOG="---"
+CURRENT="First Version"

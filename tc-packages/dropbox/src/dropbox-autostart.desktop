@@ -1,0 +1,12 @@
+[Desktop Entry]
+Name=Dropbox
+GenericName=Dropbox
+Comment=A Web-based file hosting service
+Exec=dropbox
+Icon=dropbox
+Type=Application
+Terminal=false
+X-GNOME-Autostart-Phase=Panel
+X-KDE-autostart-after=panel
+Categories=Application;Network;Applet;
+OnlyShowIn=KDE;GNOME;LXDE;XFCE

@@ -1,0 +1,43 @@
+
+############################################################################
+#                                                                          #
+#    package build functions: configure, compile, install, rules, etc.     #
+#                                                                          #
+############################################################################
+
+## install
+build_install() {
+
+  install -d "$I_ROOT/usr/local/dropbox"
+  rm libstdc++.so.6
+  cp -R . "$I_ROOT/usr/local/dropbox" || return 1
+
+  find "$I_ROOT/usr/local/dropbox/" -type f -exec chmod 644 {} \;
+  find "$I_ROOT/usr/local/dropbox/" -type d -exec chmod 755 {} \;
+  chmod 755 "$I_ROOT/usr/local/dropbox/dropboxd"
+  chmod 755 "$I_ROOT/usr/local/dropbox/dropbox"
+  chown -R root.root "$I_ROOT/usr/local/dropbox"
+
+  install -D -m 755 "$P_SRC/dropbox.sh" "$I_ROOT/usr/local/bin/dropbox"
+  install -D -m 644 "$P_SRC/dropbox.desktop" "$I_ROOT/usr/local/share/applications/dropbox.desktop"
+  install -D -m 644 "$P_SRC/dropbox-autostart.desktop" "$I_ROOT/usr/local/etc/xdg/autostart/dropboxd.desktop"
+  install -D -m 644 "$P_SRC/dropbox.png" "$I_ROOT/usr/local/share/pixmaps/dropbox.png"
+
+}
+
+## rules
+build_rules() {
+
+   tet_load
+   tet_download
+   tet_convert
+   tet_unpack
+   tet_install
+   tet_split
+   tet_create
+   tet_generate
+   tet_check
+   tet_package
+
+}
+

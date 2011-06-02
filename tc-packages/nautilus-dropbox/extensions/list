@@ -1,0 +1,15 @@
+usr/local/lib/nautilus/extensions-2.0/libnautilus-dropbox.la
+usr/local/lib/nautilus/extensions-2.0/libnautilus-dropbox.so
+usr/local/share/icons/hicolor/16x16/apps/dropbox.png
+usr/local/share/icons/hicolor/22x22/apps/dropbox.png
+usr/local/share/icons/hicolor/24x24/apps/dropbox.png
+usr/local/share/icons/hicolor/32x32/apps/dropbox.png
+usr/local/share/icons/hicolor/48x48/apps/dropbox.png
+usr/local/share/icons/hicolor/64x64/apps/dropbox.png
+usr/local/share/man/man1/dropbox.1
+usr/local/share/nautilus-dropbox/emblems/emblem-dropbox-syncing.icon
+usr/local/share/nautilus-dropbox/emblems/emblem-dropbox-syncing.png
+usr/local/share/nautilus-dropbox/emblems/emblem-dropbox-unsyncable.icon
+usr/local/share/nautilus-dropbox/emblems/emblem-dropbox-unsyncable.png
+usr/local/share/nautilus-dropbox/emblems/emblem-dropbox-uptodate.icon
+usr/local/share/nautilus-dropbox/emblems/emblem-dropbox-uptodate.png
