@@ -1,5 +1,5 @@
 PACKAGE="java-sun"
-VERSION="6u24"
+VERSION="6u26"
 SOURCE="http://download.java.net/dlj/binaries/jdk-${VERSION}-dlj-linux-i586.bin"
 BUILD_DEPENDS="bash"
 
@@ -10,5 +10,6 @@ COPYING="custom"
 MAINTAINERS="Arslan S."
 COMMENTS="---"
 CHANGELOG="2011/01/08 First Version 6u23
-		2011/01/26 Added init scripts to copy files to file system and rearranged jdk path"
+		2011/01/26 Added init scripts to copy files to file system and rearranged jdk path
+		2011/04/23 Updated to 6u24"
 CURRENT="Updated to $VERSION"

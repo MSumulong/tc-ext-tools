@@ -5,8 +5,6 @@ usr/local/etc/init.d/derby-network-server
 usr/local/java-sun/COPYRIGHT
 usr/local/java-sun/LICENSE
 usr/local/java-sun/README.html
-usr/local/java-sun/README_ja.html
-usr/local/java-sun/README_zh_CN.html
 usr/local/java-sun/THIRDPARTYLICENSEREADME.txt
 usr/local/java-sun/bin/ControlPanel
 usr/local/java-sun/bin/HtmlConverter
@@ -1881,8 +1879,6 @@ usr/local/java-sun/demo/applets/WireFrame/models/hughes_500.obj
 usr/local/java-sun/demo/applets/WireFrame/models/knoxS.obj
 usr/local/java-sun/demo/jfc/CodePointIM/CodePointIM.jar
 usr/local/java-sun/demo/jfc/CodePointIM/README.html
-usr/local/java-sun/demo/jfc/CodePointIM/README_ja.html
-usr/local/java-sun/demo/jfc/CodePointIM/README_zh_CN.html
 usr/local/java-sun/demo/jfc/CodePointIM/src/CodePointIM.java
 usr/local/java-sun/demo/jfc/CodePointIM/src/CodePointInputMethod.java
 usr/local/java-sun/demo/jfc/CodePointIM/src/CodePointInputMethodDescriptor.java
@@ -2756,8 +2752,6 @@ usr/local/java-sun/demo/plugin/applets/WireFrame/models/hughes_500.obj
 usr/local/java-sun/demo/plugin/applets/WireFrame/models/knoxS.obj
 usr/local/java-sun/demo/plugin/jfc/CodePointIM/CodePointIM.jar
 usr/local/java-sun/demo/plugin/jfc/CodePointIM/README.html
-usr/local/java-sun/demo/plugin/jfc/CodePointIM/README_ja.html
-usr/local/java-sun/demo/plugin/jfc/CodePointIM/README_zh_CN.html
 usr/local/java-sun/demo/plugin/jfc/CodePointIM/src/CodePointIM.java
 usr/local/java-sun/demo/plugin/jfc/CodePointIM/src/CodePointInputMethod.java
 usr/local/java-sun/demo/plugin/jfc/CodePointIM/src/CodePointInputMethodDescriptor.java
@@ -3330,6 +3324,8 @@ usr/local/java-sun/jre/lib/fontconfig.RedHat.3.bfc
 usr/local/java-sun/jre/lib/fontconfig.RedHat.3.properties.src
 usr/local/java-sun/jre/lib/fontconfig.RedHat.4.bfc
 usr/local/java-sun/jre/lib/fontconfig.RedHat.4.properties.src
+usr/local/java-sun/jre/lib/fontconfig.RedHat.6.0.bfc
+usr/local/java-sun/jre/lib/fontconfig.RedHat.6.0.properties.src
 usr/local/java-sun/jre/lib/fontconfig.RedHat.bfc
 usr/local/java-sun/jre/lib/fontconfig.RedHat.properties.src
 usr/local/java-sun/jre/lib/fontconfig.SuSE.11.bfc
@@ -3604,6 +3600,7 @@ usr/local/java-sun/jre/lib/zi/America/Matamoros
 usr/local/java-sun/jre/lib/zi/America/Mazatlan
 usr/local/java-sun/jre/lib/zi/America/Menominee
 usr/local/java-sun/jre/lib/zi/America/Merida
+usr/local/java-sun/jre/lib/zi/America/Metlakatla
 usr/local/java-sun/jre/lib/zi/America/Mexico_City
 usr/local/java-sun/jre/lib/zi/America/Miquelon
 usr/local/java-sun/jre/lib/zi/America/Moncton
@@ -3616,6 +3613,7 @@ usr/local/java-sun/jre/lib/zi/America/New_York
 usr/local/java-sun/jre/lib/zi/America/Nipigon
 usr/local/java-sun/jre/lib/zi/America/Nome
 usr/local/java-sun/jre/lib/zi/America/Noronha
+usr/local/java-sun/jre/lib/zi/America/North_Dakota/Beulah
 usr/local/java-sun/jre/lib/zi/America/North_Dakota/Center
 usr/local/java-sun/jre/lib/zi/America/North_Dakota/New_Salem
 usr/local/java-sun/jre/lib/zi/America/Ojinaga
@@ -3639,6 +3637,7 @@ usr/local/java-sun/jre/lib/zi/America/Santiago
 usr/local/java-sun/jre/lib/zi/America/Santo_Domingo
 usr/local/java-sun/jre/lib/zi/America/Sao_Paulo
 usr/local/java-sun/jre/lib/zi/America/Scoresbysund
+usr/local/java-sun/jre/lib/zi/America/Sitka
 usr/local/java-sun/jre/lib/zi/America/St_Johns
 usr/local/java-sun/jre/lib/zi/America/St_Kitts
 usr/local/java-sun/jre/lib/zi/America/St_Lucia
