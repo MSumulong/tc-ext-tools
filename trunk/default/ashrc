@@ -36,12 +36,12 @@ _tet_common() {
         return 1
    fi
 
-   if [ -f common ]; then
-        . common
-        ARGS="$@"
-   else
-        PACKAGE="$1"
+   PACKAGE="$1"
+   if [ -f "$TCEXTTOOLS_PACKAGES_DATABASE/$PACKAGE" ]; then
         shift
+        ARGS="$@"
+   elif [ -f common ]; then
+        . common
         ARGS="$@"
    fi
 
@@ -59,7 +59,7 @@ tetcd() {
 
    _tet_common $@ || return 1
 
-   if [ -z "$PACKAGE" ]; then
+   if [ -z "$@" ]; then
         cd "$TCEXTTOOLS_PACKAGES"
         return 0
    fi
@@ -85,7 +85,7 @@ tetls() {
 
    _tet_common $@ || return 1
 
-   if [ -z "$PACKAGE" ]; then
+   if [ -z "$@" ]; then
         ls "$TCEXTTOOLS_PACKAGES_DATABASE"
         return 0
    fi
@@ -108,7 +108,7 @@ tetfind() {
 
    _tet_common $@ || return 1
 
-   if [ -z "$PACKAGE" ]; then
+   if [ -z "$@" ]; then
         find "$TCEXTTOOLS_PACKAGES" -not -path *.svn*
         return 0
    fi
@@ -131,7 +131,7 @@ teted() {
 
    _tet_common $@ || return 1
 
-   if [ -z "$PACKAGE" ]; then
+   if [ -z "$@" ]; then
         echo "teted: package ?"
         return 1
    fi

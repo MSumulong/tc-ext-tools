@@ -15,7 +15,7 @@ build_configure() {
     -Dffmpeg_branding=Chrome \
     -Dproprietary_codecs=1 \
     -Drelease_extra_cflags="${CFLAGS}" \
-    -Duse_cups=0 \
+    -Duse_cups=1 \
     -Duse_system_libjpeg=1 \
     -Duse_system_libxslt=0 \
     -Duse_system_libxml=0 \

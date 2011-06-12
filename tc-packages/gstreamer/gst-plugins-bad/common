@@ -1,5 +1,5 @@
 PACKAGE="gst-plugins-bad"
-VERSION="0.10.21"
+VERSION="0.10.22"
 SOURCE="http://gstreamer.freedesktop.org/src/${PACKAGE}/${PACKAGE}-${VERSION}.tar.bz2"
 BUILD_DEPENDS="gstreamer
 gstreamer-dev
@@ -38,6 +38,8 @@ libsndfile
 libsndfile-dev
 libdc1394
 libdc1394-dev
+libusb
+libusb-dev
 faac
 faac-dev
 SDL
@@ -75,5 +77,6 @@ CHANGELOG="2009/11/08 First Version by juanito
 			-added audio cd support
 		2010/03/16 Updated to 0.10.18 by Arslan S.
 		2010/07/19 Updated to 0.10.19 by Arslan S.
-		2010/12/08 Updated to 0.10.20 by Arslan S."
+		2010/12/08 Updated to 0.10.20 by Arslan S.
+		2011/02/08 Updated to 0.10.21 by Arslan S."
 CURRENT="Updated to $VERSION by Arslan S."

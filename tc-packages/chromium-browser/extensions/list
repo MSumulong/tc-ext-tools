@@ -101,6 +101,7 @@ usr/local/chromium-browser/resources/inspector/Images/excludeButtonGlyph.png
 usr/local/chromium-browser/resources/inspector/Images/focusButtonGlyph.png
 usr/local/chromium-browser/resources/inspector/Images/forward.png
 usr/local/chromium-browser/resources/inspector/Images/frame.png
+usr/local/chromium-browser/resources/inspector/Images/garbageCollectButtonGlyph.png
 usr/local/chromium-browser/resources/inspector/Images/gearButtonGlyph.png
 usr/local/chromium-browser/resources/inspector/Images/glossyHeader.png
 usr/local/chromium-browser/resources/inspector/Images/glossyHeaderPressed.png
@@ -223,6 +224,7 @@ usr/local/chromium-browser/resources/inspector/Images/warningIcon.png
 usr/local/chromium-browser/resources/inspector/Images/warningMediumIcon.png
 usr/local/chromium-browser/resources/inspector/Images/warningOrangeDot.png
 usr/local/chromium-browser/resources/inspector/Images/warningsErrors.png
+usr/local/chromium-browser/resources/inspector/ScriptFormatterWorker.js
 usr/local/chromium-browser/resources/inspector/devTools.css
 usr/local/chromium-browser/resources/inspector/devtools.html
 usr/local/chromium-browser/xdg-settings

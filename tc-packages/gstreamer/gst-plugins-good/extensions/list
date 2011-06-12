@@ -13,6 +13,8 @@ usr/local/lib/gstreamer-0.10/libgstapetag.la
 usr/local/lib/gstreamer-0.10/libgstapetag.so
 usr/local/lib/gstreamer-0.10/libgstaudiofx.la
 usr/local/lib/gstreamer-0.10/libgstaudiofx.so
+usr/local/lib/gstreamer-0.10/libgstaudioparsers.la
+usr/local/lib/gstreamer-0.10/libgstaudioparsers.so
 usr/local/lib/gstreamer-0.10/libgstauparse.la
 usr/local/lib/gstreamer-0.10/libgstauparse.so
 usr/local/lib/gstreamer-0.10/libgstautodetect.la
@@ -61,8 +63,8 @@ usr/local/lib/gstreamer-0.10/libgstimagefreeze.la
 usr/local/lib/gstreamer-0.10/libgstimagefreeze.so
 usr/local/lib/gstreamer-0.10/libgstinterleave.la
 usr/local/lib/gstreamer-0.10/libgstinterleave.so
-usr/local/lib/gstreamer-0.10/libgstjack.la
-usr/local/lib/gstreamer-0.10/libgstjack.so
+usr/local/lib/gstreamer-0.10/libgstisomp4.la
+usr/local/lib/gstreamer-0.10/libgstisomp4.so
 usr/local/lib/gstreamer-0.10/libgstjpeg.la
 usr/local/lib/gstreamer-0.10/libgstjpeg.so
 usr/local/lib/gstreamer-0.10/libgstlevel.la
@@ -87,8 +89,6 @@ usr/local/lib/gstreamer-0.10/libgstpng.la
 usr/local/lib/gstreamer-0.10/libgstpng.so
 usr/local/lib/gstreamer-0.10/libgstpulse.la
 usr/local/lib/gstreamer-0.10/libgstpulse.so
-usr/local/lib/gstreamer-0.10/libgstqtdemux.la
-usr/local/lib/gstreamer-0.10/libgstqtdemux.so
 usr/local/lib/gstreamer-0.10/libgstreplaygain.la
 usr/local/lib/gstreamer-0.10/libgstreplaygain.so
 usr/local/lib/gstreamer-0.10/libgstrtp.la

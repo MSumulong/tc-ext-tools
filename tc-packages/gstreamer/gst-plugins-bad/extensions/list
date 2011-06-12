@@ -1,5 +1,6 @@
 usr/local/include/gstreamer-0.10/gst/basecamerabinsrc/gstbasecamerasrc.h
 usr/local/include/gstreamer-0.10/gst/basecamerabinsrc/gstcamerabin-enum.h
+usr/local/include/gstreamer-0.10/gst/basecamerabinsrc/gstcamerabinpreview.h
 usr/local/include/gstreamer-0.10/gst/interfaces/photography-enumtypes.h
 usr/local/include/gstreamer-0.10/gst/interfaces/photography.h
 usr/local/include/gstreamer-0.10/gst/signalprocessor/gstsignalprocessor.h
@@ -18,8 +19,6 @@ usr/local/include/gstreamer-0.10/gst/vdpau/gstvdpvideosrcpad.h
 usr/local/include/gstreamer-0.10/gst/video/gstbasevideocodec.h
 usr/local/include/gstreamer-0.10/gst/video/gstbasevideodecoder.h
 usr/local/include/gstreamer-0.10/gst/video/gstbasevideoencoder.h
-usr/local/include/gstreamer-0.10/gst/video/gstbasevideoparse.h
-usr/local/include/gstreamer-0.10/gst/video/gstbasevideoutils.h
 usr/local/lib/gstreamer-0.10/libgstadpcmdec.la
 usr/local/lib/gstreamer-0.10/libgstadpcmdec.so
 usr/local/lib/gstreamer-0.10/libgstadpcmenc.la
@@ -32,8 +31,6 @@ usr/local/lib/gstreamer-0.10/libgstasfmux.la
 usr/local/lib/gstreamer-0.10/libgstasfmux.so
 usr/local/lib/gstreamer-0.10/libgstassrender.la
 usr/local/lib/gstreamer-0.10/libgstassrender.so
-usr/local/lib/gstreamer-0.10/libgstaudioparsersbad.la
-usr/local/lib/gstreamer-0.10/libgstaudioparsersbad.so
 usr/local/lib/gstreamer-0.10/libgstautoconvert.la
 usr/local/lib/gstreamer-0.10/libgstautoconvert.so
 usr/local/lib/gstreamer-0.10/libgstbayer.la
@@ -48,8 +45,6 @@ usr/local/lib/gstreamer-0.10/libgstcdaudio.la
 usr/local/lib/gstreamer-0.10/libgstcdaudio.so
 usr/local/lib/gstreamer-0.10/libgstcdxaparse.la
 usr/local/lib/gstreamer-0.10/libgstcdxaparse.so
-usr/local/lib/gstreamer-0.10/libgstcelt.la
-usr/local/lib/gstreamer-0.10/libgstcelt.so
 usr/local/lib/gstreamer-0.10/libgstcog.la
 usr/local/lib/gstreamer-0.10/libgstcog.so
 usr/local/lib/gstreamer-0.10/libgstcoloreffects.la
@@ -64,6 +59,8 @@ usr/local/lib/gstreamer-0.10/libgstdccp.la
 usr/local/lib/gstreamer-0.10/libgstdccp.so
 usr/local/lib/gstreamer-0.10/libgstdebugutilsbad.la
 usr/local/lib/gstreamer-0.10/libgstdebugutilsbad.so
+usr/local/lib/gstreamer-0.10/libgstdecklink.la
+usr/local/lib/gstreamer-0.10/libgstdecklink.so
 usr/local/lib/gstreamer-0.10/libgstdtmf.la
 usr/local/lib/gstreamer-0.10/libgstdtmf.so
 usr/local/lib/gstreamer-0.10/libgstdtsdec.la
@@ -82,6 +79,10 @@ usr/local/lib/gstreamer-0.10/libgstfbdevsink.la
 usr/local/lib/gstreamer-0.10/libgstfbdevsink.so
 usr/local/lib/gstreamer-0.10/libgstfestival.la
 usr/local/lib/gstreamer-0.10/libgstfestival.so
+usr/local/lib/gstreamer-0.10/libgstfieldanalysis.la
+usr/local/lib/gstreamer-0.10/libgstfieldanalysis.so
+usr/local/lib/gstreamer-0.10/libgstfragmented.la
+usr/local/lib/gstreamer-0.10/libgstfragmented.so
 usr/local/lib/gstreamer-0.10/libgstfreeze.la
 usr/local/lib/gstreamer-0.10/libgstfreeze.so
 usr/local/lib/gstreamer-0.10/libgstfrei0r.la
@@ -114,6 +115,8 @@ usr/local/lib/gstreamer-0.10/libgstjpegformat.la
 usr/local/lib/gstreamer-0.10/libgstjpegformat.so
 usr/local/lib/gstreamer-0.10/libgstlegacyresample.la
 usr/local/lib/gstreamer-0.10/libgstlegacyresample.so
+usr/local/lib/gstreamer-0.10/libgstlinsys.la
+usr/local/lib/gstreamer-0.10/libgstlinsys.so
 usr/local/lib/gstreamer-0.10/libgstliveadder.la
 usr/local/lib/gstreamer-0.10/libgstliveadder.so
 usr/local/lib/gstreamer-0.10/libgstmimic.la
@@ -124,6 +127,8 @@ usr/local/lib/gstreamer-0.10/libgstmpegdemux.la
 usr/local/lib/gstreamer-0.10/libgstmpegdemux.so
 usr/local/lib/gstreamer-0.10/libgstmpegpsmux.la
 usr/local/lib/gstreamer-0.10/libgstmpegpsmux.so
+usr/local/lib/gstreamer-0.10/libgstmpegtsdemux.la
+usr/local/lib/gstreamer-0.10/libgstmpegtsdemux.so
 usr/local/lib/gstreamer-0.10/libgstmpegtsmux.la
 usr/local/lib/gstreamer-0.10/libgstmpegtsmux.so
 usr/local/lib/gstreamer-0.10/libgstmpegvideoparse.la
@@ -138,12 +143,12 @@ usr/local/lib/gstreamer-0.10/libgstnsf.la
 usr/local/lib/gstreamer-0.10/libgstnsf.so
 usr/local/lib/gstreamer-0.10/libgstnuvdemux.la
 usr/local/lib/gstreamer-0.10/libgstnuvdemux.so
+usr/local/lib/gstreamer-0.10/libgstpatchdetect.la
+usr/local/lib/gstreamer-0.10/libgstpatchdetect.so
 usr/local/lib/gstreamer-0.10/libgstpcapparse.la
 usr/local/lib/gstreamer-0.10/libgstpcapparse.so
 usr/local/lib/gstreamer-0.10/libgstpnm.la
 usr/local/lib/gstreamer-0.10/libgstpnm.so
-usr/local/lib/gstreamer-0.10/libgstqtmux.la
-usr/local/lib/gstreamer-0.10/libgstqtmux.so
 usr/local/lib/gstreamer-0.10/libgstrawparse.la
 usr/local/lib/gstreamer-0.10/libgstrawparse.so
 usr/local/lib/gstreamer-0.10/libgstreal.la
@@ -154,10 +159,14 @@ usr/local/lib/gstreamer-0.10/libgstrsvg.la
 usr/local/lib/gstreamer-0.10/libgstrsvg.so
 usr/local/lib/gstreamer-0.10/libgstrtpmux.la
 usr/local/lib/gstreamer-0.10/libgstrtpmux.so
+usr/local/lib/gstreamer-0.10/libgstrtpvp8.la
+usr/local/lib/gstreamer-0.10/libgstrtpvp8.so
 usr/local/lib/gstreamer-0.10/libgstscaletempoplugin.la
 usr/local/lib/gstreamer-0.10/libgstscaletempoplugin.so
 usr/local/lib/gstreamer-0.10/libgstschro.la
 usr/local/lib/gstreamer-0.10/libgstschro.so
+usr/local/lib/gstreamer-0.10/libgstsdi.la
+usr/local/lib/gstreamer-0.10/libgstsdi.so
 usr/local/lib/gstreamer-0.10/libgstsdl.la
 usr/local/lib/gstreamer-0.10/libgstsdl.so
 usr/local/lib/gstreamer-0.10/libgstsdpelem.la
@@ -184,10 +193,14 @@ usr/local/lib/gstreamer-0.10/libgstvcdsrc.la
 usr/local/lib/gstreamer-0.10/libgstvcdsrc.so
 usr/local/lib/gstreamer-0.10/libgstvdpau.la
 usr/local/lib/gstreamer-0.10/libgstvdpau.so
+usr/local/lib/gstreamer-0.10/libgstvideofiltersbad.la
+usr/local/lib/gstreamer-0.10/libgstvideofiltersbad.so
 usr/local/lib/gstreamer-0.10/libgstvideomaxrate.la
 usr/local/lib/gstreamer-0.10/libgstvideomaxrate.so
 usr/local/lib/gstreamer-0.10/libgstvideomeasure.la
 usr/local/lib/gstreamer-0.10/libgstvideomeasure.so
+usr/local/lib/gstreamer-0.10/libgstvideoparsersbad.la
+usr/local/lib/gstreamer-0.10/libgstvideoparsersbad.so
 usr/local/lib/gstreamer-0.10/libgstvideosignal.la
 usr/local/lib/gstreamer-0.10/libgstvideosignal.so
 usr/local/lib/gstreamer-0.10/libgstvmnc.la

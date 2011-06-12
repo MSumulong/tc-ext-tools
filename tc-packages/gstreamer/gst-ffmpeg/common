@@ -21,5 +21,6 @@ MAINTAINERS="Arslan S."
 COMMENTS="This extension is PPI compatible."
 CHANGELOG="2009/12/28 Original 0.10.9
 		2010/03/16 Updated to 0.10.10
-		2010/07/19 Updated to 0.10.11"
+		2010/07/19 Updated to 0.10.11
+		2011/02/09 Rebuilt"
 CURRENT="Rebuilt"
