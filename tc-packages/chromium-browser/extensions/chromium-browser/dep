@@ -5,6 +5,6 @@ libasound.tcz
 nss.tcz
 libevent.tcz
 libcups.tcz
+libgcrypt.tcz
 shared-mime-info.tcz
 hicolor-icon-theme.tcz
-

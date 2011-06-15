@@ -1,10 +1,12 @@
 PACKAGE="xulrunner"
-VERSION="1.9.2.14"
+VERSION="1.9.2.17"
 SOURCE="http://releases.mozilla.org/pub/mozilla.org/xulrunner/releases/${VERSION}/source/xulrunner-${VERSION}.source.tar.bz2"
 BUILD_DEPENDS="gtk2
 gtk2-dev
 Xorg-7.5-lib
 Xorg-7.5-dev
+libxcb
+libxcb-dev
 libasound
 alsa-dev
 python
@@ -14,10 +16,6 @@ dbus
 dbus-dev
 dbus-glib
 dbus-glib-dev
-gnome-vfs
-gnome-vfs-dev
-libgnomeui
-libgnomeui-dev
 libstartup-notification
 libstartup-notification-dev
 nspr
@@ -32,11 +30,17 @@ libnotify-dev
 wireless_tools
 hunspell
 hunspell-dev
-#autoconf2.13
 sqlite3
 sqlite3-dev
-libxcb
-libxcb-dev"
+libevent
+libevent-dev
+GConf
+GConf-dev
+#gnome-vfs
+#gnome-vfs-dev
+#libgnomeui
+#libgnomeui-dev
+#autoconf2.13"
 
 DESCRIPTION="XULRunner is a Mozilla runtime package."
 AUTHOR="Mozilla Foundation"
@@ -48,5 +52,6 @@ CHANGELOG="2010/01/30 Original 1.9.1.7
 		2010/06/09 Updated to 1.9.2
 		2010/08/24 Updated to 1.9.2.8
 		2010/11/30 Updated to 1.9.2.12
-		2010/12/12 Updated to 1.9.2.13"
+		2010/12/12 Updated to 1.9.2.13
+		2011/03/03 Updated to 1.9.2.14"
 CURRENT="Updated to $VERSION"
