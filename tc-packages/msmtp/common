@@ -1,5 +1,5 @@
 PACKAGE="msmtp"
-VERSION="1.4.23"
+VERSION="1.4.24"
 SOURCE="http://download.sourceforge.net/sourceforge/msmtp/msmtp-${VERSION}.tar.bz2"
 BUILD_DEPENDS="gnutls
 gnutls-dev
@@ -12,5 +12,5 @@ SITE="http://msmtp.sourceforge.net/"
 COPYING="GPL-3"
 MAINTAINERS="Arslan S."
 COMMENTS="This extension is PPI compatible."
-CHANGELOG="---"
-CURRENT="First Version"
+CHANGELOG="2011/03/31 First Version 1.4.23"
+CURRENT="Updated to $VERSION"

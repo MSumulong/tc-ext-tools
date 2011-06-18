@@ -1,5 +1,5 @@
 usr/local/bin/cherrytree
-usr/local/lib/python2.7/site-packages/CherryTree-0.20.1-py2.7.egg-info
+usr/local/lib/python2.7/site-packages/CherryTree-0.22-py2.7.egg-info
 usr/local/share/application-registry/cherrytree.applications
 usr/local/share/applications/cherrytree.desktop
 usr/local/share/cherrytree/glade/anchor.png
@@ -33,6 +33,7 @@ usr/local/share/cherrytree/glade/color_foreground.png
 usr/local/share/cherrytree/glade/edit-copy.png
 usr/local/share/cherrytree/glade/edit-cut.png
 usr/local/share/cherrytree/glade/edit-delete.png
+usr/local/share/cherrytree/glade/edit-paste.png
 usr/local/share/cherrytree/glade/export_from_cherrytree.png
 usr/local/share/cherrytree/glade/find.png
 usr/local/share/cherrytree/glade/find_again.png
@@ -55,6 +56,7 @@ usr/local/share/cherrytree/glade/link_handle.png
 usr/local/share/cherrytree/glade/link_website.png
 usr/local/share/cherrytree/glade/list_bulleted.png
 usr/local/share/cherrytree/glade/list_numbered.png
+usr/local/share/cherrytree/glade/list_todo.png
 usr/local/share/cherrytree/glade/new-instance.png
 usr/local/share/cherrytree/glade/node_bullet.png
 usr/local/share/cherrytree/glade/node_name_header.png
@@ -68,6 +70,8 @@ usr/local/share/cherrytree/glade/table_save.png
 usr/local/share/cherrytree/glade/to_html.png
 usr/local/share/cherrytree/glade/to_txt.png
 usr/local/share/cherrytree/glade/toolbar.png
+usr/local/share/cherrytree/glade/tree-node-add.png
+usr/local/share/cherrytree/glade/tree-subnode-add.png
 usr/local/share/cherrytree/modules/clipboard.py
 usr/local/share/cherrytree/modules/codeboxes.py
 usr/local/share/cherrytree/modules/config.py
@@ -78,6 +82,7 @@ usr/local/share/cherrytree/modules/findreplace.py
 usr/local/share/cherrytree/modules/imports.py
 usr/local/share/cherrytree/modules/lists.py
 usr/local/share/cherrytree/modules/machines.py
+usr/local/share/cherrytree/modules/main.py
 usr/local/share/cherrytree/modules/printing.py
 usr/local/share/cherrytree/modules/support.py
 usr/local/share/cherrytree/modules/tablez.py
