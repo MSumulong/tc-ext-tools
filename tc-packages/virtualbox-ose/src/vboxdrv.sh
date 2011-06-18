@@ -34,7 +34,7 @@ start(){
        rmmod vboxnetadp 2>/dev/null
        rmmod vboxnetflt 2>/dev/null
        rmmod vboxdrv 2>/dev/null
-       failure "Cannot change group root for device $DEVICE"
+       echo "Cannot change group root for device $DEVICE"
    fi
 
    if grep -q usb_device /proc/devices; then

@@ -1,5 +1,5 @@
 PACKAGE="srware-iron"
-VERSION="11.0.700.2"
+VERSION="12.0.750.0"
 SOURCE="http://www.srware.net/downloads/iron-linux.tar.gz->srware-iron-${VERSION}.tar.gz"
 BUILD_DEPENDS=""
 

@@ -8,6 +8,7 @@ usr/local/include/orc-0.4/orc/opcodes.h
 usr/local/include/orc-0.4/orc/orc-stdint.h
 usr/local/include/orc-0.4/orc/orc.h
 usr/local/include/orc-0.4/orc/orcarm.h
+usr/local/include/orc-0.4/orc/orccpuinsn.h
 usr/local/include/orc-0.4/orc/orcdebug.h
 usr/local/include/orc-0.4/orc/orcemulateopcodes.h
 usr/local/include/orc-0.4/orc/orcfunctions.h
@@ -20,16 +21,17 @@ usr/local/include/orc-0.4/orc/orcprogram.h
 usr/local/include/orc-0.4/orc/orcsse.h
 usr/local/include/orc-0.4/orc/orcutils.h
 usr/local/include/orc-0.4/orc/orcx86.h
+usr/local/include/orc-0.4/orc/orcx86insn.h
 usr/local/lib/liborc-0.4.a
 usr/local/lib/liborc-0.4.la
 usr/local/lib/liborc-0.4.so
 usr/local/lib/liborc-0.4.so.0
-usr/local/lib/liborc-0.4.so.0.11.0
+usr/local/lib/liborc-0.4.so.0.14.0
 usr/local/lib/liborc-test-0.4.a
 usr/local/lib/liborc-test-0.4.la
 usr/local/lib/liborc-test-0.4.so
 usr/local/lib/liborc-test-0.4.so.0
-usr/local/lib/liborc-test-0.4.so.0.11.0
+usr/local/lib/liborc-test-0.4.so.0.14.0
 usr/local/lib/pkgconfig/orc-0.4.pc
 usr/local/share/gtk-doc/html/orc/ch01.html
 usr/local/share/gtk-doc/html/orc/ch02.html
@@ -56,6 +58,7 @@ usr/local/share/gtk-doc/html/orc/orc-building.html
 usr/local/share/gtk-doc/html/orc/orc-concepts.html
 usr/local/share/gtk-doc/html/orc/orc-misc.html
 usr/local/share/gtk-doc/html/orc/orc-opcodes.html
+usr/local/share/gtk-doc/html/orc/orc-runninging.html
 usr/local/share/gtk-doc/html/orc/orc-tutorial.html
 usr/local/share/gtk-doc/html/orc/orc-x86.html
 usr/local/share/gtk-doc/html/orc/orc.devhelp

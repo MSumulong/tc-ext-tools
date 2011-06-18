@@ -1,5 +1,5 @@
 PACKAGE="celestia"
-VERSION="1.6.0"
+VERSION="1.6.1"
 SOURCE="http://downloads.sourceforge.net/sourceforge/celestia/celestia-${VERSION}.tar.gz"
 BUILD_DEPENDS="gtk2
 gtk2-dev
@@ -12,7 +12,9 @@ gtkglext-dev
 Xorg-7.5
 Xorg-7.5-dev
 freeglut
-freeglut-dev"
+freeglut-dev
+libxcb
+libxcb-dev"
 
 DESCRIPTION="A real-time space simulation in 3D."
 AUTHOR="Celestia Development Team"
@@ -20,5 +22,5 @@ SITE="http://www.shatters.net/celestia/"
 COPYING="GPL"
 MAINTAINERS="Arslan S."
 COMMENTS="This extension is PPI compatible."
-CHANGELOG="---"
-CURRENT="First Version"
+CHANGELOG="2010/09/01 First Version 1.6.0"
+CURRENT="Updated to $VERSION"
