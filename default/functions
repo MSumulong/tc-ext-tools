@@ -129,6 +129,9 @@ set_source() {
      elif [ "${PACKAGE_SOURCE_NAME%.txz}" != "$PACKAGE_SOURCE_NAME" ]; then
           PACKAGE_SOURCE_TYPE="txz"
           PACKAGE_SOURCE_NAME_CONV="$PACKAGE_SOURCE_NAME"
+     elif [ "${PACKAGE_SOURCE_NAME%.tar.lzma}" != "$PACKAGE_SOURCE_NAME" ]; then
+          PACKAGE_SOURCE_TYPE="tarlzma"
+          PACKAGE_SOURCE_NAME_CONV="$PACKAGE_SOURCE_NAME"
      elif [ "${PACKAGE_SOURCE_NAME%.tar}" != "$PACKAGE_SOURCE_NAME" ]; then
           PACKAGE_SOURCE_TYPE="tar"
           PACKAGE_SOURCE_NAME_CONV="${PACKAGE_SOURCE_NAME%.tar}.tar.xz"

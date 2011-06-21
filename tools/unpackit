@@ -51,7 +51,9 @@ this_main() {
    [ -d "$PACKAGE_SRC_TEMP" ] && sudo rm -rf "$PACKAGE_SRC_TEMP"
    mkdir -p "$PACKAGE_SRC_TEMP"
 
-   if [ -f "$PACKAGE_SOURCE_CONV" ] || [ "$PACKAGE_SOURCE_TYPE" = "tarbz2" ] || [ "$PACKAGE_SOURCE_TYPE" = "targz" ] || [ "$PACKAGE_SOURCE_TYPE" = "tgz" ] || [ "$PACKAGE_SOURCE_TYPE" = "tbz2" ] || [ "$PACKAGE_SOURCE_TYPE" = "tarxz" ] || [ "$PACKAGE_SOURCE_TYPE" = "txz" ] || [ "$PACKAGE_SOURCE_TYPE" = "tar" ]; then
+   if [ -f "$PACKAGE_SOURCE_CONV" ] || [ "$PACKAGE_SOURCE_TYPE" = "tarbz2" ] || [ "$PACKAGE_SOURCE_TYPE" = "targz" ] ||
+      [ "$PACKAGE_SOURCE_TYPE" = "tgz" ] || [ "$PACKAGE_SOURCE_TYPE" = "tbz2" ] || [ "$PACKAGE_SOURCE_TYPE" = "tarxz" ] ||
+      [ "$PACKAGE_SOURCE_TYPE" = "txz" ] || [ "$PACKAGE_SOURCE_TYPE" = "tarlzma" ] || [ "$PACKAGE_SOURCE_TYPE" = "tar" ]; then
         echo "---------------------------------------------------------------"
         echo "Extracting the package source by using tar"
         echo "---------------------------------------------------------------"
