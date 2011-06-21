@@ -50,8 +50,10 @@ this_main() {
    [ -d "$PACKAGE_PKG_TEMP" ] && sudo rm -rf "$PACKAGE_PKG_TEMP"
 
    if [ -f "$PACKAGE_SOURCE_CONV" -a -f "$PACKAGE_SOURCE_ORIG" ]; then
-        echo "Removing the package original source."
-        sudo rm -f "$PACKAGE_SOURCE_ORIG"
+        if [ "$PACKAGE_SOURCE_CONV" != "$PACKAGE_SOURCE_ORIG" ]; then
+             echo "Removing the package original source."
+             sudo rm -f "$PACKAGE_SOURCE_ORIG"
+        fi
    fi
 
    echo "---------------------------------------------------------------"
