@@ -52,29 +52,6 @@ else
     exit 1
 fi
 
-# message print function
-print_it() {
-
-  case  "$1" in
-     -e|--error)
-           echo -e "${TCEXTTOOLS_ERROR_COLOR}${2}${NORMAL}"
-           ;;
-     -w|--warning)
-           echo -e "${TCEXTTOOLS_WARNING_COLOR}${2}${NORMAL}"
-           ;;
-     -h|--hilight)
-           echo -e "${TCEXTTOOLS_HILIGHT_COLOR}${2}${NORMAL}"
-           ;;
-     -m|--message)
-           echo -e "${TCEXTTOOLS_HILIGHT_COLOR}${2}${NORMAL}"
-           ;;
-     *)
-           echo -e "${TCEXTTOOLS_MESSAGE_COLOR}${1}${NORMAL}"
-           ;;
-  esac
-
-}
-
 # sets the package source variables
 set_source() {
 
@@ -354,7 +331,7 @@ if [ -f "$PACKAGE_COMMON" ]; then
      [ -f "$PACKAGE_MESSAGE_LOG" ] || touch "$PACKAGE_MESSAGE_LOG"
 
 elif [ "$THIS" != "boostit" ]; then
-     print_it --error "You must boost it first!"
+     echo "${ERROR_COLOR}You must boost it first!${NORMAL}"
      exit 1
 fi
 
@@ -367,7 +344,7 @@ if [ "$THIS" != "boostit" ]; then
      if [ -f "$PACKAGE_BUILD" ]; then
           . "$PACKAGE_BUILD"
      else
-          print_it --error "You must boost it first!"
+          echo "${ERROR_COLOR}You must boost it first!${NORMAL}"
           exit 1
      fi
 fi

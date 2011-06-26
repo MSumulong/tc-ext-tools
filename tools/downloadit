@@ -91,14 +91,14 @@ this_main() {
 
 }
 
-print_it "Downloading the package $PACKAGE source ... \c"
+echo -e "${MESSAGE_COLOR}Downloading the package ${HILIGHT_COLOR}$PACKAGE${MESSAGE_COLOR} source ... ${NORMAL}\c"
 this_main > "$PACKAGE_MESSAGE_LOG" 2>&1
 if [ "$?" -gt 0 ]; then
-     print_it --error "failed!"
-     print_it --warning "For details: buildit print message"
+     echo "${ERROR_COLOR}failed!${NORMAL}"
+     echo "${WARNING_COLOR}For details: ${WARNING_COLOR_H}buildit print message${NORMAL}"
      exit 1
 fi
-print_it --hilight "successful!"
+echo "${HILIGHT_COLOR}successful!${NORMAL}"
 
 exit 0
 
