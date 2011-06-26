@@ -71,20 +71,20 @@ echo -e "\n\t${TCEXTTOOLS_MESSAGE_COLOR}EXTENSIONS=${TCEXTTOOLS_WARNING_COLOR}$E
 echo -e "\n${NORMAL}"
 
 if [ -f "$PACKAGE_COMMON" ]; then
-   print_it --error "This package looks to be boosted before."
-   print_it --warning "If you continue existing files will be overwritten."
-   print_it --message "Would you like you continue ? [y|yes or n|no]"
+   echo "${ERROR_COLOR}This package looks to be boosted before.${NORMAL}"
+   echo "${WARNING_COLOR}If you continue, the existing files will be overwritten.${NORMAL}"
+   echo "${MESSAGE_COLOR}Would you like you continue ? ${HILIGHT_COLOR}[y|yes or n|no]${NORMAL}"
    read ans
    case "$ans" in
         y|yes)
-          print_it "You agreed to continue. The files will be overwritten."
+          echo "${MESSAGE_COLOR}You agreed to continue, the files will be overwritten.${NORMAL}"
           ;;
         n|no)
-          print_it "You don't want to continue ? Farewell!"
+          echo "${MESSAGE_COLOR}You don't want to continue ? Farewell!${NORMAL}"
           exit 0
           ;;
         *)
-          print_it --error "I don't understand what you are saying!"
+          echo "${ERROR_COLOR}I don't understand what you are saying!${NORMAL}"
           exit 1
           ;;
    esac
@@ -198,14 +198,14 @@ _EOF
 
 }
 
-print_it "Boosting the package $PACKAGE ... \c"
+echo -e "${MESSAGE_COLOR}Boosting the package ${HILIGHT_COLOR}$PACKAGE${MESSAGE_COLOR} ... ${NORMAL}\c"
 this_main > /tmp/boostit.log 2>&1
 if [ "$?" -gt 0 ]; then
-     print_it --error "failed!"
-     print_it --warning "See /tmp/boostit.log for details."
+     echo "${ERROR_COLOR}failed!${NORMAL}"
+     echo "${WARNING_COLOR}See /tmp/boostit.log for details.${NORMAL}"
      exit 1
 fi
-print_it --hilight "successful!"
+echo "${HILIGHT_COLOR}successful!${NORMAL}"
 
 exit 0
 

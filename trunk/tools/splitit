@@ -35,7 +35,7 @@ else
 fi
 
 if [ ! -d "$PACKAGE_INSTALL_ROOT" ]; then
-       print_it --error "You must install it first!"
+       echo "${ERROR_COLOR}You must install it first!${NORMAL}"
        exit 1
 fi
 
@@ -177,14 +177,14 @@ this_main() {
 
 }
 
-print_it "Splitting the package $PACKAGE extensions ... \c"
+echo -e "${MESSAGE_COLOR}Splitting the package ${HILIGHT_COLOR}$PACKAGE${MESSAGE_COLOR} extensions ... ${NORMAL}\c"
 this_main > "$PACKAGE_MESSAGE_LOG" 2>&1
 if [ "$?" -gt 0 ]; then
-     print_it --error "failed!"
-     print_it --warning "For details: buildit print message"
+     echo "${ERROR_COLOR}failed!${NORMAL}"
+     echo "${WARNING_COLOR}For details: ${WARNING_COLOR_H}buildit print message${NORMAL}"
      exit 1
 fi
-print_it --hilight "successful!"
+echo "${HILIGHT_COLOR}successful!${NORMAL}"
 
 exit 0
 

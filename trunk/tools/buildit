@@ -36,8 +36,8 @@ fi
 
 print_usage(){
 
-   echo -e "${TCEXTTOOLS_ERROR_COLOR}${THIS} usage:"
-   echo -e "\n\t${TCEXTTOOLS_MESSAGE_COLOR}${THIS} clean|load|download|convert|unpack|patch|configure|compile|install|split|strip|create|check|generate|package|custom|encrypt|print|help${NORMAL}"
+   echo -e "${WARNING_COLOR}${THIS} usage:"
+   echo -e "\n\t${WARNING_COLOR_H}${THIS} -c,clean|-l,load|-d,download|-x,convert|-u,unpack|-pt,patch|-cn,configure|-cm,compile|-i,install|-sp,split|-st,strip|-cr,create|-ch,check|-g,generate|-pk,package|-cs,custom|-e,encrypt|-p,print|-h,help${NORMAL}"
 
    exit 0
 
@@ -52,7 +52,7 @@ clean_it() {
 download_it() {
 
    if [ -f "$PACKAGE_SOURCE_ORIG" -o -f "$PACKAGE_SOURCE_CONV" ]; then
-        print_it --warning "The package $PACKAGE source already exists."
+        echo "${WARNING_COLOR}The package ${WARNING_COLOR_H}$PACKAGE${WARNING_COLOR} source already exists.${NORMAL}"
         exit 0
    fi
 
@@ -63,7 +63,7 @@ download_it() {
 convert_it() {
 
    if [ -f "$PACKAGE_SOURCE_CONV" ]; then
-        print_it --warning "The package $PACKAGE source converted already exists."
+        echo "${WARNING_COLOR}The package ${WARNING_COLOR_H}$PACKAGE${WARNING_COLOR} source converted already exists.${NORMAL}"
         exit 0
    fi
 
@@ -149,23 +149,23 @@ encrypt_it() {
 
 }
 
-custom_function() {
+build_custom() {
 
    FUNCTION="$1"
 
    if [ -z "$FUNCTION" ]; then
-        print_it --error "You need to specify the name of the custom function."
+        echo "${ERROR_COLOR}You need to specify the name of the custom function.${NORMAL}"
         exit 1
    fi
 
-   print_it "Executing the package $PACKAGE custom build function $FUNCTION ... \c"
+   echo -e "${MESSAGE_COLOR}Executing the package ${HILIGHT_COLOR}$PACKAGE${MESSAGE_COLOR} custom build function $FUNCTION ... ${NORMAL}\c"
    build_${FUNCTION} > "$PACKAGE_MESSAGE_LOG" 2>&1
-   if [ "$?" -gt 0 ]; then
-        print_it --error "failed!"
-        print_it --warning "For details: buildit print message"
-        exit 1
-   fi
-   print_it --hilight "successful!"
+if [ "$?" -gt 0 ]; then
+     echo "${ERROR_COLOR}failed!${NORMAL}"
+     echo "${WARNING_COLOR}For details: ${WARNING_COLOR_H}buildit print message${NORMAL}"
+     exit 1
+fi
+echo "${HILIGHT_COLOR}successful!${NORMAL}"
 
 }
 
@@ -262,47 +262,48 @@ tet_custom() {
 build_it() {
 
    set_date; SECONDS_BEFORE="$SECONDS"
-   echo -e "${TCEXTTOOLS_MESSAGE_COLOR}Building the package $PACKAGE started at ${TCEXTTOOLS_HILIGHT_COLOR}$TIME${TCEXTTOOLS_MESSAGE_COLOR}"
+   echo "${MESSAGE_COLOR}Building the package ${HILIGHT_COLOR}$PACKAGE${MESSAGE_COLOR} started at ${HILIGHT_COLOR}$TIME${NORMAL}"
    clean_it
    build_rules
-   set_date; SECONDS_AFTER="$SECONDS"; SECONDS_ELAPSED=`expr $SECONDS_AFTER - $SECONDS_BEFORE`
-   echo -e "${TCEXTTOOLS_MESSAGE_COLOR}Building the package $PACKAGE finished at ${TCEXTTOOLS_HILIGHT_COLOR}$TIME${TCEXTTOOLS_MESSAGE_COLOR} in ${TCEXTTOOLS_HILIGHT_COLOR}${SECONDS_ELAPSED}${TCEXTTOOLS_MESSAGE_COLOR} seconds${NORMAL}"
+   set_date; SECONDS_AFTER="$SECONDS"
+   SECONDS_ELAPSED=`expr $SECONDS_AFTER - $SECONDS_BEFORE`
+   echo "${MESSAGE_COLOR}Building the package ${HILIGHT_COLOR}$PACKAGE${MESSAGE_COLOR} finished at ${HILIGHT_COLOR}$TIME${MESSAGE_COLOR} in ${HILIGHT_COLOR}${SECONDS_ELAPSED}${MESSAGE_COLOR} seconds${NORMAL}"
    encrypt_it
 
 }
 
-print_function() {
+print_it() {
 
    case "$1" in
-       configure)
+       -cn|configure)
                 if [ -f "$PACKAGE_CONFIGURE_LOG" ]; then
                      cat "$PACKAGE_CONFIGURE_LOG"
                 fi
                 ;;
-       compile)
+       -cm|compile)
                 if [ -f "$PACKAGE_COMPILE_LOG" ]; then
                      cat "$PACKAGE_COMPILE_LOG"
                 fi
                 ;;
-       install)
+       -i|install)
                 if [ -f "$PACKAGE_INSTALL_LOG" ]; then
                      cat "$PACKAGE_INSTALL_LOG"
                 fi
                 ;;
-       build)
+       -b|build)
                 if [ -f "$PACKAGE_BUILD_LOG" ]; then
                      cat "$PACKAGE_BUILD_LOG"
                      echo -e "${NORMAL}\c"
                 fi
                 ;;
-       message)
+       -m|message)
                 if [ -f "$PACKAGE_MESSAGE_LOG" ]; then
                      cat "$PACKAGE_MESSAGE_LOG"
                      echo -e "${NORMAL}\c"
                 fi
                 ;;
        *)
-                print_it --warning "Usage: buildit print configure|compile|install|build|message"
+                echo "${WARNING_COLOR}Usage: ${WARNING_COLOR_H}buildit -p,print -cn,configure|-cm,compile|-i,install|-b,build|-m,message${NORMAL}"
                 ;;
    esac
 
@@ -317,61 +318,61 @@ if [ -z "$1" ]; then
 fi
 
 case "$1" in
-	clean)
+	-c|clean)
 		  clean_it
 		  ;;
-	download)
+	-d|download)
 		  download_it
 		  ;;
-	convert)
+	-x|convert)
 		  convert_it
 		  ;;
-	unpack)
+	-u|unpack)
 		  unpack_it
 		  ;;
-	load)
+	-l|load)
 		  load_it
 		  ;;
-	patch)
+	-pt|patch)
 		  patch_it
 		  ;;
-	configure)
+	-cn|configure)
 		  configure_it
 		  ;;
-	compile)
+	-cm|compile)
 		  compile_it
 		  ;;
-	install)
+	-i|install)
 		  install_it
 		  ;;
-	split)
+	-sp|split)
 		  split_it
 		  ;;
-	strip)
+	-st|strip)
 		  strip_it
 		  ;;
-	create)
+	-cr|create)
 		  create_it
 		  ;;
-	check)
+	-ch|check)
 		  check_it
 		  ;;
-	generate)
+	-g|generate)
 		  generate_it
 		  ;;
-	package)
+	-pk|package)
 		  package_it
 		  ;;
-	encrypt)
+	-e|encrypt)
 		  encrypt_it
 		  ;;
-	print)
-		  print_function "$2"
+	-p|print)
+		  print_it "$2"
 		  ;;
-	custom)
-		  custom_function "$2"
+	-cs|custom)
+		  build_custom "$2"
 		  ;;
-	*)
+	-h|help|*)
 		  print_usage
 		  ;;
 esac
