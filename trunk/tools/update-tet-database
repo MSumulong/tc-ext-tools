@@ -45,27 +45,56 @@ if [ -z "$TCEXTTOOLS_PACKAGES_DATABASE" ]; then
      exit 1
 fi
 
-echo "${BLUE}Cleaning the packages database${NORMAL}"
-if [ -d "$TCEXTTOOLS_PACKAGES_DATABASE" ]; then
-     sudo rm -rf "$TCEXTTOOLS_PACKAGES_DATABASE"
+echo -e "${BLUE}Checking if the packages database exists ... \c${NORMAL}"
+if [ ! -f "$TCEXTTOOLS_PACKAGES_DATABASE"/packages.db ]; then
+       echo "${YELLOW}no${NORMAL}"
+       echo "${GREEN}Initializing the packages database${NORMAL}"
+       [ -d "$TCEXTTOOLS_PACKAGES_DATABASE" ] || mkdir -p "$TCEXTTOOLS_PACKAGES_DATABASE"
+       cd "$TCEXTTOOLS_PACKAGES_DATABASE"
+       touch packages.db
+else
+       echo "${CYAN}yes${NORMAL}"
 fi
-mkdir -p "$TCEXTTOOLS_PACKAGES_DATABASE"
 
-echo "${BLUE}Getting the packages list${NORMAL}"
 PACKAGES=`find $TCEXTTOOLS_PACKAGES -type f -name common -a -not -path "*/extensions/*/common" | sort`
 
-echo "${BLUE}Creating the packages database${NORMAL}"
+cd "$TCEXTTOOLS_PACKAGES_DATABASE"
+
+echo "${BLUE}Updating the packages database${NORMAL}"
 for package in $PACKAGES
 do
    . "$package"
-   echo "${GREEN}Adding the package ${YELLOW}${PACKAGE}${GREEN} to the packages database${NORMAL}"
+
+   ADD=0
+   UPDATE=0
+
+   if [ -f "$PACKAGE" ]; then
+        . "$PACKAGE"
+        if [ "$PACKAGE_VERSION" != "$VERSION" ]; then
+             UPDATE=1
+        fi
+   else
+        ADD=1
+        echo "$PACKAGE" >> packages.db
+   fi
+
+if [ "$ADD" == "1" ]; then
+     echo "${GREEN}Adding the package ${YELLOW}${PACKAGE}${NORMAL}"
+elif [ "$UPDATE" == "1" ]; then
+     echo "${GREEN}Updating the package ${YELLOW}${PACKAGE}${NORMAL}"
+fi
+
+if [ "$ADD" == 1 -o "$UPDATE" == 1 ]; then
    cat > "$TCEXTTOOLS_PACKAGES_DATABASE/$PACKAGE" << _EOF
 PACKAGE_NAME="$PACKAGE"
 PACKAGE_VERSION="$VERSION"
 PACKAGE_DESCRIPTION="$DESCRIPTION"
 PACKAGE_ROOT="${package%/common}"
 _EOF
+fi
 done
+
+echo "${CYAN}All done!${NORMAL}"
 
 exit 0
 

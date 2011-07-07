@@ -275,35 +275,35 @@ build_it() {
 print_it() {
 
    case "$1" in
-       -cn|configure)
+       cn|configure)
                 if [ -f "$PACKAGE_CONFIGURE_LOG" ]; then
                      cat "$PACKAGE_CONFIGURE_LOG"
                 fi
                 ;;
-       -cm|compile)
+       cm|compile)
                 if [ -f "$PACKAGE_COMPILE_LOG" ]; then
                      cat "$PACKAGE_COMPILE_LOG"
                 fi
                 ;;
-       -i|install)
+       i|install)
                 if [ -f "$PACKAGE_INSTALL_LOG" ]; then
                      cat "$PACKAGE_INSTALL_LOG"
                 fi
                 ;;
-       -b|build)
+       b|build)
                 if [ -f "$PACKAGE_BUILD_LOG" ]; then
                      cat "$PACKAGE_BUILD_LOG"
                      echo -e "${NORMAL}\c"
                 fi
                 ;;
-       -m|message)
+       m|message)
                 if [ -f "$PACKAGE_MESSAGE_LOG" ]; then
                      cat "$PACKAGE_MESSAGE_LOG"
                      echo -e "${NORMAL}\c"
                 fi
                 ;;
        *)
-                echo "${WARNING_COLOR}Usage: ${WARNING_COLOR_H}buildit -p,print -cn,configure|-cm,compile|-i,install|-b,build|-m,message${NORMAL}"
+                echo "${WARNING_COLOR}Usage: ${WARNING_COLOR_H}buildit -p,print cn,configure|cm,compile|i,install|b,build|m,message${NORMAL}"
                 ;;
    esac
 
