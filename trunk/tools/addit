@@ -2,7 +2,7 @@
 
 ############################################################################
 #                                                                          #
-#             boostit: Boosts the package for the first time               #
+#               addit: Adds a new package for the first time               #
 #                                                                          #
 ############################################################################
 
@@ -27,11 +27,18 @@
 
 TCEXTTOOLS_ROOT="$(dirname $0)/.."
 
-if [ -f "$TCEXTTOOLS_ROOT/etc/tc-ext-tools/functions" ]; then
-     . "$TCEXTTOOLS_ROOT/etc/tc-ext-tools/functions"
+if [ -f "$TCEXTTOOLS_ROOT/etc/tc-ext-tools/config" ]; then
+     . "$TCEXTTOOLS_ROOT/etc/tc-ext-tools/config"
 else
-     echo "${RED}$(basename $0):${BLUE} tc-ext-tools functions file not found!${NORMAL}"
+     echo "${RED}${THIS}: default configuration file not found!${NORMAL}"
      exit 1
+fi
+
+if [ -f "$HOME/.config/tc-ext-tools.conf" ]; then
+     . "$HOME/.config/tc-ext-tools.conf"
+else
+    echo "${RED}${THIS}: user configuration file not found!${NORMAL}"
+    exit 1
 fi
 
 print_usage(){
@@ -64,15 +71,25 @@ else
    EXTENSIONS="$3"
 fi
 
-echo -e "${TCEXTTOOLS_MESSAGE_COLOR}Boosting the package with:"
-echo -e "\n\t${TCEXTTOOLS_MESSAGE_COLOR}PACKAGE=${TCEXTTOOLS_WARNING_COLOR}$PACKAGE"
-echo -e "\n\t${TCEXTTOOLS_MESSAGE_COLOR}VERSION=${TCEXTTOOLS_WARNING_COLOR}$VERSION"
-echo -e "\n\t${TCEXTTOOLS_MESSAGE_COLOR}EXTENSIONS=${TCEXTTOOLS_WARNING_COLOR}$EXTENSIONS"
+if [ -f "$TCEXTTOOLS_ROOT/etc/tc-ext-tools/functions" ]; then
+     [ -d "$TCEXTTOOLS_PACKAGES/$PACKAGE" ] || mkdir -p "$TCEXTTOOLS_PACKAGES/$PACKAGE"
+     cd "$TCEXTTOOLS_PACKAGES/$PACKAGE"
+
+     . "$TCEXTTOOLS_ROOT/etc/tc-ext-tools/functions"
+else
+     echo "${RED}$(basename $0):${BLUE} tc-ext-tools functions file not found!${NORMAL}"
+     exit 1
+fi
+
+echo -e "${MESSAGE_COLOR}Adding the package with:"
+echo -e "\n\t${MESSAGE_COLOR}PACKAGE=${WARNING_COLOR}$PACKAGE"
+echo -e "\n\t${MESSAGE_COLOR}VERSION=${WARNING_COLOR}$VERSION"
+echo -e "\n\t${MESSAGE_COLOR}EXTENSIONS=${WARNING_COLOR}$EXTENSIONS"
 echo -e "\n${NORMAL}"
 
 if [ -f "$PACKAGE_COMMON" ]; then
-   echo "${ERROR_COLOR}This package looks to be boosted before.${NORMAL}"
-   echo "${WARNING_COLOR}If you continue, the existing files will be overwritten.${NORMAL}"
+   echo "${ERROR_COLOR}This package already exists.${NORMAL}"
+   echo "${WARNING_COLOR}If you continue, existing files will be overwritten.${NORMAL}"
    echo "${MESSAGE_COLOR}Would you like you continue ? ${HILIGHT_COLOR}[y|yes or n|no]${NORMAL}"
    read ans
    case "$ans" in
@@ -94,7 +111,7 @@ this_main() {
 
    echo "---------------------------------------------------------------"
    echo ""
-   echo "Boosting the package $PACKAGE inside the package root directory $PACKAGE_ROOT ..."
+   echo "Creating the package $PACKAGE files ..."
    echo ""
    echo "---------------------------------------------------------------"
 
@@ -165,7 +182,7 @@ _EOF
 
    fi
 
-   echo "Installing the package build."
+   echo "Installing the package build file."
    install -m 644 "$TCEXTTOOLS_ROOT/share/tc-ext-tools/build" "$PACKAGE_BUILD" || return 1
 
    echo "Creating the package extensions install and dep files."
@@ -185,12 +202,14 @@ _EOF
        elif [ -n "$(echo $EXTENSIONS | grep ${EXTENSION}-locale)" ]; then
           echo "usr/local" > "$PACKAGE_EXTENSIONS/$EXTENSION/install" || return 1
           echo "x-usr/local/share/locale" >> "$PACKAGE_EXTENSIONS/$EXTENSION/install" || return 1
+       elif [ "${EXTENSION%-dev}" != "$EXTENSION" ]; then
+          echo "${EXTENSION%-dev}.tcz" > "$PACKAGE_EXTENSIONS/$EXTENSION/dep" || return 1
        fi
    done
 
    echo "---------------------------------------------------------------"
    echo ""
-   echo "Boosted the package $PACKAGE successfully."
+   echo "Created the package $PACKAGE files successfully."
    echo ""
    echo "---------------------------------------------------------------"
 
@@ -198,14 +217,16 @@ _EOF
 
 }
 
-echo -e "${MESSAGE_COLOR}Boosting the package ${HILIGHT_COLOR}$PACKAGE${MESSAGE_COLOR} ... ${NORMAL}\c"
-this_main > /tmp/boostit.log 2>&1
+echo -e "${MESSAGE_COLOR}Adding the package ${HILIGHT_COLOR}$PACKAGE${MESSAGE_COLOR} ... ${NORMAL}\c"
+this_main > /tmp/addit.log 2>&1
 if [ "$?" -gt 0 ]; then
      echo "${ERROR_COLOR}failed!${NORMAL}"
-     echo "${WARNING_COLOR}See /tmp/boostit.log for details.${NORMAL}"
+     echo "${WARNING_COLOR}See /tmp/addit.log for details.${NORMAL}"
      exit 1
 fi
 echo "${HILIGHT_COLOR}successful!${NORMAL}"
+
+echo "${WARNING_COLOR}Please don't forget to run ${WARNING_COLOR_H}update-tet-database${WARNING_COLOR} at least once after adding a new package.${NORMAL}"
 
 exit 0
 

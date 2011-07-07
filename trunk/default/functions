@@ -330,8 +330,8 @@ if [ -f "$PACKAGE_COMMON" ]; then
      [ -f "$PACKAGE_BUILD_LOG" ] || touch "$PACKAGE_BUILD_LOG"
      [ -f "$PACKAGE_MESSAGE_LOG" ] || touch "$PACKAGE_MESSAGE_LOG"
 
-elif [ "$THIS" != "boostit" ]; then
-     echo "${ERROR_COLOR}You must boost it first!${NORMAL}"
+elif [ "$THIS" != "addit" ]; then
+     echo "${ERROR_COLOR}You must add it first!${NORMAL}"
      exit 1
 fi
 
@@ -340,11 +340,11 @@ fi
 [ -z "$LDFLAGS" ] && export LDFLAGS="$TCEXTTOOLS_LDFLAGS"
 
 # package build
-if [ "$THIS" != "boostit" ]; then
+if [ "$THIS" != "addit" ]; then
      if [ -f "$PACKAGE_BUILD" ]; then
           . "$PACKAGE_BUILD"
      else
-          echo "${ERROR_COLOR}You must boost it first!${NORMAL}"
+          echo "${ERROR_COLOR}You must add it first!${NORMAL}"
           exit 1
      fi
 fi
