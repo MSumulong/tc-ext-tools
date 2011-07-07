@@ -82,10 +82,10 @@ else
 fi
 
 echo -e "${MESSAGE_COLOR}Adding the package with:"
-echo -e "\n\t${MESSAGE_COLOR}PACKAGE=${WARNING_COLOR}$PACKAGE"
-echo -e "\n\t${MESSAGE_COLOR}VERSION=${WARNING_COLOR}$VERSION"
-echo -e "\n\t${MESSAGE_COLOR}EXTENSIONS=${WARNING_COLOR}$EXTENSIONS"
-echo -e "\n${NORMAL}"
+echo -e "\n\t${MESSAGE_COLOR}PACKAGE = ${WARNING_COLOR}$PACKAGE"
+echo -e "\t${MESSAGE_COLOR}VERSION = ${WARNING_COLOR}$VERSION"
+echo -e "\t${MESSAGE_COLOR}EXTENSIONS = ${WARNING_COLOR}$EXTENSIONS"
+echo -e "${NORMAL}"
 
 if [ -f "$PACKAGE_COMMON" ]; then
    echo "${ERROR_COLOR}This package already exists.${NORMAL}"
