@@ -45,11 +45,11 @@ buildit
 }}}
 
 == Creating a new package ==
-  * First boost the package with boostit
+  * First add the package with addit
 {{{
 mkdir package
 cd package
-boostit <package> <version> "extension1 extension2 ..."
+addit <package> <version> "extension1 extension2 ..."
 }}}
 _Hint: version can be a number, "svn" or "git"._
 

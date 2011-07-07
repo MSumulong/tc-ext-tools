@@ -41,9 +41,9 @@ DATADIR=$DESTDIR/share
 install -m 755 tools/* $BINDIR
 
 install -D -m 644 default/build $DATADIR/tc-ext-tools/build
-install -D -m 644 default/config $SYSCONFDIR/tc-ext-tools/config
-install -D -m 755 default/functions $SYSCONFDIR/tc-ext-tools/functions
-install -D -m 755 default/ashrc $SYSCONFDIR/init.d/tet-functions
+install -D -m 644 tools/config $SYSCONFDIR/tc-ext-tools/config
+install -D -m 755 tools/functions $SYSCONFDIR/tc-ext-tools/functions
+install -D -m 755 tools/tet-functions $SYSCONFDIR/init.d/tet-functions
 
 sudo ln -sf $SYSCONFDIR/init.d/tet-functions /etc/init.d/tet-functions
 
