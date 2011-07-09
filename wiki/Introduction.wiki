@@ -12,16 +12,17 @@ tc-ext-tools is a package build system developed for Tiny Core Linux. The main a
   * A new package can be created in just a few minutes.
  * Easy maintenance of packages.
   * Updating a package is a simple task of editing just a few lines.
- * Each package has a source, and the source is an archive file or a vcs repository.
-  * Here we refer to package as the parent of extensions.
+ * Each package has a source, and the source is an online archive file or a vcs repository.
+  * Multiple source packages are also supported via custom defined rules.
  * Extensions are created from packages.
-  * There is a distinction between the terms package and extension.
+  * There is a distinction between the package and the extension terms.
+  * Here we refer to a package as the parent of its extensions.
  * Host the packages at an online vcs repository.
-  * Track and save the changes applied to packages with a version control system (svn).
+  * Track and save the changes applied to the packages with a version control system (svn).
  * Support for Tiny Core Linux specific features (tce.installed, wbar icon etc.)
   * Create wbar icon, install script, adjust directory access rights without being expert about Tiny Core Linux.
  * Error handling.
-  * Inform the user when an error occurs about the details of what happened.
+  * Inform the user when an error occurs about the details.
 
 = Installation =
 
@@ -47,16 +48,14 @@ buildit
 == Creating a new package ==
   * First add the package with addit
 {{{
-mkdir package
-cd package
 addit <package> <version> "extension1 extension2 ..."
 }}}
 _Hint: version can be a number, "svn" or "git"._
 
-  * Then edit the files generated under package root directory by using your favorite file manager and text editor.
+  * Then edit the files generated under the package root directory by using your favorite file manager and text editor.
 
   * Most important variables that you need to specify in the common file are SOURCE, and BUILD_DEPENDS. You also need to define configure, compile, install, and rules functions in the package build file.
-_Note: Rules function is placed in the build file to give complete control to the user for defining the build rules._
+_Note: The rules function is placed in the build file to give complete control to the user for defining the package build rules._
 
 _Hint: SOURCE can be the direct link to a tarball or the url of an svn or git repository._
 
@@ -66,23 +65,23 @@ buildit
 }}}
   * When creating a package for the first time you better advance step by step.
 {{{
-buildit load|download|convert|unpack|patch|configure|compile|install|split|strip|create|check|generate|package|encrypt
+buildit -c,clean|-l,load|-d,download|-x,convert|-u,unpack|-pt,patch|-cn,configure|-cm,compile|-i,install|-sp,split|-st,strip|-cr,create|-ch,check|-g,generate|-pk,package|-cs,custom|-e,encrypt|-p,print|-h,help
 }}}
   * There is also custom build function support which can be used for defining custom functions.
 {{{
-buildit custom <function>
+buildit -cs|custom <function>
 }}}
 _Hint: You need to define `build_<function>` in the package build file._
   * If you want to see configure, compile, install output messages.
 {{{
-buildit print configure|compile|install
+buildit -p|print -cn|configure|-cm|compile|-i|install
 }}}
   * If an error occurs or you want to see low level messages.
 {{{
-buildit print message
+buildit -p|print -m|message
 }}}
 
-=== See available packages for more. ===
+=== See other available packages for more. ===
 {{{
 svn checkout http://tc-ext-tools.googlecode.com/svn/tc-packages/
 }}}
@@ -94,7 +93,7 @@ The shell environment is to make your life easier by implementing special shell 
 _Note: A reboot or relogin is required for tc-ext-tools shell functions to be available for the first time installation._
 
 === update-tet-database ===
-  * Create a database from packages found in the packages directory.
+  * Create a database from the packages located in the packages directory.
 {{{
 update-tet-database
 }}}
@@ -111,7 +110,7 @@ _Hint: If `<package>` is left blank, tetls lists all available packages._
 {{{
 tetcd <package>
 }}}
-_Hint: If `<package>` is left blank, tetcd changes directory to packages directory._
+_Hint: If `<package>` is left blank, tetcd changes directory to the packages directory._
 
 === tetfind ===
   * Find files in the package
@@ -125,8 +124,8 @@ _Hint: If no argument is given, tetfind finds all the files in the packages dire
 {{{
 teted <package> <file>
 }}}
-_Hint: If `<file>` is left blank, teted lists all the files in the package and asks you which one to open. If a file name is specified it searches for the files with the name in the package, and if more than one file is found with the same name it asks you which one to open. If the search matches only one file it opens the file._
+_Hint: If `<file>` is left blank, teted lists all the files in the package and asks you which one to edit. If a file name is specified it searches for the files with the name in the package, and if more than one file is found with the same name it asks you which one to edit. If the search matches only one file it opens the file for you to edit._
 
-*Important Note: This project is still under development and is in alpha stage. So any suggestion or critiques welcome.*
+*Important Note: This project is still under development and considered to be in alpha stage. So any suggestion or critiques welcome.*
 
 *Sercan Arslan <arslanserc@gmail.com>*
