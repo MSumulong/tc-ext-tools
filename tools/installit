@@ -38,9 +38,9 @@ if [ "$PACKAGE_SOURCE_TYPE" = "none" ]; then
      mkdir -p "$PACKAGE_SOURCE_TOPDIR"
 fi
 
-if [ ! -d "$PACKAGE_SOURCE_TOPDIR" ]; then
-       echo "${ERROR_COLOR}You must compile it first!${NORMAL}"
-       exit 1
+if [ -n "$HAVE_TET_COMPILE" -a ! -f "$PACKAGE_COMPILE_STAMP" ]; then
+      echo "${ERROR_COLOR}You must compile it first!${NORMAL}"
+      exit 1
 fi
 
 this_main() {
@@ -76,6 +76,8 @@ this_main() {
 
 }
 
+[ -f "$PACKAGE_INSTALL_STAMP" ] && sudo rm -f "$PACKAGE_INSTALL_STAMP"
+
 echo -e "${MESSAGE_COLOR}Installing the package ${HILIGHT_COLOR}$PACKAGE${MESSAGE_COLOR} ... ${NORMAL}\c"
 this_main > "$PACKAGE_MESSAGE_LOG" 2>&1
 if [ "$?" -gt 0 ]; then
@@ -84,6 +86,8 @@ if [ "$?" -gt 0 ]; then
      exit 1
 fi
 echo "${HILIGHT_COLOR}successful!${NORMAL}"
+
+touch "$PACKAGE_INSTALL_STAMP"
 
 exit 0
 
