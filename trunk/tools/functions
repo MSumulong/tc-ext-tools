@@ -52,6 +52,20 @@ else
     exit 1
 fi
 
+# aliases and wrapper functions
+# list files
+lf() {
+
+   ls $@ | grep -v '/'
+
+}
+# list directories
+ldir() {
+
+   ls $@ | grep '/'
+
+}
+
 # sets the package source variables
 set_source() {
 
@@ -122,7 +136,7 @@ set_source() {
 
      if [ -z "$SOURCE_TOPDIR" ]; then
           if [ -d "$PACKAGE_SRC_TEMP" ]; then
-               LIST=`ls $PACKAGE_SRC_TEMP`
+               LIST=`ldir $PACKAGE_SRC_TEMP`
                cnt=0
                for i in $LIST
                do
@@ -347,5 +361,28 @@ if [ "$THIS" != "addit" ]; then
           echo "${ERROR_COLOR}You must add it first!${NORMAL}"
           exit 1
      fi
+
+     [ $(grep -v '^#' $PACKAGE_BUILD | grep -w tet_load) ] && HAVE_TET_LOAD=y
+     [ $(grep -v '^#' $PACKAGE_BUILD | grep -w tet_download) ] && HAVE_TET_DOWNLOAD=y
+     [ $(grep -v '^#' $PACKAGE_BUILD | grep -w tet_convert) ] && HAVE_TET_CONVERT=y
+     [ $(grep -v '^#' $PACKAGE_BUILD | grep -w tet_unpack) ] && HAVE_TET_UNPACK=y
+     [ $(grep -v '^#' $PACKAGE_BUILD | grep -w tet_patch) ] && HAVE_TET_PATCH=y
+     [ $(grep -v '^#' $PACKAGE_BUILD | grep -w tet_configure) ] && HAVE_TET_CONFIGURE=y
+     [ $(grep -v '^#' $PACKAGE_BUILD | grep -w tet_compile) ] && HAVE_TET_COMPILE=y
+     [ $(grep -v '^#' $PACKAGE_BUILD | grep -w tet_install) ] && HAVE_TET_INSTALL=y
+     [ $(grep -v '^#' $PACKAGE_BUILD | grep -w tet_split) ] && HAVE_TET_SPLIT=y
+     [ $(grep -v '^#' $PACKAGE_BUILD | grep -w tet_strip) ] && HAVE_TET_STRIP=y
+     [ $(grep -v '^#' $PACKAGE_BUILD | grep -w tet_create) ] && HAVE_TET_CREATE=y
+     [ $(grep -v '^#' $PACKAGE_BUILD | grep -w tet_generate) ] && HAVE_TET_GENERATE=y
+     [ $(grep -v '^#' $PACKAGE_BUILD | grep -w tet_check) ] && HAVE_TET_CHECK=y
+     [ $(grep -v '^#' $PACKAGE_BUILD | grep -w tet_package) ] && HAVE_TET_PACKAGE=y
+
+     PACKAGE_DOWNLOAD_STAMP="$_PACKAGE_SRC/download.stamp"
+     PACKAGE_CONVERT_STAMP="$_PACKAGE_SRC/convert.stamp"
+     PACKAGE_UNPACK_STAMP="$PACKAGE_SRC_TEMP/unpack.stamp"
+     PACKAGE_PATCH_STAMP="$PACKAGE_SRC_TEMP/patch.stamp"
+     PACKAGE_CONFIGURE_STAMP="$PACKAGE_SRC_TEMP/configure.stamp"
+     PACKAGE_COMPILE_STAMP="$PACKAGE_SRC_TEMP/compile.stamp"
+     PACKAGE_INSTALL_STAMP="$PACKAGE_BIN/install.stamp"
 fi
 

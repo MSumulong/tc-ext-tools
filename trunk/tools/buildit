@@ -51,8 +51,8 @@ clean_it() {
 
 download_it() {
 
-   if [ -f "$PACKAGE_SOURCE_ORIG" -o -f "$PACKAGE_SOURCE_CONV" ]; then
-        echo "${WARNING_COLOR}The package ${WARNING_COLOR_H}$PACKAGE${WARNING_COLOR} source already exists.${NORMAL}"
+   if [ -f "$PACKAGE_SOURCE_ORIG" -a -f "$PACKAGE_DOWNLOAD_STAMP" ] || [ -f "$PACKAGE_SOURCE_CONV" -a -f "$PACKAGE_CONVERT_STAMP" ]; then
+        echo "${WARNING_COLOR}The package ${WARNING_COLOR_H}$PACKAGE${WARNING_COLOR} source is already downloaded.${NORMAL}"
         exit 0
    fi
 
@@ -62,8 +62,8 @@ download_it() {
 
 convert_it() {
 
-   if [ -f "$PACKAGE_SOURCE_CONV" ]; then
-        echo "${WARNING_COLOR}The package ${WARNING_COLOR_H}$PACKAGE${WARNING_COLOR} source converted already exists.${NORMAL}"
+   if [ -f "$PACKAGE_SOURCE_CONV" -a -f "$PACKAGE_CONVERT_STAMP" ]; then
+        echo "${WARNING_COLOR}The package ${WARNING_COLOR_H}$PACKAGE${WARNING_COLOR} source is already converted.${NORMAL}"
         exit 0
    fi
 

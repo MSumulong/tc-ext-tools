@@ -44,14 +44,14 @@ fi
 print_usage(){
 
    cat << EOF
-${RED}${THIS} usage:${NORMAL}
+${RED}Usage:${NORMAL}
 
-      ${GREEN}${THIS} <package> <version> <extensions> 
+      ${GREEN}addit <package> <version> <extensions> 
 ${BLUE}
       where;
-             <package> is the package name.
-             <version> is the version in numbers, svn, git, or any type of vcs system supported.
-             <extensions> is the set of extensions. If it is not given, it is set to the package name.
+             ${GREEN}<package>${BLUE} is the package name.
+             ${GREEN}<version>${BLUE} is the version in numbers, svn, git, or any other type supported.
+             ${GREEN}<extensions>${BLUE} is the set of extensions. If it is not given, it is set to the package name.
 ${NORMAL}
 EOF
 

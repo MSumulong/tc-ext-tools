@@ -34,9 +34,9 @@ else
      exit 1
 fi
 
-if [ ! -f "$PACKAGE_SOURCE_ORIG" -a ! -f "$PACKAGE_SOURCE_CONV" ]; then
-       echo "${ERROR_COLOR}You must download it first!${NORMAL}"
-       exit 1
+if [ -n "$HAVE_TET_DOWNLOAD" -a ! -f "$PACKAGE_DOWNLOAD_STAMP" ]; then
+     echo "${ERROR_COLOR}You must download it first!${NORMAL}"
+     exit 1
 fi
 
 this_main() {
@@ -86,6 +86,8 @@ this_main() {
 
 }
 
+[ -f "$PACKAGE_UNPACK_STAMP" ] && sudo rm -f "$PACKAGE_UNPACK_STAMP"
+
 echo -e "${MESSAGE_COLOR}Unpacking the package ${HILIGHT_COLOR}$PACKAGE${MESSAGE_COLOR} source ... ${NORMAL}\c"
 this_main > "$PACKAGE_MESSAGE_LOG" 2>&1
 if [ "$?" -gt 0 ]; then
@@ -94,6 +96,8 @@ if [ "$?" -gt 0 ]; then
      exit 1
 fi
 echo "${HILIGHT_COLOR}successful!${NORMAL}"
+
+touch "$PACKAGE_UNPACK_STAMP"
 
 exit 0
 
