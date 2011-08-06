@@ -2,6 +2,9 @@
 # tc-ext-tools build functions: configure, compile, install, rules
 #
 
+# boost libraries cannot be found by configure
+#sudo ln -sf /usr/local/bin/bash /bin/sh
+
 # Configure
 build_configure() {
 

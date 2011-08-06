@@ -1,5 +1,5 @@
 PACKAGE="minitube"
-VERSION="1.4.2"
+VERSION="1.5"
 SOURCE="http://flavio.tordini.org/files/minitube/minitube-${VERSION}.tar.gz"
 BUILD_DEPENDS="qt-4.x-base
 qt-4.x-xml
@@ -14,5 +14,6 @@ SITE="http://flavio.tordini.org/minitube"
 COPYING="GPL-3"
 MAINTAINERS="Arslan S."
 COMMENTS="This extension is PPI compatible."
-CHANGELOG="2011/04/16 First Version 1.4.2"
-CURRENT="Use phonon backend gstreamer and gst plugins"
+CHANGELOG="2011/04/16 First Version 1.4.2
+		2011/04/21 Use phonon backend gstreamer and gst plugins"
+CURRENT="Updated to $VERSION"
