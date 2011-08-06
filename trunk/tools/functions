@@ -62,8 +62,14 @@ lf() {
 # list directories
 ldir() {
 
-   ls $@ | grep '/'
-
+   for i in `ls $@`
+   do
+      res=`ls -l $@ | grep $i | grep '^d'`
+      if [ -n "$res" ]; then
+           ret="$i $ret"
+      fi
+   done
+   echo $ret
 }
 
 # sets the package source variables
