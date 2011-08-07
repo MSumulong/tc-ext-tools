@@ -1,6 +1,6 @@
 PACKAGE="banshee"
-VERSION="1.8.1"
-SOURCE="http://download.banshee-project.org/banshee/stable/$VERSION/banshee-1-${VERSION}.tar.bz2"
+VERSION="2.0.1"
+SOURCE="http://download.banshee-project.org/banshee/stable/$VERSION/banshee-${VERSION}.tar.bz2"
 BUILD_DEPENDS="mono
 mono-dev
 gtk-sharp
@@ -32,8 +32,8 @@ libusb
 libusb-dev
 libmtp
 libmtp-dev
-webkit
-webkit-dev
+webkitgtk-1.0-0
+webkitgtk-1.0-0-dev
 libsoup-gnome
 libsoup-gnome-dev"
 
@@ -44,6 +44,7 @@ COPYING="MIT"
 MAINTAINERS="Arslan S."
 COMMENTS="This extension is PPI compatible."
 CHANGELOG="2010/04/20 First Version 1.6.0
-		2010/10/04 Updated to 1.8.0"
+		2010/10/04 Updated to 1.8.0
+		2011/01/30 Updated to 1.8.1"
 CURRENT="Updated to $VERSION"
 

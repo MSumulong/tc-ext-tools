@@ -1,0 +1,66 @@
+
+############################################################################
+#                                                                          #
+#  tc-ext-tools build functions: configure, compile, install, rules, etc.  #
+#                                                                          #
+############################################################################
+
+# to get rid of that .wapi errors
+export MONO_SHARED_DIR="${PACKAGE_SOURCE_TOPDIR}/src/weird"
+
+############################################################################ 
+#                            Configure                                     #
+############################################################################
+
+build_configure() {
+
+   [ -d "${MONO_SHARED_DIR}" ] || mkdir -p "${MONO_SHARED_DIR}"
+
+   sed -i 's:webkit-1.0@LIB_PREFIX@.2@:libwebkitgtk-1.0@LIB_PREFIX@.0.7.0@:' sources/webkit-sharp.dll.config.in
+   ./configure --prefix=/usr/local --disable-static --enable-debug || return 1
+
+}
+
+############################################################################ 
+#                              Compile                                     #
+############################################################################
+
+build_compile() {
+
+   make || return 1
+
+}
+
+############################################################################ 
+#                              Install                                     #
+############################################################################
+
+build_install() {
+
+   make DESTDIR="$INSTALL_ROOT" install || return 1
+
+}
+
+############################################################################ 
+#                                Rules                                     #
+############################################################################
+
+build_rules() {
+
+   tet_load
+   tet_download
+   tet_convert
+   tet_unpack
+   tet_patch
+   tet_configure
+   tet_compile
+   tet_install
+   tet_split
+   tet_strip
+   tet_create
+   tet_generate
+   tet_check
+   tet_package
+
+}
+

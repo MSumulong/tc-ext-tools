@@ -6,7 +6,7 @@
 build_configure() {
 
   ./configure --prefix=/usr/local --enable-addons --disable-hildon --disable-tests \
-      --enable-unique --enable-libnotify --disable-libidn --enable-vala \
+      --enable-unique --enable-libnotify --disable-libidn \
       --enable-nls --enable-docs --enable-apidocs || return 1
 
 }

@@ -15,6 +15,7 @@ build_configure() {
     -Dffmpeg_branding=Chrome \
     -Dproprietary_codecs=1 \
     -Drelease_extra_cflags="${CFLAGS}" \
+    -Dremoting=0 \
     -Duse_cups=1 \
     -Duse_system_libjpeg=1 \
     -Duse_system_libxslt=0 \
@@ -47,6 +48,7 @@ build_install() {
   install -m 4755 out/Release/chrome_sandbox "$INSTALL_ROOT/usr/local/chromium-browser/chromium-browser-sandbox" || return 1
   install -m 644 -D out/Release/chrome.pak "$INSTALL_ROOT/usr/local/chromium-browser/chrome.pak" || return 1
   install -m 755 -D out/Release/libffmpegsumo.so ${INSTALL_ROOT}/usr/local/chromium-browser/libffmpegsumo.so || return 1
+  install -m 755 -D out/Release/libppGoogleNaClPluginChrome.so ${INSTALL_ROOT}/usr/local/chromium-browser/libppGoogleNaClPluginChrome.so || return 1
   install -m 644 -D out/Release/resources.pak ${INSTALL_ROOT}/usr/local/chromium-browser/resources.pak || return 1
   install -m 755 -D out/Release/xdg-settings ${INSTALL_ROOT}/usr/local/chromium-browser/xdg-settings || return 1
   cp -a out/Release/resources ${INSTALL_ROOT}/usr/local/chromium-browser || return 1

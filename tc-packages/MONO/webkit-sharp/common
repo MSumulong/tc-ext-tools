@@ -1,0 +1,18 @@
+PACKAGE="webkit-sharp"
+VERSION="0.3"
+SOURCE="ftp://ftp.novell.com/pub/mono/sources/webkit-sharp/webkit-sharp-${VERSION}.tar.bz2"
+BUILD_DEPENDS="mono
+mono-dev
+gtk-sharp
+gtk-sharp-dev
+webkitgtk-1.0-0
+webkitgtk-1.0-0-dev"
+
+DESCRIPTION="WebKit/GTK+ cli bindings."
+AUTHOR="Andreia Gaita, Everaldo Canuto"
+SITE="http://www.mono-project.com/"
+COPYING="MIT"
+MAINTAINERS="Arslan S."
+COMMENTS="This extension is PPI compatible."
+CHANGELOG="2010/05/13 Original 0.3"
+CURRENT="Rebuilt against webkitgtk-1.0-0"

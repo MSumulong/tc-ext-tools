@@ -50,6 +50,7 @@ build_install() {
   ln -sf VBox "$INSTALL_ROOT/usr/local/bin/VBoxManage" || return 1
   ln -sf VBox "$INSTALL_ROOT/usr/local/bin/VBoxSDL" || return 1
   ln -sf VBox "$INSTALL_ROOT/usr/local/bin/VirtualBox" || return 1
+  ln -sf VBox "$INSTALL_ROOT/usr/local/bin/VBoxVRDP" || return 1
 
   install -m 0755 VBoxTunctl "$INSTALL_ROOT/usr/local/bin" || return 1
 

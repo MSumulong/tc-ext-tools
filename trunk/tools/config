@@ -52,5 +52,3 @@ TCEXTTOOLS_CFLAGS="-march=i486 -mtune=i686 -Os -pipe"
 TCEXTTOOLS_CXXFLAGS="-march=i486 -mtune=i686 -Os -pipe"
 TCEXTTOOLS_LDFLAGS="-Wl,-O1"
 
-# tc-ext-tools packages database directory
-TCEXTTOOLS_PACKAGES_DATABASE="${HOME}/.local/share/tc-ext-tools/packages_db"

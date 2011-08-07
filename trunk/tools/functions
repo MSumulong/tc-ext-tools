@@ -52,13 +52,6 @@ else
     exit 1
 fi
 
-# aliases and wrapper functions
-# list files
-lf() {
-
-   ls $@ | grep -v '/'
-
-}
 # list directories
 ldir() {
 

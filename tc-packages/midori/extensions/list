@@ -1,7 +1,7 @@
 usr/local/bin/midori
 usr/local/etc/xdg/midori/extensions/libadblock.so/config
 usr/local/etc/xdg/midori/search
-usr/local/include/midori-0.3/extensions/history-list.h
+usr/local/include/midori-0.4/extensions/history-list.h
 usr/local/lib/midori/libadblock.so
 usr/local/lib/midori/libaddons.so
 usr/local/lib/midori/libcolorful-tabs.so

@@ -13,4 +13,5 @@ libgoogle-data-mono.tcz
 libsoup-gnome.tcz
 gst-plugins-base.tcz
 gst-plugins-good.tcz
-
+gst-plugins-bad.tcz
+gst-ffmpeg.tcz
