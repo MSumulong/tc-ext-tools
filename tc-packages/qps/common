@@ -1,5 +1,5 @@
 PACKAGE="qps"
-VERSION="1.10.12.2"
+VERSION="1.10.15"
 SOURCE="http://kldp.net/frs/download.php/5843/qps-${VERSION}.tar.bz2"
 BUILD_DEPENDS="qt-4.x-base
 qt-4.x-xml
@@ -14,5 +14,6 @@ SITE="http://qps.kldp.net/projects/qps"
 COPYING="GPL"
 MAINTAINERS="Arslan S."
 COMMENTS="This extension is PPI compatible."
-CHANGELOG="2010/07/04 First Version 1.9.18.6"
+CHANGELOG="2010/07/04 First Version 1.9.18.6
+		2010/12/05 Updated to 1.10.12.2"
 CURRENT="Updated to $VERSION"

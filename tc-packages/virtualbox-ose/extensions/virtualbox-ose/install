@@ -4,10 +4,12 @@ usr/local/bin/VirtualBox
 usr/local/bin/VBoxHeadless
 usr/local/bin/VBoxSDL
 usr/local/bin/VBoxTunctl
+usr/local/bin/VBoxVRDP
 usr/local/bin/VBoxManage
+usr/local/bin/VBoxBalloonCtrl
 usr/local/bin/VBox
 usr/local/share/doc/virtualbox-ose/license
-usr/local/share/pixmaps/VBox.png
+usr/local/share/pixmaps/virtualbox.png
 usr/local/share/applications/virtualbox-ose.desktop
 usr/local/share/mime/packages/virtualbox.xml
 usr/local/share/icons/hicolor

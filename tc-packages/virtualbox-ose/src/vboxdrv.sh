@@ -20,19 +20,25 @@ start(){
       if [ "$(lsmod | grep vboxnetflt)" ]; then
          echo "vboxnetflt already loaded"
       else
-         if [ "$(lsmod | grep vboxdrv)" ]; then
-            echo "vboxdrv already loaded"
+         if [ "$(lsmod | grep vboxpci)" ]; then
+              echo "vboxpci already loaded"
          else
-            modprobe vboxdrv || { echo "vboxdrv failed"; exit 1; }
+              if [ "$(lsmod | grep vboxdrv)" ]; then
+                   echo "vboxdrv already loaded"
+              else
+                   modprobe vboxdrv || { echo "vboxdrv failed"; exit 1; }
+              fi
+              modprobe vboxpci || echo "loading vboxpci failed"
          fi
-         modprobe vboxnetflt || echo "vboxnetflt failed"
+         modprobe vboxnetflt || echo "loading vboxnetflt failed"
       fi
-      modprobe vboxnetadp || echo "vboxnetadp failed"
+      modprobe vboxnetadp || echo "loading vboxnetadp failed"
    fi
 
    if ! chown :root $DEVICE 2>/dev/null; then
        rmmod vboxnetadp 2>/dev/null
        rmmod vboxnetflt 2>/dev/null
+       rmmod vboxpci 2>/dev/null
        rmmod vboxdrv 2>/dev/null
        echo "Cannot change group root for device $DEVICE"
    fi
@@ -46,7 +52,7 @@ start(){
 
 stop(){
    echo "Stopping VirtualBox kernel modules"
-   rmmod vboxnetadp && rmmod vboxnetflt && rmmod vboxdrv
+   rmmod vboxnetadp && rmmod vboxnetflt && rmmod vboxpci && rmmod vboxdrv
    if [ $? != 0 ]; then
       echo "Could not remove modules. Is there a VM still running?"
       exit 1
@@ -57,14 +63,18 @@ stop(){
 
 status(){
    if [ "$(lsmod | grep vboxdrv)" ]; then
-      if [ "$(lsmod | grep vboxnetflt)" ]; then
-         if [ "$(lsmod | grep vboxnetadp)" ]; then
-            echo "All kernel modules loaded"
+      if [ "$(lsmod | grep vboxpci)" ]; then
+         if [ "$(lsmod | grep vboxnetflt)" ]; then
+            if [ "$(lsmod | grep vboxnetadp)" ]; then
+               echo "All kernel modules loaded"
+            else
+               echo "vboxdrv, vboxpci and vboxnetflt loaded"
+            fi
          else
-            echo "vboxdrv and vboxnetflt loaded"
+            echo "vboxdrv and vboxpci loaded"
          fi
       else
-         echo "vboxdrv loaded"
+            echo "vboxdrv loaded"
       fi
       if [ -d /tmp/.vbox-${TCUSER}-ipc ]; then
          export VBOX_IPC_SOCKETID="${TCUSER}"
@@ -77,7 +87,7 @@ status(){
          fi
       fi
    else
-      echo "VBox modules not loaded"
+         echo "VBox modules not loaded"
    fi
 }
 

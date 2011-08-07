@@ -51,17 +51,21 @@ build_install() {
   ln -sf VBox "$INSTALL_ROOT/usr/local/bin/VBoxSDL" || return 1
   ln -sf VBox "$INSTALL_ROOT/usr/local/bin/VirtualBox" || return 1
   ln -sf VBox "$INSTALL_ROOT/usr/local/bin/VBoxVRDP" || return 1
+  ln -sf VBox "$INSTALL_ROOT/usr/local/bin/VBoxBalloonCtrl" || return 1
 
   install -m 0755 VBoxTunctl "$INSTALL_ROOT/usr/local/bin" || return 1
 
   install -m 0755 components/* "$INSTALL_ROOT/usr/local/lib/virtualbox/components" || return 1
 
   install -m 0755 *.so "$INSTALL_ROOT/usr/local/lib/virtualbox" || return 1
-  install -m 0644 *.gc *.r0  VBoxEFI*.fd "$INSTALL_ROOT/usr/local/lib/virtualbox" || return 1
+  install -m 0644 *.gc *.r0 VBoxEFI*.fd "$INSTALL_ROOT/usr/local/lib/virtualbox" || return 1
 
-  install -m 4755 VBoxHeadless VBoxSDL VBoxNetDHCP VBoxNetAdpCtl VirtualBox VBoxBFE "$INSTALL_ROOT/usr/local/lib/virtualbox" || return 1
+  install -m 4755 VBoxHeadless VBoxSDL VBoxNetDHCP VBoxNetAdpCtl VirtualBox VBoxBFE \
+     "$INSTALL_ROOT/usr/local/lib/virtualbox" || return 1
 
-  install -m 0755 VBoxManage VBoxSVC VBoxXPCOMIPCD VBoxExtPackHelperApp VBoxSysInfo.sh xpidl VBoxTestOGL EfiThunk "$INSTALL_ROOT/usr/local/lib/virtualbox" || return 1
+  install -m 0755 VBoxManage VBoxSVC VBoxXPCOMIPCD VBoxExtPackHelperApp VBoxBalloonCtrl \
+      VBoxSysInfo.sh vboxshell.py VBoxCreateUSBNode.sh xpidl VBoxTestOGL EfiThunk \
+     "$INSTALL_ROOT/usr/local/lib/virtualbox" || return 1
 
   install -m 0755 SUPInstall SUPLoggerCtl SUPUninstall "$INSTALL_ROOT/usr/local/lib/virtualbox" || return 1
 
@@ -74,6 +78,10 @@ build_install() {
       install -Dm644 "icons/$i/virtualbox-ovf.png" "$INSTALL_ROOT/usr/local/share/icons/hicolor/$i/mimetypes/virtualbox-ovf.png"
       install -Dm644 "icons/$i/virtualbox-vbox.png" "$INSTALL_ROOT/usr/local/share/icons/hicolor/$i/mimetypes/virtualbox-vbox.png"
       install -Dm644 "icons/$i/virtualbox-vbox-extpack.png" "$INSTALL_ROOT/usr/local/share/icons/hicolor/$i/mimetypes/virtualbox-vbox-extpack.png"
+      install -Dm644 "icons/$i/virtualbox-hdd.png" "$INSTALL_ROOT/usr/local/share/icons/hicolor/$i/mimetypes/virtualbox-hdd.png"
+      install -Dm644 "icons/$i/virtualbox-vdi.png" "$INSTALL_ROOT/usr/local/share/icons/hicolor/$i/mimetypes/virtualbox-vdi.png"
+      install -Dm644 "icons/$i/virtualbox-vhd.png" "$INSTALL_ROOT/usr/local/share/icons/hicolor/$i/mimetypes/virtualbox-vhd.png"
+      install -Dm644 "icons/$i/virtualbox-vmdk.png" "$INSTALL_ROOT/usr/local/share/icons/hicolor/$i/mimetypes/virtualbox-vmdk.png"
   done
   install -D -m 0644 VBox.png "$INSTALL_ROOT/usr/local/share/pixmaps/virtualbox.png" || return 1
   install -D -m 0644 virtualbox.xml "$INSTALL_ROOT/usr/local/share/mime/packages/virtualbox.xml" || return 1
