@@ -33,6 +33,13 @@ if [ `id -u` = 0 ]; then
      exit 1
 fi
 
+if [ -f "$TCEXTTOOLS_ROOT/etc/tc-ext-tools/config" ]; then
+     . "$TCEXTTOOLS_ROOT/etc/tc-ext-tools/config"
+else
+     echo "${RED}${THIS}: default configuration file not found!${NORMAL}"
+     exit 1
+fi
+
 if [ -f "$HOME/.config/tc-ext-tools.conf" ]; then
      . "$HOME/.config/tc-ext-tools.conf"
 else
