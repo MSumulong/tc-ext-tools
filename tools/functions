@@ -141,13 +141,14 @@ set_source() {
                do
                    cnt=`expr $cnt + 1`
                done
-               if [ $cnt -eq 0 ]; then
-                    SOURCE_TOPDIR=${PACKAGE}-${VERSION}
-               elif [ $cnt -eq 1 ]; then
+               if [ $cnt -eq 1 ]; then
                     SOURCE_TOPDIR="$LIST"
                elif [ $cnt -gt 1 ]; then
                     SOURCE_TOPDIR="./"
                fi
+          fi
+          if [ -z "$SOURCE_TOPDIR" ]; then
+               SOURCE_TOPDIR=${PACKAGE}-${VERSION}
           fi
      fi
 
@@ -269,6 +270,7 @@ set_date() {
    DATE=$(date +%Y/%m/%d)
    TIME=$(date +%H:%M:%S)
    SECONDS=$(date +%s)
+   _DATE=$(date +%Y%m%d)
 
 }
 
@@ -312,9 +314,9 @@ if [ -f "$PACKAGE_COMMON" ]; then
      INSTALL_ROOT="$PACKAGE_INSTALL_ROOT"
      PREFIX=/usr/local
 
-     set_depends
      set_source
      set_extensions
+     set_depends
 
      # shortened variables for use in package build
      P_ROOT="$PACKAGE_ROOT"
