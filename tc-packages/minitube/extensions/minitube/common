@@ -1,2 +1,11 @@
 ICON="/usr/local/share/icons/hicolor/64x64/apps/minitube.png"
-COMMENTS="This extension is PPI compatible."
+COMMENTS="You must install at least one of the phonon backends listed below.
+			phonon-backend-{mplayer,vlc,xine,gstreamer}
+
+		Important Notes:
+			- Mplayer backend is recommended.
+			- Phonon backends gstreamer and xine depend on Xorg.
+			- If you prefer backend gstreamer you also need to install
+			at least gst-plugins-good and gst-ffmpeg extensions.
+
+		This extension is PPI compatible."

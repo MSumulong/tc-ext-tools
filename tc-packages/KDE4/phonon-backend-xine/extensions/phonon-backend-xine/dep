@@ -1,2 +1,8 @@
 phonon.tcz
 xine-lib.tcz
+libxcb.tcz
+flac.tcz
+faad.tcz
+libmad.tcz
+libtheora.tcz
+libmpeg2.tcz

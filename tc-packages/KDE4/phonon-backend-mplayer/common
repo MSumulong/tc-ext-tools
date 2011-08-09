@@ -1,0 +1,20 @@
+PACKAGE="phonon-backend-mplayer"
+VERSION="git${_DATE}"
+SOURCE="git::git://anongit.kde.org/phonon-mplayer"
+BUILD_DEPENDS="automoc4
+cmake
+qt-4.x-base
+qt-4.x-dev
+phonon
+phonon-dev
+Xorg-7.5-lib
+Xorg-7.5-dev"
+
+DESCRIPTION="Phonon Mplayer backend."
+AUTHOR="Tanguy Krotoff"
+SITE="http://www.kde.org/"
+COPYING="LGPL"
+MAINTAINERS="Arslan S."
+COMMENTS="This extension is PPI compatible."
+CHANGELOG="---"
+CURRENT="First Version ${VERSION}"

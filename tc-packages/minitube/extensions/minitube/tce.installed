@@ -1,5 +1,7 @@
 #!/bin/sh
 
-[ "$(which gtk-update-icon-cache)" ] && gtk-update-icon-cache -q -f -t /usr/local/share/icons/hicolor
+[ $(which gtk-update-icon-cache) ] && gtk-update-icon-cache -q -f -t /usr/local/share/icons/hicolor
 
-[ -e "${HOME}/.gstreamer-0.10/registry.i686.bin" ] && rm -f "${HOME}/.gstreamer-0.10/registry.i686.bin"
+if [ -e /usr/local/tce.installed/phonon-backend-gstreamer ]; then
+     [ -e "${HOME}/.gstreamer-0.10/registry.i686.bin" ] && rm -f "${HOME}/.gstreamer-0.10/registry.i686.bin"
+fi

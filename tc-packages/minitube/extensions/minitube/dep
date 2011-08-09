@@ -1,6 +1,4 @@
 qt-4.x-base.tcz
 qt-4.x-dbus.tcz
 qt-4.x-xml.tcz
-phonon-backend-gstreamer.tcz
-gst-plugins-good.tcz
-gst-ffmpeg.tcz
+phonon.tcz
