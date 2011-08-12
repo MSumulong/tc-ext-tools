@@ -1,6 +1,7 @@
 PACKAGE="qps"
 VERSION="1.10.15"
-SOURCE="http://kldp.net/frs/download.php/5843/qps-${VERSION}.tar.bz2"
+_DLVER=5946
+SOURCE="http://kldp.net/frs/download.php/${_DLVER}/qps-${VERSION}.tar.gz"
 BUILD_DEPENDS="qt-4.x-base
 qt-4.x-xml
 qt-4.x-dbus
