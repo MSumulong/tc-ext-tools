@@ -1,6 +1,6 @@
 diff -Naur a/data/mint.pc.in b/data/mint.pc.in
---- a/data/mint.pc.in	2010-11-12 10:24:41.000000000 +0000
-+++ b/data/mint.pc.in	2010-12-27 21:22:58.947515527 +0000
+--- a/data/mint.pc.in	2011-08-09 01:16:35.000000000 +0000
++++ b/data/mint.pc.in	2011-08-12 04:30:47.496029155 +0000
 @@ -1,5 +1,5 @@
 -prefix=${pcfiledir}/../..
 -exec_prefix=${pcfiledir}/../..
@@ -10,8 +10,8 @@ diff -Naur a/data/mint.pc.in b/data/mint.pc.in
  includedir=${prefix}/include/mono-@API_VER@
  
 diff -Naur a/data/mono-2.pc.in b/data/mono-2.pc.in
---- a/data/mono-2.pc.in	2010-11-12 10:24:41.000000000 +0000
-+++ b/data/mono-2.pc.in	2010-12-27 21:23:24.620846345 +0000
+--- a/data/mono-2.pc.in	2011-08-09 01:16:35.000000000 +0000
++++ b/data/mono-2.pc.in	2011-08-12 04:30:47.497781552 +0000
 @@ -1,5 +1,5 @@
 -prefix=${pcfiledir}/../..
 -exec_prefix=${pcfiledir}/../..
@@ -21,8 +21,8 @@ diff -Naur a/data/mono-2.pc.in b/data/mono-2.pc.in
  includedir=${prefix}/include/mono-@API_VER@
  sysconfdir=@sysconfdir@
 diff -Naur a/data/mono-cairo.pc.in b/data/mono-cairo.pc.in
---- a/data/mono-cairo.pc.in	2010-11-12 10:24:41.000000000 +0000
-+++ b/data/mono-cairo.pc.in	2010-12-27 21:22:58.947515527 +0000
+--- a/data/mono-cairo.pc.in	2011-08-09 01:16:35.000000000 +0000
++++ b/data/mono-cairo.pc.in	2011-08-12 04:30:47.497781552 +0000
 @@ -1,5 +1,5 @@
 -prefix=${pcfiledir}/../..
 -exec_prefix=${pcfiledir}/../..
@@ -32,8 +32,8 @@ diff -Naur a/data/mono-cairo.pc.in b/data/mono-cairo.pc.in
  includedir=${prefix}/include
  
 diff -Naur a/data/mono-lineeditor.pc.in b/data/mono-lineeditor.pc.in
---- a/data/mono-lineeditor.pc.in	2010-11-12 10:24:41.000000000 +0000
-+++ b/data/mono-lineeditor.pc.in	2010-12-27 21:22:58.947515527 +0000
+--- a/data/mono-lineeditor.pc.in	2011-08-09 01:16:35.000000000 +0000
++++ b/data/mono-lineeditor.pc.in	2011-08-12 04:30:47.497781552 +0000
 @@ -1,4 +1,4 @@
 -prefix=${pcfiledir}/../..
 +prefix=@prefix@
@@ -41,8 +41,8 @@ diff -Naur a/data/mono-lineeditor.pc.in b/data/mono-lineeditor.pc.in
  Sources=${assemblies_dir}/getline.cs
  
 diff -Naur a/data/mono-nunit.pc.in b/data/mono-nunit.pc.in
---- a/data/mono-nunit.pc.in	2010-11-12 10:24:41.000000000 +0000
-+++ b/data/mono-nunit.pc.in	2010-12-27 21:22:58.947515527 +0000
+--- a/data/mono-nunit.pc.in	2011-08-09 01:16:35.000000000 +0000
++++ b/data/mono-nunit.pc.in	2011-08-12 04:30:47.497781552 +0000
 @@ -1,4 +1,4 @@
 -prefix=${pcfiledir}/../..
 +prefix=@prefix@
@@ -50,8 +50,8 @@ diff -Naur a/data/mono-nunit.pc.in b/data/mono-nunit.pc.in
  libdir=${exec_prefix}/lib
  
 diff -Naur a/data/mono-options.pc.in b/data/mono-options.pc.in
---- a/data/mono-options.pc.in	2010-11-12 10:24:41.000000000 +0000
-+++ b/data/mono-options.pc.in	2010-12-27 21:22:58.947515527 +0000
+--- a/data/mono-options.pc.in	2011-08-09 01:16:35.000000000 +0000
++++ b/data/mono-options.pc.in	2011-08-12 04:30:47.497781552 +0000
 @@ -1,4 +1,4 @@
 -prefix=${pcfiledir}/../..
 +prefix=@prefix@
@@ -59,8 +59,19 @@ diff -Naur a/data/mono-options.pc.in b/data/mono-options.pc.in
  Sources=${assemblies_dir}/Options.cs
  
 diff -Naur a/data/mono.pc.in b/data/mono.pc.in
---- a/data/mono.pc.in	2010-11-12 10:24:41.000000000 +0000
-+++ b/data/mono.pc.in	2010-12-27 21:22:58.947515527 +0000
+--- a/data/mono.pc.in	2011-08-09 01:16:35.000000000 +0000
++++ b/data/mono.pc.in	2011-08-12 04:30:47.497781552 +0000
+@@ -1,5 +1,5 @@
+-prefix=${pcfiledir}/../..
+-exec_prefix=${pcfiledir}/../..
++prefix=@prefix@
++exec_prefix=${prefix}
+ libdir=${prefix}/@reloc_libdir@
+ includedir=${prefix}/include/mono-@API_VER@
+ sysconfdir=@sysconfdir@
+diff -Naur a/data/monosgen-2.pc.in b/data/monosgen-2.pc.in
+--- a/data/monosgen-2.pc.in	2011-08-09 01:16:35.000000000 +0000
++++ b/data/monosgen-2.pc.in	2011-08-12 04:31:30.931748491 +0000
 @@ -1,5 +1,5 @@
 -prefix=${pcfiledir}/../..
 -exec_prefix=${pcfiledir}/../..

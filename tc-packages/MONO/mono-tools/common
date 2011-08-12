@@ -1,6 +1,6 @@
 PACKAGE="mono-tools"
-VERSION="2.8"
-SOURCE="http://ftp.novell.com/pub/mono/sources/mono-tools/mono-tools-${VERSION}.tar.bz2"
+VERSION="2.10"
+SOURCE="http://download.mono-project.com/sources/mono-tools/mono-tools-${VERSION}.tar.bz2"
 BUILD_DEPENDS="mono
 mono-dev
 gnome-desktop-sharp
@@ -14,5 +14,5 @@ SITE="http://www.mono-project.com/"
 COPYING="GPL"
 MAINTAINERS="Arslan S."
 COMMENTS="This extension is PPI compatible."
-CHANGELOG="---"
-CURRENT="First Version"
+CHANGELOG="2010/12/31 First Version 2.8"
+CURRENT="Updated to $VERSION"

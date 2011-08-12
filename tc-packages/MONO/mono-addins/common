@@ -1,6 +1,6 @@
 PACKAGE="mono-addins"
-VERSION="0.5"
-SOURCE="http://ftp.novell.com/pub/mono/sources/mono-addins/mono-addins-${VERSION}.tar.bz2"
+VERSION="0.6.2"
+SOURCE="http://download.mono-project.com/sources/mono-addins/mono-addins-${VERSION}.tar.bz2"
 BUILD_DEPENDS="gtk-sharp
 gtk-sharp-dev
 mono
@@ -12,5 +12,6 @@ SITE="http://www.mono-project.com/Mono.Addins"
 COPYING="MIT"
 MAINTAINERS="Arslan S."
 COMMENTS="This extension is PPI compatible."
-CHANGELOG="2010/05/10 Original 0.4.0"
+CHANGELOG="2010/05/10 Original 0.4.0
+		2010/12/29 Updated to 0.5"
 CURRENT="Updated to $VERSION"

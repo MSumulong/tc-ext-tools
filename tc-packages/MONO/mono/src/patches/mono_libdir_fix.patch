@@ -13,14 +13,13 @@ diff -Naur a/mcs/tools/gacutil/driver.cs b/mcs/tools/gacutil/driver.cs
 diff -Naur a/mono/metadata/assembly.c b/mono/metadata/assembly.c
 --- a/mono/metadata/assembly.c	2010-11-12 10:24:41.000000000 +0000
 +++ b/mono/metadata/assembly.c	2010-12-27 23:30:19.762584844 +0000
-@@ -565,7 +565,7 @@
+@@ -565,6 +565,6 @@
  	}
  
  	config = g_build_filename (base, "etc", NULL);
 -	lib = g_build_filename (base, "lib", NULL);
--	mono = g_build_filename (lib, "mono/1.0", NULL);
 +	lib = g_build_filename (base, "@MONOLIBDIR@", NULL);
-+	mono = g_build_filename (lib, "mono/2.0", NULL);
+	mono = g_build_filename (lib, "mono/2.0", NULL);
  	if (stat (mono, &buf) == -1)
  		fallback ();
 @@ -622,7 +622,7 @@

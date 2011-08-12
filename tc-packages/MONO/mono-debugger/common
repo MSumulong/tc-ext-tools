@@ -1,6 +1,6 @@
 PACKAGE="mono-debugger"
-VERSION="2.8.1"
-SOURCE="http://ftp.novell.com/pub/mono/sources/mono-debugger/mono-debugger-${VERSION}.tar.bz2"
+VERSION="2.10"
+SOURCE="http://download.mono-project.com/sources/mono-debugger/mono-debugger-${VERSION}.tar.bz2"
 BUILD_DEPENDS="mono
 mono-dev
 glibc_add_libs"
@@ -11,5 +11,6 @@ SITE="http://www.mono-project.com/"
 COPYING="MIT X11/GPL"
 MAINTAINERS="Arslan S."
 COMMENTS="This extension is PPI compatible."
-CHANGELOG="2010/05/12 Original 2.6.3"
+CHANGELOG="2010/05/12 Original 2.6.3
+		010/12/28 Updated to 2.8.1"
 CURRENT="Updated to $VERSION"

@@ -1,6 +1,6 @@
 PACKAGE="libgdiplus"
-VERSION="2.8.1"
-SOURCE="http://ftp.novell.com/pub/mono/sources/libgdiplus/libgdiplus-${VERSION}.tar.bz2"
+VERSION="2.10"
+SOURCE="http://download.mono-project.com/sources/libgdiplus/libgdiplus-${VERSION}.tar.bz2"
 BUILD_DEPENDS="glib2
 glib2-dev
 cairo
@@ -23,5 +23,6 @@ COPYING="LGPL/MPL"
 MAINTAINERS="Arslan S."
 COMMENTS="This extension is PPI compatible."
 CHANGELOG="2010/05/10 Original 2.6.2
-		2010/10/03 Updated to 2.6.7"
+		2010/10/03 Updated to 2.6.7
+		2010/12/27 Updated to 2.8.1"
 CURRENT="Updated to $VERSION"

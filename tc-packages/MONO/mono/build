@@ -18,12 +18,18 @@ build_compile() {
 
   make || return 1
 
+  cd mcs/jay
+  make || return 1
+
 }
 
 # Install
 build_install() {
 
   make DESTDIR="$INSTALL_ROOT" install || return 1
+
+  cd mcs/jay
+  make DESTDIR="$INSTALL_ROOT" INSTALL=../../install-sh install || return 1
 
 }
 
@@ -39,7 +45,7 @@ build_rules() {
   tet_compile
   tet_install
   tet_split
-   tet_strip
+  tet_strip
   tet_create
   tet_generate
   tet_check

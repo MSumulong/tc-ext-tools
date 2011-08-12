@@ -1,6 +1,6 @@
 #!/bin/sh
 
 if [ -d /tmp/tcloop/mono-doc ]; then
-     sudo busybox cp -Lf /usr/local/lib/monodoc/monodoc.xml /usr/local/lib/monodoc
+     cp -Lf /usr/local/lib/monodoc/monodoc.xml /usr/local/lib/monodoc
 fi
 
