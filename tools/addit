@@ -46,34 +46,48 @@ print_usage(){
    cat << EOF
 ${RED}Usage:${NORMAL}
 
-      ${GREEN}addit <package> <version> <extensions> 
+      ${GREEN}addit --package=<package> --version=<version> --extensions=<extensions> --root-dir=<root-dir>
 ${BLUE}
       where;
              ${GREEN}<package>${BLUE} is the package name.
              ${GREEN}<version>${BLUE} is the version in numbers, svn, git, or any other type supported.
-             ${GREEN}<extensions>${BLUE} is the set of extensions. It is package name by default.
+             ${GREEN}<extensions>${BLUE} is the set of extensions. Default is package name.
+             ${GREEN}<group-dir>${BLUE} is the group directory where the package directory will be created in. Default is tc-ext-tools packages root directory.
 ${NORMAL}
 EOF
 
 }
 
-if [ "$#" -lt 2 -o "$#" -gt 3 ]; then
-   print_usage
-   exit 1
-else
-   PACKAGE="$1"
-   VERSION="$2"
+ARG="$1"
+while [ -n "$ARG" ]
+do
+    case "$ARG" in
+           --package=*) PACKAGE=${ARG#--package=} ;;
+           --version=*) VERSION=${ARG#--version=} ;;
+           --extensions=*) EXTENSIONS=${ARG#--extensions=} ;;
+           --group-dir=*) GROUP_DIR=${ARG#--group-dir=} ;;
+           *) print_usage; exit 1 ;;
+    esac
+    shift
+    ARG="$1"
+done
+
+if [ -z "$PACKAGE" -o -z "$VERSION" ]; then
+     print_usage
+     exit 1
 fi
 
-if [ "$#" -lt 3 ]; then
-   EXTENSIONS="$PACKAGE"
-else
-   EXTENSIONS="$3"
+if [ -z "$EXTENSIONS" ]; then
+     EXTENSIONS=$PACKAGE
+fi
+
+if [ -z "$GROUP_DIR" ]; then
+     GROUP_DIR=.
 fi
 
 if [ -f "$TCEXTTOOLS_ROOT/etc/tc-ext-tools/functions" ]; then
-     [ -d "$TCEXTTOOLS_PACKAGES/$PACKAGE" ] || mkdir -p "$TCEXTTOOLS_PACKAGES/$PACKAGE"
-     cd "$TCEXTTOOLS_PACKAGES/$PACKAGE"
+     [ -d "$TCEXTTOOLS_PACKAGES/$GROUP_DIR/$PACKAGE" ] || mkdir -p "$TCEXTTOOLS_PACKAGES/$GROUP_DIR/$PACKAGE"
+     cd "$TCEXTTOOLS_PACKAGES/$GROUP_DIR/$PACKAGE"
 
      . "$TCEXTTOOLS_ROOT/etc/tc-ext-tools/functions"
 else
@@ -81,10 +95,11 @@ else
      exit 1
 fi
 
-echo -e "${MESSAGE_COLOR}Adding the package with:"
+echo -e "${MESSAGE_COLOR}Adding the package with parameters:"
 echo -e "\n\t${MESSAGE_COLOR}PACKAGE = ${WARNING_COLOR}$PACKAGE"
 echo -e "\t${MESSAGE_COLOR}VERSION = ${WARNING_COLOR}$VERSION"
 echo -e "\t${MESSAGE_COLOR}EXTENSIONS = ${WARNING_COLOR}$EXTENSIONS"
+echo -e "\t${MESSAGE_COLOR}GROUP_DIR = ${WARNING_COLOR}$GROUP_DIR"
 echo -e "${NORMAL}"
 
 if [ -f "$PACKAGE_COMMON" ]; then
