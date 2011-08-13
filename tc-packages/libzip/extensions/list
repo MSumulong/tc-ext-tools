@@ -2,12 +2,12 @@ usr/local/bin/zipcmp
 usr/local/bin/zipmerge
 usr/local/bin/ziptorrent
 usr/local/include/zip.h
+usr/local/include/zipconf.h
 usr/local/lib/libzip.a
 usr/local/lib/libzip.la
 usr/local/lib/libzip.so
 usr/local/lib/libzip.so.2
 usr/local/lib/libzip.so.2.1.0
-usr/local/lib/libzip/include/zipconf.h
 usr/local/lib/pkgconfig/libzip.pc
 usr/local/share/man/man1/zipcmp.1
 usr/local/share/man/man1/zipmerge.1

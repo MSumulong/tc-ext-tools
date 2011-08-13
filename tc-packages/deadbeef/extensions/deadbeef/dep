@@ -16,4 +16,5 @@ libcdio.tcz
 libcddb.tcz
 libmms.tcz
 faad.tcz
-
+libxcb-util.tcz
+libzip.tcz

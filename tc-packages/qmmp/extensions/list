@@ -42,10 +42,10 @@ usr/local/include/qmmpui/playlistparser.h
 usr/local/include/qmmpui/templateeditor.h
 usr/local/lib/libqmmp.so
 usr/local/lib/libqmmp.so.0
-usr/local/lib/libqmmp.so.0.5.0
+usr/local/lib/libqmmp.so.0.5.1
 usr/local/lib/libqmmpui.so
 usr/local/lib/libqmmpui.so.0
-usr/local/lib/libqmmpui.so.0.5.0
+usr/local/lib/libqmmpui.so.0.5.1
 usr/local/lib/qmmp/CommandLineOptions/libincdecvolumeoption.so
 usr/local/lib/qmmp/CommandLineOptions/libseekoption.so
 usr/local/lib/qmmp/CommandLineOptions/libstatusoption.so

@@ -1,5 +1,5 @@
 PACKAGE="qmmp"
-VERSION="0.5.0"
+VERSION="0.5.1"
 SOURCE="http://qmmp.ylsoftware.com/files/qmmp-${VERSION}.tar.bz2"
 BUILD_DEPENDS="cmake
 libmpcdec
@@ -7,6 +7,7 @@ libmpcdec-dev
 libasound
 alsa-dev
 jack
+jack-dev
 libmad
 libmad-dev
 qt-4.x-base
@@ -64,5 +65,6 @@ CHANGELOG="2010/02/07 Original 0.3.2
 		2010/05/31 Updated to 0.4.0
 		2010/08/26 Updated to 0.4.1
 		2010/09/05 Updated to 0.4.2
-		2010/11/06 Updated to 0.4.3"
+		2010/11/06 Updated to 0.4.3
+		2011/04/04 Updated to 0.5.0"
 CURRENT="Updated to $VERSION"

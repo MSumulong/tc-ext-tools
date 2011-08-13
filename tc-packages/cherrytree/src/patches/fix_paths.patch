@@ -1,18 +1,18 @@
 diff -Naur a/cherrytree b/cherrytree
---- a/cherrytree	2011-02-20 12:44:05.000000000 +0000
-+++ b/cherrytree	2011-04-02 22:58:30.258667689 +0000
+--- a/cherrytree	2011-06-28 20:57:26.000000000 +0000
++++ b/cherrytree	2011-08-13 04:45:30.092793800 +0000
 @@ -23,7 +23,7 @@
- import sys, os, gtk, gettext
+ import sys, os
  
  if os.path.isdir('modules'): MODULES_PATH = os.path.join(os.curdir, 'modules')
 -else: MODULES_PATH = '/usr/share/cherrytree/modules/'
 +else: MODULES_PATH = '/usr/local/share/cherrytree/modules/'
  
- sys.path.append(MODULES_PATH)
+ sys.path.insert(0, MODULES_PATH)
  
 diff -Naur a/linux/cherrytree.desktop b/linux/cherrytree.desktop
---- a/linux/cherrytree.desktop	2011-02-20 12:44:05.000000000 +0000
-+++ b/linux/cherrytree.desktop	2011-04-02 22:59:36.841993633 +0000
+--- a/linux/cherrytree.desktop	2011-06-28 20:45:19.000000000 +0000
++++ b/linux/cherrytree.desktop	2011-08-13 04:45:30.092793800 +0000
 @@ -11,7 +11,7 @@
  Comment[ru]=Записная книжка с иерархической структурой
  Comment[uk]=Записник з ієрархічною структурою
@@ -23,16 +23,16 @@ diff -Naur a/linux/cherrytree.desktop b/linux/cherrytree.desktop
  Terminal=false
  Type=Application
 diff -Naur a/modules/cons.py b/modules/cons.py
---- a/modules/cons.py	2011-03-07 17:14:33.000000000 +0000
-+++ b/modules/cons.py	2011-04-02 23:00:19.155323504 +0000
+--- a/modules/cons.py	2011-07-10 15:30:32.000000000 +0000
++++ b/modules/cons.py	2011-08-13 04:48:54.259441608 +0000
 @@ -42,8 +42,8 @@
-       GLADE_PATH = 'glade/'
-       LOCALE_PATH = 'locale/'
-    else:
--      GLADE_PATH = '/usr/share/cherrytree/glade/'
--      LOCALE_PATH = '/usr/share/locale/'
-+      GLADE_PATH = '/usr/local/share/cherrytree/glade/'
-+      LOCALE_PATH = '/usr/local/share/locale/'
+         GLADE_PATH = 'glade/'
+         LOCALE_PATH = 'locale/'
+     else:
+-        GLADE_PATH = '/usr/share/cherrytree/glade/'
+-        LOCALE_PATH = '/usr/share/locale/'
++        GLADE_PATH = '/usr/local/share/cherrytree/glade/'
++        LOCALE_PATH = '/usr/local/share/locale/'
  AVAILABLE_LANGS = ['default', 'cs', 'de', 'en', 'es', 'fr', 'it', 'pl', 'ru', 'uk']
  SHOW_MENU_ICONS = "gconftool-2 --set /desktop/gnome/interface/menus_have_icons --type bool 1"
- COLOR_WHITE = "#ffffffffffff"
+ COLOR_YELLOW = "#ffffffff0000"

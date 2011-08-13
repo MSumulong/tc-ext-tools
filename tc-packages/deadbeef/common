@@ -1,5 +1,5 @@
 PACKAGE="deadbeef"
-VERSION="0.4.4"
+VERSION="0.5.1"
 SOURCE="http://downloads.sourceforge.net/project/deadbeef/deadbeef-${VERSION}.tar.bz2"
 BUILD_DEPENDS="libasound
 alsa-dev
@@ -35,10 +35,17 @@ curl-dev
 libnotify
 libnotify-dev
 dbus
+dbus-dev
 Xorg-7.5-lib
 Xorg-7.5-dev
 libiconv
-libiconv-dev"
+libiconv-dev
+libxcb
+libxcb-dev
+libxcb-util
+libxcb-util-dev
+libzip
+libzip-dev"
 
 DESCRIPTION="DeaDBeeF - ultimate music player for GNU/Linux systems with X11."
 AUTHOR="Alexey Yakovenko, Viktor Semykin, Stas Akimushkin"
@@ -48,5 +55,6 @@ MAINTAINERS="Arslan S."
 COMMENTS="This extension is PPI compatible." 
 CHANGELOG="2010/09/17 First Version 0.4.1
 		2010/10/17 Updated to 0.4.2
-		2010/11/01 Updated to 0.4.3"
+		2010/11/01 Updated to 0.4.3
+		2010/11/17 Updated to 0.4.4"
 CURRENT="Updated to 0.4.4"
