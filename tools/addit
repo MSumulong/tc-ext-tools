@@ -51,7 +51,7 @@ ${BLUE}
       where;
              ${GREEN}<package>${BLUE} is the package name.
              ${GREEN}<version>${BLUE} is the version in numbers, svn, git, or any other type supported.
-             ${GREEN}<extensions>${BLUE} is the set of extensions. If it is not given, it is set to the package name.
+             ${GREEN}<extensions>${BLUE} is the set of extensions. It is package name by default.
 ${NORMAL}
 EOF
 

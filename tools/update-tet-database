@@ -25,10 +25,10 @@
 
 . /etc/init.d/tc-functions
 
-THIS=`basename $0`
-TCEXTTOOLS_ROOT=`dirname $0`/..
+THIS=$(basename $0)
+TCEXTTOOLS_ROOT="$(dirname $0)/.."
 
-if [ `id -u` = 0 ]; then
+if [ $(id -u) = 0 ]; then
      echo "${RED}Do not run $THIS as root!${NORMAL}"
      exit 1
 fi
@@ -63,7 +63,7 @@ else
        echo "${CYAN}yes${NORMAL}"
 fi
 
-PACKAGES=`find $TCEXTTOOLS_PACKAGES -type f -name common -a -not -path "*/extensions/*/common" | sort`
+PACKAGES=$(find $TCEXTTOOLS_PACKAGES -type f -name common -a -not -path "*/extensions/*/common" | sort)
 
 cd "$TCEXTTOOLS_PACKAGES_DATABASE"
 
@@ -72,26 +72,26 @@ for package in $PACKAGES
 do
    . "$package"
 
-   ADD=0
-   UPDATE=0
+   ADD=
+   UPDATE=
 
    if [ -f "$PACKAGE" ]; then
         . "$PACKAGE"
         if [ "$PACKAGE_VERSION" != "$VERSION" ]; then
-             UPDATE=1
+             UPDATE=y
         fi
    else
-        ADD=1
+        ADD=y
         echo "$PACKAGE" >> packages.db
    fi
 
-if [ "$ADD" == "1" ]; then
+if [ -n "$ADD" ]; then
      echo "${GREEN}Adding the package ${YELLOW}${PACKAGE}${NORMAL}"
-elif [ "$UPDATE" == "1" ]; then
+elif [ -n "$UPDATE" ]; then
      echo "${GREEN}Updating the package ${YELLOW}${PACKAGE}${NORMAL}"
 fi
 
-if [ "$ADD" == 1 -o "$UPDATE" == 1 ]; then
+if [ -n "$ADD" -o -n "$UPDATE" ]; then
    cat > "$TCEXTTOOLS_PACKAGES_DATABASE/$PACKAGE" << _EOF
 PACKAGE_NAME="$PACKAGE"
 PACKAGE_VERSION="$VERSION"

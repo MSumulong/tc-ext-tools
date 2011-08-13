@@ -22,6 +22,7 @@
 #  Copyright (c) 2011 Sercan Arslan <arslanserc@gmail.com>
 #
 
+# This is it!
 THIS=$(basename $0)
 
 if [ $(id -u) = 0 ] ; then
@@ -31,7 +32,7 @@ if [ $(id -u) = 0 ] ; then
      fi
 else
      if [ "$THIS" = "installit" ]; then
-          echo "${RED}You need to run ${THIS} as root!${NORMAL}"
+          echo "${RED}You must run ${THIS} as root!${NORMAL}"
           exit 1
      fi
 fi
@@ -385,5 +386,11 @@ if [ "$THIS" != "addit" ]; then
      PACKAGE_CONFIGURE_STAMP="$PACKAGE_SRC_TEMP/configure.stamp"
      PACKAGE_COMPILE_STAMP="$PACKAGE_SRC_TEMP/compile.stamp"
      PACKAGE_INSTALL_STAMP="$PACKAGE_BIN/install.stamp"
+     PACKAGE_SPLIT_STAMP="$PACKAGE_BIN/split.stamp"
+     PACKAGE_STRIP_STAMP="$PACKAGE_BIN/strip.stamp"
+     PACKAGE_CREATE_STAMP="$PACKAGE_PKG/create.stamp"
+     PACKAGE_GENERATE_STAMP="$PACKAGE_PKG/generate.stamp"
+     PACKAGE_CHECK_STAMP="$PACKAGE_PKG/check.stamp"
+     PACKAGE_PACKAGE_STAMP="$PACKAGE_PKG/package.stamp"
 fi
 

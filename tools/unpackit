@@ -34,7 +34,7 @@ else
      exit 1
 fi
 
-if [ -n "$HAVE_TET_DOWNLOAD" -a ! -f "$PACKAGE_DOWNLOAD_STAMP" ]; then
+if [ -n "$HAVE_TET_DOWNLOAD" -a ! -f "$PACKAGE_DOWNLOAD_STAMP" ] && [ -n "$HAVE_TET_CONVERT" -a ! -f "$PACKAGE_CONVERT_STAMP" ]; then
      echo "${ERROR_COLOR}You must download it first!${NORMAL}"
      exit 1
 fi

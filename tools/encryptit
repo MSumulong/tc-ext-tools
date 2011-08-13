@@ -34,9 +34,9 @@ else
      exit 1
 fi
 
-if [ ! -f "$PACKAGE_PACKAGE" ]; then
-       echo "${ERROR_COLOR}You must package it first!${NORMAL}"
-       exit 1
+if [ -n "$HAVE_TET_PACKAGE" -a ! -f "$PACKAGE_PACKAGE_STAMP" ]; then
+     echo "${ERROR_COLOR}You must package it first!${NORMAL}"
+     exit 1
 fi
 
 this_main() {
