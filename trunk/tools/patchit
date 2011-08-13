@@ -47,15 +47,20 @@ this_main() {
    echo ""
    echo "---------------------------------------------------------------"
 
+   PATCHES=
+
    echo -e "Checking if the package patches series file exists ... \c"
    if [ -f "$PACKAGE_PATCHES/series" ]; then
         echo "yes"
-        PATCHES=$(cat "$PACKAGE_PATCHES/series")
+        PATCHES=$(cat "$PACKAGE_PATCHES/series" | grep -v '^#')
    else
         echo "no"
+           echo -e "Checking if the package patches directory exists ... \c"
         if [ -d "$PACKAGE_PATCHES" ]; then
-             echo "Getting the list of patches from the package patches directory contents."
+             echo "yes"
              PATCHES=$(ls "$PACKAGE_PATCHES")
+        else
+             echo "no"
         fi
    fi
 
@@ -68,16 +73,17 @@ this_main() {
            echo "---------------------------------------------------------------"
            echo "Processing the patch $PATCH"
            echo "---------------------------------------------------------------"
-           if [ -d "$PACKAGE_PATCHES/$PATCH" ]; then
-                echo "Skipping the patch $PATCH because it is a directory!"
+
+           if [ ! -f "$PACKAGE_PATCHES/$PATCH" ]; then
+                echo "Skipping the patch $PATCH because it is not a file!"
                 continue
            fi
 
            echo "Detecting the patch level."
-           for i in $(cat $PACKAGE_PATCHES/$PATCH | grep "\-\-\-" | cut -f2 -d" " | cut -f1 -d" ")
+           for FILE in $(cat $PACKAGE_PATCHES/$PATCH | grep "\-\-\-" | cut -f2 -d" " | cut -f1 -d" ")
            do
-               PATCH_LEVEL=""
-               if [ -f "$PACKAGE_SOURCE_TOPDIR/$i" ]; then
+               PATCH_LEVEL=
+               if [ -f "$PACKAGE_SOURCE_TOPDIR/$FILE" ]; then
                     PATCH_LEVEL=0
                else
                     PATCH_LEVEL=1
@@ -86,12 +92,7 @@ this_main() {
            done
 
            if [ -z "$PATCH_LEVEL" ]; then
-                echo "Error! patch level for $PATCH can not be detected."
-                return 1
-           fi
-
-           if [ ! -f "$PACKAGE_PATCHES/$PATCH" ]; then
-                echo "Error! The patch $PATCH is not a regular file."
+                echo "Error! The patch level for the patch $PATCH can not be detected."
                 return 1
            fi
 

@@ -34,6 +34,26 @@ else
      exit 1
 fi
 
+if [ -n "$HAVE_TET_DOWNLOAD" -a ! -f "$PACKAGE_DOWNLOAD_STAMP" ] && [ -n "$HAVE_TET_CONVERT" -a ! -f "$PACKAGE_CONVERT_STAMP" ]; then
+     echo "${ERROR_COLOR}You must download it first!${NORMAL}"
+     exit 1
+fi
+
+if [ -n "$HAVE_TET_CREATE" -a ! -f "$PACKAGE_CREATE_STAMP" ]; then
+     echo "${ERROR_COLOR}You must create it first!${NORMAL}"
+     exit 1
+fi
+
+if [ -n "$HAVE_TET_GENERATE" -a ! -f "$PACKAGE_GENERATE_STAMP" ]; then
+     echo "${ERROR_COLOR}You must generate it first!${NORMAL}"
+     exit 1
+fi
+
+if [ -n "$HAVE_TET_CHECK" -a ! -f "$PACKAGE_CHECK_STAMP" ]; then
+     echo "${ERROR_COLOR}You must check it first!${NORMAL}"
+     exit 1
+fi
+
 this_main() {
 
    echo "---------------------------------------------------------------"
@@ -119,6 +139,8 @@ this_main() {
 
 }
 
+[ -f "$PACKAGE_PACKAGE_STAMP" ] && sudo rm -f "$PACKAGE_PACKAGE_STAMP"
+
 echo -e "${MESSAGE_COLOR}Packaging the package ${HILIGHT_COLOR}$PACKAGE${MESSAGE_COLOR} ... ${NORMAL}\c"
 this_main > "$PACKAGE_MESSAGE_LOG" 2>&1
 if [ "$?" -gt 0 ]; then
@@ -127,6 +149,8 @@ if [ "$?" -gt 0 ]; then
      exit 1
 fi
 echo "${HILIGHT_COLOR}successful!${NORMAL}"
+
+touch "$PACKAGE_PACKAGE_STAMP"
 
 exit 0
 

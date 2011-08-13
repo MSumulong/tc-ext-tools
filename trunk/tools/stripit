@@ -34,6 +34,11 @@ else
      exit 1
 fi
 
+if [ -n "$HAVE_TET_SPLIT" -a ! -f "$PACKAGE_SPLIT_STAMP" ]; then
+     echo "${ERROR_COLOR}You must split it first!${NORMAL}"
+     exit 1
+fi
+
 this_strip() {
 
    echo "Getting the package extension executables list."
@@ -96,7 +101,6 @@ this_main() {
             echo "---------------------------------------------------------------"
             echo "Error! Stripping the package extension $PACKAGE_EXTENSION_NAME failed."
             echo "---------------------------------------------------------------"
-            sudo rm -rf "$TMP_DIR"
             return 1
        else
             echo "---------------------------------------------------------------"
@@ -115,6 +119,8 @@ this_main() {
 
 }
 
+[ -f "$PACKAGE_STRIP_STAMP" ] && sudo rm -f "$PACKAGE_STRIP_STAMP"
+
 echo -e "${MESSAGE_COLOR}Stripping the package ${HILIGHT_COLOR}$PACKAGE${MESSAGE_COLOR} extensions ... ${NORMAL}\c"
 this_main > "$PACKAGE_MESSAGE_LOG" 2>&1
 if [ "$?" -gt 0 ]; then
@@ -123,6 +129,8 @@ if [ "$?" -gt 0 ]; then
      exit 1
 fi
 echo "${HILIGHT_COLOR}successful!${NORMAL}"
+
+touch "$PACKAGE_STRIP_STAMP"
 
 exit 0
 

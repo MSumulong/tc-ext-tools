@@ -39,8 +39,8 @@ if [ "$PACKAGE_SOURCE_TYPE" = "none" ]; then
 fi
 
 if [ -n "$HAVE_TET_COMPILE" -a ! -f "$PACKAGE_COMPILE_STAMP" ]; then
-      echo "${ERROR_COLOR}You must compile it first!${NORMAL}"
-      exit 1
+     echo "${ERROR_COLOR}You must compile it first!${NORMAL}"
+     exit 1
 fi
 
 this_main() {
