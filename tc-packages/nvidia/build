@@ -6,9 +6,9 @@ build_convert() {
 
    sh $PACKAGE_SOURCE --extract-only || return 1
 
-   tar -cJvf $PACKAGE_SOURCE_NAME_CONVERTED $SOURCE_TOPDIR || return 1
+   tar -cJvf $PACKAGE_SOURCE_NAME_CONV $SOURCE_TOPDIR || return 1
 
-   busybox mv -f $PACKAGE_SOURCE_NAME_CONVERTED $_P_SRC || return 1
+   busybox mv -f $PACKAGE_SOURCE_NAME_CONV $_P_SRC || return 1
 
 }
 

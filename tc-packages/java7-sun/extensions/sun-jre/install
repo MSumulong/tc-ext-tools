@@ -1,0 +1,9 @@
+etc/profile.d/sun-jre.sh
+usr/local/java-sun/jre
+usr/local/share/licenses/sun-jre
+usr/local/lib/mozilla/plugins
+usr/local/share/applications
+x-usr/local/share/applications/java-monitoring-and-management-console.desktop
+x-usr/local/share/applications/java-visualvm.desktop
+usr/local/share/icons
+usr/local/share/mime

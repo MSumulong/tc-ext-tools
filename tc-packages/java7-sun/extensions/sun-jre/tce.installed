@@ -1,0 +1,18 @@
+#!/bin/sh
+
+THIS=$(basename $0)
+
+. /etc/profile.d/sun-jre.sh
+
+if [ -d "/tmp/tcloop/$THIS" ]; then
+     for dir in bin lib
+     do
+        cp -a "/tmp/tcloop/$THIS/$JAVA_HOME/$dir" "$JAVA_HOME"
+     done
+fi
+
+[ -d /etc/.java/.systemPrefs ] || mkdir -p /etc/.java/.systemPrefs
+
+[ $(which gtk-update-icon-cache) ] && gtk-update-icon-cache -q -f -t /usr/local/share/icons/hicolor > /dev/null 2>&1
+[ $(which update-desktop-database) ] && update-desktop-database -q > /dev/null 2>&1
+[ $(which update-mime-database) ] && update-mime-database /usr/local/share/mime &> /dev/null

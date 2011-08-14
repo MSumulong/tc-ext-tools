@@ -1,0 +1,15 @@
+PACKAGE="java7-sun"
+VERSION="7"
+  [ "${ARCH}" = 'i686' ]   && _ARCH='i586'
+  [ "${ARCH}" = 'x86_64' ] && _ARCH='x64'
+SOURCE="http://download.oracle.com/otn-pub/java/jdk/7/jdk-${VERSION}-linux-${_ARCH}.tar.gz"
+BUILD_DEPENDS=""
+
+DESCRIPTION="Sun/Oracle's implementation of tha Java 7 specification."
+AUTHOR="Sun/Oracle"
+SITE="http://java.sun.com"
+COPYING="custom"
+MAINTAINERS="Arslan S."
+COMMENTS="---"
+CHANGELOG="---"
+CURRENT="First Version $VERSION"

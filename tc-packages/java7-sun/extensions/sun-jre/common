@@ -1,0 +1,5 @@
+DESCRIPTION="Sun/Oracle's implementation of tha Java 7 specification, java runtime environment."
+COMMENTS="The sun-jre7 package is licensed software.
+		You MUST read and agree to the license /usr/local/java-sun/jre/LICENSE before using it.
+		You need to relogin or reboot to have java in PATH."
+NAME=sun-jre7

@@ -1,0 +1,90 @@
+
+############################################################################
+#                                                                          #
+#  tc-ext-tools build functions: configure, compile, install, rules, etc.  #
+#                                                                          #
+############################################################################
+
+############################################################################ 
+#                              Install                                     #
+############################################################################
+
+build_install() {
+
+  # main files for java-sun
+  mkdir -p ${INSTALL_ROOT}/usr/local/java-sun
+  cp -R . ${INSTALL_ROOT}/usr/local/java-sun
+
+  # profiles
+  install -D ${PACKAGE_SRC}/jre.profile ${INSTALL_ROOT}/etc/profile.d/sun-jre.sh
+
+  mkdir -p ${INSTALL_ROOT}/usr/local/lib/mozilla/plugins
+
+  if [ "$ARCH" = i686 ]; then
+       ln -s /usr/local/java-sun/jre/lib/i386/libnpjp2.so ${INSTALL_ROOT}/usr/local/lib/mozilla/plugins
+  elif [ "$ARCH" = x86_64 ]; then
+       ln -s /usr/local/java-sun/jre/lib/amd64/libnpjp2.so ${INSTALL_ROOT}/usr/local/lib/mozilla/plugins
+  fi
+
+  # licenses
+  install -d -m 755 ${INSTALL_ROOT}/usr/local/share/licenses/sun-jre
+  install -m644 ${INSTALL_ROOT}/usr/local/java-sun/jre/COPYRIGHT ${INSTALL_ROOT}/usr/local/share/licenses/sun-jre
+  install -m644 ${INSTALL_ROOT}/usr/local/java-sun/jre/LICENSE ${INSTALL_ROOT}/usr/local/share/licenses/sun-jre
+  install -m644 ${INSTALL_ROOT}/usr/local/java-sun/jre/THIRDPARTYLICENSEREADME.txt ${INSTALL_ROOT}/usr/local/share/licenses/sun-jre
+
+  # install icons and desktop entries
+  install -d -m 755 ${INSTALL_ROOT}/usr/local/share
+  install -Dm644 jre/lib/desktop/icons/hicolor/48x48/apps/sun-java.png ${INSTALL_ROOT}/usr/local/share/pixmaps/java.png
+  cp -r jre/lib/desktop/icons ${INSTALL_ROOT}/usr/local/share
+  cp -r jre/lib/desktop/applications ${INSTALL_ROOT}/usr/local/share
+  cp -r jre/lib/desktop/mime ${INSTALL_ROOT}/usr/local/share
+  install -m644 ${PACKAGE_SRC}/java-monitoring-and-management-console.desktop ${INSTALL_ROOT}/usr/local/share/applications/java-monitoring-and-management-console.desktop
+  install -m644 ${PACKAGE_SRC}/java-policy-settings.desktop ${INSTALL_ROOT}/usr/local/share/applications/java-policy-settings.desktop
+  install -m644 ${PACKAGE_SRC}/java-visualvm.desktop ${INSTALL_ROOT}/usr/local/share/applications/java-visualvm.desktop
+
+  install -m 755 ${PACKAGE_SRC}/javaws-launcher ${INSTALL_ROOT}/usr/local/java-sun/jre/bin
+  sed -e 's/Exec=javaws/&-launcher %f/' \
+      -e '/NoDisplay=true/d' \
+      -i ${INSTALL_ROOT}/usr/local/share/applications/sun-javaws.desktop
+
+  # profiles
+  install -D ${PACKAGE_SRC}/jdk.profile ${INSTALL_ROOT}/etc/profile.d/sun-jdk.sh
+
+  # licenses
+  install -d -m 755 ${INSTALL_ROOT}/usr/local/share/licenses/sun-jdk
+  install -m644 ${INSTALL_ROOT}/usr/local/java-sun/COPYRIGHT ${INSTALL_ROOT}/usr/local/share/licenses/sun-jdk
+  install -m644 ${INSTALL_ROOT}/usr/local/java-sun/LICENSE ${INSTALL_ROOT}/usr/local/share/licenses/sun-jdk
+  install -m644 ${INSTALL_ROOT}/usr/local/java-sun/THIRDPARTYLICENSEREADME.txt ${INSTALL_ROOT}/usr/local/share/licenses/sun-jdk
+
+  # javadb (apache derby) daemon files
+  install -D ${PACKAGE_SRC}/derby-network-server ${INSTALL_ROOT}/usr/local/etc/init.d/derby-network-server
+  install -D -m644 ${PACKAGE_SRC}/derby-network-server.conf ${INSTALL_ROOT}/usr/local/etc/conf.d/derby-network-server
+
+  # remove unneccessary files
+  rm -r $INSTALL_ROOT/usr/local/java-sun/jre/lib/desktop
+  rm -r $INSTALL_ROOT/usr/local/java-sun/jre/plugin/desktop
+  rm -r $INSTALL_ROOT/usr/local/java-sun/lib/desktop
+  rm -r $INSTALL_ROOT/usr/local/java-sun/src.zip
+  find ${INSTALL_ROOT}/usr/local/java-sun -name '*\.bat' -delete
+
+}
+
+############################################################################ 
+#                                Rules                                     #
+############################################################################
+
+build_rules() {
+
+   tet_load
+   tet_download
+   tet_convert
+   tet_unpack
+   tet_install
+   tet_split
+   tet_create
+   tet_generate
+   tet_check
+   tet_package
+
+}
+

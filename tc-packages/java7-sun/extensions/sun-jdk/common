@@ -1,0 +1,5 @@
+DESCRIPTION="Sun/Oracle's implementation of tha Java 7 specification, java development kit."
+COMMENTS="The sun-jdk7 package is licensed software.
+		You MUST read and agree to the license /usr/local/java-sun/LICENSE before using it.
+		You need to relogin or reboot to have java in PATH."
+NAME=sun-jdk7
