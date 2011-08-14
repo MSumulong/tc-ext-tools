@@ -46,9 +46,3 @@ TCEXTTOOLS_DEPENDS="compiletc
 
 # default encryption key
 PACKAGE_ENCRYPTION_KEY="tinycore"
-
-# tc-ext-tools compiler and linker flags
-TCEXTTOOLS_CFLAGS="-march=i486 -mtune=i686 -Os -pipe"
-TCEXTTOOLS_CXXFLAGS="-march=i486 -mtune=i686 -Os -pipe"
-TCEXTTOOLS_LDFLAGS="-Wl,-O1"
-
