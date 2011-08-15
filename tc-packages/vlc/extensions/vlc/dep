@@ -38,6 +38,8 @@ fluidsynth.tcz
 libxcb-util.tcz
 libx11-xcb.tcz
 libproxy-2.7.tcz
+gnutls.tcz
+ncurses.tcz
 shared-mime-info.tcz
 hicolor-icon-theme.tcz
 

@@ -11,13 +11,13 @@ build_configure() {
        --enable-xvideo --enable-theora --disable-caca --enable-xcb \
        --enable-avformat --enable-avcodec --enable-postproc --enable-swscale \
        --enable-a52 --enable-dca --enable-faad --enable-libmpeg2 --enable-live555 --with-live555-tree=/usr/local/lib/live \
-       --enable-mad --enable-v4l --enable-v4l2 --enable-libcddb --disable-vcdx --enable-vcd --disable-zvbi --enable-taglib \
+       --enable-mad --enable-v4l --enable-libcddb --disable-vcdx --enable-vcd --disable-zvbi --enable-taglib \
        --disable-hd1000v --disable-hd1000a --enable-lua --disable-telx \
        --enable-dvb --enable-dvbpsi --enable-libxml2 --enable-ogg --enable-vorbis --enable-speex \
        --enable-dvdread --enable-dvdnav --enable-shout --enable-notify --enable-screen \
        --enable-mpc --disable-gme --enable-twolame --enable-flac --enable-schroedinger \
        --enable-mozilla --enable-mtp --enable-png --enable-sdl --enable-realrtsp \
-       --enable-visual --enable-snapshot --disable-gnutls --disable-projectm --enable-svg \
+       --enable-visual --enable-snapshot --enable-gnutls --disable-projectm --enable-svg \
        --enable-lirc --enable-pvr || return 1
 
 }

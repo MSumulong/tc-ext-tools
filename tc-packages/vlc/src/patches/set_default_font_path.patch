@@ -1,13 +1,14 @@
---- a/modules/misc/freetype.c	2010-06-15 23:58:09.000000000 +0000
-+++ b/modules/misc/freetype.c	2010-08-11 12:38:45.523777845 +0000
-@@ -67,8 +67,8 @@
- #define DEFAULT_FONT "/usr/share/fonts/nokia/nosnb.ttf"
- #define FC_DEFAULT_FONT "Nokia Sans Bold"
+diff -Naur a/modules/misc/freetype.c b/modules/misc/freetype.c
+--- a/modules/misc/freetype.c	2011-07-09 15:18:51.000000000 +0000
++++ b/modules/misc/freetype.c	2011-08-15 00:25:19.321749993 +0000
+@@ -55,8 +55,8 @@
+ # define DEFAULT_FONT_FILE "/usr/share/fonts/nokia/nosnb.ttf"
+ # define DEFAULT_FAMILY "Nokia Sans Bold"
  #else
--#define DEFAULT_FONT "/usr/share/fonts/truetype/freefont/FreeSerifBold.ttf"
--#define FC_DEFAULT_FONT "Serif Bold"
-+#define DEFAULT_FONT "/usr/local/share/vlc/skins2/fonts/FreeSansBold.ttf"
-+#define FC_DEFAULT_FONT "Sans Bold"
+-# define DEFAULT_FONT_FILE "/usr/share/fonts/truetype/freefont/FreeSerifBold.ttf"
+-# define DEFAULT_FAMILY "Serif Bold"
++# define DEFAULT_FONT_FILE "/usr/local/share/vlc/skins2/fonts/FreeSansBold.ttf"
++# define DEFAULT_FAMILY "Sans Bold"
  #endif
  
- #if defined(HAVE_FRIBIDI)
+ /* Freetype */

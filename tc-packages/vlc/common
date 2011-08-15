@@ -1,5 +1,5 @@
 PACKAGE="vlc"
-VERSION="1.1.9"
+VERSION="1.1.11"
 SOURCE="http://download.videolan.org/pub/videolan/vlc/${VERSION}/vlc-${VERSION}.tar.bz2"
 BUILD_DEPENDS="ffmpeg-ffserver
 ffmpeg-ffserver-dev
@@ -87,6 +87,7 @@ libdc1394
 libdc1394-dev
 libproxy-2.7
 jack
+jack-dev
 xulrunner
 xulrunner-dev
 librsvg
@@ -118,10 +119,10 @@ libsndfile-dev
 pulseaudio-dev
 libiconv
 libiconv-dev
-#kdelibs
-#kdelibs-dev
-#avahi-2.7
-#avahi-2.7-dev"
+ncurses
+ncurses-dev
+gnutls
+gnutls-dev"
 
 DESCRIPTION="VLC is a free and open source cross-platform multimedia player."
 AUTHOR="VideoLAN Team"
@@ -153,5 +154,6 @@ CHANGELOG="2009/11/05 First Version
 		2010/08/24 Updated to 1.1.3
 		2010/11/17 Updated to 1.1.5
 		2011/02/01 Updated to 1.1.7
-		2011/03/26 Updated to 1.1.8"
+		2011/03/26 Updated to 1.1.8
+		2011/04/22 Updated to 1.1.9"
 CURRENT="Updated to $VERSION"

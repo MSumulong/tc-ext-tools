@@ -1,4 +1,5 @@
 usr/local/bin/cvlc
+usr/local/bin/nvlc
 usr/local/bin/qvlc
 usr/local/bin/rvlc
 usr/local/bin/svlc
@@ -85,11 +86,11 @@ usr/local/include/vlc/vlc.h
 usr/local/lib/libvlc.la
 usr/local/lib/libvlc.so
 usr/local/lib/libvlc.so.5
-usr/local/lib/libvlc.so.5.2.0
+usr/local/lib/libvlc.so.5.2.1
 usr/local/lib/libvlccore.la
 usr/local/lib/libvlccore.so
 usr/local/lib/libvlccore.so.4
-usr/local/lib/libvlccore.so.4.0.2
+usr/local/lib/libvlccore.so.4.0.3
 usr/local/lib/mozilla/plugins/libvlcplugin.la
 usr/local/lib/mozilla/plugins/libvlcplugin.so
 usr/local/lib/pkgconfig/libvlc.pc
@@ -157,8 +158,6 @@ usr/local/lib/vlc/plugins/access/libaccess_http_plugin.la
 usr/local/lib/vlc/plugins/access/libaccess_http_plugin.so
 usr/local/lib/vlc/plugins/access/libaccess_imem_plugin.la
 usr/local/lib/vlc/plugins/access/libaccess_imem_plugin.so
-usr/local/lib/vlc/plugins/access/libaccess_jack_plugin.la
-usr/local/lib/vlc/plugins/access/libaccess_jack_plugin.so
 usr/local/lib/vlc/plugins/access/libaccess_mmap_plugin.la
 usr/local/lib/vlc/plugins/access/libaccess_mmap_plugin.so
 usr/local/lib/vlc/plugins/access/libaccess_mms_plugin.la
@@ -261,8 +260,6 @@ usr/local/lib/vlc/plugins/audio_output/libaout_file_plugin.la
 usr/local/lib/vlc/plugins/audio_output/libaout_file_plugin.so
 usr/local/lib/vlc/plugins/audio_output/libaout_sdl_plugin.la
 usr/local/lib/vlc/plugins/audio_output/libaout_sdl_plugin.so
-usr/local/lib/vlc/plugins/audio_output/libjack_plugin.la
-usr/local/lib/vlc/plugins/audio_output/libjack_plugin.so
 usr/local/lib/vlc/plugins/audio_output/liboss_plugin.la
 usr/local/lib/vlc/plugins/audio_output/liboss_plugin.so
 usr/local/lib/vlc/plugins/audio_output/libpulse_plugin.la
@@ -433,6 +430,8 @@ usr/local/lib/vlc/plugins/demux/libwav_plugin.la
 usr/local/lib/vlc/plugins/demux/libwav_plugin.so
 usr/local/lib/vlc/plugins/demux/libxa_plugin.la
 usr/local/lib/vlc/plugins/demux/libxa_plugin.so
+usr/local/lib/vlc/plugins/gui/libncurses_plugin.la
+usr/local/lib/vlc/plugins/gui/libncurses_plugin.so
 usr/local/lib/vlc/plugins/gui/libqt4_plugin.la
 usr/local/lib/vlc/plugins/gui/libqt4_plugin.so
 usr/local/lib/vlc/plugins/gui/libskins2_plugin.la
@@ -449,6 +448,8 @@ usr/local/lib/vlc/plugins/misc/libexport_plugin.la
 usr/local/lib/vlc/plugins/misc/libexport_plugin.so
 usr/local/lib/vlc/plugins/misc/libfreetype_plugin.la
 usr/local/lib/vlc/plugins/misc/libfreetype_plugin.so
+usr/local/lib/vlc/plugins/misc/libgnutls_plugin.la
+usr/local/lib/vlc/plugins/misc/libgnutls_plugin.so
 usr/local/lib/vlc/plugins/misc/libinhibit_plugin.la
 usr/local/lib/vlc/plugins/misc/libinhibit_plugin.so
 usr/local/lib/vlc/plugins/misc/liblogger_plugin.la
@@ -713,6 +714,9 @@ usr/local/lib/vlc/plugins/visualization/libvisual_plugin.la
 usr/local/lib/vlc/plugins/visualization/libvisual_plugin.so
 usr/local/lib/vlc/vlc-cache-gen
 usr/local/share/applications/vlc.desktop
+usr/local/share/apps/solid/actions/vlc-opencda.desktop
+usr/local/share/apps/solid/actions/vlc-opendvd.desktop
+usr/local/share/apps/solid/actions/vlc-openvcd.desktop
 usr/local/share/doc/vlc/bugreport-howto.txt
 usr/local/share/doc/vlc/fortunes.txt
 usr/local/share/doc/vlc/intf-vcd.txt
@@ -726,10 +730,9 @@ usr/local/share/icons/hicolor/32x32/apps/vlc.png
 usr/local/share/icons/hicolor/32x32/apps/vlc.xpm
 usr/local/share/icons/hicolor/48x48/apps/vlc-christmas.png
 usr/local/share/icons/hicolor/48x48/apps/vlc.png
-usr/local/share/kde4/apps/solid/actions/vlc-opencda.desktop
-usr/local/share/kde4/apps/solid/actions/vlc-opendvd.desktop
-usr/local/share/kde4/apps/solid/actions/vlc-openvcd.desktop
+usr/local/share/locale/ach/LC_MESSAGES/vlc.mo
 usr/local/share/locale/af/LC_MESSAGES/vlc.mo
+usr/local/share/locale/am/LC_MESSAGES/vlc.mo
 usr/local/share/locale/ar/LC_MESSAGES/vlc.mo
 usr/local/share/locale/ast/LC_MESSAGES/vlc.mo
 usr/local/share/locale/be/LC_MESSAGES/vlc.mo
@@ -737,6 +740,7 @@ usr/local/share/locale/bg/LC_MESSAGES/vlc.mo
 usr/local/share/locale/bn/LC_MESSAGES/vlc.mo
 usr/local/share/locale/br/LC_MESSAGES/vlc.mo
 usr/local/share/locale/ca/LC_MESSAGES/vlc.mo
+usr/local/share/locale/cgg/LC_MESSAGES/vlc.mo
 usr/local/share/locale/ckb/LC_MESSAGES/vlc.mo
 usr/local/share/locale/co/LC_MESSAGES/vlc.mo
 usr/local/share/locale/cs/LC_MESSAGES/vlc.mo
@@ -748,6 +752,7 @@ usr/local/share/locale/es/LC_MESSAGES/vlc.mo
 usr/local/share/locale/et/LC_MESSAGES/vlc.mo
 usr/local/share/locale/eu/LC_MESSAGES/vlc.mo
 usr/local/share/locale/fa/LC_MESSAGES/vlc.mo
+usr/local/share/locale/ff/LC_MESSAGES/vlc.mo
 usr/local/share/locale/fi/LC_MESSAGES/vlc.mo
 usr/local/share/locale/fr/LC_MESSAGES/vlc.mo
 usr/local/share/locale/fur/LC_MESSAGES/vlc.mo
@@ -802,6 +807,7 @@ usr/local/share/locale/vi/LC_MESSAGES/vlc.mo
 usr/local/share/locale/wa/LC_MESSAGES/vlc.mo
 usr/local/share/locale/zh_CN/LC_MESSAGES/vlc.mo
 usr/local/share/locale/zh_TW/LC_MESSAGES/vlc.mo
+usr/local/share/locale/zu/LC_MESSAGES/vlc.mo
 usr/local/share/man/man1/vlc-config.1
 usr/local/share/man/man1/vlc-wrapper.1
 usr/local/share/man/man1/vlc.1
