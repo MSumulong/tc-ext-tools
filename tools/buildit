@@ -35,124 +35,85 @@ else
 fi
 
 print_usage(){
-
    echo -e "${WARNING_COLOR}${THIS} usage:"
-   echo -e "\n\t${WARNING_COLOR_H}${THIS} -c,clean|-l,load|-d,download|-x,convert|-u,unpack|-pt,patch|-cn,configure|-cm,compile|-i,install|-sp,split|-st,strip|-cr,create|-ch,check|-g,generate|-pk,package|-cs,custom|-e,encrypt|-p,print|-h,help${NORMAL}"
-
+   echo -e "\n\t${WARNING_COLOR_H}${THIS} -c,clean|-l,load|-d,download|-x,convert|-u,unpack|-pt,patch|-cn,configure|-cm,compile|-i,install|-sp,split|-st,strip|-cr,create|-ch,check|-g,generate|-pk,package|-cs,custom|-e,encrypt|-pr,prepare|-p,print|-h,help${NORMAL}"
    exit 0
-
 }
 
 clean_it() {
-
    cleanit || exit 1
-
 }
 
 download_it() {
-
    if [ -f "$PACKAGE_SOURCE_ORIG" -a -f "$PACKAGE_DOWNLOAD_STAMP" ] || [ -f "$PACKAGE_SOURCE_CONV" -a -f "$PACKAGE_CONVERT_STAMP" ]; then
         echo "${WARNING_COLOR}The package ${WARNING_COLOR_H}$PACKAGE${WARNING_COLOR} source is already downloaded.${NORMAL}"
         exit 0
    fi
-
    downloadit || exit 1
-
 }
 
 convert_it() {
-
    if [ -f "$PACKAGE_SOURCE_CONV" -a -f "$PACKAGE_CONVERT_STAMP" ]; then
         echo "${WARNING_COLOR}The package ${WARNING_COLOR_H}$PACKAGE${WARNING_COLOR} source is already converted.${NORMAL}"
         exit 0
    fi
-
    convertit || exit 1
-
 }
 
 unpack_it() {
-
    unpackit || exit 1
-
 }
 
 load_it() {
-
    loadit || exit 1
-
 }
 
 patch_it() {
-
    patchit || exit 1
-
 }
 
 configure_it() {
-
    configureit || exit 1
-
 }
 
 compile_it() {
-
    compileit || exit 1
-
 }
 
 install_it() {
-
    sudo installit || exit 1
-
 }
 
 split_it() {
-
    splitit || exit 1
-
 }
 
 strip_it() {
-
    stripit || exit 1
-
 }
 
 create_it() {
-
    createit || exit 1
-
 }
 
 generate_it() {
-
    generateit || exit 1
-
 }
 
 check_it() {
-
    checkit || exit 1
-
 }
 
 package_it() {
-
    packageit || exit 1
-
 }
 
 encrypt_it() {
-
    encryptit || exit 1
-
 }
 
 build_custom() {
-
    FUNCTION="$1"
-
    if [ -z "$FUNCTION" ]; then
         echo "${ERROR_COLOR}You need to specify the name of the custom function.${NORMAL}"
         exit 1
@@ -160,107 +121,21 @@ build_custom() {
 
    echo -e "${MESSAGE_COLOR}Executing the package ${HILIGHT_COLOR}$PACKAGE${MESSAGE_COLOR} custom build function $FUNCTION ... ${NORMAL}\c"
    build_${FUNCTION} > "$PACKAGE_MESSAGE_LOG" 2>&1
-if [ "$?" -gt 0 ]; then
-     echo "${ERROR_COLOR}failed!${NORMAL}"
-     echo "${WARNING_COLOR}For details: ${WARNING_COLOR_H}buildit print message${NORMAL}"
-     exit 1
-fi
-echo "${HILIGHT_COLOR}successful!${NORMAL}"
-
+   if [ "$?" -gt 0 ]; then
+        echo "${ERROR_COLOR}failed!${NORMAL}"
+        echo "${WARNING_COLOR}For details: ${WARNING_COLOR_H}buildit print message${NORMAL}"
+        exit 1
+   fi
+   echo "${HILIGHT_COLOR}successful!${NORMAL}"
 }
 
-tet_load() {
-
-   buildit load || exit 1
-
-}
-
-tet_download() {
-
-   buildit download || exit 1
-
-}
-
-tet_convert() {
-
-   buildit convert || exit 1
-
-}
-
-tet_unpack() {
-
-   buildit unpack || exit 1
-
-}
-
-tet_patch() {
-
-   buildit patch || exit 1
-
-}
-
-tet_configure() {
-
-   buildit configure || exit 1
-
-}
-
-tet_compile() {
-
-   buildit compile || exit 1
-
-}
-
-tet_install() {
-
-   buildit install || exit 1
-
-}
-
-tet_split() {
-
-   buildit split || exit 
-
-}
-
-tet_strip() {
-
-   buildit strip || exit 1
-
-}
-
-tet_create() {
-
-   buildit create || exit 1
-
-}
-
-tet_generate() {
-
-   buildit generate || exit 1
-
-}
-
-tet_check() {
-
-   buildit check || exit 1
-
-}
-
-tet_package() {
-
-   buildit package || exit 1
-
-}
-
-tet_custom() {
-
-   buildit custom "$1" || exit 1
-
+prepare_it() {
+   [ -d "$TET_LINUX_DIR" ] || mkdir -p "$TET_LINUX_DIR"
+   cd "$TET_LINUX_DIR"
+   modules-prepare.sh || exit 1
 }
 
 build_it() {
-
    set_date; SECONDS_BEFORE="$SECONDS"
    echo "${MESSAGE_COLOR}Building the package ${HILIGHT_COLOR}$PACKAGE${MESSAGE_COLOR} started at ${HILIGHT_COLOR}$TIME${NORMAL}"
    clean_it
@@ -269,11 +144,9 @@ build_it() {
    SECONDS_ELAPSED=`expr $SECONDS_AFTER - $SECONDS_BEFORE`
    echo "${MESSAGE_COLOR}Building the package ${HILIGHT_COLOR}$PACKAGE${MESSAGE_COLOR} finished at ${HILIGHT_COLOR}$TIME${MESSAGE_COLOR} in ${HILIGHT_COLOR}${SECONDS_ELAPSED}${MESSAGE_COLOR} seconds${NORMAL}"
    encrypt_it
-
 }
 
 print_it() {
-
    case "$1" in
        cn|configure)
                 if [ -f "$PACKAGE_CONFIGURE_LOG" ]; then
@@ -306,7 +179,70 @@ print_it() {
                 echo "${WARNING_COLOR}Usage: ${WARNING_COLOR_H}buildit -p,print cn,configure|cm,compile|i,install|b,build|m,message${NORMAL}"
                 ;;
    esac
+}
 
+tet_load() {
+   buildit load || exit 1
+}
+
+tet_download() {
+   buildit download || exit 1
+}
+
+tet_convert() {
+   buildit convert || exit 1
+}
+
+tet_unpack() {
+   buildit unpack || exit 1
+}
+
+tet_patch() {
+   buildit patch || exit 1
+}
+
+tet_configure() {
+   buildit configure || exit 1
+}
+
+tet_compile() {
+   buildit compile || exit 1
+}
+
+tet_install() {
+   buildit install || exit 1
+}
+
+tet_split() {
+   buildit split || exit 
+}
+
+tet_strip() {
+   buildit strip || exit 1
+}
+
+tet_create() {
+   buildit create || exit 1
+}
+
+tet_generate() {
+   buildit generate || exit 1
+}
+
+tet_check() {
+   buildit check || exit 1
+}
+
+tet_package() {
+   buildit package || exit 1
+}
+
+tet_custom() {
+   buildit custom "$1" || exit 1
+}
+
+tet_modules_prepare() {
+   buildit prepare || exit 1
 }
 
 if [ -z "$1" ]; then
@@ -318,63 +254,26 @@ if [ -z "$1" ]; then
 fi
 
 case "$1" in
-	-c|clean)
-		  clean_it
-		  ;;
-	-d|download)
-		  download_it
-		  ;;
-	-x|convert)
-		  convert_it
-		  ;;
-	-u|unpack)
-		  unpack_it
-		  ;;
-	-l|load)
-		  load_it
-		  ;;
-	-pt|patch)
-		  patch_it
-		  ;;
-	-cn|configure)
-		  configure_it
-		  ;;
-	-cm|compile)
-		  compile_it
-		  ;;
-	-i|install)
-		  install_it
-		  ;;
-	-sp|split)
-		  split_it
-		  ;;
-	-st|strip)
-		  strip_it
-		  ;;
-	-cr|create)
-		  create_it
-		  ;;
-	-ch|check)
-		  check_it
-		  ;;
-	-g|generate)
-		  generate_it
-		  ;;
-	-pk|package)
-		  package_it
-		  ;;
-	-e|encrypt)
-		  encrypt_it
-		  ;;
-	-p|print)
-		  print_it "$2"
-		  ;;
-	-cs|custom)
-		  build_custom "$2"
-		  ;;
-	-h|help|*)
-		  print_usage
-		  ;;
+   -c|clean) clean_it ;;
+   -d|download) download_it ;;
+   -x|convert) convert_it ;;
+   -u|unpack) unpack_it ;; 
+   -l|load) load_it ;;
+   -pt|patch) patch_it ;;
+   -cn|configure) configure_it ;;
+   -cm|compile) compile_it ;;
+   -i|install) install_it ;;
+   -sp|split) split_it ;;
+   -st|strip) strip_it ;;
+   -cr|create) create_it ;;
+   -ch|check) check_it ;;
+   -g|generate) generate_it ;;
+   -pk|package) package_it ;;
+   -e|encrypt) encrypt_it ;;
+   -p|print) print_it "$2" ;;
+   -cs|custom) build_custom "$2" ;;
+   -pr|prepare) prepare_it ;;
+   -h|help|*) print_usage ;;
 esac
 
 exit 0
