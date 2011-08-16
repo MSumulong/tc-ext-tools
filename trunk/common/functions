@@ -336,6 +336,7 @@ if [ "$THIS" != "addit" ] && [ -f "$PACKAGE_COMMON" ]; then
      PACKAGE_PACKAGE="$PACKAGE_PKG/${PACKAGE}.tar.bz2"
      PACKAGE_PACKAGE_ENCRYPTED="$PACKAGE_PKG/${PACKAGE}.tar.bz2.bfe"
 
+     TET_LINUX_DIR="$TCEXTTOOLS_STORAGE/linux"
      INSTALL_ROOT="$PACKAGE_INSTALL_ROOT"
      PREFIX=/usr/local
 
