@@ -23,6 +23,9 @@ build_compile() {
    cd build
    make || return 1
 
+   cd ..
+   doxygen
+
 }
 
 # Install
@@ -31,7 +34,11 @@ build_install() {
    cd build
    make DESTDIR="$INSTALL_ROOT" install || return 1
 
-   install -Dm644 $PACKAGE_SRC/bullet.pc $INSTALL_ROOT/usr/local/lib/pkgconfig/bullet.pc
+   install -Dm644 "$PACKAGE_SRC"/bullet.pc "$INSTALL_ROOT"/usr/local/lib/pkgconfig/bullet.pc
+
+   cd ..
+   install -Dm644 Bullet_User_Manual.pdf "$INSTALL_ROOT"/usr/local/share/doc/bullet/Bullet_User_Manual.pdf
+   cp -r html "$INSTALL_ROOT"/usr/local/share/doc/bullet/html
 
 }
 

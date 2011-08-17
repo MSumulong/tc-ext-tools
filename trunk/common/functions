@@ -336,7 +336,7 @@ if [ "$THIS" != "addit" ] && [ -f "$PACKAGE_COMMON" ]; then
      PACKAGE_PACKAGE="$PACKAGE_PKG/${PACKAGE}.tar.bz2"
      PACKAGE_PACKAGE_ENCRYPTED="$PACKAGE_PKG/${PACKAGE}.tar.bz2.bfe"
 
-     TET_LINUX_DIR="$TCEXTTOOLS_STORAGE/linux"
+     TET_LINUX_ROOT="$TCEXTTOOLS_STORAGE/linux"
      INSTALL_ROOT="$PACKAGE_INSTALL_ROOT"
      PREFIX=/usr/local
 
@@ -347,7 +347,7 @@ if [ "$THIS" != "addit" ] && [ -f "$PACKAGE_COMMON" ]; then
      # shortened variables for use in package build
      P_ROOT="$PACKAGE_ROOT"
      _P_ROOT="$_PACKAGE_ROOT"
-     P_NAME="$PACKAGE"
+     P_NAM="$PACKAGE"
      P_VER="$VERSION"
      P_SRC="$PACKAGE_SRC"
      _P_SRC="$_PACKAGE_SRC"
