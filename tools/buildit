@@ -130,8 +130,8 @@ build_custom() {
 }
 
 prepare_it() {
-   [ -d "$TET_LINUX_DIR" ] || mkdir -p "$TET_LINUX_DIR"
-   cd "$TET_LINUX_DIR"
+   [ -d "$TET_LINUX_ROOT" ] || mkdir -p "$TET_LINUX_ROOT"
+   cd "$TET_LINUX_ROOT"
    modules-prepare.sh || exit 1
 }
 
