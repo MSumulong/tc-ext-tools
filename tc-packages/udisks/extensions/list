@@ -10,8 +10,6 @@ usr/local/bin/udisks-tcp-bridge
 usr/local/etc/avahi/services/udisks.service
 usr/local/etc/bash_completion.d/udisks-bash-completion.sh
 usr/local/etc/dbus-1/system.d/org.freedesktop.UDisks.conf
-usr/local/lib/polkit-1/extensions/libudisks-action-lookup.la
-usr/local/lib/polkit-1/extensions/libudisks-action-lookup.so
 usr/local/libexec/udisks-daemon
 usr/local/libexec/udisks-helper-ata-smart-collect
 usr/local/libexec/udisks-helper-ata-smart-selftest

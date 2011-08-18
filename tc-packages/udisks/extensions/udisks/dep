@@ -6,6 +6,7 @@ libatasmart.tcz
 parted.tcz
 lvm2.tcz
 lsof.tcz
-bash.tcz
+eject.tcz
+ntfs-3g.tcz
 util-linux-ng.tcz
-
+bash.tcz
