@@ -1,5 +1,5 @@
 PACKAGE="bombono-dvd"
-VERSION="1.0.0"
+VERSION="1.0.2"
 SOURCE="http://downloads.sourceforge.net/bombono/bombono-dvd-${VERSION}.tar.bz2"
 BUILD_DEPENDS="scons
 gtk2
@@ -29,5 +29,5 @@ SITE="http://www.bombono.org/"
 COPYING="GPL"
 MAINTAINERS="Arslan S."
 COMMENTS="This extension is PPI compatible."
-CHANGELOG="---"
-CURRENT="First Version"
+CHANGELOG="2011/02/10 First Version"
+CURRENT="Updated to $VERSION"

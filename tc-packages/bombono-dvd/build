@@ -5,13 +5,6 @@
 #                                                                          #
 ############################################################################
 
-## configure
-build_configure() {
-
-   return 0
-
-}
-
 ## compile
 build_compile() {
 
@@ -34,7 +27,6 @@ build_rules() {
    tet_convert
    tet_unpack
    tet_patch
-   tet_configure
    tet_compile
    tet_install
    tet_split

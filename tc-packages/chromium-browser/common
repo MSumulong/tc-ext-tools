@@ -1,5 +1,5 @@
 PACKAGE="chromium-browser"
-VERSION="13.0.782.107"
+VERSION="13.0.782.112"
 SOURCE="http://build.chromium.org/buildbot/official/chromium-${VERSION}.tar.bz2"
 BUILD_DEPENDS="python
 python-dev
@@ -69,6 +69,7 @@ CHANGELOG="2009/12/17 First Version
 		2011/05/08 Updated to 11.0.696.65
 		    -Disabled GConf
 		2011/06/12 Updated to 12.0.742.91
-		2011/07/01 Updated to 12.0.742.112"
+		2011/07/01 Updated to 12.0.742.112
+		2011/08/07 Updated to 13.0.782.107"
 CURRENT="Updated to $VERSION"
 

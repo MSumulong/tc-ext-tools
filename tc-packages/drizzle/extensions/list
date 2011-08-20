@@ -37,7 +37,6 @@ usr/local/include/drizzle7/drizzled/current_session.h
 usr/local/include/drizzle7/drizzled/cursor.h
 usr/local/include/drizzle7/drizzled/daemon.h
 usr/local/include/drizzle7/drizzled/data_home.h
-usr/local/include/drizzle7/drizzled/db.h
 usr/local/include/drizzle7/drizzled/debug.h
 usr/local/include/drizzle7/drizzled/definition/cache.h
 usr/local/include/drizzle7/drizzled/definitions.h
@@ -81,6 +80,8 @@ usr/local/include/drizzle7/drizzled/filesort.h
 usr/local/include/drizzle7/drizzled/filesort_info.h
 usr/local/include/drizzle7/drizzled/foreign_key.h
 usr/local/include/drizzle7/drizzled/function/additive_op.h
+usr/local/include/drizzle7/drizzled/function/bit.h
+usr/local/include/drizzle7/drizzled/function/bit/functions.h
 usr/local/include/drizzle7/drizzled/function/cast/boolean.h
 usr/local/include/drizzle7/drizzled/function/cast/signed.h
 usr/local/include/drizzle7/drizzled/function/cast/time.h
@@ -249,6 +250,7 @@ usr/local/include/drizzle7/drizzled/join_table.h
 usr/local/include/drizzle7/drizzled/key.h
 usr/local/include/drizzle7/drizzled/key_map.h
 usr/local/include/drizzle7/drizzled/key_part_spec.h
+usr/local/include/drizzle7/drizzled/kill.h
 usr/local/include/drizzle7/drizzled/korr.h
 usr/local/include/drizzle7/drizzled/lex_column.h
 usr/local/include/drizzle7/drizzled/lex_input_stream.h
@@ -266,6 +268,7 @@ usr/local/include/drizzle7/drizzled/message/catalog.h
 usr/local/include/drizzle7/drizzled/message/catalog.pb.h
 usr/local/include/drizzle7/drizzled/message/engine.pb.h
 usr/local/include/drizzle7/drizzled/message/event.pb.h
+usr/local/include/drizzle7/drizzled/message/replication_options.pb.h
 usr/local/include/drizzle7/drizzled/message/resultset.pb.h
 usr/local/include/drizzle7/drizzled/message/schema.h
 usr/local/include/drizzle7/drizzled/message/schema.pb.h
@@ -324,6 +327,7 @@ usr/local/include/drizzle7/drizzled/plugin/authentication.h
 usr/local/include/drizzle7/drizzled/plugin/authorization.h
 usr/local/include/drizzle7/drizzled/plugin/catalog.h
 usr/local/include/drizzle7/drizzled/plugin/client.h
+usr/local/include/drizzle7/drizzled/plugin/client/cached.h
 usr/local/include/drizzle7/drizzled/plugin/client/concurrent.h
 usr/local/include/drizzle7/drizzled/plugin/daemon.h
 usr/local/include/drizzle7/drizzled/plugin/error_message.h
@@ -357,6 +361,7 @@ usr/local/include/drizzle7/drizzled/records.h
 usr/local/include/drizzle7/drizzled/refresh_version.h
 usr/local/include/drizzle7/drizzled/replication_services.h
 usr/local/include/drizzle7/drizzled/resource_context.h
+usr/local/include/drizzle7/drizzled/schema.h
 usr/local/include/drizzle7/drizzled/select_create.h
 usr/local/include/drizzle7/drizzled/select_dump.h
 usr/local/include/drizzle7/drizzled/select_dumpvar.h
@@ -382,6 +387,9 @@ usr/local/include/drizzle7/drizzled/show.h
 usr/local/include/drizzle7/drizzled/show_type.h
 usr/local/include/drizzle7/drizzled/signal_handler.h
 usr/local/include/drizzle7/drizzled/sort_field.h
+usr/local/include/drizzle7/drizzled/sql/exception.h
+usr/local/include/drizzle7/drizzled/sql/result_set.h
+usr/local/include/drizzle7/drizzled/sql/result_set_meta_data.h
 usr/local/include/drizzle7/drizzled/sql_base.h
 usr/local/include/drizzle7/drizzled/sql_error.h
 usr/local/include/drizzle7/drizzled/sql_lex.h
@@ -439,7 +447,6 @@ usr/local/include/drizzle7/drizzled/statement/update.h
 usr/local/include/drizzle7/drizzled/statistics_variables.h
 usr/local/include/drizzle7/drizzled/status_helper.h
 usr/local/include/drizzle7/drizzled/stored_key.h
-usr/local/include/drizzle7/drizzled/strfunc.h
 usr/local/include/drizzle7/drizzled/structs.h
 usr/local/include/drizzle7/drizzled/symbol_hash.h
 usr/local/include/drizzle7/drizzled/sys_var.h
@@ -475,7 +482,6 @@ usr/local/include/drizzle7/drizzled/type/decimal.h
 usr/local/include/drizzle7/drizzled/type/time.h
 usr/local/include/drizzle7/drizzled/type/uuid.h
 usr/local/include/drizzle7/drizzled/typelib.h
-usr/local/include/drizzle7/drizzled/tzfile.h
 usr/local/include/drizzle7/drizzled/tztime.h
 usr/local/include/drizzle7/drizzled/unique.h
 usr/local/include/drizzle7/drizzled/unireg.h
@@ -486,6 +492,7 @@ usr/local/include/drizzle7/drizzled/utf8/unchecked.h
 usr/local/include/drizzle7/drizzled/utf8/utf8.h
 usr/local/include/drizzle7/drizzled/util/backtrace.h
 usr/local/include/drizzle7/drizzled/util/convert.h
+usr/local/include/drizzle7/drizzled/util/find_ptr.h
 usr/local/include/drizzle7/drizzled/util/functors.h
 usr/local/include/drizzle7/drizzled/util/gmtime.h
 usr/local/include/drizzle7/drizzled/util/storable.h
@@ -589,8 +596,8 @@ usr/local/lib/drizzle7/libshutdown_function_plugin.la
 usr/local/lib/drizzle7/libshutdown_function_plugin.so
 usr/local/lib/drizzle7/libsimple_user_policy_plugin.la
 usr/local/lib/drizzle7/libsimple_user_policy_plugin.so
-usr/local/lib/drizzle7/libsleep_plugin.la
-usr/local/lib/drizzle7/libsleep_plugin.so
+usr/local/lib/drizzle7/libslave_plugin.la
+usr/local/lib/drizzle7/libslave_plugin.so
 usr/local/lib/drizzle7/libstorage_engine_api_tester_plugin.la
 usr/local/lib/drizzle7/libstorage_engine_api_tester_plugin.so
 usr/local/lib/drizzle7/libsubstr_functions_plugin.la

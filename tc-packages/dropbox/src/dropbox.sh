@@ -34,8 +34,8 @@ exit 0
 }
 
 case $1 in
-  force) force_start ;;
-  help)	echo "${YELLOW}Usage: $0 force|*=start|help${NORMAL}" ; exit 0 ;;
+  -f|--force) force_start ;;
+  -h|--help)	echo "${YELLOW}Usage: $0 [OPTIONS]; where options are -f|--force| to force start dropbox daemon or -h|--help to print this message and exit${NORMAL}" ; exit 0 ;;
   *) start ;;
 esac
 
