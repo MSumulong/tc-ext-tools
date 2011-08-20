@@ -1,6 +1,6 @@
 #!/bin/sh
 
-XYZ=260.19.21
+XYZ=280.13
 
 [ -d /etc/OpenCL ] || ln -s /usr/local/etc/OpenCL /etc/OpenCL
 

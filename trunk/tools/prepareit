@@ -27,8 +27,8 @@
 
 TET_ROOT="$(dirname $0)/.."
 
-if [ -f "$TET_ROOT/etctet/functions" ]; then
-     . "$TET_ROOT/etctet/functions"
+if [ -f "$TET_ROOT/etc/tet/functions" ]; then
+     . "$TET_ROOT/etc/tet/functions"
 else
      echo "${RED}$(basename $0):${BLUE} tc-ext-tools functions file not found!${NORMAL}"
      exit 1
@@ -39,24 +39,26 @@ if [ -n "$HAVE_TET_LOAD" -a ! -f "$PACKAGE_LOAD_STAMP" ]; then
      exit 1
 fi
 
-LINUX_DIR=linux-${KERNEL_VER}
-LINUX_SOURCE=linux-${KERNEL_VER}-patched.tbz2
-KERNEL_MIRROR=${TCMIRROR}/${TCVER}/release/src/kernel
-KERNEL_CONFIG=config-${KERNEL}
+LINUX_DIR="linux-${KERNEL_VER}"
+LINUX_SRC="${TET_LINUX}/${KERNEL}/${LINUX_DIR}"
+LINUX_SOURCE="linux-${KERNEL_VER}-patched.tbz2"
+KERNEL_MIRROR="${TCMIRROR}/${TCVER}/release/src/kernel"
+KERNEL_CONFIG="config-${KERNEL}"
+DL="${TET_LINUX}/dl"
 
 this_main() {
 
    [ -d "$TET_LINUX" ] || mkdir -p "$TET_LINUX"
    cd "$TET_LINUX"
 
-   [ -d dl ] || mkdir dl
+   [ -d "$DL" ] || mkdir -p "$DL"
 
-   if [ ! -f "${TET_LINUX}/dl/${LINUX_SOURCE}" ]; then
-        wget ${KERNEL_MIRROR}/${LINUX_SOURCE} -O ${TET_LINUX}/dl/${LINUX_SOURCE} || return 1
+   if [ ! -f "${DL}/${LINUX_SOURCE}" ]; then
+        wget "${KERNEL_MIRROR}/${LINUX_SOURCE}" -O "${DL}/${LINUX_SOURCE}" || return 1
    fi
 
-   if [ ! -f "${TET_LINUX}/${KERNEL_CONFIG}" ]; then
-        wget ${KERNEL_MIRROR}/${KERNEL_CONFIG} -O ${TET_LINUX}/dl/${KERNEL_CONFIG} || return 1
+   if [ ! -f "${DL}/${KERNEL_CONFIG}" ]; then
+        wget "${KERNEL_MIRROR}/${KERNEL_CONFIG}" -O "${DL}/${KERNEL_CONFIG}" || return 1
    fi
 
    [ -d "$KERNEL" ] || mkdir "$KERNEL"
@@ -64,15 +66,15 @@ this_main() {
 
    [ -d "$LINUX_DIR" ] && sudo rm -rf "$LINUX_DIR"
 
-   tar -xf "${TET_LINUX}/dl/${LINUX_SOURCE}" || return 1
+   tar -xf "${DL}/${LINUX_SOURCE}" || return 1
 
    cd "$LINUX_DIR"
 
-   cp -f ${TET_LINUX}/dl/${KERNEL_CONFIG} .config
+   cp -f "${DL}/${KERNEL_CONFIG}" .config
 
    if [ "$ARCH" = x86_64 ]; then
-        make ARCH=$ARCH CROSS_COMPILE=$CROSS_COMPILE oldconfig || return 1
-        make ARCH=$ARCH CROSS_COMPILE=$CROSS_COMPILE modules_prepare || return 1
+        make ARCH="$ARCH" CROSS_COMPILE="$CROSS_COMPILE" oldconfig || return 1
+        make ARCH="$ARCH" CROSS_COMPILE="$CROSS_COMPILE" modules_prepare || return 1
    else
         make oldconfig || return 1
         make modules_prepare || return 1

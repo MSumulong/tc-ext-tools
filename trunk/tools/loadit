@@ -27,8 +27,8 @@
 
 TET_ROOT="$(dirname $0)/.."
 
-if [ -f "$TET_ROOT/etctet/functions" ]; then
-        . "$TET_ROOT/etctet/functions"
+if [ -f "$TET_ROOT/etc/tet/functions" ]; then
+        . "$TET_ROOT/etc/tet/functions"
 else
         echo "${RED}$(basename $0):${BLUE} tc-ext-tools functions file not found!${NORMAL}"
         exit 1
