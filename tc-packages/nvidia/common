@@ -1,7 +1,7 @@
 PACKAGE="nvidia"
 VERSION="260.19.21"
 SOURCE="ftp://download.nvidia.com/XFree86/Linux-x86/${VERSION}/NVIDIA-Linux-x86-${VERSION}.run"
-BUILD_DEPENDS="linux-headers-2.6.33.3-tinycore"
+BUILD_DEPENDS="#linux-headers-2.6.33.3-tinycore"
 
 DESCRIPTION="NVIDIA Linux Drivers."
 AUTHOR="NVIDIA"

@@ -9,13 +9,13 @@
 PACKAGE_MAINTAINER="${USER}"
 
 # tc-ext-tools packages directory
-TCEXTTOOLS_PACKAGES="${HOME}/tc-ext-tools/packages"
+TET_PACKAGES="${HOME}/tc-ext-tools/packages"
 
 # tc-ext-tools storage directory
-TCEXTTOOLS_STORAGE="${HOME}/tc-ext-tools/storage"
+TET_STORAGE="${HOME}/tc-ext-tools/storage"
 
 # tc-ext-tools packages database directory
-TCEXTTOOLS_PACKAGES_DATABASE="${HOME}/.local/share/tc-ext-tools/packages_db"
+TET_PACKAGES_DATABASE="${HOME}/.local/share/tc-ext-tools/packages_db"
 
 # tc-ext-tools text editor
-TCEXTTOOLS_EDITOR=editor
+TET_EDITOR=editor

@@ -40,9 +40,9 @@ DATADIR=$DESTDIR/share
 
 install -m 755 tools/* $BINDIR
 
-install -D -m 644 common/build $DATADIR/tc-ext-tools/build
-install -D -m 644 common/config $SYSCONFDIR/tc-ext-tools/config
-install -D -m 755 common/functions $SYSCONFDIR/tc-ext-tools/functions
+install -D -m 644 common/build $DATADIR/tet/build
+install -D -m 644 common/config $SYSCONFDIR/tet/config
+install -D -m 755 common/functions $SYSCONFDIR/tet/functions
 install -D -m 755 common/tet-functions $SYSCONFDIR/init.d/tet-functions
 
 sudo ln -sf $SYSCONFDIR/init.d/tet-functions /etc/init.d/tet-functions
@@ -57,5 +57,5 @@ if ! grep tet-functions /opt/.filetool.lst >/dev/null; then
   echo "etc/init.d/tet-functions" >> /opt/.filetool.lst
 fi
 
-install -D -m 644 -o $USER -g staff .config $HOME/.config/tc-ext-tools.conf
+install -D -m 644 -o $USER -g staff .config $HOME/.config/tet.conf
 

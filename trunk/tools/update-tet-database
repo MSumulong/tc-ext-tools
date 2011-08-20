@@ -26,46 +26,46 @@
 . /etc/init.d/tc-functions
 
 THIS=$(basename $0)
-TCEXTTOOLS_ROOT="$(dirname $0)/.."
+TET_ROOT="$(dirname $0)/.."
 
 if [ $(id -u) = 0 ]; then
      echo "${RED}Do not run $THIS as root!${NORMAL}"
      exit 1
 fi
 
-if [ -f "$TCEXTTOOLS_ROOT/etc/tc-ext-tools/config" ]; then
-     . "$TCEXTTOOLS_ROOT/etc/tc-ext-tools/config"
+if [ -f "$TET_ROOT/etctet/config" ]; then
+     . "$TET_ROOT/etctet/config"
 else
      echo "${RED}${THIS}: default configuration file not found!${NORMAL}"
      exit 1
 fi
 
-if [ -f "$HOME/.config/tc-ext-tools.conf" ]; then
-     . "$HOME/.config/tc-ext-tools.conf"
+if [ -f "$HOME/.configtet.conf" ]; then
+     . "$HOME/.configtet.conf"
 else
     echo "${RED}${THIS}: user configuration file not found!${NORMAL}"
     exit 1
 fi
 
-if [ -z "$TCEXTTOOLS_PACKAGES_DATABASE" ]; then
+if [ -z "$TET_PACKAGES_DATABASE" ]; then
      echo "${RED}Check your configuration file!${NORMAL}"
      exit 1
 fi
 
 echo -e "${BLUE}Checking if the packages database exists ... \c${NORMAL}"
-if [ ! -f "$TCEXTTOOLS_PACKAGES_DATABASE"/packages.db ]; then
+if [ ! -f "$TET_PACKAGES_DATABASE"/packages.db ]; then
        echo "${YELLOW}no${NORMAL}"
        echo "${GREEN}Initializing the packages database${NORMAL}"
-       [ -d "$TCEXTTOOLS_PACKAGES_DATABASE" ] || mkdir -p "$TCEXTTOOLS_PACKAGES_DATABASE"
-       cd "$TCEXTTOOLS_PACKAGES_DATABASE"
+       [ -d "$TET_PACKAGES_DATABASE" ] || mkdir -p "$TET_PACKAGES_DATABASE"
+       cd "$TET_PACKAGES_DATABASE"
        touch packages.db
 else
        echo "${CYAN}yes${NORMAL}"
 fi
 
-PACKAGES=$(find $TCEXTTOOLS_PACKAGES -type f -name common -a -not -path "*/extensions/*/common" | sort)
+PACKAGES=$(find $TET_PACKAGES -type f -name common -a -not -path "*/extensions/*/common" | sort)
 
-cd "$TCEXTTOOLS_PACKAGES_DATABASE"
+cd "$TET_PACKAGES_DATABASE"
 
 echo "${BLUE}Updating the packages database${NORMAL}"
 for package in $PACKAGES
@@ -92,7 +92,7 @@ elif [ -n "$UPDATE" ]; then
 fi
 
 if [ -n "$ADD" -o -n "$UPDATE" ]; then
-   cat > "$TCEXTTOOLS_PACKAGES_DATABASE/$PACKAGE" << _EOF
+   cat > "$TET_PACKAGES_DATABASE/$PACKAGE" << _EOF
 PACKAGE_NAME="$PACKAGE"
 PACKAGE_VERSION="$VERSION"
 PACKAGE_DESCRIPTION="$DESCRIPTION"

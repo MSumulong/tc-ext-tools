@@ -1,0 +1,98 @@
+#!/bin/sh
+
+############################################################################
+#                                                                          #
+#        prepareit: prepares the kernel source for building modules        #
+#                                                                          #
+############################################################################
+
+#
+#  This program is free software; you can redistribute it and/or modify
+#  it under the terms of the GNU General Public License as published by
+#  the Free Software Foundation; either KERNEL_VER 2 of the License, or
+#  (at your option) any later KERNEL_VER.
+#
+#  This program is distributed in the hope that it will be useful,
+#  but WITHOUT ANY WARRANTY; without even the implied warranty of
+#  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+#  GNU General Public License for more details.
+#
+#  You should have received a copy of the GNU General Public License
+#  along with this program.  If not, see <http://www.gnu.org/licenses/>.
+#
+#  Copyright (c) 2011 Sercan Arslan <arslanserc@gmail.com>
+#
+
+. /etc/init.d/tc-functions
+
+TET_ROOT="$(dirname $0)/.."
+
+if [ -f "$TET_ROOT/etctet/functions" ]; then
+     . "$TET_ROOT/etctet/functions"
+else
+     echo "${RED}$(basename $0):${BLUE} tc-ext-tools functions file not found!${NORMAL}"
+     exit 1
+fi
+
+if [ -n "$HAVE_TET_LOAD" -a ! -f "$PACKAGE_LOAD_STAMP" ]; then
+     echo "${ERROR_COLOR}You must load it first!${NORMAL}"
+     exit 1
+fi
+
+LINUX_DIR=linux-${KERNEL_VER}
+LINUX_SOURCE=linux-${KERNEL_VER}-patched.tbz2
+KERNEL_MIRROR=${TCMIRROR}/${TCVER}/release/src/kernel
+KERNEL_CONFIG=config-${KERNEL}
+
+this_main() {
+
+   [ -d "$TET_LINUX" ] || mkdir -p "$TET_LINUX"
+   cd "$TET_LINUX"
+
+   [ -d dl ] || mkdir dl
+
+   if [ ! -f "${TET_LINUX}/dl/${LINUX_SOURCE}" ]; then
+        wget ${KERNEL_MIRROR}/${LINUX_SOURCE} -O ${TET_LINUX}/dl/${LINUX_SOURCE} || return 1
+   fi
+
+   if [ ! -f "${TET_LINUX}/${KERNEL_CONFIG}" ]; then
+        wget ${KERNEL_MIRROR}/${KERNEL_CONFIG} -O ${TET_LINUX}/dl/${KERNEL_CONFIG} || return 1
+   fi
+
+   [ -d "$KERNEL" ] || mkdir "$KERNEL"
+   cd "$KERNEL"
+
+   [ -d "$LINUX_DIR" ] && sudo rm -rf "$LINUX_DIR"
+
+   tar -xf "${TET_LINUX}/dl/${LINUX_SOURCE}" || return 1
+
+   cd "$LINUX_DIR"
+
+   cp -f ${TET_LINUX}/dl/${KERNEL_CONFIG} .config
+
+   if [ "$ARCH" = x86_64 ]; then
+        make ARCH=$ARCH CROSS_COMPILE=$CROSS_COMPILE oldconfig || return 1
+        make ARCH=$ARCH CROSS_COMPILE=$CROSS_COMPILE modules_prepare || return 1
+   else
+        make oldconfig || return 1
+        make modules_prepare || return 1
+   fi
+
+   return 0
+
+}
+
+[ -f "$PACKAGE_PREPARE_STAMP" ] && sudo rm -f "$PACKAGE_PREPARE_STAMP"
+
+echo -e "${MESSAGE_COLOR}Preparing the linux kernel ${HILIGHT_COLOR}$KERNEL${MESSAGE_COLOR} source ... ${NORMAL}\c"
+this_main > "$PACKAGE_MESSAGE_LOG" 2>&1
+if [ "$?" -gt 0 ]; then
+     echo "${ERROR_COLOR}failed!${NORMAL}"
+     echo "${WARNING_COLOR}For details: ${WARNING_COLOR_H}buildit print message${NORMAL}"
+     exit 1
+fi
+echo "${HILIGHT_COLOR}successful!${NORMAL}"
+
+touch "$PACKAGE_PREPARE_STAMP"
+
+exit 0

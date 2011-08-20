@@ -16,10 +16,10 @@ build_install() {
 
     install -d ${I_ROOT}/usr/local/bin
     install -d ${I_ROOT}/usr/local/share
-    install -d ${I_ROOT}/usr/local/share/${P_NAME}
+    install -d ${I_ROOT}/usr/local/share/${P_NAM}
     install -d ${I_ROOT}/usr/local/share/man/man1
 
-    install makeself.lsm README ${I_ROOT}/usr/local/share/${P_NAME}
+    install makeself.lsm README ${I_ROOT}/usr/local/share/${P_NAM}
     install -m755 makeself.sh ${I_ROOT}/usr/local/bin/makeself
     install -m755 makeself-header.sh ${I_ROOT}/usr/local/bin
     install -m644 makeself.1 ${I_ROOT}/usr/local/share/man/man1/

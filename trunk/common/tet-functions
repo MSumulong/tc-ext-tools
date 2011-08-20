@@ -24,20 +24,20 @@
 
 _tet_common() {
 
-   if [ -f "$HOME/.config/tc-ext-tools.conf" ]; then
-        . "$HOME/.config/tc-ext-tools.conf"
+   if [ -f "$HOME/.config/tet.conf" ]; then
+        . "$HOME/.config/tet.conf"
    else
         echo "$tc-ext-tools user configuration not found"
         return 1
    fi
 
-   if [ ! -d "$TCEXTTOOLS_PACKAGES_DATABASE" ]; then
+   if [ ! -d "$TET_PACKAGES_DATABASE" ]; then
         echo "You need to run update-tet-database at least once before using tet functions"
         return 1
    fi
 
    PACKAGE="$1"
-   if [ -f "$TCEXTTOOLS_PACKAGES_DATABASE/$PACKAGE" ]; then
+   if [ -f "$TET_PACKAGES_DATABASE/$PACKAGE" ]; then
         shift
         ARGS="$@"
    elif [ -f common ]; then
@@ -60,12 +60,12 @@ tetcd() {
    _tet_common $@ || return 1
 
    if [ -z "$@" ]; then
-        cd "$TCEXTTOOLS_PACKAGES"
+        cd "$TET_PACKAGES"
         return 0
    fi
 
-   if [ -f "$TCEXTTOOLS_PACKAGES_DATABASE/$PACKAGE" ]; then
-        . "$TCEXTTOOLS_PACKAGES_DATABASE/$PACKAGE"
+   if [ -f "$TET_PACKAGES_DATABASE/$PACKAGE" ]; then
+        . "$TET_PACKAGES_DATABASE/$PACKAGE"
    else
         echo "tetcd: No such package $PACKAGE"
         return 1
@@ -86,12 +86,12 @@ tetls() {
    _tet_common $@ || return 1
 
    if [ -z "$@" ]; then
-        ls "$TCEXTTOOLS_PACKAGES_DATABASE"
+        ls "$TET_PACKAGES_DATABASE"
         return 0
    fi
 
-   if [ -f "$TCEXTTOOLS_PACKAGES_DATABASE/$PACKAGE" ]; then
-        . "$TCEXTTOOLS_PACKAGES_DATABASE/$PACKAGE"
+   if [ -f "$TET_PACKAGES_DATABASE/$PACKAGE" ]; then
+        . "$TET_PACKAGES_DATABASE/$PACKAGE"
    else
         echo "tetls: No such package $PACKAGE"
         return 1
@@ -109,12 +109,12 @@ tetfind() {
    _tet_common $@ || return 1
 
    if [ -z "$@" ]; then
-        find "$TCEXTTOOLS_PACKAGES" -not -path *.svn*
+        find "$TET_PACKAGES" -not -path *.svn*
         return 0
    fi
 
-   if [ -f "$TCEXTTOOLS_PACKAGES_DATABASE/$PACKAGE" ]; then
-        . "$TCEXTTOOLS_PACKAGES_DATABASE/$PACKAGE"
+   if [ -f "$TET_PACKAGES_DATABASE/$PACKAGE" ]; then
+        . "$TET_PACKAGES_DATABASE/$PACKAGE"
    else
         echo "tetfind: No such package $PACKAGE"
         return 1
@@ -136,20 +136,20 @@ teted() {
         return 1
    fi
 
-   if [ -f "$TCEXTTOOLS_PACKAGES_DATABASE/$PACKAGE" ]; then
-        . "$TCEXTTOOLS_PACKAGES_DATABASE/$PACKAGE"
+   if [ -f "$TET_PACKAGES_DATABASE/$PACKAGE" ]; then
+        . "$TET_PACKAGES_DATABASE/$PACKAGE"
    else
         echo "teted: No such package $PACKAGE"
         return 1
    fi
 
-   if [ -z "$TCEXTTOOLS_EDITOR" ]; then
+   if [ -z "$TET_EDITOR" ]; then
         echo "teted: You need to set tc-ext-tools editor"
         return 1
    fi
 
-   if ! which "$TCEXTTOOLS_EDITOR" >/dev/null 2>&1; then
-        echo "teted: Editor $TCEXTTOOLS_EDITOR not found"
+   if ! which "$TET_EDITOR" >/dev/null 2>&1; then
+        echo "teted: Editor $TET_EDITOR not found"
         return 1
    fi
 
@@ -173,7 +173,7 @@ teted() {
         echo "teted: No such file(s)"
         return 1
    elif [ $file_cnt = 1 ]; then
-        $TCEXTTOOLS_EDITOR $FILES &
+        $TET_EDITOR $FILES &
    else
         echo "teted: More than one file found"
         echo "Choose one of the options below"
@@ -201,7 +201,7 @@ teted() {
         do
             index=`expr $index + 1`
             if [ $index = $ans ]; then
-                 $TCEXTTOOLS_EDITOR $FILE &
+                 $TET_EDITOR $FILE &
                  return 0
             fi
         done
@@ -209,7 +209,7 @@ teted() {
         if [ $index = $ans ]; then
              for FILE in $FILES
              do
-                 $TCEXTTOOLS_EDITOR $FILE &
+                 $TET_EDITOR $FILE &
              done
         fi
    fi
