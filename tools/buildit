@@ -27,8 +27,8 @@
 
 TET_ROOT="$(dirname $0)/.."
 
-if [ -f "$TET_ROOT/etctet/functions" ]; then
-     . "$TET_ROOT/etctet/functions"
+if [ -f "$TET_ROOT/etc/tet/functions" ]; then
+     . "$TET_ROOT/etc/tet/functions"
 else
      echo "${RED}$(basename $0):${BLUE} tc-ext-tools functions file not found!${NORMAL}"
      exit 1
@@ -36,7 +36,7 @@ fi
 
 print_usage(){
    echo -e "${WARNING_COLOR}${THIS} usage:"
-   echo -e "\n\t${WARNING_COLOR_H}${THIS} -c,clean|-l,load|-d,download|-x,convert|-u,unpack|-pt,patch|-cn,configure|-cm,compile|-i,install|-sp,split|-st,strip|-cr,create|-ch,check|-g,generate|-pk,package|-cs,custom|-e,encrypt|-pr,prepare|-p,print|-h,help${NORMAL}"
+   echo -e "\n\t${WARNING_COLOR_H}${THIS} -c,clean|-l,load|-pr,prepare|-d,download|-x,convert|-u,unpack|-pt,patch|-cn,configure|-cm,compile|-i,install|-sp,split|-st,strip|-cr,create|-ch,check|-g,generate|-pk,package|-cs,custom|-e,encrypt|-p,print|-h,help${NORMAL}"
    exit 0
 }
 

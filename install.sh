@@ -31,21 +31,21 @@ else
   . .config
 fi
 
-[ -z "$DESTDIR" ] && DESTDIR=$HOME/.local
-BINDIR=$DESTDIR/bin
-SYSCONFDIR=$DESTDIR/etc
-DATADIR=$DESTDIR/share
+[ -z "$DESTDIR" ] && DESTDIR="$HOME/.local"
+BINDIR="$DESTDIR/bin"
+SYSCONFDIR="$DESTDIR/etc"
+DATADIR="$DESTDIR/share"
 
-[ -d "$BINDIR" ] || install -m 755 -d $BINDIR
+[ -d "$BINDIR" ] || install -m 755 -d "$BINDIR"
 
-install -m 755 tools/* $BINDIR
+install -m 755 tools/* "$BINDIR"
 
-install -D -m 644 common/build $DATADIR/tet/build
-install -D -m 644 common/config $SYSCONFDIR/tet/config
-install -D -m 755 common/functions $SYSCONFDIR/tet/functions
-install -D -m 755 common/tet-functions $SYSCONFDIR/init.d/tet-functions
+install -D -m 644 common/build "$DATADIR/tet/build"
+install -D -m 644 common/config "$SYSCONFDIR/tet/config"
+install -D -m 755 common/functions "$SYSCONFDIR/tet/functions"
+install -D -m 755 common/tet-functions "$SYSCONFDIR/init.d/tet-functions"
 
-sudo ln -sf $SYSCONFDIR/init.d/tet-functions /etc/init.d/tet-functions
+sudo ln -sf "$SYSCONFDIR/init.d/tet-functions" /etc/init.d/tet-functions
 
 # source tc-ext-tools shell environment functions in user's ashrc
 if ! grep tet-functions ~/.ashrc >/dev/null; then
@@ -57,5 +57,5 @@ if ! grep tet-functions /opt/.filetool.lst >/dev/null; then
   echo "etc/init.d/tet-functions" >> /opt/.filetool.lst
 fi
 
-install -D -m 644 -o $USER -g staff .config $HOME/.config/tet.conf
+install -D -m 644 -o "$USER" .config "$HOME/.config/tet.conf"
 

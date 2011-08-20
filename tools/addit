@@ -27,15 +27,15 @@
 
 TET_ROOT="$(dirname $0)/.."
 
-if [ -f "$TET_ROOT/etctet/config" ]; then
-     . "$TET_ROOT/etctet/config"
+if [ -f "$TET_ROOT/etc/tet/config" ]; then
+     . "$TET_ROOT/etc/tet/config"
 else
      echo "${RED}${THIS}: default configuration file not found!${NORMAL}"
      exit 1
 fi
 
-if [ -f "$HOME/.configtet.conf" ]; then
-     . "$HOME/.configtet.conf"
+if [ -f "$HOME/.config/tet.conf" ]; then
+     . "$HOME/.config/tet.conf"
 else
     echo "${RED}${THIS}: user configuration file not found!${NORMAL}"
     exit 1
@@ -85,11 +85,11 @@ if [ -z "$GROUP_DIR" ]; then
      GROUP_DIR=.
 fi
 
-if [ -f "$TET_ROOT/etctet/functions" ]; then
+if [ -f "$TET_ROOT/etc/tet/functions" ]; then
      [ -d "$TET_PACKAGES/$GROUP_DIR/$PACKAGE" ] || mkdir -p "$TET_PACKAGES/$GROUP_DIR/$PACKAGE"
      cd "$TET_PACKAGES/$GROUP_DIR/$PACKAGE"
 
-     . "$TET_ROOT/etctet/functions"
+     . "$TET_ROOT/etc/tet/functions"
 else
      echo "${RED}$(basename $0):${BLUE} tc-ext-tools functions file not found!${NORMAL}"
      exit 1
