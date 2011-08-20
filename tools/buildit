@@ -25,10 +25,10 @@
 
 . /etc/init.d/tc-functions
 
-TCEXTTOOLS_ROOT="$(dirname $0)/.."
+TET_ROOT="$(dirname $0)/.."
 
-if [ -f "$TCEXTTOOLS_ROOT/etc/tc-ext-tools/functions" ]; then
-     . "$TCEXTTOOLS_ROOT/etc/tc-ext-tools/functions"
+if [ -f "$TET_ROOT/etctet/functions" ]; then
+     . "$TET_ROOT/etctet/functions"
 else
      echo "${RED}$(basename $0):${BLUE} tc-ext-tools functions file not found!${NORMAL}"
      exit 1
@@ -42,6 +42,18 @@ print_usage(){
 
 clean_it() {
    cleanit || exit 1
+}
+
+load_it() {
+   loadit || exit 1
+}
+
+prepare_it() {
+   if [ -f "$PACKAGE_PREPARE_STAMP" ]; then
+        echo "${WARNING_COLOR}The linux kernel ${WARNING_COLOR_H}$KERNEL${WARNING_COLOR} source is already prepared.${NORMAL}"
+        exit 0
+   fi
+   prepareit || exit 1
 }
 
 download_it() {
@@ -62,10 +74,6 @@ convert_it() {
 
 unpack_it() {
    unpackit || exit 1
-}
-
-load_it() {
-   loadit || exit 1
 }
 
 patch_it() {
@@ -127,12 +135,6 @@ build_custom() {
         exit 1
    fi
    echo "${HILIGHT_COLOR}successful!${NORMAL}"
-}
-
-prepare_it() {
-   [ -d "$TET_LINUX_ROOT" ] || mkdir -p "$TET_LINUX_ROOT"
-   cd "$TET_LINUX_ROOT"
-   modules-prepare.sh || exit 1
 }
 
 build_it() {
@@ -241,7 +243,7 @@ tet_custom() {
    buildit custom "$1" || exit 1
 }
 
-tet_modules_prepare() {
+tet_prepare() {
    buildit prepare || exit 1
 }
 
@@ -255,6 +257,7 @@ fi
 
 case "$1" in
    -c|clean) clean_it ;;
+   -pr|prepare) prepare_it ;;
    -d|download) download_it ;;
    -x|convert) convert_it ;;
    -u|unpack) unpack_it ;; 
@@ -272,7 +275,6 @@ case "$1" in
    -e|encrypt) encrypt_it ;;
    -p|print) print_it "$2" ;;
    -cs|custom) build_custom "$2" ;;
-   -pr|prepare) prepare_it ;;
    -h|help|*) print_usage ;;
 esac
 

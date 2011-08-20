@@ -25,17 +25,17 @@
 
 . /etc/init.d/tc-functions
 
-TCEXTTOOLS_ROOT="$(dirname $0)/.."
+TET_ROOT="$(dirname $0)/.."
 
-if [ -f "$TCEXTTOOLS_ROOT/etc/tc-ext-tools/config" ]; then
-     . "$TCEXTTOOLS_ROOT/etc/tc-ext-tools/config"
+if [ -f "$TET_ROOT/etctet/config" ]; then
+     . "$TET_ROOT/etctet/config"
 else
      echo "${RED}${THIS}: default configuration file not found!${NORMAL}"
      exit 1
 fi
 
-if [ -f "$HOME/.config/tc-ext-tools.conf" ]; then
-     . "$HOME/.config/tc-ext-tools.conf"
+if [ -f "$HOME/.configtet.conf" ]; then
+     . "$HOME/.configtet.conf"
 else
     echo "${RED}${THIS}: user configuration file not found!${NORMAL}"
     exit 1
@@ -85,11 +85,11 @@ if [ -z "$GROUP_DIR" ]; then
      GROUP_DIR=.
 fi
 
-if [ -f "$TCEXTTOOLS_ROOT/etc/tc-ext-tools/functions" ]; then
-     [ -d "$TCEXTTOOLS_PACKAGES/$GROUP_DIR/$PACKAGE" ] || mkdir -p "$TCEXTTOOLS_PACKAGES/$GROUP_DIR/$PACKAGE"
-     cd "$TCEXTTOOLS_PACKAGES/$GROUP_DIR/$PACKAGE"
+if [ -f "$TET_ROOT/etctet/functions" ]; then
+     [ -d "$TET_PACKAGES/$GROUP_DIR/$PACKAGE" ] || mkdir -p "$TET_PACKAGES/$GROUP_DIR/$PACKAGE"
+     cd "$TET_PACKAGES/$GROUP_DIR/$PACKAGE"
 
-     . "$TCEXTTOOLS_ROOT/etc/tc-ext-tools/functions"
+     . "$TET_ROOT/etctet/functions"
 else
      echo "${RED}$(basename $0):${BLUE} tc-ext-tools functions file not found!${NORMAL}"
      exit 1
@@ -198,7 +198,7 @@ _EOF
    fi
 
    echo "Installing the package build file."
-   install -m 644 "$TCEXTTOOLS_ROOT/share/tc-ext-tools/build" "$PACKAGE_BUILD" || return 1
+   install -m 644 "$TET_ROOT/sharetet/build" "$PACKAGE_BUILD" || return 1
 
    echo "Creating the package extensions install and dep files."
    for EXTENSION in $EXTENSIONS

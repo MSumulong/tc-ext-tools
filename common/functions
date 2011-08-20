@@ -38,8 +38,8 @@ else
 fi
 
 # source default configuration
-if [ -f "$TCEXTTOOLS_ROOT/etc/tc-ext-tools/config" ]; then
-     . "$TCEXTTOOLS_ROOT/etc/tc-ext-tools/config"
+if [ -f "$TET_ROOT/etc/tc-ext-tools/config" ]; then
+     . "$TET_ROOT/etc/tc-ext-tools/config"
 else
      echo "${RED}${THIS}: default configuration file not found!${NORMAL}"
      exit 1
@@ -173,16 +173,16 @@ set_source() {
 set_depends() {
 
      if [ "$PACKAGE_SOURCE_URL_TYPE" = svn ]; then
-          TCEXTTOOLS_DEPENDS="$TCEXTTOOLS_DEPENDS svn"
+          TET_DEPENDS="$TET_DEPENDS svn"
      elif [ "$PACKAGE_SOURCE_URL_TYPE" = git ]; then
-          TCEXTTOOLS_DEPENDS="$TCEXTTOOLS_DEPENDS git"
+          TET_DEPENDS="$TET_DEPENDS git"
      fi
 
      if [ "$PACKAGE_SOURCE_TYPE" = zip ]; then
-          TCEXTTOOLS_DEPENDS="$TCEXTTOOLS_DEPENDS zip-unzip"
+          TET_DEPENDS="$TET_DEPENDS zip-unzip"
      fi
 
-     PACKAGE_BUILD_DEPENDS=$(echo "$TCEXTTOOLS_DEPENDS $BUILD_DEPENDS" | sed -e "s/KERNEL/${KERNEL}/")
+     PACKAGE_BUILD_DEPENDS=$(echo "$TET_DEPENDS $BUILD_DEPENDS" | sed -e "s/KERNEL/${KERNEL}/")
 
 }
 
@@ -280,6 +280,9 @@ set_date
 # sets the tcl system variables
 set_tcl_system() {
 
+   TCMIRROR=http://distro.ibiblio.org/pub/linux/distributions/tinycorelinux/
+   TCVER=3.x
+
    TCUSER=$(cat /etc/sysconfig/tcuser)
    TCE_DIR=$(cat /opt/.tce_dir)
    TCLOOP=/tmp/tcloop
@@ -287,21 +290,23 @@ set_tcl_system() {
 
    if [ -n "$(echo $KERNEL | grep tinycore64)" ]; then
         ARCH=x86_64
-        TCEXTTOOLS_DEPENDS="$TCEXTTOOLS_DEPENDS toolchain64"
+        KERNEL_VER=${KERNEL%-tinycore64}
+        TET_DEPENDS="$TET_DEPENDS toolchain64"
         CROSS_COMPILE=x86_64-unknown-linux-gnu-
         CC=${CROSS_COMPILE}gcc
         LD=${CROSS_COMPILE}ld
         export PATH="/usr/local/x64/bin:$PATH"
    else
         ARCH=i686
-        TCEXTTOOLS_CFLAGS="-march=i486 -mtune=i686 -Os -pipe"
-        TCEXTTOOLS_CXXFLAGS="-march=i486 -mtune=i686 -Os -pipe"
-        TCEXTTOOLS_LDFLAGS="-Wl,-O1"
+        KERNEL_VER=${KERNEL%-tinycore}
+        TET_CFLAGS="-march=i486 -mtune=i686 -Os -pipe"
+        TET_CXXFLAGS="-march=i486 -mtune=i686 -Os -pipe"
+        TET_LDFLAGS="-Wl,-O1"
    fi
 
-   [ -z "$CFLAGS" ] && export CFLAGS="$TCEXTTOOLS_CFLAGS"
-   [ -z "$CXXFLAGS" ] && export CXXFLAGS="$TCEXTTOOLS_CXXFLAGS"
-   [ -z "$LDFLAGS" ] && export LDFLAGS="$TCEXTTOOLS_LDFLAGS"
+   [ -z "$CFLAGS" ] && export CFLAGS="$TET_CFLAGS"
+   [ -z "$CXXFLAGS" ] && export CXXFLAGS="$TET_CXXFLAGS"
+   [ -z "$LDFLAGS" ] && export LDFLAGS="$TET_LDFLAGS"
 
 }
 
@@ -319,7 +324,7 @@ PACKAGE_PATCHES="$PACKAGE_SRC/patches"
 if [ "$THIS" != "addit" ] && [ -f "$PACKAGE_COMMON" ]; then
      . "$PACKAGE_COMMON"
 
-     _PACKAGE_ROOT="$TCEXTTOOLS_STORAGE/$PACKAGE"
+     _PACKAGE_ROOT="$TET_STORAGE/$PACKAGE"
      PACKAGE_BIN="$_PACKAGE_ROOT/bin"
      _PACKAGE_SRC="$_PACKAGE_ROOT/src"
      PACKAGE_LOG="$_PACKAGE_ROOT/log"
@@ -336,7 +341,7 @@ if [ "$THIS" != "addit" ] && [ -f "$PACKAGE_COMMON" ]; then
      PACKAGE_PACKAGE="$PACKAGE_PKG/${PACKAGE}.tar.bz2"
      PACKAGE_PACKAGE_ENCRYPTED="$PACKAGE_PKG/${PACKAGE}.tar.bz2.bfe"
 
-     TET_LINUX_ROOT="$TCEXTTOOLS_STORAGE/linux"
+     TET_LINUX="$TET_STORAGE/linux"
      INSTALL_ROOT="$PACKAGE_INSTALL_ROOT"
      PREFIX=/usr/local
 
@@ -358,7 +363,7 @@ if [ "$THIS" != "addit" ] && [ -f "$PACKAGE_COMMON" ]; then
      I_ROOT="$INSTALL_ROOT"
 
      # create directories
-     [ -d "$TCEXTTOOLS_STORAGE" ] || sudo install -m 755 -d -o "$TCUSER" -g staff "$TCEXTTOOLS_STORAGE"
+     [ -d "$TET_STORAGE" ] || sudo install -m 755 -d -o "$TCUSER" -g staff "$TET_STORAGE"
      [ -d "$PACKAGE_BIN" ] || install -m 755 -d "$PACKAGE_BIN"
      [ -d "$_PACKAGE_SRC" ] || install -m 755 -d "$_PACKAGE_SRC"
      [ -d "$PACKAGE_PKG" ] || install -m 755 -d "$PACKAGE_PKG"
@@ -379,6 +384,7 @@ fi
 get_rules() {
 
    [ $(grep -v '^#' $PACKAGE_BUILD | grep -w tet_load) ] && HAVE_TET_LOAD=y
+   [ $(grep -v '^#' $PACKAGE_BUILD | grep -w tet_prepare) ] && HAVE_TET_PREPARE=y
    [ $(grep -v '^#' $PACKAGE_BUILD | grep -w tet_download) ] && HAVE_TET_DOWNLOAD=y
    [ $(grep -v '^#' $PACKAGE_BUILD | grep -w tet_convert) ] && HAVE_TET_CONVERT=y
    [ $(grep -v '^#' $PACKAGE_BUILD | grep -w tet_unpack) ] && HAVE_TET_UNPACK=y
@@ -397,6 +403,8 @@ get_rules() {
 
 set_stamps() {
 
+   PACKAGE_LOAD_STAMP="$PACKAGE_PKG/load.stamp"
+   PACKAGE_PREPARE_STAMP="$TET_LINUX/$KERNEL/prepare.stamp"
    PACKAGE_DOWNLOAD_STAMP="$_PACKAGE_SRC/download.stamp"
    PACKAGE_CONVERT_STAMP="$_PACKAGE_SRC/convert.stamp"
    PACKAGE_UNPACK_STAMP="$PACKAGE_SRC_TEMP/unpack.stamp"
