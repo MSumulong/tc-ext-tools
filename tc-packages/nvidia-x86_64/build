@@ -2,16 +2,6 @@
 # tc-ext-tools build functions: configure, compile, install, rules
 #
 
-build_convert() {
-
-   sh "$PACKAGE_SOURCE" --extract-only || return 1
-
-   tar -cJvf "$PACKAGE_SOURCE_NAME_CONV" "$SOURCE_TOPDIR" || return 1
-
-   busybox mv -f "$PACKAGE_SOURCE_NAME_CONV" "$_P_SRC" || return 1
-
-}
-
 build_unpack() {
 
    sh "$PACKAGE_SOURCE" --extract-only || return 1
@@ -21,8 +11,9 @@ build_unpack() {
 # Compile
 build_compile() {
 
+   echo "CROSS_COMPILE = $CROSS_COMPILE"
    cd kernel &&
-   make SYSSRC="$TET_LINUX_BUILD" CROSS_COMPILE="$CROSS_COMPILE" IGNORE_CC_MISMATCH=1 module || return 1
+   make SYSSRC="$TET_LINUX_BUILD" CC="${CROSS_COMPILE}gcc" LD="${CROSS_COMPILE}ld" IGNORE_CC_MISMATCH=1 module || return 1
 
 }
 
@@ -40,8 +31,8 @@ build_install() {
 build_rules() {
 
    tet_load
+   tet_prepare
    tet_download
-   tet_convert
    tet_unpack
    tet_compile
    tet_install
@@ -52,3 +43,4 @@ build_rules() {
    tet_package
 
 }
+
