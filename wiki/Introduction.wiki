@@ -65,7 +65,7 @@ buildit
 }}}
   * When creating a package for the first time you better advance step by step.
 {{{
-buildit -c,clean|-l,load|-d,download|-x,convert|-u,unpack|-pt,patch|-cn,configure|-cm,compile|-i,install|-sp,split|-st,strip|-cr,create|-ch,check|-g,generate|-pk,package|-cs,custom|-e,encrypt|-p,print|-h,help
+buildit -c,clean|-l,load|-d,download|-x,convert|-u,unpack|-pt,patch|-cn,configure|-cm,compile|-i,install|-sp,split|-st,strip|-cr,create|-ch,check|-g,generate|-pk,package|-e,encrypt|-p,print|-h,help
 }}}
   * There is also custom build function support which can be used for defining custom functions.
 {{{
