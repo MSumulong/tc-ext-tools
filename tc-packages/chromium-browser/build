@@ -49,6 +49,7 @@ build_install() {
   install -m 644 -D out/Release/chrome.pak "$INSTALL_ROOT/usr/local/chromium-browser/chrome.pak" || return 1
   install -m 755 -D out/Release/libffmpegsumo.so ${INSTALL_ROOT}/usr/local/chromium-browser/libffmpegsumo.so || return 1
   install -m 755 -D out/Release/libppGoogleNaClPluginChrome.so ${INSTALL_ROOT}/usr/local/chromium-browser/libppGoogleNaClPluginChrome.so || return 1
+  cp out/Release/nacl_irt_x86_*.nexe ${INSTALL_ROOT}/usr/local/chromium-browser/ || return 1
   install -m 644 -D out/Release/resources.pak ${INSTALL_ROOT}/usr/local/chromium-browser/resources.pak || return 1
   install -m 755 -D out/Release/xdg-settings ${INSTALL_ROOT}/usr/local/chromium-browser/xdg-settings || return 1
   cp -a out/Release/resources ${INSTALL_ROOT}/usr/local/chromium-browser || return 1

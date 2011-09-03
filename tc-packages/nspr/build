@@ -26,6 +26,11 @@ build_install() {
   cd mozilla/nsprpub
   make DESTDIR="$INSTALL_ROOT" install || return 1
 
+  rm -rf "${INSTALL_ROOT}/usr/local/bin/compile-et.pl" \
+         "${INSTALL_ROOT}/usr/local/bin/prerr.properties" \
+         "${INSTALL_ROOT}/usr/local/share/aclocal/nspr.m4" \
+         "${INSTALL_ROOT}/usr/local/include/nspr/md"
+
 }
 
 # Rules

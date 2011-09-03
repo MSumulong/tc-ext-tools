@@ -1,5 +1,5 @@
 PACKAGE="nss"
-VERSION="3.12.10"
+VERSION="3.12.11"
 SOURCE="ftp://ftp.mozilla.org/pub/security/nss/releases/NSS_${VERSION//./_}_RTM/src/nss-${VERSION}.tar.gz"
 BUILD_DEPENDS="bash
 nspr
@@ -15,5 +15,6 @@ MAINTAINERS="Arslan S."
 COMMENTS="This extension is PPI compatible."
 CHANGELOG="2010/06/07 Original 3.12.6
 		2010/10/11 Updated to 3.12.8
-		2011/01/15 Updated to 3.12.9"
+		2011/01/15 Updated to 3.12.9
+		2011/06/02 Updated to 3.12.10"
 CURRENT="Updated to $VERSION"

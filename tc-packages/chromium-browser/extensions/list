@@ -57,6 +57,7 @@ usr/local/chromium-browser/chromium-browser-sandbox
 usr/local/chromium-browser/libffmpegsumo.so
 usr/local/chromium-browser/libppGoogleNaClPluginChrome.so
 usr/local/chromium-browser/locales
+usr/local/chromium-browser/nacl_irt_x86_32.nexe
 usr/local/chromium-browser/plugins
 usr/local/chromium-browser/resources.pak
 usr/local/chromium-browser/resources/inspector/DevTools.js
