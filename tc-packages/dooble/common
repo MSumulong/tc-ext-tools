@@ -1,11 +1,13 @@
 PACKAGE="dooble"
-VERSION="1.20.1"
+VERSION="1.24"
 SOURCE="http://sourceforge.net/projects/dooble/files/Version%20${VERSION}/Dooble.d.tar.gz"
 BUILD_DEPENDS="qt-4.x-base
 qt-4.x-webkit
 qt-4.x-dbus
 qt-4.x-sql
 qt-4.x-dev
+libgcrypt
+libgcrypt-dev
 sharutils
 Xorg-7.5-lib
 Xorg-7.5-dev"
@@ -16,5 +18,6 @@ SITE="http://dooble.sourceforge.net/"
 COPYING="GPL-2"
 MAINTAINERS="Arslan S."
 COMMENTS="This extension is PPI compatible."
-CHANGELOG="2010/06/10 First Version 0.09.01~100607"
+CHANGELOG="2010/06/10 First Version 0.09.01~100607
+		2011/04/04 Updated to 1.20.1"
 CURRENT="Updated to $VERSION"

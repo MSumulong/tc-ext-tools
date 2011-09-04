@@ -1,5 +1,5 @@
 PACKAGE="stellarium"
-VERSION="0.10.6"
+VERSION="0.11.0"
 SOURCE="http://downloads.sourceforge.net/stellarium/stellarium-${VERSION}.tar.gz"
 BUILD_DEPENDS="cmake
 boost
@@ -22,5 +22,5 @@ MAINTAINERS="Arslan S."
 COMMENTS="It shows a realistic sky in 3D, just like what you see with the naked eye,
 		binoculars or a telescope.
 		This extension is PPI compatible."
-CHANGELOG="---"
-CURRENT="First Version"
+CHANGELOG="2011/01/16 First Version 0.10.6"
+CURRENT="Updated to $VERSION"

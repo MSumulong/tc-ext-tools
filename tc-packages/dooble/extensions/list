@@ -6,6 +6,8 @@ usr/local/dooble/Icons/16x16/dooble.png
 usr/local/dooble/Icons/16x16/duckduckgo.png
 usr/local/dooble/Icons/16x16/google.png
 usr/local/dooble/Icons/16x16/wikipedia.png
+usr/local/dooble/Icons/16x16/wolframalpha.png
+usr/local/dooble/Icons/16x16/yacy.png
 usr/local/dooble/Icons/32x32/dooble.png
 usr/local/dooble/Icons/32x32/exe.ico
 usr/local/dooble/Icons/64x64/dooble.png
@@ -24,6 +26,7 @@ usr/local/dooble/Icons/everaldo/16x16/copy.png
 usr/local/dooble/Icons/everaldo/16x16/desktop.png
 usr/local/dooble/Icons/everaldo/16x16/download.png
 usr/local/dooble/Icons/everaldo/16x16/downloadmanager.png
+usr/local/dooble/Icons/everaldo/16x16/email.png
 usr/local/dooble/Icons/everaldo/16x16/empty.png
 usr/local/dooble/Icons/everaldo/16x16/filesaveas.png
 usr/local/dooble/Icons/everaldo/16x16/folder_yellow.png
@@ -68,6 +71,7 @@ usr/local/dooble/Icons/everaldo/48x48/security.png
 usr/local/dooble/Icons/everaldo/48x48/tabs.png
 usr/local/dooble/Icons/everaldo/48x48/webkit.png
 usr/local/dooble/Icons/everaldo/48x48/windows.png
+usr/local/dooble/Icons/everaldo/48x48/zerocrypt.png
 usr/local/dooble/Icons/everaldo/configuration.cfg
 usr/local/dooble/Icons/meego/16x16/about.png
 usr/local/dooble/Icons/meego/16x16/add_tab.png
@@ -84,6 +88,7 @@ usr/local/dooble/Icons/meego/16x16/desktop.png
 usr/local/dooble/Icons/meego/16x16/download.png
 usr/local/dooble/Icons/meego/16x16/downloadmanager.png
 usr/local/dooble/Icons/meego/16x16/edit-copy.png
+usr/local/dooble/Icons/meego/16x16/email.png
 usr/local/dooble/Icons/meego/16x16/empty.png
 usr/local/dooble/Icons/meego/16x16/filesaveas.png
 usr/local/dooble/Icons/meego/16x16/folder_yellow.png
@@ -132,6 +137,7 @@ usr/local/dooble/Icons/meego/48x48/security.png
 usr/local/dooble/Icons/meego/48x48/tabs.png
 usr/local/dooble/Icons/meego/48x48/webkit.png
 usr/local/dooble/Icons/meego/48x48/windows.png
+usr/local/dooble/Icons/meego/48x48/zerocrypt.png
 usr/local/dooble/Icons/meego/configuration.cfg
 usr/local/dooble/Icons/nuovext/16x16/about.png
 usr/local/dooble/Icons/nuovext/16x16/bookmark.png
@@ -143,6 +149,7 @@ usr/local/dooble/Icons/nuovext/16x16/cookies.png
 usr/local/dooble/Icons/nuovext/16x16/copy.png
 usr/local/dooble/Icons/nuovext/16x16/desktop.png
 usr/local/dooble/Icons/nuovext/16x16/download.png
+usr/local/dooble/Icons/nuovext/16x16/email.png
 usr/local/dooble/Icons/nuovext/16x16/empty.png
 usr/local/dooble/Icons/nuovext/16x16/filesaveas.png
 usr/local/dooble/Icons/nuovext/16x16/folderopen.png
@@ -184,6 +191,7 @@ usr/local/dooble/Icons/nuovext/48x48/security.png
 usr/local/dooble/Icons/nuovext/48x48/tabs.png
 usr/local/dooble/Icons/nuovext/48x48/webkit.png
 usr/local/dooble/Icons/nuovext/48x48/windows.png
+usr/local/dooble/Icons/nuovext/48x48/zerocrypt.png
 usr/local/dooble/Icons/nuovext/configuration.cfg
 usr/local/dooble/Icons/nuvola/16x16/about.png
 usr/local/dooble/Icons/nuvola/16x16/add_tab.png
@@ -197,6 +205,7 @@ usr/local/dooble/Icons/nuvola/16x16/copy.png
 usr/local/dooble/Icons/nuvola/16x16/desktop.png
 usr/local/dooble/Icons/nuvola/16x16/download.png
 usr/local/dooble/Icons/nuvola/16x16/downloadmanager.png
+usr/local/dooble/Icons/nuvola/16x16/email.png
 usr/local/dooble/Icons/nuvola/16x16/empty.png
 usr/local/dooble/Icons/nuvola/16x16/filesaveas.png
 usr/local/dooble/Icons/nuvola/16x16/folderopen.png
@@ -242,6 +251,7 @@ usr/local/dooble/Icons/nuvola/48x48/security.png
 usr/local/dooble/Icons/nuvola/48x48/tabs.png
 usr/local/dooble/Icons/nuvola/48x48/webkit.png
 usr/local/dooble/Icons/nuvola/48x48/windows.png
+usr/local/dooble/Icons/nuvola/48x48/zerocrypt.png
 usr/local/dooble/Icons/nuvola/configuration.cfg
 usr/local/dooble/Images/doobledesktop_background_cityroof.jpg
 usr/local/dooble/Images/doobledesktop_background_debian.png
@@ -250,12 +260,16 @@ usr/local/dooble/Images/doobledesktop_background_glassified.png
 usr/local/dooble/Images/doobledesktop_background_harddrive.jpg
 usr/local/dooble/Images/doobledesktop_background_hotelroof.png
 usr/local/dooble/Images/doobledesktop_background_linux.png
+usr/local/dooble/Images/doobledesktop_background_rainbow.png
 usr/local/dooble/Images/doobledesktop_background_shiretoko.png
 usr/local/dooble/Images/doobledesktop_background_sonycenter.png
 usr/local/dooble/Images/doobledesktop_background_ublue.png
 usr/local/dooble/Images/doobledesktop_background_ubrown.png
 usr/local/dooble/Images/doobledesktop_background_white.png
 usr/local/dooble/Images/doobledesktop_background_winterbyspace.jpg
-usr/local/dooble/Tab/Default/dooble_logo.png
+usr/local/dooble/Tab/Default/dooble_logo_round.png
+usr/local/dooble/Tab/Default/favicon.ico
+usr/local/dooble/Tab/Default/htmls.qrc
+usr/local/dooble/Tab/Default/search.css
 usr/local/dooble/Tab/Default/search.html
 usr/local/dooble/Tab/Default/world.png
