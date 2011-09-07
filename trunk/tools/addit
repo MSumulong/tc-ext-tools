@@ -198,7 +198,7 @@ _EOF
    fi
 
    echo "Installing the package build file."
-   install -m 644 "$TET_ROOT/sharetet/build" "$PACKAGE_BUILD" || return 1
+   install -m 644 "$TET_ROOT/share/tet/build" "$PACKAGE_BUILD" || return 1
 
    echo "Creating the package extensions install and dep files."
    for EXTENSION in $EXTENSIONS
