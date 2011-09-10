@@ -8,7 +8,16 @@
 ## configure
 build_configure() {
 
-   ./configure --prefix=/usr/local || return 1
+   unset LDFLAGS
+
+   # fix for finding full path to libraries
+   sudo cp -Lf /usr/local/bin/gcc /usr/local/bin/gcc
+   sudo cp -Lf /usr/local/bin/ld /usr/local/bin/ld
+
+   rm -f configure
+   ./bootstrap || return 1
+   ./configure --prefix=/usr/local --disable-ccache --disable-external-libraries \
+       --enable-goom --enable-gl --disable-dvdcss --enable-webserver --enable-xrandr || return 1
 
 }
 

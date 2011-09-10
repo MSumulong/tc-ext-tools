@@ -1,0 +1,10 @@
+--- a/tools/Linux/xbmc.sh.in
++++ b/tools/Linux/xbmc.sh.in
+@@ -23,6 +23,7 @@
+ exec_prefix="@exec_prefix@"
+ datarootdir="@datarootdir@"
+ LIBDIR="@libdir@"
++export LD_LIBRARY_PATH="/usr/local/lib/mysql:$LD_LIBRARY_PATH"
+ 
+ # Check for some options used by this script
+ while [ "$#" -gt "0" ]

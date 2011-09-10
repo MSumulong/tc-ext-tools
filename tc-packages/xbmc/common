@@ -1,9 +1,10 @@
 PACKAGE="xbmc"
-VERSION="10.1"
-SOURCE="http://mirrors.xbmc.org/releases/source/xbmc-${VERSION}.tar.gz"
+VERSION="vcs-20110908"
+SOURCE="git::git://github.com/xbmc/xbmc.git"
 BUILD_DEPENDS="cmake
 cvs
 zip-unzip
+coreutils
 faac
 faac-dev
 libmad
@@ -14,6 +15,7 @@ ffmpeg-ffserver
 ffmpeg-ffserver-dev
 hal
 hal-dev
+bzip2
 bzip2-lib
 bzip2-dev
 Xorg-7.5
@@ -74,11 +76,26 @@ mysql
 mysql-dev
 samba3
 jasper
-jasper-dev"
+jasper-dev
+libvdpau
+libvdpau-dev
+yajl
+yajl-dev
+libplist
+pysqlite2
+SDL_gfx
+SDL_gfx-dev
+nasm
+libmicrohttpd
+libmicrohttpd-dev
+libiconv
+libiconv-dev
+yasm
+yasm-dev"
 
-DESCRIPTION="A brief description of package."
-AUTHOR="authors of package"
-SITE="http://www.package.com"
+DESCRIPTION="XBMC is a free and open source media-player and entertainment hub."
+AUTHOR="---"
+SITE="http://xbmc.org/"
 COPYING="GPL-2"
 MAINTAINERS="Arslan S."
 COMMENTS="This extension is PPI compatible."

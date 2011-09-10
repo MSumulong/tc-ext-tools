@@ -1,0 +1,11 @@
+diff -Naur a/configure.in b/configure.in
+--- a/configure.in	2011-09-08 10:23:12.000000000 +0000
++++ b/configure.in	2011-09-08 13:42:20.258834070 +0000
+@@ -730,6 +730,7 @@
+     AC_DEFINE([HAVE_SDL],[1],["Define to 1 if using sdl"])
+   fi
+ else
++  AC_CHECK_LIB([iconv],     [main],, AC_MSG_ERROR($missing_library))
+   AC_CHECK_LIB([dl],         [main],, AC_MSG_ERROR($missing_library))
+   AC_CHECK_LIB([resolv],     [main],, AC_MSG_ERROR($missing_library))
+   AC_CHECK_LIB([jasper],     [main],, AC_MSG_ERROR($missing_library)) # check for cximage
