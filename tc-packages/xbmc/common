@@ -1,7 +1,10 @@
 PACKAGE="xbmc"
-VERSION="vcs-20110908"
-SOURCE="git::git://github.com/xbmc/xbmc.git"
-BUILD_DEPENDS="cmake
+#VERSION="vcs-20110908"
+#SOURCE="git::git://github.com/xbmc/xbmc.git"
+VERSION="10.1"
+SOURCE="https://launchpad.net/~team-xbmc/+archive/ppa/+files/xbmc_${VERSION}~ppa1~lucid.tar.gz"
+BUILD_DEPENDS="
+cmake
 cvs
 zip-unzip
 coreutils
@@ -11,8 +14,8 @@ libmad
 libmad-dev
 libvorbis
 libvorbis-dev
-ffmpeg-ffserver
-ffmpeg-ffserver-dev
+#ffmpeg-ffserver
+#ffmpeg-ffserver-dev
 hal
 hal-dev
 bzip2

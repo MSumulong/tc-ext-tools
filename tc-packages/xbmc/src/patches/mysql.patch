@@ -1,10 +1,17 @@
---- a/tools/Linux/xbmc.sh.in
-+++ b/tools/Linux/xbmc.sh.in
-@@ -23,6 +23,7 @@
- exec_prefix="@exec_prefix@"
+--- a/tools/Linux/xbmc.sh.in	2011-03-09 16:39:18.000000000 +0000
++++ b/tools/Linux/xbmc.sh.in	2011-09-10 09:57:44.666555103 +0000
+@@ -24,6 +24,14 @@
  datarootdir="@datarootdir@"
  LIBDIR="@libdir@"
-+export LD_LIBRARY_PATH="/usr/local/lib/mysql:$LD_LIBRARY_PATH"
  
++# fix mysql library path
++if [ -z "$LD_LIBRARY_PATH" ]; then
++     LD_LIBRARY_PATH="/usr/local/lib/mysql"
++else
++     LD_LIBRARY_PATH="/usr/local/lib/mysql:$LD_LIBRARY_PATH"
++fi
++export LD_LIBRARY_PATH
++
  # Check for some options used by this script
  while [ "$#" -gt "0" ]
+ do

@@ -5,19 +5,27 @@
 #                                                                          #
 ############################################################################
 
+# fix for lzo1x.h not found error
+export CFLAGS="$CFLAGS -I/usr/local/include/lzo"
+export CXXFLAGS="$CXXFLAGS -I/usr/local/include/lzo"
+
 ## configure
 build_configure() {
 
-   unset LDFLAGS
-
    # fix for finding full path to libraries
-   sudo cp -Lf /usr/local/bin/gcc /usr/local/bin/gcc
-   sudo cp -Lf /usr/local/bin/ld /usr/local/bin/ld
+   sudo busybox cp -Lf /usr/local/bin/gcc /usr/local/bin/gcc
+   sudo busybox cp -Lf /usr/local/bin/ld /usr/local/bin/ld
 
    rm -f configure
    ./bootstrap || return 1
-   ./configure --prefix=/usr/local --disable-ccache --disable-external-libraries \
-       --enable-goom --enable-gl --disable-dvdcss --enable-webserver --enable-xrandr || return 1
+   ./configure --prefix=/usr/local --docdir=/usr/local/share/doc/xbmc \
+       --disable-debug --enable-faac --disable-dvdcss \
+       --disable-ccache --enable-goom --enable-gl --enable-webserver --enable-xrandr \
+       --disable-gles --enable-vdpau --disable-vaapi \
+       --disable-vdadecoder --disable-openmax --disable-tegra --disable-profiling \
+       --enable-joystick --disable-pulse --disable-rtmp --enable-ffmpeg-libvorbis --disable-mid \
+       --enable-hal --disable-avahi --disable-asap-codec \
+       --disable-libdts --disable-liba52 || return 1
 
 }
 
