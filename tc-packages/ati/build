@@ -2,16 +2,6 @@
 # tc-ext-tools build functions: configure, compile, install, rules
 #
 
-build_convert() {
-
-   sh "$PACKAGE_SOURCE" --extract "$SOURCE_TOPDIR" || return 1
-
-   tar -cJvf "$PACKAGE_SOURCE_NAME_CONV" "$SOURCE_TOPDIR" || return 1
-
-   busybox mv -f "$PACKAGE_SOURCE_NAME_CONV" "$_P_SRC" || return 1
-
-}
-
 build_unpack() {
 
    sh "$PACKAGE_SOURCE" --extract "$SOURCE_TOPDIR" || return 1
@@ -21,7 +11,6 @@ build_unpack() {
 # Install
 build_install() {
 
-   ## Install userspace tools and libraries
    # Create directories
    install -m755 -d "${INSTALL_ROOT}/etc/ati"
    install -m755 -d "${INSTALL_ROOT}/usr/local/etc/init.d"
@@ -31,9 +20,10 @@ build_install() {
 
    install -m755 -d "${INSTALL_ROOT}/usr/local/lib/X11/modules/dri"
    install -m755 -d "${INSTALL_ROOT}/usr/local/lib/X11/modules/drivers"
-   install -m755 -d "${INSTALL_ROOT}/usr/local/lib/X11/modules/extensions"
+   install -m755 -d "${INSTALL_ROOT}/usr/local/lib/X11/modules/extensions/fglrx"
    install -m755 -d "${INSTALL_ROOT}/usr/local/lib/X11/modules/linux"
    install -m755 -d "${INSTALL_ROOT}/usr/local/lib/dri"
+   install -m755 -d "${INSTALL_ROOT}/usr/local/lib/fglrx"
 
    install -m755 -d "${INSTALL_ROOT}/usr/local/src"
 
@@ -50,34 +40,46 @@ build_install() {
    install -m755 -d "${INSTALL_ROOT}/usr/local/share/man/man8"
    install -m755 -d "${INSTALL_ROOT}/usr/local/share/pixmaps"
 
-   # X.org driver
+   # xorg driver
    cd "${PACKAGE_SOURCE_TOPDIR}/xpic/usr/X11R6/lib/modules" || return 1
 
    install -m755 *.so "${INSTALL_ROOT}/usr/local/lib/X11/modules/" || return 1
    install -m755 drivers/*.so "${INSTALL_ROOT}/usr/local/lib/X11/modules/drivers/" || return 1
    install -m755 linux/*.so "${INSTALL_ROOT}/usr/local/lib/X11/modules/linux/" || return 1
-   install -m755 extensions/libglx.so "${INSTALL_ROOT}/usr/local/lib/X11/modules/extensions/libglx.so.ati" || return 1
-   ln -sf libglx.so.ati "${INSTALL_ROOT}/usr/local/lib/X11/modules/extensions/libglx.so"
+   install -m755 extensions/fglrx/fglrx-libglx.so "${INSTALL_ROOT}/usr/local/lib/X11/modules/extensions/fglrx/fglrx-libglx.so" || return 1
+   ln -sf fglrx-libglx.so "${INSTALL_ROOT}/usr/local/lib/X11/modules/extensions/libglx.so"
 
+   # libraries and tools
    cd "${PACKAGE_SOURCE_TOPDIR}/arch/x86/usr" || return 1
 
    install -m755 X11R6/bin/* "${INSTALL_ROOT}/usr/local/bin/" || return 1
    install -m755 sbin/* "${INSTALL_ROOT}/usr/local/sbin/" || return 1
-   install -m755 X11R6/lib/*.so* "${INSTALL_ROOT}/usr/local/lib/" || return 1
-   install -m644 X11R6/lib/*.a "${INSTALL_ROOT}/usr/local/lib/" || return 1
+
+   install -m755 X11R6/lib/fglrx/fglrx-libGL.so.1.2 "${INSTALL_ROOT}/usr/local/lib/fglrx" || return 1
+   ln -sf /usr/local/lib/fglrx/fglrx-libGL.so.1.2 "${INSTALL_ROOT}/usr/local/lib/fglrx/libGL.so.1.2"
+   ln -sf /usr/local/lib/fglrx/fglrx-libGL.so.1.2 "${INSTALL_ROOT}/usr/local/lib/fglrx-libGL.so.1.2"
+   ln -sf /usr/local/lib/fglrx/fglrx-libGL.so.1.2 "${INSTALL_ROOT}/usr/local/lib/libGL.so.1.2"
+   ln -sf /usr/local/lib/fglrx/fglrx-libGL.so.1.2 "${INSTALL_ROOT}/usr/local/lib/libGL.so.1"
+   ln -sf /usr/local/lib/fglrx/fglrx-libGL.so.1.2 "${INSTALL_ROOT}/usr/local/lib/libGL.so"
+
+   install -m755 X11R6/lib/libAMDXvBA.so.1.0 "${INSTALL_ROOT}/usr/local/lib/" || return 1
+   ln -snf libAMDXvBA.so.1.0 "${INSTALL_ROOT}/usr/local/lib/libAMDXvBA.so.1"
+   ln -snf libAMDXvBA.so.1.0 "${INSTALL_ROOT}/usr/local/lib/libAMDXvBA.so"
+
+   install -m755 X11R6/lib/libatiadlxx.so "${INSTALL_ROOT}/usr/local/lib/" || return 1
+   install -m755 X11R6/lib/libfglrx_dm.so.1.0 "${INSTALL_ROOT}/usr/local/lib/" || return 1
+
+   install -m755 X11R6/lib/libXvBAW.so.1.0 "${INSTALL_ROOT}/usr/local/lib/" || return 1
+   ln -snf libXvBAW.so.1.0 "${INSTALL_ROOT}/usr/local/lib/libXvBAW.so.1"
+   ln -snf libXvBAW.so.1.0 "${INSTALL_ROOT}/usr/local/lib/libXvBAW.so"
+
    install -m644 X11R6/lib/*.cap "${INSTALL_ROOT}/usr/local/lib/" || return 1
    install -m755 X11R6/lib/modules/dri/*.so "${INSTALL_ROOT}/usr/local/lib/X11/modules/dri/" || return 1
    install -m755 lib/*.so* "${INSTALL_ROOT}/usr/local/lib/" || return 1
 
-   mv "${INSTALL_ROOT}/usr/local/lib/libGL.so.1.2" "${INSTALL_ROOT}/usr/local/lib/libGL.so.1.2.ati" || return 1
-
    ln -sf /usr/local/lib/X11/modules/dri/fglrx_dri.so ${INSTALL_ROOT}/usr/local/lib/dri/fglrx_dri.so
    ln -sf libfglrx_dm.so.1.0 "${INSTALL_ROOT}/usr/local/lib/libfglrx_dm.so.1"
    ln -sf libfglrx_dm.so.1.0 "${INSTALL_ROOT}/usr/local/lib/libfglrx_dm.so"
-   ln -sf libfglrx_gamma.so.1.0 "${INSTALL_ROOT}/usr/local/lib/libfglrx_gamma.so.1"
-   ln -sf libGL.so.1.2.ati "${INSTALL_ROOT}/usr/local/lib/libGL.so.1.2"
-   ln -sf libGL.so.1.2 "${INSTALL_ROOT}/usr/local/lib/libGL.so.1"
-   ln -sf libGL.so.1.2 "${INSTALL_ROOT}/usr/local/lib/libGL.so"
    ln -sf libatiuki.so.1.0 "${INSTALL_ROOT}/usr/local/lib/libatiuki.so.1"
    ln -sf libatiuki.so.1.0 "${INSTALL_ROOT}/usr/local/lib/libatiuki.so"
 
@@ -89,8 +91,7 @@ build_install() {
    #security provided with 10.9, is it working fine?
    install -m644 etc/security/console.apps/amdcccle-su "${INSTALL_ROOT}/etc/security/console.apps/" || return 1
 
-   install -m644 usr/X11R6/include/X11/extensions/*.h "${INSTALL_ROOT}/usr/local/include/X11/extensions/" || return 1
-   install -m644 usr/X11R6/bin/amdupdaterandrconfig "${INSTALL_ROOT}/usr/local/bin/" || return 1
+   install -m755 usr/X11R6/bin/amdupdaterandrconfig "${INSTALL_ROOT}/usr/local/bin/" || return 1
    install -m644 usr/include/GL/*.h "${INSTALL_ROOT}/usr/local/include/GL/" || return 1
    install -m755 usr/sbin/*.sh "${INSTALL_ROOT}/usr/local/sbin/" || return 1
    install -m644 usr/share/ati/amdcccle/* "${INSTALL_ROOT}/usr/local/share/ati/amdcccle/" || return 1 # ? what are these files for?
@@ -110,16 +111,16 @@ build_install() {
    install -m755 "${PACKAGE_SRC}/catalyst.sh" "${INSTALL_ROOT}/etc/profile.d/" || return 1
 
    # License
-   install -m644 "${PACKAGE_SOURCE_TOPDIR}/ATI_LICENSE.TXT" "${INSTALL_ROOT}/usr/local/share/doc/ati-fglrx/" || return 1
-   install -m644 "${PACKAGE_SOURCE_TOPDIR}/ATI_LICENSE.TXT" "${INSTALL_ROOT}/usr/local/share/doc/ati-fglrx-kernel-source/" || return 1
+   install -m644 "${PACKAGE_SOURCE_TOPDIR}/LICENSE.TXT" "${INSTALL_ROOT}/usr/local/share/doc/ati-fglrx/ATI_LICENSE.TXT" || return 1
+   install -m644 "${PACKAGE_SOURCE_TOPDIR}/LICENSE.TXT" "${INSTALL_ROOT}/usr/local/share/doc/ati-fglrx-kernel-source/ATI_LICENSE.TXT" || return 1
 
    # kernel module installer
    install -m755 "${PACKAGE_SRC}/ati-fglrx-kernel-module-installer.sh" "${INSTALL_ROOT}/usr/local/sbin/ati-fglrx-kernel-module-installer"
 
    # kernel source
    cd "${PACKAGE_SOURCE_TOPDIR}/common/lib/modules/fglrx/build_mod"
-   cp "${PACKAGE_SOURCE_TOPDIR}/arch/x86/lib/modules/fglrx/build_mod/libfglrx_ip.a.GCC4" libfglrx_ip.a.GCC4.x86 || return 1
-   cp "${PACKAGE_SOURCE_TOPDIR}/arch/x86_64/lib/modules/fglrx/build_mod/libfglrx_ip.a.GCC4" libfglrx_ip.a.GCC4.x86_64 || return 1
+   cp "${PACKAGE_SOURCE_TOPDIR}/arch/x86/lib/modules/fglrx/build_mod/libfglrx_ip.a" libfglrx_ip.a.x86 || return 1
+   cp "${PACKAGE_SOURCE_TOPDIR}/arch/x86_64/lib/modules/fglrx/build_mod/libfglrx_ip.a" libfglrx_ip.a.x86_64 || return 1
    cp 2.6.x/Makefile . || return 1
 
    cd "${PACKAGE_SOURCE_TOPDIR}/common/lib/modules"

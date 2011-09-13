@@ -7,6 +7,7 @@ ln -sf /usr/local/lib/dri/fglrx_dri.so /usr/lib/dri/fglrx_dri.so
 # xorg glx files must be overwritten
 ln -sf libGL.so.1.2 /usr/local/lib/libGL.so
 ln -sf libGL.so.1.2 /usr/local/lib/libGL.so.1
-ln -sf libGL.so.1.2.ati /usr/local/lib/libGL.so.1.2
-ln -sf libglx.so.ati /usr/local/lib/X11/modules/extensions/libglx.so
+ln -sf fglrx/fglrx-libGL.so.1.2 /usr/local/lib/libGL.so.1.2
+ln -sf fglrx/fglrx-libglx.so /usr/local/lib/X11/modules/extensions/libglx.so
 
+ln -sf /usr/local/lib/fglrx /usr/lib/fglrx

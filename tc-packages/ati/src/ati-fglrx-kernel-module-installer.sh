@@ -105,7 +105,7 @@ build_compile() {
 
    cd $TMPDIR/$WRKDIR
 
-   cp libfglrx_ip.a.GCC4.${ARCH} libfglrx_ip.a.GCC4
+   cp libfglrx_ip.a.${ARCH} libfglrx_ip.a
 
    if [ "$ARCH" = x86_64 ]; then
         make CC=$CC LD=$LD GCC_VER_MAJ=4 SMP=1 PAGE_ATTR_FIX=0 COMPAT_ALLOC_USER_SPACE=compat_alloc_user_space || return 1
