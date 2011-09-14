@@ -1,0 +1,6 @@
+usr/local/include
+usr/local/lib/pkgconfig
+usr/local/lib/*.a
+usr/local/lib/*.la
+usr/local/share/info
+usr/local/share/man

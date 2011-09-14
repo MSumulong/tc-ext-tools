@@ -53,38 +53,35 @@ this_check() {
    sudo find -not -type d -exec file "{}" \; || return 1
    cd -
 
-   echo "Checking the permissions and ownership of the package extension tce.installed directory."
-   if [ -d "$PACKAGE_EXTENSION_BIN_TEMP/usr/local/tce.installed" ]; then
+   echo -e "Checking if the package extension tce.installed script exists ... \c"
+   if [ -e "$PACKAGE_EXTENSION_BIN_TEMP/usr/local/tce.installed/$PACKAGE_EXTENSION_NAME" ]; then
+        echo "yes"
+
+        echo -e "Checking if the permission and ownership of the package extension tce.installed directory is correct ... \c"
         OUT=$(sudo busybox ls -d -l "$PACKAGE_EXTENSION_BIN_TEMP/usr/local/tce.installed")
         PERM=$(echo $OUT | cut -d" " -f1)
         OWNER=$(echo $OUT | cut -d" " -f3-4)
 
-        if [ "$PERM" != "drwxrwxr-x" ] && [ "$PERM" != "drwxrwsr-x" ]; then
-             echo "Error! Wrong permissions detected for the package extension $PACKAGE_EXTENSION_NAME tce.installed directory."
+        if [ "$PERM" = "drwxrwxr-x" -o "$PERM" = "drwxrwsr-x" ] && [ "$OWNER" = "root staff" ]; then
+             echo "yes."
+        else
+             echo "no"
              return 1
         fi
 
-        if [ "$OWNER" != "root staff" ]; then
-             echo "Error! Wrong ownership detected for the package extension $PACKAGE_EXTENSION_NAME tce.installed directory."
+        echo -e "Checking if the permissions and ownership of the package extension tce.installed script is correct ... \c"
+        OUT=$(sudo busybox ls -l "$PACKAGE_EXTENSION_BIN_TEMP/usr/local/tce.installed/$PACKAGE_EXTENSION_NAME")
+        PERM=$(echo $OUT | cut -d" " -f1)
+        OWNER=$(echo $OUT | cut -d" " -f3-4)
+
+        if [ "$PERM" = "-rwxrwxr-x" -o "$PERM" = "-rwxrwsr-x" ] && [ "$OWNER" = "root staff" ]; then
+             echo "yes"
+        else
+             echo "no"
              return 1
         fi
-
-        echo "Checking the permissions and ownership of the package extension tce.installed script."
-        if [ -e "$PACKAGE_EXTENSION_BIN_TEMP/usr/local/tce.installed/$PACKAGE_EXTENSION_NAME" ]; then
-             OUT=$(sudo busybox ls -l "$PACKAGE_EXTENSION_BIN_TEMP/usr/local/tce.installed/$PACKAGE_EXTENSION_NAME")
-             PERM=$(echo $OUT | cut -d" " -f1)
-             OWNER=$(echo $OUT | cut -d" " -f3-4)
-
-             if [ "$PERM" != "-rwxrwxr-x" ] && [ "$PERM" != "-rwxrwsr-x" ]; then
-                  echo "Error! Wrong permissions detected for the package extension $PACKAGE_EXTENSION_NAME tce.installed script."
-                  return 1
-             fi
-
-             if [ "$OWNER" != "root staff" ]; then
-                  echo "Error! Wrong ownership detected for the package extension $PACKAGE_EXTENSION_NAME tce.installed script."
-                  return 1
-             fi
-        fi
+   else
+        echo "no"
    fi
 
    return 0
@@ -143,14 +140,14 @@ this_main() {
 
 [ -f "$PACKAGE_CHECK_STAMP" ] && sudo rm -f "$PACKAGE_CHECK_STAMP"
 
-echo -e "${MESSAGE_COLOR}Checking the package ${HILIGHT_COLOR}$PACKAGE${MESSAGE_COLOR} extensions ... ${NORMAL}\c"
+echo -e "${MESSAGE_COLOR}Checking the package ${MESSAGE_COLOR_H}$PACKAGE${MESSAGE_COLOR} extensions ... ${NORMAL}\c"
 this_main > "$PACKAGE_MESSAGE_LOG" 2>&1
 if [ "$?" -gt 0 ]; then
      echo "${ERROR_COLOR}failed!${NORMAL}"
-     echo "${WARNING_COLOR}For details: ${WARNING_COLOR_H}buildit print message${NORMAL}"
+     echo "${WARNING_COLOR}For details: ${WARNING_COLOR_H}buildit --print message${NORMAL}"
      exit 1
 fi
-echo "${HILIGHT_COLOR}successful!${NORMAL}"
+echo "${MESSAGE_COLOR_H}successful!${NORMAL}"
 
 touch "$PACKAGE_CHECK_STAMP"
 

@@ -1,0 +1,54 @@
+
+############################################################################
+#                                                                          #
+#    package build functions: configure, compile, install, rules, etc.     #
+#                                                                          #
+############################################################################
+
+## configure
+build_configure() {
+
+   ./configure --prefix=/usr/local \
+      --disable-dependency-tracking --enable-largefile \
+      --enable-curl --enable-messages --with-pic || return 1
+
+}
+
+## compile
+build_compile() {
+
+   make || return 1
+
+}
+
+## install
+build_install() {
+
+   make DESTDIR="$I_ROOT" install || return 1
+
+   install -Dm644 src/include/platform.h ${I_ROOT}/usr/local/include/libmicrohttpd/platform.h
+   install -Dm644 src/include/plibc/plibc.h ${I_ROOT}/usr/local/include/libmicrohttpd/plibc.h
+   sed -i 's#Cflags: -I${includedir}#Cflags: -I${includedir} -I{includedir}/libmicrohttpd#' ${I_ROOT}/usr/local/lib/pkgconfig/libmicrohttpd.pc
+
+}
+
+## rules
+build_rules() {
+
+   tet_load
+   tet_download
+   tet_convert
+   tet_unpack
+   tet_patch
+   tet_configure
+   tet_compile
+   tet_install
+   tet_split
+   tet_strip
+   tet_create
+   tet_generate
+   tet_check
+   tet_package
+
+}
+

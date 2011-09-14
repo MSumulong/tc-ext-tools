@@ -105,7 +105,7 @@ echo -e "${NORMAL}"
 if [ -f "$PACKAGE_COMMON" ]; then
    echo "${ERROR_COLOR}This package already exists.${NORMAL}"
    echo "${WARNING_COLOR}If you continue, existing files will be overwritten.${NORMAL}"
-   echo "${MESSAGE_COLOR}Would you like you continue ? ${HILIGHT_COLOR}[y|yes or n|no]${NORMAL}"
+   echo "${MESSAGE_COLOR}Would you like you continue ? ${MESSAGE_COLOR_H}[y|yes or n|no]${NORMAL}"
    read ans
    case "$ans" in
         y|yes)
@@ -232,14 +232,14 @@ _EOF
 
 }
 
-echo -e "${MESSAGE_COLOR}Adding the package ${HILIGHT_COLOR}$PACKAGE${MESSAGE_COLOR} ... ${NORMAL}\c"
+echo -e "${MESSAGE_COLOR}Adding the package ${MESSAGE_COLOR_H}$PACKAGE${MESSAGE_COLOR} ... ${NORMAL}\c"
 this_main > /tmp/addit.log 2>&1
 if [ "$?" -gt 0 ]; then
      echo "${ERROR_COLOR}failed!${NORMAL}"
      echo "${WARNING_COLOR}See /tmp/addit.log for details.${NORMAL}"
      exit 1
 fi
-echo "${HILIGHT_COLOR}successful!${NORMAL}"
+echo "${MESSAGE_COLOR_H}successful!${NORMAL}"
 
 echo "${WARNING_COLOR}Please don't forget to run ${WARNING_COLOR_H}update-tet-database${WARNING_COLOR} at least once after adding a new package.${NORMAL}"
 

@@ -59,7 +59,7 @@ this_main() {
    echo "---------------------------------------------------------------" >> "$PACKAGE_MESSAGE_LOG"
    echo "Running bcrypt to encrypt the package $PACKAGE tarball."  >> "$PACKAGE_MESSAGE_LOG"
    echo "---------------------------------------------------------------" >> "$PACKAGE_MESSAGE_LOG"
-   echo "${MESSAGE_COLOR}Please enter the encryption key: ${HILIGHT_COLOR}$PACKAGE_ENCRYPTION_KEY${NORMAL}"
+   echo "${MESSAGE_COLOR}Please enter the encryption key: ${MESSAGE_COLOR_H}$PACKAGE_ENCRYPTION_KEY${NORMAL}"
 
    bcrypt "$PACKAGE_PACKAGE"
    if [ "$?" -gt 0 ]; then
@@ -81,14 +81,14 @@ this_main() {
 
 }
 
-echo -e "${MESSAGE_COLOR}Encrypting the package ${HILIGHT_COLOR}$PACKAGE${MESSAGE_COLOR} ...${NORMAL}"
+echo -e "${MESSAGE_COLOR}Encrypting the package ${MESSAGE_COLOR_H}$PACKAGE${MESSAGE_COLOR} ...${NORMAL}"
 this_main
 if [ "$?" -gt 0 ]; then
      echo "${ERROR_COLOR}failed!${NORMAL}"
-     echo "${WARNING_COLOR}For details: ${WARNING_COLOR_H}buildit print message${NORMAL}"
+     echo "${WARNING_COLOR}For details: ${WARNING_COLOR_H}buildit --print message${NORMAL}"
      exit 1
 fi
-echo "${HILIGHT_COLOR}successful!${NORMAL}"
+echo "${MESSAGE_COLOR_H}successful!${NORMAL}"
 
 exit 0
 

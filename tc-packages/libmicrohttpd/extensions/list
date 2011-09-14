@@ -1,0 +1,12 @@
+usr/local/include/libmicrohttpd/platform.h
+usr/local/include/libmicrohttpd/plibc.h
+usr/local/include/microhttpd.h
+usr/local/lib/libmicrohttpd.a
+usr/local/lib/libmicrohttpd.la
+usr/local/lib/libmicrohttpd.so
+usr/local/lib/libmicrohttpd.so.10
+usr/local/lib/libmicrohttpd.so.10.10.0
+usr/local/lib/pkgconfig/libmicrohttpd.pc
+usr/local/share/info/microhttpd-tutorial.info
+usr/local/share/info/microhttpd.info
+usr/local/share/man/man3/libmicrohttpd.3

@@ -88,14 +88,14 @@ this_main() {
 
 [ -f "$PACKAGE_UNPACK_STAMP" ] && sudo rm -f "$PACKAGE_UNPACK_STAMP"
 
-echo -e "${MESSAGE_COLOR}Unpacking the package ${HILIGHT_COLOR}$PACKAGE${MESSAGE_COLOR} source ... ${NORMAL}\c"
+echo -e "${MESSAGE_COLOR}Unpacking the package ${MESSAGE_COLOR_H}$PACKAGE${MESSAGE_COLOR} source ... ${NORMAL}\c"
 this_main > "$PACKAGE_MESSAGE_LOG" 2>&1
 if [ "$?" -gt 0 ]; then
      echo "${ERROR_COLOR}failed!${NORMAL}"
-     echo "${WARNING_COLOR}For details: ${WARNING_COLOR_H}buildit print message${NORMAL}"
+     echo "${WARNING_COLOR}For details: ${WARNING_COLOR_H}buildit --print message${NORMAL}"
      exit 1
 fi
-echo "${HILIGHT_COLOR}successful!${NORMAL}"
+echo "${MESSAGE_COLOR_H}successful!${NORMAL}"
 
 touch "$PACKAGE_UNPACK_STAMP"
 
