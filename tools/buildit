@@ -35,9 +35,39 @@ else
 fi
 
 print_usage(){
-   echo -e "${WARNING_COLOR}${THIS} usage:"
-   echo -e "\n\t${WARNING_COLOR_H}${THIS} -c,clean|-l,load|-pr,prepare|-d,download|-x,convert|-u,unpack|-pt,patch|-cn,configure|-cm,compile|-i,install|-sp,split|-st,strip|-cr,create|-ch,check|-g,generate|-pk,package|-cs,custom|-e,encrypt|-p,print|-h,help${NORMAL}"
+
+   cat << EOF
+${ERROR_COLOR}Usage:${NORMAL}
+
+      ${WARNING_COLOR}buildit ${WARNING_COLOR_H}<function> <options>
+
+      ${MESSAGE_COLOR}where available functions are:
+
+             ${WARNING_COLOR}--clean${MESSAGE_COLOR} to clean files from previous build.
+             ${WARNING_COLOR}--load${MESSAGE_COLOR} to load package build dependencies.
+             ${WARNING_COLOR}--prepare${MESSAGE_COLOR} to prepare kernel source for building kernel modules.
+             ${WARNING_COLOR}--download${MESSAGE_COLOR} to download package source.
+             ${WARNING_COLOR}--convert${MESSAGE_COLOR} to convert package source.
+             ${WARNING_COLOR}--unpack${MESSAGE_COLOR} to unpack package source.
+             ${WARNING_COLOR}--patch${MESSAGE_COLOR} to patch package source.
+             ${WARNING_COLOR}--configure${MESSAGE_COLOR} to configure package.
+             ${WARNING_COLOR}--compile${MESSAGE_COLOR} to compile package.
+             ${WARNING_COLOR}--install${MESSAGE_COLOR} to install package.
+             ${WARNING_COLOR}--split${MESSAGE_COLOR} to split package into extensions.
+             ${WARNING_COLOR}--strip${MESSAGE_COLOR} to strip extension files.
+             ${WARNING_COLOR}--create${MESSAGE_COLOR} to create extensions.
+             ${WARNING_COLOR}--check${MESSAGE_COLOR} to check extensions.
+             ${WARNING_COLOR}--generate${MESSAGE_COLOR} to generate extension info files.
+             ${WARNING_COLOR}--package${MESSAGE_COLOR} to create package tarball.
+             ${WARNING_COLOR}--encrypt${MESSAGE_COLOR} to encrypt package tarball.
+             ${WARNING_COLOR}--custom <function>${MESSAGE_COLOR} to execute custom defined function. Where ${MESSAGE_COLOR_H}build_<function>${MESSAGE_COLOR} is the name of the custom function which must be defined in the package build file.
+             ${WARNING_COLOR}--print <options>${MESSAGE_COLOR} to print build log. See ${MESSAGE_COLOR_H}buildit --print help${MESSAGE_COLOR} for details.
+             ${WARNING_COLOR}--help${MESSAGE_COLOR} to print this message.
+${NORMAL}
+EOF
+
    exit 0
+
 }
 
 clean_it() {
@@ -127,127 +157,140 @@ build_custom() {
         exit 1
    fi
 
-   echo -e "${MESSAGE_COLOR}Executing the package ${HILIGHT_COLOR}$PACKAGE${MESSAGE_COLOR} custom build function $FUNCTION ... ${NORMAL}\c"
+   echo -e "${MESSAGE_COLOR}Executing the package ${MESSAGE_COLOR_H}$PACKAGE${MESSAGE_COLOR} custom build function $FUNCTION ... ${NORMAL}\c"
    build_${FUNCTION} > "$PACKAGE_MESSAGE_LOG" 2>&1
    if [ "$?" -gt 0 ]; then
         echo "${ERROR_COLOR}failed!${NORMAL}"
-        echo "${WARNING_COLOR}For details: ${WARNING_COLOR_H}buildit print message${NORMAL}"
+        echo "${WARNING_COLOR}For details: ${WARNING_COLOR_H}buildit --print message${NORMAL}"
         exit 1
    fi
-   echo "${HILIGHT_COLOR}successful!${NORMAL}"
+   echo "${MESSAGE_COLOR_H}successful!${NORMAL}"
 }
 
 build_it() {
    set_date; SECONDS_BEFORE="$SECONDS"
-   echo "${MESSAGE_COLOR}Building the package ${HILIGHT_COLOR}$PACKAGE${MESSAGE_COLOR} started at ${HILIGHT_COLOR}$TIME${NORMAL}"
+   echo "${MESSAGE_COLOR}Building the package ${MESSAGE_COLOR_H}$PACKAGE${MESSAGE_COLOR} started at ${MESSAGE_COLOR_H}$TIME${NORMAL}"
    clean_it
    build_rules
    set_date; SECONDS_AFTER="$SECONDS"
    SECONDS_ELAPSED=`expr $SECONDS_AFTER - $SECONDS_BEFORE`
-   echo "${MESSAGE_COLOR}Building the package ${HILIGHT_COLOR}$PACKAGE${MESSAGE_COLOR} finished at ${HILIGHT_COLOR}$TIME${MESSAGE_COLOR} in ${HILIGHT_COLOR}${SECONDS_ELAPSED}${MESSAGE_COLOR} seconds${NORMAL}"
+   echo "${MESSAGE_COLOR}Building the package ${MESSAGE_COLOR_H}$PACKAGE${MESSAGE_COLOR} finished at ${MESSAGE_COLOR_H}$TIME${MESSAGE_COLOR} in ${MESSAGE_COLOR_H}${SECONDS_ELAPSED}${MESSAGE_COLOR} seconds${NORMAL}"
    encrypt_it
 }
 
 print_it() {
    case "$1" in
-       cn|configure)
+       configure)
                 if [ -f "$PACKAGE_CONFIGURE_LOG" ]; then
                      cat "$PACKAGE_CONFIGURE_LOG"
                 fi
                 ;;
-       cm|compile)
+       compile)
                 if [ -f "$PACKAGE_COMPILE_LOG" ]; then
                      cat "$PACKAGE_COMPILE_LOG"
                 fi
                 ;;
-       i|install)
+       install)
                 if [ -f "$PACKAGE_INSTALL_LOG" ]; then
                      cat "$PACKAGE_INSTALL_LOG"
                 fi
                 ;;
-       b|build)
+       build)
                 if [ -f "$PACKAGE_BUILD_LOG" ]; then
                      cat "$PACKAGE_BUILD_LOG"
                      echo -e "${NORMAL}\c"
                 fi
                 ;;
-       m|message)
+       message)
                 if [ -f "$PACKAGE_MESSAGE_LOG" ]; then
                      cat "$PACKAGE_MESSAGE_LOG"
                      echo -e "${NORMAL}\c"
                 fi
                 ;;
-       *)
-                echo "${WARNING_COLOR}Usage: ${WARNING_COLOR_H}buildit -p,print cn,configure|cm,compile|i,install|b,build|m,message${NORMAL}"
+       help|*)
+                echo "${ERROR_COLOR}Usage:"
+                echo ""
+                echo "        ${WARNING_COLOR}buildit --print ${WARNING_COLOR_H}<option>"
+                echo ""
+                echo "        ${MESSAGE_COLOR}where available options are:"
+                echo ""
+                echo "                  ${WARNING_COLOR_H}configure${MESSAGE_COLOR} to print configure log."
+                echo "                  ${WARNING_COLOR_H}compile${MESSAGE_COLOR} to print compile log."
+                echo "                  ${WARNING_COLOR_H}install${MESSAGE_COLOR} to print install log."
+                echo "                  ${WARNING_COLOR_H}build${MESSAGE_COLOR} to print build log."
+                echo "                  ${WARNING_COLOR_H}message${MESSAGE_COLOR} to print message log."
+                echo "${NORMAL}"
                 ;;
    esac
 }
 
 tet_load() {
-   buildit load || exit 1
-}
-
-tet_download() {
-   buildit download || exit 1
-}
-
-tet_convert() {
-   buildit convert || exit 1
-}
-
-tet_unpack() {
-   buildit unpack || exit 1
-}
-
-tet_patch() {
-   buildit patch || exit 1
-}
-
-tet_configure() {
-   buildit configure || exit 1
-}
-
-tet_compile() {
-   buildit compile || exit 1
-}
-
-tet_install() {
-   buildit install || exit 1
-}
-
-tet_split() {
-   buildit split || exit 
-}
-
-tet_strip() {
-   buildit strip || exit 1
-}
-
-tet_create() {
-   buildit create || exit 1
-}
-
-tet_generate() {
-   buildit generate || exit 1
-}
-
-tet_check() {
-   buildit check || exit 1
-}
-
-tet_package() {
-   buildit package || exit 1
-}
-
-tet_custom() {
-   buildit custom "$1" || exit 1
+   buildit --load || exit 1
 }
 
 tet_prepare() {
-   buildit prepare || exit 1
+   buildit --prepare || exit 1
 }
 
-if [ -z "$1" ]; then
+tet_download() {
+   buildit --download || exit 1
+}
+
+tet_convert() {
+   buildit --convert || exit 1
+}
+
+tet_unpack() {
+   buildit --unpack || exit 1
+}
+
+tet_patch() {
+   buildit --patch || exit 1
+}
+
+tet_configure() {
+   buildit --configure || exit 1
+}
+
+tet_compile() {
+   buildit --compile || exit 1
+}
+
+tet_install() {
+   buildit --install || exit 1
+}
+
+tet_split() {
+   buildit --split || exit 
+}
+
+tet_strip() {
+   buildit --strip || exit 1
+}
+
+tet_create() {
+   buildit --create || exit 1
+}
+
+tet_generate() {
+   buildit --generate || exit 1
+}
+
+tet_check() {
+   buildit --check || exit 1
+}
+
+tet_package() {
+   buildit --package || exit 1
+}
+
+tet_custom() {
+   buildit --custom "$1" || exit 1
+}
+
+ARG="$1"
+
+if [ -z "$ARG" ]; then
      if build_it | tee "$PACKAGE_BUILD_LOG"; then
         exit 0
      else
@@ -255,28 +298,33 @@ if [ -z "$1" ]; then
      fi
 fi
 
-case "$1" in
-   -c|clean) clean_it ;;
-   -pr|prepare) prepare_it ;;
-   -d|download) download_it ;;
-   -x|convert) convert_it ;;
-   -u|unpack) unpack_it ;; 
-   -l|load) load_it ;;
-   -pt|patch) patch_it ;;
-   -cn|configure) configure_it ;;
-   -cm|compile) compile_it ;;
-   -i|install) install_it ;;
-   -sp|split) split_it ;;
-   -st|strip) strip_it ;;
-   -cr|create) create_it ;;
-   -ch|check) check_it ;;
-   -g|generate) generate_it ;;
-   -pk|package) package_it ;;
-   -e|encrypt) encrypt_it ;;
-   -p|print) print_it "$2" ;;
-   -cs|custom) build_custom "$2" ;;
-   -h|help|*) print_usage ;;
-esac
+while [ -n "$ARG" ]
+do
+    case "$ARG" in
+      --clean) clean_it ;;
+      --prepare) prepare_it ;;
+      --download) download_it ;;
+      --convert) convert_it ;;
+      --unpack) unpack_it ;;
+      --load) load_it ;;
+      --patch) patch_it ;;
+      --configure) configure_it ;;
+      --compile) compile_it ;;
+      --install) install_it ;;
+      --split) split_it ;;
+      --strip) strip_it ;;
+      --create) create_it ;;
+      --check) check_it ;;
+      --generate) generate_it ;;
+      --package) package_it ;;
+      --encrypt) encrypt_it ;;
+      --print) print_it "$2"; shift;;
+      --custom) build_custom "$2"; shift;;
+      --help|*) print_usage ;;
+    esac
+    shift
+    ARG="$1"
+done
 
 exit 0
 
