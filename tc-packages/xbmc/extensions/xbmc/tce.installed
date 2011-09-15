@@ -1,0 +1,5 @@
+#!/bin/sh
+
+[ $(which gtk-update-icon-cache) ] && gtk-update-icon-cache -q -f -t /usr/local/share/icons/hicolor > /dev/null 2>&1
+[ $(which update-desktop-database) ] && update-desktop-database -q > /dev/null 2>&1
+

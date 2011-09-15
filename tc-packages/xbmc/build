@@ -9,6 +9,8 @@
 export CFLAGS="$CFLAGS -I/usr/local/include/lzo"
 export CXXFLAGS="$CXXFLAGS -I/usr/local/include/lzo"
 
+unset LDFLAGS; export LDFLAGS="-Wl,--hash-style=gnu"
+
 ## configure
 build_configure() {
 
@@ -19,12 +21,11 @@ build_configure() {
    rm -f configure
    ./bootstrap || return 1
    ./configure --prefix=/usr/local --docdir=/usr/local/share/doc/xbmc \
-       --disable-debug --enable-faac --disable-dvdcss \
-       --disable-ccache --enable-goom --enable-gl --enable-webserver --enable-xrandr \
-       --disable-gles --enable-vdpau --disable-vaapi \
-       --disable-vdadecoder --disable-openmax --disable-tegra --disable-profiling \
-       --enable-joystick --disable-pulse --disable-rtmp --enable-ffmpeg-libvorbis --disable-mid \
-       --enable-hal --disable-avahi --disable-asap-codec \
+       --disable-debug --enable-external-libraries --disable-external-python \
+       --enable-faac --disable-ccache --enable-goom --enable-gl --enable-webserver --enable-xrandr \
+       --disable-gles --enable-vdpau --disable-external-ffmpeg \
+       --enable-joystick --enable-pulse --enable-rtmp --enable-ffmpeg-libvorbis --disable-mid \
+       --disable-hal --disable-avahi --disable-asap-codec --enable-external-libass \
        --disable-libdts --disable-liba52 || return 1
 
 }
@@ -33,6 +34,8 @@ build_configure() {
 build_compile() {
 
    make || return 1
+   make -C lib/addons/script.module.pil || return 1
+   make -C lib/addons/script.module.pysqlite || return 1
 
 }
 
@@ -41,6 +44,25 @@ build_install() {
 
    make DESTDIR="$I_ROOT" install || return 1
 
+   # Replace FEH.py with FEH.sh (and thus remove external python dependency)
+   install -D -m 0755 "${PACKAGE_SRC}/FEH.sh" "${I_ROOT}/usr/local/share/xbmc/FEH.sh" || return 1
+   sed -i -e 's/^python \(.*\)FEH.py \(.*\)$/\1FEH.sh \2/' "${I_ROOT}/usr/local/bin/xbmc" || return 1
+
+   # lsb_release fix
+   install -D -m 0755 "${PACKAGE_SRC}/lsb_release.sh" "${I_ROOT}/usr/local/bin/lsb_release" || return 1
+
+   # .desktop files
+   install -D -m 0644 tools/Linux/xbmc.desktop "${I_ROOT}/usr/local/share/applications/xbmc.desktop" || return 1
+   install -D -m 0644 tools/Linux/xbmc-48x48.png "${I_ROOT}/usr/local/share/pixmaps/xbmc.png" || return 1
+
+   # Tools
+   install -D -m 0755 xbmc-xrandr "${I_ROOT}/usr/local/share/xbmc/xbmc-xrandr" || return 1
+   install -D -m 0755 tools/TexturePacker/TexturePacker "${I_ROOT}/usr/local/share/xbmc/" || return 1
+
+   # clean up unneccessary files
+   rm -rf "${I_ROOT}/usr/local/share/xsessions"
+   rm -f "${I_ROOT}/usr/local/share/xbmc/FEH.py"
+   rm -f "${I_ROOT}/usr/local/share/icons/hicolor/icon-theme.cache"
 }
 
 ## rules

@@ -4,8 +4,8 @@ COMMENTS="LyX combines the power and flexibility of TeX/LaTeX with the ease of
 		So instead of an installation use iso/DVD option. 
 
 		To summarize things to do:
-		1) Download texlive2009.iso from http://tug.org/texlive/acquire-iso.html
-		2) Burn it to a DVD or Mount texlive2009.iso
+		1) Download texlive20xx.iso from http://tug.org/texlive/acquire-iso.html
+		2) Burn it with a DVD or Mount texlive20xx.iso
 		4) cd to DVD/iso root and Run tl-portable
 		5) Run lyx in the same terminal
 		6) Tools->Reconfigure
@@ -24,7 +24,7 @@ COMMENTS="LyX combines the power and flexibility of TeX/LaTeX with the ease of
 		Note: Installing these programs is not enough usually. You have to specify
 		appropriate commands to invoke them in Tools->Preferences
 		
-		For example you installed GraphicsMagick as image converter
+		For example if you installed GraphicsMagick as image converter
 		Go to Tools->Preferences->File Handling->Converters
 		add from PNG format to EPS format with command 'gm convert \$\$i \$\$o'
 		For file viewers, Tools->Preferences->File Handling->File formats 

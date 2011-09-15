@@ -1,0 +1,14 @@
+PACKAGE="rtmpdump"
+VERSION="2.4"
+SOURCE="ftp://ftp.archlinux.org/other/rtmpdump/rtmpdump-${VERSION}.tar.xz"
+BUILD_DEPENDS="openssl-0.9.8
+openssl-0.9.8-dev"
+
+DESCRIPTION="A tool to download rtmp streams."
+AUTHOR="---"
+SITE="http://rtmpdump.mplayerhq.hu/"
+COPYING="GPL-2/LGPL-2.1"
+MAINTAINERS="Arslan S."
+COMMENTS="This extension is PPI compatible."
+CHANGELOG="---"
+CURRENT="First Version"

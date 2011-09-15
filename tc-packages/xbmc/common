@@ -1,8 +1,10 @@
-PACKAGE="xbmc"
 #VERSION="vcs-20110908"
 #SOURCE="git::git://github.com/xbmc/xbmc.git"
+#SOURCE="https://launchpad.net/~team-xbmc/+archive/ppa/+files/xbmc_${VERSION}~ppa1~lucid.tar.gz"
+
+PACKAGE="xbmc"
 VERSION="10.1"
-SOURCE="https://launchpad.net/~team-xbmc/+archive/ppa/+files/xbmc_${VERSION}~ppa1~lucid.tar.gz"
+SOURCE="http://mirrors.xbmc.org/releases/source/xbmc-${VERSION}.tar.gz"
 BUILD_DEPENDS="
 cmake
 cvs
@@ -12,12 +14,12 @@ faac
 faac-dev
 libmad
 libmad-dev
+libmms
+libmms-dev
 libvorbis
 libvorbis-dev
-#ffmpeg-ffserver
-#ffmpeg-ffserver-dev
-hal
-hal-dev
+#hal
+#hal-dev
 bzip2
 bzip2-lib
 bzip2-dev
@@ -44,8 +46,6 @@ dbus
 dbus-dev
 faad
 faad-dev
-liba52
-liba52-dev
 python
 python-dev
 graphics-libs-1
@@ -82,6 +82,7 @@ jasper
 jasper-dev
 libvdpau
 libvdpau-dev
+libva
 yajl
 yajl-dev
 libplist
@@ -94,7 +95,13 @@ libmicrohttpd-dev
 libiconv
 libiconv-dev
 yasm
-yasm-dev"
+yasm-dev
+pulseaudio
+pulseaudio-dev
+libxcb
+libxcb-dev
+rtmpdump
+rtmpdump-dev"
 
 DESCRIPTION="XBMC is a free and open source media-player and entertainment hub."
 AUTHOR="---"
