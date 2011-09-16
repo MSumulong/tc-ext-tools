@@ -1,6 +1,6 @@
 PACKAGE="sakura"
-VERSION="2.4.0"
-SOURCE="http://pleyades.net/david/projects/sakura/sakura-${VERSION}.tar.bz2"
+VERSION="2.4.2"
+SOURCE="http://launchpad.net/sakura/trunk/2.4.2/+download/sakura-${VERSION}.tar.bz2"
 BUILD_DEPENDS="libxft
 libxft-dev
 vte
@@ -14,10 +14,11 @@ ImageMagick"
 
 DESCRIPTION="Sakura is a terminal emulator based on GTK+/VTE."
 AUTHOR="David Gomez Espinosa"
-SITE="http://www.pleyades.net/david/sakura.php"
+SITE="https://launchpad.net/sakura"
 COPYING="GPL-2"
 MAINTAINERS="Arslan S."
 COMMENTS="This extension is PPI compatible."
 CHANGELOG="2010/03/06 Original 2.3.7
-		2010/05/22 Updated to 2.3.8"
+		2010/05/22 Updated to 2.3.8
+		2011/04/02 Updated to 2.4.0"
 CURRENT="Updated to $VERSION"
