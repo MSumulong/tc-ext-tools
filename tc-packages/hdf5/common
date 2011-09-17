@@ -1,0 +1,13 @@
+PACKAGE="hdf5"
+VERSION="1.8.7"
+SOURCE="ftp://ftp.hdfgroup.org/HDF5/current/src/hdf5-${VERSION}.tar.bz2"
+BUILD_DEPENDS=""
+
+DESCRIPTION="HDF5 is a data model, library, and file format for storing and managing data."
+AUTHOR="---"
+SITE="http://www.hdfgroup.org/HDF5/"
+COPYING="custom"
+MAINTAINERS="Arslan S."
+COMMENTS="This extension is PPI compatible."
+CHANGELOG="---"
+CURRENT="First Version"

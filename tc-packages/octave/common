@@ -1,0 +1,34 @@
+PACKAGE="octave"
+VERSION="3.4.2"
+SOURCE="ftp://ftp.gnu.org/gnu/octave/octave-${VERSION}.tar.bz2"
+BUILD_DEPENDS="gfortran
+fftw
+fftw-dev
+pcre
+pcre-dev
+curl
+curl-dev
+liblapack
+blas
+Xorg-7.5
+Xorg-7.5-dev
+libxcb
+libxcb-dev
+GraphicsMagick
+GraphicsMagick-dev
+glpk
+glpk-dev
+hdf5
+hdf5-dev
+qhull
+qhull-dev
+texinfo"
+
+DESCRIPTION="GNU Octave is a high-level interpreted language, primarily intended for numerical computations."
+AUTHOR="---"
+SITE="http://www.gnu.org/software/octave/"
+COPYING="GPL-2"
+MAINTAINERS="Arslan S."
+COMMENTS="This extension is PPI compatible."
+CHANGELOG="---"
+CURRENT="First Version"

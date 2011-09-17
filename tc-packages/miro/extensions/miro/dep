@@ -12,5 +12,6 @@ gst-ffmpeg.tcz
 gst-python.tcz
 libtorrent-rasterbar-python.tcz
 libavformat.tcz
+mutagen.tcz
 hicolor-icon-theme.tcz
 shared-mime-info.tcz

@@ -1,0 +1,61 @@
+
+############################################################################
+#                                                                          #
+#    package build functions: configure, compile, install, rules, etc.     #
+#                                                                          #
+############################################################################
+
+export FC=gfortran
+
+## configure
+build_configure() {
+
+   cp -f "$PACKAGE_SRC/Makefile.blas" BLAS/SRC/Makefile 
+   cp -f INSTALL/make.inc.gfortran make.inc
+
+}
+
+## compile
+build_compile() {
+
+   cd BLAS/SRC
+   make clean || return 1
+   FFLAGS="${CFLAGS/-O?/-O0}" make dcabs1.o
+   FFLAGS="${CFLAGS} -fPIC" CFLAGS="${CFLAGS} -fPIC" make shared
+   cp libblas.so.${VERSION} "$PACKAGE_SOURCE_TOPDIR"
+
+}
+
+## install
+build_install() {
+
+   install -m755 -d "${INSTALL_ROOT}/usr/local/lib"
+   install -m755 "libblas.so.${VERSION}" "${INSTALL_ROOT}/usr/local/lib/"
+   ln -sf libblas.so.${VERSION} "${INSTALL_ROOT}/usr/local/lib/libblas.so"
+   ln -sf libblas.so.${VERSION} "${INSTALL_ROOT}/usr/local/lib/libblas.so.3"
+  
+   install -m755 -d "${INSTALL_ROOT}/usr/local/share/licenses/blas"
+   install -m644 "${PACKAGE_SRC}/LICENSE.blas" "${INSTALL_ROOT}/usr/local/share/licenses/blas/LICENSE"
+
+}
+
+## rules
+build_rules() {
+
+   tet_load
+   tet_download
+   tet_convert
+   tet_unpack
+   tet_patch
+   tet_configure
+   tet_compile
+   tet_install
+   tet_split
+   tet_strip
+   tet_create
+   tet_generate
+   tet_check
+   tet_package
+
+}
+

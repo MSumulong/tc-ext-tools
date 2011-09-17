@@ -1,0 +1,13 @@
+PACKAGE="blas"
+VERSION="3.3.1"
+SOURCE="http://www.netlib.org/lapack/lapack-${VERSION}.tgz"
+BUILD_DEPENDS="gfortran"
+
+DESCRIPTION="Basic Linear Algebra Subprograms."
+AUTHOR="---"
+SITE="http://www.netlib.org/blas"
+COPYING="custom"
+MAINTAINERS="Arslan S."
+COMMENTS="This extension is PPI compatible."
+CHANGELOG="---"
+CURRENT="First Version"

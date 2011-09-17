@@ -1,0 +1,59 @@
+
+############################################################################
+#                                                                          #
+#    package build functions: configure, compile, install, rules, etc.     #
+#                                                                          #
+############################################################################
+
+## configure
+build_configure() {
+
+   ./configure --prefix=/usr/local \
+    --enable-hl \
+    --enable-threadsafe \
+    --enable-linux-lfs \
+    --enable-production \
+    --with-pic \
+    --docdir=/usr/local/share/doc/hdf5/ \
+    --with-pthread=/usr/lib/ \
+    --disable-sharedlib-rpath || return 1
+
+}
+
+## compile
+build_compile() {
+
+   make || return 1
+
+}
+
+## install
+build_install() {
+
+   make DESTDIR="$I_ROOT" install || return 1
+
+   install -d -m755 ${I_ROOT}/usr/local/share/licenses/${PACKAGE}
+   install -m644 COPYING ${I_ROOT}/usr/local/share/licenses/${PACKAGE}/LICENSE 
+
+}
+
+## rules
+build_rules() {
+
+   tet_load
+   tet_download
+   tet_convert
+   tet_unpack
+   tet_patch
+   tet_configure
+   tet_compile
+   tet_install
+   tet_split
+   tet_strip
+   tet_create
+   tet_generate
+   tet_check
+   tet_package
+
+}
+

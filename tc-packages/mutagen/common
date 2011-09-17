@@ -1,0 +1,14 @@
+PACKAGE="mutagen"
+VERSION="1.20"
+SOURCE="http://mutagen.googlecode.com/files/mutagen-${VERSION}.tar.gz"
+BUILD_DEPENDS="python
+python-dev"
+
+DESCRIPTION="A Python module to handle audio metadata."
+AUTHOR="---"
+SITE="http://code.google.com/p/mutagen/"
+COPYING="GPL-2"
+MAINTAINERS="Arslan S."
+COMMENTS="This extension is PPI compatible."
+CHANGELOG="---"
+CURRENT="First Version"

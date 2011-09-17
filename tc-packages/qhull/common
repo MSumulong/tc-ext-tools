@@ -1,0 +1,13 @@
+PACKAGE="qhull"
+VERSION="2011.1"
+SOURCE="http://www.qhull.org/download/qhull-${VERSION}-src.tgz"
+BUILD_DEPENDS="cmake"
+
+DESCRIPTION="Qhull computes the convex hull, Delaunay triangulation, Voronoi diagram etc."
+AUTHOR="---"
+SITE="http://www.qhull.org"
+COPYING="custom"
+MAINTAINERS="Arslan S."
+COMMENTS="This extension is PPI compatible."
+CHANGELOG="---"
+CURRENT="First Version"

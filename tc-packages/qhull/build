@@ -1,0 +1,61 @@
+
+############################################################################
+#                                                                          #
+#    package build functions: configure, compile, install, rules, etc.     #
+#                                                                          #
+############################################################################
+
+## configure
+build_configure() {
+
+   mkdir build
+   cd build
+   cmake -DCMAKE_INSTALL_PREFIX=/usr/local -DCMAKE_BUILD_TYPE=Release \
+     -DDOC_INSTALL_DIR=/usr/local/share/doc -DLIB_INSTALL_DIR=/usr/local/lib .. || return 1
+
+}
+
+## compile
+build_compile() {
+
+   cd build
+   make || return 1
+
+}
+
+## install
+build_install() {
+
+   cd build
+   make DESTDIR="$I_ROOT" install || return 1
+
+   cd ..
+   # install manpages
+   install -Dm644 html/rbox.man "${I_ROOT}/usr/local/share/man/man1/rbox.1"
+   install -Dm644 html/qhull.man "${I_ROOT}/usr/local/share/man/man1/qhull.1"
+
+   # Install license
+   install -Dm644 COPYING.txt "${I_ROOT}/usr/local/share/licenses/qhull/license.txt"
+
+}
+
+## rules
+build_rules() {
+
+   tet_load
+   tet_download
+   tet_convert
+   tet_unpack
+   tet_patch
+   tet_configure
+   tet_compile
+   tet_install
+   tet_split
+   tet_strip
+   tet_create
+   tet_generate
+   tet_check
+   tet_package
+
+}
+

@@ -1,0 +1,4 @@
+usr/local/bin
+usr/local/lib/*.settings
+usr/local/lib/*.so*
+usr/local/share

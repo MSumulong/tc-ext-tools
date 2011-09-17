@@ -1,0 +1,13 @@
+PACKAGE="glpk"
+VERSION="4.44"
+SOURCE="http://ftp.gnu.org/gnu/glpk/glpk-${VERSION}.tar.gz"
+BUILD_DEPENDS=""
+
+DESCRIPTION="GNU Linear Programming Kit."
+AUTHOR="---"
+SITE="http://www.gnu.org/software/glpk/glpk.html"
+COPYING="GPL-2"
+MAINTAINERS="Arslan S."
+COMMENTS="This extension is PPI compatible."
+CHANGELOG="---"
+CURRENT="First Version"
