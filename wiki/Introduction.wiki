@@ -2,31 +2,31 @@
 
 = Introduction =
 
-tc-ext-tools is a package build system developed for Tiny Core Linux. The main aim of the project is to create a high level, easy package maintenance system for package maintainers from Tiny Core Linux.
+tc-ext-tools is a package build system developed for Tiny Core Linux. The main aim of the project is to create a high level, easy package maintenance system for Tiny Core Linux.
 
 = Design Concepts =
 
- * Divide and conquer.
-  * The building process of a package is a step by step procedure.
- * Fast initial packaging time.
+ * Divide and conquer
+  * The package building process is step by step.
+ * Fast packaging
   * A new package can be created in just a few minutes.
- * Easy maintenance of packages.
+ * Easy package maintenance
   * Updating a package is a simple task of editing just a few lines.
- * Each package has a source, and the source is an online archive file or a vcs repository.
-  * Multiple source packages are also supported via custom defined rules.
- * Extensions are created from packages.
-  * There is a distinction between the package and the extension terms.
-  * Here we refer to a package as the parent of its extensions.
+ * Each package has a source
+  * The package source is an archive file or a VCS (Version Control System, i.e svn or git) repository.
+  * Multiple source packages are also supported via custom defined build rules.
+ * A package has extensions
+  * We refer to a package as the parent of its extensions.
  * Host the packages at an online vcs repository.
-  * Track and save the changes applied to the packages with a version control system (svn).
+  * Track and save the changes applied to packages with a version control system (svn).
  * Support for Tiny Core Linux specific features (tce.installed, wbar icon etc.)
-  * Create wbar icon, install script, adjust directory access rights without being expert about Tiny Core Linux.
- * Error handling.
-  * Inform the user when an error occurs about the details.
+  * Add wbar icon or install script without worrying about permissions and ownerships.
+ * Error handling, debugging
+  * The packager can sort out the problem by tracking the error messages.
 
 = Installation =
 
-Check out the latest source code from svn repository and follow the instructions in the INSTALL file.
+Check out the latest source code from the svn repository and follow the instructions in INSTALL file.
 
 {{{
 svn checkout http://tc-ext-tools.googlecode.com/svn/trunk tc-ext-tools
@@ -38,7 +38,7 @@ cp config.sample .config
 = Usage =
 
 == Hello World ==
-  * See how easy it is to build a package
+  * It is easy to build a package
 {{{
 svn checkout http://tc-ext-tools.googlecode.com/svn/tc-packages/libdvbpsi
 cd libdvbpsi
@@ -48,11 +48,11 @@ buildit
 == Creating a new package ==
   * First add the package with addit
 {{{
-addit <package> <version> "extension1 extension2 ..."
+addit --package=<package> --version=<version> --extensions="extension1 extension2 ..."
 }}}
 _Hint: version can be a number, "svn" or "git"._
 
-  * Then edit the files generated under the package root directory by using your favorite file manager and text editor.
+  * Then edit the files in the package root directory by using your favorite file manager and text editor.
 
   * Most important variables that you need to specify in the common file are SOURCE, and BUILD_DEPENDS. You also need to define configure, compile, install, and rules functions in the package build file.
 _Note: The rules function is placed in the build file to give complete control to the user for defining the package build rules._
@@ -65,20 +65,20 @@ buildit
 }}}
   * When creating a package for the first time you better advance step by step.
 {{{
-buildit -c,clean|-l,load|-d,download|-x,convert|-u,unpack|-pt,patch|-cn,configure|-cm,compile|-i,install|-sp,split|-st,strip|-cr,create|-ch,check|-g,generate|-pk,package|-e,encrypt|-p,print|-h,help
+buildit --clean|--load|--download|--convert|--unpack|--patch|--configure|--compile|--install|--split|--strip|--create|--check|--generate|--package|--encrypt|--print|--help
 }}}
   * There is also custom build function support which can be used for defining custom functions.
 {{{
-buildit -cs|custom <function>
+buildit --custom <function>
 }}}
 _Hint: You need to define `build_<function>` in the package build file._
   * If you want to see configure, compile, install output messages.
 {{{
-buildit -p|print -cn|configure|-cm|compile|-i|install
+buildit --print configure|compile|install
 }}}
   * If an error occurs or you want to see low level messages.
 {{{
-buildit -p|print -m|message
+buildit --print message
 }}}
 
 === See other available packages for more. ===
@@ -126,6 +126,6 @@ teted <package> <file>
 }}}
 _Hint: If `<file>` is left blank, teted lists all the files in the package and asks you which one to edit. If a file name is specified it searches for the files with the name in the package, and if more than one file is found with the same name it asks you which one to edit. If the search matches only one file it opens the file for you to edit._
 
-*Important Note: This project is still under development and considered to be in alpha stage. So any suggestion or critiques welcome.*
+*Important Note: This project is still under development and considered to be in alpha stage. So any suggestions or critiques are welcome.*
 
 *Sercan Arslan <arslanserc@gmail.com>*
