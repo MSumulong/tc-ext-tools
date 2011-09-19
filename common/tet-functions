@@ -24,6 +24,8 @@
 
 _tet_common() {
 
+   CMD="$@"
+
    if [ -f "$HOME/.config/tet.conf" ]; then
         . "$HOME/.config/tet.conf"
    else
@@ -57,9 +59,9 @@ is_integer() {
 # tc-ext-tools cd: change directory to package root
 tetcd() {
 
-   _tet_common $@ || return 1
+   _tet_common "$@" || return 1
 
-   if [ -z "$@" ]; then
+   if [ -z "$CMD" -a -z "$PACKAGE" ]; then
         cd "$TET_PACKAGES"
         return 0
    fi
@@ -83,9 +85,9 @@ tetcd() {
 # tc-ext-tools ls: list package contents
 tetls() {
 
-   _tet_common $@ || return 1
+   _tet_common "$@" || return 1
 
-   if [ -z "$@" ]; then
+   if [ -z "$CMD" -a -z "$PACKAGE" ]; then
         ls "$TET_PACKAGES_DATABASE"
         return 0
    fi
@@ -97,7 +99,7 @@ tetls() {
         return 1
    fi
 
-   cd "$PACKAGE_ROOT"
+   cd "$PACKAGE_ROOT" || { echo "package is removed probably" ; return 1; }
    ls $ARGS
    cd - > /dev/null
 
@@ -106,9 +108,9 @@ tetls() {
 # tc-ext-tools find: find in package
 tetfind() {
 
-   _tet_common $@ || return 1
+   _tet_common "$@" || return 1
 
-   if [ -z "$@" ]; then
+   if [ -z "$CMD" -a -z "$PACKAGE" ]; then
         find "$TET_PACKAGES" -not -path *.svn*
         return 0
    fi
@@ -129,9 +131,9 @@ tetfind() {
 # tc-ext-tools edit: edit package files
 teted() {
 
-   _tet_common $@ || return 1
+   _tet_common "$@" || return 1
 
-   if [ -z "$@" ]; then
+   if [ -z "$CMD" -a -z "$PACKAGE" ]; then
         echo "teted: package ?"
         return 1
    fi
