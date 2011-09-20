@@ -25,16 +25,13 @@
 # This is it!
 THIS=$(basename $0)
 
-if [ $(id -u) = 0 ] ; then
-     if [ "$THIS" != "installit" ]; then
-          echo "${RED}Do not run ${THIS} as root!${NORMAL}"
-          exit 1
-     fi
-else
-     if [ "$THIS" = "installit" ]; then
-          echo "${RED}You must run ${THIS} as root!${NORMAL}"
-          exit 1
-     fi
+# check for root user
+if [ $(id -u) = 0 -a "$THIS" != "installit" ]; then
+     echo "${RED}Do not run ${THIS} as root!${NORMAL}"
+     exit 1
+elif [ "$THIS" = "installit" ]; then
+       echo "${RED}You must run ${THIS} as root!${NORMAL}"
+       exit 1
 fi
 
 # source default configuration
@@ -56,6 +53,8 @@ fi
 # list directories
 ldir() {
 
+   unset ret
+
    for i in `ls $@`
    do
       res=`ls -l $@ | grep $i | grep '^d'`
@@ -63,7 +62,9 @@ ldir() {
            ret="$i $ret"
       fi
    done
+
    echo $ret
+
 }
 
 # sets the package source variables
