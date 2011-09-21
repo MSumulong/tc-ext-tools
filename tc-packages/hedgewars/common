@@ -1,6 +1,6 @@
 PACKAGE="hedgewars"
-VERSION="0.9.15"
-SOURCE="http://hedgewars.org/download/hedgewars-src-${VERSION}.tar.bz2"
+VERSION="0.9.16"
+SOURCE="http://download.gna.org/hedgewars/hedgewars-src-${VERSION}.tar.bz2"
 BUILD_DEPENDS="cmake
 fpc
 SDL
@@ -13,7 +13,7 @@ ncurses
 ncurses-dev
 readline
 readline-dev
-lua
+liblua
 lua-dev"
 
 DESCRIPTION="A Worms-like turn based strategy game."

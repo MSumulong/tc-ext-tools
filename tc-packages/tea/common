@@ -1,0 +1,23 @@
+PACKAGE="tea"
+VERSION="31.0.0"
+SOURCE="http://downloads.sourceforge.net/project/tea-editor/tea-editor/${VERSION}/tea-${VERSION}.tar.bz2"
+BUILD_DEPENDS="
+fontconfig
+fontconfig-dev
+qt-4.x-base.tcz
+qt-4.x-xml.tcz
+qt-4.x-script.tcz
+qt-4.x-extended.tcz
+qt-4.x-dev
+hunspell
+hunspell-dev"
+
+DESCRIPTION="TEA is a Qt based Text Editor with many functions."
+AUTHOR="Peter Semiletov"
+SITE="http://tea-editor.sourceforge.net/"
+COPYING="GPL-3"
+MAINTAINERS="Arslan S."
+COMMENTS="This extension is PPI compatible."
+CHANGELOG="2009/12/11 Original 26.1.0
+		2010/05/30 Updated to 27.1.0"
+CURRENT="Updated to $VERSION"

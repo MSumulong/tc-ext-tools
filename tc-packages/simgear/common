@@ -1,6 +1,6 @@
 PACKAGE="simgear"
-VERSION="2.0.0"
-SOURCE="ftp://mirrors.ibiblio.org/pub/mirrors/simgear/ftp/Source/SimGear-${VERSION}.tar.gz"
+VERSION="2.4.0"
+SOURCE="ftp://mirrors.ibiblio.org/pub/mirrors/simgear/ftp/Source/simgear-${VERSION}.tar.bz2"
 BUILD_DEPENDS="Xorg-7.5
 Xorg-7.5-dev
 libxcb
@@ -23,5 +23,5 @@ SITE="http://simgear.sourceforge.net/"
 COPYING="LGPL"
 MAINTAINERS="Arslan S."
 COMMENTS="This extension is PPI compatible."
-CHANGELOG="---"
-CURRENT="First Version"
+CHANGELOG="2010/12/19 First Version 2.0.0"
+CURRENT="Updated to $VERSION"

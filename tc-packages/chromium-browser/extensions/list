@@ -55,9 +55,7 @@ usr/local/chromium-browser/chrome.pak
 usr/local/chromium-browser/chromium-browser
 usr/local/chromium-browser/chromium-browser-sandbox
 usr/local/chromium-browser/libffmpegsumo.so
-usr/local/chromium-browser/libppGoogleNaClPluginChrome.so
 usr/local/chromium-browser/locales
-usr/local/chromium-browser/nacl_irt_x86_32.nexe
 usr/local/chromium-browser/plugins
 usr/local/chromium-browser/resources.pak
 usr/local/chromium-browser/resources/inspector/DevTools.js
@@ -104,6 +102,8 @@ usr/local/chromium-browser/resources/inspector/Images/localStorage.png
 usr/local/chromium-browser/resources/inspector/Images/paneAddButtons.png
 usr/local/chromium-browser/resources/inspector/Images/paneBottomGrow.png
 usr/local/chromium-browser/resources/inspector/Images/paneBottomGrowActive.png
+usr/local/chromium-browser/resources/inspector/Images/paneElementStateButtons.png
+usr/local/chromium-browser/resources/inspector/Images/paneFilterButtons.png
 usr/local/chromium-browser/resources/inspector/Images/paneGrowHandleLine.png
 usr/local/chromium-browser/resources/inspector/Images/paneRefreshButtons.png
 usr/local/chromium-browser/resources/inspector/Images/paneSettingsButtons.png
@@ -141,6 +141,10 @@ usr/local/chromium-browser/resources/inspector/Images/segmentSelectedEnd.png
 usr/local/chromium-browser/resources/inspector/Images/segmentSelectedEndChromium.png
 usr/local/chromium-browser/resources/inspector/Images/sessionStorage.png
 usr/local/chromium-browser/resources/inspector/Images/spinner.gif
+usr/local/chromium-browser/resources/inspector/Images/spinnerActive.gif
+usr/local/chromium-browser/resources/inspector/Images/spinnerActiveSelected.gif
+usr/local/chromium-browser/resources/inspector/Images/spinnerInactive.gif
+usr/local/chromium-browser/resources/inspector/Images/spinnerInactiveSelected.gif
 usr/local/chromium-browser/resources/inspector/Images/splitviewDimple.png
 usr/local/chromium-browser/resources/inspector/Images/splitviewDividerBackground.png
 usr/local/chromium-browser/resources/inspector/Images/statusbarBackground.png
