@@ -6,6 +6,8 @@ XUL_DIR=/usr/local/lib/xulrunner-${VERSION}
 XUL_DEVEL_DIR=/usr/local/lib/xulrunner-devel-${VERSION}
 XUL_INCLUDE_DIR=/usr/local/include/xulrunner-${VERSION}
 
+export LDFLAGS="-Wl,-rpath,${XUL_DIR} -Wl,-O1,--sort-common,--hash-style=gnu,--as-needed"
+
 ### Configure
 build_configure() {
 
@@ -26,6 +28,9 @@ build_compile() {
 build_install() {
 
   make -f client.mk DESTDIR="$INSTALL_ROOT" install || return 1
+
+  rm -rf "${INSTALL_ROOT}/usr/local/lib/xulrunner-${VERSION}/dictionaries" || return 1
+  ln -sf /usr/local/share/myspell "${INSTALL_ROOT}/usr/local/lib/xulrunner-${VERSION}/dictionaries" || return 1
 
   ln -sf $XUL_DEVEL_DIR/lib/libxul.so $INSTALL_ROOT/usr/local/lib || return 1
   ln -sf $XUL_DEVEL_DIR/lib/libxpcom.so $INSTALL_ROOT/usr/local/lib || return 1

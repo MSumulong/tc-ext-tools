@@ -1,7 +1,8 @@
 PACKAGE="xulrunner"
-VERSION="1.9.2.17"
+VERSION="6.0.2"
 SOURCE="http://releases.mozilla.org/pub/mozilla.org/xulrunner/releases/${VERSION}/source/xulrunner-${VERSION}.source.tar.bz2"
-BUILD_DEPENDS="gtk2
+BUILD_DEPENDS="
+gtk2
 gtk2-dev
 Xorg-7.5-lib
 Xorg-7.5-dev
@@ -36,11 +37,8 @@ libevent
 libevent-dev
 GConf
 GConf-dev
-#gnome-vfs
-#gnome-vfs-dev
-#libgnomeui
-#libgnomeui-dev
-#autoconf2.13"
+yasm
+yasm-dev"
 
 DESCRIPTION="XULRunner is a Mozilla runtime package."
 AUTHOR="Mozilla Foundation"
@@ -53,5 +51,6 @@ CHANGELOG="2010/01/30 Original 1.9.1.7
 		2010/08/24 Updated to 1.9.2.8
 		2010/11/30 Updated to 1.9.2.12
 		2010/12/12 Updated to 1.9.2.13
+		2011/03/03 Updated to 1.9.2.14
 		2011/03/03 Updated to 1.9.2.14"
 CURRENT="Updated to $VERSION"

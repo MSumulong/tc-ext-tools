@@ -1,12 +1,12 @@
 PACKAGE="conkeror"
-VERSION="git110220"
+VERSION="git110922"
 SOURCE="git::git://repo.or.cz/conkeror.git"
 BUILD_DEPENDS=""
 
 DESCRIPTION="Conkeror is a free, keyboard-driven, Mozilla-based web browser."
-AUTHOR="various"
+AUTHOR="---"
 SITE="http://conkeror.org/"
-COPYING="GPL-2"
+COPYING="GPL/LGPL/MPL"
 MAINTAINERS="Arslan S."
 COMMENTS="Conkeror is a keyboard-oriented, highly-customizable,
 		highly-extensible web browser based on Mozilla XULRunner,
@@ -17,5 +17,6 @@ COMMENTS="Conkeror is a keyboard-oriented, highly-customizable,
 CHANGELOG="2010/06/09 First Version git100609
 		2010/08/24 Updated to git100824
 		2010/11/18 Updated to git101118
-		2010/12/15 Updated to git101215"
+		2010/12/15 Updated to git101215
+		2011/02/20 Updated to git110220"
 CURRENT="Updated to $VERSION"
