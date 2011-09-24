@@ -10,7 +10,7 @@ export FC=gfortran
 ## configure
 build_configure() {
 
-   cp -f "$PACKAGE_SRC/Makefile.blas" BLAS/SRC/Makefile 
+   cp -f "$PACKAGE_SRC/Makefile.lapack" SRC/Makefile 
    cp -f INSTALL/make.inc.gfortran make.inc
 
 }
@@ -20,11 +20,14 @@ build_compile() {
 
    [ -L /usr/local/bin/gfortran ] && sudo cp -Lf /usr/local/bin/gfortran /usr/local/bin/
 
-   cd BLAS/SRC
+   cd INSTALL
    make clean || return 1
-   FFLAGS="${CFLAGS/-O?/-O0}" make dcabs1.o || return 1
-   FFLAGS="${CFLAGS} -fPIC" CFLAGS="${CFLAGS} -fPIC" make shared || return 1
-   cp libblas.so.${VERSION} "$PACKAGE_SOURCE_TOPDIR"
+   make NOOPT="${CFLAGS/-O?/-O0} -fPIC" OPTS="${CFLAGS} -fPIC" || return 1
+
+   cd ../SRC
+   make clean || return 1
+   make FFLAGS="${CFLAGS} -fPIC" CFLAGS="${CFLAGS} -fPIC" shared || return 1
+   cp liblapack.so.${VERSION} "$PACKAGE_SOURCE_TOPDIR"
 
 }
 
@@ -32,12 +35,12 @@ build_compile() {
 build_install() {
 
    install -m755 -d "${INSTALL_ROOT}/usr/local/lib"
-   install -m755 "libblas.so.${VERSION}" "${INSTALL_ROOT}/usr/local/lib/" || return 1
-   ln -sf libblas.so.${VERSION} "${INSTALL_ROOT}/usr/local/lib/libblas.so"
-   ln -sf libblas.so.${VERSION} "${INSTALL_ROOT}/usr/local/lib/libblas.so.3"
+   install -m755 "liblapack.so.${VERSION}" "${INSTALL_ROOT}/usr/local/lib/" || return 1
+   ln -sf liblapack.so.${VERSION} "${INSTALL_ROOT}/usr/local/lib/liblapack.so"
+   ln -sf liblapack.so.${VERSION} "${INSTALL_ROOT}/usr/local/lib/liblapack.so.3"
   
-   install -m755 -d "${INSTALL_ROOT}/usr/local/share/licenses/blas"
-   install -m644 "${PACKAGE_SRC}/LICENSE.blas" "${INSTALL_ROOT}/usr/local/share/licenses/blas/LICENSE" || return 1
+   install -m755 -d "${INSTALL_ROOT}/usr/local/share/licenses/lapack"
+   install -m644 LICENSE "${INSTALL_ROOT}/usr/local/share/licenses/lapack/LICENSE" || return 1
 
 }
 

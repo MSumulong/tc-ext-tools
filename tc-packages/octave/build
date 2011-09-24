@@ -7,15 +7,23 @@
 
 export FFLAGS="-O -ffloat-store"
 
+[ -e /usr/local/include/qhull ] || ln -s /usr/local/include/libqhull /usr/local/include/qhull
+[ -e /usr/local/include/libqhull/qhull.h ] || sudo ln -s /usr/local/include/libqhull/libqhull.h /usr/local/include/libqhull/qhull.h
+
 ## configure
 build_configure() {
 
-   ./configure --prefix=/usr/local || return 1
+   ./configure --prefix=/usr/local \
+     --disable-docs \
+     --without-opengl --without-fltk \
+     --with-qhull=qhull6 --with-qhull-includedir=/usr/local/include/libqhull --with-qhull-libdir=/usr/local/lib || return 1
 
 }
 
 ## compile
 build_compile() {
+
+   [ -L /usr/local/bin/gfortran ] && sudo cp -Lf /usr/local/bin/gfortran /usr/local/bin/
 
    make || return 1
 

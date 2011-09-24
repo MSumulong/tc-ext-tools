@@ -1,0 +1,15 @@
+PACKAGE="lapack"
+VERSION="3.3.1"
+SOURCE="http://www.netlib.org/lapack/lapack-${VERSION}.tgz"
+BUILD_DEPENDS="
+gfortran
+blas"
+
+DESCRIPTION="Linear Algebra Package."
+AUTHOR="---"
+SITE="http://www.netlib.org/lapack"
+COPYING="custom"
+MAINTAINERS="Arslan S."
+COMMENTS="This extension is PPI compatible."
+CHANGELOG="---"
+CURRENT="First Version"

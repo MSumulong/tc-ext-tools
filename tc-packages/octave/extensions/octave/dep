@@ -1,0 +1,12 @@
+fftw.tcz
+readline.tcz
+pcre.tcz
+curl.tcz
+glpk.tcz
+hdf5.tcz
+qhull.tcz
+umfpack.tcz
+blas.tcz
+lapack.tcz
+gnuplot.tcz
+GraphicsMagick.tcz

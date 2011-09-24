@@ -1,4 +1,4 @@
-etc
+usr/local/etc
 usr/local/bin
-usr/local/lib/xulrunner-6.0.*
+usr/local/lib/xulrunner-${VERSION}
 usr/local/lib/xulrunner-addons

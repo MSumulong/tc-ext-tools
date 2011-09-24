@@ -1,5 +1,5 @@
 usr/local/include
-usr/local/share/idl
-usr/local/lib/xulrunner-devel-*
-usr/local/lib/*.so
 usr/local/lib/pkgconfig
+usr/local/lib/xulrunner-devel-${VERSION}
+usr/local/lib/*.so
+usr/local/share/idl

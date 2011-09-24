@@ -1,15 +1,16 @@
 PACKAGE="octave"
 VERSION="3.4.2"
 SOURCE="ftp://ftp.gnu.org/gnu/octave/octave-${VERSION}.tar.bz2"
-BUILD_DEPENDS="gfortran
+BUILD_DEPENDS="
+gfortran
 fftw
 fftw-dev
+readline
+readline-dev
 pcre
 pcre-dev
 curl
 curl-dev
-liblapack
-blas
 Xorg-7.5
 Xorg-7.5-dev
 libxcb
@@ -22,6 +23,11 @@ hdf5
 hdf5-dev
 qhull
 qhull-dev
+umfpack
+umfpack-dev
+blas
+lapack
+gnuplot
 texinfo"
 
 DESCRIPTION="GNU Octave is a high-level interpreted language, primarily intended for numerical computations."

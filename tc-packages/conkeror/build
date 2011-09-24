@@ -23,7 +23,7 @@ build_install() {
   cp -a * "$INSTALL_ROOT/usr/local/conkeror" || return 1
   cp contrib/man/conkeror.1 "$INSTALL_ROOT"/usr/local/share/man/man1 || return 1
   rm -rf "$INSTALL_ROOT/usr/local/conkeror/contrib/man"
-  rm -f "$INSTALL_ROOT/usr/local/conkeror/*.c"
+  rm -f "$INSTALL_ROOT"/usr/local/conkeror/*.c
   rm -f "$INSTALL_ROOT/usr/local/conkeror/Makefile"
   rm -f "$INSTALL_ROOT/usr/local/conkeror/INSTALL"
   rm -rf "$INSTALL_ROOT/usr/local/conkeror/debian"
