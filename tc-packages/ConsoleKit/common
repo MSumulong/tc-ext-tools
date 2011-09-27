@@ -1,8 +1,8 @@
 PACKAGE="ConsoleKit"
 VERSION="0.4.1"
 SOURCE="http://www.freedesktop.org/software/ConsoleKit/dist/ConsoleKit-${VERSION}.tar.bz2"
-BUILD_DEPENDS="Xorg-7.5
-Xorg-7.5-dev
+BUILD_DEPENDS="Xorg-7.6
+Xorg-7.6-dev
 polkit
 polkit-dev
 Linux-PAM

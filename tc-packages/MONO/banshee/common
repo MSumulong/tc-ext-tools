@@ -15,8 +15,8 @@ glib2
 glib2-dev
 gtk2
 gtk2-dev
-Xorg-7.5-lib
-Xorg-7.5-dev
+Xorg-7.6-lib
+Xorg-7.6-dev
 sqlite3
 sqlite3-dev
 webkit-sharp

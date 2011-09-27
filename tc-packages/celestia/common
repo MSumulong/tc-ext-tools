@@ -9,8 +9,8 @@ libtheora
 libtheora-dev
 gtkglext
 gtkglext-dev
-Xorg-7.5
-Xorg-7.5-dev
+Xorg-7.6
+Xorg-7.6-dev
 freeglut
 freeglut-dev
 libxcb

@@ -26,8 +26,8 @@ libasound
 alsa-dev
 pixman
 pixman-dev
-Xorg-7.5
-Xorg-7.5-dev
+Xorg-7.6
+Xorg-7.6-dev
 SDL
 SDL-dev
 qt-4.x-base

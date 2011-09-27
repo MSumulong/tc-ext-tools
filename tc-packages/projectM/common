@@ -7,8 +7,8 @@ ftgl
 ftgl-dev
 gtkglext
 gtkglext-dev
-Xorg-7.5
-Xorg-7.5-dev"
+Xorg-7.6
+Xorg-7.6-dev"
 
 DESCRIPTION="An OpenGL based advanced music visualization program for Linux."
 AUTHOR="projectM Team"
@@ -17,5 +17,5 @@ COPYING="LGPL"
 MAINTAINERS="Arslan S."
 COMMENTS="This extension is PPI compatible."
 CHANGELOG="2010/04/05 Original
-		2010/06/13 Rebuild against Xorg-7.5"
+		2010/06/13 Rebuild against Xorg-7.6"
 CURRENT="Bugfix update"

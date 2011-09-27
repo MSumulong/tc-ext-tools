@@ -5,8 +5,8 @@ BUILD_DEPENDS="libraw1394
 libraw1394-dev
 libusb
 libusb-dev
-Xorg-7.5-lib
-Xorg-7.5-dev"
+Xorg-7.6-lib
+Xorg-7.6-dev"
 
 DESCRIPTION="High level API for IEEE1394 digital camera."
 AUTHOR="various"

@@ -5,8 +5,8 @@ BUILD_DEPENDS="cmake
 automoc4
 phonon
 phonon-dev
-Xorg-7.5-lib
-Xorg-7.5-dev
+Xorg-7.6-lib
+Xorg-7.6-dev
 xine-lib
 xine-lib-dev"
 

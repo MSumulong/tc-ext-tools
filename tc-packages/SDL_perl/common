@@ -8,8 +8,8 @@ SDL-dev
 smpeg
 SDL_gfx
 SDL_gfx-dev
-Xorg-7.5
-Xorg-7.5-dev"
+Xorg-7.6
+Xorg-7.6-dev"
 
 DESCRIPTION="Simple DirectMedia Library Bindings for Perl."
 AUTHOR="various"

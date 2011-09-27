@@ -19,9 +19,9 @@ libbonobo
 libbonobo-dev
 libgnome
 libgnome-dev
-Xorg-7.5-bin
-Xorg-7.5-lib
-Xorg-7.5-dev"
+Xorg-7.6-bin
+Xorg-7.6-lib
+Xorg-7.6-dev"
 
 DESCRIPTION="Bonobo UI library."
 AUTHOR="GNOME Maintainers"

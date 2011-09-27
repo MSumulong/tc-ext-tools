@@ -3,8 +3,8 @@ VERSION="2.0.22"
 SOURCE="http://www.ferzkopp.net/Software/SDL_gfx-2.0/SDL_gfx-${VERSION}.tar.gz"
 BUILD_DEPENDS="SDL
 SDL-dev
-Xorg-7.5-lib
-Xorg-7.5-dev"
+Xorg-7.6-lib
+Xorg-7.6-dev"
 
 DESCRIPTION="SDL Graphic Primitives library."
 AUTHOR="Andreas Schiffler"

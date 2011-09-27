@@ -1,8 +1,8 @@
 PACKAGE="freeglut"
 VERSION="2.6.0"
 SOURCE="http://downloads.sourceforge.net/freeglut/freeglut-${VERSION}.tar.gz"
-BUILD_DEPENDS="Xorg-7.5
-Xorg-7.5-dev"
+BUILD_DEPENDS="Xorg-7.6
+Xorg-7.6-dev"
 
 DESCRIPTION="Open Source alternative to the OpenGL Utility Toolkit (GLUT)."
 AUTHOR="Pawel W. Olszta, Andreas Umbach, Steve Baker"
@@ -11,5 +11,5 @@ COPYING="MIT"
 MAINTAINERS="Arslan S."
 COMMENTS="This extension is PPI compatible."
 CHANGELOG="2010/02/10 Original 2.6.0
-		2010/06/12 Rebuilt against Xorg-7.5"
+		2010/06/12 Rebuilt against Xorg-7.6"
 CURRENT="Updated to overwrite Xorg glut"

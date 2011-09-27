@@ -1,8 +1,8 @@
 PACKAGE="flightgear"
 VERSION="2.4.0"
 SOURCE="http://ftp.linux.kiev.ua/pub/fgfs/Source/flightgear-${VERSION}.tar.bz2"
-BUILD_DEPENDS="Xorg-7.5
-Xorg-7.5-dev
+BUILD_DEPENDS="Xorg-7.6
+Xorg-7.6-dev
 freeglut
 freeglut-dev
 freealut

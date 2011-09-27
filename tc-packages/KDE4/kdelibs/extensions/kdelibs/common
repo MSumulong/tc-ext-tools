@@ -12,6 +12,6 @@ COMMENTS="Optional dependencies:
 		shared-mime-info.tcz
 		shared-desktop-ontologies.tcz
 		hicolor-icon-theme.tcz
-		Xorg-7.5.tcz
+		Xorg-7.6.tcz
 
 		This extension is PPI compatible."

@@ -16,8 +16,8 @@ libstartup-notification-dev
 dbus-glib
 rarian
 rarian-dev
-Xorg-7.5-lib
-Xorg-7.5-dev
+Xorg-7.6-lib
+Xorg-7.6-dev
 bzip2-lib
 bzip2-dev
 xulrunner

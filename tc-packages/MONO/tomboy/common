@@ -15,8 +15,8 @@ mono-addins
 gnome-desktop-sharp
 gnome-desktop-sharp-dev
 ndesk-dbus-glib
-Xorg-7.5-lib
-Xorg-7.5-dev
+Xorg-7.6-lib
+Xorg-7.6-dev
 libpanel-applet
 libpanel-applet-dev"
 

@@ -2,8 +2,8 @@ PACKAGE="libxnvctrl"
 VERSION="1.25"
 XYZ="260.19.26"
 SOURCE="ftp://download.nvidia.com/XFree86/nvidia-settings/nvidia-settings-${XYZ}.tar.bz2"
-BUILD_DEPENDS="Xorg-7.5-lib
-Xorg-7.5-dev"
+BUILD_DEPENDS="Xorg-7.6-lib
+Xorg-7.6-dev"
 
 DESCRIPTION="NVCtrl library."
 AUTHOR="NVIDIA"

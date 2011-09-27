@@ -13,8 +13,8 @@ libnotify
 libnotify-dev
 libxcb
 libxcb-dev
-Xorg-7.5-lib
-Xorg-7.5-dev
+Xorg-7.6-lib
+Xorg-7.6-dev
 libxnvctrl
 dbus
 dbus-dev

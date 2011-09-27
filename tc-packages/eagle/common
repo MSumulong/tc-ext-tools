@@ -3,8 +3,8 @@ VERSION="5.11.0"
 SOURCE="ftp://ftp.cadsoft.de/eagle/program/${VERSION%.*}/eagle-lin-${VERSION}.run"
 BUILD_DEPENDS="fontconfig
 fontconfig-dev
-Xorg-7.5-lib
-Xorg-7.5-dev
+Xorg-7.6-lib
+Xorg-7.6-dev
 libxcb
 libxcb-dev"
 

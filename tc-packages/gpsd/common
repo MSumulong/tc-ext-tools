@@ -3,8 +3,8 @@ VERSION="2.96bis"
 SOURCE="http://download.berlios.de/gpsd/gpsd-${VERSION}.tar.gz"
 #VERSION="git"
 #SOURCE="git::git://git.berlios.de/gpsd"
-BUILD_DEPENDS="Xorg-7.5-lib
-Xorg-7.5-dev
+BUILD_DEPENDS="Xorg-7.6-lib
+Xorg-7.6-dev
 libusb
 libusb-dev
 glib2

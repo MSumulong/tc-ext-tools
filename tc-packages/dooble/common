@@ -9,8 +9,8 @@ qt-4.x-dev
 libgcrypt
 libgcrypt-dev
 sharutils
-Xorg-7.5-lib
-Xorg-7.5-dev"
+Xorg-7.6-lib
+Xorg-7.6-dev"
 
 DESCRIPTION="Dooble is a web browser based on Qt/Webkit."
 AUTHOR="The Dooble Team"

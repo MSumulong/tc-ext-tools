@@ -21,8 +21,8 @@ libgnome-keyring
 libgnome-keyring-dev
 libxml2
 libxml2-dev
-Xorg-7.5-lib
-Xorg-7.5-dev"
+Xorg-7.6-lib
+Xorg-7.6-dev"
 
 DESCRIPTION="The Gnome UI library."
 AUTHOR="GNOME Maintainers"

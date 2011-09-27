@@ -11,8 +11,8 @@ libexif
 libexif-dev
 graphics-libs-1
 graphics-libs-1-dev
-Xorg-7.5-lib
-Xorg-7.5-dev
+Xorg-7.6-lib
+Xorg-7.6-dev
 libxcb
 libxcb-dev"
 

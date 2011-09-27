@@ -9,8 +9,8 @@ glib2
 glib2-dev
 cairo
 cairo-dev
-Xorg-7.5-lib
-Xorg-7.5-dev"
+Xorg-7.6-lib
+Xorg-7.6-dev"
 
 DESCRIPTION="A project for providing machine readable introspection data of the API of C libraries."
 AUTHOR="Colin Walters, Johan Dahlin, Matthias Clasen, Jürg Billeter"

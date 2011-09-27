@@ -28,7 +28,7 @@ openldap.tcz
 dejavu-fonts-ttf.tcz
 xdg-utils.tcz
 desktop-file-utils.tcz
-Xorg-7.5.tcz
+Xorg-7.6.tcz
 qt-4.x-designer.tcz
 qt-4.x-webkit.tcz
 gst-plugins-good.tcz

@@ -3,8 +3,8 @@ VERSION="2.32.1"
 SOURCE="http://ftp.gnome.org/pub/GNOME/sources/gnome-panel/2.32/gnome-panel-${VERSION}.tar.bz2"
 BUILD_DEPENDS="gnome-doc-utils
 rarian
-Xorg-7.5-lib
-Xorg-7.5-dev
+Xorg-7.6-lib
+Xorg-7.6-dev
 gtk2
 gtk2-dev
 libgnome-desktop

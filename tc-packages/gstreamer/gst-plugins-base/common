@@ -10,8 +10,8 @@ libvorbis-dev
 libasound
 alsa-dev
 liboil
-Xorg-7.5-lib
-Xorg-7.5-dev
+Xorg-7.6-lib
+Xorg-7.6-dev
 glib2
 glib2-dev
 libxml2

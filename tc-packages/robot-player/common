@@ -27,8 +27,8 @@ gtk2
 gtk2-dev
 libxcb
 libxcb-dev
-Xorg-7.5-lib
-Xorg-7.5-dev
+Xorg-7.6-lib
+Xorg-7.6-dev
 libusb
 libusb-dev
 libdc1394

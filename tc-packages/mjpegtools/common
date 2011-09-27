@@ -7,8 +7,8 @@ SDL
 SDL-dev
 gtk2
 gtk2-dev
-Xorg-7.5-lib
-Xorg-7.5-dev"
+Xorg-7.6-lib
+Xorg-7.6-dev"
 
 DESCRIPTION="A set of tools that can do recording of videos and playback, simple cut-and-paste editing and the MPEG compression of audio and video under Linux."
 AUTHOR="various"

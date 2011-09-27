@@ -8,8 +8,8 @@ qt-4.x-dbus
 qt-4.x-sql
 qt-4.x-extended
 qt-4.x-dev
-Xorg-7.5-lib
-Xorg-7.5-dev
+Xorg-7.6-lib
+Xorg-7.6-dev
 boost
 boost-dev
 soprano

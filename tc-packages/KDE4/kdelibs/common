@@ -23,8 +23,8 @@ qt-4.x-webkit
 qt-4.x-extended
 qt-4.x-opengl
 qt-4.x-dev
-Xorg-7.5
-Xorg-7.5-dev
+Xorg-7.6
+Xorg-7.6-dev
 libasound
 alsa-dev
 openssl-0.9.8

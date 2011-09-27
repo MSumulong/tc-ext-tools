@@ -4,8 +4,8 @@ SOURCE="http://releases.mozilla.org/pub/mozilla.org/xulrunner/releases/${VERSION
 BUILD_DEPENDS="
 gtk2
 gtk2-dev
-Xorg-7.5-lib
-Xorg-7.5-dev
+Xorg-7.6-lib
+Xorg-7.6-dev
 libxcb
 libxcb-dev
 libasound

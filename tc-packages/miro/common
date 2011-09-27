@@ -10,8 +10,8 @@ gnome-python
 gnome-python-dev
 libxcb
 libxcb-dev
-Xorg-7.5-lib
-Xorg-7.5-dev
+Xorg-7.6-lib
+Xorg-7.6-dev
 webkit
 webkit-dev
 pywebkit-2.7

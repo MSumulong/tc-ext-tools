@@ -20,8 +20,8 @@ boost-dev
 cyrus-sasl
 cyrus-sasl-dev
 libxslt
-Xorg-7.5-lib
-Xorg-7.5-dev
+Xorg-7.6-lib
+Xorg-7.6-dev
 qca
 qca-dev
 libassuan

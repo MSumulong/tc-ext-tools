@@ -13,8 +13,8 @@ qimageblitz-dev
 net-snmp
 libarchive
 libarchive-dev
-Xorg-7.5-lib
-Xorg-7.5-dev
+Xorg-7.6-lib
+Xorg-7.6-dev
 qca
 qca-dev
 kdebase

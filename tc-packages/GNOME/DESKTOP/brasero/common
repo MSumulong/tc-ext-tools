@@ -23,8 +23,8 @@ totem-pl-parser
 totem-pl-parser-dev
 libunique
 libunique-dev
-Xorg-7.5-lib
-Xorg-7.5-dev
+Xorg-7.6-lib
+Xorg-7.6-dev
 libnautilus-extension
 libnautilus-extension-dev
 libburn

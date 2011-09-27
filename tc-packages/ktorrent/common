@@ -6,7 +6,7 @@ automoc4
 libxml2-bin
 kdelibs
 kdelibs-dev
-Xorg-7.5-dev
+Xorg-7.6-dev
 libktorrent
 libktorrent-dev
 kdebase-workspace

@@ -11,8 +11,8 @@ GConf
 GConf-dev
 libstartup-notification
 libstartup-notification-dev
-Xorg-7.5-lib
-Xorg-7.5-dev
+Xorg-7.6-lib
+Xorg-7.6-dev
 upower
 upower-dev
 polkit-gnome

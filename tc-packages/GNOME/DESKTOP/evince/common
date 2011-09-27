@@ -22,8 +22,8 @@ graphics-libs-1-dev
 librsvg
 librsvg-dev
 gnome-icon-theme
-Xorg-7.5-lib
-Xorg-7.5-dev
+Xorg-7.6-lib
+Xorg-7.6-dev
 libgs
 openjpeg
 openjpeg-dev"

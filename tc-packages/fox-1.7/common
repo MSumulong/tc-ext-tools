@@ -1,8 +1,8 @@
 PACKAGE="fox-1.7"
 VERSION="1.7.25"
 SOURCE="http://www.fox-toolkit.org/ftp/fox-${VERSION}.tar.gz"
-BUILD_DEPENDS="Xorg-7.5
-Xorg-7.5-dev
+BUILD_DEPENDS="Xorg-7.6
+Xorg-7.6-dev
 fontconfig
 fontconfig-dev
 libxft

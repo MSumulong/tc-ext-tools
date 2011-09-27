@@ -3,8 +3,8 @@ VERSION="20100929"
 SOURCE="http://downloads.sourceforge.net/pcb/pcb-${VERSION}.tar.gz"
 BUILD_DEPENDS="gtk2
 gtk2-dev
-Xorg-7.5-lib
-Xorg-7.5-dev
+Xorg-7.6-lib
+Xorg-7.6-dev
 libxcb
 libxcb-dev
 dbus

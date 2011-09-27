@@ -10,7 +10,7 @@ libattr
 attr-dev
 libxml2
 libxml2-dev
-Xorg-7.5-dev
+Xorg-7.6-dev
 glib2
 glib2-dev
 gtk2

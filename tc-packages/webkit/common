@@ -6,8 +6,8 @@ SOURCE="http://webkitgtk.org/webkit-${VERSION}.tar.gz"
 BUILD_DEPENDS="gtk-doc
 gtk2
 gtk2-dev
-Xorg-7.5-lib
-Xorg-7.5-dev
+Xorg-7.6-lib
+Xorg-7.6-dev
 libxcb
 libxcb-dev
 libxslt

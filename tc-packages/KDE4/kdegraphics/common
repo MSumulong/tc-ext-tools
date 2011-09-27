@@ -33,8 +33,8 @@ shared-mime-info
 shared-desktop-ontologies
 sane-backends
 sane-backends-dev
-Xorg-7.5-lib
-Xorg-7.5-dev
+Xorg-7.6-lib
+Xorg-7.6-dev
 libxft
 libxft-dev
 libxml2-bin
