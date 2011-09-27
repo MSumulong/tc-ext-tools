@@ -282,15 +282,16 @@ set_date
 set_tcl_system() {
 
    TCMIRROR=http://distro.ibiblio.org/pub/linux/distributions/tinycorelinux/
-   TCVER=3.x
+   TCVER=4.x
 
    TCUSER=$(cat /etc/sysconfig/tcuser)
    TCE_DIR=$(cat /opt/.tce_dir)
    TCLOOP=/tmp/tcloop
    KERNEL=$(uname -r)
+   ARCH=i686
 
    if [ -n "$(echo $KERNEL | grep tinycore64)" ]; then
-        ARCH=x86_64
+        KERNEL_ARCH=x86_64
         KERNEL_VER="${KERNEL%-tinycore64}"
         TET_DEPENDS="$TET_DEPENDS toolchain64"
         CROSS_COMPILE=x86_64-unknown-linux-gnu-
@@ -298,7 +299,7 @@ set_tcl_system() {
         LD=${CROSS_COMPILE}ld
         export PATH="/usr/local/x64/bin:$PATH"
    else
-        ARCH=i686
+        KERNEL_ARCH=x86
         KERNEL_VER="${KERNEL%-tinycore}"
         TET_CFLAGS="-march=i486 -mtune=i686 -Os -pipe"
         TET_CXXFLAGS="-march=i486 -mtune=i686 -Os -pipe"

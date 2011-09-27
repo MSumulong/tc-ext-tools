@@ -42,7 +42,7 @@ fi
 LINUX_DIR="linux-${KERNEL_VER}"
 LINUX_SRC="${TET_LINUX}/${KERNEL}/${LINUX_DIR}"
 LINUX_SOURCE="linux-${KERNEL_VER}-patched.tbz2"
-KERNEL_MIRROR="${TCMIRROR}/${TCVER}/release/src/kernel"
+KERNEL_MIRROR="${TCMIRROR}/${TCVER}/x86/release/src/kernel"
 KERNEL_CONFIG="config-${KERNEL}"
 DL="${TET_LINUX}/dl"
 
@@ -72,9 +72,9 @@ this_main() {
 
    cp -f "${DL}/${KERNEL_CONFIG}" .config
 
-   if [ "$ARCH" = x86_64 ]; then
-        make ARCH="$ARCH" CROSS_COMPILE="$CROSS_COMPILE" oldconfig || return 1
-        make ARCH="$ARCH" CROSS_COMPILE="$CROSS_COMPILE" modules_prepare || return 1
+   if [ "$KERNEL_ARCH" = x86_64 ]; then
+        make ARCH="$KERNEL_ARCH" CROSS_COMPILE="$CROSS_COMPILE" oldconfig || return 1
+        make ARCH="$KERNEL_ARCH" CROSS_COMPILE="$CROSS_COMPILE" modules_prepare || return 1
    else
         make oldconfig || return 1
         make modules_prepare || return 1
