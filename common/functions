@@ -408,7 +408,8 @@ get_rules() {
 set_stamps() {
 
    PACKAGE_LOAD_STAMP="$PACKAGE_PKG/load.stamp"
-   PACKAGE_PREPARE_STAMP="$TET_LINUX/$KERNEL/prepare.stamp"
+   PACKAGE_PREPARE_STAMP="$PACKAGE_PKG/prepare.stamp"
+   LINUX_PREPARE_STAMP="$TET_LINUX/$KERNEL/prepare.stamp"
    PACKAGE_DOWNLOAD_STAMP="$_PACKAGE_SRC/download.stamp"
    PACKAGE_CONVERT_STAMP="$_PACKAGE_SRC/convert.stamp"
    PACKAGE_UNPACK_STAMP="$PACKAGE_SRC_TEMP/unpack.stamp"

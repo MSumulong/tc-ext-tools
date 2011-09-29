@@ -41,12 +41,13 @@ fi
 
 LINUX_DIR="linux-${KERNEL_VER}"
 LINUX_SRC="${TET_LINUX}/${KERNEL}/${LINUX_DIR}"
-LINUX_SOURCE="linux-${KERNEL_VER}-patched.tbz2"
+LINUX_BUILD="$LINUX_SRC"
+LINUX_SOURCE="linux-${KERNEL_VER}-patched.tar.xz"
 KERNEL_MIRROR="${TCMIRROR}/${TCVER}/x86/release/src/kernel"
 KERNEL_CONFIG="config-${KERNEL}"
 DL="${TET_LINUX}/dl"
 
-this_main() {
+this_prepare() {
 
    [ -d "$TET_LINUX" ] || mkdir -p "$TET_LINUX"
    cd "$TET_LINUX"
@@ -79,6 +80,22 @@ this_main() {
         make oldconfig || return 1
         make modules_prepare || return 1
    fi
+
+   touch "$LINUX_PREPARE_STAMP"
+
+   return 0
+
+}
+
+this_main() {
+
+   if [ ! -f "$LINUX_PREPARE_STAMP" ]; then
+        this_prepare || return 1
+   fi
+
+   [ -d /usr/src ] || sudo mkdir -p /usr/src
+   sudo ln -sf "$LINUX_SRC" /usr/src/linux || return 1
+   sudo ln -sf "$LINUX_BUILD" /lib/modules/${KERNEL}/build || return 1
 
    return 0
 
