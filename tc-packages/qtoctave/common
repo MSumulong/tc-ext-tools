@@ -1,0 +1,17 @@
+PACKAGE="qtoctave"
+VERSION="0.10.1"
+SOURCE="http://forja.rediris.es/frs/download.php/2054/qtoctave-${VERSION}.tar.gz"
+BUILD_DEPENDS="
+cmake
+qt-4.x-base
+qt-4.x-dev
+octave"
+
+DESCRIPTION="Qt frontend for octave."
+AUTHOR="---"
+SITE="https://forja.rediris.es/projects/csl-qtoctave/"
+COPYING="GPL-2"
+MAINTAINERS="Arslan S."
+COMMENTS="This extension is PPI compatible."
+CHANGELOG="---"
+CURRENT="First Version"

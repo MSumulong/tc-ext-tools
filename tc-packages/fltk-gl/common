@@ -1,8 +1,7 @@
 PACKAGE="fltk-gl"
 VERSION="1.1.10"
 SOURCE="http://ftp.easysw.com/pub/fltk/${VERSION}/fltk-${VERSION}-source.tar.bz2"
-BUILD_DEPENDS="libxft
-libxft-dev
+BUILD_DEPENDS="
 Xorg-7.6
 Xorg-7.6-dev"
 

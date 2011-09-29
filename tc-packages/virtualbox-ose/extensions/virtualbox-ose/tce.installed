@@ -4,8 +4,8 @@ THIS=$(basename $0)
 TCUSER=$(cat /etc/sysconfig/tcuser)
 
 # update system databases
-[ "$(which update-mime-database)" ] && update-mime-database /usr/local/share/mime
-[ "$(which gtk-update-icon-cache)" ] && gtk-update-icon-cache -q -f -t /usr/local/share/icons/hicolor
+[ $(which update-mime-database) ] && update-mime-database /usr/local/share/mime
+[ $(which gtk-update-icon-cache) ] && gtk-update-icon-cache -q -f -t /usr/local/share/icons/hicolor
 
 # copy virtualbox to file system if extension is mounted
 if [ -d /tmp/tcloop/$THIS ]; then

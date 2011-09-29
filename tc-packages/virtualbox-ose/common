@@ -1,7 +1,8 @@
 PACKAGE="virtualbox-ose"
-VERSION="4.1.0"
+VERSION="4.1.2"
 SOURCE="http://download.virtualbox.org/virtualbox/${VERSION}/VirtualBox-${VERSION}.tar.bz2"
-BUILD_DEPENDS="coreutils
+BUILD_DEPENDS="
+coreutils
 bzip2
 libxslt
 libxml2
@@ -34,7 +35,6 @@ qt-4.x-base
 qt-4.x-xml
 qt-4.x-opengl
 qt-4.x-dev
-linux-headers-2.6.33.3-tinycore
 Linux-PAM
 Linux-PAM-dev
 mkisofs-tools
@@ -44,8 +44,6 @@ dbus-glib
 dbus-glib-dev
 libvncserver
 libvncserver-dev
-libxft
-libxft-dev
 makeself"
 
 DESCRIPTION="A Powerful x86 virtualization solution."
@@ -60,5 +58,6 @@ CHANGELOG="2010/10/16 First Version 3.2.10
 		2011/02/20 Updated to 4.0.4
 		2011/04/30 Updated to 4.0.6
 		2011/05/23 Updated to 4.0.8
-		2011/06/02 Fixed USB devices support for virtualbox-ose"
-CURRENT="Updated to $VERSION"
+		2011/06/02 Fixed USB devices support for virtualbox-ose
+		2011/08/07 Updated to 4.1.0"
+CURRENT="Updated to $VERSION and build for TCL 4.x"

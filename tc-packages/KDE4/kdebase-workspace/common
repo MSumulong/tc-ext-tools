@@ -53,8 +53,6 @@ libraw1394
 libraw1394-dev
 libqalculate
 libqalculate-dev
-libxft
-libxft-dev
 docbook_xsl"
 
 DESCRIPTION="KDE base workspace."

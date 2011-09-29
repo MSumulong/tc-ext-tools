@@ -28,9 +28,7 @@ taglib-dev
 libvorbis
 libvorbis-dev
 libdvdread
-libdvdread-dev
-libxft
-libxft-dev"
+libdvdread-dev"
 
 DESCRIPTION="K3b is a full-featured CD/DVD/Blu-ray burning and ripping application."
 AUTHOR="Sebastian Trueg"

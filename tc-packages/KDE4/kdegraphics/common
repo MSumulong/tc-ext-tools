@@ -35,8 +35,6 @@ sane-backends
 sane-backends-dev
 Xorg-7.6-lib
 Xorg-7.6-dev
-libxft
-libxft-dev
 libxml2-bin
 docbook_xsl"
 

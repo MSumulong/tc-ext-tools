@@ -28,9 +28,7 @@ automoc4
 kdelibs
 kdelibs-dev
 kdebase-workspace
-kdebase-workspace-dev
-libxft
-libxft-dev"
+kdebase-workspace-dev"
 
 DESCRIPTION="KDE base applications."
 AUTHOR="KDE development team"

@@ -1,8 +1,7 @@
 PACKAGE="nvidia"
 VERSION="280.13"
 SOURCE="ftp://download.nvidia.com/XFree86/Linux-x86/${VERSION}/NVIDIA-Linux-x86-${VERSION}.run"
-BUILD_DEPENDS="#linux-headers-${KERNEL}
-coreutils"
+BUILD_DEPENDS="coreutils"
 
 DESCRIPTION="NVIDIA Linux Drivers."
 AUTHOR="NVIDIA"
@@ -11,5 +10,6 @@ COPYING="Proprietary"
 MAINTAINERS="Arslan S."
 COMMENTS="This extension is PPI compatible."
 CHANGELOG="2010/05/24 Original 195.36.24
-		2010/11/15 Updated to 260.19.21"
-CURRENT="Updated to $VERSION"
+		2010/11/15 Updated to 260.19.21
+		2011/08/20 Updated to 280.13"
+CURRENT="Rebuilt for TCL 4.x"

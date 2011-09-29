@@ -7,7 +7,8 @@ build_configure() {
 
   cp "$PACKAGE_SRC/LocalConfig.kmk" .
 
-  ./configure --disable-pulse --disable-java --disable-docs || return 1
+  ./configure --disable-pulse --disable-java --disable-docs \
+       --enable-vnc || return 1
 
 }
 
@@ -139,6 +140,7 @@ build_install() {
 build_rules() {
 
    tet_load
+   tet_prepare
    tet_download
    tet_convert
    tet_unpack

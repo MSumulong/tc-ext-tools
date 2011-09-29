@@ -65,8 +65,6 @@ polkit-qt-1-dev
 krb5
 strigi
 strigi-dev
-libxft
-libxft-dev
 gamin
 gamin-dev
 docbook_xml_dtd

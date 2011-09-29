@@ -1,0 +1,5 @@
+#!/bin/sh
+
+[ `which gtk-update-icon-cache` ] && gtk-update-icon-cache -q -f -t /usr/local/share/icons/hicolor
+
+[ -e /opt/qtoctave ] || ln -s /usr/local /opt/qtoctave

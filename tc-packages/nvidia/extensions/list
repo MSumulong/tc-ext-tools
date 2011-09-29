@@ -33,7 +33,7 @@ usr/local/lib/libnvidia-ml.so
 usr/local/lib/libnvidia-ml.so.1
 usr/local/lib/libnvidia-ml.so.280.13
 usr/local/lib/libnvidia-tls.so.280.13
-usr/local/lib/modules/2.6.33.3-tinycore/kernel/drivers/video/nvidia.ko.gz
+usr/local/lib/modules/3.0.3-tinycore/kernel/drivers/video/nvidia.ko.gz
 usr/local/lib/vdpau/libvdpau_nvidia.so
 usr/local/lib/vdpau/libvdpau_nvidia.so.1
 usr/local/lib/vdpau/libvdpau_nvidia.so.280.13
