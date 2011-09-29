@@ -179,15 +179,15 @@ teted() {
    else
         echo "teted: More than one file found"
         echo "Choose one of the options below"
-        index=0
-        echo "[$index]: quit"
+        echo "[0]: quit"
+        echo "[1]: all"
+
+        index=1
         for i in $FILES
         do
             index=`expr $index + 1`
             echo "[$index]: ${i#$PACKAGE_ROOT/}"
         done
-        index=`expr $index + 1`
-        echo "[$index]: all"
 
         read ans
         if ! is_integer $ans; then
@@ -198,21 +198,23 @@ teted() {
             return 1
         fi
 
-        index=0
-        for FILE in $FILES
-        do
-            index=`expr $index + 1`
-            if [ $index = $ans ]; then
-                 $TET_EDITOR $FILE &
-                 return 0
-            fi
-        done
-        index=`expr $index + 1`
-        if [ $index = $ans ]; then
+        if [ $ans = 0 ]; then
+             return 0
+        elif [ $ans = 1 ]; then
              for FILE in $FILES
              do
                  $TET_EDITOR $FILE &
              done
+        else
+            index=1
+            for FILE in $FILES
+            do
+                index=`expr $index + 1`
+                if [ $ans = $index ]; then
+                     $TET_EDITOR $FILE &
+                     return 0
+                fi
+            done
         fi
    fi
 
