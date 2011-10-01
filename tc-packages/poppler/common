@@ -19,7 +19,7 @@ qt-4.x-xml
 qt-4.x-dev
 openjpeg
 openjpeg-dev
-glibc_gconv"
+eglibc_gconv"
 
 DESCRIPTION="Poppler PDF rendering library."
 AUTHOR="Kristian Hogsberg, Derek Noonburg, Albert Astals Cid"

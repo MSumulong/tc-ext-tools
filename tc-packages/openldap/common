@@ -1,7 +1,8 @@
 PACKAGE="openldap"
-VERSION="2.4.25"
+VERSION="2.4.26"
 SOURCE="ftp://ftp.openldap.org/pub/OpenLDAP/openldap-release/openldap-${VERSION}.tgz"
-BUILD_DEPENDS="openssl-0.9.8
+BUILD_DEPENDS="
+openssl-0.9.8
 openssl-0.9.8-dev
 bsddb
 bsddb-dev
@@ -28,5 +29,6 @@ COMMENTS="This extension is PPI compatible."
 CHANGELOG="2010/02/21 Original 2.4.19
 		2010/07/03 Updated to 2.4.21 & renamed extensions & added init.d script for openldap-server
 		2010/11/09 Updated to 2.4.23
-		2011/02/20 Updated to 2.4.24"
+		2011/02/20 Updated to 2.4.24
+		2011/04/22 Updated to 2.4.25"
 CURRENT="Updated to $VERSION"

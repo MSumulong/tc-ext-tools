@@ -1339,6 +1339,7 @@ usr/local/share/doc/postgresql/html/release-8-2-19.html
 usr/local/share/doc/postgresql/html/release-8-2-2.html
 usr/local/share/doc/postgresql/html/release-8-2-20.html
 usr/local/share/doc/postgresql/html/release-8-2-21.html
+usr/local/share/doc/postgresql/html/release-8-2-22.html
 usr/local/share/doc/postgresql/html/release-8-2-3.html
 usr/local/share/doc/postgresql/html/release-8-2-4.html
 usr/local/share/doc/postgresql/html/release-8-2-5.html
@@ -1354,6 +1355,7 @@ usr/local/share/doc/postgresql/html/release-8-3-12.html
 usr/local/share/doc/postgresql/html/release-8-3-13.html
 usr/local/share/doc/postgresql/html/release-8-3-14.html
 usr/local/share/doc/postgresql/html/release-8-3-15.html
+usr/local/share/doc/postgresql/html/release-8-3-16.html
 usr/local/share/doc/postgresql/html/release-8-3-2.html
 usr/local/share/doc/postgresql/html/release-8-3-3.html
 usr/local/share/doc/postgresql/html/release-8-3-4.html
@@ -1371,12 +1373,15 @@ usr/local/share/doc/postgresql/html/release-8-4-5.html
 usr/local/share/doc/postgresql/html/release-8-4-6.html
 usr/local/share/doc/postgresql/html/release-8-4-7.html
 usr/local/share/doc/postgresql/html/release-8-4-8.html
+usr/local/share/doc/postgresql/html/release-8-4-9.html
 usr/local/share/doc/postgresql/html/release-8-4.html
 usr/local/share/doc/postgresql/html/release-9-0-1.html
 usr/local/share/doc/postgresql/html/release-9-0-2.html
 usr/local/share/doc/postgresql/html/release-9-0-3.html
 usr/local/share/doc/postgresql/html/release-9-0-4.html
+usr/local/share/doc/postgresql/html/release-9-0-5.html
 usr/local/share/doc/postgresql/html/release-9-0.html
+usr/local/share/doc/postgresql/html/release-9-1-1.html
 usr/local/share/doc/postgresql/html/release-9-1.html
 usr/local/share/doc/postgresql/html/release.html
 usr/local/share/doc/postgresql/html/resources.html
@@ -1862,6 +1867,7 @@ usr/local/share/locale/pl/LC_MESSAGES/plperl-9.1.mo
 usr/local/share/locale/pl/LC_MESSAGES/plpgsql-9.1.mo
 usr/local/share/locale/pl/LC_MESSAGES/plpython-9.1.mo
 usr/local/share/locale/pl/LC_MESSAGES/pltcl-9.1.mo
+usr/local/share/locale/pl/LC_MESSAGES/postgres-9.1.mo
 usr/local/share/locale/pl/LC_MESSAGES/psql-9.1.mo
 usr/local/share/locale/pt_BR/LC_MESSAGES/ecpg-9.1.mo
 usr/local/share/locale/pt_BR/LC_MESSAGES/ecpglib6-9.1.mo

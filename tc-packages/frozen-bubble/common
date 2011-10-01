@@ -9,7 +9,7 @@ SDL_perl
 SDL_pango
 SDL_pango-dev
 perl_gettext
-glibc_gconv"
+eglibc_gconv"
 
 DESCRIPTION="A game in which you throw colorful bubbles and build groups to destroy the bubbles."
 AUTHOR="The Frozen-Bubble Team"
@@ -17,5 +17,5 @@ SITE="http://www.frozen-bubble.org"
 COPYING="GPL-2"
 MAINTAINERS="Arslan S."
 COMMENTS="This extension is PPI compatible."
-CHANGELOG="---"
-CURRENT="First Version"
+CHANGELOG="2010/12/30 First Version 2.2.0"
+CURRENT="Rebuilt"

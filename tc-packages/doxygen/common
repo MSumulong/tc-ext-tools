@@ -6,7 +6,7 @@ qt-4.x-base
 qt-4.x-xml
 qt-4.x-dev
 graphviz
-glibc_gconv"
+eglibc_gconv"
 
 DESCRIPTION="A documentation system for C++, C, Java, Objective-C, Python etc."
 AUTHOR="Dimitri van Heesch"

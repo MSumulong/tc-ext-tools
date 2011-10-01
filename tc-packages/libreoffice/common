@@ -15,7 +15,7 @@ ccache
 rsync
 mktemp
 perl_archive_zip
-glibc_gconv
+eglibc_gconv
 cppunit
 hicolor-icon-theme
 shared-mime-info
@@ -32,8 +32,8 @@ xulrunner
 xulrunner-dev
 gtk2
 gtk2-dev
-glibc_apps
-glibc_add_libs
+eglibc_apps
+eglibc_add_libs
 openldap
 openldap-dev
 GConf

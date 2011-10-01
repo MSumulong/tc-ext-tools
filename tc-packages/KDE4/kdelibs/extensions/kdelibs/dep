@@ -18,5 +18,5 @@ graphics-libs-1.tcz
 phonon.tcz
 bzip2-lib.tcz
 krb5.tcz
-glibc_gconv.tcz
+eglibc_gconv.tcz
 

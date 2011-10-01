@@ -1,6 +1,6 @@
 PACKAGE="SDL_perl"
 VERSION="v2.2.6"
-SOURCE="http://cpan.gazi.edu.tr/authors/id/K/KT/KTHAKORE/SDL_Perl-${VERSION}.tar.gz"
+SOURCE="http://www.cpan.org/authors/id/K/KT/KTHAKORE/SDL_Perl-${VERSION}.tar.gz"
 BUILD_DEPENDS="perl5
 perl_YAML
 SDL
@@ -17,5 +17,5 @@ SITE="http://sdl.perl.org"
 COPYING="LGPL"
 MAINTAINERS="Arslan S."
 COMMENTS="This extension is PPI compatible."
-CHANGELOG="---"
-CURRENT="First Version"
+CHANGELOG="2010/12/30 First Version 2.2.6"
+CURRENT="Rebuilt"

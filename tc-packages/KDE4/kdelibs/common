@@ -70,7 +70,7 @@ gamin-dev
 docbook_xml_dtd
 docbook_xsl
 libxml2-bin
-glibc_gconv"
+eglibc_gconv"
 
 DESCRIPTION="KDE core libraries."
 AUTHOR="KDE development team"

@@ -7,7 +7,7 @@ mono
 mono-dev
 gtk-sharp
 gtk-sharp-dev
-glibc_gconv"
+eglibc_gconv"
 
 DESCRIPTION="C/C++ MIME lib."
 AUTHOR="see list of sites below"

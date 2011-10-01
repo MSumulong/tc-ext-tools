@@ -2,11 +2,11 @@
 # tc-ext-tools build functions: configure, compile, install, rules
 #
 
-export LIBS=-ldb
+export LIBS="-ldb -lgnutls -lgcrypt -lgpg-error"
 
 # Configure
 build_configure() {
-   
+
    ./configure --prefix=/usr/local \
         --localstatedir=/var/lib/openldap \
 	--disable-debug \

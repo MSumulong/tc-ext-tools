@@ -13,8 +13,8 @@ xulrunner
 xulrunner-dev
 gtk2
 gtk2-dev
-glibc_apps
-glibc_add_libs
+eglibc_apps
+eglibc_add_libs
 openldap
 openldap-dev
 GConf
@@ -34,7 +34,7 @@ gstreamer
 gstreamer-dev
 gst-plugins-base
 gst-plugins-base-dev
-glibc_gconv
+eglibc_gconv
 libasound
 alsa-dev
 Linux-PAM

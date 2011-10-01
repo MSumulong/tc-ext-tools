@@ -1,6 +1,6 @@
 #!/bin/sh
 
-PERL_LOCAL="/usr/local/lib/perl5/5.10.1/i686-linux"
+PERL_LOCAL="/usr/local/lib/perl5/5.14.1/i686-linux"
 PERL_POD="$PERL_LOCAL/perllocal.pod"
 YAML_POD="/usr/local/share/perl_YAML/perllocal.pod"
 

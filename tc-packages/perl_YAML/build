@@ -34,7 +34,7 @@ build_install() {
    make DESTDIR="$INSTALL_ROOT" install || return 1
 
    mkdir -p "$INSTALL_ROOT/usr/local/share/perl_YAML"
-   mv "$INSTALL_ROOT/usr/local/lib/perl5/5.10.1/i686-linux/perllocal.pod" "$INSTALL_ROOT/usr/local/share/perl_YAML" || return 1
+   mv "$INSTALL_ROOT/usr/local/lib/perl5/5.14.1/i686-linux/perllocal.pod" "$INSTALL_ROOT/usr/local/share/perl_YAML" || return 1
 
 }
 

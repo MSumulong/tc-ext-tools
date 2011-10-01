@@ -18,7 +18,7 @@ graphics-libs-1-dev
 fribidi
 glib2
 glib2-dev
-glibc_gconv"
+eglibc_gconv"
 
 DESCRIPTION="Generates DVD movies from mpeg2 stream."
 AUTHOR="Scott Smith"

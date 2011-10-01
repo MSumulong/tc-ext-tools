@@ -11,6 +11,6 @@ qt-4.x-xml.tcz
 qt-4.x-opengl.tcz
 python.tcz
 procps.tcz
-glibc_apps.tcz
+eglibc_apps.tcz
 Xorg-7.6.tcz
 
