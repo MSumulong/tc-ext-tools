@@ -1,7 +1,8 @@
 PACKAGE="qtfm"
-VERSION="4.9"
+VERSION="5.0"
 SOURCE="http://www.qtfm.org/qtfm-${VERSION}.tar.gz"
-BUILD_DEPENDS="qt-4.x-base
+BUILD_DEPENDS="
+qt-4.x-base
 qt-4.x-dev"
 
 DESCRIPTION="A small, lightweight file manager for Linux desktops based on pure Qt."
@@ -10,5 +11,5 @@ SITE="http://www.qtfm.org"
 COPYING="GPL-2"
 MAINTAINERS="Arslan S."
 COMMENTS="This extension is PPI compatible."
-CHANGELOG="---"
-CURRENT="First Version"
+CHANGELOG="2011/04/09 First Version 4.9"
+CURRENT="Updated to $VERSION"

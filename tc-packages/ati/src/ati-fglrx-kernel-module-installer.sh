@@ -19,9 +19,9 @@
 #  Copyright (c) 2010 Sercan Arslan <arslanserc@gmail.com>
 #
 
-THIS=$(basename $0)
+THIS=`basename $0`
 
-if [ "$(id -u)" -ne 0 ] ; then
+if [ `id -u` -ne 0 ] ; then
      echo "You need to run $THIS as root!"
      exit 1
 fi
@@ -38,8 +38,10 @@ then
         LD=ld
 else
         ARCH=x86_64
-        CC=x86_64-unknown-linux-gnu-gcc
-        LD=x86_64-unknown-linux-gnu-ld
+        CROSS_COMPILE=x86_64-unknown-linux-gnu-
+        CC=${CROSS_COMPILE}gcc
+        LD=${CROSS_COMPILE}ld
+        export PATH="/usr/local/x64/bin:$PATH"
 fi
 
 EXTNAM="ati-fglrx-module-$KERNEL"
@@ -148,7 +150,7 @@ build_install() {
 
    cd $TMPDIR
 
-   if [ -e $TCEDIR/optional/$EXTNAM.tcz ]
+   if [ -e "$TCEDIR/optional/$EXTNAM.tcz" ]
    then
         [ -d "$TCEDIR/optional/upgrade" ] || mkdir -p "$TCEDIR/optional/upgrade"
         cp -f $EXTNAM.tcz* $TCEDIR/optional/upgrade
@@ -156,7 +158,7 @@ build_install() {
         cp -f $EXTNAM.tcz* $TCEDIR/optional
    fi
 
-   if [ ! -e /usr/local/tce.installed/$EXTNAM ]
+   if [ ! -e "/usr/local/tce.installed/$EXTNAM" ]
    then
           su $TCUSER -c "tce-load -w graphics-${KERNEL}.tcz"
           su $TCUSER -c "tce-load -i $EXTNAM.tcz" || return 1

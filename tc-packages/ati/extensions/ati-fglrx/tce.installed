@@ -11,3 +11,4 @@ ln -sf fglrx/fglrx-libGL.so.1.2 /usr/local/lib/libGL.so.1.2
 ln -sf fglrx/fglrx-libglx.so /usr/local/lib/X11/modules/extensions/libglx.so
 
 ln -sf /usr/local/lib/fglrx /usr/lib/fglrx
+

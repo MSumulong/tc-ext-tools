@@ -46,7 +46,7 @@ build_install() {
    install -m755 *.so "${INSTALL_ROOT}/usr/local/lib/X11/modules/" || return 1
    install -m755 drivers/*.so "${INSTALL_ROOT}/usr/local/lib/X11/modules/drivers/" || return 1
    install -m755 linux/*.so "${INSTALL_ROOT}/usr/local/lib/X11/modules/linux/" || return 1
-   install -m755 extensions/fglrx/fglrx-libglx.so "${INSTALL_ROOT}/usr/local/lib/X11/modules/extensions/fglrx/fglrx-libglx.so" || return 1
+   install -m755 extensions/fglrx/*.so "${INSTALL_ROOT}/usr/local/lib/X11/modules/extensions/fglrx/" || return 1
    ln -sf fglrx/fglrx-libglx.so "${INSTALL_ROOT}/usr/local/lib/X11/modules/extensions/libglx.so"
 
    # libraries and tools
