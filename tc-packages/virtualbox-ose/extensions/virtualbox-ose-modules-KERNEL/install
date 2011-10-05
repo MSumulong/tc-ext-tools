@@ -1,5 +1,5 @@
-usr/local/lib/modules/${KERNEL}/kernel/misc/vboxdrv.ko
-usr/local/lib/modules/${KERNEL}/kernel/misc/vboxnetflt.ko
-usr/local/lib/modules/${KERNEL}/kernel/misc/vboxnetadp.ko
-usr/local/lib/modules/${KERNEL}/kernel/misc/vboxpci.ko
+usr/local/lib/modules/${KERNEL}/kernel/misc/vboxdrv.ko.gz
+usr/local/lib/modules/${KERNEL}/kernel/misc/vboxnetflt.ko.gz
+usr/local/lib/modules/${KERNEL}/kernel/misc/vboxnetadp.ko.gz
+usr/local/lib/modules/${KERNEL}/kernel/misc/vboxpci.ko.gz
 

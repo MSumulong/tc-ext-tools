@@ -11,8 +11,8 @@ libxml2
 libxml2-dev
 ode
 ode-dev
-Xorg-7.6
-Xorg-7.6-dev
+Xorg-7.6-lib
+Xorg-7.6-lib-dev
 ogre
 ogre-dev
 libopenal

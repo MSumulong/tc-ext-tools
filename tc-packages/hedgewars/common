@@ -7,8 +7,8 @@ SDL
 SDL-dev
 qt-4.x-base
 qt-4.x-dev
-Xorg-7.6
-Xorg-7.6-dev
+Xorg-7.6-lib
+Xorg-7.6-lib-dev
 ncurses
 ncurses-dev
 readline

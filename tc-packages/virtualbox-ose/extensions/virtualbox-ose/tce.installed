@@ -9,7 +9,7 @@ TCUSER=$(cat /etc/sysconfig/tcuser)
 
 # copy virtualbox to file system if extension is mounted
 if [ -d /tmp/tcloop/$THIS ]; then
-     cp -a /tmp/tcloop/$THIS/usr/local/lib/virtualbox /usr/local/lib
+     busybox cp -a /tmp/tcloop/$THIS/usr/local/lib/virtualbox /usr/local/lib
 fi
 
 # creating vboxusers group if it isn't already there

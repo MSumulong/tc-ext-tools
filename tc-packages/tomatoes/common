@@ -5,8 +5,8 @@ BUILD_DEPENDS="SDL
 SDL-dev
 libmikmod
 libmikmod-dev
-Xorg-7.6
-Xorg-7.6-dev"
+Xorg-7.6-lib
+Xorg-7.6-lib-dev"
 
 DESCRIPTION="How many tomatoes can you smash in ten short minutes?"
 AUTHOR="Mika Halttunen"

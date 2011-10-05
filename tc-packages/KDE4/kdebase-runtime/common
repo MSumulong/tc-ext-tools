@@ -32,8 +32,8 @@ qt-4.x-qt3support
 qt-4.x-opengl
 qt-4.x-designer
 qt-4.x-dev
-Xorg-7.6
-Xorg-7.6-dev
+Xorg-7.6-lib
+Xorg-7.6-lib-dev
 attica
 attica-dev
 exiv2

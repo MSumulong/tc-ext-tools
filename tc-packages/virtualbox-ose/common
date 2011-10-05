@@ -1,5 +1,5 @@
 PACKAGE="virtualbox-ose"
-VERSION="4.1.2"
+VERSION="4.1.4"
 SOURCE="http://download.virtualbox.org/virtualbox/${VERSION}/VirtualBox-${VERSION}.tar.bz2"
 BUILD_DEPENDS="
 coreutils
@@ -27,7 +27,7 @@ libasound
 alsa-dev
 pixman
 pixman-dev
-Xorg-7.6
+Xorg-7.6-lib
 Xorg-7.6-dev
 SDL
 SDL-dev
@@ -60,4 +60,4 @@ CHANGELOG="2010/10/16 First Version 3.2.10
 		2011/05/23 Updated to 4.0.8
 		2011/06/02 Fixed USB devices support for virtualbox-ose
 		2011/08/07 Updated to 4.1.0"
-CURRENT="Updated to $VERSION and build for TCL 4.x"
+CURRENT="Updated to $VERSION and built for TCL 4.x"

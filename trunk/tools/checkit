@@ -63,7 +63,7 @@ this_check() {
         OWNER=$(echo $OUT | cut -d" " -f3-4)
 
         if [ "$PERM" = "drwxrwxr-x" -o "$PERM" = "drwxrwsr-x" ] && [ "$OWNER" = "root staff" ]; then
-             echo "yes."
+             echo "yes"
         else
              echo "no"
              return 1

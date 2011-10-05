@@ -19,8 +19,8 @@ librsvg
 librsvg-dev
 gtkglext
 gtkglext-dev
-Xorg-7.6
-Xorg-7.6-dev"
+Xorg-7.6-lib
+Xorg-7.6-lib-dev"
 
 DESCRIPTION="Cairo-Dock core package."
 AUTHOR="Cairo-Dock Team"

@@ -24,8 +24,6 @@ dbus-glib
 dbus-glib-dev
 libgnome-keyring
 libgnome-keyring-dev
-Xorg-7.6
-Xorg-7.6-dev
 libxcb
 libxcb-dev
 libevent

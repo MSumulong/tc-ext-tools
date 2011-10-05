@@ -5,8 +5,8 @@ BUILD_DEPENDS="python
 python-dev
 librsvg
 librsvg-dev
-Xorg-7.6
-Xorg-7.6-dev
+Xorg-7.6-lib
+Xorg-7.6-lib-dev
 freeglut
 freeglut-dev
 graphics-libs-1

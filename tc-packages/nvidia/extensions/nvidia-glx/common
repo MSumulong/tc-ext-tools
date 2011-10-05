@@ -1,20 +1,22 @@
 DESCRIPTION="NVIDIA Linux Drivers, Xorg driver."
-COMMENTS="Installation:
-		1) load nvidia-glx.tcz
-		2) exit to prompt
-		3) create xorg.conf
-			sudo Xorg -configure
-		4) move new config file to /etc/X11/ and name it to xorg.conf
-			sudo mv xorg.conf.new /etc/X11/xorg.conf
-		5) sudo nvidia-xconfig
-		6) startx
-		7) add etc/X11/xorg.conf to backup (/opt/.filetool.lst)
+COMMENTS="To install nvidia glx driver:
+		-----------------------------------------------------------------------------
+		1) Load nvidia-glx extension
+			$ tce-load -wi nvidia-glx
+		2) Click on Exit button, select `Exit to Prompt` and then press Ok button
+		3) Create xorg.conf
+			$ sudo Xorg -configure
+			$ sudo mv xorg.conf.new /etc/X11/xorg.conf
+		4) Configure X server settings for nvidia driver
+			$ sudo nvidia-xconfig
+		5) Start X server
+			$ startx
+		6) Run glxgears to test installation
+			$ glxgears
+		7) Add etc/X11/xorg.conf to backup (/opt/.filetool.lst)
 
-		If you already have Xorg installed and have xorg.conf skip steps 3-4.
-
-		If you don't have xorg.conf then you can skip steps 3-4 if you load pkg-config and procps extensions for once only.
-
-		For testing your installation you can run glxgears.
+		If you already have Xorg installed and have xorg.conf skip step-3.
+		-----------------------------------------------------------------------------
 		
 		For more information please refer to nvidia-glx-doc extension (index.html).
 
@@ -23,4 +25,9 @@ COMMENTS="Installation:
 		You can also read the License online before downloading the extension
 		http://www.nvidia.com/content/DriverDownload-March2009/licence.php?lang=us
 
+		-----------------------------------------------------------------------------
+
+		This extension requires Xorg.
+		This extension is not compatible with Xorg-7.6.
+		Xorg-7.5 is recommended.
 		This extension is PPI compatible."

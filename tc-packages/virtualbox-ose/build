@@ -111,11 +111,11 @@ build_install() {
   install -m755 "$PACKAGE_SOURCE_TOPDIR/src/VBox/Additions/x11/Installer/98vboxadd-xclient" "$INSTALL_ROOT/usr/local/bin/VBoxClient-all" || return 1
   install -m644 "$PACKAGE_SOURCE_TOPDIR/src/VBox/Additions/x11/Installer/vboxclient.desktop" "$INSTALL_ROOT/usr/local/etc/xdg/autostart/vboxclient.desktop" || return 1
 
-  install -m755 -D pam_vbox.so "$INSTALL_ROOT/usr/local/lib/security/pam_vbox.so" || return 1
   install -D -m644 "$PACKAGE_SRC/xorg.conf.sample" "$INSTALL_ROOT/usr/local/share/virtualbox-ose-additions/xorg.conf.sample" || return 1
 
-  install -D vboxmouse_drv_17.so "$INSTALL_ROOT/usr/local/lib/X11/modules/input/vboxmouse.so" || return 1
-  install -D vboxvideo_drv_17.so "$INSTALL_ROOT/usr/local/lib/X11/modules/drivers/vboxvideo.so" || return 1
+  install -Dm755 vboxmouse_drv_111.so "$INSTALL_ROOT/usr/local/lib/X11/modules/input/vboxmouse.so" || return 1
+  install -Dm755 vboxvideo_drv_111.so "$INSTALL_ROOT/usr/local/lib/X11/modules/drivers/vboxvideo.so" || return 1
+
   install -m755 VBoxOGL*.so "$INSTALL_ROOT/usr/local/lib" || return 1
   install -d -m755 "$INSTALL_ROOT/usr/local/lib/X11/modules/dri"
   ln -s /usr/local/lib/VBoxOGL.so "$INSTALL_ROOT/usr/local/lib/X11/modules/dri/vboxvideo_dri.so" || return 1
@@ -133,6 +133,9 @@ build_install() {
   install -D -m644 vboxvideo.ko "$INSTALL_ROOT/usr/local/lib/modules/$KERNEL/kernel/misc/vboxvideo.ko" || return 1
 
   install -D -m 0644 "$PACKAGE_SRC/60-vboxguest.rules" "$INSTALL_ROOT/lib/udev/rules.d/60-vboxguest.rules" || return 1
+
+  # compress kernel modules with gzip
+  gzip "$INSTALL_ROOT"/usr/local/lib/modules/"$KERNEL"/kernel/misc/*.ko || return 1
 
 }
 

@@ -8,8 +8,8 @@ pygtk-2.7-dev
 gtkglext
 gtkglext-dev
 pyopengl
-Xorg-7.6
-Xorg-7.6-dev"
+Xorg-7.6-lib
+Xorg-7.6-lib-dev"
 
 DESCRIPTION="GtkGLExt is an OpenGL extension to GTK+."
 AUTHOR="Naofumi Yasufuku, Alif Wahid"

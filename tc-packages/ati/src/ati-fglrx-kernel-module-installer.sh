@@ -160,12 +160,13 @@ build_install() {
 
    if [ ! -e "/usr/local/tce.installed/$EXTNAM" ]
    then
-          su $TCUSER -c "tce-load -w graphics-${KERNEL}.tcz"
-          su $TCUSER -c "tce-load -i $EXTNAM.tcz" || return 1
+        mv -f $TCEDIR/optional/upgrade/$EXTNAM.tcz* $TCEDIR/optional
+        su $TCUSER -c "tce-load -w graphics-${KERNEL}.tcz"
+        su $TCUSER -c "tce-load -i $EXTNAM.tcz" || return 1
    else
-          echo "$EXTNAM is already installed !"
-          echo "You must reboot to use your new extensions !"
-          return 1
+        echo "$EXTNAM is already installed !"
+        echo "You must reboot to use your new extensions !"
+        return 1
    fi
 
    return 0

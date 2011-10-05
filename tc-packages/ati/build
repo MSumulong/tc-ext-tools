@@ -135,7 +135,6 @@ build_rules() {
    tet_load
    tet_download
    tet_unpack
-   tet_patch
    tet_install
    tet_split
    tet_create

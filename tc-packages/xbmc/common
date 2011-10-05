@@ -23,8 +23,8 @@ libvorbis-dev
 bzip2
 bzip2-lib
 bzip2-dev
-Xorg-7.6
-Xorg-7.6-dev
+Xorg-7.6-lib
+Xorg-7.6-lib-dev
 glew
 boost
 boost-dev

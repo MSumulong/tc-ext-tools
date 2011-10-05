@@ -20,8 +20,8 @@ cppunit
 hicolor-icon-theme
 shared-mime-info
 desktop-file-utils
-Xorg-7.6
-Xorg-7.6-dev
+Xorg-7.6-lib
+Xorg-7.6-lib-dev
 cups
 cups-dev
 nspr
