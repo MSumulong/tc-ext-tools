@@ -4,7 +4,7 @@ SOURCE="http://downloads.sourceforge.net/sourceforge/gtkglext/gtkglext-${VERSION
 BUILD_DEPENDS="gtk2
 gtk2-dev
 Xorg-7.6-lib
-Xorg-7.6-lib-dev"
+Xorg-7.6-dev"
 
 DESCRIPTION="GtkGLExt is an OpenGL extension to GTK+."
 AUTHOR="Naofumi Yasufuku, Stephane Brunet, Ralf Corsepius, and Braden McDaniel"

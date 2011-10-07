@@ -10,7 +10,7 @@ COMMENTS="Each player controls a team of several hedgehogs. During the course of
 		hold up the game with excessive thinking or moving.
 
 		You need OSS or ALSA for sound.
-
 		You need GPU acceleration for smooth playing experience.
 
+		This extension requires Xorg.
 		This extension is PPI compatible."

@@ -28,7 +28,7 @@ strigi-dev
 libusb
 libusb-dev
 Xorg-7.6-lib
-Xorg-7.6-lib-dev
+Xorg-7.6-dev
 fontconfig
 fontconfig-dev
 qedje

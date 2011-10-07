@@ -1,7 +1,8 @@
 PACKAGE="celestia"
 VERSION="1.6.1"
 SOURCE="http://downloads.sourceforge.net/sourceforge/celestia/celestia-${VERSION}.tar.gz"
-BUILD_DEPENDS="gtk2
+BUILD_DEPENDS="
+gtk2
 gtk2-dev
 lua
 lua-dev
@@ -10,9 +11,7 @@ libtheora-dev
 gtkglext
 gtkglext-dev
 Xorg-7.6-lib
-Xorg-7.6-lib-dev
-freeglut
-freeglut-dev
+Xorg-7.6-dev
 libxcb
 libxcb-dev"
 
@@ -21,6 +20,8 @@ AUTHOR="Celestia Development Team"
 SITE="http://www.shatters.net/celestia/"
 COPYING="GPL"
 MAINTAINERS="Arslan S."
-COMMENTS="This extension is PPI compatible."
-CHANGELOG="2010/09/01 First Version 1.6.0"
-CURRENT="Updated to $VERSION"
+COMMENTS="This extension requires Xorg.
+		This extension is PPI compatible."
+CHANGELOG="2010/09/01 First Version 1.6.0
+		2011/06/14 Updated to 1.6.1"
+CURRENT="Rebuilt for TCL 4.x"

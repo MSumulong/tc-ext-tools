@@ -5,7 +5,7 @@ BUILD_DEPENDS="cmake
 boost
 boost-dev
 Xorg-7.6-lib
-Xorg-7.6-lib-dev
+Xorg-7.6-dev
 openssl-0.9.8
 openssl-0.9.8-dev
 qt-4.x-base

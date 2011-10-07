@@ -131,6 +131,8 @@ build_create() {
         cp 2.6.x/fglrx.ko $INSTALL_ROOT/usr/local/lib/modules/${KERNEL}/kernel/drivers/video || return 1
    fi
 
+   gzip $INSTALL_ROOT/usr/local/lib/modules/${KERNEL}/kernel/drivers/video/fglrx.ko
+
    cp $LICENSE $INSTALL_ROOT/usr/local/share/doc/$EXTNAM
 
    cd $TMPDIR

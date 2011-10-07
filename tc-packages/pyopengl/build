@@ -1,24 +1,10 @@
 #
-# Note: This file is sourced by buildit
+# Defines build functions: configure, compile, install
 #
-# Defines mandatory build functions: configure, compile, install
-#
-
-build_configure() {
-
-  return 0
-
-}
-
-build_compile() {
-
-  return 0
-
-}
 
 build_install() {
 
-  sudo python setup.py install --prefix=/usr/local --root=${INSTALL_ROOT} || return 1
+  python setup.py install --prefix=/usr/local --root="$INSTALL_ROOT" || return 1
 
 }
 
@@ -29,11 +15,9 @@ build_rules() {
   tet_unpack
   tet_patch
   tet_load
-  tet_configure
-  tet_compile
   tet_install
   tet_split
-   tet_strip
+  tet_strip
   tet_create
   tet_generate
   tet_check

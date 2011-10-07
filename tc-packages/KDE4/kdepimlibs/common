@@ -31,7 +31,7 @@ qt-4.x-extended
 qt-4.x-opengl
 qt-4.x-dev
 Xorg-7.6-lib
-Xorg-7.6-lib-dev
+Xorg-7.6-dev
 shared-desktop-ontologies
 shared-mime-info
 docbook_xsl"

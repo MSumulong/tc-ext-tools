@@ -12,7 +12,7 @@ pcre-dev
 curl
 curl-dev
 Xorg-7.6-lib
-Xorg-7.6-lib-dev
+Xorg-7.6-dev
 libxcb
 libxcb-dev
 GraphicsMagick

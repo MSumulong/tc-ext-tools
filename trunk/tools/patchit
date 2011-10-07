@@ -80,7 +80,7 @@ this_main() {
            fi
 
            echo "Detecting the patch level."
-           for FILE in $(cat $PACKAGE_PATCHES/$PATCH | grep "+++" | cut -f2 -d" " | cut -f1 -d" ")
+           for FILE in $(cat $PACKAGE_PATCHES/$PATCH | grep -e "---" -e "+++" | cut -f2 -d" " | cut -f1 -d" ")
            do
                PATCH_LEVEL=
                if [ -f "$PACKAGE_SOURCE_TOPDIR/$FILE" ]; then

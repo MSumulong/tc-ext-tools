@@ -25,7 +25,7 @@ gst-plugins-good
 libgnome-desktop
 libgnome-desktop-dev
 Xorg-7.6-lib
-Xorg-7.6-lib-dev
+Xorg-7.6-dev
 libxcb
 libxcb-dev
 dbus

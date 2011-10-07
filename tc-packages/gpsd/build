@@ -5,31 +5,34 @@
 # Configure
 build_configure() {
 
-  ./configure --prefix=/usr/local \
-      --enable-dbus || return 1
+  scons prefix=/usr/local \
+    systemd=yes \
+    dbus_export=yes \
+    libQgpsmm=no || return 1
 
 }
 
 # Compile
 build_compile() {
 
-  make || return 1
+  scons build || return 1
 
 }
 
 # Install
 build_install() {
 
-  make DESTDIR="$INSTALL_ROOT" install || return 1
+  export DESTDIR="$INSTALL_ROOT"
+  scons install || return 1
 
   install -d -m 755 "$INSTALL_ROOT/usr/local/etc/init.d"
   install -m 755 "$PACKAGE_SRC/gpsd.sh" "$INSTALL_ROOT/usr/local/etc/init.d/gpsd"
   install -m 644 "$PACKAGE_SRC/gpsd.rc" "$INSTALL_ROOT/usr/local/etc/gpsd.rc"
 
-  sed -i 's|Id: gpsd.rules|Id: 99-gpsd-usb.rules|' gpsd.rules
   install -D -m644 "gpsd.rules" "$INSTALL_ROOT/lib/udev/rules.d/99-gpsd-usb.rules"
-  install -D -m755 "gpsd.hotplug.wrapper" "$INSTALL_ROOT/lib/udev/gpsd.hotplug.wrapper"
   install -D -m755 "gpsd.hotplug" "$INSTALL_ROOT/lib/udev/gpsd.hotplug"
+
+  sed -i 's|/etc/default/gpsd|/usr/local/etc/gpsd.rc|' gpsd.hotplug
 
 }
 

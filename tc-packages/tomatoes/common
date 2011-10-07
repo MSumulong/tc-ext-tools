@@ -6,7 +6,7 @@ SDL-dev
 libmikmod
 libmikmod-dev
 Xorg-7.6-lib
-Xorg-7.6-lib-dev"
+Xorg-7.6-dev"
 
 DESCRIPTION="How many tomatoes can you smash in ten short minutes?"
 AUTHOR="Mika Halttunen"

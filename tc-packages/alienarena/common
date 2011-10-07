@@ -5,7 +5,7 @@ SOURCE="http://icculus.org/alienarena/Files/alienarena-7_50-linux${_VERSION}.tar
 BUILD_DEPENDS="curl
 curl-dev
 Xorg-7.6-lib
-Xorg-7.6-lib-dev
+Xorg-7.6-dev
 libxcb
 libxcb-dev
 libvorbis

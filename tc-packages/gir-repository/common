@@ -33,7 +33,7 @@ goocanvas-dev
 gamin
 gamin-dev
 Xorg-7.6-lib
-Xorg-7.6-lib-dev
+Xorg-7.6-dev
 babl"
 
 DESCRIPTION="A repository of GIR interface description files."

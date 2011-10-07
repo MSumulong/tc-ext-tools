@@ -5,7 +5,7 @@
 ### Configure
 build_configure() {
 
-  ./configure --prefix=/usr/local --with-gtk --without-libiconv-prefix || return 1
+  ./configure --prefix=/usr/local --with-gtk || return 1
 
 }
 ##
@@ -21,7 +21,7 @@ build_compile() {
 ### Install
 build_install() {
 
-  make DESTDIR=${INSTALL_ROOT} install || return 1
+  make DESTDIR="$INSTALL_ROOT" install || return 1
 
 }
 ##
@@ -29,11 +29,11 @@ build_install() {
 ### Rules
 build_rules() {
 
+  tet_load
   tet_download
   tet_convert
   tet_unpack
   tet_patch
-  tet_load
   tet_configure
   tet_compile
   tet_install

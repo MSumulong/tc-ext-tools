@@ -17,7 +17,7 @@ qimageblitz
 qimageblitz-dev
 samba3
 Xorg-7.6-lib
-Xorg-7.6-lib-dev
+Xorg-7.6-dev
 glib2
 glib2-dev
 libraw1394

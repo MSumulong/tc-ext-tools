@@ -1,9 +1,9 @@
 PACKAGE="gpsd"
-VERSION="2.96bis"
-SOURCE="http://download.berlios.de/gpsd/gpsd-${VERSION}.tar.gz"
-#VERSION="git"
-#SOURCE="git::git://git.berlios.de/gpsd"
-BUILD_DEPENDS="Xorg-7.6-lib
+VERSION="3.1"
+SOURCE="http://download.savannah.gnu.org/releases/gpsd/gpsd-${VERSION}.tar.gz"
+BUILD_DEPENDS="
+scons
+Xorg-7.6-lib
 Xorg-7.6-dev
 libusb
 libusb-dev
@@ -23,11 +23,13 @@ dbus
 dbus-dev
 dbus-glib
 dbus-glib-dev
+bluez
+bluez-dev
 docbook_xsl"
 
 DESCRIPTION="GPS (Global Positioning System) services daemon."
 AUTHOR="various"
-SITE="http://gpsd.berlios.de/"
+SITE="http://www.catb.org/gpsd/"
 COPYING="BSD"
 MAINTAINERS="Arslan S., T. Buctoo"
 COMMENTS="Service daemon can be controlled using the command:
@@ -38,5 +40,6 @@ CHANGELOG="2010/03/14 First version by Arslan S.
 		2010/07/10 Moved libgps.so from gpsd-dev to gpsd (mounted extension causes broken symlinks)
 			   Fixed init.d script now returns exit codes properly when status requested by Arslan S.
 		2010/11/01 Updated to latest git revision by Arslan S.
-		2011/01/21 Updated to latest git revision by Arslan S"
+		2011/01/21 Updated to latest git revision by Arslan S
+		2011/04/12 Updated to 2.96bis by Arslan S."
 CURRENT="Updated to $VERSION by Arslan S."

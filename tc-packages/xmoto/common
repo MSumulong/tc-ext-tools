@@ -8,7 +8,7 @@ bzip2-dev
 SDL
 SDL-dev
 Xorg-7.6-lib
-Xorg-7.6-lib-dev
+Xorg-7.6-dev
 curl
 curl-dev
 sqlite3

@@ -10,7 +10,7 @@ qt-4.x-dev
 glib2
 glib2-dev
 Xorg-7.6-lib
-Xorg-7.6-lib-dev"
+Xorg-7.6-dev"
 
 DESCRIPTION="Phonon Multimedia Framework."
 AUTHOR="Matthias Kretz, Ricardo Villalba, Ian Monroe, Nokia Corporation"

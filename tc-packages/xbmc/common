@@ -24,7 +24,7 @@ bzip2
 bzip2-lib
 bzip2-dev
 Xorg-7.6-lib
-Xorg-7.6-lib-dev
+Xorg-7.6-dev
 glew
 boost
 boost-dev

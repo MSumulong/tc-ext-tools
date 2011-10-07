@@ -18,7 +18,7 @@ librsvg-dev
 xine-lib
 xine-lib-dev
 Xorg-7.6-lib
-Xorg-7.6-lib-dev
+Xorg-7.6-dev
 freeglut
 freeglut-dev
 poppler
