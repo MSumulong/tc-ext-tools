@@ -46,3 +46,10 @@ TET_DEPENDS="compiletc
 
 # default encryption key
 PACKAGE_ENCRYPTION_KEY="tinycore"
+
+# compiler and linker flags
+TET_CFLAGS="-march=i486 -mtune=i686 -Os -pipe"
+TET_CXXFLAGS="-march=i486 -mtune=i686 -Os -pipe"
+TET_LDFLAGS="-Wl,-O1"
+
+
