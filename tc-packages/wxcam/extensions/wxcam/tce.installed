@@ -1,0 +1,10 @@
+#!/bin/sh
+
+USER=`cat /etc/sysconfig/tcuser`
+DESKTOP_DIR="/home/${USER}/Desktop"
+
+if [ ! -d ${DESKTOP_DIR} ]; then
+     mkdir ${DESKTOP_DIR}
+     chown ${USER}:staff ${DESKTOP_DIR}
+fi
+

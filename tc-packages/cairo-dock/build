@@ -26,7 +26,7 @@ build_install() {
    make DESTDIR="$INSTALL_ROOT" install || return 1
 
    cd ..
-   install -Dm644 LICENSE "$INSTALL_ROOT/usr/local/share/doc/cairo-dock/LICENSE"
+   install -Dm644 LICENSE "$INSTALL_ROOT/usr/local/share/doc/cairo-dock-core/LICENSE"
 
 }
 

@@ -1,7 +1,8 @@
 PACKAGE="wxcam"
 VERSION="1.1"
 SOURCE="http://downloads.sourceforge.net/wxcam/wxcam-${VERSION}.tar.bz2"
-BUILD_DEPENDS="gtk2
+BUILD_DEPENDS="
+gtk2
 gtk2-dev
 libglade
 libglade-dev
@@ -12,7 +13,9 @@ xvid-dev
 mjpegtools
 mjpegtools-dev
 libv4l
-libv4l-dev"
+libv4l-dev
+libasound
+alsa-dev"
 
 DESCRIPTION="wxCam is a webcam application for linux."
 AUTHOR="various"
@@ -22,4 +25,4 @@ MAINTAINERS="Arslan S."
 COMMENTS="This extension is PPI compatible."
 CHANGELOG="2010/12/07 First Version 1.0.6
 		2011/03/30 Updated to 1.0.7"
-CURRENT="Updated to $VERSION"
+CURRENT="Updated to $VERSION and built for TCL 4.x"

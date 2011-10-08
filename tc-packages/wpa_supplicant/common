@@ -1,10 +1,13 @@
 PACKAGE="wpa_supplicant"
 VERSION="0.7.3"
 SOURCE="http://hostap.epitest.fi/releases/wpa_supplicant-${VERSION}.tar.gz"
-BUILD_DEPENDS="openssl-0.9.8
+BUILD_DEPENDS="
+openssl-0.9.8
 openssl-0.9.8-dev
 dbus
+dbus-dev
 dbus-glib
+dbus-glib-dev
 libnl1
 libnl1-dev
 readline
@@ -17,6 +20,7 @@ COPYING="GPL-2"
 MAINTAINERS="Arslan S."
 COMMENTS="This extension conflicts with wpa_supplicant.tcz
 		This extension is PPI compatible."
-CHANGELOG="2010/07/05 First Version 0.6.10"
-CURRENT="Updated to 0.7.3"
+CHANGELOG="2010/07/05 First Version 0.6.10
+		2010/11/18 Updated to 0.7.3"
+CURRENT="Rebuilt for TCL 4.x"
 

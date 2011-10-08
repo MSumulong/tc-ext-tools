@@ -1,12 +1,13 @@
 PACKAGE="cairo-dock"
-MAJORVERSION="2.2.0"
-SUBVERSION="4"
-VERSION="${MAJORVERSION}-${SUBVERSION}"
-SOURCE="http://launchpad.net/cairo-dock-core/2.2/${MAJORVERSION}/+download/cairo-dock-${VERSION}.tar.gz"
-BUILD_DEPENDS="cmake
+_VERSION="2.4.0"
+VERSION="${_VERSION}~2"
+SOURCE="http://launchpad.net/cairo-dock-core/${_VERSION%.*}/${_VERSION}/+download/cairo-dock-${VERSION}.tar.gz"
+BUILD_DEPENDS="
+cmake
 glib2
 glib2-dev
 dbus-glib
+dbus-glib-dev
 libxml2
 libxml2-dev
 cairo
@@ -28,5 +29,5 @@ SITE="https://launchpad.net/cairo-dock-core"
 COPYING="GPL-3"
 MAINTAINERS="Arslan S."
 COMMENTS="This extension is PPI compatible."
-CHANGELOG="---"
-CURRENT="First Version"
+CHANGELOG="2010/12/04 First Version 2.2.0-4"
+CURRENT="Updated to $VERSION and built for TCL 4.x"
