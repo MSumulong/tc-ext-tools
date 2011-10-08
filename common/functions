@@ -53,17 +53,15 @@ fi
 # list directories
 ldir() {
 
-   unset ret
-
+   unset dirs
    for i in `ls $@`
    do
       res=`ls -l $@ | grep $i | grep '^d'`
       if [ -n "$res" ]; then
-           ret="$i $ret"
+           dirs="$i $dirs"
       fi
    done
-
-   echo $ret
+   echo $dirs
 
 }
 
@@ -207,10 +205,6 @@ set_extensions() {
    if [ $cnt = 0 ]; then
         echo "Error, there is no extension available !"
         exit 1
-   elif [ $cnt = 1 ]; then
-        SINGLE_EXTENSION=1
-   else
-        SINGLE_EXTENSION=0
    fi
 
 }
@@ -241,9 +235,7 @@ set_extension() {
         PACKAGE_EXTENSION_NAME="$NAME"
    fi
 
-   if [ "$(echo $PACKAGE_EXTENSION_NAME | grep KERNEL)" ]; then
-        PACKAGE_EXTENSION_NAME=$(echo $PACKAGE_EXTENSION_NAME | sed "s/KERNEL/${KERNEL}/")
-   fi
+   PACKAGE_EXTENSION_NAME=$(echo $PACKAGE_EXTENSION_NAME | sed "s/KERNEL/${KERNEL}/")
 
    PACKAGE_EXTENSION_BIN="$PACKAGE_BIN/$PACKAGE_EXTENSION_NAME"
    PACKAGE_EXTENSION_PKG="$PACKAGE_PKG/$PACKAGE_EXTENSION_NAME"
@@ -276,8 +268,6 @@ set_date() {
 
 }
 
-set_date
-
 # sets the tcl system variables
 set_tcl_system() {
 
@@ -301,10 +291,13 @@ set_tcl_system() {
    else
         KERNEL_ARCH=x86
         KERNEL_VER="${KERNEL%-tinycore}"
-        TET_CFLAGS="-march=i486 -mtune=i686 -Os -pipe"
-        TET_CXXFLAGS="-march=i486 -mtune=i686 -Os -pipe"
-        TET_LDFLAGS="-Wl,-O1"
+        CC=gcc
+        LD=ld
    fi
+
+}
+
+set_flags() {
 
    [ -z "$CFLAGS" ] && export CFLAGS="$TET_CFLAGS"
    [ -z "$CXXFLAGS" ] && export CXXFLAGS="$TET_CXXFLAGS"
@@ -312,7 +305,9 @@ set_tcl_system() {
 
 }
 
+set_date
 set_tcl_system
+set_flags
 
 # package variables
 PACKAGE_ROOT="$PWD"
