@@ -1,7 +1,8 @@
 PACKAGE="crosstool-ng"
-VERSION="1.9.3"
+VERSION="1.12.3"
 SOURCE="http://ymorin.is-a-geek.org/download/crosstool-ng/crosstool-ng-${VERSION}.tar.bz2"
-BUILD_DEPENDS="bash
+BUILD_DEPENDS="
+bash
 texinfo
 coreutils
 cvs
@@ -16,8 +17,8 @@ gzip
 binutils"
 
 DESCRIPTION="A versatile (cross-)toolchain generator."
-AUTHOR="various"
-SITE="http://ymorin.is-a-geek.org/projects/crosstool"
+AUTHOR="---"
+SITE="http://crosstool-ng.org/"
 COPYING="GPL"
 MAINTAINERS="Arslan S."
 COMMENTS="Example usage:
@@ -38,6 +39,7 @@ COMMENTS="Example usage:
 		$ ct-ng list-samples
 
 		This extension is PPI compatible."
-CHANGELOG="2011/02/24 First Version 1.9.3"
-CURRENT="Patched to prefer wget over curl"
+CHANGELOG="2011/02/24 First Version 1.9.3
+		2011/03/06 Patched to prefer wget over curl"
+CURRENT="Updated to $VERSION"
 

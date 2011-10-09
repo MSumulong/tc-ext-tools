@@ -1,36 +1,29 @@
---- a/configure	2011-01-31 23:11:19.000000000 +0000
-+++ b/configure	2011-03-06 16:51:14.919955905 +0000
-@@ -358,7 +358,7 @@
+diff -Naur a/configure b/configure
+--- a/configure	2011-09-24 20:08:46.000000000 +0000
++++ b/configure	2011-10-09 12:14:05.693399008 +0000
+@@ -453,7 +453,7 @@
               ver='\(GNU libtool.*\) (2[[:digit:]]*\.|1\.6[[:digit:]]*\.|1\.5\.[2-9][[:digit:]]+)'   \
-              err="'libtool' 1.5.26 or above was not found"
+              err="'libtoolize' 1.5.26 or above was not found"
  has_or_abort prog=stat
--has_or_abort prog="aria2c curl wget"
-+has_or_abort prog="wget aria2c curl"
- has_or_abort prog=cvs
+-has_or_abort prog="curl wget"
++has_or_abort prog="wget curl"
  has_or_abort prog=patch
  has_or_abort prog=tar
-
---- a/scripts/functions	2011-01-31 23:11:19.000000000 +0000
-+++ b/scripts/functions	2011-03-06 16:59:13.375741448 +0000
-@@ -400,17 +400,17 @@
- _curl=$(CT_Which curl)
- 
- # Wrapper function to call one of, in order of preference:
-+#   wget
- #   aria2
- #   curl
--#   wget
- # Usage: CT_DoGetFile <URL>
- CT_DoGetFile() {
--    if   [ -n "${_aria2c}" -a ${CT_DOWNLOAD_MAX_CHUNKS} -gt 1 ]; then
-+    if [ -n "${_wget}" ]; then
-+        CT_DoGetFileWget "$1"
-+    elif   [ -n "${_aria2c}" -a ${CT_DOWNLOAD_MAX_CHUNKS} -gt 1 ]; then
-         CT_DoGetFileAria2 "$1"
-     elif [ -n "${_curl}" ]; then
-         CT_DoGetFileCurl "$1"
--    elif [ -n "${_wget}" ]; then
--        CT_DoGetFileWget "$1"
-     else
-         CT_Abort "Could find neither wget nor curl"
-     fi
+ has_or_abort prog=gzip
+diff -Naur a/scripts/functions b/scripts/functions
+--- a/scripts/functions	2011-09-24 20:08:46.000000000 +0000
++++ b/scripts/functions	2011-10-09 12:17:43.820072226 +0000
+@@ -450,10 +450,10 @@
+     # not easy to detect them, and wget does not timeout by default while
+     # connecting, so force a global ${CT_CONNECT_TIMEOUT}-second timeout.
+     # For curl, no good progress indicator is available. So, be silent.
+-    if CT_DoExecLog ALL "${_curl}" --ftp-pasv    --retry 3 --connect-timeout ${CT_CONNECT_TIMEOUT} -L -f -s -o "${tmp}"   "${url}"  \
+-    || CT_DoExecLog ALL "${_curl}"               --retry 3 --connect-timeout ${CT_CONNECT_TIMEOUT} -L -f -s -o "${tmp}"   "${url}"  \
+-    || CT_DoExecLog ALL "${_wget}" --passive-ftp --tries=3 -T ${CT_CONNECT_TIMEOUT} -nc --progress=dot:binary -O "${tmp}" "${url}"  \
++    if CT_DoExecLog ALL "${_wget}" --passive-ftp --tries=3 -T ${CT_CONNECT_TIMEOUT} -nc --progress=dot:binary -O "${tmp}" "${url}"  \
+     || CT_DoExecLog ALL "${_wget}"               --tries=3 -T ${CT_CONNECT_TIMEOUT} -nc --progress=dot:binary -O "${tmp}" "${url}"  \
++    || CT_DoExecLog ALL "${_curl}" --ftp-pasv    --retry 3 --connect-timeout ${CT_CONNECT_TIMEOUT} -L -f -s -o "${tmp}"   "${url}"  \
++    || CT_DoExecLog ALL "${_curl}"               --retry 3 --connect-timeout ${CT_CONNECT_TIMEOUT} -L -f -s -o "${tmp}"   "${url}"  \
+     ; then
+         # One of them succeeded, good!
+         mv "${tmp}" "${dest}"

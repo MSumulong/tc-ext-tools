@@ -1,7 +1,7 @@
 #!/bin/sh
 
 THIS=`basename $0`
-VERSION=1.9.3
+VERSION=1.12.3
 
 if [ -d "/tmp/tcloop/$THIS" ]; then
   busybox cp -a /tmp/tcloop/$THIS/usr/local/bin/ct-ng /usr/local/bin/ct-ng

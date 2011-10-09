@@ -13,6 +13,7 @@ AUTHOR="Mika Halttunen"
 SITE="http://tomatoes.sourceforge.net/"
 COPYING="ZLIB"
 MAINTAINERS="Arslan S."
-COMMENTS="This extension is PPI compatible."
+COMMENTS="This extension requires Xorg.
+		This extension is PPI compatible."
 CHANGELOG="---"
 CURRENT="First Version"

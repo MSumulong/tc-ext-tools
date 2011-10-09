@@ -1,6 +1,6 @@
+compiletc.tcz
 ncurses.tcz
 ncurses-dev.tcz
-base-dev.tcz
 coreutils.tcz
 binutils.tcz
 findutils.tcz

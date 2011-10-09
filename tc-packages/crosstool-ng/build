@@ -8,6 +8,8 @@
 ## configure
 build_configure() {
 
+   sed -i -e "s/^.*VERSION=.*/VERSION=${VERSION}/" "$PACKAGE_EXTENSIONS/crosstool-ng/tce.installed" || return 1 
+
    ./configure --prefix=/usr/local || return 1
 
 }

@@ -5,6 +5,7 @@
 ### Configure
 build_configure() {
 
+  ./autogen.sh || return 1
   ./configure --prefix=/usr/local \
       --localstatedir=/var --disable-scrollkeeper \
       --with-search=basic --with-gecko=libxul-embedding || return 1
