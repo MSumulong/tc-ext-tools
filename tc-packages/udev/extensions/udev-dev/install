@@ -1,0 +1,5 @@
+usr/include
+usr/lib/pkgconfig
+usr/share/pkgconfig
+usr/lib/libgudev-1.0.la
+usr/lib/libudev.la

@@ -1,10 +1,10 @@
 #!/bin/sh
 
-[ -d /var/run/sepermit ] || sudo mkdir -p /var/run/sepermit
-[ -d /usr/local/etc/security/limits.d ] || sudo mkdir -p /usr/local/etc/security/limits.d
-[ -d /usr/local/etc/security/namespace.d ] || sudo mkdir -p /usr/local/etc/security/namespace.d
+[ -d /var/run/sepermit ] || mkdir -p /var/run/sepermit
+[ -d /usr/local/etc/security/limits.d ] || mkdir -p /usr/local/etc/security/limits.d
+[ -d /usr/local/etc/security/namespace.d ] || mkdir -p /usr/local/etc/security/namespace.d
 
-[ -d /etc/security ] || sudo ln -sf /usr/local/etc/security /etc/security
-[ -d /etc/pam.d ] || sudo ln -sf /usr/local/etc/pam.d /etc/pam.d
-[ -e /etc/environment ] || sudo ln -sf /usr/local/etc/environment /etc/environment
+[ -d /etc/security ] || ln -sf /usr/local/etc/security /etc/security
+[ -d /etc/pam.d ] || ln -sf /usr/local/etc/pam.d /etc/pam.d
+[ -e /etc/environment ] || ln -sf /usr/local/etc/environment /etc/environment
 

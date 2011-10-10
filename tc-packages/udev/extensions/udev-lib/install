@@ -1,0 +1,4 @@
+lib/libudev.so*
+usr/lib/libudev.so
+lib/libgudev-1.0.so.*
+usr/lib/libgudev-1.0.so

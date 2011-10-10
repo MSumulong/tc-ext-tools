@@ -21,7 +21,7 @@ usr/local/include/security/pam_modutil.h
 usr/local/lib/libpam.la
 usr/local/lib/libpam.so
 usr/local/lib/libpam.so.0
-usr/local/lib/libpam.so.0.83.0
+usr/local/lib/libpam.so.0.83.1
 usr/local/lib/libpam_misc.la
 usr/local/lib/libpam_misc.so
 usr/local/lib/libpam_misc.so.0
@@ -162,6 +162,7 @@ usr/local/share/locale/ta/LC_MESSAGES/Linux-PAM.mo
 usr/local/share/locale/te/LC_MESSAGES/Linux-PAM.mo
 usr/local/share/locale/tr/LC_MESSAGES/Linux-PAM.mo
 usr/local/share/locale/uk/LC_MESSAGES/Linux-PAM.mo
+usr/local/share/locale/vi/LC_MESSAGES/Linux-PAM.mo
 usr/local/share/locale/zh_CN/LC_MESSAGES/Linux-PAM.mo
 usr/local/share/locale/zh_TW/LC_MESSAGES/Linux-PAM.mo
 usr/local/share/locale/zu/LC_MESSAGES/Linux-PAM.mo

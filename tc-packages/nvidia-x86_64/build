@@ -11,8 +11,7 @@ build_unpack() {
 # Compile
 build_compile() {
 
-   echo "CROSS_COMPILE = $CROSS_COMPILE"
-   cd kernel &&
+   cd kernel
    make SYSSRC="$TET_LINUX_BUILD" CC="${CROSS_COMPILE}gcc" LD="${CROSS_COMPILE}ld" IGNORE_CC_MISMATCH=1 module || return 1
 
 }
@@ -24,6 +23,7 @@ build_install() {
    # kernel module
    install -d -m 755 "$INSTALL_ROOT/usr/local/lib/modules/$KERNEL/kernel/drivers/video"
    install -m 644 nvidia.ko "$INSTALL_ROOT/usr/local/lib/modules/$KERNEL/kernel/drivers/video/nvidia.ko" || return 1
+   gzip "$INSTALL_ROOT/usr/local/lib/modules/$KERNEL/kernel/drivers/video/nvidia.ko"
 
 }
 

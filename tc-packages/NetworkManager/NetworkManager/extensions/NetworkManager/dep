@@ -2,7 +2,7 @@ dbus-glib.tcz
 pppd.tcz
 wireless_tools.tcz
 wpa_supplicant-dbus.tcz
-gudev-lib.tcz
+udev-lib.tcz
 polkit.tcz
 libnl1.tcz
 dhcpcd.tcz

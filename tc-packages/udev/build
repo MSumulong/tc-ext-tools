@@ -1,0 +1,60 @@
+
+############################################################################
+#                                                                          #
+#    package build functions: configure, compile, install, rules, etc.     #
+#                                                                          #
+############################################################################
+
+## configure
+build_configure() {
+
+  ./configure --prefix=/usr \
+              --with-rootlibdir=/lib \
+              --libexecdir=/lib/udev \
+              --sysconfdir=/etc \
+              --sbindir=/sbin \
+              --disable-introspection \
+              --enable-rule-generator \
+              --enable-udev_acl \
+              --with-usb-ids-path=/usr/local/share/usb.ids.gz \
+              --with-pci-ids-path=/usr/local/share/pci.ids.gz || return 1
+
+}
+
+## compile
+build_compile() {
+
+  make || return 1
+
+}
+
+## install
+build_install() {
+
+   make DESTDIR="$I_ROOT" install || return 1
+
+   mkdir -p "$I_ROOT/usr/local/lib"
+   mv "$I_ROOT/usr/lib/ConsoleKit" "$I_ROOT/usr/local/lib/ConsoleKit"
+
+}
+
+## rules
+build_rules() {
+
+   tet_load
+   tet_download
+   tet_convert
+   tet_unpack
+   tet_patch
+   tet_configure
+   tet_compile
+   tet_install
+   tet_split
+   tet_strip
+   tet_create
+   tet_generate
+   tet_check
+   tet_package
+
+}
+

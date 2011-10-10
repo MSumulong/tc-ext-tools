@@ -1,0 +1,33 @@
+PACKAGE="cnetworkmanager"
+VERSION="git${_DATE}"
+SOURCE="git::git://repo.or.cz/cnetworkmanager.git"
+BUILD_DEPENDS="
+python
+python-dev"
+
+DESCRIPTION="Command line interface to Network Manager."
+AUTHOR="Martin Vidner"
+SITE="http://vidner.net/martin/software/cnetworkmanager/"
+COPYING="GPL-2"
+MAINTAINERS="Arslan S."
+COMMENTS="cnetworkmanager is originally suitable for automatic ip wireless connections, and it does not support static ips yet.
+		It is a NetworkManager client with a command line interface which is purely written in python.
+
+		To start NetworkManager add to your /opt/bootlocal.sh :
+			/usr/local/etc/init.d/dbus restart
+			/usr/local/etc/init.d/NetworkManager start
+
+		Example usage:
+			cnetworkmanager --wifi=on
+			cnetworkmanager --connect=my_unprotected_wifi_essid --unprotected
+			or
+			cnetworkmanager --connect=my_wpa_protected_wifi_essid --wpa-pass=mypassword
+			or
+			cnetworkmanager --connect=my_wep_protected_wifi_essid --wep-pass=mypassword
+
+		See cnetworkmanager --help for details
+
+		This extension is PPI compatible."
+CHANGELOG="2010/07/06 First Version 0.21.1
+		2010/08/04 Built against python 2.7"
+CURRENT="Updated to $VERSION"

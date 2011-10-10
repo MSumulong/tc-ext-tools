@@ -1,0 +1,57 @@
+diff -Naur a/configure.ac b/configure.ac
+--- a/configure.ac	2011-09-20 03:53:24.000000000 +0000
++++ b/configure.ac	2011-10-10 12:38:07.066323116 +0000
+@@ -107,7 +107,7 @@
+ dnl
+ AC_C_BIGENDIAN
+ 
+-AC_ARG_WITH(distro, AS_HELP_STRING([--with-distro=DISTRO], [Specify the Linux distribution to target: One of redhat, suse, gentoo, debian, arch, slackware, paldo, mandriva, pardus, linexa or exherbo]))
++AC_ARG_WITH(distro, AS_HELP_STRING([--with-distro=DISTRO], [Specify the Linux distribution to target: One of redhat, suse, gentoo, debian, arch, slackware, paldo, mandriva, tinycore, pardus, linexa or exherbo]))
+ if test "z$with_distro" = "z"; then
+ 	AC_CHECK_FILE(/etc/redhat-release,with_distro="redhat")
+ 	AC_CHECK_FILE(/etc/SuSE-release,with_distro="suse")
+@@ -119,6 +119,7 @@
+ 	AC_CHECK_FILE(/etc/frugalware-release,with_distro="frugalware")
+ 	AC_CHECK_FILE(/etc/mandriva-release,with_distro="mandriva")
+ 	AC_CHECK_FILE(/etc/pardus-release,with_distro="pardus")
++	AC_CHECK_FILE(/etc/sysconfig/tcuser,with_distro="tinycore")
+ 	AC_CHECK_FILE(/etc/linexa-release,with_distro="linexa")
+ 	AC_CHECK_FILE(/etc/exherbo-release,with_distro="exherbo")
+ 	if test "z$with_distro" = "z"; then
+@@ -132,7 +133,7 @@
+ 	exit 1
+ else
+ 	case $with_distro in
+-		redhat|suse|gentoo|debian|slackware|arch|paldo|frugalware|mandriva|pardus|linexa|exherbo) ;;
++		redhat|suse|gentoo|debian|slackware|arch|paldo|frugalware|mandriva|pardus|linexa|exherbo|tinycore) ;;
+ 		*)
+ 			echo "Your distribution (${with_distro}) is not yet supported!  (patches welcome)"
+ 			exit 1
+@@ -190,6 +191,12 @@
+   AC_DEFINE(TARGET_PARDUS, 1, [Define if you have Pardus])
+ fi
+ 
++AM_CONDITIONAL(TARGET_TINYCORE, test x"$with_distro" = xtinycore)
++if test x"$with_distro" = xtinycore; then
++  AC_DEFINE(TARGET_TINYCORE, 1, [Define if you have Tiny Core Linux])
++fi
++
++
+ AM_CONDITIONAL(TARGET_LINEXA, test x"$with_distro" = xlinexa)
+ if test x"$with_distro" = xlinexa; then
+   AC_DEFINE(TARGET_LINEXA, 1, [Define if you have linexa])
+diff -Naur a/src/backends/Makefile.am b/src/backends/Makefile.am
+--- a/src/backends/Makefile.am	2011-07-21 22:46:18.000000000 +0000
++++ b/src/backends/Makefile.am	2011-10-10 12:39:22.135916705 +0000
+@@ -53,6 +53,11 @@
+ libnmbackend_la_SOURCES += NetworkManagerPardus.c
+ endif
+ 
++if TARGET_TINYCORE
++libnmbackend_la_SOURCES += NetworkManagerTinyCore.c
++endif
++
++
+ if TARGET_LINEXA
+ libnmbackend_la_SOURCES += NetworkManagerLinexa.c
+ endif

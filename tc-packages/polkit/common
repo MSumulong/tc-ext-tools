@@ -1,11 +1,13 @@
 PACKAGE="polkit"
-VERSION="0.99"
+VERSION="0.102"
 SOURCE="http://hal.freedesktop.org/releases/polkit-${VERSION}.tar.gz"
-BUILD_DEPENDS="glib2
+BUILD_DEPENDS="
+glib2
 glib2-dev
 expat2
 expat2-dev
 dbus-glib
+dbus-glib-dev
 eggdbus
 Linux-PAM
 Linux-PAM-dev"
@@ -18,5 +20,6 @@ MAINTAINERS="Arslan S."
 COMMENTS="This extension is PPI compatible."
 CHANGELOG="2010/02/12 Original 0.96
 		2010/02/15 Fixed permissions on pkexec & polkit-agent-helper-1
-		2010/07/01 Rebuilt"
-CURRENT="Updated to 0.99 & renamed policykit --> polkit"
+		2010/07/01 Rebuilt
+		2010/10/10 Updated to 0.99 & renamed policykit --> polkit"
+CURRENT="Updated to $VERSION"

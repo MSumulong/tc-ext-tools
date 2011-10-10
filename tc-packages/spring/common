@@ -1,0 +1,35 @@
+PACKAGE="spring"
+VERSION="0.82.7.1"
+SOURCE="http://downloads.sourceforge.net/sourceforge/springrts/spring_${VERSION}_src.tar.lzma"
+BUILD_DEPENDS="cmake
+boost
+boost-dev
+zip-unzip
+xz
+python
+python-dev
+cp2fs::sun-jre
+cp2fs::sun-jdk
+libvorbis
+libvorbis-dev
+libdevil
+graphics-libs-1-dev
+p7zip-full
+libopenal
+libopenal-dev
+glew
+Xorg-7.5
+Xorg-7.5-dev
+libxcb
+libxcb-dev
+SDL
+SDL-dev"
+
+DESCRIPTION="An Open Source Real Time Strategy game engine."
+AUTHOR="---"
+SITE="http://springrts.com/"
+COPYING="GPL"
+MAINTAINERS="Arslan S."
+COMMENTS="This extension is PPI compatible."
+CHANGELOG="---"
+CURRENT="First Version"

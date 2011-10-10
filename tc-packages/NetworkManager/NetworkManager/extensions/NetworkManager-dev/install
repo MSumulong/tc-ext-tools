@@ -1,5 +1,4 @@
 usr/local/include
-usr/local/lib/NetworkManager/*.la
 usr/local/lib/*.la
 usr/local/lib/pkgconfig
 usr/local/lib/pppd/*/*.la

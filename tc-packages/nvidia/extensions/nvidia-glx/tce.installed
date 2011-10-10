@@ -1,6 +1,6 @@
 #!/bin/sh
 
-XYZ=280.13
+VERSION=280.13
 
 [ -d /etc/OpenCL ] || ln -s /usr/local/etc/OpenCL /etc/OpenCL
 
@@ -9,10 +9,10 @@ XYZ=280.13
 mv /usr/local/lib/libGL.so.1.2 /usr/local/lib/nvidia/libGL.so.1.2.xlibmesa
 
 ln -sf libGL.so.1 /usr/local/lib/libGL.so
-ln -sf libGL.so.$XYZ /usr/local/lib/libGL.so.1
+ln -sf libGL.so.$VERSION /usr/local/lib/libGL.so.1
 
 mv /usr/local/lib/X11/modules/extensions/libglx.so /usr/local/lib/X11/modules/extensions/libglx.so.Xorg
-ln -sf libglx.so.$XYZ /usr/local/lib/X11/modules/extensions/libglx.so
+ln -sf libglx.so.$VERSION /usr/local/lib/X11/modules/extensions/libglx.so
 
 ldconfig
 

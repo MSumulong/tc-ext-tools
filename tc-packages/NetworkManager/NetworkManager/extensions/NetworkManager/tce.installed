@@ -5,4 +5,5 @@
 [ -d /var/run/NetworkManager ] || mkdir -p /var/run/NetworkManager
 [ -d /var/lib/NetworkManager ] || mkdir -p /var/lib/NetworkManager
 
-/sbin/udevadm trigger
+udevadm trigger
+
