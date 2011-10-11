@@ -1,0 +1,47 @@
+
+############################################################################
+#                                                                          #
+#    package build functions: configure, compile, install, rules, etc.     #
+#                                                                          #
+############################################################################
+
+## compile
+build_compile() {
+
+   make || return 1
+
+}
+
+## install
+build_install() {
+
+   make PREFIX="$I_ROOT/usr/local" install || return 1
+
+   rm -rf "$I_ROOT/usr/local/share/lazarus/debian"
+   rm -rf "$I_ROOT/usr/local/share/lazarus/install"
+
+   install -Dm644 install/lazarus.desktop "$I_ROOT/usr/local/share/applications/lazarus.desktop"
+   install -Dm644 install/lazarus-mime.xml "$I_ROOT/usr/local/share/mime/lazarus-mime.xml"
+   install -Dm644 images/ide_icon48x48.png "$I_ROOT/usr/local/share/pixmaps/lazarus.png"
+
+}
+
+## rules
+build_rules() {
+
+   tet_load
+   tet_download
+   tet_convert
+   tet_unpack
+   tet_patch
+   tet_compile
+   tet_install
+   tet_split
+   tet_strip
+   tet_create
+   tet_generate
+   tet_check
+   tet_package
+
+}
+

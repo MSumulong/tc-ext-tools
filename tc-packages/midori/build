@@ -25,6 +25,8 @@ build_install() {
 
   make DESTDIR="$INSTALL_ROOT" install || return 1
 
+  rm -f "$I_ROOT/usr/local/share/applications/midori-private.desktop"
+
 }
 ##
 

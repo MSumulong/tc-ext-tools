@@ -1,0 +1,5 @@
+#!/bin/sh
+
+[ $(which update-desktop-database) ] && update-desktop-database -q > /dev/null 2>&1
+[ $(which update-mime-database) ] && update-mime-database /usr/local/share/mime > /dev/null 2>&1
+

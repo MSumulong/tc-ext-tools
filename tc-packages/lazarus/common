@@ -1,0 +1,13 @@
+PACKAGE="lazarus"
+VERSION="0.9.30"
+SOURCE="http://downloads.sourceforge.net/project/lazarus/Lazarus%20Zip%20_%20GZip/Lazarus%20${VERSION}/lazarus-${VERSION}-src.tar.bz2"
+BUILD_DEPENDS="fpc fpc-src gtk2 gtk2-dev"
+
+DESCRIPTION="A Rapid Application Development Tool for Free Pascal."
+AUTHOR="---"
+SITE="http://www.lazarus.freepascal.org/"
+COPYING="GPL/MPL/LGPL"
+MAINTAINERS="Arslan S."
+COMMENTS="This extension is PPI compatible."
+CHANGELOG="---"
+CURRENT="First Version"

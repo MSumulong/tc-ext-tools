@@ -25,6 +25,10 @@ build_install() {
 
   mv $INSTALL_ROOT/usr/local/man $INSTALL_ROOT/usr/local/share/ || return 1
 
+  tar -C $I_ROOT/usr/local/lib/fpc -xvf $PACKAGE_SOURCE || return 1
+  mv $I_ROOT/usr/local/lib/fpc/fpcbuild-${VERSION}/fpcsrc $I_ROOT/usr/local/lib/fpc/src
+  rm -rf $I_ROOT/usr/local/lib/fpc/fpcbuild-${VERSION}
+
 }
 ##
 
