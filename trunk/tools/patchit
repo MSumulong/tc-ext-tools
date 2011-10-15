@@ -79,24 +79,28 @@ this_main() {
                 continue
            fi
 
-           echo "Detecting the patch level."
-           for FILE in $(cat $PACKAGE_PATCHES/$PATCH | grep -e "---" -e "+++" | cut -f2 -d" " | cut -f1 -d" ")
+           echo -e "Detecting the patch level ... \c"
+           for FILE in $(cat $PACKAGE_PATCHES/$PATCH | grep -e "---" -e "+++" | cut -f2 -d" " | cut -f1 -s)
            do
                PATCH_LEVEL=
                if [ -f "$PACKAGE_SOURCE_TOPDIR/$FILE" ]; then
                     PATCH_LEVEL=0
-               else
+               elif [ -f "$PACKAGE_SOURCE_TOPDIR/${FILE#*/}" ]; then
                     PATCH_LEVEL=1
+               elif [ -f "$PACKAGE_SOURCE_TOPDIR/${FILE#*/*/}" ]; then
+                    PATCH_LEVEL=2
                fi
-               break
+               [ -n "$PATCH_LEVEL" ] && break
            done
 
-           if [ -z "$PATCH_LEVEL" ]; then
-                echo "Error! The patch level for the patch $PATCH can not be detected."
+           if [ -n "$PATCH_LEVEL" ]; then
+                echo "Patch level is $PATCH_LEVEL"
+           else
+                echo "Error! can not detect patch level"
                 return 1
            fi
 
-           echo "Applying the patch $PATCH with patch level $PATCH_LEVEL."
+           echo "Applying the patch $PATCH"
            patch --directory="$PACKAGE_SOURCE_TOPDIR" -Np$PATCH_LEVEL -i "$PACKAGE_PATCHES/$PATCH" || return 1
         done
    else
