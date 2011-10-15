@@ -1,0 +1,80 @@
+
+############################################################################
+#                                                                          #
+#    package build functions: configure, compile, install, rules, etc.     #
+#                                                                          #
+############################################################################
+
+## configure
+build_configure() {
+
+   sed -i -e 's|/bin/bash|/bin/sh|' in/scripts=*.in
+
+   python setup.py configure --wicdgroup=staff \
+	                     --no-install-init \
+	                     --lib=/usr/local/lib/wicd \
+	                     --share=/usr/local/share/wicd \
+	                     --etc=/usr/local/etc/wicd \
+	                     --scripts=/usr/local/etc/wicd/scripts \
+	                     --pixmaps=/usr/local/share/pixmaps \
+	                     --images=/usr/local/share/pixmaps/wicd \
+	                     --encryption=/usr/local/etc/wicd/encryption/templates \
+	                     --bin=/usr/local/bin \
+	                     --sbin=/usr/local/sbin \
+	                     --backends=/usr/local/share/wicd/backends \
+	                     --daemon=/usr/local/share/wicd/daemon \
+	                     --curses=/usr/local/share/wicd/curses \
+	                     --gtk=/usr/local/share/wicd/gtk \
+	                     --cli=/usr/local/share/wicd/cli \
+	                     --pmutils=/usr/local/lib/pm-utils/sleep.d/ \
+	                     --dbus=/usr/local/etc/dbus-1/system.d/ \
+	                     --desktop=/usr/local/share/applications/ \
+	                     --icons=/usr/local/share/icons/hicolor/ \
+	                     --translations=/usr/local/share/locale/ \
+	                     --autostart=/usr/local/etc/xdg/autostart/ \
+	                     --kdedir=/usr/local/share/autostart \
+	                     --python=/usr/local/bin/python \
+	                     --resume=/usr/local/share/wicd/scripts/ \
+                             --suspend=/usr/local/share/wicd/scripts/ \
+	                     --docdir=/usr/local/share/doc/wicd \
+	                     --mandir=/usr/local/share/man \
+                             --verbose || return 1
+
+}
+
+## install
+build_install() {
+
+   python setup.py install --prefix=/usr/local --optimize=1 --root="$I_ROOT" || return 1
+
+   # Add custom rc.d script
+   install -Dm755 "$P_SRC/wicd-daemon.sh" "$I_ROOT/usr/local/etc/init.d/wicd"
+   #install -Dm644 "$P_SRC/wicd.desktop" "$I_ROOT/usr/local/share/applications/wicd.desktop"
+
+   cd build/lib/wicd
+   for i in *.py; do
+     install -Dm 755 $i $I_ROOT/usr/local/lib/wicd/$i
+   done
+  
+   rm -rf "$I_ROOT/usr/local/share/autostart"
+}
+
+## rules
+build_rules() {
+
+   tet_load
+   tet_download
+   tet_convert
+   tet_unpack
+   tet_patch
+   tet_configure
+   tet_install
+   tet_split
+   tet_strip
+   tet_create
+   tet_generate
+   tet_check
+   tet_package
+
+}
+

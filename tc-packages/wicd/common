@@ -1,0 +1,13 @@
+PACKAGE="wicd"
+VERSION="1.7.0"
+SOURCE="http://downloads.sourceforge.net/sourceforge/wicd/wicd-${VERSION}.tar.gz"
+BUILD_DEPENDS="python python-dev"
+
+DESCRIPTION="Wired and wireless network manager for Linux."
+AUTHOR="---"
+SITE="http://wicd.sourceforge.net/"
+COPYING="GPL-2"
+MAINTAINERS="Arslan S."
+COMMENTS="This extension is PPI compatible."
+CHANGELOG="---"
+CURRENT="First Version for TCL 4.x"

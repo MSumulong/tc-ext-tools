@@ -1,0 +1,16 @@
+ICON="/usr/local/share/icons/hicolor/64x64/apps/wicd-gtk.png"
+COMMENTS="To start wicd daemon add to your boot script (/opt/bootlocal.sh):
+		  /usr/local/etc/init.d/dbus restart
+		  /usr/local/etc/init.d/wicd start
+
+		For persistency add to your backup list (/opt/.filetool.lst):
+		  usr/local/etc/wicd
+		  var/lib/wicd/configurations
+
+		It is recommended to add wicd.tcz to your onboot list and reboot for the first time.
+
+		Optional dependency:
+		  notify-python-2.7 for desktop notifications (a notification daemon needs to be running)
+
+		Please note that some wireless chip drivers require a firmware to work so please
+		make sure you have the correct firmware loaded. See firmware, firmware-iwlwifi and others"

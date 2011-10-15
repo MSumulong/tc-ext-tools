@@ -1,0 +1,21 @@
+From: Clint Adams <schizo@debian.org>
+Subject: fix typo in sourcecode
+Origin: vendor, http://bugs.debian.org/567665
+Bug-Debian: http://bugs.debian.org/567665
+Forwarded: no
+
+---
+ cli/wicd-cli.py |    2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+--- wicd.orig/cli/wicd-cli.py
++++ wicd/cli/wicd-cli.py
+@@ -143,7 +143,7 @@ if options.network_details:
+ # network properties
+ 
+ if options.network_property:
+-	options.network_property = option.network_property.lower()
++	options.network_property = options.network_property.lower()
+ 	if options.wireless:
+ 		if options.network >= 0:
+ 			is_valid_wireless_network_id(options.network)

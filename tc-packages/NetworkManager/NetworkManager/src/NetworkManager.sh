@@ -55,7 +55,7 @@ status() {
 	     echo "$SERVICE is running."
 	     exit 0
 	else
-	     echo "$SERVICE is not running"
+	     echo "$SERVICE is not running."
 	     exit 1
 	fi
 }

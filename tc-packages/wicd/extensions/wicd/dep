@@ -1,0 +1,10 @@
+pygtk-2.7.tcz
+dbus-python-2.7.tcz
+urwid-2.7.tcz
+libglade.tcz
+wpa_supplicant-dbus.tcz
+dhcpcd.tcz
+net-tools.tcz
+ncurses-utils.tcz
+shared-mime-info.tcz
+hicolor-icon-theme.tcz
