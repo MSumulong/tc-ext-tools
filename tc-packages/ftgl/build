@@ -5,6 +5,13 @@
 #                                                                          #
 ############################################################################
 
+## configure
+build_configure() {
+
+   ./configure --prefix=/usr/local --with-pic || return 1
+
+}
+
 ## compile
 build_compile() {
 
@@ -15,18 +22,9 @@ build_compile() {
 ## install
 build_install() {
 
-   make PREFIX="$I_ROOT/usr/local" install || return 1
+   make DESTDIR="$I_ROOT" install || return 1
 
-   rm -rf "$I_ROOT/usr/local/share/lazarus/debian"
-   rm -rf "$I_ROOT/usr/local/share/lazarus/install"
-
-   ln -sf "/usr/local/share/lazarus/lazarus" "$I_ROOT/usr/local/bin/lazarus-ide"
-   ln -sf "/usr/local/share/lazarus/lazbuild" "$I_ROOT/usr/local/bin/lazbuild"
-   ln -sf "/usr/local/share/lazarus/startlazarus" "$I_ROOT/usr/local/bin/startlazarus"
-
-   install -Dm644 install/lazarus.desktop "$I_ROOT/usr/local/share/applications/lazarus.desktop"
-   install -Dm644 install/lazarus-mime.xml "$I_ROOT/usr/local/share/mime/lazarus-mime.xml"
-   install -Dm644 images/ide_icon48x48.png "$I_ROOT/usr/local/share/pixmaps/lazarus.png"
+   install -m644 src/FTFace.h src/FTLibrary.h src/FTSize.h "$I_ROOT/usr/local/include/FTGL/"
 
 }
 
@@ -38,6 +36,7 @@ build_rules() {
    tet_convert
    tet_unpack
    tet_patch
+   tet_configure
    tet_compile
    tet_install
    tet_split
