@@ -1,5 +1,5 @@
 PACKAGE="openscenegraph"
-VERSION="2.8.3"
+VERSION="3.0.1"
 SOURCE="http://www.openscenegraph.org/downloads/stable_releases/OpenSceneGraph-${VERSION}/source/OpenSceneGraph-${VERSION}.zip"
 BUILD_DEPENDS="cmake
 libxml2
@@ -9,28 +9,29 @@ gtk2-dev
 graphics-libs-1
 graphics-libs-1-dev
 jasper
+jasper-dev
 pth
 pth-dev
 curl
 curl-dev
 librsvg
 librsvg-dev
-xine-lib
-xine-lib-dev
 Xorg-7.6-lib
 Xorg-7.6-dev
-freeglut
-freeglut-dev
 poppler
 poppler-dev
 openexr
-openexr-dev"
+openexr-dev
+libvncserver
+libvncserver-dev
+gdal
+gdal-dev"
 
 DESCRIPTION="An open source high performance 3D graphics toolkit."
-AUTHOR="various"
+AUTHOR="---"
 SITE="http://www.openscenegraph.org"
 COPYING="OSGPL"
 MAINTAINERS="Arslan S."
 COMMENTS="This extension is PPI compatible."
-CHANGELOG="---"
-CURRENT="First Version"
+CHANGELOG="2010/12/19 First Version 2.8.3"
+CURRENT="Updated to $VERSION"

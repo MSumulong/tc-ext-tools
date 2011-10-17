@@ -1,14 +1,12 @@
 PACKAGE="simgear"
 VERSION="2.4.0"
 SOURCE="ftp://mirrors.ibiblio.org/pub/mirrors/simgear/ftp/Source/simgear-${VERSION}.tar.bz2"
-BUILD_DEPENDS="Xorg-7.6
+BUILD_DEPENDS="Xorg-7.6-lib
 Xorg-7.6-dev
 libxcb
 libxcb-dev
 libopenal
 libopenal-dev
-freeglut
-freeglut-dev
 freealut
 freealut-dev
 openscenegraph

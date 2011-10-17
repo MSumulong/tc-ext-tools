@@ -12,9 +12,9 @@
 build_install() {
 
    cd ..
-   mkdir -p $INSTALL_ROOT/usr/local/share/FlightGear
-   mv data $INSTALL_ROOT/usr/local/share/FlightGear || return 1
-   chown -R root.root $INSTALL_ROOT/usr/local/share/FlightGear/data
+   mkdir -p $INSTALL_ROOT/usr/local/share/flightgear
+   mv data $INSTALL_ROOT/usr/local/share/flightgear || return 1
+   chown -R root.root $INSTALL_ROOT/usr/local/share/flightgear/data
 
 }
 

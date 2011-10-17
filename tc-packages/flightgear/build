@@ -11,8 +11,6 @@
 
 build_configure() {
 
-    find . -name \*.c\* -exec sed -i '1,2i#include <stdio.h>' {} \;
-
    ./configure --prefix=/usr/local || return 1
 
 }
