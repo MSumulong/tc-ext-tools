@@ -82,7 +82,7 @@ this_main() {
            echo -e "Detecting the patch level ... \c"
            for FILE in $(cat $PACKAGE_PATCHES/$PATCH | grep -e "---" -e "+++" | cut -f2 -d" " | cut -f1 -s)
            do
-               PATCH_LEVEL=
+               PATCH_LEVEL=1
                if [ -f "$PACKAGE_SOURCE_TOPDIR/$FILE" ]; then
                     PATCH_LEVEL=0
                elif [ -f "$PACKAGE_SOURCE_TOPDIR/${FILE#*/}" ]; then
