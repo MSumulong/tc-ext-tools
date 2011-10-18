@@ -1,0 +1,13 @@
+PACKAGE="ModemManager"
+VERSION="0.5"
+SOURCE="http://download.gnome.org/sources/ModemManager/0.5/ModemManager-${VERSION}.tar.xz"
+BUILD_DEPENDS="dbus-glib dbus-glib-dev udev-lib udev-dev pppd"
+
+DESCRIPTION="Mobile broadband modem manager."
+AUTHOR="Tambet Ingo"
+SITE="http://cgit.freedesktop.org/ModemManager/ModemManager/"
+COPYING="GPL-2"
+MAINTAINERS="Arslan S."
+COMMENTS="ModemManager is automatically started by NetworkManager if it is available"
+CHANGELOG="2010/07/07 First Version 0.4"
+CURRENT="Updated to $VERSION"

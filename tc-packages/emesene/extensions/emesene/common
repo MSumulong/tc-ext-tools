@@ -1,0 +1,12 @@
+ICON="/usr/local/share/pixmaps/emesene.png"
+COMMENTS="plugins with extra dependencies:
+		DBus:		dbus-python
+		Spell:		python-gtkspell,
+				ispell or hunspell
+		Notification:	notify-python
+		Wink Receiving: cabextract
+		
+		For webcam:	gst-python,
+				gst-plugins-good
+
+		This extension is PPI compatible."

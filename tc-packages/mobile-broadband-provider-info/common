@@ -1,0 +1,13 @@
+PACKAGE="mobile-broadband-provider-info"
+VERSION="20110511"
+SOURCE="http://ftp.gnome.org/pub/GNOME/sources/mobile-broadband-provider-info/${VERSION}/mobile-broadband-provider-info-${VERSION}.tar.bz2"
+BUILD_DEPENDS=""
+
+DESCRIPTION="Mobile broadband settings for different service providers in different countries."
+AUTHOR="---"
+SITE="http://git.gnome.org/browse/mobile-broadband-provider-info/"
+COPYING="CC-PD (Creative Commons Public Domain)"
+MAINTAINERS="Arslan S."
+COMMENTS="This extension is PPI compatible."
+CHANGELOG="2010/07/14 First Version 20100510"
+CURRENT="Updated to $VERSION"
