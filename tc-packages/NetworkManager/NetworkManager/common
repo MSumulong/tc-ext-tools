@@ -1,6 +1,6 @@
 PACKAGE="NetworkManager"
-VERSION="0.9.1.90"
-SOURCE="http://ftp.gnome.org/pub/GNOME/sources/NetworkManager/0.9/NetworkManager-${VERSION}.tar.bz2"
+VERSION="0.8.4.0"
+SOURCE="http://ftp.gnome.org/pub/GNOME/sources/NetworkManager/0.8/NetworkManager-${VERSION}.tar.bz2"
 BUILD_DEPENDS="
 cvs
 glib2

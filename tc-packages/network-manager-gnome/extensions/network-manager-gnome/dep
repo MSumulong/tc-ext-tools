@@ -1,0 +1,10 @@
+dbus-glib.tcz
+GConf.tcz
+libgnome-keyring.tcz
+nss.tcz
+libglade.tcz
+udev-lib.tcz
+libnotify.tcz
+NetworkManager.tcz
+hicolor-icon-theme.tcz
+shared-mime-info.tcz

@@ -29,5 +29,5 @@ COMMENTS="cnetworkmanager is originally suitable for automatic ip wireless conne
 
 		This extension is PPI compatible."
 CHANGELOG="2010/07/06 First Version 0.21.1
-		2010/08/04 Built against python 2.7"
+		2010/08/04 Rebuilt against python 2.7"
 CURRENT="Updated to $VERSION"

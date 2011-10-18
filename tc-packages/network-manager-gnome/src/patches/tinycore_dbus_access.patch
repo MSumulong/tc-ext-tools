@@ -1,0 +1,18 @@
+--- network-manager-applet-0.8.1~git100705/nm-applet-dbus-126.conf	2010-07-05 08:13:18.000000000 +0000
++++ network-manager-applet-0.8.1~git100705_tinycore/nm-applet-dbus-126.conf	2010-07-05 19:11:07.787347291 +0000
+@@ -32,6 +32,15 @@
+                 <allow send_destination="org.freedesktop.NetworkManagerUserSettings"
+                        send_interface="org.freedesktop.NetworkManagerSettings.Connection"/>
+         </policy>
++        <policy group="staff">
++                <allow own="org.freedesktop.NetworkManagerUserSettings"/>
++
++                <allow send_destination="org.freedesktop.NetworkManagerUserSettings"
++                       send_interface="org.freedesktop.NetworkManagerSettings"/>
++
++                <allow send_destination="org.freedesktop.NetworkManagerUserSettings"
++                       send_interface="org.freedesktop.NetworkManagerSettings.Connection"/>
++        </policy>
+         <policy context="default">
+                 <allow send_destination="org.freedesktop.NetworkManagerUserSettings"
+                        send_interface="org.freedesktop.DBus.Introspectable"/>

@@ -3,6 +3,7 @@ usr/local/bin
 usr/local/etc
 usr/local/lib/*.so*
 usr/local/lib/pppd/*/*.so
+usr/local/lib/NetworkManager/*.so
 usr/local/libexec
 usr/local/sbin
 usr/local/share

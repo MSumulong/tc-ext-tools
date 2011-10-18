@@ -1,9 +1,10 @@
 PACKAGE="NetworkManager-vpnc"
-VERSION="0.8.2"
+VERSION="0.8.4"
 SOURCE="http://ftp.gnome.org/pub/GNOME/sources/NetworkManager-vpnc/0.8/NetworkManager-vpnc-$VERSION.tar.bz2"
 BUILD_DEPENDS="NetworkManager
 NetworkManager-dev
 dbus-glib
+dbus-glib-dev
 libgnome-keyring
 libgnome-keyring-dev
 gtk2
@@ -14,8 +15,8 @@ glib2
 glib2-dev
 libglade
 libglade-dev
-gudev-lib
-gudev-dev"
+udev-lib
+udev-dev"
 
 DESCRIPTION="NetworkManager vpnc plugin."
 AUTHOR="Dan Williams, David Zeuthen"
@@ -24,4 +25,4 @@ COPYING="GPL-2"
 MAINTAINERS="Arslan S."
 COMMENTS="This extension is PPI compatible."
 CHANGELOG="2010/08/04 First Version 0.8.1"
-CURRENT="Updated to 0.8.2"
+CURRENT="Updated to $VERSION"

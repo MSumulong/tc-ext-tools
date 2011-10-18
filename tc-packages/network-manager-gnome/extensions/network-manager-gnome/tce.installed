@@ -1,4 +1,5 @@
 #!/bin/sh
 
 [ $(which gtk-update-icon-cache) ] && gtk-update-icon-cache -q -f -t /usr/local/share/icons/hicolor > /dev/null 2>&1
+[ $(which update-gconf-database) ] && update-gconf-database register nm-applet > /dev/null 2>&1
 
