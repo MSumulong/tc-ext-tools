@@ -1,0 +1,13 @@
+PACKAGE="xmpppy"
+VERSION="0.5.0_rc1"
+SOURCE="http://downloads.sourceforge.net/project/xmpppy/xmpppy/${VERSION/_/-}/xmpppy-${VERSION/_/}.tar.gz"
+BUILD_DEPENDS="python python-dev python_setuptools-2.7"
+
+DESCRIPTION="Provides easy scripting with Jabber."
+AUTHOR="---"
+SITE="http://xmpppy.sourceforge.net/"
+COPYING="GPL"
+MAINTAINERS="Arslan S."
+COMMENTS="This extension is PPI compatible."
+CHANGELOG="---"
+CURRENT="First Version"
