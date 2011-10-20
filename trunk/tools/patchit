@@ -27,8 +27,8 @@
 
 TET_ROOT="$(dirname $0)/.."
 
-if [ -f "$TET_ROOT/etc/tet/functions" ]; then
-     . "$TET_ROOT/etc/tet/functions"
+if [ -f "$TET_ROOT/share/tet/functions.sh" ]; then
+     . "$TET_ROOT/share/tet/functions.sh"
 else
      echo "${RED}$(basename $0):${BLUE} tc-ext-tools functions file not found!${NORMAL}"
      exit 1
@@ -80,7 +80,7 @@ this_main() {
            fi
 
            echo -e "Detecting the patch level ... \c"
-           for FILE in $(cat $PACKAGE_PATCHES/$PATCH | grep -e "---" -e "+++" | cut -f2 -d" " | cut -f1 -s)
+           for FILE in $(cat $PACKAGE_PATCHES/$PATCH | grep -e "---" -e "+++" | cut -f2 -d" "; cat $PACKAGE_PATCHES/$PATCH | grep -e "---" -e "+++" | cut -f2 -d" " | cut -f1 -s)
            do
                PATCH_LEVEL=1
                if [ -f "$PACKAGE_SOURCE_TOPDIR/$FILE" ]; then

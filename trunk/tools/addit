@@ -27,8 +27,8 @@
 
 TET_ROOT="$(dirname $0)/.."
 
-if [ -f "$TET_ROOT/etc/tet/config" ]; then
-     . "$TET_ROOT/etc/tet/config"
+if [ -f "$TET_ROOT/etc/tet.conf" ]; then
+     . "$TET_ROOT/etc/tet.conf"
 else
      echo "${RED}${THIS}: default configuration file not found!${NORMAL}"
      exit 1
@@ -85,11 +85,11 @@ if [ -z "$GROUP_DIR" ]; then
      GROUP_DIR=.
 fi
 
-if [ -f "$TET_ROOT/etc/tet/functions" ]; then
+if [ -f "$TET_ROOT/share/tet/functions.sh" ]; then
      [ -d "$TET_PACKAGES/$GROUP_DIR/$PACKAGE" ] || mkdir -p "$TET_PACKAGES/$GROUP_DIR/$PACKAGE"
      cd "$TET_PACKAGES/$GROUP_DIR/$PACKAGE"
 
-     . "$TET_ROOT/etc/tet/functions"
+     . "$TET_ROOT/share/tet/functions.sh"
 else
      echo "${RED}$(basename $0):${BLUE} tc-ext-tools functions file not found!${NORMAL}"
      exit 1
@@ -198,7 +198,7 @@ _EOF
    fi
 
    echo "Installing the package build file."
-   install -m 644 "$TET_ROOT/share/tet/build" "$PACKAGE_BUILD" || return 1
+   install -m 644 "$TET_ROOT/share/tet/build.sample" "$PACKAGE_BUILD" || return 1
 
    echo "Creating the package extensions install and dep files."
    for EXTENSION in $EXTENSIONS
