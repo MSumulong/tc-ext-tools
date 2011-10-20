@@ -22,6 +22,8 @@
 #  Copyright (c) 2011 Sercan Arslan <arslanserc@gmail.com>
 #
 
+export TET_PACKAGES_DATABASE="${HOME}/.local/share/tc-ext-tools/packages_db"
+
 _tet_common() {
 
    CMD="$@"

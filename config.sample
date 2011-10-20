@@ -14,8 +14,6 @@ TET_PACKAGES="${HOME}/tc-ext-tools/packages"
 # tc-ext-tools storage directory
 TET_STORAGE="${HOME}/tc-ext-tools/storage"
 
-# tc-ext-tools packages database directory
-TET_PACKAGES_DATABASE="${HOME}/.local/share/tc-ext-tools/packages_db"
-
 # tc-ext-tools text editor
 TET_EDITOR=editor
+

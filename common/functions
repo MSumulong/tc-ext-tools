@@ -35,8 +35,8 @@ elif [ $(id -u) != 0 -a "$THIS" = "installit" ]; then
 fi
 
 # source default configuration
-if [ -f "$TET_ROOT/etc/tet/config" ]; then
-     . "$TET_ROOT/etc/tet/config"
+if [ -f "$TET_ROOT/etc/tet.conf" ]; then
+     . "$TET_ROOT/etc/tet.conf"
 else
      echo "${RED}${THIS}: default configuration file not found!${NORMAL}"
      exit 1
