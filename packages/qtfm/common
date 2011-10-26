@@ -1,9 +1,7 @@
 PACKAGE="qtfm"
-VERSION="5.0"
+VERSION="5.1"
 SOURCE="http://www.qtfm.org/qtfm-${VERSION}.tar.gz"
-BUILD_DEPENDS="
-qt-4.x-base
-qt-4.x-dev"
+BUILD_DEPENDS="qt-4.x-base qt-4.x-dev"
 
 DESCRIPTION="A small, lightweight file manager for Linux desktops based on pure Qt."
 AUTHOR="Wittfella"

@@ -1,35 +1,10 @@
 PACKAGE="chromium-browser"
-VERSION="14.0.835.186"
+VERSION="15.0.874.102"
 SOURCE="http://build.chromium.org/official/chromium-${VERSION}.tar.bz2"
-BUILD_DEPENDS="python
-python-dev
-perl5
-gtk2
-gtk2-dev
-bzip2-lib
-bzip2-dev
-nspr
-nspr-dev
-nss
-nss-dev
-libasound
-alsa-dev
-Xorg-7.6-lib
-Xorg-7.6-dev
-GConf
-GConf-dev
-dbus
-dbus-dev
-dbus-glib
-dbus-glib-dev
-libgnome-keyring
-libgnome-keyring-dev
-libxcb
-libxcb-dev
-libevent
-libevent-dev
-libcups
-cups-dev"
+BUILD_DEPENDS="python python-dev gtk2 gtk2-dev bzip2-lib bzip2-dev nspr nspr-dev
+     nss nss-dev libasound alsa-dev Xorg-7.6-lib Xorg-7.6-dev GConf GConf-dev dbus dbus-dev
+     dbus-glib dbus-glib-dev libgnome-keyring libgnome-keyring-dev libxcb libxcb-dev
+     libevent libevent-dev libcups cups-dev krb5 gperf"
 
 DESCRIPTION="Chromium Web Browser."
 AUTHOR="Chromium Authors"
@@ -68,6 +43,7 @@ CHANGELOG="2009/12/17 First Version
 		2011/07/01 Updated to 12.0.742.112
 		2011/08/07 Updated to 13.0.782.107
 		2011/08/20 Updated to 13.0.782.112
-		2011/09/08 Updated to 13.0.782.218"
+		2011/09/08 Updated to 13.0.782.218
+		2011/09/21 Updated to 14.0.835.186"
 CURRENT="Updated to $VERSION"
 

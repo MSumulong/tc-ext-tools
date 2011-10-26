@@ -209,8 +209,11 @@ usr/local/chromium-browser/resources/inspector/Images/warningMediumIcon.png
 usr/local/chromium-browser/resources/inspector/Images/warningOrangeDot.png
 usr/local/chromium-browser/resources/inspector/Images/warningsErrors.png
 usr/local/chromium-browser/resources/inspector/ScriptFormatterWorker.js
+usr/local/chromium-browser/resources/inspector/dataGrid.css
 usr/local/chromium-browser/resources/inspector/devTools.css
 usr/local/chromium-browser/resources/inspector/devtools.html
+usr/local/chromium-browser/resources/inspector/inspectorCommon.css
+usr/local/chromium-browser/resources/inspector/networkLogView.css
 usr/local/chromium-browser/xdg-settings
 usr/local/share/applications/chromium-browser.desktop
 usr/local/share/doc/chromium-browser/AUTHORS
