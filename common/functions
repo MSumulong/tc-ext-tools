@@ -42,9 +42,12 @@ else
      exit 1
 fi
 
+# tc user
+TCUSER=$(cat /etc/sysconfig/tcuser)
+
 # source user configuration
-if [ -f "$HOME/.config/tet.conf" ]; then
-     . "$HOME/.config/tet.conf"
+if [ -f "/home/$TCUSER/.config/tet.conf" ]; then
+     . "/home/$TCUSER/.config/tet.conf"
 else
     echo "${RED}${THIS}: user configuration file not found!${NORMAL}"
     exit 1
@@ -274,7 +277,6 @@ set_tcl_system() {
    TCMIRROR=http://distro.ibiblio.org/pub/linux/distributions/tinycorelinux/
    TCVER=4.x
 
-   TCUSER=$(cat /etc/sysconfig/tcuser)
    TCE_DIR=$(cat /opt/.tce_dir)
    TCLOOP=/tmp/tcloop
    KERNEL=$(uname -r)
