@@ -1,5 +1,6 @@
 usr/local/bin/g-ir-annotation-tool
 usr/local/bin/g-ir-compiler
+usr/local/bin/g-ir-doc-tool
 usr/local/bin/g-ir-generate
 usr/local/bin/g-ir-scanner
 usr/local/include/gobject-introspection-1.0/giarginfo.h
@@ -7,7 +8,6 @@ usr/local/include/gobject-introspection-1.0/gibaseinfo.h
 usr/local/include/gobject-introspection-1.0/gicallableinfo.h
 usr/local/include/gobject-introspection-1.0/giconstantinfo.h
 usr/local/include/gobject-introspection-1.0/gienuminfo.h
-usr/local/include/gobject-introspection-1.0/gierrordomaininfo.h
 usr/local/include/gobject-introspection-1.0/gifieldinfo.h
 usr/local/include/gobject-introspection-1.0/gifunctioninfo.h
 usr/local/include/gobject-introspection-1.0/giinterfaceinfo.h
@@ -59,9 +59,15 @@ usr/local/lib/gobject-introspection/giscanner/cachestore.pyo
 usr/local/lib/gobject-introspection/giscanner/codegen.py
 usr/local/lib/gobject-introspection/giscanner/codegen.pyc
 usr/local/lib/gobject-introspection/giscanner/codegen.pyo
-usr/local/lib/gobject-introspection/giscanner/config.py
-usr/local/lib/gobject-introspection/giscanner/config.pyc
-usr/local/lib/gobject-introspection/giscanner/config.pyo
+usr/local/lib/gobject-introspection/giscanner/docbookdescription.py
+usr/local/lib/gobject-introspection/giscanner/docbookdescription.pyc
+usr/local/lib/gobject-introspection/giscanner/docbookdescription.pyo
+usr/local/lib/gobject-introspection/giscanner/docbookwriter.py
+usr/local/lib/gobject-introspection/giscanner/docbookwriter.pyc
+usr/local/lib/gobject-introspection/giscanner/docbookwriter.pyo
+usr/local/lib/gobject-introspection/giscanner/docmain.py
+usr/local/lib/gobject-introspection/giscanner/docmain.pyc
+usr/local/lib/gobject-introspection/giscanner/docmain.pyo
 usr/local/lib/gobject-introspection/giscanner/dumper.py
 usr/local/lib/gobject-introspection/giscanner/dumper.pyc
 usr/local/lib/gobject-introspection/giscanner/dumper.pyo
@@ -83,6 +89,9 @@ usr/local/lib/gobject-introspection/giscanner/libtoolimporter.pyo
 usr/local/lib/gobject-introspection/giscanner/maintransformer.py
 usr/local/lib/gobject-introspection/giscanner/maintransformer.pyc
 usr/local/lib/gobject-introspection/giscanner/maintransformer.pyo
+usr/local/lib/gobject-introspection/giscanner/mallardwriter.py
+usr/local/lib/gobject-introspection/giscanner/mallardwriter.pyc
+usr/local/lib/gobject-introspection/giscanner/mallardwriter.pyo
 usr/local/lib/gobject-introspection/giscanner/message.py
 usr/local/lib/gobject-introspection/giscanner/message.pyc
 usr/local/lib/gobject-introspection/giscanner/message.pyo
@@ -147,7 +156,6 @@ usr/local/share/gtk-doc/html/gi/gi-GIBaseInfo.html
 usr/local/share/gtk-doc/html/gi/gi-GICallableInfo.html
 usr/local/share/gtk-doc/html/gi/gi-GIConstantInfo.html
 usr/local/share/gtk-doc/html/gi/gi-GIEnumInfo.html
-usr/local/share/gtk-doc/html/gi/gi-GIErrorDomainInfo.html
 usr/local/share/gtk-doc/html/gi/gi-GIFieldInfo.html
 usr/local/share/gtk-doc/html/gi/gi-GIFunctionInfo.html
 usr/local/share/gtk-doc/html/gi/gi-GIInterfaceInfo.html
@@ -160,6 +168,7 @@ usr/local/share/gtk-doc/html/gi/gi-GITypeInfo.html
 usr/local/share/gtk-doc/html/gi/gi-GIUnionInfo.html
 usr/local/share/gtk-doc/html/gi/gi-GIVFuncInfo.html
 usr/local/share/gtk-doc/html/gi/gi-ffi.html
+usr/local/share/gtk-doc/html/gi/gi-gierrordomaininfo.html
 usr/local/share/gtk-doc/html/gi/gi-gir-reference.html
 usr/local/share/gtk-doc/html/gi/gi-gir.html
 usr/local/share/gtk-doc/html/gi/gi-girepository.html
@@ -170,7 +179,6 @@ usr/local/share/gtk-doc/html/gi/gi-overview.html
 usr/local/share/gtk-doc/html/gi/gi-repository-structs.html
 usr/local/share/gtk-doc/html/gi/gi-struct-hierarchy.html
 usr/local/share/gtk-doc/html/gi/gi-typelib.html
-usr/local/share/gtk-doc/html/gi/gi.devhelp
 usr/local/share/gtk-doc/html/gi/gi.devhelp2
 usr/local/share/gtk-doc/html/gi/girepository.html
 usr/local/share/gtk-doc/html/gi/glib.html
