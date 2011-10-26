@@ -30,4 +30,4 @@ COMMENTS="LyX combines the power and flexibility of TeX/LaTeX with the ease of
 		For file viewers, Tools->Preferences->File Handling->File formats 
 		Choose a file format and type correct program name inside textbox 'Viewer'
 		
-		This extension is PPI compatible." 
+		" 

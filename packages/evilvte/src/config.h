@@ -22,6 +22,10 @@
 #define WORD_CHARS             "-A-Za-z0-9_$.+!*(),;:@&=?/~#%"
 #define MENU                   TRUE
 #define MENU_ENCODING_LIST     "Default Encoding", "UTF-8", "EUC-JP", "EUC-KR", "GBK", "BIG-5"
+#define DEFAULT_ENCODING       "UTF-8"
+#define FONT                   "Monospace 11"
+#define FONT_ANTI_ALIAS        TRUE
+#define CURSOR_BLINKS          TRUE
 #define MENU_MATCH_STRING_EXEC "x-www-browser"
 #define MENU_CUSTOM            "Copy", "Paste", "Select all", "Separator", "Add tab", "Remove tab", "Edit label", "Separator", "Toggle background", "Toggle tabbar", "Toggle scrollbar", "Toggle anti-alias", "Toggle window decorated", "Separator", "Select font", "Reset terminal", "Adjust saturation", "Background tint", "Submenu encoding list", "Submenu input method"
 #define TAB                    TRUE

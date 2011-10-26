@@ -16,7 +16,7 @@ AUTHOR="David Gomez Espinosa"
 SITE="https://launchpad.net/sakura"
 COPYING="GPL-2"
 MAINTAINERS="Arslan S."
-COMMENTS="This extension is PPI compatible."
+COMMENTS=""
 CHANGELOG="2010/03/06 Original 2.3.7
 		2010/05/22 Updated to 2.3.8
 		2011/04/02 Updated to 2.4.0"

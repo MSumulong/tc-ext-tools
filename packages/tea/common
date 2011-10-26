@@ -17,7 +17,7 @@ AUTHOR="Peter Semiletov"
 SITE="http://tea-editor.sourceforge.net/"
 COPYING="GPL-3"
 MAINTAINERS="Arslan S."
-COMMENTS="This extension is PPI compatible."
+COMMENTS=""
 CHANGELOG="2009/12/11 Original 26.1.0
 		2010/05/30 Updated to 27.1.0"
 CURRENT="Updated to $VERSION"

@@ -41,7 +41,7 @@ AUTHOR="GNOME Maintainers"
 SITE="http://www.gnome.org"
 COPYING="GPL/LGPL"
 MAINTAINERS="Arslan S."
-COMMENTS="This extension is PPI compatible."
+COMMENTS=""
 CHANGELOG="2010/08/02 First Version 2.30.2
 		2010/11/25 Updated to 2.32.1"
 CURRENT="Fixed bonobo applets support"

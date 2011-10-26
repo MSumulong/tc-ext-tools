@@ -17,7 +17,7 @@ AUTHOR="Colin Walters, Johan Dahlin, Matthias Clasen, Jürg Billeter"
 SITE="http://live.gnome.org/GObjectIntrospection"
 COPYING="GPL/LGPL"
 MAINTAINERS="Arslan S."
-COMMENTS="This extension is PPI compatible."
+COMMENTS=""
 CHANGELOG="2010/03/14 Original 0.6.7
 		2010/05/05 Updated to 0.6.10
 		2010/07/23 Updated to 0.6.14

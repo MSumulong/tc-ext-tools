@@ -14,4 +14,4 @@ COMMENTS="Optional dependencies:
 		hicolor-icon-theme.tcz
 		Xorg-7.6.tcz
 
-		This extension is PPI compatible."
+		"

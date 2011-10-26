@@ -25,4 +25,4 @@ COMMENTS="This is a panel applet and a client to the NetworkManager. So you need
 			-gnome-keyring
 			-notification-daemon or notify-osd or xfce4-notifyd
 
-		This extension is PPI compatible."
+		"

@@ -27,7 +27,7 @@ AUTHOR="various"
 SITE="http://live.gnome.org/GnomeGames/"
 COPYING="GPL"
 MAINTAINERS="Arslan S."
-COMMENTS="This extension is PPI compatible."
+COMMENTS=""
 CHANGELOG="2010/03/22 Original 2.28.2
 		2010/08/14 Updated to 2.30.2"
 CURRENT="Updated to $VERSION"

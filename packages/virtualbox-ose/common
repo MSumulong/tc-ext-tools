@@ -51,7 +51,7 @@ AUTHOR="Sun Microsystems"
 SITE="http://www.virtualbox.org/"
 COPYING="GPL-2"
 MAINTAINERS="Arslan S."
-COMMENTS="This extension is PPI compatible."
+COMMENTS=""
 CHANGELOG="2010/10/16 First Version 3.2.10
 		2010/12/02 Updated to 3.2.12
 		2011/01/29 Updated to 4.0.2

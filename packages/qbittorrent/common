@@ -29,7 +29,7 @@ COMMENTS="Please do for the first time due to a bug:
 
 		Optional dependency: python (required for only torrent search engine)
 
-		This extension is PPI compatible."
+		"
 CHANGELOG="2009/12/08 First Version 1.5.6
 		2010/01/28 Updated to 2.1.2
 		2010/07/09 Updated to 2.2.10

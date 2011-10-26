@@ -1,6 +1,6 @@
 PACKAGE="shared-mime-info"
-VERSION="0.90"
-SOURCE="http://freedesktop.org/~hadess/shared-mime-info-${VERSION}.tar.bz2"
+VERSION="0.91"
+SOURCE="http://freedesktop.org/~hadess/shared-mime-info-${VERSION}.tar.xz"
 BUILD_DEPENDS="glib2
 glib2-dev
 libxml2
@@ -11,10 +11,11 @@ AUTHOR="freedesktop.org "
 SITE="http://www.freedesktop.org/wiki/Software/shared-mime-info"
 COPYING="GPL"
 MAINTAINERS="Jason W, Arslan S."
-COMMENTS="This extension is PPI compatible."
+COMMENTS=""
 CHANGELOG="2009/01/01 First version 0.51 by Jason W
 		2010/01/29 Updated to 0.70 by Arslan S.
 		2010/03/02 Rebuilt & fixed updated mime database by Arslan S.
 		2010/07/23 Updated to 0.71 by Arslan S.
-		2010/10/10 Updated to 0.80 by Arslan S."
+		2010/10/10 Updated to 0.80 by Arslan S.
+		2010/12/13 Updated to 0.90 by Arslan S."
 CURRENT="Updated to $VERSION by Arslan S."

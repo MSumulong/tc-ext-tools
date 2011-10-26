@@ -14,7 +14,7 @@ AUTHOR="The Code::Blocks Team"
 SITE="http://www.codeblocks.org"
 COPYING="GPL-3"
 MAINTAINERS="Arslan S."
-COMMENTS="This extension is PPI compatible."
+COMMENTS=""
 CHANGELOG="2010/02/10 Original 8.02
 		2010/02/12 Updated to 8.02svn6155"
 CURRENT="Updated to 10.05"

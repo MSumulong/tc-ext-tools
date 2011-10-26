@@ -11,7 +11,7 @@ AUTHOR="David Zeuthen"
 SITE="http://www.freedesktop.org/wiki/Software/PolicyKit"
 COPYING="LGPL"
 MAINTAINERS="Arslan S."
-COMMENTS="This extension is PPI compatible."
+COMMENTS=""
 CHANGELOG="2010/03/06 Original 0.96
 		2010/07/23 Rebuilt"
 CURRENT="Updated to 0.99 & renamed policykit-gnome --> polkit-gnome"

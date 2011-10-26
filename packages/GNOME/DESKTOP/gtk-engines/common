@@ -10,7 +10,7 @@ AUTHOR="Various"
 SITE="http://ftp.gnome.org/pub/gnome/sources/gtk-engines"
 COPYING="GPL,LGPL"
 MAINTAINERS="Curaga, Arslan S."
-COMMENTS="This extension is PPI compatible."
+COMMENTS=""
 CHANGELOG="2009/01/18 Original
 		2010/01/24 Added default .gtkrc-2.0, stripped some more
 		2010/01/25 Edited startup script

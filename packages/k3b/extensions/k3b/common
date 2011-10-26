@@ -4,6 +4,6 @@ COMMENTS="It supports a variety of project types as well as copying of optical m
 
 		Optional dependencies: vcdimager, emovix, transcode, sox
 
-		This extension is PPI compatible."
+		"
 ICON="/usr/local/share/apps/k3b/icons/oxygen/64x64/apps/k3b.png"
 DESKTOP="/usr/local/share/applications/kde4/k3b.desktop"

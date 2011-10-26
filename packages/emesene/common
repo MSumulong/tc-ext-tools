@@ -8,7 +8,7 @@ AUTHOR="---"
 SITE="http://www.emesene.org/"
 COPYING="GPL/LGPL"
 MAINTAINERS="Arslan S."
-COMMENTS="This extension is PPI compatible."
+COMMENTS=""
 CHANGELOG="2010/03/11 Original 1.6
 		2010/08/03 Updated to 1.6.3 and built against python 2.7"
 CURRENT="Updated to $VERSION"

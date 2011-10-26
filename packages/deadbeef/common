@@ -52,7 +52,7 @@ AUTHOR="Alexey Yakovenko, Viktor Semykin, Stas Akimushkin"
 SITE="http://deadbeef.sourceforge.net/"
 COPYING="GPL-2"
 MAINTAINERS="Arslan S."
-COMMENTS="This extension is PPI compatible." 
+COMMENTS="" 
 CHANGELOG="2010/09/17 First Version 0.4.1
 		2010/10/17 Updated to 0.4.2
 		2010/11/01 Updated to 0.4.3

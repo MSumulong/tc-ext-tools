@@ -22,7 +22,7 @@ AUTHOR="various"
 SITE="http://wxcam.sourceforge.net/"
 COPYING="GPL"
 MAINTAINERS="Arslan S."
-COMMENTS="This extension is PPI compatible."
+COMMENTS=""
 CHANGELOG="2010/12/07 First Version 1.0.6
 		2011/03/30 Updated to 1.0.7"
 CURRENT="Updated to $VERSION and built for TCL 4.x"

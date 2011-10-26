@@ -8,7 +8,7 @@ AUTHOR="Roy Marples"
 SITE="http://roy.marples.name/projects/dhcpcd"
 COPYING="BSD"
 MAINTAINERS="Arslan S."
-COMMENTS="This extension is PPI compatible."
+COMMENTS=""
 CHANGELOG="2010/07/05 First Version 5.2.5
 		2010/11/06 Updated to 5.2.8
 		2011/02/03 Updated to 5.2.10

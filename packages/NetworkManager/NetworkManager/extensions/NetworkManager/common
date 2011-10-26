@@ -22,4 +22,4 @@ COMMENTS="This is not a stand alone network manager for end users, you need a Ne
 		
 		Important Note: You need to restart dbus daemon If you loaded this extension after dbus daemon started.
 
-		This extension is PPI compatible, If you backup /etc/udev/rules.d/77-nm-olpc-mesh.rules"
+		 If you backup /etc/udev/rules.d/77-nm-olpc-mesh.rules"

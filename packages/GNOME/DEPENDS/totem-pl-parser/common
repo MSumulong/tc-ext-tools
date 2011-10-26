@@ -26,7 +26,7 @@ COMMENTS="a simple GObject-based library to parse a host of playlist formats
                 totem-pl-parser-2.30.1 - LGPLv2 - http://ftp.acc.umu.se/pub/GNOME/sources/totem-pl-parser/2.30/totem-pl-parser-2.30.1.tar.bz2
                 ----------
 
-		This extension is PPI compatible."
+		"
 CHANGELOG="2009/11/08 First Version 2.28.1 by juanito,
 		2010/07/25 Updated to 2.30.1 by Arslan S."
 CURRENT="Updated to 2.32.1 by Arslan S."

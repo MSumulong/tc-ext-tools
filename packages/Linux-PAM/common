@@ -12,7 +12,7 @@ AUTHOR="Andrew G. Morgan ,Dmitry V. Levin, Thorsten Kukuk, Sebastien Tricaud, To
 SITE="http://www.kernel.org/pub/linux/libs/pam/"
 COPYING="BSD-like"
 MAINTAINERS="Arslan S."
-COMMENTS="This extension is PPI compatible."
+COMMENTS=""
 CHANGELOG="2010/02/12 First Version 1.1.1
 		2010/02/15 Fixed permissions on unix_chkpwd & added system-auth file
 		2010/08/02 Changed default configuration to pam_unix & added cracklib module

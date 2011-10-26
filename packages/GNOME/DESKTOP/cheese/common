@@ -48,7 +48,7 @@ AUTHOR="various"
 SITE="http://projects.gnome.org/cheese/"
 COPYING="GPL"
 MAINTAINERS="Arslan S."
-COMMENTS="This extension is PPI compatible."
+COMMENTS=""
 CHANGELOG="2010/03/31 Original 2.28.1
 		2010/08/13 Updated to 2.30.1
 		2010/12/08 Updated to 2.32.0"

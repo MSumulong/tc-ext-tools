@@ -12,4 +12,4 @@ COMMENTS="Optional dependencies:
 			-libburn    : alternative burning backend
 			-libisofs   : alternative iso backend
 
-		This extension is PPI compatible."
+		"

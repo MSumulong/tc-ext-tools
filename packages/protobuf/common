@@ -15,6 +15,6 @@ COMMENTS="Protocol Buffers are a way of encoding structured
 		uses Protocol Buffers for almost all of its internal
 		RPC protocols and file formats.
 
-		This extension is PPI compatible."
+		"
 CHANGELOG="2010/05/17 Original 2.3.0"
 CURRENT="Rebuilt against python 2.7"

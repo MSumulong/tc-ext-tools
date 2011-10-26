@@ -19,7 +19,7 @@ AUTHOR="Paolo Bacchilega"
 SITE="http://www.gnome.org"
 COPYING="GPL-2"
 MAINTAINERS="Arslan S."
-COMMENTS="This extension is PPI compatible."
+COMMENTS=""
 CHANGELOG="2010/01/23 Original 2.29.3
 		2010/02/07 Updated init script
 		2010/02/20 Added nautilus plugin

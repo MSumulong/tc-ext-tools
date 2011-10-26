@@ -31,7 +31,7 @@ AUTHOR="various"
 SITE="http://gstreamer.freedesktop.org"
 COPYING="LGPL"
 MAINTAINERS="juanito, Arslan S."
-COMMENTS="This extension is PPI compatible."
+COMMENTS=""
 CHANGELOG="2009/05/04 First version by Roberto A. Foglietta
 		2009/11/08 [juanito] updated 0.10.22 -> 0.10.25 & renamed tczl
 		2010/03/16 Updated to 0.10.28 (Arslan S.)

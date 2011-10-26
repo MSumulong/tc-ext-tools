@@ -17,7 +17,7 @@ COMMENTS="a simple but powerful config file reader and writer:
                 This extension contains:
                 configobj-4.7.2 - BSD - http://pypi.python.org/packages/source/c/configobj/configobj-4.7.2.tar.gz
 
-		This extension is PPI compatible."
+		"
 CHANGELOG="2009/11/08 first version 4.6.0 by juanito
 		2010/06/19 updated to 4.7.2 by Arslan S."
 CURRENT="Rebuilt against python 2.7 by Arslan S."

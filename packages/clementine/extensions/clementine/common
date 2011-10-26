@@ -1,4 +1,4 @@
 COMMENTS="Optional dependencies: gst-plugins-good, gst-plugins-bad, gst-plugins-ugly
-		This extension is PPI compatible."
+		"
 ICON="/usr/local/share/icons/hicolor/64x64/apps/application-x-clementine.png"
 

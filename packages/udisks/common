@@ -30,7 +30,7 @@ AUTHOR="David Zeuthen"
 SITE="http://www.freedesktop.org/wiki/Software/udisks"
 COPYING="GPL"
 MAINTAINERS="Arslan S."
-COMMENTS="This extension is not PPI compatible."
+COMMENTS=""
 CHANGELOG="2010/07/22 First Version 1.0.1
 		2010/08/03 Patched for util-linux support
 		2010/12/01 Rebuilt"

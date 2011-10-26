@@ -17,7 +17,7 @@ AUTHOR="The Dooble Team"
 SITE="http://dooble.sourceforge.net/"
 COPYING="GPL-2"
 MAINTAINERS="Arslan S."
-COMMENTS="This extension is PPI compatible."
+COMMENTS=""
 CHANGELOG="2010/06/10 First Version 0.09.01~100607
 		2011/04/04 Updated to 1.20.1"
 CURRENT="Updated to $VERSION"

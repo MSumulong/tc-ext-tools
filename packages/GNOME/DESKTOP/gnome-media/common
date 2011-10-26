@@ -37,7 +37,7 @@ AUTHOR="GNOME Maintainers"
 SITE="http://www.gnome.org"
 COPYING="GPL-2"
 MAINTAINERS="juanito, Arslan S."
-COMMENTS="This extension is PPI compatible."
+COMMENTS=""
 CHANGELOG="2009/11/08 First Version 2.28.1 by juanito
 		2010/06/16 Updated to 2.28.5 by Arslan S.
 		2010/07/31 Updated to 2.30.0 & added pulseaudio support by Arslan S."

@@ -6,4 +6,4 @@ COMMENTS="Optional dependencies:
 		Spelling:	python-gtkspell, ispell or hunspell and a dictionary
 		DBus:		dbus-python
 
-		This extension is PPI compatible."
+		"

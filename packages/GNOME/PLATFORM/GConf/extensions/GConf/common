@@ -5,4 +5,4 @@ COMMENTS="Run update-gconf-database for help
 
 		Optional dependency: openldap (only needed for evoldap backend)
 
-		This extension is PPI compatible."
+		"

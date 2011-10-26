@@ -25,7 +25,7 @@ AUTHOR="OpenLDAP"
 SITE="http://www.openldap.org/"
 COPYING="OpenLDAP Public License"
 MAINTAINERS="Arslan S."
-COMMENTS="This extension is PPI compatible."
+COMMENTS=""
 CHANGELOG="2010/02/21 Original 2.4.19
 		2010/07/03 Updated to 2.4.21 & renamed extensions & added init.d script for openldap-server
 		2010/11/09 Updated to 2.4.23

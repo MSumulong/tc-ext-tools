@@ -38,7 +38,7 @@ COMMENTS="Example usage:
 		For complete list of sample configurations
 		$ ct-ng list-samples
 
-		This extension is PPI compatible."
+		"
 CHANGELOG="2011/02/24 First Version 1.9.3
 		2011/03/06 Patched to prefer wget over curl"
 CURRENT="Updated to $VERSION"

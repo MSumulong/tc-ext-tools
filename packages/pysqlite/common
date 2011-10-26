@@ -11,7 +11,7 @@ AUTHOR="Gerhard Haering"
 SITE="http://code.google.com/p/pysqlite/"
 COPYING="MIT"
 MAINTAINERS="Kingdomcome, Arslan S."
-COMMENTS="This extension is PPI compatible."
+COMMENTS=""
 CHANGELOG="2009/05/16 First Version 2.5.5 by Kingdomcome
 		2009/08/28 Rebuilt for Python2.6 by Kingdomcome
 		2010/12/08 Updated to 2.6.0 & built against python 2.7 by Arslan S."

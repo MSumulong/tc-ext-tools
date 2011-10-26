@@ -14,7 +14,7 @@ AUTHOR="Arvid Norberg"
 SITE="http://code.google.com/p/libtorrent/"
 COPYING="New BSD License"
 MAINTAINERS="Arslan S."
-COMMENTS="This extension is PPI compatible."
+COMMENTS=""
 CHANGELOG="2009/12/08 Original 0.14.7
 		2010/01/28 Updated to 0.14.8
 		2010/07/09 Updated to 0.14.10

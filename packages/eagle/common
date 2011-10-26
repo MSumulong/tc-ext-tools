@@ -19,6 +19,6 @@ COMMENTS="You can use this software as a Freeware for educational non-profit pur
 		For persistency you need to add this file to your backup list (/opt/.filetool.lst)
 			usr/local/eagle/bin/eagle.key
 
-		This extension is PPI compatible."
+		"
 CHANGELOG="---"
 CURRENT="First Version"

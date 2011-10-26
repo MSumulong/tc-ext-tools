@@ -25,4 +25,4 @@ COMMENTS="VLC media player is a highly portable multimedia player supporting mos
 		Optional dependencies: Xorg-7.6, libmtp, libv4l, libdvdcss, xulrunner, oss, alsa, pulseaudio,
 		jack, x264, libnotify, libproxy, fribidi, librsvg, libdc1394, lirc,
 		
-		This extension is PPI compatible."
+		"

@@ -17,7 +17,7 @@ AUTHOR="various"
 SITE="http://www.freedesktop.org/wiki/Software/PolicyKit"
 COPYING="LGPL"
 MAINTAINERS="Arslan S."
-COMMENTS="This extension is PPI compatible."
+COMMENTS=""
 CHANGELOG="2010/02/12 Original 0.96
 		2010/02/15 Fixed permissions on pkexec & polkit-agent-helper-1
 		2010/07/01 Rebuilt

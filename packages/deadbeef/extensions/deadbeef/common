@@ -1,4 +1,4 @@
 ICON="/usr/local/share/icons/hicolor/48x48/apps/deadbeef.png"
 DESKTOP="/usr/local/share/applications/deadbeef.desktop"
 COMMENTS="You need pulseaudio or alsa or OSS for sound output plugins.
-		This extension is PPI compatible."
+		"

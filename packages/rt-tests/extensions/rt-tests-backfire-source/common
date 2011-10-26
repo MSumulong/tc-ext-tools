@@ -5,4 +5,4 @@ COMMENTS="To build backfire module for your kernel
 		or
 		$ sudo KERNEL=2.6.XY.Z-<suffix> ARCH=arm CROSS_COMPILE=arm-linux- LINUX_BUILD=/full/path/to/linux/build ./make.sh
 
-		This extension is PPI compatible."
+		"

@@ -21,6 +21,6 @@ COPYING="GPL-2"
 MAINTAINERS="Arslan S."
 COMMENTS="It shows a realistic sky in 3D, just like what you see with the naked eye,
 		binoculars or a telescope.
-		This extension is PPI compatible."
+		"
 CHANGELOG="2011/01/16 First Version 0.10.6"
 CURRENT="Updated to $VERSION"

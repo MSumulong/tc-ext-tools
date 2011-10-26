@@ -29,4 +29,4 @@ COMMENTS="To install nvidia glx driver:
 
 		This extension requires Xorg.
 		This extension is not compatible with Xorg-7.6 so Xorg-7.5 is recommended.
-		This extension is PPI compatible."
+		"

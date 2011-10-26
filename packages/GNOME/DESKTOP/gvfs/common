@@ -40,7 +40,7 @@ AUTHOR="various"
 SITE="http://www.gnome.org"
 COPYING="LGPL"
 MAINTAINERS="Arslan S."
-COMMENTS="This extension is PPI compatible."
+COMMENTS=""
 CHANGELOG="2010/03/06 Original 1.4.3
 		2010/07/28 Updated to 1.6.3 & replaced hal backend with gdu backend
 		2010/08/03 Rebuilt without fuse"

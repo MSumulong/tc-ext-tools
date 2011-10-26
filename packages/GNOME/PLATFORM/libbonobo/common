@@ -19,7 +19,7 @@ AUTHOR="GNOME Maintainers"
 SITE="http://live.gnome.org/Bonobo"
 COPYING="GPL/LGPL"
 MAINTAINERS="Arslan S."
-COMMENTS="This extension is PPI compatible."
+COMMENTS=""
 CHANGELOG="2009/05/25 First Version 2.24.1 by jpeters
 		2010/01/30 Updated to 2.24.2
 		2010/07/15 Updated to 2.24.3"

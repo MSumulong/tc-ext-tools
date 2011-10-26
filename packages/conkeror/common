@@ -13,7 +13,7 @@ COMMENTS="Conkeror is a keyboard-oriented, highly-customizable,
 		written mainly in JavaScript, and inspired by exceptional
 		software such as Emacs and vi.
 
-		This extension is PPI compatible."
+		"
 CHANGELOG="2010/06/09 First Version git100609
 		2010/08/24 Updated to git100824
 		2010/11/18 Updated to git101118

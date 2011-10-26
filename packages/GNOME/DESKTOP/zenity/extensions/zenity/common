@@ -3,4 +3,4 @@ COMMENTS="Zenity is a tool that allows you to display Gtk+ dialog boxes from the
 		intended to be saner. It comes from the same family as dialog, 
 		Xdialog, and cdialog, but it surpasses those projects by having a cooler name.
 				
-		This extension is PPI compatible."
+		"

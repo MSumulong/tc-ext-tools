@@ -36,7 +36,7 @@ AUTHOR="Chromium Authors"
 SITE="http://code.google.com/chromium/"
 COPYING="BSD"
 MAINTAINERS="Arslan S."
-COMMENTS="This extension is PPI compatible."
+COMMENTS=""
 CHANGELOG="2009/12/17 First Version
 	     	2009/12/19 Updated info
 	     	2009/12/31 Updated to 4.0.286.0

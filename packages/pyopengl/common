@@ -13,7 +13,7 @@ SITE="http://pyopengl.sourceforge.net"
 COPYING="BSD"
 MAINTAINERS="Arslan S."
 COMMENTS="This extension requires Xorg.
-		This extension is PPI compatible."
+		"
 CHANGELOG="2010/03/22 Original 3.0.1
 		2010/07/21 Rebuilt against python 2.7
 		2010/08/13 Renamed without python version"

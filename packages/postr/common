@@ -11,6 +11,6 @@ COPYING="GPL-2"
 MAINTAINERS="Arslan S."
 COMMENTS="Nautilus plugin depends on nautilus-python.
 
-		This extension is PPI compatible."
+		"
 CHANGELOG="2010/05/15 Original 0.12.4"
 CURRENT="Rebuilt against python 2.7"

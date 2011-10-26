@@ -17,7 +17,7 @@ MAINTAINERS="Curaga, Arslan S."
 COMMENTS="Some packages use the Gnome icons.
 		If you need an icon for something, these are all GPL :)
 
-		This extension is PPI compatible."
+		"
 CHANGELOG="2009/04/28 Original
 		2010/01/24 Added default .gtkrc-2.0
 		2010/01/25 Edited startup script

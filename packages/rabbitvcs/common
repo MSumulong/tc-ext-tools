@@ -16,7 +16,7 @@ AUTHOR="Jason Field, Bruce van der Kooij, Adam Plumb, Jason Heeris"
 SITE="http://www.rabbitvcs.org/"
 COPYING="GPL-2"
 MAINTAINERS="Arslan S."
-COMMENTS="This extension is PPI compatible."
+COMMENTS=""
 CHANGELOG="2010/06/20 First Version 0.13.3
 		2010/08/15 Rebuilt against python 2.7
 		2010/10/09 Rebuilt

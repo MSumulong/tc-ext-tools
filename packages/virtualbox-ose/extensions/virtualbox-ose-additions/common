@@ -9,4 +9,4 @@ COMMENTS="Xorg should be able to run in confless mode but if you wish
 		4-) Add etc/X11/xorg.conf to your backup list (/opt/.filetool.lst)
 
 		This extension depends on Xorg.
-		This extension is PPI compatible."
+		"

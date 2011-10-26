@@ -8,4 +8,4 @@ COMMENTS="You must install at least one of the phonon backends listed below.
 			- If you prefer backend gstreamer you also need to install
 			at least gst-plugins-good and gst-ffmpeg extensions.
 
-		This extension is PPI compatible."
+		"

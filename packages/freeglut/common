@@ -9,7 +9,7 @@ AUTHOR="Pawel W. Olszta, Andreas Umbach, Steve Baker"
 SITE="http://freeglut.sourceforge.net"
 COPYING="MIT"
 MAINTAINERS="Arslan S."
-COMMENTS="This extension is PPI compatible."
+COMMENTS=""
 CHANGELOG="2010/02/10 Original 2.6.0
 		2010/06/12 Rebuilt against Xorg-7.6"
 CURRENT="Updated to overwrite Xorg glut"

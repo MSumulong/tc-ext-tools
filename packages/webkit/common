@@ -31,7 +31,7 @@ AUTHOR="various"
 SITE="http://webkitgtk.org/"
 COPYING="LGPL/BSD-like"
 MAINTAINERS="Arslan S."
-COMMENTS="This extension is PPI compatible."
+COMMENTS=""
 CHANGELOG="2009/05/04 First Version by Roberto A. Foglietta
 		2009/12/23 Updated to 1.15.4
 		2010/04/12 Updated to 1.2.0

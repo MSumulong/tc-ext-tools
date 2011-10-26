@@ -4,4 +4,4 @@ COMMENTS="It uses Cairo / OpenGL to render nice graphics (many in correlation wi
 		You can easily plug applets into it or in a desklet mode.
 
 		This extension requires Xorg.
-		This extension is PPI compatible."
+		"

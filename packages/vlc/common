@@ -130,7 +130,7 @@ AUTHOR="VideoLAN Team"
 SITE="http://www.videolan.org"
 COPYING="GPL-2"
 MAINTAINERS="Arslan S."
-COMMENTS="This extension is PPI compatible."
+COMMENTS=""
 CHANGELOG="2009/11/05 First Version
 		2009/11/06 Updated to 1.0.3
 			Added support for the following:	

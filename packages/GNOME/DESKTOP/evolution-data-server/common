@@ -46,7 +46,7 @@ AUTHOR="GNOME Maintainers"
 SITE="http://www.gnome.org/"
 COPYING="LGPL"
 MAINTAINERS="Arslan S."
-COMMENTS="This extension is PPI compatible."
+COMMENTS=""
 CHANGELOG="2010/03/28 Original 2.28.2
 		2010/07/21 Updated to 2.30.2.1"
 CURRENT="Updated to 2.32.1"

@@ -10,6 +10,6 @@ SITE="http://packages.python.org/distribute"
 COPYING="PSF"
 MAINTAINERS="Arslan S."
 COMMENTS="Conflicts with python-setuptools.
-		This extension is PPI compatible."
+		"
 CHANGELOG="---"
 CURRENT="First Version"

@@ -17,6 +17,6 @@ SITE="http://www.flightgear.org"
 COPYING="GPL"
 MAINTAINERS="Arslan S."
 COMMENTS="This extension requires Xorg.
-		This extension is PPI compatible."
+		"
 CHANGELOG="2010/12/20 First Version 2.0.0"
 CURRENT="Updated to $VERSION"

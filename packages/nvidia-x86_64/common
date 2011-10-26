@@ -9,7 +9,7 @@ AUTHOR="NVIDIA"
 SITE="http://www.nvidia.com"
 COPYING="Proprietary"
 MAINTAINERS="Arslan S."
-COMMENTS="This extension is PPI compatible."
+COMMENTS=""
 CHANGELOG="2010/05/24 Original 195.36.24
 		2010/11/17 Updated to 260.19.21
 		2011/08/20 Updated to 280.13"

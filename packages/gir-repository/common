@@ -41,7 +41,7 @@ AUTHOR="Johan Dahlin"
 SITE="http://live.gnome.org/GObjectIntrospection"
 COPYING="LGPL-2"
 MAINTAINERS="Arslan S."
-COMMENTS="This extension is PPI compatible."
+COMMENTS=""
 CHANGELOG="2010/03/14 Original 0.6.5
 		2010/05/12 Splitted development files & Removed WebKit data"
 CURRENT="Rebuilt"

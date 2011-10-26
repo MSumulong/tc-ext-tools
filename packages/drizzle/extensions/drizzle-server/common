@@ -6,4 +6,4 @@ COMMENTS="Usage:
 
 		Optional dependencies: openldap, Linux-PAM
 
-		This extension is PPI compatible."
+		"

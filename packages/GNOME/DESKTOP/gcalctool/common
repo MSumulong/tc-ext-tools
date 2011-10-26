@@ -13,7 +13,7 @@ AUTHOR="Rich Burridge"
 SITE="http://live.gnome.org/Gcalctool"
 COPYING="GPL-2"
 MAINTAINERS="Arslan S."
-COMMENTS="This extension is PPI compatible."
+COMMENTS=""
 CHANGELOG="2010/06/15 Original 5.28.2
 		2010/08/13 Updated to 5.30.2"
 CURRENT="Updated to $VERSION"

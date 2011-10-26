@@ -22,6 +22,6 @@ COMMENTS="Example usage:
 
 		        notify-send \"title\" \"message\" -i notification-message-im
 
-		This extension is PPI compatible."
+		"
 CHANGELOG="---"
 CURRENT="First Version"

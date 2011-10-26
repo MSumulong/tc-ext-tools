@@ -1,4 +1,4 @@
 ICON="/usr/local/share/icons/hicolor/48x48/apps/media-player-banshee.png"
 DESKTOP="/usr/local/share/applications/banshee.desktop"
 COMMENTS="Optional dependencies: gnome-icon-theme or any compatible icon theme, gst-plugins-ugly
-		This extension is PPI compatible."
+		"

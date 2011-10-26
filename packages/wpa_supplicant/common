@@ -19,7 +19,7 @@ SITE="http://hostap.epitest.fi/wpa_supplicant"
 COPYING="GPL-2"
 MAINTAINERS="Arslan S."
 COMMENTS="This extension conflicts with wpa_supplicant.tcz
-		This extension is PPI compatible."
+		"
 CHANGELOG="2010/07/05 First Version 0.6.10
 		2010/11/18 Updated to 0.7.3"
 CURRENT="Rebuilt for TCL 4.x"

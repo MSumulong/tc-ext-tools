@@ -26,7 +26,7 @@ AUTHOR="Kristian Hogsberg, Derek Noonburg, Albert Astals Cid"
 SITE="poppler.freedesktop.org/"
 COPYING="GPL"
 MAINTAINERS="Jason W, Arslan S."
-COMMENTS="This extension is PPI compatible."
+COMMENTS=""
 CHANGELOG="2008/10/22 First version
 		2009/07/23 Updated to 0.10.7
 		2010/02/21 Updated to 0.12.3 by Arslan S.

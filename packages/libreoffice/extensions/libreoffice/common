@@ -27,4 +27,4 @@ COMMENTS="LibreOffice is a productivity suite that is compatible with other majo
 		If you have mounted sun-jre don't forget to copy sun-jre.sh to root file system.
 		(sudo cp /etc/profile.d/sun-jre.sh /etc/profile.d/)
 
-		This extension is PPI compatible."
+		"

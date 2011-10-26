@@ -45,7 +45,7 @@ AUTHOR="Mozilla Foundation"
 SITE="https://developer.mozilla.org/en/XULRunner"
 COPYING="MPL/GPL/LGPL"
 MAINTAINERS="Arslan S."
-COMMENTS="This extension is PPI compatible."
+COMMENTS=""
 CHANGELOG="2010/01/30 Original 1.9.1.7
 		2010/06/09 Updated to 1.9.2
 		2010/08/24 Updated to 1.9.2.8

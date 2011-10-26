@@ -9,7 +9,7 @@ AUTHOR="The Bazaar Team"
 SITE="http://bazaar.canonical.com/"
 COPYING="GPL-2"
 MAINTAINERS="Kingdomcome, Arslan S."
-COMMENTS="This extension is PPI compatible."
+COMMENTS=""
 CHANGELOG="2010/03/12 First Version 2.1.0
 		2010/10/05 Using 2.6 naming
 		2011/03/09 Updated to 2.3.0 and built against python 2.7 by Arslan S."
