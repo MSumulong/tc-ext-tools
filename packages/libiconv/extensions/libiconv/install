@@ -1,0 +1,5 @@
+usr/local/bin
+usr/local/share/man/man1
+usr/local/lib
+x-usr/local/lib/*.la
+

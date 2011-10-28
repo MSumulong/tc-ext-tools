@@ -1,4 +1,4 @@
-lib
+lib/udev/rules.d
 usr/local/bin
 usr/local/etc
 usr/local/lib/*.so*

@@ -1,0 +1,16 @@
+PACKAGE="libiconv"
+VERSION="1.14"
+SOURCE="http://ftp.gnu.org/gnu/libiconv/libiconv-$VERSION.tar.gz"
+BUILD_DEPENDS=""
+
+DESCRIPTION="This library provides an iconv() implementation."
+AUTHOR="Brunu Haible, Taro Muraoka, Akira Hatakeyama, Juan Manel Guerro"
+SITE="http://www.gnu.org/software/libiconv"
+COPYING="GPL/LGPL"
+MAINTAINERS="Arslan S."
+COMMENTS="---"
+CHANGELOG="2009/01/23 First version by jpeters
+		2009/07/09 Updated to 1.13.1 by jpeters
+		2010/01/30 Rebuilt & separated files
+		2010/04/08 Separated doc files"
+CURRENT="Updated to $VERSION"

@@ -1,29 +1,10 @@
 PACKAGE="udisks"
-VERSION="1.0.3"
+VERSION="1.0.4"
 SOURCE="http://hal.freedesktop.org/releases/udisks-${VERSION}.tar.gz"
-BUILD_DEPENDS="libdevmapper
-liblvm2
-lvm2
-dbus
-dbus-dev
-dbus-glib
-dbus-glib-dev
-glib2
-glib2-dev
-gudev-lib
-gudev-dev
-polkit
-polkit-dev
-libatasmart
-libatasmart-dev
-sg3-utils
-sg3-utils-dev
-parted
-parted-dev
-udev-lib
-udev-dev
-expat2
-expat2-dev"
+BUILD_DEPENDS="libdevmapper lvm2 dbus dbus-dev dbus-glib dbus-glib-dev
+               glib2 glib2-dev polkit polkit-dev libatasmart libatasmart-dev
+               sg3-utils sg3-utils-dev parted parted-dev udev-lib udev-dev
+               expat2 expat2-dev"
 
 DESCRIPTION="Disk Management Service."
 AUTHOR="David Zeuthen"
@@ -33,5 +14,6 @@ MAINTAINERS="Arslan S."
 COMMENTS="---"
 CHANGELOG="2010/07/22 First Version 1.0.1
 		2010/08/03 Patched for util-linux support
-		2010/12/01 Rebuilt"
+		2010/12/01 Rebuilt
+		2011/08/18 Updated to 1.0.3"
 CURRENT="Updated to $VERSION"

@@ -10,6 +10,8 @@ build_configure() {
 
   sed -i -e 's|profile.d|bash_completion.d|' tools/Makefile
 
+  sed -i -e 's|/sbin/mdadm|/usr/local/sbin/mdadm|' data/80-udisks.rules
+
 }
 
 # Compile
@@ -38,7 +40,7 @@ build_rules() {
   tet_compile
   tet_install
   tet_split
-   tet_strip
+  tet_strip
   tet_create
   tet_generate
   tet_check

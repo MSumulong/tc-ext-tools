@@ -1,0 +1,25 @@
+diff -Naur a/src/helpers/udisks-helper-change-luks-password b/src/helpers/udisks-helper-change-luks-password
+--- a/src/helpers/udisks-helper-change-luks-password	2011-08-25 18:27:33.000000000 +0000
++++ b/src/helpers/udisks-helper-change-luks-password	2011-10-28 23:27:45.007041858 +0000
+@@ -1,9 +1,9 @@
+-#!/bin/bash
++#!/bin/sh
+ set -e
+ 
+ DEVICE=$1
+ read CURPASS
+ read NEWPASS
+ 
+-echo -e "$CURPASS\n$NEWPASS\n$NEWPASS\n" | /sbin/cryptsetup luksAddKey $DEVICE
+-echo -e "$CURPASS\n$NEWPASS\n" | /sbin/cryptsetup luksRemoveKey $DEVICE
++echo -e "$CURPASS\n$NEWPASS\n$NEWPASS\n" | /usr/local/sbin/cryptsetup luksAddKey $DEVICE
++echo -e "$CURPASS\n$NEWPASS\n" | /usr/local/sbin/cryptsetup luksRemoveKey $DEVICE
+diff -Naur a/src/helpers/udisks-helper-mdadm-expand b/src/helpers/udisks-helper-mdadm-expand
+--- a/src/helpers/udisks-helper-mdadm-expand	2011-08-25 18:27:33.000000000 +0000
++++ b/src/helpers/udisks-helper-mdadm-expand	2011-10-28 23:27:53.093660144 +0000
+@@ -1,4 +1,4 @@
+-#!/bin/bash
++#!/bin/sh
+ 
+ set -e
+ 

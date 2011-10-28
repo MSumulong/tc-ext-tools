@@ -7,7 +7,6 @@ lib/udev/rules.d/95-upower-battery-recall-toshiba.rules
 lib/udev/rules.d/95-upower-csr.rules
 lib/udev/rules.d/95-upower-hid.rules
 lib/udev/rules.d/95-upower-wup.rules
-usr/local/bin/devkit-power
 usr/local/bin/upower
 usr/local/etc/UPower/UPower.conf
 usr/local/etc/dbus-1/system.d/org.freedesktop.UPower.conf
@@ -26,7 +25,6 @@ usr/local/lib/libupower-glib.so
 usr/local/lib/libupower-glib.so.1
 usr/local/lib/libupower-glib.so.1.0.1
 usr/local/lib/pkgconfig/upower-glib.pc
-usr/local/libexec/devkit-power-daemon
 usr/local/libexec/upowerd
 usr/local/share/dbus-1/interfaces/org.freedesktop.UPower.Device.xml
 usr/local/share/dbus-1/interfaces/org.freedesktop.UPower.KbdBacklight.xml

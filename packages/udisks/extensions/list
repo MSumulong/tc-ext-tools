@@ -1,6 +1,5 @@
 lib/udev/rules.d/80-udisks.rules
 lib/udev/udisks-dm-export
-lib/udev/udisks-lvm-pv-export
 lib/udev/udisks-part-id
 lib/udev/udisks-probe-ata-smart
 lib/udev/udisks-probe-sas-expander

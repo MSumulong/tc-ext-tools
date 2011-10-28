@@ -1,16 +1,8 @@
 PACKAGE="upower"
-VERSION="0.9.7"
-SOURCE="http://upower.freedesktop.org/releases/upower-${VERSION}.tar.bz2"
-BUILD_DEPENDS="dbus
-dbus-glib
-glib2
-glib2-dev
-gudev-lib
-gudev-dev
-polkit
-polkit-dev
-libusb
-libusb-dev"
+VERSION="0.9.14"
+SOURCE="http://upower.freedesktop.org/releases/upower-${VERSION}.tar.xz"
+BUILD_DEPENDS="dbus dbus-dev dbus-glib dbus-glib-dev glib2 glib2-dev udev-lib udev-dev
+               polkit polkit-dev libusb libusb-dev"
 
 DESCRIPTION="UPower is an abstraction for power management."
 AUTHOR="David Zeuthen, Richard Hughes"
@@ -19,5 +11,6 @@ COPYING="GPL"
 MAINTAINERS="Arslan S."
 COMMENTS="---"
 CHANGELOG="2010/07/22 First Version 0.9.5
-		2010/08/02 Rebuilt"
+		2010/08/02 Rebuilt
+		2010/12/01 Updated to 0.9.7"
 CURRENT="Updated to $VERSION"

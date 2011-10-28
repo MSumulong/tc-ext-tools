@@ -1,4 +1,4 @@
 dbus-glib.tcz
 libusb.tcz
-gudev-lib.tcz
+udev-extra.tcz
 polkit.tcz

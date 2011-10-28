@@ -1,12 +1,14 @@
 dbus-glib.tcz
-gudev-lib.tcz
+udev-extra.tcz
 polkit.tcz
 sg3-utils.tcz
 libatasmart.tcz
-parted.tcz
 lvm2.tcz
+parted.tcz
 lsof.tcz
 eject.tcz
 ntfs-3g.tcz
 util-linux-ng.tcz
-bash.tcz
+cryptsetup.tcz
+mdadm.tcz
+
