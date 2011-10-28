@@ -5,5 +5,7 @@ if ! grep $XUL_DIR /etc/ld.so.conf >/dev/null; then
   echo $XUL_DIR >> /etc/ld.so.conf
 fi
 
-ln -sf /usr/local/lib/mozilla/plugins/libflashplayer.so /usr/local/lib/xulrunner-addons/plugins/libflashplayer.so > /dev/null 2>&1
+[ -d /usr/local/lib/xulrunner-addons/plugins ] || mkdir -p /usr/local/lib/xulrunner-addons/plugins
+[ -d /usr/local/lib/xulrunner-addons/extensions ] || mkdir -p /usr/local/lib/xulrunner-addons/extensions
+[ -e /usr/local/lib/xulrunner-addons/plugins/libflashplayer.so ] || ln -sf /usr/local/lib/mozilla/plugins/libflashplayer.so /usr/local/lib/xulrunner-addons/plugins/libflashplayer.so
 

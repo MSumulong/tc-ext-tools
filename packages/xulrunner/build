@@ -37,11 +37,11 @@ build_install() {
   ln -sf $XUL_DEVEL_DIR/lib/libxpcom.so $INSTALL_ROOT/usr/local/lib || return 1
   ln -sf $XUL_DEVEL_DIR/lib/libmozjs.so $INSTALL_ROOT/usr/local/lib || return 1
 
+  rm -rf $INSTALL_ROOT/$XUL_DIR/plugins $INSTALL_ROOT/$XUL_DIR/extensions
   install -m 755 -d $INSTALL_ROOT/usr/local/lib/xulrunner-addons/plugins || return 1
-  ln -s /usr/local/lib/xulrunner-addons/plugins $INSTALL_ROOT/$XUL_DIR/plugins || return 1
-  touch $INSTALL_ROOT/usr/local/lib/xulrunner-addons/plugins/xulrunner.plugins
-  ln -s /usr/local/lib/xulrunner-addons/extensions $INSTALL_ROOT/$XUL_DIR/extensions || return 1
-  touch $INSTALL_ROOT/usr/local/lib/xulrunner-addons/extensions/xulrunner.extensions
+  ln -sf /usr/local/lib/xulrunner-addons/plugins $INSTALL_ROOT/$XUL_DIR/ || return 1
+  install -m 755 -d $INSTALL_ROOT/usr/local/lib/xulrunner-addons/extensions || return 1
+  ln -sf /usr/local/lib/xulrunner-addons/extensions $INSTALL_ROOT/$XUL_DIR/ || return 1
 
   install -m 755 -d $INSTALL_ROOT/usr/local/etc/ld.so.conf.d || return 1
   echo "$XUL_DIR" >> $INSTALL_ROOT/usr/local/etc/ld.so.conf.d/xulrunner.conf || return 1
