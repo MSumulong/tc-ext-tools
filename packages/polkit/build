@@ -5,7 +5,7 @@
 # Configure
 build_configure() {
 
-  ./configure --prefix=/usr/local \
+  ./configure --prefix=/usr/local --disable-static \
       --disable-introspection --disable-man-pages \
       --localstatedir=/var || return 1
 

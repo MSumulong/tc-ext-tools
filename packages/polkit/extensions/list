@@ -39,17 +39,14 @@ usr/local/include/polkit-1/polkitbackend/polkitbackendauthority.h
 usr/local/include/polkit-1/polkitbackend/polkitbackendinteractiveauthority.h
 usr/local/include/polkit-1/polkitbackend/polkitbackendlocalauthority.h
 usr/local/include/polkit-1/polkitbackend/polkitbackendtypes.h
-usr/local/lib/libpolkit-agent-1.a
 usr/local/lib/libpolkit-agent-1.la
 usr/local/lib/libpolkit-agent-1.so
 usr/local/lib/libpolkit-agent-1.so.0
 usr/local/lib/libpolkit-agent-1.so.0.0.0
-usr/local/lib/libpolkit-backend-1.a
 usr/local/lib/libpolkit-backend-1.la
 usr/local/lib/libpolkit-backend-1.so
 usr/local/lib/libpolkit-backend-1.so.0
 usr/local/lib/libpolkit-backend-1.so.0.0.0
-usr/local/lib/libpolkit-gobject-1.a
 usr/local/lib/libpolkit-gobject-1.la
 usr/local/lib/libpolkit-gobject-1.so
 usr/local/lib/libpolkit-gobject-1.so.0
@@ -57,7 +54,6 @@ usr/local/lib/libpolkit-gobject-1.so.0.0.0
 usr/local/lib/pkgconfig/polkit-agent-1.pc
 usr/local/lib/pkgconfig/polkit-backend-1.pc
 usr/local/lib/pkgconfig/polkit-gobject-1.pc
-usr/local/lib/polkit-1/extensions/libnullbackend.a
 usr/local/lib/polkit-1/extensions/libnullbackend.la
 usr/local/lib/polkit-1/extensions/libnullbackend.so
 usr/local/libexec/polkit-agent-helper-1

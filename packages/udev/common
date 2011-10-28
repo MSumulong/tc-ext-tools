@@ -1,16 +1,7 @@
 PACKAGE="udev"
 VERSION="173"
 SOURCE="http://www.kernel.org/pub/linux/utils/kernel/hotplug/udev-${VERSION}.tar.bz2"
-BUILD_DEPENDS="
-libusb
-libusb-dev
-usb-utils
-pci-utils
-glib2
-glib2-dev
-acl
-acl-dev
-gperf"
+BUILD_DEPENDS="libusb libusb-dev usb-utils pci-utils glib2 glib2-dev acl acl-dev gperf libffi libffi-dev"
 
 DESCRIPTION="The userspace dev tools (udev)."
 AUTHOR="---"
@@ -18,7 +9,7 @@ SITE="http://www.kernel.org/pub/linux/utils/kernel/hotplug/udev.html"
 COPYING="GPL-2"
 MAINTAINERS="Curaga, Arslan S."
 COMMENTS="---"
-CHANGELOG="2010/01/31 Original by Curaga
-		2010/02/23 split libudev by Curaga
-		2011/08/10 Update to 2a30eaa by Curaga"
-CURRENT="Updated to $VERSION and moved other files to udev-extra by Arslan S."
+CHANGELOG="2010/01/31 Original
+		2010/02/23 split libudev
+		2011/08/10 Update to 2a30eaa"
+CURRENT="Updated to $VERSION and moved other files to udev-extra (Arslan S.)"

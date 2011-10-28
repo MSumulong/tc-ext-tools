@@ -3,8 +3,8 @@ lib/udev/ata_id
 lib/udev/cdrom_id
 lib/udev/collect
 lib/udev/findkeyboards
+lib/udev/firmware
 lib/udev/input_id
-lib/udev/keyboard-force-release.sh
 lib/udev/mtd_probe
 lib/udev/path_id
 lib/udev/pci-db
@@ -14,10 +14,6 @@ lib/udev/write_cd_rules
 lib/udev/rules.d/60-persistent-v4l.rules
 lib/udev/rules.d/61-accelerometer.rules
 lib/udev/rules.d/70-udev-acl.rules
-lib/udev/rules.d/75-cd-aliases-generator.rules
-lib/udev/rules.d/75-net-description.rules
-lib/udev/rules.d/75-persistent-net-generator.rules
-lib/udev/rules.d/75-probe_mtd.rules
 lib/udev/scsi_id
 lib/udev/udev-acl
 lib/udev/usb-db
