@@ -16,7 +16,7 @@ AUTHOR="Damon Chaplin, Owen Taylor"
 SITE="http://www.gtk.org/gtk-doc/"
 COPYING="GPL-2/FDL"
 MAINTAINERS="Arslan S."
-COMMENTS=""
+COMMENTS="---"
 CHANGELOG="2010/01/08 Original 1.13
 		2010/07/11 Updated to 1.14"
 CURRENT="Updated to 1.15"

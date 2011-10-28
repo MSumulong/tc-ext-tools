@@ -30,7 +30,7 @@ AUTHOR="Paolo Maggi, Paolo Borelli, Steve Frecinaux, Jesse van den Kieboom"
 SITE="http://projects.gnome.org/gedit/"
 COPYING="GPL-2"
 MAINTAINERS="Arslan S."
-COMMENTS=""
+COMMENTS="---"
 CHANGELOG="2010/04/04 Original 2.28.2
 		2010/07/30 Updated to 2.30.2"
 CURRENT="Updated to $VERSION"

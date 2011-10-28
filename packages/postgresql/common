@@ -26,7 +26,7 @@ AUTHOR="various"
 SITE="http://www.postgresql.org/"
 COPYING="PostgreSQL License"
 MAINTAINERS="Arslan S."
-COMMENTS=""
+COMMENTS="---"
 CHANGELOG="2010/07/01 First Version 8.4.4
 		2010/10/03 Updated to 9.0.0 & Splitted out libs
 		2010/10/08 Updated to 9.0.1

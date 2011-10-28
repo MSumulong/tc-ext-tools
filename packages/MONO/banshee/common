@@ -42,7 +42,7 @@ AUTHOR="various"
 SITE="http://banshee-project.org/"
 COPYING="MIT"
 MAINTAINERS="Arslan S."
-COMMENTS=""
+COMMENTS="---"
 CHANGELOG="2010/04/20 First Version 1.6.0
 		2010/10/04 Updated to 1.8.0
 		2011/01/30 Updated to 1.8.1"

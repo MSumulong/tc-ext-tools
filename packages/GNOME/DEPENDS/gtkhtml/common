@@ -21,7 +21,7 @@ AUTHOR="GNOME Maintainers"
 SITE="http://www.gnome.org/"
 COPYING="GPL"
 MAINTAINERS="Arslan S."
-COMMENTS=""
+COMMENTS="---"
 CHANGELOG="2010/03/28 Original 3.28.2
 		2010/07/23 Updated to 3.30.2"
 CURRENT="Updated to 3.32.1"

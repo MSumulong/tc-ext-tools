@@ -10,7 +10,7 @@ AUTHOR="Miguel de Icaza, Paolo Molaro, Dietmar Maurer"
 SITE="http://www.mono-project.com/"
 COPYING="GPL-2/LGPL-2/MIT"
 MAINTAINERS="Arslan S."
-COMMENTS=""
+COMMENTS="---"
 CHANGELOG="2010/04/10 First Version 2.6.3
 		2010/04/18 Added init script to copy executables to file system
 		2010/10/04 Updated to 2.6.7

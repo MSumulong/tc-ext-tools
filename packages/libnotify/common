@@ -11,7 +11,7 @@ AUTHOR="Christian Hammond, Mike Hearn, John Palmieri"
 SITE="http://www.galago-project.org/"
 COPYING="LGPL"
 MAINTAINERS="Daniel Barnes, Arslan S."
-COMMENTS=""
+COMMENTS="---"
 CHANGELOG="2009/07/05 First Version 0.4.5 by Daniel Barnes
 		2011/01/25 Updated to 0.5.2 and splitted into extensions by Arslan S."
 CURRENT="Updated to $VERSION by Arslan S."

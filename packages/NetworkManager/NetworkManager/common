@@ -31,7 +31,7 @@ AUTHOR="Dan Williams, Tambet Ingo"
 SITE="http://projects.gnome.org/NetworkManager/"
 COPYING="GPL-2"
 MAINTAINERS="Arslan S."
-COMMENTS=""
+COMMENTS="---"
 CHANGELOG="2010/07/05 First Version 0.8.1~git100705
 		2010/08/04 Updated to 0.8.1"
 CURRENT="Updated to $VERSION"

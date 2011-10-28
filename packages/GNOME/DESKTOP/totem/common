@@ -46,7 +46,7 @@ AUTHOR="Bastien Nocera, Julien Moutte"
 SITE="http://projects.gnome.org/totem/"
 COPYING="GPL-2"
 MAINTAINERS="Arslan S."
-COMMENTS=""
+COMMENTS="---"
 CHANGELOG="2010/01/10 First Version 2.28.5
 		2010/01/18 Removed some broken plugins
 		2010/02/07 Updated init script & reduced size"

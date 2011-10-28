@@ -35,8 +35,6 @@ sqlite3
 sqlite3-dev
 libevent
 libevent-dev
-#GConf
-#GConf-dev
 yasm
 yasm-dev"
 
@@ -45,13 +43,12 @@ AUTHOR="Mozilla Foundation"
 SITE="https://developer.mozilla.org/en/XULRunner"
 COPYING="MPL/GPL/LGPL"
 MAINTAINERS="Arslan S."
-COMMENTS=""
+COMMENTS="---"
 CHANGELOG="2010/01/30 Original 1.9.1.7
 		2010/06/09 Updated to 1.9.2
 		2010/08/24 Updated to 1.9.2.8
 		2010/11/30 Updated to 1.9.2.12
 		2010/12/12 Updated to 1.9.2.13
-		2011/03/03 Updated to 1.9.2.14
 		2011/03/03 Updated to 1.9.2.14
 		2011/09/22 Updated to 6.0.2"
 CURRENT="Updated to $VERSION"

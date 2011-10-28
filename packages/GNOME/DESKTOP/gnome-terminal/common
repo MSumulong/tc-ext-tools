@@ -25,7 +25,7 @@ AUTHOR="Guilherme de S. Pastore, Havoc Pennington, Mariano Suarez-Alvarez"
 SITE="http://www.gnome.org"
 COPYING="GPL-2"
 MAINTAINERS="Arslan S."
-COMMENTS=""
+COMMENTS="---"
 CHANGELOG="2010/06/16 Original 2.28.2
 		2010/07/23 Updated to 2.30.2"
 CURRENT="Updated to $VERSION"

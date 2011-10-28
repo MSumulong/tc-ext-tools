@@ -13,7 +13,7 @@ AUTHOR="various"
 SITE="http://gstreamer.freedesktop.org"
 COPYING="LGPL"
 MAINTAINERS="juanito, Arslan S."
-COMMENTS=""
+COMMENTS="---"
 CHANGELOG="2009/11/08 First version 0.10.17 by Juanito
 		2010/03/16 Updated to 0.10.18 by Arslan S.
 		2010/07/19 Updated to 0.10.19 by Arslan S.

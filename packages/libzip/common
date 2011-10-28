@@ -8,7 +8,7 @@ AUTHOR="Dieter Baron, Thomas Klausner"
 SITE="http://nih.at/libzip/"
 COPYING="BSD"
 MAINTAINERS="Arslan S."
-COMMENTS=""
+COMMENTS="---"
 CHANGELOG="2010/07/15 First Version 0.9.3
 		2011/04/20 Updated to 0.10"
 CURRENT="Fixed missing headers: zipconf.h"

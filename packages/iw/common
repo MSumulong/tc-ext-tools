@@ -10,7 +10,7 @@ AUTHOR="Johannes Berg, Luis R. Rodriguez, Mike Kershaw, Andy Lutomirski"
 SITE="http://wireless.kernel.org/en/users/Documentation/iw"
 COPYING="custom"
 MAINTAINERS="Arslan S."
-COMMENTS=""
+COMMENTS="---"
 CHANGELOG="2009/10/19 - First version(iw-0.9.17.tcz) by ZhaoChunsheng
 		2009/12/11 - iw-0.9.18 by ZhaoChunsheng"
 CURRENT="Updated to $VERSION"

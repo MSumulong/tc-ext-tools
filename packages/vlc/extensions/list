@@ -158,6 +158,8 @@ usr/local/lib/vlc/plugins/access/libaccess_http_plugin.la
 usr/local/lib/vlc/plugins/access/libaccess_http_plugin.so
 usr/local/lib/vlc/plugins/access/libaccess_imem_plugin.la
 usr/local/lib/vlc/plugins/access/libaccess_imem_plugin.so
+usr/local/lib/vlc/plugins/access/libaccess_jack_plugin.la
+usr/local/lib/vlc/plugins/access/libaccess_jack_plugin.so
 usr/local/lib/vlc/plugins/access/libaccess_mmap_plugin.la
 usr/local/lib/vlc/plugins/access/libaccess_mmap_plugin.so
 usr/local/lib/vlc/plugins/access/libaccess_mms_plugin.la
@@ -190,8 +192,6 @@ usr/local/lib/vlc/plugins/access/librtp_plugin.la
 usr/local/lib/vlc/plugins/access/librtp_plugin.so
 usr/local/lib/vlc/plugins/access/libv4l2_plugin.la
 usr/local/lib/vlc/plugins/access/libv4l2_plugin.so
-usr/local/lib/vlc/plugins/access/libv4l_plugin.la
-usr/local/lib/vlc/plugins/access/libv4l_plugin.so
 usr/local/lib/vlc/plugins/access/libvcd_plugin.la
 usr/local/lib/vlc/plugins/access/libvcd_plugin.so
 usr/local/lib/vlc/plugins/access/libxcb_screen_plugin.la
@@ -260,6 +260,8 @@ usr/local/lib/vlc/plugins/audio_output/libaout_file_plugin.la
 usr/local/lib/vlc/plugins/audio_output/libaout_file_plugin.so
 usr/local/lib/vlc/plugins/audio_output/libaout_sdl_plugin.la
 usr/local/lib/vlc/plugins/audio_output/libaout_sdl_plugin.so
+usr/local/lib/vlc/plugins/audio_output/libjack_plugin.la
+usr/local/lib/vlc/plugins/audio_output/libjack_plugin.so
 usr/local/lib/vlc/plugins/audio_output/liboss_plugin.la
 usr/local/lib/vlc/plugins/audio_output/liboss_plugin.so
 usr/local/lib/vlc/plugins/audio_output/libpulse_plugin.la
@@ -652,8 +654,6 @@ usr/local/lib/vlc/plugins/video_filter/libmotiondetect_plugin.la
 usr/local/lib/vlc/plugins/video_filter/libmotiondetect_plugin.so
 usr/local/lib/vlc/plugins/video_filter/libnoise_plugin.la
 usr/local/lib/vlc/plugins/video_filter/libnoise_plugin.so
-usr/local/lib/vlc/plugins/video_filter/libosdmenu_plugin.la
-usr/local/lib/vlc/plugins/video_filter/libosdmenu_plugin.so
 usr/local/lib/vlc/plugins/video_filter/libpanoramix_plugin.la
 usr/local/lib/vlc/plugins/video_filter/libpanoramix_plugin.so
 usr/local/lib/vlc/plugins/video_filter/libpostproc_plugin.la
@@ -714,9 +714,6 @@ usr/local/lib/vlc/plugins/visualization/libvisual_plugin.la
 usr/local/lib/vlc/plugins/visualization/libvisual_plugin.so
 usr/local/lib/vlc/vlc-cache-gen
 usr/local/share/applications/vlc.desktop
-usr/local/share/apps/solid/actions/vlc-opencda.desktop
-usr/local/share/apps/solid/actions/vlc-opendvd.desktop
-usr/local/share/apps/solid/actions/vlc-openvcd.desktop
 usr/local/share/doc/vlc/bugreport-howto.txt
 usr/local/share/doc/vlc/fortunes.txt
 usr/local/share/doc/vlc/intf-vcd.txt
@@ -730,6 +727,9 @@ usr/local/share/icons/hicolor/32x32/apps/vlc.png
 usr/local/share/icons/hicolor/32x32/apps/vlc.xpm
 usr/local/share/icons/hicolor/48x48/apps/vlc-christmas.png
 usr/local/share/icons/hicolor/48x48/apps/vlc.png
+usr/local/share/kde4/apps/solid/actions/vlc-opencda.desktop
+usr/local/share/kde4/apps/solid/actions/vlc-opendvd.desktop
+usr/local/share/kde4/apps/solid/actions/vlc-openvcd.desktop
 usr/local/share/locale/ach/LC_MESSAGES/vlc.mo
 usr/local/share/locale/af/LC_MESSAGES/vlc.mo
 usr/local/share/locale/am/LC_MESSAGES/vlc.mo

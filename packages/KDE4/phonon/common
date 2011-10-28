@@ -17,7 +17,7 @@ AUTHOR="Matthias Kretz, Ricardo Villalba, Ian Monroe, Nokia Corporation"
 SITE="http://www.kde.org/"
 COPYING="GPL-2/LGPL-2.1/MIT"
 MAINTAINERS="robc, Arslan S."
-COMMENTS=""
+COMMENTS="---"
 CHANGELOG="2010/01/07 Original 4.3.0 by robc
 		2010/07/01 Updated to 4.4.2 & added gstreamer backend by Arslan S.
 		2011/01/08 Updated to 4.4.3 by Arslan S."

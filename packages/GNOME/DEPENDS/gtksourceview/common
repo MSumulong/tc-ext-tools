@@ -15,7 +15,7 @@ AUTHOR="Paolo Maggi, Paolo Borelli, Yevgen Muntyan"
 SITE="http://projects.gnome.org/gtksourceview/"
 COPYING="GPL/LGPL"
 MAINTAINERS="Arslan S."
-COMMENTS=""
+COMMENTS="---"
 CHANGELOG="2010/04/03 Original 2.8.1
 		2010/07/18 Updated to 2.10.4"
 CURRENT="Updated to 2.10.5"

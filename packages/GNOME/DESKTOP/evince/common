@@ -33,7 +33,7 @@ AUTHOR="GNOME Maintainers"
 SITE="http://projects.gnome.org/evince/"
 COPYING="GPL-2"
 MAINTAINERS="Arslan S."
-COMMENTS=""
+COMMENTS="---"
 CHANGELOG="2010/03/05 Original 2.28.2
 		2010/05/15 Fixed desktop entry
 		2010/07/30 Updated to 2.30.3"

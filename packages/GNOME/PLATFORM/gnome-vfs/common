@@ -32,7 +32,7 @@ AUTHOR="GNOME Maintainers"
 SITE="http://www.gnome.org"
 COPYING="GPL-2/LGPL-2"
 MAINTAINERS="Arslan S."
-COMMENTS=""
+COMMENTS="---"
 CHANGELOG="2009/05/26 First Version 2.24.1 by jpeters
 		2010/02/23 Updated to 2.24.2
 		2010/07/15 Updated to 2.24.3"

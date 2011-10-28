@@ -27,7 +27,7 @@ AUTHOR="Havoc Pennington"
 SITE="http://projects.gnome.org/gconf"
 COPYING="LGPL-2"
 MAINTAINERS="Arslan S."
-COMMENTS=""
+COMMENTS="---"
 CHANGELOG="2009/05/26 First Version 2.18.0.1 by jpeters
 		2009/10/29 Updated to 2.22.0.1 by jpeters
 		2010/01/28 Updated to 2.28.0

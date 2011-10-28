@@ -12,7 +12,7 @@ AUTHOR="The Mozilla Community"
 SITE="http://www.mozilla.org/projects/security/pki/nss/"
 COPYING="MPL 1.1/GPL 2.0/LGPL"
 MAINTAINERS="Arslan S."
-COMMENTS=""
+COMMENTS="---"
 CHANGELOG="2010/06/07 Original 3.12.6
 		2010/10/11 Updated to 3.12.8
 		2011/01/15 Updated to 3.12.9

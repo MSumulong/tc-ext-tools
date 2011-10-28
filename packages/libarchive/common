@@ -18,7 +18,7 @@ AUTHOR="Tim Kientzle"
 SITE="http://code.google.com/p/libarchive/"
 COPYING="BSD"
 MAINTAINERS="Arslan S."
-COMMENTS=""
+COMMENTS="---"
 CHANGELOG="2010/02/08 Original 2.8.0
 		2010/07/22 Updated to 2.8.4"
 CURRENT="Rebuilt"

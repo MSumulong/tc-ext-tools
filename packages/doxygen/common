@@ -13,7 +13,7 @@ AUTHOR="Dimitri van Heesch"
 SITE="http://www.stack.nl/~dimitri/doxygen/"
 COPYING="GPL"
 MAINTAINERS="Arslan S."
-COMMENTS=""
+COMMENTS="---"
 CHANGELOG="2009/10/16 Original 1.6.1
 		2010/04/29 Updated to 1.6.3 & splitted doxygen-gui(doxywizard)
 		2010/10/10 Updated to 1.7.2

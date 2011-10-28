@@ -67,7 +67,7 @@ AUTHOR="Evolution Team"
 SITE="http://projects.gnome.org/evolution/"
 COPYING="GPL/LGPL/MPL/OpenLDAP"
 MAINTAINERS="Arslan S."
-COMMENTS=""
+COMMENTS="---"
 CHANGELOG="2010/03/30 Original 2.28.2
 		2010/07/31 Updated to 2.30.2"
 CURRENT="Updated to $VERSION"

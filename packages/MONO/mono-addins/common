@@ -11,7 +11,7 @@ AUTHOR="Lluis Sanchez Gual"
 SITE="http://www.mono-project.com/Mono.Addins"
 COPYING="MIT"
 MAINTAINERS="Arslan S."
-COMMENTS=""
+COMMENTS="---"
 CHANGELOG="2010/05/10 Original 0.4.0
 		2010/12/29 Updated to 0.5"
 CURRENT="Updated to $VERSION"

@@ -21,7 +21,7 @@ AUTHOR="GNOME Maintainers"
 SITE="http://projects.gnome.org/epiphany/"
 COPYING="GPL-2"
 MAINTAINERS="Arslan S."
-COMMENTS=""
+COMMENTS="---"
 CHANGELOG="2010/05/08 Original 2.29.6
 		2010/08/15 Updated to 2.30.1"
 CURRENT="Updated to $VERSION"

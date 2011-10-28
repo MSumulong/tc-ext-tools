@@ -5,7 +5,7 @@ CHROMIUM_ROOT=/usr/local/chromium-browser
 CHROME_DESKTOP=chromium-browser.desktop
 CHROME_WRAPPER="$CHROMIUM_ROOT/$CHROMIUM_APP"
 PATH="$CHROMIUM_ROOT:$PATH"
-CHROME_VERSION_EXTRA="Tiny Core Linux"
+CHROME_VERSION_EXTRA="for Tiny Core Linux"
 
 if [ "X$LD_LIBRARY_PATH" = "X" ]; then
   LD_LIBRARY_PATH="$CHROMIUM_ROOT"

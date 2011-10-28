@@ -15,7 +15,7 @@ AUTHOR="David Leonard, Michael Stroeder, et al."
 SITE="http://www.python-ldap.org/"
 COPYING="Python-style"
 MAINTAINERS="Arslan S."
-COMMENTS=""
+COMMENTS="---"
 CHANGELOG="2010/02/21 Original 2.3.10
 		2010/03/20 Fixed missing module."
 CURRENT="Updated to 2.3.12 & built against python 2.7"

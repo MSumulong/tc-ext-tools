@@ -26,7 +26,7 @@ AUTHOR="GNOME Maintainers"
 SITE="http://live.gnome.org/LibSoup"
 COPYING="LGPL"
 MAINTAINERS="juanito, Arslan S."
-COMMENTS=""
+COMMENTS="---"
 CHANGELOG="2009/05/04 First version by Roberto A. Foglietta
 		2009/11/08 libsoup-gnome by juanito
 		2009/12/22 Updated libsoup to 2.29.4 (svn) by Arslan S.

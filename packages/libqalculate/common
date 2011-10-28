@@ -15,7 +15,7 @@ AUTHOR="Niklas Knutsson"
 SITE="qalculate.sourceforge.net"
 COPYING="GPL-2"
 MAINTAINERS="Arslan S."
-COMMENTS=""
+COMMENTS="---"
 CHANGELOG="2010/03/07 Original 0.9.7"
 CURRENT="Rebuilt"
 

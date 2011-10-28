@@ -10,7 +10,7 @@ AUTHOR="Martin Baulig, Miguel de Icaza"
 SITE="http://www.mono-project.com/"
 COPYING="MIT X11/GPL"
 MAINTAINERS="Arslan S."
-COMMENTS=""
+COMMENTS="---"
 CHANGELOG="2010/05/12 Original 2.6.3
 		010/12/28 Updated to 2.8.1"
 CURRENT="Updated to $VERSION"

@@ -21,7 +21,7 @@ AUTHOR="GNOME Maintainers"
 SITE="http://www.gnome.org"
 COPYING="LGPL"
 MAINTAINERS="juanito, Arslan S."
-COMMENTS=""
+COMMENTS="---"
 CHANGELOG="2009/11/08 First Version by juanito
 		2010/03/06 Rebuilt with more options & separated dev by Arslan S.
 		2010/07/18 Updated to 2.30.0 by Arslan S."

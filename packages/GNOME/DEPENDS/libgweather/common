@@ -28,7 +28,7 @@ AUTHOR="Papadimitriou Spiros"
 SITE="http://www.gnome.org/"
 COPYING="GPL"
 MAINTAINERS="Arslan S."
-COMMENTS=""
+COMMENTS="---"
 CHANGELOG="2010/03/28 Original 2.28.0
 		2010/07/19 Updated to 2.30.2"
 CURRENT="Updated to 2.30.3"

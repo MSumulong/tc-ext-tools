@@ -19,7 +19,7 @@ AUTHOR="LyX Team"
 SITE="http://www.lyx.org"
 COPYING="GPL-2"
 MAINTAINERS="Arslan S."
-COMMENTS=""
+COMMENTS="---"
 CHANGELOG="2009/10/29 First Version
 		2009/12/13 Updated to 1.6.5
 		2010/08/26 Updated to 1.6.7

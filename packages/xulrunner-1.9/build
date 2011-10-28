@@ -38,8 +38,8 @@ build_install() {
   ln -s /usr/local/lib/xulrunner-addons/plugins $INSTALL_ROOT/$XUL_DIR/plugins || return 1
   ln -s /usr/local/lib/xulrunner-addons/extensions $INSTALL_ROOT/$XUL_DIR/extensions || return 1
 
-  install -m 755 -d $INSTALL_ROOT/etc/ld.so.conf.d || return 1
-  echo "$XUL_DIR" >> $INSTALL_ROOT/etc/ld.so.conf.d/xulrunner.conf || return 1
+  install -m 755 -d $INSTALL_ROOT/usr/local/etc/ld.so.conf.d || return 1
+  echo "$XUL_DIR" >> $INSTALL_ROOT/usr/local/etc/ld.so.conf.d/xulrunner.conf || return 1
 
 }
 ##

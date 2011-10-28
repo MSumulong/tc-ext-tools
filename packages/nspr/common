@@ -8,7 +8,7 @@ AUTHOR="The Mozilla Community"
 SITE="http://www.mozilla.org/projects/nspr/"
 COPYING="MPL 1.1/GPL 2.0/LGPL"
 MAINTAINERS="Arslan S."
-COMMENTS=""
+COMMENTS="---"
 CHANGELOG="2010/06/07 Original 4.8.4
 		2010/10/11 Updated to 4.8.6
 		2011/01/15 Updated to 4.8.7

@@ -23,7 +23,7 @@ AUTHOR="various"
 SITE="http://www.gnome.org"
 COPYING="GPL/LGPL/FDL"
 MAINTAINERS="Arslan S."
-COMMENTS=""
+COMMENTS="---"
 CHANGELOG="2010/03/28 Original 2.28.2
 		2010/07/29 Updated to 2.30.2"
 CURRENT="Updated to $VERSION"

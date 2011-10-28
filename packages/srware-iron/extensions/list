@@ -104,6 +104,8 @@ usr/local/iron/resources/inspector/Images/localStorage.png
 usr/local/iron/resources/inspector/Images/paneAddButtons.png
 usr/local/iron/resources/inspector/Images/paneBottomGrow.png
 usr/local/iron/resources/inspector/Images/paneBottomGrowActive.png
+usr/local/iron/resources/inspector/Images/paneElementStateButtons.png
+usr/local/iron/resources/inspector/Images/paneFilterButtons.png
 usr/local/iron/resources/inspector/Images/paneGrowHandleLine.png
 usr/local/iron/resources/inspector/Images/paneRefreshButtons.png
 usr/local/iron/resources/inspector/Images/paneSettingsButtons.png
@@ -141,6 +143,10 @@ usr/local/iron/resources/inspector/Images/segmentSelectedEnd.png
 usr/local/iron/resources/inspector/Images/segmentSelectedEndChromium.png
 usr/local/iron/resources/inspector/Images/sessionStorage.png
 usr/local/iron/resources/inspector/Images/spinner.gif
+usr/local/iron/resources/inspector/Images/spinnerActive.gif
+usr/local/iron/resources/inspector/Images/spinnerActiveSelected.gif
+usr/local/iron/resources/inspector/Images/spinnerInactive.gif
+usr/local/iron/resources/inspector/Images/spinnerInactiveSelected.gif
 usr/local/iron/resources/inspector/Images/splitviewDimple.png
 usr/local/iron/resources/inspector/Images/splitviewDividerBackground.png
 usr/local/iron/resources/inspector/Images/statusbarBackground.png

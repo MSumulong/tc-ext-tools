@@ -13,7 +13,7 @@ AUTHOR="Giuseppe Penone"
 SITE="http://www.giuspen.com/cherrytree/"
 COPYING="GPL"
 MAINTAINERS="Arslan S."
-COMMENTS=""
+COMMENTS="---"
 CHANGELOG="2011/01/03 First Version 0.19
 		2011/01/09 Added wbar icon
 		2011/01/18 Updated to 0.19.3

@@ -1,5 +1,5 @@
 PACKAGE="srware-iron"
-VERSION="13.0.800.0"
+VERSION="14.0.850.0"
 SOURCE="http://www.srware.net/downloads/iron-linux.tar.gz->srware-iron-${VERSION}.tar.gz"
 BUILD_DEPENDS=""
 
@@ -8,8 +8,9 @@ AUTHOR="SRWare"
 SITE="http://www.srware.net/en/software_srware_iron.php"
 COPYING="BSD"
 MAINTAINERS="Arslan S."
-COMMENTS=""
+COMMENTS="---"
 CHANGELOG="2011/02/27 First Version 9.0.600.2
 		2011/03/11 Updated to 10.0.650.0
-		2011/06/14 Updated to 12.0.750.0"
+		2011/06/14 Updated to 12.0.750.0
+		2011/08/20 Updated to 13.0.800.0"
 CURRENT="Updated to $VERSION"

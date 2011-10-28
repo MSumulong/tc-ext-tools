@@ -21,7 +21,7 @@ AUTHOR="Jordi Mas i Hernandez"
 SITE="http://live.gnome.org/gbrainy"
 COPYING="GPL-2"
 MAINTAINERS="Arslan S."
-COMMENTS=""
+COMMENTS="---"
 CHANGELOG="2010/04/16 First Version 1.41"
 CURRENT="Updated to $VERSION"
 

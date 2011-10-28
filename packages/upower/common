@@ -17,7 +17,7 @@ AUTHOR="David Zeuthen, Richard Hughes"
 SITE="http://upower.freedesktop.org/"
 COPYING="GPL"
 MAINTAINERS="Arslan S."
-COMMENTS=""
+COMMENTS="---"
 CHANGELOG="2010/07/22 First Version 0.9.5
 		2010/08/02 Rebuilt"
 CURRENT="Updated to $VERSION"

@@ -11,7 +11,7 @@ AUTHOR="freedesktop.org "
 SITE="http://www.freedesktop.org/wiki/Software/shared-mime-info"
 COPYING="GPL"
 MAINTAINERS="Jason W, Arslan S."
-COMMENTS=""
+COMMENTS="---"
 CHANGELOG="2009/01/01 First version 0.51 by Jason W
 		2010/01/29 Updated to 0.70 by Arslan S.
 		2010/03/02 Rebuilt & fixed updated mime database by Arslan S.

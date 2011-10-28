@@ -1,3 +1,2 @@
 ICON="/usr/local/share/pixmaps/iron.png"
-COMMENTS="This extension conflicts with chromium-browser.
-		"
+COMMENTS="This extension conflicts with chromium-browser."

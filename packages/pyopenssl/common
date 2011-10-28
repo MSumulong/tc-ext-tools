@@ -11,7 +11,7 @@ AUTHOR="Jean-Paul Calderone"
 SITE="https://launchpad.net/pyopenssl"
 COPYING="LGPL"
 MAINTAINERS="Kingdomcome, Arslan S."
-COMMENTS=""
+COMMENTS="---"
 CHANGELOG="2010/03/12 First Version 0.10 by Kingdomcome
 		2011/01/04 Rebuilt against python 2.7 by Arslan S."
 CURRENT="Updated to $VERSION by Arslan S."

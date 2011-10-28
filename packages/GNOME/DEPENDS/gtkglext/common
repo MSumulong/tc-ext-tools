@@ -11,7 +11,7 @@ AUTHOR="Naofumi Yasufuku, Stephane Brunet, Ralf Corsepius, and Braden McDaniel"
 SITE="http://projects.gnome.org/gtkglext"
 COPYING="LGPL"
 MAINTAINERS="Arslan S."
-COMMENTS=""
+COMMENTS="---"
 CHANGELOG="2010/03/22 Original 1.2.0
 		2010/06/13 Rebuilt against Xorg-7.6-lib"
 CURRENT="gtk2.20 bugfix update"

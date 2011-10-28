@@ -19,7 +19,7 @@ AUTHOR="Joris Guisson, Ivan Vasic"
 SITE="http://ktorrent.org/"
 COPYING="GPL-2"
 MAINTAINERS="Arslan S."
-COMMENTS=""
+COMMENTS="---"
 CHANGELOG="2010/07/27 First Version 4.0.2"
 CURRENT="Updated to $VERSION"
 

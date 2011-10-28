@@ -29,7 +29,7 @@ AUTHOR="various"
 SITE="http://gstreamer.freedesktop.org"
 COPYING="LGPL"
 MAINTAINERS="juanito, Arslan S."
-COMMENTS=""
+COMMENTS="---"
 CHANGELOG="2009/11/08 First Version by juanito
 	   	2010/01/10 Rebuild with more libs (Arslan S.)
 			-Added AC3 audio codec (liba52)

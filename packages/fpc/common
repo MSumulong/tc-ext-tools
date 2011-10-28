@@ -10,7 +10,7 @@ AUTHOR="various"
 SITE="http://www.freepascal.org/"
 COPYING="GPL/LGPL/Custom"
 MAINTAINERS="Arslan S."
-COMMENTS=""
+COMMENTS="---"
 CHANGELOG="2010/08/31 First Version 2.4.0
 		2011/02/24 Updated to 2.4.2
 		2011/09/16 Updated to 2.4.4"

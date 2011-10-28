@@ -59,7 +59,7 @@ AUTHOR="Ilya Kotov, Vladimir Kuznetsov, Yuriy Zhuravlev, Andrey Adreev"
 SITE="http://qmmp.ylsoftware.com/"
 COPYING="GPL-2"
 MAINTAINERS="Arslan S."
-COMMENTS=""
+COMMENTS="---"
 CHANGELOG="2010/02/07 Original 0.3.2
 		2010/04/06 Updated to 0.3.4-svn-r1660
 		2010/05/31 Updated to 0.4.0

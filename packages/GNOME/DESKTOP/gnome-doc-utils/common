@@ -18,7 +18,7 @@ AUTHOR="GNOME Maintainers"
 SITE="http://www.gnome.org"
 COPYING="GPL/LGPL"
 MAINTAINERS="juanito, Arslan S."
-COMMENTS=""
+COMMENTS="---"
 CHANGELOG="2009/11/06 First Version 0.18.0 by juanito
 		2010/06/17 Updated to 0.19.5 by Arslan S.
 		2010/07/29 Updated to 0.20.1 by Arslan S."

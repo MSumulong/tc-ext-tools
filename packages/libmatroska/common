@@ -9,7 +9,7 @@ AUTHOR="Matroska Team"
 SITE="http://www.matroska.org/"
 COPYING="LGPL"
 MAINTAINERS="Arslan S."
-COMMENTS=""
+COMMENTS="---"
 CHANGELOG="2009/11/13 Original 0.8.1
 		2010/02/20 Updated with rtti (Curaga)
 		2010/12/05 Updated to 1.0.0"

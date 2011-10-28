@@ -21,7 +21,7 @@ AUTHOR="Henrik Enqvist"
 SITE="http://pinball.sourceforge.net/"
 COPYING="GPL-2"
 MAINTAINERS="Arslan S."
-COMMENTS=""
+COMMENTS="---"
 CHANGELOG="2009/12/08 Original 0.3.1
 		2010/06/14 Rebuilt"
 CURRENT="Bugfix update"

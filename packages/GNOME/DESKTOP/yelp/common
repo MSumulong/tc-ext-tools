@@ -30,7 +30,7 @@ AUTHOR="Mikael Hallendal, Alexander Larsson, Shaun McCance"
 SITE="http://live.gnome.org/Yelp"
 COPYING="GPL-2"
 MAINTAINERS="Arslan S."
-COMMENTS=""
+COMMENTS="---"
 CHANGELOG="2010/06/17 Original 2.29.5
 		2010/07/23 Updated to 2.30.1
 		2010/11/30 Updated to 2.30.2"
