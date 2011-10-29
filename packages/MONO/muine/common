@@ -17,7 +17,7 @@ libgdbm
 libgdbm-dev"
 
 DESCRIPTION="Muine is an innovative music player, featuring a simple, intuitive interface."
-AUTHOR="various"
+AUTHOR="---"
 SITE="http://muine.gooeylinux.org/"
 COPYING="GPL-2"
 MAINTAINERS="Arslan S."

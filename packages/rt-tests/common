@@ -5,7 +5,7 @@ BUILD_DEPENDS="linux-headers-KERNEL
 python"
 
 DESCRIPTION="A set of programs that test and measure various components of real-time kernel behavior."
-AUTHOR="various"
+AUTHOR="---"
 SITE="http://www.kernel.org/pub/linux/kernel/people/tglx/rt-tests/"
 COPYING="GPL-2"
 MAINTAINERS="Arslan S."

@@ -17,7 +17,7 @@ lua
 lua-dev"
 
 DESCRIPTION="A challenging 2D motocross platform game."
-AUTHOR="various"
+AUTHOR="---"
 SITE="http://xmoto.tuxfamily.org/"
 COPYING="GPL"
 MAINTAINERS="Arslan S."

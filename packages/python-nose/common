@@ -6,7 +6,7 @@ python-dev
 python-distribute"
 
 DESCRIPTION="Nose extends unittest to make testing easier."
-AUTHOR="various"
+AUTHOR="---"
 SITE="http://www.somethingaboutorange.com/mrl/projects/nose/"
 COPYING="LGPL-2"
 MAINTAINERS="Arslan S."

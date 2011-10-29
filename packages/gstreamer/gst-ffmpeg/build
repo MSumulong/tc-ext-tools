@@ -6,8 +6,7 @@
 build_configure() {
 
   ./configure --prefix=/usr/local --localstatedir=/var \
-      --disable-static \
-      --with-ffmpeg-extra-configure="--enable-runtime-cpudetect" || return 1
+      --disable-static --with-ffmpeg-extra-configure="--enable-runtime-cpudetect" || return 1
 
 }
 

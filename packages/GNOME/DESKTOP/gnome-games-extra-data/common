@@ -7,7 +7,7 @@ BUILD_DEPENDS=""
 
 
 DESCRIPTION="Extra data for gnome-games."
-AUTHOR="various"
+AUTHOR="---"
 SITE="http://live.gnome.org/GnomeGames/"
 COPYING="GPL"
 MAINTAINERS="Arslan S."

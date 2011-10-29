@@ -4,7 +4,7 @@ SOURCE="http://downloads.sourceforge.net/sourceforge/freeimage/FreeImage3141.zip
 BUILD_DEPENDS=""
 
 DESCRIPTION="A library project for developers who would like to support popular graphics image formats."
-AUTHOR="various"
+AUTHOR="---"
 SITE="http://sourceforge.net/projects/freeimage/"
 COPYING="GPL/FreeImage Public License - Version 1.0"
 MAINTAINERS="Arslan S."

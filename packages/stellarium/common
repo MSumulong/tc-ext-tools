@@ -15,7 +15,7 @@ qt-4.x-extended
 qt-4.x-dev"
 
 DESCRIPTION="Stellarium is a free open source planetarium for your computer."
-AUTHOR="various"
+AUTHOR="---"
 SITE="http://www.stellarium.org/"
 COPYING="GPL-2"
 MAINTAINERS="Arslan S."

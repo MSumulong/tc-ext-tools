@@ -22,7 +22,7 @@ openldap-dev
 tzdata"
 
 DESCRIPTION="A powerful, open source object-relational database system."
-AUTHOR="various"
+AUTHOR="---"
 SITE="http://www.postgresql.org/"
 COPYING="PostgreSQL License"
 MAINTAINERS="Arslan S."

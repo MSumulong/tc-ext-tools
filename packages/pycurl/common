@@ -7,7 +7,7 @@ python
 python-dev"
 
 DESCRIPTION="Python bindings for libcurl."
-AUTHOR="various"
+AUTHOR="---"
 SITE="http://pycurl.sourceforge.net"
 COPYING="LGPL"
 MAINTAINERS="Arslan S."

@@ -13,7 +13,7 @@ gtk2
 gtk2-dev"
 
 DESCRIPTION="A full fledged dock application for GNOME."
-AUTHOR="various"
+AUTHOR="---"
 SITE="https://launchpad.net/docky"
 COPYING="GPL-3"
 MAINTAINERS="Arslan S."

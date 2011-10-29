@@ -12,7 +12,7 @@ kdebase
 kdebase-dev"
 
 DESCRIPTION="A web browser component for KDE."
-AUTHOR="various"
+AUTHOR="---"
 SITE="http://opendesktop.org/content/show.php?content=127960"
 COPYING="LGPL"
 MAINTAINERS="Arslan S."

@@ -38,7 +38,7 @@ libsoup-gnome
 libsoup-gnome-dev"
 
 DESCRIPTION="A music management and playback application for GNOME."
-AUTHOR="various"
+AUTHOR="---"
 SITE="http://banshee-project.org/"
 COPYING="MIT"
 MAINTAINERS="Arslan S."

@@ -4,7 +4,7 @@ SOURCE="http://download.videolan.org/pub/libdvbpsi/${VERSION}/libdvbpsi-${VERSIO
 BUILD_DEPENDS=""
 
 DESCRIPTION="A simple library designed for decoding and generation of MPEG TS and DVB PSI tables."
-AUTHOR="various"
+AUTHOR="---"
 SITE="http://developers.videolan.org/libdvbpsi/"
 COPYING="GPL"
 MAINTAINERS="Arslan S."

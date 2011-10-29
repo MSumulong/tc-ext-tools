@@ -36,7 +36,7 @@ gst-plugins-base
 gst-plugins-base-dev"
 
 DESCRIPTION="Web Browser of GNOME."
-AUTHOR="various"
+AUTHOR="---"
 SITE="http://projects.gnome.org/epiphany/"
 COPYING="GPL-2"
 MAINTAINERS="Arslan S."

@@ -5,7 +5,7 @@ SOURCE="http://www.openjpeg.org/openjpeg_${_VERSION}.tar.gz"
 BUILD_DEPENDS=""
 
 DESCRIPTION="An open-source JPEG 2000 codec."
-AUTHOR="various"
+AUTHOR="---"
 SITE="http://www.openjpeg.org/"
 COPYING="BSD"
 MAINTAINERS="Arslan S."

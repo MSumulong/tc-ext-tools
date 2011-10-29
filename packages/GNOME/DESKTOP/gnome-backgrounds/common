@@ -7,7 +7,7 @@ BUILD_DEPENDS=""
 
 
 DESCRIPTION="The GNOME wallpapers."
-AUTHOR="various"
+AUTHOR="---"
 SITE="http://www.gnome.org"
 COPYING="GPL-2"
 MAINTAINERS="Arslan S."

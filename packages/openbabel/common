@@ -13,7 +13,7 @@ python
 python-dev"
 
 DESCRIPTION="The Open Source Chemistry Toolbox."
-AUTHOR="various"
+AUTHOR="---"
 SITE="http://openbabel.org/wiki/Main_Page"
 COPYING="GPL"
 MAINTAINERS="Arslan S."

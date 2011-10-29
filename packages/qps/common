@@ -10,7 +10,7 @@ Xorg-7.6-lib
 Xorg-7.6-dev"
 
 DESCRIPTION="Visual process manager and status monitor."
-AUTHOR="various"
+AUTHOR="---"
 SITE="http://qps.kldp.net/projects/qps"
 COPYING="GPL"
 MAINTAINERS="Arslan S."

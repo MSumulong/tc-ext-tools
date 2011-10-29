@@ -8,7 +8,7 @@ rarian"
 
 
 DESCRIPTION="The GNOME user guide."
-AUTHOR="various"
+AUTHOR="---"
 SITE="http://www.gnome.org"
 COPYING="FDL-1.1"
 MAINTAINERS="Arslan S."

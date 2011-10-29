@@ -16,7 +16,7 @@ pygobject-2.7
 pygobject-2.7-dev"
 
 DESCRIPTION="Glue library between telepathy and farsight."
-AUTHOR="various"
+AUTHOR="---"
 SITE="http://telepathy.freedesktop.org/wiki/"
 COPYING="LGPL"
 MAINTAINERS="Arslan S."

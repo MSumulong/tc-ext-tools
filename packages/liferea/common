@@ -22,7 +22,7 @@ Xorg-7.6-dev
 #NetworkManager-dev"
 
 DESCRIPTION="Liferea (Linux Feed Reader) is an aggregator for online news feeds."
-AUTHOR="various"
+AUTHOR="---"
 SITE="http://liferea.sourceforge.net/"
 COPYING="GPL"
 MAINTAINERS="Arslan S."

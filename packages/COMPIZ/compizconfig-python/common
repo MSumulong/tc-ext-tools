@@ -12,7 +12,7 @@ python-dev
 pyrex-2.7"
 
 DESCRIPTION="Python bindings for libcompizconfig."
-AUTHOR="various"
+AUTHOR="---"
 SITE="http://www.compiz.org/"
 COPYING="GPL-2"
 MAINTAINERS="Arslan S."

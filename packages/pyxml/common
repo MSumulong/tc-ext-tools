@@ -5,7 +5,7 @@ BUILD_DEPENDS="python
 python-dev"
 
 DESCRIPTION="Python XML parsing library."
-AUTHOR="various"
+AUTHOR="---"
 SITE="http://sourceforge.net/projects/pyxml/"
 COPYING="custom"
 MAINTAINERS="Arslan S."

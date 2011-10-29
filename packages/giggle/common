@@ -13,7 +13,7 @@ libiconv
 libiconv-dev"
 
 DESCRIPTION="A graphical frontend for the git content tracker."
-AUTHOR="various"
+AUTHOR="---"
 SITE="http://live.gnome.org/giggle"
 COPYING="GPL"
 MAINTAINERS="Arslan S."

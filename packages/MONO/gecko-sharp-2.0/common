@@ -12,7 +12,7 @@ gtk2
 gtk2-dev"
 
 DESCRIPTION="C# bindings for gtkmozembed."
-AUTHOR="various"
+AUTHOR="---"
 SITE="http://www.mono-project.com/"
 COPYING="LGPL/MPL"
 MAINTAINERS="Arslan S."

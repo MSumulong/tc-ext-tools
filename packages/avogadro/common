@@ -16,7 +16,7 @@ openbabel
 openbabel-dev"
 
 DESCRIPTION="An advanced molecule editor and visualizer."
-AUTHOR="various"
+AUTHOR="---"
 SITE="http://avogadro.openmolecules.net/wiki/Main_Page"
 COPYING="GPL-2"
 MAINTAINERS="Arslan S."

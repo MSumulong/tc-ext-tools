@@ -7,7 +7,7 @@ glib2
 glib2-dev"
 
 DESCRIPTION="A library that read information about processes and the running system."
-AUTHOR="various"
+AUTHOR="---"
 SITE="http://www.gnome.org/"
 COPYING="LGPL"
 MAINTAINERS="Arslan S."

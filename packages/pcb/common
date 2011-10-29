@@ -14,7 +14,7 @@ tk
 tk-dev"
 
 DESCRIPTION="An interactive printed circuit board editor."
-AUTHOR="various"
+AUTHOR="---"
 SITE="http://pcb.gpleda.org/"
 COPYING="GPL"
 MAINTAINERS="Arslan S."

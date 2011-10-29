@@ -113,8 +113,6 @@ usr/local/lib/gstreamer-0.10/libgsttheora.la
 usr/local/lib/gstreamer-0.10/libgsttheora.so
 usr/local/lib/gstreamer-0.10/libgsttypefindfunctions.la
 usr/local/lib/gstreamer-0.10/libgsttypefindfunctions.so
-usr/local/lib/gstreamer-0.10/libgstvideo4linux.la
-usr/local/lib/gstreamer-0.10/libgstvideo4linux.so
 usr/local/lib/gstreamer-0.10/libgstvideorate.la
 usr/local/lib/gstreamer-0.10/libgstvideorate.so
 usr/local/lib/gstreamer-0.10/libgstvideoscale.la

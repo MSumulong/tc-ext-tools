@@ -1,20 +1,11 @@
 PACKAGE="gst-ffmpeg"
-VERSION="0.10.11"
+VERSION="0.10.12"
 SOURCE="http://gstreamer.freedesktop.org/src/${PACKAGE}/${PACKAGE}-${VERSION}.tar.bz2"
-BUILD_DEPENDS="gstreamer
-gstreamer-dev
-gst-plugins-base
-gst-plugins-base-dev
-bzip2-lib
-bzip2-dev
-SDL
-SDL-dev
-coreutils
-liborc
-liborc-dev"
+BUILD_DEPENDS="gstreamer gstreamer-dev gst-plugins-base gst-plugins-base-dev
+               bzip2-lib bzip2-dev SDL SDL-dev coreutils liborc liborc-dev yasm"
 
 DESCRIPTION="GStreamer ffmpeg plugin."
-AUTHOR="various"
+AUTHOR="---"
 SITE="http://gstreamer.freedesktop.org"
 COPYING="GPL"
 MAINTAINERS="Arslan S."
@@ -22,5 +13,6 @@ COMMENTS="---"
 CHANGELOG="2009/12/28 Original 0.10.9
 		2010/03/16 Updated to 0.10.10
 		2010/07/19 Updated to 0.10.11
-		2011/02/09 Rebuilt"
-CURRENT="Rebuilt"
+		2011/02/09 Rebuilt
+		2011/06/12 Rebuilt"
+CURRENT="Updated to $VERSION"

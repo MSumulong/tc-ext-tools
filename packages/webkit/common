@@ -27,7 +27,7 @@ icu-dev
 #gobject-introspection-dev"
 
 DESCRIPTION="WebKit/GTK+ is the GTK+ port of WebKit."
-AUTHOR="various"
+AUTHOR="---"
 SITE="http://webkitgtk.org/"
 COPYING="LGPL/BSD-like"
 MAINTAINERS="Arslan S."

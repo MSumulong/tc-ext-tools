@@ -19,7 +19,7 @@ ffmpeg-ffserver
 ffmpeg-ffserver-dev"
 
 DESCRIPTION="The free and open source internet TV platform."
-AUTHOR="various"
+AUTHOR="---"
 SITE="http://www.getmiro.com/"
 COPYING="GPL-2"
 MAINTAINERS="Arslan S."

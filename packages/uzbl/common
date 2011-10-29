@@ -5,7 +5,7 @@ BUILD_DEPENDS="webkit
 webkit-dev"
 
 DESCRIPTION="The uzbl web interface tools."
-AUTHOR="various"
+AUTHOR="---"
 SITE="http://www.uzbl.org/"
 COPYING="GPL-3"
 MAINTAINERS="Arslan S."

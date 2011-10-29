@@ -12,7 +12,7 @@ Xorg-7.6-lib
 Xorg-7.6-dev"
 
 DESCRIPTION="Simple DirectMedia Library Bindings for Perl."
-AUTHOR="various"
+AUTHOR="---"
 SITE="http://sdl.perl.org"
 COPYING="LGPL"
 MAINTAINERS="Arslan S."

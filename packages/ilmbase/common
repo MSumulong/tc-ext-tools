@@ -4,7 +4,7 @@ SOURCE="http://savannah.nongnu.org/download/openexr/ilmbase-${VERSION}.tar.gz"
 BUILD_DEPENDS=""
 
 DESCRIPTION="Ilmbase libraries."
-AUTHOR="various"
+AUTHOR="---"
 SITE="http://www.openexr.com/"
 COPYING="custom"
 MAINTAINERS="Juanito, Arslan S."

@@ -18,7 +18,7 @@ libopenal
 libopenal-dev"
 
 DESCRIPTION="Multiplayer retro sci-fi deathmatch game."
-AUTHOR="various"
+AUTHOR="---"
 SITE="http://icculus.org/alienarena/rpa/"
 COPYING="GPL-2"
 MAINTAINERS="Arslan S."

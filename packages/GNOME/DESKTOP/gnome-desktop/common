@@ -19,7 +19,7 @@ python
 python-dev"
 
 DESCRIPTION="Utility library for loading .desktop files."
-AUTHOR="various"
+AUTHOR="---"
 SITE="http://www.gnome.org"
 COPYING="GPL/LGPL/FDL"
 MAINTAINERS="Arslan S."

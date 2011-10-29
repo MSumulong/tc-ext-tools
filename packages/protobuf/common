@@ -6,7 +6,7 @@ python-dev
 python_setuptools-2.7"
 
 DESCRIPTION="Protocol buffers C++ library."
-AUTHOR="various"
+AUTHOR="---"
 SITE="http://code.google.com/p/protobuf/"
 COPYING="BSD"
 MAINTAINERS="Arslan S."

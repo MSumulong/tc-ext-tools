@@ -4,7 +4,7 @@ SOURCE="http://hal.freedesktop.org/releases/polkit-${VERSION}.tar.gz"
 BUILD_DEPENDS="glib2 glib2-dev expat2 expat2-dev Linux-PAM Linux-PAM-dev"
 
 DESCRIPTION="An application-level toolkit for managing administrative policies and privileges."
-AUTHOR="various"
+AUTHOR="---"
 SITE="http://www.freedesktop.org/wiki/Software/PolicyKit"
 COPYING="LGPL"
 MAINTAINERS="Arslan S."

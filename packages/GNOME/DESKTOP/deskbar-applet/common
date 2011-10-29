@@ -23,7 +23,7 @@ libiconv
 libiconv-dev"
 
 DESCRIPTION="An advanced search bar for GNOME panel."
-AUTHOR="various"
+AUTHOR="---"
 SITE="http://live.gnome.org/DeskbarApplet"
 COPYING="GPL"
 MAINTAINERS="Arslan S."

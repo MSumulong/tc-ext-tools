@@ -18,7 +18,7 @@ libasound
 alsa-dev"
 
 DESCRIPTION="wxCam is a webcam application for linux."
-AUTHOR="various"
+AUTHOR="---"
 SITE="http://wxcam.sourceforge.net/"
 COPYING="GPL"
 MAINTAINERS="Arslan S."

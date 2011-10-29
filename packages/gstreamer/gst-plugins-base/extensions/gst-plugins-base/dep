@@ -3,7 +3,7 @@ libasound.tcz
 liboil.tcz
 libtheora.tcz
 libvorbis.tcz
-gudev-lib.tcz
+udev-lib.tcz
 iso-codes.tcz
 cairo.tcz
 pango.tcz

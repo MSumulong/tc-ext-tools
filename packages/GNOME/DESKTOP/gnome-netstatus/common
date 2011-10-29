@@ -14,7 +14,7 @@ libgnome-keyring-dev"
 
 
 DESCRIPTION="A GNOME panel applet that shows information about network status."
-AUTHOR="various"
+AUTHOR="---"
 SITE="http://www.gnome.org"
 COPYING="GPL"
 MAINTAINERS="Arslan S."

@@ -8,7 +8,7 @@ libxcb
 libxcb-dev"
 
 DESCRIPTION="Oxygen-Gtk is a port of the default KDE widget theme (Oxygen), to gtk."
-AUTHOR="various"
+AUTHOR="---"
 SITE="http://kde-look.org/content/show.php/?content=136216"
 COPYING="LGPL"
 MAINTAINERS="Arslan S."

@@ -107,8 +107,6 @@ usr/local/lib/gstreamer-0.10/libgstinvtelecine.la
 usr/local/lib/gstreamer-0.10/libgstinvtelecine.so
 usr/local/lib/gstreamer-0.10/libgstivfparse.la
 usr/local/lib/gstreamer-0.10/libgstivfparse.so
-usr/local/lib/gstreamer-0.10/libgstjp2k.la
-usr/local/lib/gstreamer-0.10/libgstjp2k.so
 usr/local/lib/gstreamer-0.10/libgstjp2kdecimator.la
 usr/local/lib/gstreamer-0.10/libgstjp2kdecimator.so
 usr/local/lib/gstreamer-0.10/libgstjpegformat.la

@@ -5,7 +5,7 @@ BUILD_DEPENDS="Xorg-7.6
 Xorg-7.6-dev"
 
 DESCRIPTION="A Suite of Portable Game Libraries."
-AUTHOR="various"
+AUTHOR="---"
 SITE="http://plib.sourceforge.net/"
 COPYING="LGPL"
 MAINTAINERS="Arslan S."

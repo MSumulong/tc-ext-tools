@@ -6,7 +6,7 @@ ncurses-dev
 fpc"
 
 DESCRIPTION="Open source compiler for Pascal and Object Pascal."
-AUTHOR="various"
+AUTHOR="---"
 SITE="http://www.freepascal.org/"
 COPYING="GPL/LGPL/Custom"
 MAINTAINERS="Arslan S."

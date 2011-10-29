@@ -4,7 +4,7 @@ SOURCE="http://live555.com/liveMedia/public/live.${VERSION}.tar.gz"
 BUILD_DEPENDS=""
 
 DESCRIPTION="C++ libraries for multimedia streaming, using open standard protocols (RTP/RTCP, RTSP, SIP). "
-AUTHOR="various"
+AUTHOR="---"
 SITE="http://live555.com/liveMedia/"
 COPYING="LGPL"
 MAINTAINERS="Arslan S."

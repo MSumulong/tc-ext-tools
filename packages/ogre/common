@@ -14,7 +14,7 @@ zziplib
 zziplib-dev"
 
 DESCRIPTION="Object-oriented Graphics Rendering Engine."
-AUTHOR="various"
+AUTHOR="---"
 SITE="http://www.ogre3d.org/"
 COPYING="MIT"
 MAINTAINERS="Arslan S."

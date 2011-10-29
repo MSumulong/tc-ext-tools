@@ -8,8 +8,8 @@ dbus-glib
 expat2
 expat2-dev
 samba3
-gudev-lib
-gudev-dev
+udev-lib
+udev-dev
 libsoup-gnome
 libsoup-gnome-dev
 libgcrypt-dev
@@ -36,7 +36,7 @@ libcdio
 libcdio-dev"
 
 DESCRIPTION="Userspace virtual filesystem."
-AUTHOR="various"
+AUTHOR="---"
 SITE="http://www.gnome.org"
 COPYING="LGPL"
 MAINTAINERS="Arslan S."

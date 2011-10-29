@@ -21,7 +21,7 @@ libpanel-applet
 libpanel-applet-dev"
 
 DESCRIPTION="A desktop note-taking application for Linux and Unix."
-AUTHOR="various"
+AUTHOR="---"
 SITE="http://www.gnome.org/projects/tomboy/"
 COPYING="GPL"
 MAINTAINERS="Arslan S."

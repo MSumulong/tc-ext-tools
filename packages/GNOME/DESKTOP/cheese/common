@@ -34,8 +34,8 @@ dbus-glib
 dbus-glib-dev
 libcanberra
 libcanberra-dev
-#gudev-lib
-#gudev-dev
+#udev-lib
+#udev-dev
 hal
 hal-dev
 evolution-data-server
@@ -44,7 +44,7 @@ libiconv
 libiconv-dev"
 
 DESCRIPTION="Take pictures and videos from your web cam."
-AUTHOR="various"
+AUTHOR="---"
 SITE="http://projects.gnome.org/cheese/"
 COPYING="GPL"
 MAINTAINERS="Arslan S."

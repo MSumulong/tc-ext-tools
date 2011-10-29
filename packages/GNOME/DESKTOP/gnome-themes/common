@@ -14,7 +14,7 @@ librsvg-dev"
 
 
 DESCRIPTION="The GNOME desktop themes."
-AUTHOR="various"
+AUTHOR="---"
 SITE="http://www.gnome.org"
 COPYING="LGPL"
 MAINTAINERS="Arslan S."

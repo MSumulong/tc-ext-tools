@@ -4,7 +4,7 @@ SOURCE="http://download.icu-project.org/files/${PACKAGE}4c/${VERSION}/${PACKAGE}
 BUILD_DEPENDS=""
 
 DESCRIPTION="International Components for Unicode."
-AUTHOR="various"
+AUTHOR="---"
 SITE="http://site.icu-project.org/"
 COPYING="ICU License"
 MAINTAINERS="Arslan S."

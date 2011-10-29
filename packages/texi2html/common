@@ -4,7 +4,7 @@ SOURCE="http://download.savannah.gnu.org/releases/texi2html/texi2html-${VERSION}
 BUILD_DEPENDS="perl5"
 
 DESCRIPTION="Converts texinfo documents to HTML."
-AUTHOR="various"
+AUTHOR="---"
 SITE="http://texi2html.nongnu.org/"
 COPYING="GPL"
 MAINTAINERS="Arslan S."

@@ -13,7 +13,7 @@ libiconv
 libiconv-dev"
 
 DESCRIPTION="GPL'd suite and toolkit of Electronic Design Automation tools."
-AUTHOR="various"
+AUTHOR="---"
 SITE="http://www.gpleda.org"
 COPYING="GPL"
 MAINTAINERS="Arslan S."

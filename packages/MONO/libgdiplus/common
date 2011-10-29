@@ -17,7 +17,7 @@ libxcb
 libxcb-dev"
 
 DESCRIPTION="An Open Source implementation of the GDI+ API."
-AUTHOR="various"
+AUTHOR="---"
 SITE="http://www.mono-project.com/"
 COPYING="LGPL/MPL"
 MAINTAINERS="Arslan S."

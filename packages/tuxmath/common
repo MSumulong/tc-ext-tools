@@ -13,7 +13,7 @@ t4k_common
 t4k_common-dev"
 
 DESCRIPTION="TuxMath is an arcade game that helps kids practice their math facts."
-AUTHOR="various"
+AUTHOR="---"
 SITE="http://tux4kids.alioth.debian.org/tuxmath/"
 COPYING="GPL-3"
 MAINTAINERS="Arslan S."

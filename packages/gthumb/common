@@ -33,7 +33,7 @@ libcanberra
 libcanberra-dev"
 
 DESCRIPTION="An Image Viewer and Browser for the GNOME Desktop."
-AUTHOR="various"
+AUTHOR="---"
 SITE="http://live.gnome.org/gthumb"
 COPYING="GPL"
 MAINTAINERS="Arslan S."

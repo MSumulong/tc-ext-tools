@@ -5,7 +5,7 @@ BUILD_DEPENDS="glib2
 glib2-dev"
 
 DESCRIPTION="GNet is a simple network library."
-AUTHOR="various"
+AUTHOR="---"
 SITE="http://www.gnetlibrary.org/"
 COPYING="LGPL"
 MAINTAINERS="Arslan S."

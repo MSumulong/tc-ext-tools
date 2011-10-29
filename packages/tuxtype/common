@@ -9,7 +9,7 @@ librsvg
 librsvg-dev"
 
 DESCRIPTION="An Educational Typing Tutor Game Starring Tux, the Linux Penguin."
-AUTHOR="various"
+AUTHOR="---"
 SITE="http://alioth.debian.org/projects/tux4kids/"
 COPYING="GPL-2 OFL-1.1"
 MAINTAINERS="Arslan S."

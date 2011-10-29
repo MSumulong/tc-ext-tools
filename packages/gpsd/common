@@ -28,7 +28,7 @@ bluez-dev
 docbook_xsl"
 
 DESCRIPTION="GPS (Global Positioning System) services daemon."
-AUTHOR="various"
+AUTHOR="---"
 SITE="http://www.catb.org/gpsd/"
 COPYING="BSD"
 MAINTAINERS="Arslan S., T. Buctoo"

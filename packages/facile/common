@@ -4,7 +4,7 @@ SOURCE="http://www.recherche.enac.fr/log/facile/distrib/facile-${VERSION}.tar.gz
 BUILD_DEPENDS="ocaml"
 
 DESCRIPTION="A constraint programming library on integer and integer set finite domains written in OCaml."
-AUTHOR="various"
+AUTHOR="---"
 SITE="http://www.recherche.enac.fr/log/facile/"
 COPYING="LGPL"
 MAINTAINERS="Arslan S."

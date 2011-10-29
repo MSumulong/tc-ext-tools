@@ -28,7 +28,7 @@ python-numpy
 doxygen"
 
 DESCRIPTION="A library of programming functions for real time computer vision."
-AUTHOR="various"
+AUTHOR="---"
 SITE="http://opencv.willowgarage.com"
 COPYING="BSD"
 MAINTAINERS="Arslan S."

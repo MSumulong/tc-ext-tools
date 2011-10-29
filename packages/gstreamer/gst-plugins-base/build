@@ -16,6 +16,7 @@ build_configure() {
 # Compile
 build_compile() {
 
+  ln -s /usr/lib/libX11.la /usr/local/lib/libX11.la
   make || return 1
 
 }

@@ -9,7 +9,7 @@ graphviz
 dejavu-fonts-ttf"
 
 DESCRIPTION="A 3D Collision Detection and Rigid Body Dynamics Library."
-AUTHOR="various"
+AUTHOR="---"
 SITE="http://www.bulletphysics.com/Bullet"
 COPYING="zlib"
 MAINTAINERS="Arslan S."

@@ -6,7 +6,7 @@ BUILD_DEPENDS="readline
 readline-dev"
 
 DESCRIPTION="GNU Circuit Analysis Package."
-AUTHOR="various"
+AUTHOR="---"
 SITE="http://gnucap.org/"
 COPYING="GPL"
 MAINTAINERS="Arslan S."

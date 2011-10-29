@@ -9,7 +9,7 @@ gfortran
 liblapack"
 
 DESCRIPTION="NumPy is the fundamental package needed for scientific computing with Python."
-AUTHOR="various"
+AUTHOR="---"
 SITE="http://numpy.scipy.org"
 COPYING="custom"
 MAINTAINERS="Arslan S."

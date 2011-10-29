@@ -19,7 +19,7 @@ libvorbis
 libvorbis-dev"
 
 DESCRIPTION="A library of code shared between tuxmath and tuxtype."
-AUTHOR="various"
+AUTHOR="---"
 SITE="http://tux4kids.alioth.debian.org/"
 COPYING="GPL-3"
 MAINTAINERS="Arslan S."

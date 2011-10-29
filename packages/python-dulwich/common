@@ -6,7 +6,7 @@ python-dev
 python_setuptools-2.7"
 
 DESCRIPTION="Dulwich is a pure-Python implementation of the Git file formats and protocols."
-AUTHOR="various"
+AUTHOR="---"
 SITE="http://samba.org/~jelmer/dulwich/"
 COPYING="GPL-2"
 MAINTAINERS="Arslan S."

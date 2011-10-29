@@ -13,7 +13,7 @@ mono-tools
 gecko-sharp-2.0"
 
 DESCRIPTION="An IDE primarily designed for C# and other .NET languages."
-AUTHOR="various"
+AUTHOR="---"
 SITE="http://monodevelop.com/"
 COPYING="LGPL"
 MAINTAINERS="Arslan S."

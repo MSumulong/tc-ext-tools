@@ -11,7 +11,7 @@ Xorg-7.6-lib
 Xorg-7.6-dev"
 
 DESCRIPTION="The Quasar DV codec (libdv) is a software codec for DV video."
-AUTHOR="various"
+AUTHOR="---"
 SITE="http://libdv.sourceforge.net/"
 COPYING="LGPL"
 MAINTAINERS="Arslan S."

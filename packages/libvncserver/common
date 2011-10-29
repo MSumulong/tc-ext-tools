@@ -4,7 +4,7 @@ SOURCE="http://downloads.sourceforge.net/libvncserver/LibVNCServer-${VERSION}.ta
 BUILD_DEPENDS=""
 
 DESCRIPTION="A library for easy implementation of a RDP/VNC server."
-AUTHOR="various"
+AUTHOR="---"
 SITE="http://libvncserver.sourceforge.net/"
 COPYING="GPL"
 MAINTAINERS="Arslan S."

@@ -23,7 +23,7 @@ pygtk-2.7
 pygtk-2.7-dev"
 
 DESCRIPTION="A collection of sixteen small five-minute games."
-AUTHOR="various"
+AUTHOR="---"
 SITE="http://live.gnome.org/GnomeGames/"
 COPYING="GPL"
 MAINTAINERS="Arslan S."

@@ -11,7 +11,7 @@ Xorg-7.6-lib
 Xorg-7.6-dev"
 
 DESCRIPTION="Objective Caml is the most popular variant of the Caml language."
-AUTHOR="various"
+AUTHOR="---"
 SITE="http://caml.inria.fr/"
 COPYING="LGPL-2/QPL-1.0"
 MAINTAINERS="Arslan S."

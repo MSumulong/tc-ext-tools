@@ -1,31 +1,13 @@
 PACKAGE="gst-plugins-ugly"
 VERSION="0.10.18"
 SOURCE="http://gstreamer.freedesktop.org/src/${PACKAGE}/${PACKAGE}-${VERSION}.tar.bz2"
-BUILD_DEPENDS="gstreamer
-gstreamer-dev
-gst-plugins-base
-gst-plugins-base-dev
-liba52
-liba52-dev
-libcdio
-libcdio-dev
-libdvdread
-libdvdread-dev
-libid3tag
-libid3tag-dev
-libmad
-libmad-dev
-libmpeg2
-libmpeg2-dev
-x264
-x264-dev
-lame
-lame-dev
-liborc
-liborc-dev"
+BUILD_DEPENDS="gstreamer gstreamer-dev gst-plugins-base gst-plugins-base-dev
+               liba52 liba52-dev libcdio libcdio-dev libdvdread libdvdread-dev
+               libid3tag libid3tag-dev libmad libmad-dev libmpeg2 libmpeg2-dev
+               x264 x264-dev lame lame-dev liborc liborc-dev"
 
 DESCRIPTION="GStreamer Ugly Plugins."
-AUTHOR="various"
+AUTHOR="---"
 SITE="http://gstreamer.freedesktop.org"
 COPYING="LGPL"
 MAINTAINERS="juanito, Arslan S."
@@ -39,5 +21,6 @@ CHANGELOG="2009/11/08 First Version by juanito
 		2010/03/16 Updated to 0.10.14 (Arslan S.)
 		2010/07/19 Updated to 0.10.15 by Arslan S.
 		2010/12/08 Updated to 0.10.16 by Arslan S.
-		2011/02/08 Updated to 0.10.17 by Arslan S."
-CURRENT="Updated to $VERSION by Arslan S."
+		2011/02/08 Updated to 0.10.17 by Arslan S.
+		2011/06/12 Updated to 0.10.18 by Arslan S."
+CURRENT="Rebuilt by Arslan S."

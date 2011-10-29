@@ -20,7 +20,7 @@ gst-plugins-base
 gst-plugins-base-dev"
 
 DESCRIPTION="Phonon Gstreamer backend."
-AUTHOR="various"
+AUTHOR="---"
 SITE="http://www.kde.org/"
 COPYING="LGPL"
 MAINTAINERS="Arslan S."

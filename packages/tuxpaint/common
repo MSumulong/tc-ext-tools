@@ -18,7 +18,7 @@ gtk2
 gtk2-dev"
 
 DESCRIPTION="Tux Paint is a drawing program for children ages 3 to 12."
-AUTHOR="various"
+AUTHOR="---"
 SITE="http://www.tuxpaint.org"
 COPYING="GPL"
 MAINTAINERS="Arslan S."

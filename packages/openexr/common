@@ -5,7 +5,7 @@ BUILD_DEPENDS="ilmbase
 ilmbase-dev"
 
 DESCRIPTION="OpenEXR is an HDR image file format."
-AUTHOR="various"
+AUTHOR="---"
 SITE="http://www.openexr.com/"
 COPYING="custom"
 MAINTAINERS="Juanito, Arslan S."

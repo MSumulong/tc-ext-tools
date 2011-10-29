@@ -15,7 +15,7 @@ ruby
 ruby-dev"
 
 DESCRIPTION="A Qt C++ library for the Last.fm webservices."
-AUTHOR="various"
+AUTHOR="---"
 SITE="https://github.com/mxcl/liblastfm/"
 COPYING="GPL-3"
 MAINTAINERS="Arslan S."

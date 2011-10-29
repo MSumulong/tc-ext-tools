@@ -5,7 +5,7 @@ BUILD_DEPENDS="libopenal
 libopenal-dev"
 
 DESCRIPTION="OpenAL Utility Toolkit (ALUT)."
-AUTHOR="various"
+AUTHOR="---"
 SITE="http://www.openal.org"
 COPYING="LGPL"
 MAINTAINERS="Arslan S."

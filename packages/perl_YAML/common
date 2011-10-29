@@ -4,7 +4,7 @@ SOURCE="http://www.cpan.org/authors/id/I/IN/INGY/YAML-${VERSION}.tar.gz"
 BUILD_DEPENDS="perl5"
 
 DESCRIPTION="Perl module YAML, YAML Ain't Markup Language (tm)."
-AUTHOR="various"
+AUTHOR="---"
 SITE="http://search.cpan.org/dist/YAML/"
 COPYING="GPL/PerlArtistic"
 MAINTAINERS="Arslan S."

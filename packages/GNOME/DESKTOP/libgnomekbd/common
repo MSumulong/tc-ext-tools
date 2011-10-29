@@ -14,7 +14,7 @@ libxklavier-dev"
 
 
 DESCRIPTION="GNOME kbd library."
-AUTHOR="various"
+AUTHOR="---"
 SITE="http://www.gnome.org"
 COPYING="LGPL"
 MAINTAINERS="Arslan S."

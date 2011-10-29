@@ -6,7 +6,7 @@ boost
 boost-dev"
 
 DESCRIPTION="Open Asset Import Library."
-AUTHOR="various"
+AUTHOR="---"
 SITE="http://assimp.sourceforge.net/"
 COPYING="BSD"
 MAINTAINERS="Arslan S."

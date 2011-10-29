@@ -6,7 +6,7 @@ mono-dev
 shared-mime-info"
 
 DESCRIPTION="Boo is a python-like language and compiler for the CLI."
-AUTHOR="various"
+AUTHOR="---"
 SITE="http://boo.codehaus.org/"
 COPYING="GPL-3"
 MAINTAINERS="Arslan S."

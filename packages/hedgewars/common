@@ -17,7 +17,7 @@ liblua
 lua-dev"
 
 DESCRIPTION="A Worms-like turn based strategy game."
-AUTHOR="various"
+AUTHOR="---"
 SITE="http://www.hedgewars.org/"
 COPYING="GPL-2/Custom"
 MAINTAINERS="Arslan S."

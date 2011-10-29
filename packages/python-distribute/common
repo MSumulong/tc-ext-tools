@@ -5,7 +5,7 @@ BUILD_DEPENDS="python
 python-dev"
 
 DESCRIPTION="Distribute is a fork of the Setuptools project."
-AUTHOR="various"
+AUTHOR="---"
 SITE="http://packages.python.org/distribute"
 COPYING="PSF"
 MAINTAINERS="Arslan S."

@@ -24,7 +24,7 @@ sqlite3
 sqlite3-dev"
 
 DESCRIPTION="Educational software suite comprising of numerous activities for children aged 2 to 10."
-AUTHOR="various"
+AUTHOR="---"
 SITE="http://gcompris.net/"
 COPYING="GPL-3"
 MAINTAINERS="Arslan S."
