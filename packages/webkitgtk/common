@@ -1,12 +1,33 @@
 PACKAGE="webkit"
-VERSION="1.2.7"
+VERSION="1.4.3"
+API="1.0"
+MJR="0"
 SOURCE="http://webkitgtk.org/webkit-${VERSION}.tar.gz"
-BUILD_DEPENDS="gtk-doc gtk2 gtk2-dev Xorg-7.6-lib Xorg-7.6-dev libxcb libxcb-dev libxslt
-               libsoup libsoup-dev sqlite3 sqlite3-dev gst-plugins-base gst-plugins-base-dev enchant enchant-dev
-               librsvg librsvg-dev icu icu-dev gobject-introspection gobject-introspection-dev"
+BUILD_DEPENDS="gtk-doc
+gtk2
+gtk2-dev
+Xorg-7.6-lib
+Xorg-7.6-dev
+libxcb
+libxcb-dev
+libxslt
+libsoup
+libsoup-dev
+sqlite3
+sqlite3-dev
+gst-plugins-base
+gst-plugins-base-dev
+enchant
+enchant-dev
+librsvg
+librsvg-dev
+icu
+icu-dev
+#gobject-introspection
+#gobject-introspection-dev"
 
 DESCRIPTION="WebKit/GTK+ is the GTK+ port of WebKit."
-AUTHOR="various"
+AUTHOR="---"
 SITE="http://webkitgtk.org/"
 COPYING="LGPL/BSD-like"
 MAINTAINERS="Arslan S."
@@ -18,6 +39,10 @@ CHANGELOG="2009/05/04 First Version by Roberto A. Foglietta
 		2010/05/30 Updated to 1.2.1
 		2010/08/24 Updated to 1.2.3
 		2010/10/08 Updated to 1.2.5
-		2011/01/06 Updated to 1.2.6"
+		2011/01/06 Updated to 1.2.6
+		2011/02/23 Updated to 1.2.7
+		2011/05/08 Updated to 1.4.0
+		2011/06/12 Updated to 1.4.1
+		2011/08/07 Updated to 1.4.2"
 CURRENT="Updated to $VERSION"
 
