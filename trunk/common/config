@@ -41,6 +41,9 @@ TET_CFLAGS="-march=i486 -mtune=i686 -Os -pipe"
 TET_CXXFLAGS="-march=i486 -mtune=i686 -Os -pipe"
 TET_LDFLAGS="-Wl,-O1"
 
+# default install prefix
+TET_PREFIX="/usr/local"
+
 # packages database directory
 TET_PACKAGES_DATABASE="${HOME}/.local/share/tc-ext-tools/packages_db"
 

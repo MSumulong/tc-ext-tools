@@ -15,7 +15,6 @@ usr/local/conkeror/components/content-policy.js
 usr/local/conkeror/components/download_helper.js
 usr/local/conkeror/components/download_manager_ui.js
 usr/local/conkeror/conkeror-spawn-helper
-usr/local/conkeror/conkeror-spawn-helper.c
 usr/local/conkeror/content/blank.html
 usr/local/conkeror/content/conkeror.xul
 usr/local/conkeror/content/downloads.css
@@ -129,6 +128,7 @@ usr/local/conkeror/modules/keymap.js
 usr/local/conkeror/modules/keywords.js
 usr/local/conkeror/modules/labels.js
 usr/local/conkeror/modules/load-spec.js
+usr/local/conkeror/modules/login.js
 usr/local/conkeror/modules/media.js
 usr/local/conkeror/modules/mime-type-override.js
 usr/local/conkeror/modules/mime.js

@@ -42,7 +42,7 @@ else
      exit 1
 fi
 
-# tc user
+# get tc user
 TCUSER=$(cat /etc/sysconfig/tcuser)
 
 # source user configuration
@@ -53,7 +53,7 @@ else
     exit 1
 fi
 
-# list directories
+# lists the directories
 ldir() {
 
    unset dirs
@@ -71,39 +71,40 @@ ldir() {
 # sets the package source variables
 set_source() {
 
+     # does the package have a source ?
      if [ -z "$SOURCE" ]; then
+          # there is no source: probably a virtual package
           PACKAGE_SOURCE_TYPE="none"
           PACKAGE_SOURCE_URL_TYPE="none"
-     fi
-
-     if [ "${SOURCE%%::*}" = "${SOURCE#*::}" ]; then
-          PACKAGE_SOURCE_URL_TYPE="generic"
+          return 0
      else
-          PACKAGE_SOURCE_URL_TYPE="${SOURCE%%::*}"
-     fi
-
-     if [ "${SOURCE##*->}" = "${SOURCE%->*}" ]; then
-          PACKAGE_SOURCE_NAME=""
-     else
-          PACKAGE_SOURCE_NAME="${SOURCE##*->}"
-     fi
-
-     if [ "$PACKAGE_SOURCE_URL_TYPE" = "generic" ] || [ "$PACKAGE_SOURCE_URL_TYPE" = "custom" ]; then
-          if [ -z "$PACKAGE_SOURCE_NAME" ]; then
-               PACKAGE_SOURCE_NAME="${SOURCE##*/}"
+          # get the source url type and name
+          if [ "${SOURCE%%::*}" = "${SOURCE#*::}" ]; then
+               PACKAGE_SOURCE_URL_TYPE="generic"
+          else
+               PACKAGE_SOURCE_URL_TYPE="${SOURCE%%::*}"
           fi
-     elif [ "$PACKAGE_SOURCE_URL_TYPE" = "svn" ] || [ "$PACKAGE_SOURCE_URL_TYPE" = "git" ]; then
-          if [ -z "$PACKAGE_SOURCE_NAME" ]; then
+
+          if [ "${SOURCE##*->}" = "${SOURCE%->*}" ]; then
+               PACKAGE_SOURCE_NAME=""
+          else
+               PACKAGE_SOURCE_NAME="${SOURCE##*->}"
+          fi
+     fi
+
+     # try to determine the source name if it is not given
+     if [ -z "$PACKAGE_SOURCE_NAME" ]; then
+          if [ "$PACKAGE_SOURCE_URL_TYPE" = "generic" ] || [ "$PACKAGE_SOURCE_URL_TYPE" = "custom" ]; then
+               PACKAGE_SOURCE_NAME="${SOURCE##*/}"
+          elif [ "$PACKAGE_SOURCE_URL_TYPE" = "svn" ] || [ "$PACKAGE_SOURCE_URL_TYPE" = "git" ]; then
                PACKAGE_SOURCE_NAME="${PACKAGE}-${VERSION}.tar.xz"
           fi
-     elif [ "$PACKAGE_SOURCE_URL_TYPE" != "none" ]; then
-          echo "Error, unsupported source url type !"
-          exit 1
      fi
 
-     SOURCE="${SOURCE#*::}"
-     SOURCE="${SOURCE%->*}"
+     # set the source url
+     SOURCE="${SOURCE#*::}"; SOURCE="${SOURCE%->*}"
 
+     # set the source type
      if [ "${PACKAGE_SOURCE_NAME%.tar.bz2}" != "$PACKAGE_SOURCE_NAME" ]; then
           PACKAGE_SOURCE_TYPE="tarbz2"
           PACKAGE_SOURCE_NAME_CONV="${PACKAGE_SOURCE_NAME%.bz2}.xz"
@@ -131,34 +132,38 @@ set_source() {
      elif [ "${PACKAGE_SOURCE_NAME%.zip}" != "$PACKAGE_SOURCE_NAME" ]; then
           PACKAGE_SOURCE_TYPE="zip"
           PACKAGE_SOURCE_NAME_CONV="${PACKAGE_SOURCE_NAME%.zip}.tar.xz"
-     elif [ "$PACKAGE_SOURCE_TYPE" != "none" ]; then
+     else
           PACKAGE_SOURCE_TYPE="custom"
           PACKAGE_SOURCE_NAME_CONV="${PACKAGE}-${VERSION}.tar.xz"
      fi
 
+     # try to determine the source's top level directory
+     # you may need to define the variable SOURCE_TOPDIR in the package common file
      if [ -z "$SOURCE_TOPDIR" ]; then
-          if [ -d "$PACKAGE_SRC_TEMP" ]; then
-               LIST=`ldir $PACKAGE_SRC_TEMP`
-               cnt=0
-               for i in $LIST
-               do
-                   cnt=`expr $cnt + 1`
-               done
+          # source's top level directory is specificly defined for vcs type sources
+          if [ "$PACKAGE_SOURCE_URL_TYPE" = "svn" ] || [ "$PACKAGE_SOURCE_URL_TYPE" = "git" ]; then
+               SOURCE_TOPDIR=${PACKAGE}-${VERSION}
+          # the source is unpacked inside the package's temporary src directory
+          elif [ -d "$PACKAGE_SRC_TEMP" ]; then
+               # we count the number of directories where the source is unpacked
+               DIR=`ldir $PACKAGE_SRC_TEMP`
+               cnt=0; for i in $DIR; do cnt=`expr $cnt + 1`; done
                if [ $cnt -eq 1 ]; then
-                    SOURCE_TOPDIR="$LIST"
-               elif [ $cnt -gt 1 ]; then
+                    SOURCE_TOPDIR="$DIR"
+               else
                     SOURCE_TOPDIR="./"
                fi
-          fi
-          if [ -z "$SOURCE_TOPDIR" ]; then
+          else
                SOURCE_TOPDIR=${PACKAGE}-${VERSION}
           fi
      fi
 
+     # full path to source top dir
      if [ -n "$SOURCE_TOPDIR" ]; then
           PACKAGE_SOURCE_TOPDIR="$PACKAGE_SRC_TEMP/$SOURCE_TOPDIR"
      fi
 
+     # and finally we have the package source
      if [ "$PACKAGE_SOURCE_TYPE" != "none" ]; then
           PACKAGE_SOURCE_ORIG="$_PACKAGE_SRC/$PACKAGE_SOURCE_NAME"
           PACKAGE_SOURCE_CONV="$_PACKAGE_SRC/$PACKAGE_SOURCE_NAME_CONV"
@@ -174,6 +179,7 @@ set_source() {
 # sets the package build dependencies
 set_depends() {
 
+     # optional deps added here
      if [ "$PACKAGE_SOURCE_URL_TYPE" = svn ]; then
           TET_DEPENDS="$TET_DEPENDS svn"
      elif [ "$PACKAGE_SOURCE_URL_TYPE" = git ]; then
@@ -184,6 +190,7 @@ set_depends() {
           TET_DEPENDS="$TET_DEPENDS zip-unzip"
      fi
 
+     # replace KERNEL pattern with kernel name
      PACKAGE_BUILD_DEPENDS=$(echo "$TET_DEPENDS $BUILD_DEPENDS" | sed -e "s/KERNEL/${KERNEL}/")
 
 }
@@ -191,22 +198,19 @@ set_depends() {
 # sets the package extensions variables
 set_extensions() {
 
+   # if the variable EXTENSIONS is not set we determine the extensions by finding the extension install files
    if [ -z "$EXTENSIONS" ]; then
         if [ -d "$PACKAGE_EXTENSIONS" ]; then
-             for i in $(find "$PACKAGE_EXTENSIONS" -type f -name install)
+             for EXT in $(find "$PACKAGE_EXTENSIONS" -type f -name install)
              do
-                 EXTENSIONS="$EXTENSIONS $(basename ${i%/install})"
+                 EXTENSIONS="$EXTENSIONS $(basename ${EXT%/install})"
              done
         fi
    fi
 
-   cnt=0
-   for i in $EXTENSIONS
-   do
-      cnt=`expr $cnt+1`
-   done
-   if [ $cnt = 0 ]; then
-        echo "Error, there is no extension available !"
+   # exit with error status if there is no extension found
+   if [ -z "$EXTENSIONS" ]; then
+        echo "Error, no extension available!"
         exit 1
    fi
 
@@ -215,47 +219,55 @@ set_extensions() {
 # sets the package extension variables
 set_extension() {
 
+   # this variable must be set prior to any call to this function
    if [ -z "$EXTENSION" ]; then
         return 0
    fi
 
+   # the files located under the package's extension directory
    PACKAGE_EXTENSION_COMMON="$PACKAGE_EXTENSIONS/$EXTENSION/common"
    PACKAGE_EXTENSION_INSTALL="$PACKAGE_EXTENSIONS/$EXTENSION/install"
    PACKAGE_EXTENSION_DEP="$PACKAGE_EXTENSIONS/$EXTENSION/dep"
    PACKAGE_EXTENSION_TCEINSTALLED="$PACKAGE_EXTENSIONS/$EXTENSION/tce.installed"
 
+   # extension specific variables
    unset NAME ICON DESKTOP
 
+   # first source the package common file then, if available, source the extension common file
    . "$PACKAGE_COMMON"
-
    if [ -f "$PACKAGE_EXTENSION_COMMON" ]; then
         . "$PACKAGE_EXTENSION_COMMON"
    fi
 
+   # extension name is set to itself if not explicitly defined
    if [ -z "$NAME" ]; then
         PACKAGE_EXTENSION_NAME="$EXTENSION"
    else
         PACKAGE_EXTENSION_NAME="$NAME"
    fi
 
+   # replace KERNEL with kernel name in the extension name
    PACKAGE_EXTENSION_NAME=$(echo $PACKAGE_EXTENSION_NAME | sed "s/KERNEL/${KERNEL}/")
 
+   # package extension directories and files located under package storage directory
    PACKAGE_EXTENSION_BIN="$PACKAGE_BIN/$PACKAGE_EXTENSION_NAME"
    PACKAGE_EXTENSION_PKG="$PACKAGE_PKG/$PACKAGE_EXTENSION_NAME"
    PACKAGE_EXTENSION_BIN_TEMP="$PACKAGE_BIN_TEMP/$PACKAGE_EXTENSION_NAME"
    PACKAGE_EXTENSION_PKG_TEMP="$PACKAGE_PKG_TEMP/$PACKAGE/$PACKAGE_EXTENSION_NAME"
+
    PACKAGE_EXTENSION_TCZ="$PACKAGE_EXTENSION_PKG/${PACKAGE_EXTENSION_NAME}.tcz"
    PACKAGE_EXTENSION_INFO="$PACKAGE_EXTENSION_PKG/${PACKAGE_EXTENSION_NAME}.tcz.info"
    _PACKAGE_EXTENSION_DEP="$PACKAGE_EXTENSION_PKG/${PACKAGE_EXTENSION_NAME}.tcz.dep"
    PACKAGE_EXTENSION_LIST="$PACKAGE_EXTENSION_PKG/${PACKAGE_EXTENSION_NAME}.tcz.list"
    PACKAGE_EXTENSION_MD5SUM="$PACKAGE_EXTENSION_PKG/${PACKAGE_EXTENSION_NAME}.tcz.md5.txt"
 
+   # application icon is set here
    if [ -n "$ICON" ]; then
         PACKAGE_EXTENSION_ICON="$ICON"
         if [ -n "$DESKTOP" ]; then
              PACKAGE_EXTENSION_DESKTOP="$PACKAGE_EXTENSION_BIN/$DESKTOP"
         else
-             PACKAGE_EXTENSION_DESKTOP="$PACKAGE_EXTENSION_BIN/usr/local/share/applications/${PACKAGE_EXTENSION_NAME}.desktop"
+             PACKAGE_EXTENSION_DESKTOP="$PACKAGE_EXTENSION_BIN/$PREFIX/share/applications/${PACKAGE_EXTENSION_NAME}.desktop"
         fi
    fi
 
@@ -267,6 +279,7 @@ set_date() {
    DATE=$(date +%Y/%m/%d)
    TIME=$(date +%H:%M:%S)
    SECONDS=$(date +%s)
+   # use this variable in packages with a vcs source
    _DATE=$(date +%Y%m%d)
 
 }
@@ -278,40 +291,46 @@ set_tcl_system() {
    TCVER=4.x
 
    TCE_DIR=$(cat /opt/.tce_dir)
-   TCLOOP=/tmp/tcloop
    KERNEL=$(uname -r)
    ARCH=i686
 
-   if [ -n "$(echo $KERNEL | grep tinycore64)" ]; then
+   # which kernel
+   if [ -n "$(echo $KERNEL | grep -w tinycore64)" ]; then
         KERNEL_ARCH=x86_64
         KERNEL_VER="${KERNEL%-tinycore64}"
         TET_DEPENDS="$TET_DEPENDS toolchain64"
         CROSS_COMPILE=x86_64-unknown-linux-gnu-
-        CC=${CROSS_COMPILE}gcc
-        LD=${CROSS_COMPILE}ld
         export PATH="/usr/local/x64/bin:$PATH"
-   else
+   elif [ -n "$(echo $KERNEL | grep -w tinycore)" ]; then
         KERNEL_ARCH=x86
         KERNEL_VER="${KERNEL%-tinycore}"
-        CC=gcc
-        LD=ld
+   else
+        # we are probably running custom kernel
+        # TODO: add partial support for custom kernels
+        KERNEL_VER="${KERNEL%%-*}"
    fi
+
+   TET_LINUX="$TET_STORAGE/linux"
+   TET_LINUX_BUILD="${TET_LINUX}/${KERNEL}/linux-${KERNEL_VER}"
+   LINUX_BUILD="$TET_LINUX_BUILD"
 
 }
 
+# set compiler and linker flags if not already set
 set_flags() {
-
+   
    [ -z "$CFLAGS" ] && export CFLAGS="$TET_CFLAGS"
    [ -z "$CXXFLAGS" ] && export CXXFLAGS="$TET_CXXFLAGS"
    [ -z "$LDFLAGS" ] && export LDFLAGS="$TET_LDFLAGS"
 
 }
 
+# call system functions
 set_date
 set_tcl_system
 set_flags
 
-# package variables
+# package root file system
 PACKAGE_ROOT="$PWD"
 PACKAGE_COMMON="$PACKAGE_ROOT/common"
 PACKAGE_BUILD="$PACKAGE_ROOT/build"
@@ -321,8 +340,10 @@ PACKAGE_SRC="$PACKAGE_ROOT/src"
 PACKAGE_PATCHES="$PACKAGE_SRC/patches"
 
 if [ "$THIS" != "addit" ] && [ -f "$PACKAGE_COMMON" ]; then
+     # source package common
      . "$PACKAGE_COMMON"
 
+     # package storage directory layout
      _PACKAGE_ROOT="$TET_STORAGE/$PACKAGE"
      PACKAGE_BIN="$_PACKAGE_ROOT/bin"
      _PACKAGE_SRC="$_PACKAGE_ROOT/src"
@@ -331,21 +352,29 @@ if [ "$THIS" != "addit" ] && [ -f "$PACKAGE_COMMON" ]; then
      PACKAGE_BIN_TEMP="$PACKAGE_BIN/temp"
      PACKAGE_SRC_TEMP="$_PACKAGE_SRC/temp"
      PACKAGE_PKG_TEMP="$PACKAGE_PKG/temp"
+
+     # log files
      PACKAGE_CONFIGURE_LOG="$PACKAGE_LOG/configure.txt"
      PACKAGE_COMPILE_LOG="$PACKAGE_LOG/compile.txt"
      PACKAGE_INSTALL_LOG="$PACKAGE_LOG/install.txt"
      PACKAGE_BUILD_LOG="$PACKAGE_LOG/build.txt"
      PACKAGE_MESSAGE_LOG="$PACKAGE_LOG/message.txt"
-     PACKAGE_INSTALL_ROOT="$PACKAGE_BIN/root"
+
+     # package tarball
      PACKAGE_PACKAGE="$PACKAGE_PKG/${PACKAGE}.tar.bz2"
+     # final product
      PACKAGE_PACKAGE_ENCRYPTED="$PACKAGE_PKG/${PACKAGE}.tar.bz2.bfe"
 
-     TET_LINUX="$TET_STORAGE/linux"
-     TET_LINUX_BUILD="${TET_LINUX}/${KERNEL}/linux-${KERNEL_VER}"
-     LINUX_BUILD="$TET_LINUX_BUILD"
-     INSTALL_ROOT="$PACKAGE_INSTALL_ROOT"
-     PREFIX=/usr/local
+     # install destination
+     PACKAGE_INSTALL_ROOT="$PACKAGE_BIN/root"
 
+     # install prefix
+     if [ -z "$PREFIX" ]; then
+          PREFIX="$TET_PREFIX"
+     fi
+     PACKAGE_INSTALL_PREFIX="$PREFIX"
+
+     # call package functions
      set_source
      set_extensions
      set_depends
@@ -357,10 +386,11 @@ if [ "$THIS" != "addit" ] && [ -f "$PACKAGE_COMMON" ]; then
      P_VER="$VERSION"
      P_SRC="$PACKAGE_SRC"
      _P_SRC="$_PACKAGE_SRC"
-     P_SRC_TEMP="$PACKAGE_SRC_TEMP"
+     P_SRC_TMP="$PACKAGE_SRC_TEMP"
      P_BIN="$PACKAGE_BIN"
      S_TOP="$SOURCE_TOPDIR"
      S_ROOT="$PACKAGE_SOURCE_TOPDIR"
+     INSTALL_ROOT="$PACKAGE_INSTALL_ROOT"
      I_ROOT="$INSTALL_ROOT"
 
      # create directories
@@ -382,6 +412,7 @@ elif [ "$THIS" != "addit" ]; then
      exit 1
 fi
 
+# get build rules from package build file
 get_rules() {
 
    [ $(grep -v '^#' $PACKAGE_BUILD | grep -w tet_load) ] && HAVE_TET_LOAD=y
@@ -402,6 +433,7 @@ get_rules() {
 
 }
 
+# set package stamps
 set_stamps() {
 
    PACKAGE_LOAD_STAMP="$PACKAGE_PKG/load.stamp"
@@ -423,17 +455,15 @@ set_stamps() {
 
 }
 
-# package build
-if [ "$THIS" != "addit" ]; then
-     if [ -f "$PACKAGE_BUILD" ]; then
-          . "$PACKAGE_BUILD"
-     else
-          echo "${ERROR_COLOR}You must add it first!${NORMAL}"
-          exit 1
-     fi
+if [ "$THIS" != "addit" ] && [ -f "$PACKAGE_BUILD" ]; then
+     # source package build
+     . "$PACKAGE_BUILD"
 
      get_rules
-
      set_stamps
+
+elif [ "$THIS" != "addit" ]; then
+     echo "${ERROR_COLOR}You must add it first!${NORMAL}"
+     exit 1
 fi
 
