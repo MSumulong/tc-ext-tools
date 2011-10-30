@@ -76,7 +76,7 @@ tetcd() {
    fi
 
    if [ ! -d "$PACKAGE_ROOT" ]; then
-        echo "$tetcd: Package $PACKAGE root directory does not exist"
+        echo "tetcd: Package $PACKAGE root directory does not exist"
         return 1
    fi
 
