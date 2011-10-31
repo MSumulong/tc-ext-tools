@@ -370,7 +370,7 @@ if [ "$THIS" != "addit" ] && [ -f "$PACKAGE_COMMON" ]; then
 
      # install prefix
      if [ -z "$PREFIX" ]; then
-          PREFIX="$TET_PREFIX"
+          PREFIX="/$TET_PREFIX"
      fi
      PACKAGE_INSTALL_PREFIX="$PREFIX"
 

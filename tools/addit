@@ -2,7 +2,7 @@
 
 ############################################################################
 #                                                                          #
-#               addit: Adds a new package for the first time               #
+#                       addit: Adds a new package                          #
 #                                                                          #
 ############################################################################
 
@@ -51,8 +51,8 @@ ${BLUE}
       where;
              ${GREEN}<package>${BLUE} is the package name.
              ${GREEN}<version>${BLUE} is the version in numbers, svn, git, or any other type supported.
-             ${GREEN}<extensions>${BLUE} is the set of extensions. Default is package name.
-             ${GREEN}<group-dir>${BLUE} is the group directory where the package directory will be created in. Default is tc-ext-tools packages root directory.
+             ${GREEN}<extensions>${BLUE} is the set of extensions, default is package name.
+             ${GREEN}<group-dir>${BLUE} is the group directory where the package directory will be created in, default is packages root directory.
 ${NORMAL}
 EOF
 
@@ -112,7 +112,7 @@ if [ -f "$PACKAGE_COMMON" ]; then
           echo "${MESSAGE_COLOR}You agreed to continue, the files will be overwritten.${NORMAL}"
           ;;
         n|no)
-          echo "${MESSAGE_COLOR}You don't want to continue ? Farewell!${NORMAL}"
+          echo "${MESSAGE_COLOR}Farewell!${NORMAL}"
           exit 0
           ;;
         *)
@@ -126,7 +126,7 @@ this_main() {
 
    echo "---------------------------------------------------------------"
    echo ""
-   echo "Creating the package $PACKAGE files ..."
+   echo "Creating the package $PACKAGE files and directories ..."
    echo ""
    echo "---------------------------------------------------------------"
 
@@ -148,7 +148,7 @@ AUTHOR="authors of package"
 SITE="http://www.package.com"
 COPYING="GPL-2"
 MAINTAINERS="$PACKAGE_MAINTAINER"
-COMMENTS="This extension is PPI compatible."
+COMMENTS="---"
 CHANGELOG="---"
 CURRENT="First Version"
 _EOF
@@ -168,7 +168,7 @@ AUTHOR="authors of package"
 SITE="http://www.package.com"
 COPYING="GPL-2"
 MAINTAINERS="$PACKAGE_MAINTAINER"
-COMMENTS="This extension is PPI compatible."
+COMMENTS="---"
 CHANGELOG="---"
 CURRENT="First Version"
 _EOF
@@ -188,7 +188,7 @@ AUTHOR="authors of package"
 SITE="http://www.package.com"
 COPYING="GPL-2"
 MAINTAINERS="$PACKAGE_MAINTAINER"
-COMMENTS="This extension is PPI compatible."
+COMMENTS="---"
 CHANGELOG="---"
 CURRENT="First Version"
 _EOF
@@ -206,17 +206,14 @@ _EOF
        mkdir -p "$PACKAGE_EXTENSIONS/$EXTENSION" || return 1
 
        touch "$PACKAGE_EXTENSIONS/$EXTENSION/install" || return 1
-
-       if [ "${EXTENSION%-doc}" = "$EXTENSION" ]; then
-            touch "$PACKAGE_EXTENSIONS/$EXTENSION/dep" || return 1
-       fi
+       touch "$PACKAGE_EXTENSIONS/$EXTENSION/dep" || return 1
 
        if [ "${EXTENSION%-locale}" != "$EXTENSION" ]; then
           echo "${EXTENSION%-locale}.tcz" > "$PACKAGE_EXTENSIONS/$EXTENSION/dep" || return 1
-          echo "usr/local/share/locale" > "$PACKAGE_EXTENSIONS/$EXTENSION/install" || return 1
+          echo "$TET_PREFIX/share/locale" > "$PACKAGE_EXTENSIONS/$EXTENSION/install" || return 1
        elif [ -n "$(echo $EXTENSIONS | grep ${EXTENSION}-locale)" ]; then
-          echo "usr/local" > "$PACKAGE_EXTENSIONS/$EXTENSION/install" || return 1
-          echo "x-usr/local/share/locale" >> "$PACKAGE_EXTENSIONS/$EXTENSION/install" || return 1
+          echo "$TET_PREFIX" > "$PACKAGE_EXTENSIONS/$EXTENSION/install" || return 1
+          echo "x-$TET_PREFIX/share/locale" >> "$PACKAGE_EXTENSIONS/$EXTENSION/install" || return 1
        elif [ "${EXTENSION%-dev}" != "$EXTENSION" ]; then
           echo "${EXTENSION%-dev}.tcz" > "$PACKAGE_EXTENSIONS/$EXTENSION/dep" || return 1
        fi

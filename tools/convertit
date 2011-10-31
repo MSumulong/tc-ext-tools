@@ -114,9 +114,9 @@ this_main() {
         echo "Executing the package build convert function"
         cd "$PACKAGE_SRC_TEMP"
         build_convert || return 1
-   elif [ "$PACKAGE_SOURCE_TYPE" = "tarxz" ] || [ "$PACKAGE_SOURCE_TYPE" = "txz" ] ||
-        [ "$PACKAGE_SOURCE_TYPE" = "tarlzma" ]; then
+   elif [ "$PACKAGE_SOURCE_TYPE" = "tarxz" ] || [ "$PACKAGE_SOURCE_TYPE" = "txz" ] || [ "$PACKAGE_SOURCE_TYPE" = "tarlzma" ]; then
         echo "No need to convert the source of this type"
+        return 0
    else
         echo "Error! Unsupported source type."
         return 1

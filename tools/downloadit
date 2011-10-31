@@ -42,12 +42,12 @@ this_main() {
    echo ""
    echo "---------------------------------------------------------------"
 
-   echo "Cleaning the package source directory."
+   echo "Cleaning the package source directory"
    [ -d "$_PACKAGE_SRC" ] && sudo rm -rf "$_PACKAGE_SRC"
    mkdir -p "$_PACKAGE_SRC" || return 1
 
    if [ "$PACKAGE_SOURCE_URL_TYPE" = "svn" ] || [ "$PACKAGE_SOURCE_URL_TYPE" = "git" ]; then
-        echo "Cleaning the package src temporary directory."
+        echo "Cleaning the package src temporary directory"
         [ -d "$PACKAGE_SRC_TEMP" ] && sudo rm -rf "$PACKAGE_SRC_TEMP"
         mkdir -p "$PACKAGE_SRC_TEMP"
 
@@ -57,27 +57,27 @@ this_main() {
              echo "Checking out the svn repository $SOURCE"
              svn --non-interactive --trust-server-cert co "$SOURCE" "$PACKAGE_SOURCE_TOPDIR" || return 1
 
-             echo "Creating a tarball from the source."
+             echo "Creating a tarball from the source"
              tar --exclude-vcs -cvJf "$PACKAGE_SOURCE_NAME" "$SOURCE_TOPDIR" || return 1
 
-             echo "Moving the tarball to the package source directory."
+             echo "Moving the tarball to the package source directory"
              mv -f "$PACKAGE_SOURCE_NAME" "$_PACKAGE_SRC" || return 1
         elif [ "$PACKAGE_SOURCE_URL_TYPE" = "git" ]; then
              echo "Cloning the git repository $SOURCE"
              git clone "$SOURCE" "$PACKAGE_SOURCE_TOPDIR" || return 1
 
-             echo "Creating a tarball from the source."
+             echo "Creating a tarball from the source"
              tar --exclude-vcs -cvJf "$PACKAGE_SOURCE_NAME" "$SOURCE_TOPDIR" || return 1
 
-             echo "Moving the tarball to the package source directory."
+             echo "Moving the tarball to the package source directory"
              mv -f "$PACKAGE_SOURCE_NAME" "$_PACKAGE_SRC" || return 1
         fi
    elif [ "$PACKAGE_SOURCE_URL_TYPE" = "generic" ]; then
         echo "Downloading the package source $PACKAGE_SOURCE_NAME from $SOURCE"
         wget --no-check-certificate "$SOURCE" -O "$PACKAGE_SOURCE_ORIG" || return 1
    elif [ "$PACKAGE_SOURCE_URL_TYPE" = "custom" ]; then
-        echo "Executing the package build download function."
-        cd $_PACKAGE_SRC
+        echo "Executing the package build download function"
+        cd "$_PACKAGE_SRC"
         build_download || return 1
    fi
 
