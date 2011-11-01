@@ -34,10 +34,6 @@ else
      exit 1
 fi
 
-if [ "$PACKAGE_SOURCE_TYPE" = "none" ]; then
-     mkdir -p "$PACKAGE_SOURCE_TOPDIR"
-fi
-
 if [ -n "$HAVE_TET_COMPILE" -a ! -f "$PACKAGE_COMPILE_STAMP" ]; then
      echo "${ERROR_COLOR}You must compile it first!${NORMAL}"
      exit 1
@@ -51,12 +47,13 @@ this_main() {
    echo ""
    echo "---------------------------------------------------------------"
 
-   echo "Cleaning the package install root directory."
+   echo "Cleaning the package install root directory"
    [ -d "$PACKAGE_INSTALL_ROOT" ] && rm -rf "$PACKAGE_INSTALL_ROOT"
 
    echo "---------------------------------------------------------------"
-   echo "Executing the package build install function."
+   echo "Executing the package build install function"
    echo "---------------------------------------------------------------"
+
    cd "$PACKAGE_SOURCE_TOPDIR"
    build_install > "$PACKAGE_INSTALL_LOG" 2>&1 || return 1
 

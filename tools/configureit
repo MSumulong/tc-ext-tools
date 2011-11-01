@@ -53,7 +53,7 @@ this_main() {
    echo "---------------------------------------------------------------"
 
    echo "---------------------------------------------------------------"
-   echo "Executing the package build configure function."
+   echo "Executing the package build configure function"
    echo "---------------------------------------------------------------"
    cd "$PACKAGE_SOURCE_TOPDIR"
    build_configure > "$PACKAGE_CONFIGURE_LOG" 2>&1 || return 1

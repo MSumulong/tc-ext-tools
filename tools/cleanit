@@ -42,14 +42,14 @@ this_main() {
    echo ""
    echo "---------------------------------------------------------------"
 
-   echo "Removing the package bin directory."
+   echo "Removing the package bin directory"
    [ -d "$PACKAGE_BIN" ] && sudo rm -rf "$PACKAGE_BIN"
-   echo "Removing the package src temporary directory."
+   echo "Removing the package src temporary directory"
    [ -d "$PACKAGE_SRC_TEMP" ] && sudo rm -rf "$PACKAGE_SRC_TEMP"
-   echo "Removing the package pkg temporary directory."
+   echo "Removing the package pkg temporary directory"
    [ -d "$PACKAGE_PKG_TEMP" ] && sudo rm -rf "$PACKAGE_PKG_TEMP"
 
-   echo "Removing the package pkg stamps."
+   echo "Removing the package pkg stamps"
    if [ -e "$PACKAGE_CREATE_STAMP" ]; then
         sudo rm -f "$PACKAGE_PKG"/*.stamp
         touch "$PACKAGE_CREATE_STAMP"
@@ -58,7 +58,7 @@ this_main() {
    fi
 
    if [ -f "$PACKAGE_SOURCE_CONV" -a -f "$PACKAGE_SOURCE_ORIG" ] && [ "$PACKAGE_SOURCE_CONV" != "$PACKAGE_SOURCE_ORIG" ]; then
-        echo "Removing the package source original."
+        echo "Removing the package source original"
         sudo rm -f "$PACKAGE_SOURCE_ORIG"
         sudo rm -f "$PACKAGE_DOWNLOAD_STAMP"
    fi
