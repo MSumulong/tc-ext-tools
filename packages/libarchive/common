@@ -7,8 +7,8 @@ bzip2-lib
 bzip2-dev
 expat2
 expat2-dev
-openssl-0.9.8
-openssl-0.9.8-dev
+openssl-1.0.0
+openssl-1.0.0-dev
 xz
 xz-dev"
 

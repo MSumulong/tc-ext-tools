@@ -13,8 +13,8 @@ libnotify
 libnotify-dev
 libcanberra
 libcanberra-dev
-openssl-0.9.8
-openssl-0.9.8-dev
+openssl-1.0.0
+openssl-1.0.0-dev
 bsddb
 bsddb-dev
 librsvg

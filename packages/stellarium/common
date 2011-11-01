@@ -6,8 +6,8 @@ boost
 boost-dev
 Xorg-7.6-lib
 Xorg-7.6-dev
-openssl-0.9.8
-openssl-0.9.8-dev
+openssl-1.0.0
+openssl-1.0.0-dev
 qt-4.x-base
 qt-4.x-opengl
 qt-4.x-script

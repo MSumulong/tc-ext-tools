@@ -2,4 +2,4 @@ acl.tcz
 bzip2-lib.tcz
 xz.tcz
 expat2.tcz
-openssl-0.9.8.tcz
+openssl-1.0.0.tcz

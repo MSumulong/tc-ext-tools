@@ -2,8 +2,8 @@ PACKAGE="wpa_supplicant"
 VERSION="0.7.3"
 SOURCE="http://hostap.epitest.fi/releases/wpa_supplicant-${VERSION}.tar.gz"
 BUILD_DEPENDS="
-openssl-0.9.8
-openssl-0.9.8-dev
+openssl-1.0.0
+openssl-1.0.0-dev
 dbus
 dbus-dev
 dbus-glib

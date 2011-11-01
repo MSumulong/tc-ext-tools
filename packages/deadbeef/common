@@ -30,7 +30,7 @@ wavpack-dev
 ffmpeg-ffserver
 ffmpeg-ffserver-dev
 curl
-openssl-0.9.8-dev
+openssl-1.0.0-dev
 curl-dev
 libnotify
 libnotify-dev

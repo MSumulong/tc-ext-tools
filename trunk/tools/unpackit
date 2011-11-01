@@ -71,7 +71,7 @@ this_main() {
         build_unpack || return 1
    else
         echo "---------------------------------------------------------------"
-        echo "Error, unsupported source type !"
+        echo "Error, unsupported source type!"
         echo "---------------------------------------------------------------"
         return 1
    fi

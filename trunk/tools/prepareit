@@ -50,34 +50,49 @@ DL="${TET_LINUX}/dl"
 this_prepare() {
 
    [ -d "$TET_LINUX" ] || mkdir -p "$TET_LINUX"
-   cd "$TET_LINUX"
-
+   [ -d "$KERNEL" ] || mkdir -p "$KERNEL"
    [ -d "$DL" ] || mkdir -p "$DL"
 
+   cd "$TET_LINUX"
+
+   echo -e "Checking if the linux source is downloaded before ... \c"
    if [ ! -f "${DL}/${LINUX_SOURCE}" ]; then
+        echo "no"
+        echo "Downloading the linux source"
         wget "${KERNEL_MIRROR}/${LINUX_SOURCE}" -O "${DL}/${LINUX_SOURCE}" || return 1
+   else
+        echo "yes"
    fi
 
+   echo -e "Checking if the kernel config is downloaded before ... \c"
    if [ ! -f "${DL}/${KERNEL_CONFIG}" ]; then
+        echo "no"
+        echo "Downloading the kernel config"
         wget "${KERNEL_MIRROR}/${KERNEL_CONFIG}" -O "${DL}/${KERNEL_CONFIG}" || return 1
+   else
+        echo "yes"
    fi
 
-   [ -d "$KERNEL" ] || mkdir "$KERNEL"
    cd "$KERNEL"
 
+   echo "Cleaning the linux directory"
    [ -d "$LINUX_DIR" ] && sudo rm -rf "$LINUX_DIR"
 
+   echo "Extracting the linux source"
    tar -xf "${DL}/${LINUX_SOURCE}" || return 1
 
    cd "$LINUX_DIR"
 
+   echo "Configuring the linux source"
    cp -f "${DL}/${KERNEL_CONFIG}" .config
 
    if [ "$KERNEL_ARCH" = x86_64 ]; then
         make ARCH="$KERNEL_ARCH" CROSS_COMPILE="$CROSS_COMPILE" oldconfig || return 1
+        echo "Compiling the linux source for building modules"
         make ARCH="$KERNEL_ARCH" CROSS_COMPILE="$CROSS_COMPILE" modules_prepare || return 1
    else
         make oldconfig || return 1
+        echo "Compiling the linux source for building modules"
         make modules_prepare || return 1
    fi
 
@@ -89,13 +104,30 @@ this_prepare() {
 
 this_main() {
 
+   echo "---------------------------------------------------------------"
+   echo ""
+   echo "Preparing the linux kernel $KERNEL source ..."
+   echo ""
+   echo "---------------------------------------------------------------"
+
+   echo -e "Checking if the linux kernel source is prepared before ... \c"
    if [ ! -f "$LINUX_PREPARE_STAMP" ]; then
+        echo "no"
         this_prepare || return 1
+   else
+        echo "yes"
    fi
 
+   echo "Creating the required symlinks in the root file system"
    [ -d /usr/src ] || sudo mkdir -p /usr/src
    sudo ln -sf "$LINUX_SRC" /usr/src/linux || return 1
    sudo ln -sf "$LINUX_BUILD" /lib/modules/${KERNEL}/build || return 1
+
+   echo "---------------------------------------------------------------"
+   echo ""
+   echo "Prepared the linux kernel $KERNEL source successfully."
+   echo ""
+   echo "---------------------------------------------------------------"
 
    return 0
 

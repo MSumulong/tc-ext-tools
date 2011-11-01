@@ -1,8 +1,8 @@
 PACKAGE="libgadu"
 VERSION="1.9.1"
 SOURCE="http://toxygen.net/libgadu/files/libgadu-${VERSION}.tar.gz"
-BUILD_DEPENDS="openssl-0.9.8
-openssl-0.9.8-dev"
+BUILD_DEPENDS="openssl-1.0.0
+openssl-1.0.0-dev"
 
 DESCRIPTION="This library implements the client side of the Gadu-Gadu protocol."
 AUTHOR="---"

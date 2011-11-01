@@ -1,8 +1,8 @@
 PACKAGE="rtmpdump"
 VERSION="2.4"
 SOURCE="ftp://ftp.archlinux.org/other/rtmpdump/rtmpdump-${VERSION}.tar.xz"
-BUILD_DEPENDS="openssl-0.9.8
-openssl-0.9.8-dev"
+BUILD_DEPENDS="openssl-1.0.0
+openssl-1.0.0-dev"
 
 DESCRIPTION="A tool to download rtmp streams."
 AUTHOR="---"

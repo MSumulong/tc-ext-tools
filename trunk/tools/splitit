@@ -2,7 +2,7 @@
 
 ############################################################################
 #                                                                          #
-#               splitit: Splits the package into extensions                #
+#                 splitit: Splits the package extensions                   #
 #                                                                          #
 ############################################################################
 
@@ -42,7 +42,7 @@ fi
 this_split() {
 
    echo "---------------------------------------------------------------"
-   echo "Getting the paths from the package extension install."
+   echo "Getting the paths from the package extension install"
    echo "---------------------------------------------------------------"
    PATHS=$(cat $PACKAGE_EXTENSION_INSTALL)
    if [ -z "$PATHS" ]; then
@@ -50,7 +50,7 @@ this_split() {
    fi
 
    echo "---------------------------------------------------------------"
-   echo "Cleaning the package extension bin temporary directory."
+   echo "Cleaning the package extension bin temporary directory"
    echo "---------------------------------------------------------------"
    [ -d "$PACKAGE_EXTENSION_BIN_TEMP" ] && sudo rm -rf "$PACKAGE_EXTENSION_BIN_TEMP"
    mkdir -p "$PACKAGE_EXTENSION_BIN_TEMP"
@@ -58,7 +58,7 @@ this_split() {
    cd "$PACKAGE_EXTENSION_BIN_TEMP"
 
    echo "---------------------------------------------------------------"
-   echo "Setting the include and the exclude paths."
+   echo "Setting the include and the exclude paths"
    echo "---------------------------------------------------------------"
    unset INCLUDE_PATHS EXCLUDE_PATHS
    for i in $PATHS
@@ -66,6 +66,8 @@ this_split() {
        echo "---------------------------------------------------------------"
        echo "Processing the path $i"
        echo "---------------------------------------------------------------"
+
+       i=$(eval echo "$i")
 
        echo -e "Checking if the path is commented out ... \c"
        if [ "${i#\#}" != "$i" ]; then
@@ -75,13 +77,15 @@ this_split() {
             echo "no"
        fi
 
-       i="$(eval echo "$i")"
+       echo -e "Checking if the path is excluded ... \c"
        if [ "${i#x-}" = "$i" ]; then
-            echo "Putting the path to the include paths."
+            echo "no"
+            echo "Putting the path to the include paths"
             INCLUDE_PATHS="$INCLUDE_PATHS $i"
        else
+            echo "yes"
             i="${i#x-}"
-            echo "Putting the path to the exclude paths."
+            echo "Putting the path to the exclude paths"
             EXCLUDE_PATHS="$EXCLUDE_PATHS $i"
        fi
    done
@@ -89,7 +93,7 @@ this_split() {
    cd "$PACKAGE_INSTALL_ROOT"
 
    echo "---------------------------------------------------------------"
-   echo "Creating the files to include list."
+   echo "Creating the files to include list"
    echo "---------------------------------------------------------------"
    LIST="${PACKAGE_EXTENSION_BIN_TEMP}/install.list"
    touch "$LIST"
@@ -99,34 +103,33 @@ this_split() {
    cat "$LIST"
 
    echo "---------------------------------------------------------------"
-   echo "Creating the files to exclude list."
+   echo "Creating the files to exclude list"
    echo "---------------------------------------------------------------"
    X_LIST="${PACKAGE_EXTENSION_BIN_TEMP}/x-install.list"
    touch "$X_LIST"
    if [ -n "$EXCLUDE_PATHS" ]; then
         sudo find $EXCLUDE_PATHS -not -type d >> "$X_LIST" || return 1
    fi
-
    cat "$X_LIST"
 
    echo "---------------------------------------------------------------"
-   echo "Creating the package extension files tarball using the files to include and the files to exclude lists."
+   echo "Creating the package extension files tarball using the files to include and the files to exclude lists"
    echo "---------------------------------------------------------------"
    sudo tar -T "$LIST" -X "$X_LIST" -cvpzf "$PACKAGE_EXTENSION_BIN_TEMP/pkg.tar.gz" || return 1
 
    echo "---------------------------------------------------------------"
-   echo "Cleaning the package extension bin directory."
+   echo "Cleaning the package extension bin directory"
    echo "---------------------------------------------------------------"
    [ -d "$PACKAGE_EXTENSION_BIN" ] && sudo rm -rf "$PACKAGE_EXTENSION_BIN"
    sudo mkdir -p "$PACKAGE_EXTENSION_BIN"
 
    echo "---------------------------------------------------------------"
-   echo "Extracting the package extension files tarball to the package extension bin directory."
+   echo "Extracting the package extension files tarball to the package extension bin directory"
    echo "---------------------------------------------------------------"
    sudo mkdir -p "$PACKAGE_EXTENSION_BIN"
    sudo tar -C "$PACKAGE_EXTENSION_BIN" -pxzf "$PACKAGE_EXTENSION_BIN_TEMP/pkg.tar.gz" || return 1
 
-   echo "Cleaning the package extension bin temporary directory."
+   echo "Cleaning the package extension bin temporary directory"
    sudo rm -rf "$PACKAGE_EXTENSION_BIN_TEMP"
 
    return 0
@@ -149,20 +152,20 @@ this_main() {
        echo "Splitting the package extension $PACKAGE_EXTENSION_NAME"
        echo "---------------------------------------------------------------"
 
-       echo "Cleaning the package bin temporary directory."
+       echo "Cleaning the package bin temporary directory"
        [ -d "$PACKAGE_BIN_TEMP" ] && sudo rm -rf "$PACKAGE_BIN_TEMP"
        mkdir -p "$PACKAGE_BIN_TEMP"
 
        this_split
        if [ "$?" -gt 0 ]; then
             echo "---------------------------------------------------------------"
-            echo "Error! splitting the package extension $PACKAGE_EXTENSION_NAME failed."
+            echo "Error! splitting the package extension $PACKAGE_EXTENSION_NAME failed"
             echo "---------------------------------------------------------------"
 
             return 1
        else
             echo "---------------------------------------------------------------"
-            echo "Splitting the package extension $PACKAGE_EXTENSION_NAME successful."
+            echo "Splitting the package extension $PACKAGE_EXTENSION_NAME successful"
             echo "---------------------------------------------------------------"
        fi
    done

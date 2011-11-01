@@ -13,8 +13,8 @@ svn
 svn-dev
 sqlite3
 sqlite3-dev
-openssl-0.9.8
-openssl-0.9.8-dev"
+openssl-1.0.0
+openssl-1.0.0-dev"
 
 DESCRIPTION="An SVN-client for KDE."
 AUTHOR="Rajko Albrecht"

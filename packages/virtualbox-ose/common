@@ -17,8 +17,8 @@ iasl
 Dev86
 libcap
 libIDL
-openssl-0.9.8
-openssl-0.9.8-dev
+openssl-1.0.0
+openssl-1.0.0-dev
 curl
 curl-dev
 python

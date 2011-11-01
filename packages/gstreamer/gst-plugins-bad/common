@@ -10,7 +10,7 @@ BUILD_DEPENDS="gstreamer gstreamer-dev gst-plugins-base gst-plugins-base-dev
                libdc1394 libdc1394-dev libusb libusb-dev faac faac-dev
                SDL SDL-dev libmusicbrainz libmusicbrainz-dev libvdpau libvdpau-dev
                libass libass-dev libvpx libvpx-dev libgme-svn libgme-svn-dev
-               openssl-0.9.8 openssl-0.9.8-dev Xorg-7.6-lib Xorg-7.6-dev
+               openssl-1.0.0 openssl-0.9.8-dev Xorg-7.6-lib Xorg-7.6-dev
                liborc liborc-dev libschroedinger libschroedinger-dev flac flac-dev"
 
 DESCRIPTION="GStreamer Bad Plugins."

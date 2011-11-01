@@ -3,8 +3,8 @@ VERSION="0.11"
 SOURCE="http://launchpad.net/pyopenssl/main/${VERSION}/+download/pyOpenSSL-${VERSION}.tar.gz"
 BUILD_DEPENDS="python
 python-dev
-openssl-0.9.8
-openssl-0.9.8-dev"
+openssl-1.0.0
+openssl-1.0.0-dev"
 
 DESCRIPTION="A Python wrapper around the OpenSSL library."
 AUTHOR="Jean-Paul Calderone"

@@ -2,8 +2,8 @@ PACKAGE="openldap"
 VERSION="2.4.26"
 SOURCE="ftp://ftp.openldap.org/pub/OpenLDAP/openldap-release/openldap-${VERSION}.tgz"
 BUILD_DEPENDS="
-openssl-0.9.8
-openssl-0.9.8-dev
+openssl-1.0.0
+openssl-1.0.0-dev
 bsddb
 bsddb-dev
 cyrus-sasl
