@@ -48,7 +48,7 @@ this_main() {
    echo "---------------------------------------------------------------"
 
    echo "---------------------------------------------------------------"
-   echo "Executing the package build compile function."
+   echo "Executing the package build compile function"
    echo "---------------------------------------------------------------"
    cd "$PACKAGE_SOURCE_TOPDIR"
    build_compile > "$PACKAGE_COMPILE_LOG" 2>&1 || return 1

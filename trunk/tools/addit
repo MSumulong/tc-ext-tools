@@ -130,11 +130,11 @@ this_main() {
    echo ""
    echo "---------------------------------------------------------------"
 
-   echo "Cleaning the package extensions directory."
+   echo "Cleaning the package extensions directory"
    [ -d "$PACKAGE_EXTENSIONS" ] && rm -rf "$PACKAGE_EXTENSIONS"
    mkdir -p "$PACKAGE_EXTENSIONS" || return 1
 
-   echo "Creating the package common file."
+   echo "Creating the package common file"
    if [ "$VERSION" = "svn" ]; then
 
         cat > "$PACKAGE_COMMON" << _EOF
@@ -200,7 +200,7 @@ _EOF
    echo "Installing the package build file."
    install -m 644 "$TET_ROOT/share/tet/build.sample" "$PACKAGE_BUILD" || return 1
 
-   echo "Creating the package extensions install and dep files."
+   echo "Creating the package extensions install and dep files"
    for EXTENSION in $EXTENSIONS
    do
        mkdir -p "$PACKAGE_EXTENSIONS/$EXTENSION" || return 1

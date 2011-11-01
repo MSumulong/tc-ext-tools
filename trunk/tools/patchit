@@ -66,7 +66,7 @@ this_main() {
 
    if [ -n "$PATCHES" ]; then
         echo "---------------------------------------------------------------"
-        echo "Patches found, applying patches."
+        echo "Patches found, applying patches ..."
         echo "---------------------------------------------------------------"
         for PATCH in $PATCHES
         do
@@ -80,32 +80,27 @@ this_main() {
            fi
 
            echo -e "Detecting the patch level ... \c"
+           PATCH_LEVEL=1
            for FILE in $(cat $PACKAGE_PATCHES/$PATCH | grep -e "---" -e "+++" | cut -f2 -d" "; cat $PACKAGE_PATCHES/$PATCH | grep -e "---" -e "+++" | cut -f2 -d" " | cut -f1 -s)
            do
-               PATCH_LEVEL=1
                if [ -f "$PACKAGE_SOURCE_TOPDIR/$FILE" ]; then
                     PATCH_LEVEL=0
+                    break
                elif [ -f "$PACKAGE_SOURCE_TOPDIR/${FILE#*/}" ]; then
                     PATCH_LEVEL=1
+                    break
                elif [ -f "$PACKAGE_SOURCE_TOPDIR/${FILE#*/*/}" ]; then
                     PATCH_LEVEL=2
+                    break
                fi
-               [ -n "$PATCH_LEVEL" ] && break
            done
 
-           if [ -n "$PATCH_LEVEL" ]; then
-                echo "Patch level is $PATCH_LEVEL"
-           else
-                echo "Error! can not detect patch level"
-                return 1
-           fi
-
-           echo "Applying the patch $PATCH"
+           echo "Applying the patch $PATCH with patch level $PATCH_LEVEL"
            patch --directory="$PACKAGE_SOURCE_TOPDIR" -Np$PATCH_LEVEL -i "$PACKAGE_PATCHES/$PATCH" || return 1
         done
    else
         echo "---------------------------------------------------------------"
-        echo "There is no patch available for the package $PACKAGE."
+        echo "There is no patch available for the package $PACKAGE"
         echo "---------------------------------------------------------------"
         return 0
    fi

@@ -41,14 +41,14 @@ fi
 
 this_check() {
 
-   echo "Cleaning the package extension bin temporary directory."
+   echo "Cleaning the package extension bin temporary directory"
    [ -d "$PACKAGE_EXTENSION_BIN_TEMP" ] && sudo rm -rf "$PACKAGE_EXTENSION_BIN_TEMP"
    mkdir -p "$PACKAGE_BIN_TEMP"
 
-   echo "Extracting the package extension to the package extension bin temporary directory."
+   echo "Extracting the package extension to the package extension bin temporary directory"
    sudo unsquashfs -d "$PACKAGE_EXTENSION_BIN_TEMP" "$PACKAGE_EXTENSION_TCZ" || return 1
 
-   echo "Checking the package extension files."
+   echo "Checking the package extension files"
    cd "$PACKAGE_EXTENSION_BIN_TEMP"
    sudo find -not -type d -exec file "{}" \; || return 1
    cd -

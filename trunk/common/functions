@@ -76,6 +76,7 @@ set_source() {
           # there is no source: probably a virtual package
           PACKAGE_SOURCE_TYPE="none"
           PACKAGE_SOURCE_URL_TYPE="none"
+          PACKAGE_SOURCE_TOPDIR="$PACKAGE_SRC_TEMP"
           return 0
      else
           # get the source url type and name
@@ -399,6 +400,7 @@ if [ "$THIS" != "addit" ] && [ -f "$PACKAGE_COMMON" ]; then
      [ -d "$_PACKAGE_SRC" ] || install -m 755 -d "$_PACKAGE_SRC"
      [ -d "$PACKAGE_PKG" ] || install -m 755 -d "$PACKAGE_PKG"
      [ -d "$PACKAGE_LOG" ] || install -m 755 -d "$PACKAGE_LOG"
+     [ "$PACKAGE_SOURCE_TYPE" = "none" ] && mkdir -p "$PACKAGE_SOURCE_TOPDIR"
 
      # touch log files
      [ -f "$PACKAGE_CONFIGURE_LOG" ] || touch "$PACKAGE_CONFIGURE_LOG"
