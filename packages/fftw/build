@@ -1,0 +1,44 @@
+
+############################################################################################
+#                                                                                          #
+#    package build functions: configure, compile, install, rules, and custom functions     #
+#                                                                                          #
+############################################################################################
+
+## install
+build_install() {
+
+   ./configure --prefix=/usr/local F77=gfortran --enable-shared
+   make 
+   make install DESTDIR="$I_ROOT"
+   make clean 
+
+   ./configure --prefix=/usr/local F77=gfortran --enable-shared --enable-single
+   make 
+   make install DESTDIR="$I_ROOT"
+   make clean 
+
+   ./configure --prefix=/usr/local F77=gfortran --enable-shared --enable-long-double
+   make 
+   make install DESTDIR="$I_ROOT"
+
+}
+
+## rules
+build_rules() {
+
+   tet_load
+   tet_download
+   tet_convert
+   tet_unpack
+   tet_patch
+   tet_install
+   tet_split
+   tet_strip
+   tet_create
+   tet_generate
+   tet_check
+   tet_package
+
+}
+

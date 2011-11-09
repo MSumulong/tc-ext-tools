@@ -1,0 +1,13 @@
+PACKAGE="fftw"
+VERSION="3.3"
+SOURCE="ftp://ftp.fftw.org/pub/fftw/fftw-${VERSION}.tar.gz"
+BUILD_DEPENDS="cp2fs::gfortran"
+
+DESCRIPTION="A library for computing the discrete Fourier transform (DFT)."
+AUTHOR="Matteo Frigo and Steven G. Johnson"
+SITE="http://www.fftw.org/"
+COPYING="GPL-2"
+MAINTAINERS="Arslan S."
+COMMENTS="---"
+CHANGELOG="2010/07/25 First Version 3.2.2"
+CURRENT="Updated to $VERSION"
