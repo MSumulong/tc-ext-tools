@@ -1,0 +1,59 @@
+
+############################################################################################
+#                                                                                          #
+#    package build functions: configure, compile, install, rules, and custom functions     #
+#                                                                                          #
+############################################################################################
+
+## configure
+build_configure() {
+
+   sed -i 's|$prefix/foobillardplus|$prefix|' configure
+   sed -i 's|$prefix/data|$prefix/share/foobillardplus|' configure
+   sed -i 's|"/data"|"/share/foobillardplus"|' src/language.c
+   sed -i 's|/opt/foobillardplus/bin/||' foobillardplus.desktop
+   sed -i 's|/opt/foobillardplus/||' foobillardplus.desktop
+   ./configure --prefix=/usr/local || return 1
+
+}
+
+## compile
+build_compile() {
+
+   make || return 1
+
+}
+
+## install
+build_install() {
+
+   install -Dm755 src/foobillardplus "${I_ROOT}/usr/local/bin/foobillardplus"
+   install -d "${I_ROOT}/usr/local/share/foobillardplus"
+   cp -R data/* "${I_ROOT}/usr/local/share/foobillardplus"
+   install -Dm644 foobillardplus.desktop "${I_ROOT}/usr/local/share/applications/foobillardplus.desktop"
+   install -Dm644 foobillardplus.png "${I_ROOT}/usr/local/share/pixmaps/foobillardplus.png"
+   install -Dm644 foobillardplus.xbm "${I_ROOT}/usr/local/share/pixmaps/foobillardplus.xbm"
+   find "${I_ROOT}" -depth  -type d -name .svn -exec rm -rf  {} \;
+
+}
+
+## rules
+build_rules() {
+
+   tet_load
+   tet_download
+   tet_convert
+   tet_unpack
+   tet_patch
+   tet_configure
+   tet_compile
+   tet_install
+   tet_split
+   tet_strip
+   tet_create
+   tet_generate
+   tet_check
+   tet_package
+
+}
+

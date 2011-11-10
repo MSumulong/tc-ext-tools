@@ -1,0 +1,13 @@
+PACKAGE="foobillardplus"
+VERSION="3.41beta"
+SOURCE="http://downloads.sourceforge.net/foobillardplus/foobillardplus-${VERSION}.tar.gz"
+BUILD_DEPENDS="Xorg-7.6-lib Xorg-7.6-dev SDL SDL-dev bzip2-lib bzip2-dev"
+
+DESCRIPTION="An OpenGL billard game."
+AUTHOR="---"
+SITE="http://foobillardplus.sourceforge.net/"
+COPYING="GPL-2"
+MAINTAINERS="Arslan S."
+COMMENTS="This extension requires Xorg."
+CHANGELOG="---"
+CURRENT="First Version 3.41beta"
