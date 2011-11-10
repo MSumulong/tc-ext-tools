@@ -45,5 +45,5 @@ TET_LDFLAGS="-Wl,-O1"
 TET_PREFIX="usr/local"
 
 # packages database directory
-TET_PACKAGES_DATABASE="${HOME}/.local/share/tc-ext-tools/packages_db"
+TET_PACKAGES_DATABASE="${HOME}/.local/share/tet/packages_db"
 
