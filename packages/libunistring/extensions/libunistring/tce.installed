@@ -3,7 +3,7 @@
 if [ `which install-info` ]
 then
   infodir=/usr/local/share/info
-  infos="fftw3.info fftw3.info-1 fftw3.info-2"
+  infos="libunistring.info"
 
   for info in $infos
   do

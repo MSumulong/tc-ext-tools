@@ -6,7 +6,7 @@
 build_configure() {
 
   ./configure --prefix=/usr/local --enable-addons --disable-hildon --disable-tests \
-      --enable-unique --enable-libnotify --disable-libidn \
+      --enable-unique --enable-libnotify \
       --enable-nls --enable-docs --enable-apidocs || return 1
 
 }
@@ -25,7 +25,7 @@ build_install() {
 
   make DESTDIR="$INSTALL_ROOT" install || return 1
 
-  rm -f "$I_ROOT/usr/local/share/applications/midori-private.desktop"
+  #rm -f "$I_ROOT/usr/local/share/applications/midori-private.desktop"
 
 }
 ##

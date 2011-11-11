@@ -1,0 +1,15 @@
+PACKAGE="guile"
+VERSION="2.0.3"
+SOURCE="ftp://ftp.gnu.org/pub/gnu/guile/guile-${VERSION}.tar.gz"
+BUILD_DEPENDS="libltdl libtool-dev gmp gmp-dev ncurses ncurses-dev
+               libffi libffi-dev libunistring libunistring-dev
+               libiconv libiconv-dev gc gc-dev texinfo"
+
+DESCRIPTION="The GNU extension language and Scheme interpreter."
+AUTHOR="---"
+SITE="http://www.gnu.org/software/guile/"
+COPYING="GPL"
+MAINTAINERS="Arslan S."
+COMMENTS="---"
+CHANGELOG="2010/03/22 First Version 1.8.7"
+CURRENT="Updated to $VERSION"

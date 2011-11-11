@@ -1,0 +1,13 @@
+PACKAGE="gc"
+VERSION="7.1"
+SOURCE="http://www.hpl.hp.com/personal/Hans_Boehm/gc/gc_source/gc-${VERSION}.tar.gz"
+BUILD_DEPENDS=""
+
+DESCRIPTION="A garbage collector for C and C++."
+AUTHOR="---"
+SITE="http://www.hpl.hp.com/personal/Hans_Boehm/gc/"
+COPYING="GPL-2"
+MAINTAINERS="Arslan S."
+COMMENTS="---"
+CHANGELOG="---"
+CURRENT="First Version"

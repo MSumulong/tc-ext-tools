@@ -1,0 +1,13 @@
+PACKAGE="libunistring"
+VERSION="0.9.3"
+SOURCE="http://ftp.gnu.org/gnu/libunistring/libunistring-${VERSION}.tar.gz"
+BUILD_DEPENDS="texinfo libiconv libiconv-dev"
+
+DESCRIPTION="A library for manipulating Unicode strings and C strings."
+AUTHOR="---"
+SITE="http://www.gnu.org/software/libunistring/"
+COPYING="GPL-2"
+MAINTAINERS="Arslan S."
+COMMENTS="---"
+CHANGELOG="---"
+CURRENT="First Version"
