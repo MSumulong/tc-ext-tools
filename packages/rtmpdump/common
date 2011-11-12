@@ -1,8 +1,7 @@
 PACKAGE="rtmpdump"
 VERSION="2.4"
 SOURCE="ftp://ftp.archlinux.org/other/rtmpdump/rtmpdump-${VERSION}.tar.xz"
-BUILD_DEPENDS="openssl-1.0.0
-openssl-1.0.0-dev"
+BUILD_DEPENDS="openssl-1.0.0 openssl-1.0.0-dev"
 
 DESCRIPTION="A tool to download rtmp streams."
 AUTHOR="---"
@@ -10,5 +9,5 @@ SITE="http://rtmpdump.mplayerhq.hu/"
 COPYING="GPL-2/LGPL-2.1"
 MAINTAINERS="Arslan S."
 COMMENTS="---"
-CHANGELOG="---"
-CURRENT="First Version"
+CHANGELOG="2011/09/15 First Version 2.4"
+CURRENT="Rebuilt"

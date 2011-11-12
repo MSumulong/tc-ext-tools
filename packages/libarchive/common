@@ -1,16 +1,8 @@
 PACKAGE="libarchive"
-VERSION="2.8.4"
+VERSION="2.8.5"
 SOURCE="http://libarchive.googlecode.com/files/libarchive-${VERSION}.tar.gz"
-BUILD_DEPENDS="acl
-acl-dev
-bzip2-lib
-bzip2-dev
-expat2
-expat2-dev
-openssl-1.0.0
-openssl-1.0.0-dev
-xz
-xz-dev"
+BUILD_DEPENDS="acl acl-dev bzip2-lib bzip2-dev xz xz-dev
+               expat2 expat2-dev openssl-1.0.0 openssl-1.0.0-dev"
 
 EXTENSIONS="libarchive libarchive-dev libarchive-doc"
 DESCRIPTION="libarchive, bsdtar and bsdcpio."
@@ -21,5 +13,5 @@ MAINTAINERS="Arslan S."
 COMMENTS="---"
 CHANGELOG="2010/02/08 Original 2.8.0
 		2010/07/22 Updated to 2.8.4"
-CURRENT="Rebuilt"
+CURRENT="Updated to $VERSION"
 

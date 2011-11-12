@@ -8,14 +8,19 @@
 ## configure
 build_configure() {
 
-   ./configure --prefix=/usr/local || return 1
+   ./configure --prefix=/usr/local \
+       --disable-error-on-warning \
+       --disable-static \
+       --enable-posix \
+       --disable-rpath \
+       --with-modules || return 1
 
 }
 
 ## compile
 build_compile() {
 
-   make LDFLAGS+="-lpthread" || return 1
+   make || return 1
 
 }
 

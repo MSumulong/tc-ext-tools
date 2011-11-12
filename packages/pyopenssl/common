@@ -1,17 +1,15 @@
 PACKAGE="pyopenssl"
-VERSION="0.11"
-SOURCE="http://launchpad.net/pyopenssl/main/${VERSION}/+download/pyOpenSSL-${VERSION}.tar.gz"
-BUILD_DEPENDS="python
-python-dev
-openssl-1.0.0
-openssl-1.0.0-dev"
+VERSION="0.13"
+SOURCE="http://pypi.python.org/packages/source/p/pyOpenSSL/pyOpenSSL-${VERSION}.tar.gz"
+BUILD_DEPENDS="python python-dev openssl-1.0.0 openssl-1.0.0-dev"
 
 DESCRIPTION="A Python wrapper around the OpenSSL library."
 AUTHOR="Jean-Paul Calderone"
-SITE="https://launchpad.net/pyopenssl"
+SITE="http://pypi.python.org/pypi/pyOpenSSL"
 COPYING="LGPL"
 MAINTAINERS="Kingdomcome, Arslan S."
 COMMENTS="---"
 CHANGELOG="2010/03/12 First Version 0.10 by Kingdomcome
-		2011/01/04 Rebuilt against python 2.7 by Arslan S."
+		2011/01/04 Rebuilt against python 2.7 by Arslan S.
+		2011/01/07 Updated to 0.11 by Arslan S."
 CURRENT="Updated to $VERSION by Arslan S."

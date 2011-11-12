@@ -6,7 +6,7 @@ usr/local/lib/libarchive.a
 usr/local/lib/libarchive.la
 usr/local/lib/libarchive.so
 usr/local/lib/libarchive.so.2
-usr/local/lib/libarchive.so.2.8.4
+usr/local/lib/libarchive.so.2.8.5
 usr/local/lib/pkgconfig/libarchive.pc
 usr/local/share/man/man1/bsdcpio.1
 usr/local/share/man/man1/bsdtar.1

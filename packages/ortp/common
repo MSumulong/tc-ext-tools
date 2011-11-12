@@ -1,8 +1,7 @@
 PACKAGE="ortp"
-VERSION="0.16.3"
+VERSION="0.16.5"
 SOURCE="http://ftp.cc.uoc.gr/mirrors/nongnu.org/linphone/ortp/sources/ortp-${VERSION}.tar.gz"
-BUILD_DEPENDS="openssl-1.0.0
-openssl-1.0.0-dev"
+BUILD_DEPENDS="openssl-1.0.0 openssl-1.0.0-dev"
 
 DESCRIPTION="A C library implementing the RTP protocol (rfc3550)."
 AUTHOR="Simon MORLAT"
@@ -10,5 +9,5 @@ SITE="http://www.linphone.org/index.php/eng/code_review/ortp"
 COPYING="LGPL"
 MAINTAINERS="Arslan S."
 COMMENTS="---"
-CHANGELOG="---"
-CURRENT="First Version"
+CHANGELOG="2011/01/22 First Version 0.16.3"
+CURRENT="Updated to $VERSION"

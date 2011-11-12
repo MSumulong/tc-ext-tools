@@ -2,3 +2,5 @@ usr/local/include
 usr/local/lib/*.a
 usr/local/lib/*.la
 usr/local/lib/pkgconfig
+usr/local/share/man/man3
+usr/local/share/man/man5
