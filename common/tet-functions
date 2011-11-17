@@ -22,7 +22,7 @@
 #  Copyright (c) 2011 Sercan Arslan <arslanserc@gmail.com>
 #
 
-export TET_PACKAGES_DATABASE="${HOME}/.local/share/tc-ext-tools/packages_db"
+export TET_PACKAGES_DATABASE="${HOME}/.local/share/tet/packages_db"
 
 _tet_common() {
 
@@ -222,4 +222,81 @@ teted() {
 
 }
 
+# tc-ext-tools browse: browse the package in your file manager
+tetbrowse() {
+
+   _tet_common "$@" || return 1
+
+   if [ -z "$CMD" -a -z "$PACKAGE" ]; then
+        $TET_FILE_MANAGER "$TET_PACKAGES" &
+        return 0
+   fi
+
+   if [ -f "$TET_PACKAGES_DATABASE/$PACKAGE" ]; then
+        . "$TET_PACKAGES_DATABASE/$PACKAGE"
+   else
+        echo "tetbrowse: No such package $PACKAGE"
+        return 1
+   fi
+
+   if [ ! -d "$PACKAGE_ROOT" ]; then
+        echo "tetbrowse: Package $PACKAGE root directory does not exist"
+        return 1
+   fi
+
+   $TET_FILE_MANAGER "$PACKAGE_ROOT" &
+
+}
+
+# tc-ext-tools info: show info about the package
+tetinfo() {
+
+   _tet_common "$@" || return 1
+
+   if [ -z "$CMD" -a -z "$PACKAGE" ]; then
+        echo "tetinfo: You must specify the package"
+        return 0
+   fi
+
+   if [ -f "$TET_PACKAGES_DATABASE/$PACKAGE" ]; then
+        . "$TET_PACKAGES_DATABASE/$PACKAGE"
+   else
+        echo "tetinfo: No such package $PACKAGE"
+        return 1
+   fi
+
+   if [ ! -d "$PACKAGE_ROOT" ]; then
+        echo "tetinfo: Package $PACKAGE root directory does not exist"
+        return 1
+   fi
+
+   cat "$TET_PACKAGES_DATABASE/$PACKAGE"
+
+}
+
+# tc-ext-tools www: open the package site in your web browser
+tetwww() {
+
+   _tet_common "$@" || return 1
+
+   if [ -z "$CMD" -a -z "$PACKAGE" ]; then
+        echo "tetwww: You must specify the package"
+        return 0
+   fi
+
+   if [ -f "$TET_PACKAGES_DATABASE/$PACKAGE" ]; then
+        . "$TET_PACKAGES_DATABASE/$PACKAGE"
+   else
+        echo "tetwww: No such package $PACKAGE"
+        return 1
+   fi
+
+   if [ ! -d "$PACKAGE_ROOT" ]; then
+        echo "tetwww: Package $PACKAGE root directory does not exist"
+        return 1
+   fi
+
+   $TET_WEB_BROWSER "$PACKAGE_SITE" &
+
+}
 
