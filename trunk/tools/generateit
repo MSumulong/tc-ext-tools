@@ -53,17 +53,17 @@ this_generate() {
    echo -e "Checking if the extension has a common file ... \c"
    if [ -f "$PACKAGE_EXTENSION_COMMON" ]; then
         echo "yes"
-        echo "Sourcing the extension common."
+        echo "Sourcing the extension common"
         . "$PACKAGE_EXTENSION_COMMON"
    else
         echo "no"
    fi
 
-   echo "Setting some other extension info variables."
+   echo "Setting the other extension info variables"
    CURRENT="$DATE $CURRENT"
    SIZE=$(du -h "$PACKAGE_EXTENSION_TCZ" | cut -f1)
 
-   echo "Writing to the extension info."
+   echo "Creating the extension info"
    cat > "$PACKAGE_EXTENSION_INFO" << _EOF
 Title:		${PACKAGE_EXTENSION_NAME}.tcz
 Description:	${DESCRIPTION}
@@ -79,7 +79,7 @@ Current:	${CURRENT}
 _EOF
 
    if [ "$?" -gt 0 ]; then
-        echo "Error! Generating the extension info file failed."
+        echo "Error! Creating the extension info failed"
         return 1
    fi
 

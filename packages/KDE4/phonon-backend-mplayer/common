@@ -1,14 +1,8 @@
 PACKAGE="phonon-backend-mplayer"
-VERSION="git${_DATE}"
+VERSION="git20110809"
 SOURCE="git::git://anongit.kde.org/phonon-mplayer"
-BUILD_DEPENDS="automoc4
-cmake
-qt-4.x-base
-qt-4.x-dev
-phonon
-phonon-dev
-Xorg-7.6-lib
-Xorg-7.6-dev"
+BUILD_DEPENDS="automoc4 cmake qt-4.x-base qt-4.x-dev phonon phonon-dev
+               Xorg-7.6-lib Xorg-7.6-dev"
 
 DESCRIPTION="Phonon Mplayer backend."
 AUTHOR="Tanguy Krotoff"

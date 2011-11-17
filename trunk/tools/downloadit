@@ -49,7 +49,7 @@ this_main() {
    if [ "$PACKAGE_SOURCE_URL_TYPE" = "svn" ] || [ "$PACKAGE_SOURCE_URL_TYPE" = "git" ]; then
         echo "Cleaning the package src temporary directory"
         [ -d "$PACKAGE_SRC_TEMP" ] && sudo rm -rf "$PACKAGE_SRC_TEMP"
-        mkdir -p "$PACKAGE_SRC_TEMP"
+        mkdir -p "$PACKAGE_SRC_TEMP" || return 1
 
         cd "$PACKAGE_SRC_TEMP"
 

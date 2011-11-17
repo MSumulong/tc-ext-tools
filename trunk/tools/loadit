@@ -50,7 +50,7 @@ this_load() {
    if [ -e "/usr/local/tce.installed/$EXTENSION_NAME" ]; then
         echo "yes"
         if [ "$COMMAND" = "cp2fs" -a -d "$TCLOOP/$EXTENSION_NAME" ]; then
-             echo "Warning! cp2fs command issued for the extension $EXTENSION_NAME but it is mounted."
+             echo "Warning! cp2fs command issued for the extension $EXTENSION_NAME but it is mounted already."
         fi
         return 0
    else
@@ -62,7 +62,7 @@ this_load() {
         echo "yes"
    else
         echo "no"
-        echo "Downloading the extension $EXTENSION_NAME."
+        echo "Downloading the extension $EXTENSION_NAME"
         tce-load -w "$EXTENSION_TCZ" || return 1
    fi
 
@@ -71,8 +71,6 @@ this_load() {
        cp2fs) tce-load -i -c "$EXTENSION_TCZ" || return 1 ;;
        *) tce-load -i "$EXTENSION_TCZ" || return 1 ;;
    esac
-
-   echo "The extension $EXTENSION_NAME is loaded successfully."
 
    return 0
 

@@ -1,9 +1,7 @@
 PACKAGE="cnetworkmanager"
-VERSION="git${_DATE}"
+VERSION="git20111018"
 SOURCE="git::git://repo.or.cz/cnetworkmanager.git"
-BUILD_DEPENDS="
-python
-python-dev"
+BUILD_DEPENDS="python python-dev"
 
 DESCRIPTION="Command line interface to Network Manager."
 AUTHOR="Martin Vidner"

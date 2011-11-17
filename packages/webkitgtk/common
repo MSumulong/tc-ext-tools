@@ -1,4 +1,4 @@
-PACKAGE="webkit"
+PACKAGE="webkitgtk"
 VERSION="1.4.3"
 API="1.0"
 MJR="0"

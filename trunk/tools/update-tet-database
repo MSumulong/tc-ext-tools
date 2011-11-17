@@ -85,18 +85,27 @@ do
         echo "$PACKAGE" >> packages.db
    fi
 
-if [ -n "$ADD" ]; then
+if [ "$ADD" = "y" ]; then
      echo "${GREEN}Adding the package ${YELLOW}${PACKAGE}${NORMAL}"
-elif [ -n "$UPDATE" ]; then
+elif [ "$UPDATE" = "y" ]; then
      echo "${GREEN}Updating the package ${YELLOW}${PACKAGE}${NORMAL}"
 fi
 
 if [ -n "$ADD" -o -n "$UPDATE" ]; then
    cat > "$TET_PACKAGES_DATABASE/$PACKAGE" << _EOF
+PACKAGE_ROOT="${package%/common}"
 PACKAGE_NAME="$PACKAGE"
 PACKAGE_VERSION="$VERSION"
+PACKAGE_SOURCE="$SOURCE"
+PACKAGE_BUILD_DEPENDS="$BUILD_DEPENDS"
 PACKAGE_DESCRIPTION="$DESCRIPTION"
-PACKAGE_ROOT="${package%/common}"
+PACKAGE_AUTHOR="$AUTHOR"
+PACKAGE_SITE="$SITE"
+PACKAGE_LICENSE="$COPYING"
+PACKAGE_MAINTAINERS="$MAINTAINERS"
+PACKAGE_COMMENTS="$(echo "$COMMENTS" | sed 's|\"|\\"|g')"
+PACKAGE_CHANGELOG="$CHANGELOG"
+PACKAGE_CURRENT="$CURRENT"
 _EOF
 fi
 done

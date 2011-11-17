@@ -197,10 +197,16 @@ _EOF
 
    fi
 
-   echo "Installing the package build file."
+   echo "Installing the package build rules file"
    install -m 644 "$TET_ROOT/share/tet/build.sample" "$PACKAGE_BUILD" || return 1
 
-   echo "Creating the package extensions install and dep files"
+   echo "Creating the package extensions directory"
+   mkdir -p "$PACKAGE_EXTENSIONS" || return 1
+
+   echo "Creating the package files list"
+   touch "$PACKAGE_EXTENSIONS/list" || return 1
+
+   echo "Creating the package extensions' files (install, dep, common and tce.installed)"
    for EXTENSION in $EXTENSIONS
    do
        mkdir -p "$PACKAGE_EXTENSIONS/$EXTENSION" || return 1
@@ -221,7 +227,7 @@ _EOF
 
    echo "---------------------------------------------------------------"
    echo ""
-   echo "Created the package $PACKAGE files successfully."
+   echo "Created the package $PACKAGE files and directories successfully."
    echo ""
    echo "---------------------------------------------------------------"
 
