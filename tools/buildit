@@ -35,7 +35,6 @@ else
 fi
 
 print_usage(){
-
    cat << EOF
 ${ERROR_COLOR}Usage:${NORMAL}
 
@@ -67,7 +66,6 @@ ${NORMAL}
 EOF
 
    exit 0
-
 }
 
 clean_it() {
@@ -153,7 +151,7 @@ encrypt_it() {
 build_custom() {
    FUNCTION="$1"
    if [ -z "$FUNCTION" ]; then
-        echo "${ERROR_COLOR}You need to specify the name of the custom function.${NORMAL}"
+        echo "${ERROR_COLOR}Error! You need to specify the name of the custom function.${NORMAL}"
         exit 1
    fi
 

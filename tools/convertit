@@ -47,9 +47,9 @@ this_main() {
    echo ""
    echo "---------------------------------------------------------------"
 
-   echo "Cleaning the package src temporary directory."
+   echo "Cleaning the package src temporary directory"
    [ -d "$PACKAGE_SRC_TEMP" ] && sudo rm -rf "$PACKAGE_SRC_TEMP"
-   mkdir -p "$PACKAGE_SRC_TEMP"
+   mkdir -p "$PACKAGE_SRC_TEMP" || return 1
 
    echo "Original source is $PACKAGE_SOURCE_NAME of type $PACKAGE_SOURCE_TYPE"
    echo "Converted source is $PACKAGE_SOURCE_NAME_CONV of type tarxz"

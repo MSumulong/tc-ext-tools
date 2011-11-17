@@ -101,7 +101,7 @@ this_main() {
        set_extension
 
        echo "---------------------------------------------------------------"
-       echo "Checking the package extension $PACKAGE_EXTENSION_NAME."
+       echo "Checking the package extension $PACKAGE_EXTENSION_NAME"
        echo "---------------------------------------------------------------"
 
        echo -e "Checking if the package extension is created before ... \c"
@@ -116,13 +116,13 @@ this_main() {
        this_check
        if [ "$?" -gt 0 ]; then
             echo "---------------------------------------------------------------"
-            echo "Error! Checking the extension $PACKAGE_EXTENSION_NAME failed."
+            echo "Error! Checking the extension $PACKAGE_EXTENSION_NAME failed"
             echo "---------------------------------------------------------------"
             sudo rm -rf "$PACKAGE_EXTENSION_BIN_TEMP"
             return 1
        else
             echo "---------------------------------------------------------------"
-            echo "Checking the extension $PACKAGE_EXTENSION_NAME successful."
+            echo "Checking the extension $PACKAGE_EXTENSION_NAME successful"
             echo "---------------------------------------------------------------"
             sudo rm -rf "$PACKAGE_EXTENSION_BIN_TEMP"
        fi

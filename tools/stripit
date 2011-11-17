@@ -41,28 +41,36 @@ fi
 
 this_strip() {
 
-   echo "Getting the package extension executables list"
-   EXECUTABLE_LIST=$(sudo find "$PACKAGE_EXTENSION_BIN" -not -type d -exec file "{}" \; | grep "executable" | grep ELF | grep "not stripped" | cut -f1 -d:)
+   echo "Setting the package extension executables list"
+   EXECUTABLES_LIST=$(sudo find "$PACKAGE_EXTENSION_BIN" -not -type d -exec file "{}" \; | grep "executable" | grep ELF | grep "not stripped" | cut -f1 -d:)
 
-   echo "Getting the package extension shared objects list"
-   SHARED_OBJECT_LIST=$(sudo find "$PACKAGE_EXTENSION_BIN" -not -type d -exec file "{}" \; | grep "shared object" | grep ELF | grep "not stripped" | cut -f1 -d:)
+   echo "Setting the package extension shared objects list"
+   SHARED_OBJECTS_LIST=$(sudo find "$PACKAGE_EXTENSION_BIN" -not -type d -exec file "{}" \; | grep "shared object" | grep ELF | grep "not stripped" | cut -f1 -d:)
 
-   echo "Processing the package extension executables list"
-   if [ -n "$EXECUTABLE_LIST" ]; then
-        for EXECUTABLE in $EXECUTABLE_LIST
+   echo -e "Checking if any executables to strip found ... \c"
+   if [ -n "$EXECUTABLES_LIST" ]; then
+        echo "yes"
+        echo "Processing the package extension executables list"
+        for EXECUTABLE in $EXECUTABLES_LIST
         do
             echo "Stripping the package extension executable ${EXECUTABLE#$PACKAGE_EXTENSION_BIN}" 
             sudo strip --strip-unneeded "$EXECUTABLE" || return 1
         done
+   else
+        echo "no"
    fi
 
-   echo "Processing the package extension shared objects list"
-   if [ -n "$SHARED_OBJECT_LIST" ]; then
-        for SHARED_OBJECT in $SHARED_OBJECT_LIST
+   echo -e "Checking if any shared objects to strip found ... \c"
+   if [ -n "$SHARED_OBJECTS_LIST" ]; then
+        echo "yes"
+        echo "Processing the package extension shared objects list"
+        for SHARED_OBJECT in $SHARED_OBJECTS_LIST
         do
             echo "Stripping the package extension shared object ${SHARED_OBJECT#$PACKAGE_EXTENSION_BIN}" 
             sudo strip -g "$SHARED_OBJECT" || return 1
         done
+   else
+        echo "no"
    fi
 
    return 0
@@ -99,12 +107,12 @@ this_main() {
        this_strip
        if [ "$?" -gt 0 ]; then
             echo "---------------------------------------------------------------"
-            echo "Error! Stripping the package extension $PACKAGE_EXTENSION_NAME failed."
+            echo "Error! Stripping the package extension $PACKAGE_EXTENSION_NAME failed"
             echo "---------------------------------------------------------------"
             return 1
        else
             echo "---------------------------------------------------------------"
-            echo "Stripping the package extension $PACKAGE_EXTENSION_NAME successful."
+            echo "Stripping the package extension $PACKAGE_EXTENSION_NAME successful"
             echo "---------------------------------------------------------------"
        fi
    done

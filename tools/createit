@@ -74,11 +74,11 @@ this_create() {
                   echo "no"
              fi
 
-             echo "Writing the extension icon entry to the extension desktop file"
+             echo "Writing the extension icon to the extension desktop file"
              sudo sh -c "echo \"X-FullPathIcon=$PACKAGE_EXTENSION_ICON\" >> $PACKAGE_EXTENSION_DESKTOP" || return 1
         else
              echo "no"
-             echo "Error! the extension desktop file not found but the icon is set"
+             echo "Error! The extension desktop file can not be found but the icon is set."
              return 1
         fi
    else

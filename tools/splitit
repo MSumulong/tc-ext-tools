@@ -53,7 +53,7 @@ this_split() {
    echo "Cleaning the package extension bin temporary directory"
    echo "---------------------------------------------------------------"
    [ -d "$PACKAGE_EXTENSION_BIN_TEMP" ] && sudo rm -rf "$PACKAGE_EXTENSION_BIN_TEMP"
-   mkdir -p "$PACKAGE_EXTENSION_BIN_TEMP"
+   mkdir -p "$PACKAGE_EXTENSION_BIN_TEMP" || return 1
 
    cd "$PACKAGE_EXTENSION_BIN_TEMP"
 
@@ -61,12 +61,12 @@ this_split() {
    echo "Setting the include and the exclude paths"
    echo "---------------------------------------------------------------"
    unset INCLUDE_PATHS EXCLUDE_PATHS
+
    for i in $PATHS
    do
        echo "---------------------------------------------------------------"
        echo "Processing the path $i"
        echo "---------------------------------------------------------------"
-
        i=$(eval echo "$i")
 
        echo -e "Checking if the path is commented out ... \c"
@@ -154,7 +154,7 @@ this_main() {
 
        echo "Cleaning the package bin temporary directory"
        [ -d "$PACKAGE_BIN_TEMP" ] && sudo rm -rf "$PACKAGE_BIN_TEMP"
-       mkdir -p "$PACKAGE_BIN_TEMP"
+       mkdir -p "$PACKAGE_BIN_TEMP" || return 1
 
        this_split
        if [ "$?" -gt 0 ]; then

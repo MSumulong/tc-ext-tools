@@ -58,7 +58,7 @@ this_main() {
    build_install > "$PACKAGE_INSTALL_LOG" 2>&1 || return 1
 
    if [ -d "$PACKAGE_INSTALL_ROOT" ]; then
-        echo "Creating the package files list."
+        echo "Creating the package files list"
         su "$TCUSER" -c "cd $PACKAGE_INSTALL_ROOT;sudo find * -not -type d | sort > $PACKAGE_FILES_LIST" || return 1
    fi
 
