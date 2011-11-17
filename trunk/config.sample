@@ -6,7 +6,7 @@
 ############################################################################
 
 # package maintainer
-PACKAGE_MAINTAINER="${USER}"
+PACKAGE_MAINTAINER="tc"
 
 # tc-ext-tools packages directory
 TET_PACKAGES="${HOME}/tc-ext-tools/packages"
@@ -15,5 +15,11 @@ TET_PACKAGES="${HOME}/tc-ext-tools/packages"
 TET_STORAGE="${HOME}/tc-ext-tools/storage"
 
 # tc-ext-tools text editor
-TET_EDITOR=editor
+TET_EDITOR="editor"
+
+# tc-ext-tools file manager
+TET_FILE_MANAGER="xfe"
+
+# tc-ext-tools web browser
+TET_WEB_BROWSER="firefox"
 
