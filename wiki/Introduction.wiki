@@ -131,7 +131,7 @@ _Hint: If `<file>` is left blank, teted lists all the files in the package and a
 {{{
 tetbrowse <package>
 }}}
-_Hint: If the package is not specified, tetbrowse opens tet packages directory._
+_Hint: If the package is not specified, tetbrowse opens the tc-ext-tools packages directory._
 
 === tetinfo ===
   * Show info about the package
