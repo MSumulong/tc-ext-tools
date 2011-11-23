@@ -2,7 +2,7 @@
 
 = Introduction =
 
-tc-ext-tools is a package build system developed for Tiny Core Linux. The main aim of the project is to create a high level, easy package maintenance system for Tiny Core Linux.
+tc-ext-tools is a package build system developed for Tiny Core Linux. The main aim of the project is to create a high level, easy and fast package maintenance system for Tiny Core Linux.
 
 = Design Concepts =
 
@@ -21,7 +21,7 @@ tc-ext-tools is a package build system developed for Tiny Core Linux. The main a
   * Track and save the changes applied to packages with a version control system (svn).
  * Support for Tiny Core Linux specific features (tce.installed, wbar icon etc.)
   * Add wbar icon or install script without worrying about permissions and ownerships.
- * Error handling, debugging
+ * Error handling
   * The packager can sort out the problem by tracking the error messages.
 
 = Installation =
@@ -67,7 +67,7 @@ buildit
 {{{
 buildit --clean|--load|--download|--convert|--unpack|--patch|--configure|--compile|--install|--split|--strip|--create|--check|--generate|--package|--encrypt|--print|--help
 }}}
-  * There is also custom build function support which can be used for defining custom functions.
+  * There is also custom build function support which can be used for defining custom build rules.
 {{{
 buildit --custom <function>
 }}}
@@ -88,7 +88,7 @@ svn checkout http://tc-ext-tools.googlecode.com/svn/tc-packages/
 
 == tc-ext-tools shell environment ==
 
-The shell environment is to make your life easier by implementing special shell functions such as changing parent's directory to a package's root directory, searching in the package, listing the contents of a package or even editing the package files.
+The shell environment is designed to make your life easier by implementing special shell functions such as changing parent's directory to a package's root directory, searching in the package, listing the contents of a package or even browsing and editing the package files.
 
 _Note: A reboot or relogin is required for tc-ext-tools shell functions to be available for the first time installation._
 
@@ -125,6 +125,27 @@ _Hint: If no argument is given, tetfind finds all the files in the packages dire
 teted <package> <file>
 }}}
 _Hint: If `<file>` is left blank, teted lists all the files in the package and asks you which one to edit. If a file name is specified it searches for the files with the name in the package, and if more than one file is found with the same name it asks you which one to edit. If the search matches only one file it opens the file for you to edit._
+
+=== tetbrowse ===
+  * Browse the package in your file manager
+{{{
+tetbrowse <package>
+}}}
+_Hint: If the package is not specified, tetbrowse opens tet packages directory._
+
+=== tetinfo ===
+  * Show info about the package
+{{{
+tetinfo <package>
+}}}
+_Hint: You must specify the package name._
+
+=== tetwww ===
+  * Open the package site in your web browser
+{{{
+tetwww <package>
+}}}
+_Hint: You must specify the package name._
 
 *Important Note: This project is still under development and considered to be in alpha stage. So any suggestions or critiques are welcome.*
 
