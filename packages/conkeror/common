@@ -1,5 +1,5 @@
 PACKAGE="conkeror"
-VERSION="git110922"
+VERSION="git111123"
 SOURCE="git::git://repo.or.cz/conkeror.git"
 BUILD_DEPENDS=""
 
@@ -11,12 +11,12 @@ MAINTAINERS="Arslan S."
 COMMENTS="Conkeror is a keyboard-oriented, highly-customizable,
 		highly-extensible web browser based on Mozilla XULRunner,
 		written mainly in JavaScript, and inspired by exceptional
-		software such as Emacs and vi.
+		software such as Emacs and vi."
 
-		"
 CHANGELOG="2010/06/09 First Version git100609
 		2010/08/24 Updated to git100824
 		2010/11/18 Updated to git101118
 		2010/12/15 Updated to git101215
-		2011/02/20 Updated to git110220"
+		2011/02/20 Updated to git110220
+		2011/09/22 Updated to git110922"
 CURRENT="Updated to $VERSION"

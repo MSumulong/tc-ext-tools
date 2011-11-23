@@ -15,6 +15,7 @@ usr/local/conkeror/components/content-policy.js
 usr/local/conkeror/components/download_helper.js
 usr/local/conkeror/components/download_manager_ui.js
 usr/local/conkeror/conkeror-spawn-helper
+usr/local/conkeror/content-policy.manifest
 usr/local/conkeror/content/blank.html
 usr/local/conkeror/content/conkeror.xul
 usr/local/conkeror/content/downloads.css

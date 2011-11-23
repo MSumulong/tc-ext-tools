@@ -32,6 +32,12 @@ else
 fi
 
 [ -z "$DESTDIR" ] && DESTDIR="$HOME/.local"
+
+echo "-----------------------------------------------"
+echo "tc-ext-tools will be installed into the destinatin directory $DESTDIR"
+echo "Please specify the variable DESTDIR if you want tc-ext-tools to be installed elsewhere"
+echo "-----------------------------------------------"
+
 BINDIR="$DESTDIR/bin"
 SYSCONFDIR="$DESTDIR/etc"
 DATADIR="$DESTDIR/share"
@@ -49,11 +55,14 @@ sudo ln -sf "$SYSCONFDIR/init.d/tet-functions" /etc/init.d/tet-functions
 
 # source tc-ext-tools shell environment functions in user's ashrc
 if ! grep tet-functions ~/.ashrc >/dev/null; then
+  echo "Applying changes to shell environment"
+  echo "You need to relogin or reboot your computer for changes to take effect"
   echo ". /etc/init.d/tet-functions" >> ~/.ashrc
 fi
 
 # add /etc/init.d/tet-functions to backup list
 if ! grep tet-functions /opt/.filetool.lst >/dev/null; then
+  echo "Adjusting backup list for persistency"
   echo "etc/init.d/tet-functions" >> /opt/.filetool.lst
 fi
 

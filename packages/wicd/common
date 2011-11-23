@@ -7,7 +7,13 @@ DESCRIPTION="Wired and wireless network manager for Linux."
 AUTHOR="---"
 SITE="http://wicd.sourceforge.net/"
 COPYING="GPL-2"
-MAINTAINERS="Arslan S."
+MAINTAINERS="bmarkus, Arslan S."
 COMMENTS="---"
-CHANGELOG="---"
-CURRENT="First Version for TCL 4.x"
+CHANGELOG="2009/11/21 First version by bmarkus
+		2010/01/20 Updated to 1.7.0
+		2010/01/24 Fixed missing WBAR icon
+		2010/01/24 External icon theme dependency removed
+		2010/01/25 Dropped HAL dependency
+		2010/02/06 Fixed DBUS initialization
+		2010/02/19 Killed bash, forced python2.6 by hiro"
+CURRENT="2011/11/23 Fix for Python 2.7 by Arslan S."

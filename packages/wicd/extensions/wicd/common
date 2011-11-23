@@ -13,4 +13,4 @@ COMMENTS="To start wicd daemon add to your boot script (/opt/bootlocal.sh):
 		  notify-python-2.7 for desktop notifications (a notification daemon needs to be running)
 
 		Please note that some wireless chip drivers require a firmware to work so please
-		make sure you have the correct firmware loaded. See firmware, firmware-iwlwifi and others"
+		make sure you have the correct firmware loaded. See firmware, firmware-iwlwifi and others."
