@@ -147,6 +147,8 @@ tetwww <package>
 }}}
 _Hint: You must specify the package name._
 
-*Important Note: This project is still under development and considered to be in alpha stage. So any suggestions or critiques are welcome.*
+*Important Note:* This project is still under development and it is considered to be in alpha stage. So we welcome all suggestions and critiques.
 
-*Sercan Arslan <arslanserc@gmail.com>*
+*Sercan Arslan*
+
+arslanserc@gmail.com
