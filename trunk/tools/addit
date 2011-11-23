@@ -139,7 +139,7 @@ this_main() {
 
         cat > "$PACKAGE_COMMON" << _EOF
 PACKAGE="$PACKAGE"
-VERSION="svn\${_DATE}"
+VERSION="svn${_DATE}"
 SOURCE="svn::"
 BUILD_DEPENDS=""
 
@@ -159,7 +159,7 @@ _EOF
 
         cat > "$PACKAGE_COMMON" << _EOF
 PACKAGE="${PACKAGE}"
-VERSION="git\${_DATE}"
+VERSION="git${_DATE}"
 SOURCE="git::"
 BUILD_DEPENDS=""
 

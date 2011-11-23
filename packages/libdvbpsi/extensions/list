@@ -1,3 +1,4 @@
+usr/local/include/dvbpsi/bat.h
 usr/local/include/dvbpsi/cat.h
 usr/local/include/dvbpsi/demux.h
 usr/local/include/dvbpsi/descriptor.h
@@ -18,6 +19,7 @@ usr/local/include/dvbpsi/dr_0e.h
 usr/local/include/dvbpsi/dr_0f.h
 usr/local/include/dvbpsi/dr_42.h
 usr/local/include/dvbpsi/dr_43.h
+usr/local/include/dvbpsi/dr_44.h
 usr/local/include/dvbpsi/dr_45.h
 usr/local/include/dvbpsi/dr_47.h
 usr/local/include/dvbpsi/dr_48.h
@@ -30,6 +32,7 @@ usr/local/include/dvbpsi/dr_58.h
 usr/local/include/dvbpsi/dr_59.h
 usr/local/include/dvbpsi/dr_5a.h
 usr/local/include/dvbpsi/dr_69.h
+usr/local/include/dvbpsi/dr_8a.h
 usr/local/include/dvbpsi/dvbpsi.h
 usr/local/include/dvbpsi/eit.h
 usr/local/include/dvbpsi/nit.h
@@ -37,10 +40,11 @@ usr/local/include/dvbpsi/pat.h
 usr/local/include/dvbpsi/pmt.h
 usr/local/include/dvbpsi/psi.h
 usr/local/include/dvbpsi/sdt.h
+usr/local/include/dvbpsi/sis.h
 usr/local/include/dvbpsi/tot.h
 usr/local/lib/libdvbpsi.a
 usr/local/lib/libdvbpsi.la
 usr/local/lib/libdvbpsi.so
-usr/local/lib/libdvbpsi.so.6
-usr/local/lib/libdvbpsi.so.6.0.0
+usr/local/lib/libdvbpsi.so.7
+usr/local/lib/libdvbpsi.so.7.0.0
 usr/local/lib/pkgconfig/libdvbpsi.pc
