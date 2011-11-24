@@ -34,7 +34,7 @@ fi
 [ -z "$DESTDIR" ] && DESTDIR="$HOME/.local"
 
 echo "-----------------------------------------------"
-echo "tc-ext-tools will be installed into the destinatin directory $DESTDIR"
+echo "tc-ext-tools will be installed into the destination directory $DESTDIR"
 echo "Please specify the variable DESTDIR if you want tc-ext-tools to be installed elsewhere"
 echo "-----------------------------------------------"
 
