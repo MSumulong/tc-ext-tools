@@ -39,14 +39,16 @@ _tet_common() {
    fi
 
    PACKAGE="$1"
-   if [ -f "$TET_PACKAGES_DATABASE/$PACKAGE" ]; then
-        shift
-        ARGS="$@"
-   elif [ -f common ]; then
+
+   [ -f "$TET_PACKAGES_DATABASE/$PACKAGE" ] && shift
+
+   if [ -f common ]; then
         . common
-        ARGS="$@"
+   elif [ -f "$TET_PACKAGES/$PACKAGE/common" ]; then
+        . "$TET_PACKAGES/$PACKAGE/common"
    fi
 
+   ARGS="$@"
 }
 
 is_integer() {
@@ -116,7 +118,7 @@ tetfind() {
    _tet_common "$@" || return 1
 
    if [ -z "$PACKAGE" ]; then
-        find "$TET_PACKAGES" -not -path *.svn*
+        find "$TET_PACKAGES" -not -path "*.svn*"
         return 0
    fi
 
@@ -133,7 +135,7 @@ tetfind() {
    fi
 
    cd "$PACKAGE_ROOT"
-   find $ARGS -not -path *.svn*
+   find $ARGS -not -path "*.svn*"
    cd - > /dev/null
 
 }
@@ -166,12 +168,12 @@ teted() {
    fi
 
    if [ -z "$ARGS" ]; then
-        FILES=`find $PACKAGE_ROOT -type f -a -not -path *.svn*`
+        FILES=`find $PACKAGE_ROOT -type f -a -not -path "*.svn*"`
    else
         unset FILES
         for FILE in $ARGS
         do
-           FILES="$(find $PACKAGE_ROOT -type f -a -not -path *.svn* -name $FILE) $FILES"
+           FILES="$(find $PACKAGE_ROOT -type f -a -not -path "*.svn*" -name $FILE) $FILES"
         done
    fi
 
@@ -288,8 +290,22 @@ tetinfo() {
         return 1
    fi
 
-   cat "$TET_PACKAGES_DATABASE/$PACKAGE"
+   cd "$TET_PACKAGES/$PACKAGE"
 
+   echo "------------------------------------------------------"
+   echo "The package $PACKAGE has the following properties"
+   echo "------------------------------------------------------"
+
+   unset EXTENSIONS
+   for EXTENSION in $(find extensions -type f -name install)
+   do
+       EXTENSIONS="$(basename ${EXTENSION%/install}) $EXTENSIONS"
+   done
+
+   cat common
+   echo "EXTENSIONS=$EXTENSIONS"
+
+   cd - > /dev/null
 }
 
 # tc-ext-tools www: open the package site in your web browser
@@ -324,7 +340,7 @@ tetwww() {
         return 1
    fi
 
-   $TET_WEB_BROWSER "$PACKAGE_SITE" &
+   $TET_WEB_BROWSER "$SITE" &
 
 }
 
