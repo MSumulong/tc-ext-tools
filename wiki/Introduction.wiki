@@ -65,7 +65,7 @@ buildit
 }}}
   * When creating a package for the first time you better advance step by step.
 {{{
-buildit --clean|--load|--download|--convert|--unpack|--patch|--configure|--compile|--install|--split|--strip|--create|--check|--generate|--package|--encrypt|--print|--help
+buildit --clean|--load|--download|--convert|--unpack|--patch|--configure|--compile|--install|--split|--strip|--create|--generate|--check|--package|--encrypt|--print|--help
 }}}
   * There is also custom build function support which can be used for defining custom build rules.
 {{{
@@ -83,7 +83,7 @@ buildit --print message
 
 === See other available packages for more. ===
 {{{
-svn checkout http://tc-ext-tools.googlecode.com/svn/tc-packages/
+svn checkout http://tc-ext-tools.googlecode.com/svn/packages/ tc-ext-tools/packages
 }}}
 
 == tc-ext-tools shell environment ==
@@ -147,7 +147,6 @@ tetwww <package>
 }}}
 _Hint: You must specify the package name._
 
-*Important Note:* This project is still under development and it is considered to be in alpha stage. So we welcome all suggestions and critiques.
 
 *Sercan Arslan*
 
