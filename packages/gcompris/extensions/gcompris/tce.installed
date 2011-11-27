@@ -1,7 +1,4 @@
 #!/bin/sh
 
-infodir=/usr/local/share/info
-file=gcompris.info
-
-install-info $infodir/$file $infodir/dir > /dev/null 2>&1
+[ `which install-info` ] && install-info /usr/local/share/info/gcompris.info /usr/local/share/info/dir > /dev/null 2>&1
 

@@ -35,8 +35,6 @@ build_install() {
 
    rm -f "$I_ROOT/usr/local/share/info/dir"
 
-   sed -i 's|^Categories=.*|Categories=Education;|' "$INSTALL_ROOT/usr/local/share/applications/gcompris.desktop" || return 1
-
 }
 
 ############################################################################ 

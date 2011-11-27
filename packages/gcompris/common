@@ -1,27 +1,9 @@
 PACKAGE="gcompris"
-VERSION="9.6"
-SOURCE="http://downloads.sourceforge.net/project/gcompris/gcompris/${VERSION}/gcompris-${VERSION}.tar.gz"
-BUILD_DEPENDS="texinfo
-texi2html
-gettext
-intltool
-gnuchess
-pyxml
-pygtk-2.7
-pygtk-2.7-dev
-librsvg
-librsvg-dev
-gtk2
-gtk2-dev
-libxcb
-libxcb-dev
-gnet
-gnet-dev
-pysqlite2
-gst-plugins-base
-gst-plugins-base-dev
-sqlite3
-sqlite3-dev"
+VERSION="11.09"
+SOURCE="http://garr.dl.sourceforge.net/project/gcompris/${VERSION}/gcompris-${VERSION}.tar.gz"
+BUILD_DEPENDS="texinfo texi2html gettext intltool gnuchess pyxml pygtk-2.7 pygtk-2.7-dev
+               librsvg librsvg-dev gtk2 gtk2-dev libxcb libxcb-dev gnet gnet-dev
+               pysqlite2 gst-plugins-base gst-plugins-base-dev sqlite3 sqlite3-dev"
 
 DESCRIPTION="Educational software suite comprising of numerous activities for children aged 2 to 10."
 AUTHOR="---"
@@ -29,5 +11,6 @@ SITE="http://gcompris.net/"
 COPYING="GPL-3"
 MAINTAINERS="Arslan S."
 COMMENTS="---"
-CHANGELOG="2010/12/26 First Version 9.5"
+CHANGELOG="2010/12/26 First Version 9.5
+		2011/03/02 Updated to 9.6"
 CURRENT="Updated to $VERSION"
