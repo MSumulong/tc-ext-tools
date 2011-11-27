@@ -40,7 +40,7 @@ cp config.sample .config
 == Hello World ==
   * It is easy to build a package
 {{{
-svn checkout http://tc-ext-tools.googlecode.com/svn/tc-packages/libdvbpsi
+svn checkout http://tc-ext-tools.googlecode.com/svn/packages/libdvbpsi
 cd libdvbpsi
 buildit
 }}}
