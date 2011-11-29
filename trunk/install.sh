@@ -47,7 +47,7 @@ DATADIR="$DESTDIR/share"
 install -m 755 tools/* "$BINDIR"
 
 install -D -m 644 common/config "$SYSCONFDIR/tet.conf"
-install -D -m 755 common/tet-functions "$SYSCONFDIR/init.d/tet-functions"
+install -D -m 755 tools/tet-functions "$SYSCONFDIR/init.d/tet-functions"
 install -D -m 644 common/build "$DATADIR/tet/build.sample"
 install -D -m 755 common/functions "$DATADIR/tet/functions.sh"
 

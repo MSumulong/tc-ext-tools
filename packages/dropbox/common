@@ -1,5 +1,5 @@
 PACKAGE="dropbox"
-VERSION="1.1.40"
+VERSION="1.2.48"
 SOURCE="https://dl-web.dropbox.com/u/17/dropbox-lnx.x86-${VERSION}.tar.gz"
 SOURCE_TOPDIR=".dropbox-dist"
 BUILD_DEPENDS=""
@@ -14,9 +14,7 @@ COMMENTS="Works best if you have a panel where you can right click
 		
 		First time started a GUI shows up that assist in first
 		connection with Dropbox.
-		Subsequent activations enters daemon mode silently.
-		
-		"
+		Subsequent activations enters daemon mode silently."
 CHANGELOG="2010/02/01 Initial Version 0.7.97 by helander
 		2010/08/04 Updated to 0.7.110 & added a wrapper and freedesktop autostart entry
 		2011/06/02 Updated to 1.1.35"
