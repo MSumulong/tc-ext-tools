@@ -11,11 +11,9 @@
 
 build_configure() {
 
-   rm -f cmake/modules/FindPythonLibs.cmake
-
    mkdir build
    cd build
-   cmake -DCMAKE_INSTALL_PREFIX=/usr/local -DCMAKE_BUILD_TYPE=Release .. || return 1
+   cmake -DCMAKE_INSTALL_PREFIX=/usr/local -DCMAKE_BUILD_TYPE=Release -DQT_MKSPECS_RELATIVE=mkspecs .. || return 1
 
 }
 
@@ -38,8 +36,6 @@ build_install() {
 
    cd build
    make DESTDIR="$I_ROOT" install || return 1
-
-   install -Dm644 ${S_ROOT}/cmake/modules/FindAvogadro.cmake ${INSTALL_ROOT}/usr/local/share/cmake-2.8/Modules/FindAvogadro.cmake || return 1
 
 }
 

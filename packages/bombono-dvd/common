@@ -1,27 +1,9 @@
 PACKAGE="bombono-dvd"
-VERSION="1.0.2"
+VERSION="1.2.0"
 SOURCE="http://downloads.sourceforge.net/bombono/bombono-dvd-${VERSION}.tar.bz2"
-BUILD_DEPENDS="scons
-gtk2
-gtk2-dev
-gtkmm
-gtkmm-dev
-boost
-boost-dev
-libxml++
-libxml++-dev
-libdvdread
-libdvdread-dev
-twolame
-twolame-dev
-ffmpeg-ffserver
-ffmpeg-ffserver-dev
-enca
-enca-dev
-mjpegtools
-mjpegtools-dev
-dvd+rwtools
-dvdauthor"
+BUILD_DEPENDS="scons gtk2 gtk2-dev gtkmm gtkmm-dev boost boost-dev libxml++ libxml++-dev
+               libdvdread libdvdread-dev twolame twolame-dev ffmpeg-ffserver ffmpeg-ffserver-dev
+               enca enca-dev mjpegtools mjpegtools-dev dvd+rwtools dvdauthor eglibc_apps"
 
 DESCRIPTION="Bombono DVD is a DVD authoring program for Linux."
 AUTHOR="Ilya Murav'jov"
@@ -29,5 +11,5 @@ SITE="http://www.bombono.org/"
 COPYING="GPL"
 MAINTAINERS="Arslan S."
 COMMENTS="---"
-CHANGELOG="2011/02/10 First Version"
+CHANGELOG="2011/02/10 First Version 1.0.0"
 CURRENT="Updated to $VERSION"

@@ -1,19 +1,8 @@
 PACKAGE="avogadro"
-VERSION="1.0.1"
+VERSION="1.0.3"
 SOURCE="http://downloads.sourceforge.net/avogadro/avogadro-${VERSION}.tar.bz2"
-BUILD_DEPENDS="cmake
-boost
-boost-dev
-eigen
-pyqt
-qt-4.x-base
-qt-4.x-opengl
-qt-4.x-dev
-glew
-python
-python-dev
-openbabel
-openbabel-dev"
+BUILD_DEPENDS="cmake boost boost-dev eigen pyqt qt-4.x-base qt-4.x-opengl qt-4.x-dev glew
+               python python-dev openbabel openbabel-dev Xorg-7.6-lib Xorg-7.6-dev"
 
 DESCRIPTION="An advanced molecule editor and visualizer."
 AUTHOR="---"
@@ -21,5 +10,5 @@ SITE="http://avogadro.openmolecules.net/wiki/Main_Page"
 COPYING="GPL-2"
 MAINTAINERS="Arslan S."
 COMMENTS="---"
-CHANGELOG="---"
-CURRENT="First Version"
+CHANGELOG="2011/01/22 First Version 1.0.1"
+CURRENT="Updated to $VERSION"

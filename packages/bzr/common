@@ -1,8 +1,7 @@
 PACKAGE="bzr"
-VERSION="2.3.4"
+VERSION="2.4.2"
 SOURCE="http://launchpad.net/bzr/${VERSION%.*}/${VERSION}/+download/bzr-${VERSION}.tar.gz"
-BUILD_DEPENDS="python
-python-dev"
+BUILD_DEPENDS="python python-dev"
 
 DESCRIPTION="Bazaar is a distributed revision control system."
 AUTHOR="The Bazaar Team"
