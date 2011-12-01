@@ -47,9 +47,8 @@ build_install() {
 
    python setup.py install --prefix=/usr/local --optimize=1 --root="$I_ROOT" || return 1
 
-   # Add custom rc.d script
+   # Add custom init.d script
    install -Dm755 "$P_SRC/wicd-daemon.sh" "$I_ROOT/usr/local/etc/init.d/wicd"
-   #install -Dm644 "$P_SRC/wicd.desktop" "$I_ROOT/usr/local/share/applications/wicd.desktop"
 
    cd build/lib/wicd
    for i in *.py; do

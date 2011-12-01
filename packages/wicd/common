@@ -16,4 +16,4 @@ CHANGELOG="2009/11/21 First version by bmarkus
 		2010/01/25 Dropped HAL dependency
 		2010/02/06 Fixed DBUS initialization
 		2010/02/19 Killed bash, forced python2.6 by hiro"
-CURRENT="2011/11/23 Fix for Python 2.7 by Arslan S."
+CURRENT="Fix for Python 2.7 by Arslan S."
