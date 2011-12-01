@@ -23,6 +23,11 @@
 #  Copyright (c) 2011 Sercan Arslan <arslanserc@gmail.com>
 #
 
+if [ `id -u` = 0 ]; then
+     echo "Do not run me as root!"
+     exit 1
+fi
+
 if [ ! -e .config ]; then
   echo "You need to create a user configuration file!"
   echo "See INSTALL for details."
@@ -47,9 +52,9 @@ DATADIR="$DESTDIR/share"
 install -m 755 tools/* "$BINDIR"
 
 install -D -m 644 common/config "$SYSCONFDIR/tet.conf"
-install -D -m 755 tools/tet-functions "$SYSCONFDIR/init.d/tet-functions"
 install -D -m 644 common/build "$DATADIR/tet/build.sample"
 install -D -m 755 common/functions "$DATADIR/tet/functions.sh"
+install -D -m 755 common/tet-functions "$SYSCONFDIR/init.d/tet-functions"
 
 sudo ln -sf "$SYSCONFDIR/init.d/tet-functions" /etc/init.d/tet-functions
 
@@ -66,5 +71,5 @@ if ! grep tet-functions /opt/.filetool.lst >/dev/null; then
   echo "etc/init.d/tet-functions" >> /opt/.filetool.lst
 fi
 
-install -D -m 644 -o "$USER" .config "$HOME/.config/tet.conf"
+install -D -m 644 .config "$HOME/.config/tet.conf"
 
