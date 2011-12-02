@@ -4,5 +4,5 @@ usr/local/include/dbusmenu-qt/dbusmenuexporter.h
 usr/local/include/dbusmenu-qt/dbusmenuimporter.h
 usr/local/lib/libdbusmenu-qt.so
 usr/local/lib/libdbusmenu-qt.so.2
-usr/local/lib/libdbusmenu-qt.so.2.5.0
+usr/local/lib/libdbusmenu-qt.so.2.6.0
 usr/local/lib/pkgconfig/dbusmenu-qt.pc

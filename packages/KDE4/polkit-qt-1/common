@@ -1,16 +1,8 @@
 PACKAGE="polkit-qt-1"
-VERSION="0.96.1"
+VERSION="0.99.0"
 SOURCE="ftp://ftp.kde.org/pub/kde/stable/apps/KDE4.x/admin/polkit-qt-1-${VERSION}.tar.bz2"
-BUILD_DEPENDS="cmake
-automoc4
-glib2
-glib2-dev
-polkit
-polkit-dev
-qt-4.x-base
-qt-4.x-dbus
-qt-4.x-xml
-qt-4.x-dev"
+BUILD_DEPENDS="cmake automoc4 glib2 glib2-dev polkit polkit-dev
+               qt-4.x-base qt-4.x-dbus qt-4.x-xml qt-4.x-dev"
 
 DESCRIPTION="PolicyKit Qt API."
 AUTHOR="Daniel Nicoletti, Dario Freddi, Jaroslav Reznik"
@@ -18,5 +10,6 @@ SITE="http://www.kde.org"
 COPYING="LGPL"
 MAINTAINERS="Arslan S."
 COMMENTS="---"
-CHANGELOG="2010/07/01 First Version 0.95.1"
+CHANGELOG="2010/07/01 First Version 0.95.1
+		2011/01/26 Updated to 0.96.1"
 CURRENT="Updated to $VERSION"

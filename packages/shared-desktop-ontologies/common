@@ -1,5 +1,5 @@
 PACKAGE="shared-desktop-ontologies"
-VERSION="0.6.0"
+VERSION="0.8.1"
 SOURCE="http://downloads.sourceforge.net/oscaf/shared-desktop-ontologies-${VERSION}.tar.bz2"
 BUILD_DEPENDS="cmake"
 
@@ -9,5 +9,6 @@ SITE="http://sourceforge.net/apps/trac/oscaf/"
 COPYING="BSD-style/CC-BY-SA 3.0/CC-BY 3.0"
 MAINTAINERS="Arslan S."
 COMMENTS="---"
-CHANGELOG="2010/07/11 First Version 0.5"
+CHANGELOG="2010/07/11 First Version 0.5
+		2011/03/01 Updated to 0.6.0"
 CURRENT="Updated to $VERSION"

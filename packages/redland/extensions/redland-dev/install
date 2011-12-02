@@ -1,8 +1,9 @@
 usr/local/bin/redland-config
 usr/local/include
 usr/local/lib/pkgconfig
-usr/local/lib/*.la
 usr/local/lib/*.a
-usr/local/lib/redland/*.la
+usr/local/lib/*.la
 usr/local/lib/redland/*.a
-
+usr/local/lib/redland/*.la
+usr/local/share/man/man1/redland-config.1
+usr/local/share/man/man3/redland.3

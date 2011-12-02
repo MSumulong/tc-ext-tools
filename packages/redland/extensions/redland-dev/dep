@@ -7,4 +7,6 @@ mysql.tcz
 mysql-dev.tcz
 postgresql.tcz
 postgresql-dev.tcz
+libiodbc.tcz
+libiodbc-dev.tcz
 redland.tcz

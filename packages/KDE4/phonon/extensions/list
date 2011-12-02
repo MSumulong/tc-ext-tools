@@ -156,10 +156,10 @@ usr/local/include/phonon/volumefaderinterface.h
 usr/local/include/phonon/volumeslider.h
 usr/local/lib/libphonon.so
 usr/local/lib/libphonon.so.4
-usr/local/lib/libphonon.so.4.5.0
+usr/local/lib/libphonon.so.4.5.1
 usr/local/lib/libphononexperimental.so
 usr/local/lib/libphononexperimental.so.4
-usr/local/lib/libphononexperimental.so.4.5.0
+usr/local/lib/libphononexperimental.so.4.5.1
 usr/local/lib/pkgconfig/phonon.pc
 usr/local/mkspecs/modules/qt_phonon.pri
 usr/local/share/dbus-1/interfaces/org.kde.Phonon.AudioOutput.xml

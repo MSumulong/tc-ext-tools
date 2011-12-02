@@ -1,16 +1,8 @@
 PACKAGE="phonon"
-VERSION="4.5.0"
-SOURCE="ftp://ftp.kde.org/pub/kde/stable/phonon/${VERSION}/src/phonon-${VERSION}.tar.bz2"
-BUILD_DEPENDS="cmake
-automoc4
-qt-4.x-base
-qt-4.x-dbus
-qt-4.x-extended
-qt-4.x-dev
-glib2
-glib2-dev
-Xorg-7.6-lib
-Xorg-7.6-dev"
+VERSION="4.5.1"
+SOURCE="ftp://ftp.kde.org/pub/kde/stable/phonon/${VERSION}/src/phonon-${VERSION}.tar.xz"
+BUILD_DEPENDS="cmake automoc4 qt-4.x-base qt-4.x-dbus qt-4.x-extended qt-4.x-dev
+               glib2 glib2-dev Xorg-7.6-lib Xorg-7.6-dev"
 
 DESCRIPTION="Phonon Multimedia Framework."
 AUTHOR="Matthias Kretz, Ricardo Villalba, Ian Monroe, Nokia Corporation"
@@ -20,5 +12,6 @@ MAINTAINERS="robc, Arslan S."
 COMMENTS="---"
 CHANGELOG="2010/01/07 Original 4.3.0 by robc
 		2010/07/01 Updated to 4.4.2 & added gstreamer backend by Arslan S.
-		2011/01/08 Updated to 4.4.3 by Arslan S."
+		2011/01/08 Updated to 4.4.3 by Arslan S.
+		2011/04/16 Updated to 4.5.0 by Arslan S."
 CURRENT="Updated to $VERSION by Arslan S."

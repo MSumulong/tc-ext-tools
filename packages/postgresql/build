@@ -6,7 +6,7 @@
 build_configure() {
 
   ./configure --prefix=/usr/local \
-     --with-libxml --with-openssl --with-perl --with-ldap \
+     --with-libxml --with-openssl --with-perl --without-ldap \
      --with-tcl --with-libxslt --with-krb5 --with-gssapi \
      --with-python --with-pam --enable-nls \
      --with-system-tzdata=/usr/local/share/zoneinfo \

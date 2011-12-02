@@ -1,24 +1,9 @@
 PACKAGE="openldap"
-VERSION="2.4.26"
+VERSION="2.4.28"
 SOURCE="ftp://ftp.openldap.org/pub/OpenLDAP/openldap-release/openldap-${VERSION}.tgz"
-BUILD_DEPENDS="
-openssl-1.0.0
-openssl-1.0.0-dev
-bsddb
-bsddb-dev
-cyrus-sasl
-cyrus-sasl-dev
-libgcrypt
-libgcrypt-dev
-gnutls
-gnutls-dev
-openslp
-openslp-dev
-libiodbc
-libiodbc-dev
-tcp_wrappers
-tcp_wrappers-dev
-groff"
+BUILD_DEPENDS="openssl-1.0.0 openssl-1.0.0-dev bsddb bsddb-dev cyrus-sasl cyrus-sasl-dev
+               libgcrypt libgcrypt-dev gnutls gnutls-dev openslp openslp-dev
+               libiodbc libiodbc-dev tcp_wrappers tcp_wrappers-dev groff"
 
 DESCRIPTION="Open LDAP (Lightweight Directory Access Protocol)."
 AUTHOR="OpenLDAP"
@@ -30,5 +15,6 @@ CHANGELOG="2010/02/21 Original 2.4.19
 		2010/07/03 Updated to 2.4.21 & renamed extensions & added init.d script for openldap-server
 		2010/11/09 Updated to 2.4.23
 		2011/02/20 Updated to 2.4.24
-		2011/04/22 Updated to 2.4.25"
+		2011/04/22 Updated to 2.4.25
+		2011/09/30 Updated to 2.4.26"
 CURRENT="Updated to $VERSION"
