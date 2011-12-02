@@ -1,0 +1,6 @@
+usr/local/bin
+x-usr/local/bin/redland-config
+usr/local/lib/*.so*
+usr/local/lib/redland/*.so
+usr/local/share/redland
+usr/local/share/man

@@ -1,0 +1,14 @@
+PACKAGE="redland"
+VERSION="1.0.14"
+SOURCE="http://download.librdf.org/source/redland-${VERSION}.tar.gz"
+BUILD_DEPENDS="raptor raptor-dev rasqal rasqal-dev bsddb bsddb-dev
+               sqlite3 sqlite3-dev mysql mysql-dev postgresql postgresql-dev"
+
+DESCRIPTION="RDF Application Framework."
+AUTHOR="---"
+SITE="http://librdf.org"
+COPYING="GPL/LGPL/Apache 2.0"
+MAINTAINERS="Arslan S."
+COMMENTS="---"
+CHANGELOG="2010/07/01 First Version 1.0.10"
+CURRENT="Updated to $VERSION"

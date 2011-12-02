@@ -3,7 +3,6 @@ usr/local/bin/ControlPanel
 usr/local/bin/PathFinder
 usr/local/bin/adie
 usr/local/bin/calculator
-usr/local/bin/fox-config
 usr/local/bin/reswrap
 usr/local/bin/shutterbug
 usr/local/include/fox-1.7/FX4Splitter.h
@@ -29,9 +28,11 @@ usr/local/include/fox-1.7/FXArray.h
 usr/local/include/fox-1.7/FXArrowButton.h
 usr/local/include/fox-1.7/FXAtomic.h
 usr/local/include/fox-1.7/FXAutoPtr.h
+usr/local/include/fox-1.7/FXAutoThreadStorageKey.h
 usr/local/include/fox-1.7/FXBMPIcon.h
 usr/local/include/fox-1.7/FXBMPImage.h
 usr/local/include/fox-1.7/FXBZFileStream.h
+usr/local/include/fox-1.7/FXBarrier.h
 usr/local/include/fox-1.7/FXBitmap.h
 usr/local/include/fox-1.7/FXBitmapFrame.h
 usr/local/include/fox-1.7/FXBitmapView.h
@@ -79,6 +80,8 @@ usr/local/include/fox-1.7/FXComplexd.h
 usr/local/include/fox-1.7/FXComplexf.h
 usr/local/include/fox-1.7/FXComposeContext.h
 usr/local/include/fox-1.7/FXComposite.h
+usr/local/include/fox-1.7/FXConcurrent.h
+usr/local/include/fox-1.7/FXCondition.h
 usr/local/include/fox-1.7/FXConsole.h
 usr/local/include/fox-1.7/FXCursor.h
 usr/local/include/fox-1.7/FXDC.h
@@ -140,6 +143,7 @@ usr/local/include/fox-1.7/FXGLTriangleMesh.h
 usr/local/include/fox-1.7/FXGLViewer.h
 usr/local/include/fox-1.7/FXGLVisual.h
 usr/local/include/fox-1.7/FXGZFileStream.h
+usr/local/include/fox-1.7/FXGauge.h
 usr/local/include/fox-1.7/FXGradientBar.h
 usr/local/include/fox-1.7/FXGroupBox.h
 usr/local/include/fox-1.7/FXHash.h
@@ -150,6 +154,7 @@ usr/local/include/fox-1.7/FXICOImage.h
 usr/local/include/fox-1.7/FXIFFIcon.h
 usr/local/include/fox-1.7/FXIFFImage.h
 usr/local/include/fox-1.7/FXIO.h
+usr/local/include/fox-1.7/FXIODevice.h
 usr/local/include/fox-1.7/FXIcon.h
 usr/local/include/fox-1.7/FXIconDict.h
 usr/local/include/fox-1.7/FXIconList.h
@@ -173,6 +178,8 @@ usr/local/include/fox-1.7/FXMDIButton.h
 usr/local/include/fox-1.7/FXMDIChild.h
 usr/local/include/fox-1.7/FXMDIClient.h
 usr/local/include/fox-1.7/FXMainWindow.h
+usr/local/include/fox-1.7/FXMat2d.h
+usr/local/include/fox-1.7/FXMat2f.h
 usr/local/include/fox-1.7/FXMat3d.h
 usr/local/include/fox-1.7/FXMat3f.h
 usr/local/include/fox-1.7/FXMat4d.h
@@ -192,6 +199,8 @@ usr/local/include/fox-1.7/FXMenuSeparator.h
 usr/local/include/fox-1.7/FXMenuTitle.h
 usr/local/include/fox-1.7/FXMessageBox.h
 usr/local/include/fox-1.7/FXMessageChannel.h
+usr/local/include/fox-1.7/FXMetaClass.h
+usr/local/include/fox-1.7/FXMutex.h
 usr/local/include/fox-1.7/FXObject.h
 usr/local/include/fox-1.7/FXObjectList.h
 usr/local/include/fox-1.7/FXOptionMenu.h
@@ -208,8 +217,11 @@ usr/local/include/fox-1.7/FXPipe.h
 usr/local/include/fox-1.7/FXPoint.h
 usr/local/include/fox-1.7/FXPopup.h
 usr/local/include/fox-1.7/FXPrintDialog.h
+usr/local/include/fox-1.7/FXProcess.h
 usr/local/include/fox-1.7/FXProgressBar.h
 usr/local/include/fox-1.7/FXProgressDialog.h
+usr/local/include/fox-1.7/FXPtrList.h
+usr/local/include/fox-1.7/FXPtrQueue.h
 usr/local/include/fox-1.7/FXQuatd.h
 usr/local/include/fox-1.7/FXQuatf.h
 usr/local/include/fox-1.7/FXRASIcon.h
@@ -220,6 +232,7 @@ usr/local/include/fox-1.7/FXRadioButton.h
 usr/local/include/fox-1.7/FXRangeSlider.h
 usr/local/include/fox-1.7/FXRanged.h
 usr/local/include/fox-1.7/FXRangef.h
+usr/local/include/fox-1.7/FXReadWriteLock.h
 usr/local/include/fox-1.7/FXRealSlider.h
 usr/local/include/fox-1.7/FXRealSpinner.h
 usr/local/include/fox-1.7/FXRecentFiles.h
@@ -232,11 +245,13 @@ usr/local/include/fox-1.7/FXRex.h
 usr/local/include/fox-1.7/FXRootWindow.h
 usr/local/include/fox-1.7/FXRuler.h
 usr/local/include/fox-1.7/FXRulerView.h
+usr/local/include/fox-1.7/FXRunnable.h
 usr/local/include/fox-1.7/FXScrollArea.h
 usr/local/include/fox-1.7/FXScrollBar.h
 usr/local/include/fox-1.7/FXScrollPane.h
 usr/local/include/fox-1.7/FXScrollWindow.h
 usr/local/include/fox-1.7/FXSearchDialog.h
+usr/local/include/fox-1.7/FXSemaphore.h
 usr/local/include/fox-1.7/FXSeparator.h
 usr/local/include/fox-1.7/FXSettings.h
 usr/local/include/fox-1.7/FXShell.h
@@ -246,6 +261,7 @@ usr/local/include/fox-1.7/FXSlider.h
 usr/local/include/fox-1.7/FXSocket.h
 usr/local/include/fox-1.7/FXSphered.h
 usr/local/include/fox-1.7/FXSpheref.h
+usr/local/include/fox-1.7/FXSpinLock.h
 usr/local/include/fox-1.7/FXSpinner.h
 usr/local/include/fox-1.7/FXSplashWindow.h
 usr/local/include/fox-1.7/FXSplitter.h
@@ -297,6 +313,7 @@ usr/local/include/fox-1.7/FXVerticalFrame.h
 usr/local/include/fox-1.7/FXVisual.h
 usr/local/include/fox-1.7/FXWindow.h
 usr/local/include/fox-1.7/FXWizard.h
+usr/local/include/fox-1.7/FXWorker.h
 usr/local/include/fox-1.7/FXXBMIcon.h
 usr/local/include/fox-1.7/FXXBMImage.h
 usr/local/include/fox-1.7/FXXPMIcon.h
@@ -312,7 +329,9 @@ usr/local/include/fox-1.7/chart/chartdefs.h
 usr/local/include/fox-1.7/fx.h
 usr/local/include/fox-1.7/fx3d.h
 usr/local/include/fox-1.7/fxascii.h
+usr/local/include/fox-1.7/fxcpuid.h
 usr/local/include/fox-1.7/fxdefs.h
+usr/local/include/fox-1.7/fxendian.h
 usr/local/include/fox-1.7/fxkeys.h
 usr/local/include/fox-1.7/fxunicode.h
 usr/local/include/fox-1.7/fxver.h
@@ -321,13 +340,13 @@ usr/local/lib/libCHART-1.7.a
 usr/local/lib/libCHART-1.7.la
 usr/local/lib/libCHART-1.7.so
 usr/local/lib/libCHART-1.7.so.0
-usr/local/lib/libCHART-1.7.so.0.0.21
+usr/local/lib/libCHART-1.7.so.0.0.30
 usr/local/lib/libFOX-1.7.a
 usr/local/lib/libFOX-1.7.la
 usr/local/lib/libFOX-1.7.so
 usr/local/lib/libFOX-1.7.so.0
-usr/local/lib/libFOX-1.7.so.0.0.21
-usr/local/lib/pkgconfig/fox.pc
+usr/local/lib/libFOX-1.7.so.0.0.30
+usr/local/lib/pkgconfig/fox17.pc
 usr/local/share/doc/fox-1.7/html/adie.html
 usr/local/share/doc/fox-1.7/html/app.html
 usr/local/share/doc/fox-1.7/html/art/bigpenguin.png
@@ -426,8 +445,6 @@ usr/local/share/doc/fox-1.7/html/screenshots/colordialog.png
 usr/local/share/doc/fox-1.7/html/screenshots/cometassay.jpg
 usr/local/share/doc/fox-1.7/html/screenshots/contact.gif
 usr/local/share/doc/fox-1.7/html/screenshots/dirdialog.png
-usr/local/share/doc/fox-1.7/html/screenshots/dlgedit1.png
-usr/local/share/doc/fox-1.7/html/screenshots/dlgedit2.png
 usr/local/share/doc/fox-1.7/html/screenshots/emso_screen.png
 usr/local/share/doc/fox-1.7/html/screenshots/emso_screen_small.jpg
 usr/local/share/doc/fox-1.7/html/screenshots/filedialog.png

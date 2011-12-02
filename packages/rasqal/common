@@ -1,0 +1,13 @@
+PACKAGE="rasqal"
+VERSION="0.9.28"
+SOURCE="http://download.librdf.org/source/rasqal-${VERSION}.tar.gz"
+BUILD_DEPENDS="raptor raptor-dev mpfr mpfr-dev"
+
+DESCRIPTION="RDF Query Library."
+AUTHOR="---"
+SITE="http://librdf.org/rasqal/"
+COPYING="GPL/LGPL"
+MAINTAINERS="Arslan S."
+COMMENTS="---"
+CHANGELOG="2010/07/01 First Version 0.9.19"
+CURRENT="Updated to $VERSION"

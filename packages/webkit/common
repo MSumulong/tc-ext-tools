@@ -6,7 +6,7 @@ BUILD_DEPENDS="gtk-doc gtk2 gtk2-dev Xorg-7.6-lib Xorg-7.6-dev libxcb libxcb-dev
                librsvg librsvg-dev icu icu-dev gobject-introspection gobject-introspection-dev"
 
 DESCRIPTION="WebKit/GTK+ is the GTK+ port of WebKit."
-AUTHOR="various"
+AUTHOR="---"
 SITE="http://webkitgtk.org/"
 COPYING="LGPL/BSD-like"
 MAINTAINERS="Arslan S."

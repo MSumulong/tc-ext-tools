@@ -1,0 +1,13 @@
+PACKAGE="raptor"
+VERSION="2.0.6"
+SOURCE="http://librdf.org/dist/source/raptor2-${VERSION}.tar.gz"
+BUILD_DEPENDS="libxml2 libxml2-dev curl curl-dev libxslt"
+
+DESCRIPTION="RDF Parser Library."
+AUTHOR="Dave Beckett, Dave Robillard, Lauri Aalto"
+SITE="http://librdf.org/raptor/"
+COPYING="GPL/LGPL"
+MAINTAINERS="Arslan S."
+COMMENTS="---"
+CHANGELOG="2010/06/30 First Version 1.4.21"
+CURRENT="Updated to $VERSION"

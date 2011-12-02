@@ -1,19 +1,13 @@
 PACKAGE="fox-1.7"
-VERSION="1.7.25"
-SOURCE="http://www.fox-toolkit.org/ftp/fox-${VERSION}.tar.gz"
-BUILD_DEPENDS="Xorg-7.6
-Xorg-7.6-dev
-fontconfig
-fontconfig-dev
-libxcb
-libxcb-dev"
+VERSION="1.7.30"
+SOURCE="ftp://ftp.fox-toolkit.org/pub/fox-${VERSION}.tar.gz"
+BUILD_DEPENDS="Xorg-7.6-lib Xorg-7.6-dev fontconfig fontconfig-dev libxcb libxcb-dev"
 
 DESCRIPTION="FOX is a C++ based Toolkit for developing Graphical User Interfaces easily and effectively."
 AUTHOR="Jeroen van der Zijp, Roland Schulz"
 SITE="http://www.fox-toolkit.org/"
 COPYING="LGPL-3"
 MAINTAINERS="Arslan S."
-COMMENTS="This is the development branch of FOX-Toolkit which will be FOX-1.8 Stable in the future.
-		"
+COMMENTS="This is the development branch of FOX-Toolkit which will be FOX-1.8 Stable in the future."
 CHANGELOG="---"
 CURRENT="First Version"
