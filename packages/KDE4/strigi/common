@@ -1,0 +1,16 @@
+PACKAGE="strigi"
+VERSION="0.7.6"
+SOURCE="ftp://ftp.archlinux.org/other/strigi/strigi-${VERSION}.tar.bz2"
+BUILD_DEPENDS="cmake bzip2-lib bzip2-dev libxml2 libxml2-dev exiv2 exiv2-dev boost boost-dev
+               qt-4.x-base qt-4.x-xml qt-4.x-dbus qt-4.x-dev libiconv libiconv-dev dbus dbus-dev"
+
+DESCRIPTION="Search Index Daemon."
+AUTHOR="---"
+SITE="http://www.vandenoever.info/software/strigi/"
+COPYING="LGPLv2+"
+MAINTAINERS="robc, Arslan S."
+COMMENTS="---"
+CHANGELOG="2010/01/07 Original by robc
+		2010/04/20 Updated to v0.7.2 by robc
+		2010/07/15 Rebuilt & added exiv2 support by Arslan S."
+CURRENT="Updated to $VERSION by Arslan S."
