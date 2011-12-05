@@ -1,0 +1,13 @@
+PACKAGE="exiv2"
+VERSION="0.22"
+SOURCE="http://www.exiv2.org/exiv2-${VERSION}.tar.gz"
+BUILD_DEPENDS="expat2 expat2-dev"
+
+DESCRIPTION="A C++ library and a command line utility to manage image metadata."
+AUTHOR="Andreas Huggel"
+SITE="http://www.exiv2.org/"
+COPYING="GPL-2"
+MAINTAINERS="Arslan S."
+COMMENTS="---"
+CHANGELOG="2010/04/05 First Version 0.19"
+CURRENT="Updated to $VERSION"
