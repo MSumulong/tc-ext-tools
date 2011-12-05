@@ -86,14 +86,14 @@ set_source() {
                PACKAGE_SOURCE_URL_TYPE="${SOURCE%%::*}"
           fi
 
-          if [ "${SOURCE##*->}" = "${SOURCE%->*}" ]; then
-               PACKAGE_SOURCE_NAME=""
-          else
+          if [ "${SOURCE##*->}" != "${SOURCE%->*}" ]; then
                PACKAGE_SOURCE_NAME="${SOURCE##*->}"
           fi
      fi
 
-     # try to determine the source name if it is not given
+     SOURCE="${SOURCE#*::}" ; SOURCE="${SOURCE%->*}"
+
+     # set the source name
      if [ -z "$PACKAGE_SOURCE_NAME" ]; then
           if [ "$PACKAGE_SOURCE_URL_TYPE" = "generic" ] || [ "$PACKAGE_SOURCE_URL_TYPE" = "custom" ]; then
                PACKAGE_SOURCE_NAME="${SOURCE##*/}"
@@ -101,9 +101,6 @@ set_source() {
                PACKAGE_SOURCE_NAME="${PACKAGE}-${VERSION}.tar.xz"
           fi
      fi
-
-     # set the source url
-     SOURCE="${SOURCE#*::}"; SOURCE="${SOURCE%->*}"
 
      # set the source type
      if [ "${PACKAGE_SOURCE_NAME%.tar.bz2}" != "$PACKAGE_SOURCE_NAME" ]; then
