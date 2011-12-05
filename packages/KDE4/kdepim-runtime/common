@@ -1,31 +1,17 @@
 PACKAGE="kdepim-runtime"
-VERSION="4.4.9"
-SOURCE="ftp://ftp.kde.org/pub/kde/stable/kdepim-${VERSION}/src/${PACKAGE}-${VERSION}.tar.bz2"
-BUILD_DEPENDS="cmake
-kdepimlibs
-kdepimlibs-dev
-strigi
-strigi-dev
-libxml2
-libxml2-dev
-libxslt
-akonadi
-akonadi-dev
-shared-desktop-ontologies
-qt-4.x-dev
-Xorg-7.6-lib
-Xorg-7.6-dev
-boost
-boost-dev
-libxml2-bin
-docbook_xsl"
+VERSION="4.7.3"
+SOURCE="ftp://ftp.kde.org/pub/kde/stable/${VERSION}/src/${PACKAGE}-${VERSION}.tar.bz2"
+BUILD_DEPENDS="cmake automoc4 kdepimlibs kdepimlibs-dev kdebase-runtime strigi strigi-dev
+               libxml2 libxml2-dev libxml2-bin akonadi akonadi-dev shared-desktop-ontologies
+               qt-4.x-dev Xorg-7.6-lib Xorg-7.6-dev boost boost-dev libxslt docbook_xsl"
 
-DESCRIPTION="KDE pim runtime."
+DESCRIPTION="KDE PIM Runtime Environment."
 AUTHOR="KDE development team"
 SITE="http://www.kde.org"
 COPYING="GPL/LGPL/FDL"
 MAINTAINERS="Arslan S."
 COMMENTS="---"
 CHANGELOG="2010/07/18 First Version 4.4.5
-		2010/10/09 Updated to 4.4.6"
+		2010/10/09 Updated to 4.4.6
+		2011/01/11 Updated to 4.4.9"
 CURRENT="Updated to $VERSION"

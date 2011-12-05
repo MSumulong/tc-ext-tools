@@ -1,42 +1,17 @@
 PACKAGE="kdegraphics"
-VERSION="4.5.5"
-SOURCE="ftp://ftp.kde.org/pub/kde/stable/${VERSION}/src/${PACKAGE}-${VERSION}.tar.bz2"
-BUILD_DEPENDS="cmake
-kdelibs
-kdelibs-dev
-kdebase-runtime
-poppler-qt4
-poppler-qt4-dev
-phonon
-phonon-dev
-libspectre
-libspectre-dev
-djvulibre
-djvulibre-dev
-phonon
-phonon-dev
-qca
-qca-dev
-graphics-libs-1
-graphics-libs-1-dev
-libxml2-dev
-libgphoto2
-qimageblitz
-qimageblitz-dev
-ebook-tools
-ebook-tools-dev
-exiv2
-exiv2-dev
-strigi
-strigi-dev
-shared-mime-info
-shared-desktop-ontologies
-sane-backends
-sane-backends-dev
-Xorg-7.6-lib
-Xorg-7.6-dev
-libxml2-bin
-docbook_xsl"
+VERSION="4.7.3"
+SOURCE="custom::"
+BUILD_DEPENDS="cmake automoc4 kdelibs kdelibs-dev kdebase-runtime poppler-qt4 poppler-qt4-dev
+               phonon phonon-dev libspectre libspectre-dev djvulibre djvulibre-dev
+               qca qca-dev graphics-libs-1 graphics-libs-1-dev libxml2 libxml2-dev
+               libxml2-bin gphoto2 qimageblitz qimageblitz-dev ebook-tools ebook-tools-dev
+               exiv2 exiv2-dev strigi strigi-dev shared-mime-info shared-desktop-ontologies
+               sane-backends sane-backends-dev Xorg-7.6-lib Xorg-7.6-dev libxslt docbook_xsl"
+
+MIRROR="ftp://ftp.kde.org/pub/kde/stable/${VERSION}/src/"
+MODULES="gwenview kamera kcolorchooser kgamma kolourpaint kruler ksaneplugin svgpart
+         ksnapshot mobipocket okular kdegraphics-strigi-analyzer kdegraphics-thumbnailers
+         libkdcraw libkipi libkexiv2 libksane"
 
 DESCRIPTION="KDE graphics oriented applications."
 AUTHOR="KDE development team"
@@ -45,5 +20,6 @@ COPYING="GPL/LGPL/FDL"
 MAINTAINERS="Arslan S."
 COMMENTS="---"
 CHANGELOG="2010/07/20 First Version 4.4.5
-		2010/10/09 Updated to 4.5.2"
+		2010/10/09 Updated to 4.5.2
+		2011/01/11 Updated to 4.5.5"
 CURRENT="Updated to $VERSION"

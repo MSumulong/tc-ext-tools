@@ -3,10 +3,10 @@ kdelibs
 kdepimlibs
 kdebase-runtime
 kdepim-runtime
+kdebase-apps
 kdegraphics
 kdebindings
 kdebase-workspace
-kdebase
 oxygen-icons
 
 # kde extra
@@ -21,8 +21,3 @@ kdeedu
 kdeplasma-addons
 kdenetwork
 
-# kde exclude
-kdelibs-experimental
-kdeadmin
-kdewebdev
-kdeaccessibility

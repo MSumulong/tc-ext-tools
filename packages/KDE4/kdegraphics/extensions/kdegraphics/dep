@@ -5,14 +5,13 @@ libspectre.tcz
 ebook-tools.tcz
 qca.tcz
 graphics-libs-1.tcz
-libgphoto2.tcz
 qimageblitz.tcz
 exiv2.tcz
 strigi.tcz
+gphoto2.tcz
 sane-backends.tcz
 phonon.tcz
 pcre.tcz
 shared-desktop-ontologies.tcz
 shared-mime-info.tcz
-oxygen-icon-theme.tcz
 

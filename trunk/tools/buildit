@@ -85,7 +85,8 @@ prepare_it() {
 }
 
 download_it() {
-   if [ -f "$PACKAGE_SOURCE_ORIG" -a -f "$PACKAGE_DOWNLOAD_STAMP" ] || [ -f "$PACKAGE_SOURCE_CONV" -a -f "$PACKAGE_CONVERT_STAMP" ]; then
+   if [ -f "$PACKAGE_SOURCE_ORIG" -a -f "$PACKAGE_DOWNLOAD_STAMP" ] || [ -f "$PACKAGE_SOURCE_CONV" -a -f "$PACKAGE_CONVERT_STAMP" ] ||
+      [ "$PACKAGE_SOURCE_URL_TYPE" = "custom" -a -f "$PACKAGE_DOWNLOAD_STAMP" ]; then
         echo "${WARNING_COLOR}The package ${WARNING_COLOR_H}$PACKAGE${WARNING_COLOR} source is already downloaded.${NORMAL}"
         exit 0
    fi

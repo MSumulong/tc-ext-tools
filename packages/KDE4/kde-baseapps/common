@@ -1,0 +1,18 @@
+PACKAGE="kde-baseapps"
+VERSION="4.7.3"
+SOURCE="ftp://ftp.kde.org/pub/kde/stable/${VERSION}/src/${PACKAGE}-${VERSION}.tar.bz2"
+BUILD_DEPENDS="cmake strigi strigi-dev libusb libusb-dev libpci libpci-dev phonon phonon-dev
+               glib2 glib2-dev libxml2 libxml2-dev libxml2-bin  qimageblitz qimageblitz-dev
+               samba3 Xorg-7.6-lib Xorg-7.6-dev libraw1394 libraw1394-dev qt-4.x-dev
+               shared-desktop-ontologies automoc4 kdelibs kdelibs-dev kdebase-runtime"
+
+DESCRIPTION="KDE base applications."
+AUTHOR="KDE development team"
+SITE="http://www.kde.org"
+COPYING="GPL/LGPL/FDL"
+MAINTAINERS="Arslan S."
+COMMENTS="---"
+CHANGELOG="2010/07/21 First Version 4.4.5
+		2010/10/30 Updated to 4.5.2
+		2011/01/14 Updated to 4.5.5"
+CURRENT="Updated to $VERSION"
