@@ -5,6 +5,8 @@ kdebase-runtime
 kdepim-runtime
 kdebase-apps
 kdegraphics
+konsole
+kate
 kdebindings
 kdebase-workspace
 oxygen-icons

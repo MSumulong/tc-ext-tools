@@ -24,12 +24,28 @@ build_unpack() {
 
 }
 
+build_preconf() {
+
+  cd $P_SRC_TMP
+  for MODULE in libkdcraw libkipi libkexiv2 libksane
+  do
+     cd ${MODULE}-${VERSION}
+     mkdir build
+     cd build
+     cmake -DCMAKE_INSTALL_PREFIX=/usr/local -DCMAKE_BUILD_TYPE=Release .. || return 1
+     make || return 1
+     sudo make install || return 1
+     cd ../..
+  done
+
+}
+
 build_configure() {
 
   for MODULE in $MODULES
   do
      cd ${MODULE}-${VERSION}
-     mkdir build
+     [ -d build ] || mkdir build
      cd build
      cmake -DCMAKE_INSTALL_PREFIX=/usr/local -DCMAKE_BUILD_TYPE=Release .. || return 1
      cd ../..
@@ -39,15 +55,25 @@ build_configure() {
 
 build_compile() {
 
-  cd build
-  make || return 1
+  for MODULE in $MODULES
+  do
+     cd ${MODULE}-${VERSION}
+     cd build
+     make || return 1
+     cd ../..
+  done
 
 }
 
 build_install() {
 
-  cd build
-  make DESTDIR="$INSTALL_ROOT" install || return 1
+  for MODULE in $MODULES
+  do
+     cd ${MODULE}-${VERSION}
+     cd build
+     make DESTDIR="$INSTALL_ROOT" install || return 1
+     cd ../..
+  done
 
 }
 
@@ -56,6 +82,7 @@ build_rules() {
   tet_load
   tet_download
   tet_unpack
+  tet_custom preconf
   tet_configure
   tet_compile
   tet_install

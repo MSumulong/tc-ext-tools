@@ -1,9 +1,9 @@
 PACKAGE="kdegraphics"
 VERSION="4.7.3"
 SOURCE="custom::"
-BUILD_DEPENDS="cmake automoc4 kdelibs kdelibs-dev kdebase-runtime poppler-qt4 poppler-qt4-dev
-               phonon phonon-dev libspectre libspectre-dev djvulibre djvulibre-dev
-               qca qca-dev graphics-libs-1 graphics-libs-1-dev libxml2 libxml2-dev
+BUILD_DEPENDS="cmake automoc4 kdelibs kdelibs-dev kdebase-runtime kde-baseapps qca qca-dev
+               poppler-qt4 poppler-qt4-dev phonon phonon-dev libspectre libspectre-dev
+               graphics-libs-1 graphics-libs-1-dev libxml2 libxml2-dev djvulibre djvulibre-dev
                libxml2-bin gphoto2 qimageblitz qimageblitz-dev ebook-tools ebook-tools-dev
                exiv2 exiv2-dev strigi strigi-dev shared-mime-info shared-desktop-ontologies
                sane-backends sane-backends-dev Xorg-7.6-lib Xorg-7.6-dev libxslt docbook_xsl"
