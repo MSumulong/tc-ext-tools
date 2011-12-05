@@ -2,8 +2,8 @@ PACKAGE="openldap"
 VERSION="2.4.28"
 SOURCE="ftp://ftp.openldap.org/pub/OpenLDAP/openldap-release/openldap-${VERSION}.tgz"
 BUILD_DEPENDS="openssl-1.0.0 openssl-1.0.0-dev bsddb bsddb-dev cyrus-sasl cyrus-sasl-dev
-               libgcrypt libgcrypt-dev gnutls gnutls-dev openslp openslp-dev
-               libiodbc libiodbc-dev tcp_wrappers tcp_wrappers-dev groff"
+               libgcrypt libgcrypt-dev openssl-1.0.0 openssl-1.0.0-dev openslp openslp-dev
+               libiodbc libiodbc-dev groff libiodbc libiodbc-dev"
 
 DESCRIPTION="Open LDAP (Lightweight Directory Access Protocol)."
 AUTHOR="OpenLDAP"

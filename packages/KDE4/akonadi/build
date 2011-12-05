@@ -20,7 +20,9 @@ build_compile() {
 build_install() {
 
    cd build
-   make DESTDIR="$INSTALL_ROOT" install || return 1
+   make DESTDIR="$I_ROOT" install || return 1
+
+   mv "$I_ROOT/usr/local/lib/qt4/plugins" "$I_ROOT/usr/local/plugins"
 
 }
 
@@ -35,7 +37,7 @@ build_rules() {
   tet_compile
   tet_install
   tet_split
-   tet_strip
+  tet_strip
   tet_create
   tet_generate
   tet_check

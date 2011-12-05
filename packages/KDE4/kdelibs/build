@@ -6,7 +6,8 @@ build_configure() {
 
    [ -d build ] || mkdir build
    cd build
-   cmake -DCMAKE_INSTALL_PREFIX=/usr/local -DCMAKE_BUILD_TYPE=Release -DKDE_DISTRIBUTION_TEXT="Tiny Core Linux" .. || return 1
+   cmake -DCMAKE_INSTALL_PREFIX=/usr/local -DCMAKE_BUILD_TYPE=Release \
+      -DKDE_DISTRIBUTION_TEXT="Tiny Core Linux" .. || return 1
 
 }
 
@@ -35,7 +36,7 @@ build_rules() {
   tet_compile
   tet_install
   tet_split
-   tet_strip
+  tet_strip
   tet_create
   tet_generate
   tet_check

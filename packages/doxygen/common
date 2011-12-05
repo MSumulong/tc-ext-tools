@@ -1,12 +1,7 @@
 PACKAGE="doxygen"
-VERSION="1.7.5"
+VERSION="1.7.6"
 SOURCE="ftp://ftp.stack.nl/pub/users/dimitri/${PACKAGE}-${VERSION}.src.tar.gz"
-BUILD_DEPENDS="coreutils
-qt-4.x-base
-qt-4.x-xml
-qt-4.x-dev
-graphviz
-eglibc_gconv"
+BUILD_DEPENDS="coreutils qt-4.x-base qt-4.x-xml qt-4.x-dev graphviz eglibc_gconv"
 
 DESCRIPTION="A documentation system for C++, C, Java, Objective-C, Python etc."
 AUTHOR="Dimitri van Heesch"
@@ -18,5 +13,6 @@ CHANGELOG="2009/10/16 Original 1.6.1
 		2010/04/29 Updated to 1.6.3 & splitted doxygen-gui(doxywizard)
 		2010/10/10 Updated to 1.7.2
 		2011/01/05 Updated to 1.7.3
-		2011/03/29 Updated to 1.7.4"
+		2011/03/29 Updated to 1.7.4
+		2011/08/18 Updated to 1.7.5"
 CURRENT="Updated to $VERSION"

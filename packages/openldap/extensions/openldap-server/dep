@@ -1,8 +1,7 @@
 openldap.tcz
-tcp_wrappers.tcz
-perl5.tcz
 libiodbc.tcz
 libltdl.tcz
 openslp.tcz
 bsddb.tcz
+perl5.tcz
 

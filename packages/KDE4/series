@@ -1,7 +1,7 @@
 # kde base
 kdelibs
-kdebase-runtime
 kdepimlibs
+kdebase-runtime
 kdepim-runtime
 kdegraphics
 kdebindings

@@ -1,0 +1,15 @@
+usr/local/bin/virtuoso-t
+usr/local/lib/libvirtuoso-t.a
+usr/local/lib/libvirtuoso-t.la
+usr/local/lib/virtodbc.a
+usr/local/lib/virtodbc.la
+usr/local/lib/virtodbc.so
+usr/local/lib/virtodbc_r.a
+usr/local/lib/virtodbc_r.la
+usr/local/lib/virtodbc_r.so
+usr/local/lib/virtodbcu.a
+usr/local/lib/virtodbcu.la
+usr/local/lib/virtodbcu.so
+usr/local/lib/virtodbcu_r.a
+usr/local/lib/virtodbcu_r.la
+usr/local/lib/virtodbcu_r.so

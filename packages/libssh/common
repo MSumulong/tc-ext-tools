@@ -1,0 +1,13 @@
+PACKAGE="libssh"
+VERSION="0.5.2"
+SOURCE="https://red.libssh.org/attachments/download/27/libssh-${VERSION}.tar.gz"
+BUILD_DEPENDS="cmake openssl-1.0.0 openssl-1.0.0-dev"
+
+DESCRIPTION="The SSH library."
+AUTHOR="---"
+SITE="http://www.libssh.org/"
+COPYING="LGPL/BSD"
+MAINTAINERS="Arslan S."
+COMMENTS="---"
+CHANGELOG="2010/07/02 First Version 0.4.4"
+CURRENT="Updated to $VERSION"

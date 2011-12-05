@@ -1,0 +1,14 @@
+usr/local/include/libssh/callbacks.h
+usr/local/include/libssh/legacy.h
+usr/local/include/libssh/libssh.h
+usr/local/include/libssh/server.h
+usr/local/include/libssh/sftp.h
+usr/local/include/libssh/ssh2.h
+usr/local/lib/libssh.so
+usr/local/lib/libssh.so.4
+usr/local/lib/libssh.so.4.2.2
+usr/local/lib/libssh_threads.so
+usr/local/lib/libssh_threads.so.4
+usr/local/lib/libssh_threads.so.4.2.2
+usr/local/lib/pkgconfig/libssh.pc
+usr/local/lib/pkgconfig/libssh_threads.pc

@@ -1,0 +1,13 @@
+PACKAGE="virtuoso"
+VERSION="6.1.4"
+SOURCE="http://downloads.sourceforge.net/virtuoso/virtuoso-opensource-${VERSION}.tar.gz"
+BUILD_DEPENDS="openssl-1.0.0 openssl-1.0.0-dev"
+
+DESCRIPTION="Virtuoso is a scalable cross-platform server that combines SQL/RDF/XML Data Management with Web Application Server and Web Services Platform functionality."
+AUTHOR="---"
+SITE="http://virtuoso.openlinksw.com/dataspace/dav/wiki/Main/"
+COPYING="GPL-2"
+MAINTAINERS="Arslan S."
+COMMENTS="This is a minimal build for KDE nepomuk."
+CHANGELOG="2010/07/17 First Version 6.1.2"
+CURRENT="Updated to $VERSION"

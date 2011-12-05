@@ -28,8 +28,8 @@ build_configure() {
 	--enable-local --enable-proctitle \
 	--enable-ipv6 \
 	--enable-spasswd \
-	--enable-wrappers \
-	--with-tls=gnutls \
+	--disable-wrappers \
+	--with-tls=openssl \
 	--with-odbc=iodbc \
 	--with-cyrus-sasl || return 1
 

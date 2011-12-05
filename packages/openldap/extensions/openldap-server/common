@@ -6,6 +6,4 @@ COMMENTS="OpenLDAP server can be started or stopped with the following command:
 
 		Add these to your backup list (/opt/.filetool.lst) if you modify the files
 			usr/local/etc/default/openldap-server
-			usr/local/etc/openldap/slapd.conf
-
-		"
+			usr/local/etc/openldap/slapd.conf"

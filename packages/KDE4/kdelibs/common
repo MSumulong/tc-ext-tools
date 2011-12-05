@@ -1,76 +1,13 @@
 PACKAGE="kdelibs"
-VERSION="4.5.5"
+VERSION="4.7.3"
 SOURCE="ftp://ftp.kde.org/pub/kde/stable/${VERSION}/src/kdelibs-${VERSION}.tar.bz2"
-BUILD_DEPENDS="cmake
-attr
-attr-dev
-acl
-acl-dev
-shared-desktop-ontologies
-phonon
-phonon-dev
-shared-mime-info
-libcups
-cups
-qt-4.x-base
-qt-4.x-xml
-qt-4.x-dbus
-qt-4.x-sql
-qt-4.x-script
-qt-4.x-designer
-qt-4.x-qt3support
-qt-4.x-webkit
-qt-4.x-extended
-qt-4.x-opengl
-qt-4.x-dev
-Xorg-7.6-lib
-Xorg-7.6-dev
-libasound
-alsa-dev
-openssl-1.0.0
-openssl-1.0.0-dev
-soprano
-soprano-dev
-libxml2
-libxml2-dev
-libxslt
-graphics-libs-1
-graphics-libs-1-dev
-libavahi
-avahi-2.7
-avahi-2.7-dev
-bzip2-lib
-bzip2-dev
-enchant
-enchant-dev
-jasper
-openexr
-openexr-dev
-pcre
-pcre-dev
-acl
-acl-dev
-automoc4
-sharutils
-qca
-qca-dev
-attica
-attica-dev
-xz
-xz-dev
-libdbusmenu-qt
-libdbusmenu-qt-dev
-polkit-qt-1
-polkit-qt-1-dev
-krb5
-strigi
-strigi-dev
-gamin
-gamin-dev
-docbook_xml_dtd
-docbook_xsl
-libxml2-bin
-eglibc_gconv"
+BUILD_DEPENDS="cmake attr attr-dev acl acl-dev shared-desktop-ontologies phonon phonon-dev shared-mime-info libcups cups-dev
+               qt-4.x-base qt-4.x-xml qt-4.x-dbus qt-4.x-sql qt-4.x-script qt-4.x-designer qt-4.x-qt3support
+               qt-4.x-webkit qt-4.x-extended qt-4.x-opengl qt-4.x-qml qt-4.x-dev Xorg-7.6-lib Xorg-7.6-dev
+               libasound alsa-dev openssl-1.0.0 openssl-1.0.0-dev soprano soprano-dev libxml2 libxml2-dev libxml2-bin libxslt
+               graphics-libs-1 graphics-libs-1-dev bzip2-lib bzip2-dev enchant enchant-dev jasper jasper-dev openexr openexr-dev pcre pcre-dev
+               automoc4 sharutils qca qca-dev attica attica-dev xz xz-dev libdbusmenu-qt libdbusmenu-qt-dev polkit-qt-1 polkit-qt-1-dev krb5
+               strigi strigi-dev gamin gamin-dev docbook_xml_dtd docbook_xsl eglibc_gconv"
 
 DESCRIPTION="KDE core libraries."
 AUTHOR="KDE development team"
@@ -80,5 +17,6 @@ MAINTAINERS="Arslan S."
 COMMENTS="---"
 CHANGELOG="2010/07/18 First Version 4.4.5
 		2010/07/27 Adjusted dep list
-		2010/11/09 Updated to 4.5.2"
+		2010/11/09 Updated to 4.5.2
+		2011/01/09 Updated to 4.5.5"
 CURRENT="Updated to $VERSION"
