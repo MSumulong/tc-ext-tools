@@ -1,0 +1,14 @@
+PACKAGE="konsole"
+VERSION="4.7.3"
+SOURCE="ftp://ftp.kde.org/pub/kde/stable/${VERSION}/src/${PACKAGE}-${VERSION}.tar.bz2"
+BUILD_DEPENDS="cmake automoc4 kdelibs kdelibs-dev kdebase-runtime Xorg-7.6-lib Xorg-7.6-dev
+               libxml2 libxml2-dev libxml2-bin docbook_xsl"
+
+DESCRIPTION="KDE command line application."
+AUTHOR="KDE development team"
+SITE="http://www.kde.org"
+COPYING="GPL/LGPL/FDL"
+MAINTAINERS="Arslan S."
+COMMENTS="---"
+CHANGELOG="---"
+CURRENT="First Version"

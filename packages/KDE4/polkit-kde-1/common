@@ -1,12 +1,7 @@
 PACKAGE="polkit-kde-1"
-VERSION="0.95.1"
-SOURCE="ftp://ftp.kde.org/pub/kde/stable/apps/KDE4.x/admin/polkit-kde-1-${VERSION}.tar.bz2"
-BUILD_DEPENDS="cmake
-automoc4
-polkit
-polkit-dev
-kdelibs
-kdelibs-dev"
+VERSION="0.99.0"
+SOURCE="ftp://ftp.kde.org/pub/kde/stable/apps/KDE4.x/admin/polkit-kde-agent-1-${VERSION}.tar.bz2"
+BUILD_DEPENDS="cmake automoc4 polkit polkit-dev kdelibs kdelibs-dev polkit-qt-1 polkit-qt-1-dev"
 
 DESCRIPTION="KDE PolicyKit Authentication Agent."
 AUTHOR="KDE development team"
@@ -14,5 +9,6 @@ SITE="http://www.kde.org"
 COPYING="GPL-2"
 MAINTAINERS="Arslan S."
 COMMENTS="---"
-CHANGELOG="2010/07/17 First Version 0.95.1"
-CURRENT="Rebuilt"
+CHANGELOG="2010/07/17 First Version 0.95.1
+		2011/01/26 Rebuilt"
+CURRENT="Updated to $VERSION"

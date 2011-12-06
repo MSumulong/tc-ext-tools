@@ -1,5 +1,5 @@
 PACKAGE="oxygen-icons"
-VERSION="4.5.5"
+VERSION="4.7.3"
 SOURCE="ftp://ftp.kde.org/pub/kde/stable/${VERSION}/src/${PACKAGE}-${VERSION}.tar.bz2"
 BUILD_DEPENDS="cmake"
 
@@ -10,6 +10,7 @@ COPYING="LGPL-3"
 MAINTAINERS="Arslan S."
 COMMENTS="---"
 CHANGELOG="2010/07/17 First Version 4.4.5
-		2010/10/30 Updated to 4.5.2"
+		2010/10/30 Updated to 4.5.2
+		2011/01/09 Updated to 4.5.5"
 CURRENT="Updated to $VERSION"
 

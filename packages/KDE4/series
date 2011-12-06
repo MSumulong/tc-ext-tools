@@ -8,8 +8,9 @@ kdegraphics
 konsole
 kate
 kdebindings
-kdebase-workspace
 oxygen-icons
+kdebase-workspace
+kde4-desktop
 
 # kde extra
 kdeartwork

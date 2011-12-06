@@ -4,7 +4,7 @@ SOURCE="ftp://ftp.kde.org/pub/kde/stable/${VERSION}/src/${PACKAGE}-${VERSION}.ta
 BUILD_DEPENDS="cmake strigi strigi-dev libusb libusb-dev libpci libpci-dev phonon phonon-dev
                glib2 glib2-dev libxml2 libxml2-dev libxml2-bin  qimageblitz qimageblitz-dev
                samba3 Xorg-7.6-lib Xorg-7.6-dev libraw1394 libraw1394-dev qt-4.x-dev
-               shared-desktop-ontologies automoc4 kdelibs kdelibs-dev kdebase-runtime"
+               shared-desktop-ontologies docbook_xsl automoc4 kdelibs kdelibs-dev kdebase-runtime"
 
 DESCRIPTION="KDE base applications."
 AUTHOR="KDE development team"

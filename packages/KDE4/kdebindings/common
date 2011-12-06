@@ -1,40 +1,13 @@
 PACKAGE="kdebindings"
-VERSION="4.5.5"
-SOURCE="ftp://ftp.kde.org/pub/kde/stable/${VERSION}/src/${PACKAGE}-${VERSION}.tar.bz2"
-BUILD_DEPENDS="cmake
-automoc4
-qt-4.x-dev
-Xorg-7.6-lib
-Xorg-7.6-dev
-kdelibs
-kdelibs-dev
-kdepimlibs
-kdepimlibs-dev
-kdebase-runtime
-kdepim-runtime
-kdegraphics
-kdegraphics-dev
-python
-python-dev
-sip
-pyqt
-mono
-mono-dev
-boost
-boost-dev
-qimageblitz
-qimageblitz-dev
-attica
-attica-dev
-akonadi
-akonadi-dev
-soprano
-soprano-dev
-phonon
-phonon-dev
-shared-desktop-ontologies
-libxml2-bin
-docbook_xsl"
+VERSION="4.7.3"
+SOURCE="custom::"
+BUILD_DEPENDS="cmake automoc4 Xorg-7.6-lib Xorg-7.6-dev kdelibs kdelibs-dev kdepimlibs kdepimlibs-dev
+               kdebase-runtime kdepim-runtime kdegraphics python python-dev sip pyqt boost boost-dev
+               qimageblitz qimageblitz-dev attica attica-dev akonadi akonadi-dev soprano soprano-dev
+               mono mono-dev phonon phonon-dev shared-desktop-ontologies libxml2-bin docbook_xsl"
+
+MIRROR="ftp://ftp.kde.org/pub/kde/stable/${VERSION}/src/"
+MODULES="pykde4 qyoto smokegen smokekde smokeqt"
 
 DESCRIPTION="KDE bindings."
 AUTHOR="KDE development team"
@@ -43,5 +16,6 @@ COPYING="GPL/LGPL"
 MAINTAINERS="Arslan S."
 COMMENTS="---"
 CHANGELOG="2010/07/20 First Version 4.4.5
-		2010/10/29 Updated to 4.5.2"
+		2010/10/29 Updated to 4.5.2
+		2011/01/12 Updated to 4.5.5"
 CURRENT="Updated to $VERSION"
