@@ -3,13 +3,14 @@ kdelibs
 kdepimlibs
 kdebase-runtime
 kdepim-runtime
-kdebase-apps
+kde-baseapps
 kdegraphics
 konsole
 kate
 kdebindings
 oxygen-icons
-kdebase-workspace
+kde-wallpapers
+kde-workspace
 kde4-desktop
 
 # kde extra

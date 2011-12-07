@@ -12,6 +12,10 @@ build_download() {
      wget -c "$MIRROR/${MODULE}-${VERSION}.tar.bz2" -O "modules/${MODULE}-${VERSION}.tar.bz2" || return 1
   done
 
+  rm -f "$PACKAGE_SOURCE_CONV"
+  cd modules
+  tar -cvJf "$PACKAGE_SOURCE_CONV" *
+
 }
 
 build_unpack() {

@@ -1,7 +1,6 @@
 gamin.tcz
 bzip2-lib.tcz
 dbus.tcz
-hal.tcz
 lm_sensors.tcz
 enchant.tcz
 graphics-libs-1.tcz
@@ -21,6 +20,7 @@ soprano.tcz
 strigi.tcz
 virtuoso.tcz
 akonadi.tcz
+mysql.tcz
 gpgme.tcz
 libical.tcz
 cyrus-sasl.tcz
@@ -28,7 +28,6 @@ openldap.tcz
 dejavu-fonts-ttf.tcz
 xdg-utils.tcz
 desktop-file-utils.tcz
-Xorg-7.6.tcz
 qt-4.x-designer.tcz
 qt-4.x-webkit.tcz
 gst-plugins-good.tcz
@@ -37,9 +36,12 @@ kdebase-runtime.tcz
 kdepimlibs.tcz
 kdepim-runtime.tcz
 kdegraphics.tcz
-kdebindings-python.tcz
-kdebase-workspace.tcz
-kdebase.tcz
+kdebindings.tcz
+python.tcz
+kde-workspace.tcz
+kde-baseapps.tcz
+konsole.tcz
+kate.tcz
 shared-mime-info.tcz
 hicolor-icon-theme.tcz
 oxygen-icon-theme.tcz

@@ -24,17 +24,13 @@ build_install() {
   cd build
   make DESTDIR="$INSTALL_ROOT" install
 
-  sed -e 's/#HaltCmd=/HaltCmd=\/sbin\/poweroff/g' -i "$INSTALL_ROOT/usr/local/share/config/kdm/kdmrc" || return 1
-
-  install -m 755 -d "$INSTALL_ROOT/usr/local/etc/init.d"
-  install -m 755 "$PACKAGE_SRC/kdm.sh" "$INSTALL_ROOT/usr/local/etc/init.d/kdm"
+  install -Dm 755 "$PACKAGE_SRC/kdm.sh" "$INSTALL_ROOT/usr/local/etc/init.d/kdm"
+  install -Dm 755 "$PACKAGE_SRC/kdmrc" "$INSTALL_ROOT/usr/local/share/config/kdm/kdmrc"
 
   install -m 755 -d "$INSTALL_ROOT/usr/local/etc/pam.d"
   install -m 644 "$PACKAGE_SRC/kde.pam" "$INSTALL_ROOT/usr/local/etc/pam.d/kde"
   install -m 644 "$PACKAGE_SRC/kde-np.pam" "$INSTALL_ROOT/usr/local/etc/pam.d/kde-np"
   install -m 644 "$PACKAGE_SRC/kscreensaver.pam" "$INSTALL_ROOT/usr/local/etc/pam.d/kscreensaver"
-
-  install -Dm 755 "$PACKAGE_SRC/kdmrc" "$INSTALL_ROOT/usr/local/share/config/kdm/kdmrc"
 
 }
 
@@ -49,7 +45,7 @@ build_rules() {
   tet_compile
   tet_install
   tet_split
-   tet_strip
+  tet_strip
   tet_create
   tet_generate
   tet_check

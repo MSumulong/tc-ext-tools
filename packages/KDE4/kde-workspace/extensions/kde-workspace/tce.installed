@@ -1,0 +1,10 @@
+#!/bin/sh
+
+getent group kdm >/dev/null 2>&1 || addgroup -g 135 kdm &>/dev/null
+getent passwd kdm >/dev/null 2>&1 || adduser -u 135 -g kdm -s /bin/false &>/dev/null
+
+mkdir -p /var/lib/kdm >/dev/null 2>&1
+chown -R 135:135 /var/lib/kdm &>/dev/null
+
+[ -d /usr/local/share/config/kdm/sessions ] || mkdir -p /usr/local/share/config/kdm/sessions
+

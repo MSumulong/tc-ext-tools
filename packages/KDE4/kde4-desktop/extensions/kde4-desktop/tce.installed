@@ -7,7 +7,6 @@ this_main() {
 [ $(which gtk-update-icon-cache) ] && gtk-update-icon-cache -q -f -t /usr/local/share/icons/hicolor
 
 [ -L /usr/local/share/config/kdm/kdmrc ] && cp -Lf /usr/local/share/config/kdm/kdmrc /usr/local/share/config/kdm/kdmrc
-[ -d /var/lib/kdm ] || mkdir -p /var/lib/kdm
 
 /usr/local/etc/init.d/dbus status
 if [ "$?" -gt 0 ]; then
@@ -16,9 +15,11 @@ else
     /usr/local/etc/init.d/dbus restart
 fi
 
-/usr/local/etc/init.d/haldaemon status
-if [ "$?" -gt 0 ]; then
-    /usr/local/etc/init.d/haldaemon start
+if [ -e /usr/local/tce.installed/hal ]; then
+     /usr/local/etc/init.d/haldaemon status
+     if [ "$?" -gt 0 ]; then
+          /usr/local/etc/init.d/haldaemon start
+     fi
 fi
 
 #echo "start-kde4" > /etc/sysconfig/desktop

@@ -1,12 +1,7 @@
 PACKAGE="libdc1394"
-VERSION="2.1.2"
+VERSION="2.1.3"
 SOURCE="http://downloads.sourceforge.net/sourceforge/libdc1394/libdc1394-${VERSION}.tar.gz"
-BUILD_DEPENDS="libraw1394
-libraw1394-dev
-libusb
-libusb-dev
-Xorg-7.6-lib
-Xorg-7.6-dev"
+BUILD_DEPENDS="libraw1394 libraw1394-dev libusb libusb-dev Xorg-7.6-lib Xorg-7.6-dev"
 
 DESCRIPTION="High level API for IEEE1394 digital camera."
 AUTHOR="---"
@@ -14,5 +9,5 @@ SITE="http://sourceforge.net/projects/libdc1394/"
 COPYING="LGPL"
 MAINTAINERS="Arslan S."
 COMMENTS="---"
-CHANGELOG="---"
-CURRENT="First Version"
+CHANGELOG="2010/09/02 First Version 2.1.2"
+CURRENT="Updated to $VERSION"

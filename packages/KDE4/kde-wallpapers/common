@@ -1,0 +1,13 @@
+PACKAGE="kde-wallpapers"
+VERSION="4.7.3"
+SOURCE="ftp://ftp.kde.org/pub/kde/stable/${VERSION}/src/${PACKAGE}-${VERSION}.tar.bz2"
+BUILD_DEPENDS="cmake"
+
+DESCRIPTION="KDE Desktop Wallpapers"
+AUTHOR="KDE development team"
+SITE="http://www.kde.org"
+COPYING="GPL/LGPL/FDL"
+MAINTAINERS="Arslan S."
+COMMENTS="---"
+CHANGELOG="---"
+CURRENT="First Version 4.7.3"

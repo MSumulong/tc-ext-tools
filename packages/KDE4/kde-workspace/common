@@ -1,0 +1,22 @@
+PACKAGE="kde-workspace"
+VERSION="4.7.3"
+SOURCE="ftp://ftp.kde.org/pub/kde/stable/${VERSION}/src/${PACKAGE}-${VERSION}.tar.bz2"
+BUILD_DEPENDS="cmake automoc4 kdelibs kdelibs-dev kdepimlibs kdepimlibs-dev akonadi akonadi-dev shared-desktop-ontologies
+               boost boost-dev ConsoleKit ConsoleKit-dev NetworkManager NetworkManager-dev polkit-kde-1
+               Linux-PAM Linux-PAM-dev qimageblitz qimageblitz-dev lm_sensors lm_sensors-dev strigi strigi-dev
+               libusb libusb-dev Xorg-7.6-lib Xorg-7.6-dev fontconfig fontconfig-dev qedje qedje-dev
+               libxklavier libxklavier-dev google-gadgets google-gadgets-qt google-gadgets-dev
+               python python-dev pyqt kdebindings libdbusmenu-qt libdbusmenu-qt-dev
+               libraw1394 libraw1394-dev libqalculate libqalculate-dev docbook_xsl libxml2-bin"
+
+DESCRIPTION="KDE base workspace."
+AUTHOR="KDE development team"
+SITE="http://www.kde.org"
+COPYING="GPL/LGPL/FDL"
+MAINTAINERS="Arslan S."
+COMMENTS="---"
+CHANGELOG="2010/07/20 First Version 4.4.5
+		2010/11/02 Updated to 4.5.2
+		2011/01/14 Updated to 4.5.5
+		2011/03/13 Fixed kdmrc"
+CURRENT="Updated to $VERSION"

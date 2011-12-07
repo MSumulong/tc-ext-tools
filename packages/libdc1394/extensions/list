@@ -1,5 +1,4 @@
 usr/local/bin/dc1394_reset_bus
-usr/local/bin/dc1394_vloopback
 usr/local/include/dc1394/camera.h
 usr/local/include/dc1394/capture.h
 usr/local/include/dc1394/control.h
@@ -22,7 +21,7 @@ usr/local/lib/libdc1394.a
 usr/local/lib/libdc1394.la
 usr/local/lib/libdc1394.so
 usr/local/lib/libdc1394.so.22
-usr/local/lib/libdc1394.so.22.1.4
+usr/local/lib/libdc1394.so.22.1.5
 usr/local/lib/pkgconfig/libdc1394-2.pc
 usr/local/share/man/man1/dc1394_multiview.1
 usr/local/share/man/man1/dc1394_reset_bus.1

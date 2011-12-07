@@ -1,5 +1,5 @@
 PACKAGE="kde4-desktop"
-VERSION="4.5.5"
+VERSION="4.7.3"
 SOURCE=""
 BUILD_DEPENDS=""
 
@@ -8,11 +8,9 @@ AUTHOR="Sercan Arslan"
 SITE="<arslanserc@gmail.com>"
 COPYING="GPL"
 MAINTAINERS="Arslan S."
-COMMENTS="Minimum System Requirements
+COMMENTS="Minimum System Requirements:
 			-Pentium 4 CPU
 			-512MB RAM + Swap
-
-		Total number of dependencies is ~ 180
 
 		Installation
 		-----------------------------------------
@@ -50,15 +48,14 @@ COMMENTS="Minimum System Requirements
 		If you wish to reboot or poweroff your pc with KDM "Restart" & "Shutdown" then you have to backup your data manually (filetool.sh backup) before exiting.
 		Use the Exit desktop widget If you want to exit with backup.
 
-		Optional KDE packages to extend KDE desktop: network-manager-kde, kdeartwork, kdemultimedia, kdepim, kdenetwork, kdeplasma-addons, kdegames, kdetoys, kdeedu, ...
+		Optional KDE packages to extend KDE desktop: kde-wallpapers network-manager-kde, kdeartwork, kdemultimedia, kdepim, kdenetwork, kdeplasma-addons, kdegames, kdetoys, kdeedu, ...
 		KDE Applications: k3b, kdesvn, ktorrent, ...
-		Other : samba3, avahi, gstreamer plugins, acpid, wicd, cpufreqd ...
+		Other : samba3, gstreamer plugins, acpid, wicd, cpufreqd ...
 		
-		ALSA is recommended for sound.
-
-		"
+		ALSA is recommended for sound."
 CHANGELOG="2010/07/21 First Version 4.4.5
 		2010/07/27 Updated
 		2010/10/31 Updated to 4.5.2
-		2011/01/19 Updated to 4.5.5"
-CURRENT="Fixed kdmrc"
+		2011/01/19 Updated to 4.5.5
+		2011/03/13 Fixed kdmrc"
+CURRENT="Updated to $VERSION"
