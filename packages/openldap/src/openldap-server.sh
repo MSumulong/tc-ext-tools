@@ -8,13 +8,12 @@
 # Kill me on all errors
 set -e
 
-EXTENSION=$(basename $0)
 SERVICE="OpenLDAP Server"
 SLAPD=/usr/local/libexec/slapd
 
 # source default configuration
-if [ -f "/usr/local/etc/default/${EXTENSION}" ]; then
-	. /usr/local/etc/default/${EXTENSION}
+if [ -f "/usr/local/etc/default/openldap-server" ]; then
+	. /usr/local/etc/default/openldap-server
 fi
 
 # Set the correct config option according to the configuration backend.
@@ -44,7 +43,7 @@ fi
 # Check whether we were configured to not start the services.
 check_for_no_start() {
 	if [ -n "$SLAPD_NO_START" ]; then
-		echo 'Not starting slapd: SLAPD_NO_START set in /usr/local/etc/default/${EXTENSION}' >&2
+		echo 'Not starting slapd: SLAPD_NO_START set in /usr/local/etc/default/openldap-server' >&2
 		exit 0
 	fi
 }

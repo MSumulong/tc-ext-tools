@@ -2,7 +2,7 @@
 # tc-ext-tools build functions: configure, compile, install, rules
 #
 
-export LIBS="-ldb -lgnutls -lgcrypt -lgpg-error"
+export LIBS="-ldb -lgcrypt -lgpg-error"
 
 # Configure
 build_configure() {
