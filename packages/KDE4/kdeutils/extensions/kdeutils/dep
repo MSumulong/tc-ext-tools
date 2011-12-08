@@ -1,9 +1,6 @@
-kdelibs.tcz
 kdebase-runtime.tcz
-kdepimlibs.tcz
-kdepim-runtime.tcz
-kdebase-workspace.tcz
-kdebindings-python.tcz
+kdebindings.tcz
+python.tcz
 qimageblitz.tcz
 qca.tcz
 libzip.tcz

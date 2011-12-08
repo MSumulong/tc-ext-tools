@@ -1,41 +1,10 @@
 PACKAGE="kdemultimedia"
-VERSION="4.5.5"
+VERSION="4.7.3"
 SOURCE="ftp://ftp.kde.org/pub/kde/stable/${VERSION}/src/kdemultimedia-${VERSION}.tar.bz2"
-BUILD_DEPENDS="cmake
-automoc4
-kdelibs
-kdelibs-dev
-kdebase-runtime
-phonon
-phonon-dev
-libasound
-alsa-dev
-cdparanoia
-cdparanoia-dev
-flac
-flac-dev
-gstreamer
-gstreamer-dev
-gst-plugins-base
-gst-plugins-base-dev
-libogg
-libogg-dev
-libvorbis
-libvorbis-dev
-taglib
-taglib-dev
-libtheora
-libtheora-dev
-libmusicbrainz
-libmusicbrainz-dev
-libtunepimp
-libtunepimp-dev
-libxml2-bin
-docbook_xsl
-pulseaudio
-pulseaudio-dev
-ffmpeg-ffserver
-ffmpeg-ffserver-dev"
+BUILD_DEPENDS="cmake automoc4 kdelibs kdelibs-dev kdebase-runtime phonon phonon-dev libasound alsa-dev
+               cdparanoia cdparanoia-dev flac flac-dev gstreamer gstreamer-dev gst-plugins-base gst-plugins-base-dev
+               libogg libogg-dev libvorbis libvorbis-dev taglib taglib-dev libtheora libtheora-dev
+               libmusicbrainz3 libmusicbrainz3-dev libtunepimp libtunepimp-dev libxml2-bin docbook_xsl"
 
 DESCRIPTION="KDE multimedia applications and libraries."
 AUTHOR="KDE development team"
@@ -44,5 +13,6 @@ COPYING="GPL/LGPL/FDL"
 MAINTAINERS="Arslan S."
 COMMENTS="---"
 CHANGELOG="2010/07/27 First Version 4.4.5
-		2010/11/02 Updated to 4.5.2"
+		2010/11/02 Updated to 4.5.2
+		2011/01/20 Updated to 4.5.5"
 CURRENT="Updated to $VERSION"

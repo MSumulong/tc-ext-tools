@@ -1,7 +1,4 @@
-kdelibs.tcz
 kdebase-runtime.tcz
-kdebase.tcz
-kdebase-workspace.tcz
 boost.tcz
 speex.tcz
 qca-ossl.tcz
@@ -16,3 +13,4 @@ libgadu.tcz
 libmsn.tcz
 kwebkitpart.tcz
 libvncserver.tcz
+jasper.tcz

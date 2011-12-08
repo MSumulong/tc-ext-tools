@@ -1,0 +1,13 @@
+PACKAGE="libmusicbrainz3"
+VERSION="3.0.3"
+SOURCE="ftp://ftp.musicbrainz.org/pub/musicbrainz/libmusicbrainz-${VERSION}.tar.gz"
+BUILD_DEPENDS="cmake neon neon-dev"
+
+DESCRIPTION="A Library That Provides Access to the MusicBrainz Server."
+AUTHOR="---"
+SITE="http://musicbrainz.org/"
+COPYING="LGPL"
+MAINTAINERS="Arslan S."
+COMMENTS="---"
+CHANGELOG="---"
+CURRENT="First Version"

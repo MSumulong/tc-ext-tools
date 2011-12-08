@@ -1,5 +1,5 @@
 PACKAGE="libmsn"
-VERSION="4.2"
+VERSION="4.2.1"
 SOURCE="http://downloads.sourceforge.net/libmsn/libmsn-${VERSION}.tar.bz2"
 BUILD_DEPENDS="cmake openssl-1.0.0 openssl-1.0.0-dev"
 
@@ -9,5 +9,6 @@ SITE="http://sourceforge.net/projects/libmsn/"
 COPYING="GPL-2"
 MAINTAINERS="Arslan S."
 COMMENTS="---"
-CHANGELOG="2011/01/22 First Version 4.1"
+CHANGELOG="2011/01/22 First Version 4.1
+		2011/11/12 Updated to 4.2"
 CURRENT="Updated to $VERSION"

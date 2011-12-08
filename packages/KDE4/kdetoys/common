@@ -1,22 +1,9 @@
 PACKAGE="kdetoys"
-VERSION="4.5.5"
+VERSION="4.7.3"
 SOURCE="ftp://ftp.kde.org/pub/kde/stable/${VERSION}/src/${PACKAGE}-${VERSION}.tar.bz2"
-BUILD_DEPENDS="cmake
-automoc4
-kdelibs
-kdelibs-dev
-kdebase-workspace
-kdebase-workspace-dev
-phonon
-phonon-dev
-strigi
-strigi-dev
-qimageblitz
-qimageblitz-dev
-Xorg-7.6-lib
-Xorg-7.6-dev
-libxml2-bin
-docbook_xsl"
+BUILD_DEPENDS="cmake automoc4 kdelibs kdelibs-dev kde-workspace phonon phonon-dev
+               strigi strigi-dev qimageblitz qimageblitz-dev Xorg-7.6-lib Xorg-7.6-dev
+               libxml2-bin docbook_xsl libxslt"
 
 DESCRIPTION="KDE desktop toys."
 AUTHOR="KDE development team"
@@ -24,5 +11,6 @@ SITE="http://www.kde.org"
 COPYING="GPL/LGPL/FDL"
 MAINTAINERS="Arslan S."
 COMMENTS="---"
-CHANGELOG="2010/11/03 First Version 4.5.2"
+CHANGELOG="2010/11/03 First Version 4.5.2
+		2011/01/21 Updated to 4.5.5"
 CURRENT="Updated to $VERSION"

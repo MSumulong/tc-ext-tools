@@ -1,33 +1,9 @@
 PACKAGE="kdeplasma-addons"
-VERSION="4.5.5"
+VERSION="4.7.3"
 SOURCE="ftp://ftp.kde.org/pub/kde/stable/${VERSION}/src/${PACKAGE}-${VERSION}.tar.bz2"
-BUILD_DEPENDS="cmake
-automoc4
-libxml2-bin
-docbook_xsl
-kdelibs
-kdelibs-dev
-kdepimlibs
-kdepimlibs-dev
-kdebase-workspace
-kdebase-workspace-dev
-kdegraphics
-kdegraphics-dev
-Xorg-7.6-lib
-Xorg-7.6-dev
-eigen
-qca
-qca-dev
-attica
-attica-dev
-qimageblitz
-qimageblitz-dev
-kdeedu
-kdeedu-dev
-libqalculate
-libqalculate-dev
-boost
-boost-dev"
+BUILD_DEPENDS="cmake automoc4 libxml2-bin docbook_xsl kdelibs kdelibs-dev kdepimlibs kdepimlibs-dev
+               kde-workspace kdegraphics Xorg-7.6-lib Xorg-7.6-dev eigen qca qca-dev attica attica-dev
+               qimageblitz qimageblitz-dev libqalculate libqalculate-dev boost boost-dev"
 
 DESCRIPTION="KDE plasma addons."
 AUTHOR="KDE development team"
@@ -35,5 +11,6 @@ SITE="http://www.kde.org"
 COPYING="GPL/LGPL/FDL"
 MAINTAINERS="Arslan S."
 COMMENTS="---"
-CHANGELOG="2010/11/08 First Version 4.5.2"
+CHANGELOG="2010/11/08 First Version 4.5.2
+		2011/01/23 Updated to 4.5.5"
 CURRENT="Updated to $VERSION"

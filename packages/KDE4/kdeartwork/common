@@ -1,18 +1,8 @@
 PACKAGE="kdeartwork"
-VERSION="4.5.5"
+VERSION="4.7.3"
 SOURCE="ftp://ftp.kde.org/pub/kde/stable/${VERSION}/src/${PACKAGE}-${VERSION}.tar.bz2"
-BUILD_DEPENDS="cmake
-automoc4
-kdebase-workspace
-kdebase-workspace-dev
-kdegraphics
-kdegraphics-dev
-eigen
-strigi
-strigi-dev
-qt-4.x-base
-qt-4.x-opengl
-qt-4.x-dev"
+BUILD_DEPENDS="cmake automoc4 kdelibs kdelibs-dev kde-workspace kdegraphics eigen strigi strigi-dev
+               Xorg-7.6-lib Xorg-7.6-dev qt-4.x-base qt-4.x-opengl qt-4.x-dev"
 
 DESCRIPTION="KDE themes, screensavers, sounds, styles, and wallpapers."
 AUTHOR="KDE development team"
@@ -21,5 +11,6 @@ COPYING="GPL-2/LGPL-2.1"
 MAINTAINERS="Arslan S."
 COMMENTS="---"
 CHANGELOG="2010/07/26 First Version 4.4.5
-		2010/11/02 Updated to 4.5.2"
+		2010/11/02 Updated to 4.5.2
+		2011/01/19 Updated to 4.5.5"
 CURRENT="Updated to $VERSION"

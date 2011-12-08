@@ -16,6 +16,7 @@ usr/local/include/msn/soap.h
 usr/local/include/msn/sstream_fix.h
 usr/local/include/msn/switchboardserver.h
 usr/local/include/msn/util.h
+usr/local/include/msn/xmlParser.h
 usr/local/lib/libmsn.so
 usr/local/lib/libmsn.so.0.3
 usr/local/lib/libmsn.so.0.3.0

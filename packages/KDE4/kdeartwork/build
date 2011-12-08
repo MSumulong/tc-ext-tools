@@ -19,47 +19,8 @@ build_compile() {
 
 build_install() {
 
-	cd build/ColorSchemes &&
-	make DESTDIR=${PACKAGE_BIN}/${PACKAGE}-colorschemes install || return 1
-	cd ../IconThemes &&
-	make DESTDIR=${PACKAGE_BIN}/${PACKAGE}-iconthemes install || return 1
-	cd ../desktopthemes &&
-	make DESTDIR=${PACKAGE_BIN}/${PACKAGE}-desktopthemes install || return 1
-	cd ../emoticons &&
-	make DESTDIR=${PACKAGE_BIN}/${PACKAGE}-emoticons install || return 1
-	cd ../kscreensaver &&
-	make DESTDIR=${PACKAGE_BIN}/${PACKAGE}-kscreensaver install || return 1
-	cd ../sounds &&
-	make DESTDIR=${PACKAGE_BIN}/${PACKAGE}-sounds install || return 1
-	cd ../styles &&
-	make DESTDIR=${PACKAGE_BIN}/${PACKAGE}-styles install || return 1
-	cd ../WeatherWallpapers &&
-	make DESTDIR=${PACKAGE_BIN}/${PACKAGE}-weatherwallpapers install || return 1
-	cd ../wallpapers &&
-	make DESTDIR=${PACKAGE_BIN}/${PACKAGE}-wallpapers install || return 1
-	cd ../HighResolutionWallpapers &&
-	make DESTDIR=${PACKAGE_BIN}/${PACKAGE}-wallpapers install || return 1
-	#
-	
-	install -m 755 -d ${PACKAGE_BIN}/kdeartwork/usr/local/share/doc/kdeartwork
-cat > ${PACKAGE_BIN}/kdeartwork/usr/local/share/doc/kdeartwork/README << EOF
-This is a meta package that contains:
-
-	color schemes
-	emoticons
-	icon themes
-	wallpapers
-	weather wallpapers
-	kscreensaver
-	desktop themes
-	sounds
-	styles
-
-from kdeartwork source package
-
-Sercan Arslan <arslanserc@gmail.com>
-
-EOF
+   cd build
+   make DESTDIR="$I_ROOT" install || return 1
 
 }
 
@@ -73,6 +34,7 @@ build_rules() {
   tet_configure
   tet_compile
   tet_install
+  tet_split
   tet_strip
   tet_create
   tet_generate

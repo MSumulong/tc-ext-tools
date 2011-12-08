@@ -1,7 +1,5 @@
-kdelibs.tcz
-kdebase-runtime.tcz
-kdepimlibs.tcz
 kdepim-runtime.tcz
+qt-4.x-qml.tcz
 boost.tcz
 akonadi.tcz
 phonon.tcz

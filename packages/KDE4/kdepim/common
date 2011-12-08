@@ -1,41 +1,10 @@
 PACKAGE="kdepim"
-VERSION="4.4.9"
-SOURCE="ftp://ftp.kde.org/pub/kde/stable/kdepim-${VERSION}/src/kdepim-${VERSION}.tar.bz2"
-BUILD_DEPENDS="cmake
-automoc4
-docbook_xsl
-libxml2-bin
-kdelibs
-kdelibs-dev
-kdepimlibs
-kdepimlibs-dev
-soprano
-soprano-dev
-phonon
-phonon-dev
-gpgme
-gpgme-dev
-boost
-boost-dev
-cyrus-sasl
-cyrus-sasl-dev
-libxslt
-Xorg-7.6-lib
-Xorg-7.6-dev
-qca
-qca-dev
-libassuan
-libassuan-dev
-strigi
-strigi-dev
-akonadi
-akonadi-dev
-pilot-link-base
-pilot-link-dev
-kdepim-runtime
-libxml2
-libxml2-dev
-shared-desktop-ontologies"
+VERSION="4.7.3"
+SOURCE="ftp://ftp.kde.org/pub/kde/stable/${VERSION}/src/kdepim-${VERSION}.tar.bz2"
+BUILD_DEPENDS="cmake automoc4 docbook_xsl libxml2-bin libxslt kdelibs kdelibs-dev kdepimlibs kdepimlibs-dev kdepim-runtime
+               soprano soprano-dev phonon phonon-dev gpgme gpgme-dev boost boost-dev cyrus-sasl cyrus-sasl-dev
+               Xorg-7.6-lib Xorg-7.6-dev qca qca-dev libassuan libassuan-dev strigi strigi-dev shared-desktop-ontologies
+               akonadi akonadi-dev pilot-link-base pilot-link-dev libxml2 libxml2-dev"
 
 DESCRIPTION="KDE pim applications."
 AUTHOR="KDE development team"
@@ -43,5 +12,6 @@ SITE="http://www.kde.org"
 COPYING="GPL/LGPL/FDL"
 MAINTAINERS="Arslan S."
 COMMENTS="---"
-CHANGELOG="2010/11/05 First Version 4.5.2"
+CHANGELOG="2010/11/05 First Version 4.5.2
+		2011/01/21 Updated to 4.4.9"
 CURRENT="Updated to $VERSION"

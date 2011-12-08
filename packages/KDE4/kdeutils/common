@@ -1,49 +1,10 @@
 PACKAGE="kdeutils"
-VERSION="4.5.5"
+VERSION="4.7.3"
 SOURCE="ftp://ftp.kde.org/pub/kde/stable/${VERSION}/src/${PACKAGE}-${VERSION}.tar.bz2"
-BUILD_DEPENDS="cmake
-automoc4
-kdelibs
-kdelibs-dev
-kdepimlibs
-kdepimlibs-dev
-gmp
-qimageblitz
-qimageblitz-dev
-net-snmp
-libarchive
-libarchive-dev
-Xorg-7.6-lib
-Xorg-7.6-dev
-qca
-qca-dev
-kdebase
-kdebase-dev
-libzip
-libzip-dev
-python
-python-dev
-kdebindings-python
-kdebindings-dev
-pyqt
-kdebase-workspace
-kdebase-workspace-dev
-shared-desktop-ontologies
-libxml2-bin
-docbook_xsl
-libarchive
-libarchive-dev
-qjson
-qjson-dev
-zip-unzip.tcz
-p7zip-full.tcz
-tar.tcz
-wget.tcz
-gzip.tcz
-bzip2.tcz
-unrar.tcz
-xz
-xz-dev"
+BUILD_DEPENDS="cmake automoc4 kdelibs kdelibs-dev kdepimlibs kdepimlibs-dev kde-workspace gmp gmp-dev qimageblitz qimageblitz-dev
+               net-snmp libarchive libarchive-dev Xorg-7.6-lib Xorg-7.6-dev qca qca-dev libzip libzip-dev
+               python python-dev kdebindings pyqt  shared-desktop-ontologies bzip2.tcz unrar.tcz xz xz-dev
+               libxml2-bin docbook_xsl qjson qjson-dev zip-unzip.tcz p7zip-full.tcz tar.tcz wget.tcz gzip.tcz"
 
 DESCRIPTION="KDE utilities."
 AUTHOR="KDE development team"
@@ -51,5 +12,6 @@ SITE="http://www.kde.org"
 COPYING="GPL/LGPL/FDL"
 MAINTAINERS="Arslan S."
 COMMENTS="---"
-CHANGELOG="2010/11/03 First Version 4.5.2"
+CHANGELOG="2010/11/03 First Version 4.5.2
+		2011/01/21 Updated to 4.5.5"
 CURRENT="Updated to $VERSION"
