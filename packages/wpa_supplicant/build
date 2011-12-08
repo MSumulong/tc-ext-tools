@@ -6,7 +6,7 @@
 build_configure() {
 
    cd wpa_supplicant
-   busybox cp -f "$PACKAGE_SRC"/config .config || return 1
+   cp -f "$PACKAGE_SRC"/config .config || return 1
 
 }
 
