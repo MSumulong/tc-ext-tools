@@ -42,13 +42,41 @@ _tet_common() {
 
    [ -f "$TET_PACKAGES_DATABASE/$PACKAGE" ] && shift
 
+   ARGS="$@"
+
+}
+
+_tet_check_for_package() {
+
    if [ -f common ]; then
         . common
-   elif [ -f "$TET_PACKAGES/$PACKAGE/common" ]; then
-        . "$TET_PACKAGES/$PACKAGE/common"
+        PACKAGE_ROOT="$PWD"
+   elif [ -f "$TET_PACKAGES_DATABASE/$PACKAGE" ]; then
+        . "$TET_PACKAGES_DATABASE/$PACKAGE"
+        . "$PACKAGE_ROOT/common"
+   else
+        echo "$this: No such package $PACKAGE"
+        return 1
    fi
 
-   ARGS="$@"
+}
+
+_tet_check_for_package_root() {
+
+   if [ ! -d "$PACKAGE_ROOT" ]; then
+        echo "$this: The package $PACKAGE root directory $PACKAGE_ROOT does not exist"
+        return 1
+   fi
+
+}
+
+_tet_package_required() {
+
+   if [ -z "$PACKAGE" -a ! -f common ]; then
+        echo "$this: You must specify the package"
+        return 1
+   fi
+
 }
 
 is_integer() {
@@ -61,6 +89,8 @@ is_integer() {
 # tc-ext-tools cd: change directory to package root
 tetcd() {
 
+   this=tetcd
+
    _tet_common "$@" || return 1
 
    if [ -z "$PACKAGE" ]; then
@@ -68,17 +98,9 @@ tetcd() {
         return 0
    fi
 
-   if [ -f "$TET_PACKAGES_DATABASE/$PACKAGE" ]; then
-        . "$TET_PACKAGES_DATABASE/$PACKAGE"
-   else
-        echo "tetcd: No such package $PACKAGE"
-        return 1
-   fi
+   _tet_check_for_package || return 1
 
-   if [ ! -d "$PACKAGE_ROOT" ]; then
-        echo "tetcd: The package $PACKAGE root directory does not exist"
-        return 1
-   fi
+   _tet_check_for_package_root || return 1
 
    cd "$PACKAGE_ROOT"
 
@@ -87,6 +109,8 @@ tetcd() {
 # tc-ext-tools ls: list package contents
 tetls() {
 
+   this=tetls
+
    _tet_common "$@" || return 1
 
    if [ -z "$PACKAGE" ]; then
@@ -94,17 +118,9 @@ tetls() {
         return 0
    fi
 
-   if [ -f "$TET_PACKAGES_DATABASE/$PACKAGE" ]; then
-        . "$TET_PACKAGES_DATABASE/$PACKAGE"
-   else
-        echo "tetls: No such package $PACKAGE"
-        return 1
-   fi
+   _tet_check_for_package || return 1
 
-   if [ ! -d "$PACKAGE_ROOT" ]; then
-        echo "tetls: The package $PACKAGE root directory does not exist"
-        return 1
-   fi
+   _tet_check_for_package_root || return 1
 
    cd "$PACKAGE_ROOT"
    ls $ARGS
@@ -115,6 +131,8 @@ tetls() {
 # tc-ext-tools find: find in package
 tetfind() {
 
+   this=tetfind
+
    _tet_common "$@" || return 1
 
    if [ -z "$PACKAGE" ]; then
@@ -122,17 +140,9 @@ tetfind() {
         return 0
    fi
 
-   if [ -f "$TET_PACKAGES_DATABASE/$PACKAGE" ]; then
-        . "$TET_PACKAGES_DATABASE/$PACKAGE"
-   else
-        echo "tetfind: No such package $PACKAGE"
-        return 1
-   fi
+   _tet_check_for_package || return 1
 
-   if [ ! -d "$PACKAGE_ROOT" ]; then
-        echo "tetfind: The package $PACKAGE root directory does not exist"
-        return 1
-   fi
+   _tet_check_for_package_root || return 1
 
    cd "$PACKAGE_ROOT"
    find $ARGS -not -path "*.svn*"
@@ -143,27 +153,23 @@ tetfind() {
 # tc-ext-tools edit: edit package files
 teted() {
 
+    this=teted
+
    _tet_common "$@" || return 1
 
-   if [ -z "$PACKAGE" ]; then
-        echo "teted: You must specify the package"
-        return 1
-   fi
+   _tet_package_required || return 1
 
-   if [ -f "$TET_PACKAGES_DATABASE/$PACKAGE" ]; then
-        . "$TET_PACKAGES_DATABASE/$PACKAGE"
-   else
-        echo "teted: No such package $PACKAGE"
-        return 1
-   fi
+   _tet_check_for_package || return 1
+
+   _tet_check_for_package_root || return 1
 
    if [ -z "$TET_EDITOR" ]; then
-        echo "teted: You need to set the tc-ext-tools editor in your configuration file"
+        echo "$this: You need to set the tc-ext-tools editor in your configuration file"
         return 1
    fi
 
    if ! which "$TET_EDITOR" >/dev/null 2>&1; then
-        echo "teted: The text editor $TET_EDITOR not found"
+        echo "$this: The text editor $TET_EDITOR not found"
         return 1
    fi
 
@@ -184,12 +190,12 @@ teted() {
    done
 
    if [ $file_cnt = 0 ]; then
-        echo "teted: No such file(s)"
+        echo "$this: No such file(s)"
         return 1
    elif [ $file_cnt = 1 ]; then
         $TET_EDITOR $FILES &
    else
-        echo "teted: More than one file found"
+        echo "$this: More than one file found"
         echo "Choose one of the options below"
         echo "[0]: quit"
         echo "[1]: all"
@@ -203,10 +209,10 @@ teted() {
 
         read ans
         if ! is_integer $ans; then
-            echo "teted: bad number"
+            echo "$this: bad number"
             return 1
         elif [ $ans -gt $index -o $ans -lt 0 ]; then
-            echo "teted: invalid option"
+            echo "$this: invalid option"
             return 1
         fi
 
@@ -235,6 +241,8 @@ teted() {
 # tc-ext-tools browse: browse the package in your file manager
 tetbrowse() {
 
+   this=tetbrowse
+
    _tet_common "$@" || return 1
 
    if [ -z "$PACKAGE" ]; then
@@ -242,25 +250,17 @@ tetbrowse() {
         return 0
    fi
 
-   if [ -f "$TET_PACKAGES_DATABASE/$PACKAGE" ]; then
-        . "$TET_PACKAGES_DATABASE/$PACKAGE"
-   else
-        echo "tetbrowse: No such package $PACKAGE"
-        return 1
-   fi
+   _tet_check_for_package || return 1
 
-   if [ ! -d "$PACKAGE_ROOT" ]; then
-        echo "tetbrowse: The package $PACKAGE root directory does not exist"
-        return 1
-   fi
+   _tet_check_for_package_root || return 1
 
    if [ -z "$TET_FILE_MANAGER" ]; then
-        echo "tetbrowse: You need to set the tc-ext-tools file manager in your configuration file"
+        echo "$this: You need to set the tc-ext-tools file manager in your configuration file"
         return 1
    fi
 
    if ! which "$TET_FILE_MANAGER" >/dev/null 2>&1; then
-        echo "tetbrowse: The file manager $TET_FILE_MANAGER not found"
+        echo "$this: The file manager $TET_FILE_MANAGER not found"
         return 1
    fi
 
@@ -271,30 +271,21 @@ tetbrowse() {
 # tc-ext-tools info: show info about the package
 tetinfo() {
 
+   this=tetinfo
+
    _tet_common "$@" || return 1
 
-   if [ -z "$PACKAGE" ]; then
-        echo "tetinfo: You must specify the package"
-        return 0
-   fi
+   _tet_package_required || return 1
 
-   if [ -f "$TET_PACKAGES_DATABASE/$PACKAGE" ]; then
-        . "$TET_PACKAGES_DATABASE/$PACKAGE"
-   else
-        echo "tetinfo: No such package $PACKAGE"
-        return 1
-   fi
+   _tet_check_for_package || return 1
 
-   if [ ! -d "$PACKAGE_ROOT" ]; then
-        echo "tetinfo: Package $PACKAGE root directory does not exist"
-        return 1
-   fi
-
-   cd "$TET_PACKAGES/$PACKAGE"
+   _tet_check_for_package_root || return 1
 
    echo "------------------------------------------------------"
    echo "The package $PACKAGE has the following properties"
    echo "------------------------------------------------------"
+
+   cd "$PACKAGE_ROOT"
 
    unset EXTENSIONS
    for EXTENSION in $(find extensions -type f -name install)
@@ -311,32 +302,23 @@ tetinfo() {
 # tc-ext-tools www: open the package site in your web browser
 tetwww() {
 
+   this=tetwww
+
    _tet_common "$@" || return 1
 
-   if [ -z "$PACKAGE" ]; then
-        echo "tetwww: You must specify the package"
-        return 0
-   fi
+   _tet_package_required || return 1
 
-   if [ -f "$TET_PACKAGES_DATABASE/$PACKAGE" ]; then
-        . "$TET_PACKAGES_DATABASE/$PACKAGE"
-   else
-        echo "tetwww: No such package $PACKAGE"
-        return 1
-   fi
+   _tet_check_for_package || return 1
 
-   if [ ! -d "$PACKAGE_ROOT" ]; then
-        echo "tetwww: Package $PACKAGE root directory does not exist"
-        return 1
-   fi
+   _tet_check_for_package_root || return 1
 
    if [ -z "$TET_WEB_BROWSER" ]; then
-        echo "tetwww: You need to set the tc-ext-tools web browser in your configuration file"
+        echo "$this: You need to set the tc-ext-tools web browser in your configuration file"
         return 1
    fi
 
    if ! which "$TET_WEB_BROWSER" >/dev/null 2>&1; then
-        echo "tetbrowse: The web browser $TET_WEB_BROWSER not found"
+        echo "$this: The web browser $TET_WEB_BROWSER not found"
         return 1
    fi
 
