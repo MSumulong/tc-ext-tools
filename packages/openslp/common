@@ -1,0 +1,13 @@
+PACKAGE="openslp"
+VERSION="1.2.1"
+SOURCE="http://downloads.sourceforge.net/sourceforge/openslp/openslp-${VERSION}.tar.gz"
+BUILD_DEPENDS="openssl-1.0.0 openssl-1.0.0-dev"
+
+DESCRIPTION="Open-source implementation of Service Location Protocol."
+AUTHOR="---"
+SITE="http://www.openslp.org/"
+COPYING="BSD"
+MAINTAINERS="Arslan S."
+COMMENTS="---"
+CHANGELOG="2010/02/21 Original 1.2.1"
+CURRENT="Rebuilt"

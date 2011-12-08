@@ -1,0 +1,4 @@
+usr/local/bin
+usr/local/etc
+usr/local/lib/*.so*
+usr/local/sbin
