@@ -1,0 +1,13 @@
+#!/bin/sh
+
+MYSQL_LIB=/usr/local/mysql/lib
+if ! grep $MYSQL_LIB /etc/ld.so.conf >/dev/null; then
+  echo $MYSQL_LIB >> /etc/ld.so.conf
+fi
+
+# temporary fix for QMYSQL driver
+cd $MYSQL_LIB
+ln -s libmysqlclient.so.18 libmysqlclient.so.16
+ln -s libmysqlclient.so.18.0.0 libmysqlclient.so.16.0.0
+ln -s libmysqlclient_r.so.18 libmysqlclient_r.so.16
+ln -s libmysqlclient_r.so.18.0.0 libmysqlclient_r.so.16.0.0

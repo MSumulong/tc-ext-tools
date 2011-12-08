@@ -1,3 +1,4 @@
+udev-extra.tcz
 gamin.tcz
 bzip2-lib.tcz
 dbus.tcz
@@ -20,7 +21,6 @@ soprano.tcz
 strigi.tcz
 virtuoso.tcz
 akonadi.tcz
-mysql.tcz
 gpgme.tcz
 libical.tcz
 cyrus-sasl.tcz
@@ -30,6 +30,7 @@ xdg-utils.tcz
 desktop-file-utils.tcz
 qt-4.x-designer.tcz
 qt-4.x-webkit.tcz
+phonon-backend-gstreamer.tcz
 gst-plugins-good.tcz
 kdelibs.tcz
 kdebase-runtime.tcz

@@ -1,0 +1,10 @@
+--- a/server/src/storage/dbconfigmysql.cpp
++++ b/server/src/storage/dbconfigmysql.cpp
+@@ -65,6 +65,7 @@
+      defaultServerPath = QLatin1String( MYSQLD_EXECUTABLE );
+ #endif
+   const QStringList mysqldSearchPath = QStringList()
++      << QLatin1String( "/usr/local/mysql/bin" )
+       << QLatin1String( "/usr/sbin" )
+       << QLatin1String( "/usr/local/sbin" )
+       << QLatin1String( "/usr/local/libexec" )

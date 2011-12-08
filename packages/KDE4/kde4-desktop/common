@@ -11,6 +11,9 @@ MAINTAINERS="Arslan S."
 COMMENTS="Minimum System Requirements:
 			-Pentium 4 CPU
 			-512MB RAM + Swap
+			-GPU accelerated graphics recommended
+
+		Please install Xorg before installing kde4-desktop.
 
 		Installation
 		-----------------------------------------
@@ -28,13 +31,13 @@ COMMENTS="Minimum System Requirements:
 			 filetool.sh -b
 			 sudo reboot
 
-		Step 6-) If panel is missing then add an empty panel,
-			 then add panel widgets such as application launcher, task manager,
-			 system tray, pager etc
+		Step 6-) When you first boot kde4-desktop you will end up with an empty desktop. So you need to customize your desktop.
+			 Right click on the screen, add an empty panel and then add panel widgets such as application launcher,
+			 task manager, clock, system tray, pager etc.
 
 		Step 7-) Create Tiny Core applications plasma widgets
 			 Drag and drop KDE start menu --> Applications --> System --> Appbrowser,Control Panel,Exit,Terminal
-			 to somewhere in desktop or panel
+			 to somewhere inside the desktop or panel
 
 		Step 8-) Backup
 			 filetool.sh -b
@@ -52,7 +55,8 @@ COMMENTS="Minimum System Requirements:
 		KDE Applications: k3b, kdesvn, ktorrent, ...
 		Other : samba3, gstreamer plugins, acpid, wicd, cpufreqd ...
 		
-		ALSA is recommended for sound."
+		ALSA is recommended for sound.
+		This extension requires Xorg."
 CHANGELOG="2010/07/21 First Version 4.4.5
 		2010/07/27 Updated
 		2010/10/31 Updated to 4.5.2
