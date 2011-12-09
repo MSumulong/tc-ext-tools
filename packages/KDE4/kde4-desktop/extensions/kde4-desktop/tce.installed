@@ -8,6 +8,9 @@ this_main() {
 
 [ -L /usr/local/share/config/kdm/kdmrc ] && cp -Lf /usr/local/share/config/kdm/kdmrc /usr/local/share/config/kdm/kdmrc
 
+udevadm control --reload-rules
+udevadm trigger
+
 /usr/local/etc/init.d/dbus status
 if [ "$?" -gt 0 ]; then
     /usr/local/etc/init.d/dbus start

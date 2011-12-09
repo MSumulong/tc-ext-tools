@@ -1,24 +1,27 @@
 PACKAGE="network-manager-kde"
-VERSION="0.8.98"
-SOURCE="ftp://ftp.kde.org/pub/kde/unstable/networkmanagement/${VERSION}/src/networkmanagement-${VERSION}.tar.bz2"
-BUILD_DEPENDS="cmake automoc4 python NetworkManager NetworkManager-dev
-               qt-4.x-xml qt-4.x-dbus qt-4.x-extended qt-4.x-dev
-               Xorg-7.6-lib Xorg-7.6-dev kdelibs kdelibs-dev kde-workspace"
+VERSION="0.9~svngit20110408"
+#SOURCE="ftp://ftp.kde.org/pub/kde/unstable/networkmanagement/${VERSION}/src/networkmanagement-${VERSION}.tar.bz2"
+SOURCE="http://archive.ubuntu.com/ubuntu/pool/main/p/plasma-widget-networkmanagement/plasma-widget-networkmanagement_${VERSION}.orig.tar.gz"
+BUILD_DEPENDS="cmake automoc4 python NetworkManager NetworkManager-dev mobile-broadband-provider-info
+               qt-4.x-xml qt-4.x-dbus qt-4.x-extended qt-4.x-dev Xorg-7.6-lib Xorg-7.6-dev kdelibs kdelibs-dev kde-workspace"
 
 DESCRIPTION="KDE NetworkManager client."
 AUTHOR="Will Stephenson, Sebastian Kogler"
 SITE="http://plasma.kde.org"
 COPYING="GPL"
 MAINTAINERS="Arslan S."
-COMMENTS="This is a KDE4 plasma widget and a client to the NetworkManager. This is not intended to work
-		for environments other than KDE4. So this extension is only for KDE4 desktop.
+COMMENTS="This is a KDE4 plasma widget and a client to the NetworkManager.
 
-		All you need to do is to start NetworkManager daemon on startup,
-		knetworkmanager is automatically started by KDE4.
-
+		All you need to do is to start NetworkManager daemon on startup.
 		To start NetworkManager add to /opt/bootlocal.sh :
 			/usr/local/etc/init.d/dbus restart
-			/usr/local/etc/init.d/NetworkManager start"
+			/usr/local/etc/init.d/NetworkManager start
+
+		knetworkmanager service is automatically started by kde4 but due to a conflict:
+		go to systemsettings->startup and shutdown->service manager and unclick on NetworkManager user settings service
+
+		Optional dependency: mobile-broadband-provider-info"
+
 CHANGELOG="2010/07/22 First Version svn1141976
 		2010/08/04 Updated to svn1154750"
 CURRENT="Updated to $VERSION"
