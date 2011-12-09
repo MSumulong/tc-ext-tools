@@ -3,6 +3,7 @@ gamin.tcz
 bzip2-lib.tcz
 dbus.tcz
 lm_sensors.tcz
+hal.tcz
 enchant.tcz
 graphics-libs-1.tcz
 pcre.tcz
@@ -38,7 +39,7 @@ kdepimlibs.tcz
 kdepim-runtime.tcz
 kdegraphics.tcz
 kdebindings.tcz
-python.tcz
+pyqt.tcz
 kde-workspace.tcz
 kde-baseapps.tcz
 konsole.tcz

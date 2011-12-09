@@ -1,5 +1,5 @@
 kdebase-runtime.tcz
-kdemultimedia-kioslave.tcz
+qt-4.x-webkit.tcz
 hal.tcz
 libavformat.tcz
 flac.tcz
@@ -17,4 +17,3 @@ dvd+rwtools.tcz
 shared-mime-info.tcz
 hicolor-icon-theme.tcz
 oxygen-icon-theme.tcz
-qt-4.x-webkit.tcz

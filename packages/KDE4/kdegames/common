@@ -1,27 +1,11 @@
 PACKAGE="kdegames"
-VERSION="4.5.5"
+VERSION="4.7.3"
 SOURCE="ftp://ftp.kde.org/pub/kde/stable/${VERSION}/src/${PACKAGE}-${VERSION}.tar.bz2"
-BUILD_DEPENDS="cmake
-automoc4
-kdelibs
-kdelibs-dev
-phonon
-phonon-dev
-qca
-qca-dev
-qt-4.x-opengl
-qt-4.x-dev
-Xorg-7.6-lib
-Xorg-7.6-dev
-kdebase-runtime
-kdebindings-python
-python
-python-dev
-ggz-client-libs
-ggz-client-libs-dev
-libxml2-bin
-docbook_xsl
-python_twisted-2.7"
+BUILD_DEPENDS="cmake automoc4 kdelibs kdelibs-dev phonon phonon-dev qca qca-dev
+               qt-4.x-opengl qt-4.x-dev Xorg-7.6-lib Xorg-7.6-dev kdebase-runtime
+               kdebindings python python-dev ggz-client-libs ggz-client-libs-dev
+               libxml2-bin docbook_xsl python_twisted-2.7 libopenal libopenal-dev
+               libsndfile libsndfile-dev pyqt"
 
 DESCRIPTION="KDE games."
 AUTHOR="KDE development team"
@@ -30,5 +14,6 @@ COPYING="GPL/LGPL/FDL"
 MAINTAINERS="Arslan S."
 COMMENTS="---"
 CHANGELOG="2010/07/30 First Version 4.4.5
-		2010/11/03 Updated to 4.5.2"
+		2010/11/03 Updated to 4.5.2
+		2011/01/20 Updated to 4.5.5"
 CURRENT="Updated to $VERSION"

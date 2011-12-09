@@ -1,34 +1,10 @@
 PACKAGE="k3b"
 VERSION="2.0.2"
 SOURCE="http://downloads.sourceforge.net/sourceforge/k3b/k3b-${VERSION}.tar.bz2"
-BUILD_DEPENDS="cmake
-automoc4
-docbook_xsl
-libxml2-bin
-kdelibs
-kdelibs-dev
-kdebase-runtime
-flac
-flac-dev
-ffmpeg-ffserver
-ffmpeg-ffserver-dev
-kdemultimedia-kioslave
-libmad
-libmad-dev
-libmpcdec
-libmpcdec-dev
-libmusicbrainz
-libmusicbrainz-dev
-libsamplerate
-libsamplerate-dev
-libsndfile
-libsndfile-dev
-taglib
-taglib-dev
-libvorbis
-libvorbis-dev
-libdvdread
-libdvdread-dev"
+BUILD_DEPENDS="cmake automoc4 docbook_xsl libxml2-bin kdelibs kdelibs-dev kdebase-runtime kdemultimedia
+               flac flac-dev ffmpeg-ffserver ffmpeg-ffserver-dev libmad libmad-dev libmpcdec libmpcdec-dev
+               libmusicbrainz libmusicbrainz-dev libsamplerate libsamplerate-dev libsndfile libsndfile-dev
+               taglib taglib-dev libvorbis libvorbis-dev libdvdread libdvdread-dev cdrkit cdrdao"
 
 DESCRIPTION="K3b is a full-featured CD/DVD/Blu-ray burning and ripping application."
 AUTHOR="Sebastian Trueg"
@@ -36,5 +12,6 @@ SITE="http://k3b.sourceforge.net"
 COPYING="GPL/FDL"
 MAINTAINERS="Arslan S."
 COMMENTS="---"
-CHANGELOG="2010/07/27 First Version 2.0.0"
-CURRENT="Updated to $VERSION"
+CHANGELOG="2010/07/27 First Version 2.0.0
+		2011/01/28 Updated to 2.0.2"
+CURRENT="Rebuilt"
