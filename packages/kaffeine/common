@@ -1,0 +1,13 @@
+PACKAGE="kaffeine"
+VERSION="1.2.2"
+SOURCE="http://downloads.sourceforge.net/kaffeine/kaffeine-${VERSION}.tar.gz"
+BUILD_DEPENDS="cmake automoc4 kdelibs kdelibs-dev kdebase-runtime xine-lib xine-lib-dev"
+
+DESCRIPTION="KDE Media Player."
+AUTHOR="---"
+SITE="http://kaffeine.kde.org"
+COPYING="GPL"
+MAINTAINERS="Arslan S."
+COMMENTS="---"
+CHANGELOG="---"
+CURRENT="First Version"

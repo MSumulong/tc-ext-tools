@@ -1,3 +1,4 @@
 #!/bin/sh
+udevadm control --reload-rules >/dev/null 2>&1
 udevadm trigger >/dev/null 2>&1
 
