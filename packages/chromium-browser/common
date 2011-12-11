@@ -1,6 +1,6 @@
 PACKAGE="chromium-browser"
-VERSION="15.0.874.102"
-SOURCE="http://build.chromium.org/official/chromium-${VERSION}.tar.bz2"
+VERSION="15.0.874.121"
+SOURCE="http://commondatastorage.googleapis.com/chromium-browser-official/chromium-${VERSION}.tar.bz2"
 BUILD_DEPENDS="python python-dev gtk2 gtk2-dev bzip2-lib bzip2-dev nspr nspr-dev
      nss nss-dev libasound alsa-dev Xorg-7.6-lib Xorg-7.6-dev GConf GConf-dev dbus dbus-dev
      dbus-glib dbus-glib-dev libgnome-keyring libgnome-keyring-dev libxcb libxcb-dev
@@ -44,6 +44,7 @@ CHANGELOG="2009/12/17 First Version
 		2011/08/07 Updated to 13.0.782.107
 		2011/08/20 Updated to 13.0.782.112
 		2011/09/08 Updated to 13.0.782.218
-		2011/09/21 Updated to 14.0.835.186"
+		2011/09/21 Updated to 14.0.835.186
+		2011/10/26 Updated to 15.0.874.102"
 CURRENT="Updated to $VERSION"
 
