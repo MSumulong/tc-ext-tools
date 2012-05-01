@@ -118,7 +118,7 @@ compile_it() {
 }
 
 install_it() {
-   sudo installit || exit 1
+   sudo -E installit || exit 1
 }
 
 split_it() {
