@@ -73,6 +73,7 @@ Original-site:	${SITE}
 Copying-policy:	${COPYING}
 Size:		${SIZE}
 Extension_by:	${MAINTAINERS}
+Tags:		${TAGS}
 Comments:	${COMMENTS}
 Change-log:	${CHANGELOG}
 Current:	${CURRENT}
