@@ -288,7 +288,7 @@ set_tcl_system() {
    TCMIRROR=http://distro.ibiblio.org/pub/linux/distributions/tinycorelinux/
    TCVER=4.x
 
-   TCE_DIR=$(cat /opt/.tce_dir)
+   TCE_DIR=/etc/sysconfig/tcedir
    KERNEL=$(uname -r)
    ARCH=i686
 
