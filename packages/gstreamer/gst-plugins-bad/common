@@ -1,6 +1,6 @@
 PACKAGE="gst-plugins-bad"
-VERSION="0.10.22"
-SOURCE="http://gstreamer.freedesktop.org/src/${PACKAGE}/${PACKAGE}-${VERSION}.tar.bz2"
+VERSION="0.10.23"
+SOURCE="https://api.opensuse.org/public/source/multimedia:libs/gstreamer-0_10-plugins-bad/gst-plugins-bad-0.10.23.tar.xz"
 BUILD_DEPENDS="gstreamer gstreamer-dev gst-plugins-base gst-plugins-base-dev
                libasound alsa-dev libcdaudio libcdaudio-dev bzip2-lib bzip2-dev
                cairo cairo-dev libdca libdca-dev libdvdnav libdvdnav-dev
@@ -17,7 +17,8 @@ DESCRIPTION="GStreamer Bad Plugins."
 AUTHOR="---"
 SITE="http://gstreamer.freedesktop.org"
 COPYING="GPL/LGPL"
-MAINTAINERS="juanito, Arslan S."
+MAINTAINERS="juanito, Arslan S., jls_legalize <unsenepopiu at tin dot it>"
+TAGS="GStreamer Bad Plugins."
 COMMENTS="---"
 CHANGELOG="2009/11/08 First Version by juanito
 		2010/01/10 Updated to 0.10.17 by Arslan S.
@@ -29,5 +30,6 @@ CHANGELOG="2009/11/08 First Version by juanito
 		2010/07/19 Updated to 0.10.19 by Arslan S.
 		2010/12/08 Updated to 0.10.20 by Arslan S.
 		2011/02/08 Updated to 0.10.21 by Arslan S.
-		2011/06/12 Updated to 0.10.22 by Arslan S."
-CURRENT="Rebuilt by Arslan S."
+		2011/06/12 Updated to 0.10.22 by Arslan S.
+		2011/10/29 Rebuilt by Arslan S."
+CURRENT="Updated to $VERSION (jls_legalize)"
