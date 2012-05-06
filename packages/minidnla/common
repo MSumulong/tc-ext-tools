@@ -1,0 +1,26 @@
+PACKAGE="minidnla"
+VERSION="1.0.24"
+SOURCE="http://downloads.sourceforge.net/project/minidlna/minidlna/1.0.24/minidlna_1.0.24_src.tar.gz"
+BUILD_DEPENDS="sqlite3-dev.tcz \
+		flac-dev.tcz \
+		libexif-dev.tcz \
+		libexif.tcz \
+		libid3tag.tcz
+		libid3tag-dev.tcz \
+		libogg-dev.tcz \
+		libvorbis-dev.tcz \
+		ffmpeg-ffserver-dev.tcz \
+		jpeg_base-dev.tcz \
+		libavutil.tcz \
+		libavcodec.tcz \
+		libavformat.tcz"
+
+DESCRIPTION="server software with the aim of being fully compliant with DLNA/UPnP-AV clients"
+AUTHOR="Justin Maggard, Portions:  Thomas Bernard"
+SITE="http://minidlna.sourceforge.net/"
+COPYING="GPL-2"
+MAINTAINERS="jls_legalize <unsenepopiu at tin dot it>"
+TAGS="server DLNA/UPnP-AV"
+COMMENTS="---"
+CHANGELOG="---"
+CURRENT="First Version"
