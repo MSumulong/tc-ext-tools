@@ -1,6 +1,6 @@
 PACKAGE="xfburn"
 VERSION="0.4.3"
-SOURCE="http://www.xfce.org/archive/src/apps/xfburn/0.4/xfburn-$VERSION.tar.bz2"
+SOURCE="http://archive.xfce.org/src/apps/xfburn/0.4/xfburn-$VERSION.tar.bz2"
 BUILD_DEPENDS="gstreamer
 gstreamer-dev
 gst-plugins-base

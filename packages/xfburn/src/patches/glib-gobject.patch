@@ -1,0 +1,11 @@
+--- a/xfburn/xfburn-settings.h	2012-05-07 22:44:25.870144585 +0200
++++ b/xfburn/xfburn-settings.h	2012-05-07 22:44:57.160146870 +0200
+@@ -24,7 +24,7 @@
+ #endif /* !HAVE_CONFIG_H */
+ 
+ #include <glib.h>
+-
++#include <glib-object.h>
+ G_BEGIN_DECLS
+ 
+ #define XFBURN_TYPE_SETTINGS         (xfburn_settings_get_type ())
