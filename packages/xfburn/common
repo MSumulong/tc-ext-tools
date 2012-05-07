@@ -30,9 +30,10 @@ DESCRIPTION="CD/DVD burning application of Xfce."
 AUTHOR="David Mohr"
 SITE="http://goodies.xfce.org/projects/applications/xfburn"
 COPYING="GPL-2"
-MAINTAINERS="Arslan S."
+MAINTAINERS="Arslan S, jls_legalize (jlslegalize@gmail.com)"
 COMMENTS="---"
 CHANGELOG="2010/02/26 Original 0.4.3
-		2010/07/29 Rebuilt"
-CURRENT="Rebuilt with latest xfce libraries and dropped thunar-vfs dependency"
+		2010/07/29 Rebuilt
+		2011/02/07 Rebuilt with latest xfce libraries and dropped thunar-vfs dependency"
+CURRENT="Rebuilt (jls_legalize)"
 
