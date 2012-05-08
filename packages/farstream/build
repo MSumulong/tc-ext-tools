@@ -9,7 +9,11 @@
 build_configure() {
 
    ## autotools
-   ./configure --prefix=/usr/local || return 1
+   ./configure --prefix=/usr/local \
+	--disable-python \
+	--disable-static \
+	--enable-introspection=no \
+	--disable-gtk-doc || return 1
 
    ## cmake
    #mkdir build
