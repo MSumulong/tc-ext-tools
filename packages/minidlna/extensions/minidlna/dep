@@ -1,7 +1,5 @@
-sqlite3.tcz
-flac.tcz
 libexif.tcz
+sqlite3.tcz
+libavformat.tcz
 libid3tag.tcz
-libogg.tcz
-libvorbis.tcz
-ffmpeg-ffserver.tcz
+flac.tcz
