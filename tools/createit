@@ -96,6 +96,9 @@ this_create() {
    echo "Creating the extension md5 sum"
    md5sum "${PACKAGE_EXTENSION_NAME}.tcz" > "${PACKAGE_EXTENSION_NAME}.tcz.md5.txt" || return 1
 
+   echo "Creating the extension zsync file"
+   sudo zsyncmake "${PACKAGE_EXTENSION_NAME}.tcz"
+
    cd "$PACKAGE_EXTENSION_BIN"
 
    echo "Creating the extension list file"
