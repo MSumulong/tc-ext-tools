@@ -1,0 +1,4 @@
+usr/local
+x-usr/local/lib/pkgconfig
+x-usr/local/include
+x-usr/local/share/gtk-doc

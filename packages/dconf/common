@@ -1,0 +1,15 @@
+PACKAGE="dconf"
+VERSION="0.11.0"
+SOURCE="http://download.gnome.org/sources/dconf/0.11/dconf-${VERSION}.tar.xz"
+BUILD_DEPENDS="dbus-dev
+glib2-dev"
+
+DESCRIPTION="A simple key-based configuration system."
+AUTHOR="Ryan Lortie"
+SITE="http://live.gnome.org/dconf"
+COPYING="LGPLv2"
+MAINTAINERS="AmatCoder"
+TAGS="gnome key configuration gsettings"
+COMMENTS="dconf editor is not available."
+CHANGELOG="---"
+CURRENT="First Version ${VERSION}"
