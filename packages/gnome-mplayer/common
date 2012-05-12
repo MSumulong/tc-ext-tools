@@ -1,0 +1,15 @@
+PACKAGE="gnome-mplayer"
+VERSION="1.0.6"
+SOURCE="http://gnome-mplayer.googlecode.com/files/gnome-mplayer-${VERSION}.tar.gz"
+BUILD_DEPENDS="libgmtk-dev"
+
+DESCRIPTION="A GTK2 interface to MPlayer."
+AUTHOR="Kevin DeKorte"
+SITE="http://code.google.com/p/gnome-mplayer/"
+COPYING="GPLv2"
+MAINTAINERS="AmatCoder"
+TAGS="video audio GUI interface mplayer"
+COMMENTS="Some icons are missing. Install gnome-icon-theme.tcz if you want them.
+		Compiled without DBus support."
+CHANGELOG="2012/02/26 First Version 1.0.5"
+CURRENT="Update to ${VERSION}"
