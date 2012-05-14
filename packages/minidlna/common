@@ -9,7 +9,7 @@ BUILD_DEPENDS="sqlite3-dev.tcz \
 		libid3tag-dev.tcz
 		libogg-dev.tcz
 		libvorbis-dev.tcz
-		ffmpeg-ffserver-dev.tcz
+		ffmpeg-0.10-dev.tcz
 		jpeg_base-dev.tcz"
 
 DESCRIPTION="server software with the aim of being fully compliant with DLNA/UPnP-AV clients"
@@ -19,5 +19,5 @@ COPYING="GPL-2"
 MAINTAINERS="jls_legalize <unsenepopiu at tin dot it>"
 TAGS="server DLNA/UPnP-AV"
 COMMENTS="Configuration file is /etc/minidlna.conf"
-CHANGELOG="---"
-CURRENT="First Version"
+CHANGELOG="2012/05/06 First Version 1.0.24"
+CURRENT="Rebuilt against ffmpeg-0.10"
