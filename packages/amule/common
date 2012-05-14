@@ -1,0 +1,20 @@
+PACKAGE="amule"
+VERSION="2.3.1"
+SOURCE="http://sourceforge.net/projects/amule/files/aMule/${VERSION}/aMule-${VERSION}.tar.bz2"
+BUILD_DEPENDS="wxgtk-dev
+crypto++-dev
+libgd
+geoip-dev
+libupnp-dev
+gettext
+ImageMagick"
+
+DESCRIPTION="An eMule-like (P2P) client for the eD2k and Kademlia networks."
+AUTHOR="Various"
+SITE="http://www.amule.org"
+COPYING="GPLv2"
+MAINTAINERS="AmatCoder"
+TAGS="P2P emule eD2k kademlia"
+COMMENTS="---"
+CHANGELOG="---"
+CURRENT="First Version ${VERSION}"

@@ -1,0 +1,51 @@
+
+############################################################################################
+#                                                                                          #
+#    package build functions: configure, compile, install, rules, and custom functions     #
+#                                                                                          #
+############################################################################################
+
+## configure
+build_configure() {
+
+   ./configure --prefix=/usr/local --enable-cas --enable-wxcas --enable-amule-daemon --enable-amulecmd --enable-amule-gui --enable-alc --enable-alcc --enable-webserver --disable-debug --enable-geoip --enable-upnp || return 1
+
+}
+
+## compile
+build_compile() {
+
+   make || return 1
+
+}
+
+## install
+build_install() {
+
+   make DESTDIR="$I_ROOT" install || return 1
+
+   convert -background None "$I_ROOT/usr/local/share/pixmaps/amule.xpm" \
+        -compress none -depth 16 "$I_ROOT/usr/local/share/pixmaps/amule.png"
+
+}
+
+## rules
+build_rules() {
+
+   tet_load
+   tet_download
+   tet_convert
+   tet_unpack
+   tet_patch
+   tet_configure
+   tet_compile
+   tet_install
+   tet_split
+   tet_strip
+   tet_create
+   tet_generate
+   tet_check
+   tet_package
+
+}
+
