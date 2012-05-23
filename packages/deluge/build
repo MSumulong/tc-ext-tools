@@ -1,0 +1,51 @@
+
+############################################################################################
+#                                                                                          #
+#    package build functions: configure, compile, install, rules, and custom functions     #
+#                                                                                          #
+############################################################################################
+
+## configure
+build_configure() {
+
+   return 0
+
+}
+
+## compile
+build_compile() {
+
+   sed -i 's/bash/sh/' get_libtorrent.sh || return 1
+   sed -i 's/SVN=$(which svn)/exit 1/' get_libtorrent.sh || return 1
+   python setup.py clean -a || return 1
+   python setup.py build || return 1
+
+}
+
+## install
+build_install() {
+
+   python setup.py install --prefix=/usr/local --root="$I_ROOT" || return 1
+
+}
+
+## rules
+build_rules() {
+
+   tet_load
+   tet_download
+   tet_convert
+   tet_unpack
+   tet_patch
+   tet_configure
+   tet_compile
+   tet_install
+   tet_split
+   tet_strip
+   tet_create
+   tet_generate
+   tet_check
+   tet_package
+
+}
+

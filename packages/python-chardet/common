@@ -1,0 +1,15 @@
+PACKAGE="python-chardet"
+VERSION="1.0.1"
+SOURCE="http://pypi.python.org/packages/source/c/chardet/chardet-${VERSION}.tar.gz"
+BUILD_DEPENDS="python
+python_setuptools-2.7"
+
+DESCRIPTION="Universal encoding detector for python."
+AUTHOR="Mark Pilgrim"
+SITE="http://pypi.python.org/pypi/chardet"
+COPYING="LGPL"
+MAINTAINERS="AmatCoder"
+TAGS="python encoding i18n xml"
+COMMENTS="---"
+CHANGELOG="---"
+CURRENT="First Version ${VERSION}"
