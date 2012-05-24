@@ -12,6 +12,7 @@ usr/local/dropbox/_codecs_tw.so
 usr/local/dropbox/_ctypes.so
 usr/local/dropbox/_dbus_bindings.so
 usr/local/dropbox/_dbus_glib_bindings.so
+usr/local/dropbox/_elementtree.so
 usr/local/dropbox/_functools.so
 usr/local/dropbox/_heapq.so
 usr/local/dropbox/_librsync.so
@@ -85,6 +86,7 @@ usr/local/dropbox/strop.so
 usr/local/dropbox/termios.so
 usr/local/dropbox/time.so
 usr/local/dropbox/unicodedata.so
+usr/local/dropbox/wx._combo.so
 usr/local/dropbox/wx._controls_.so
 usr/local/dropbox/wx._core_.so
 usr/local/dropbox/wx._gdi_.so

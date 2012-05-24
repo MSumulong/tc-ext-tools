@@ -11,7 +11,7 @@ build_compile() {
   export USE_SYSTEM_ZLIB=1
   export ZLIB_LIBS=-lz
 
-  make -C mozilla/security/nss nss_build_all || return 1
+  make PREFIX=/usr/local -C mozilla/security/nss nss_build_all || return 1
 
 }
 

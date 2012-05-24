@@ -4,7 +4,7 @@ SOURCE="http://commondatastorage.googleapis.com/chromium-browser-official/chromi
 BUILD_DEPENDS="python python-dev gtk2 gtk2-dev bzip2-lib bzip2-dev nspr nspr-dev
      nss nss-dev libasound alsa-dev Xorg-7.6-lib Xorg-7.6-dev GConf GConf-dev dbus dbus-dev
      dbus-glib dbus-glib-dev libgnome-keyring libgnome-keyring-dev libxcb libxcb-dev
-     libevent libevent-dev libcups cups-dev krb5 gperf"
+     libevent libevent-dev libcups cups-dev krb5 gperf udev-lib udev-dev openssl-1.0.0 openssl-1.0.0-dev"
 
 DESCRIPTION="Chromium Web Browser."
 AUTHOR="Chromium Authors"
