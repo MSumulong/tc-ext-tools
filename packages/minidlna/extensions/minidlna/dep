@@ -1,5 +1,6 @@
 libexif.tcz
 sqlite3.tcz
-libavformat.tcz
+libavformat53.tcz
 libid3tag.tcz
 flac.tcz
+libiconv.tcz
