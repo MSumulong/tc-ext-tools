@@ -1,7 +1,4 @@
 usr/local/bin/nss-config
-usr/local/include/nss/NSPRerrs.h
-usr/local/include/nss/SECerrs.h
-usr/local/include/nss/SSLerrs.h
 usr/local/include/nss/alghmac.h
 usr/local/include/nss/base.h
 usr/local/include/nss/base64.h

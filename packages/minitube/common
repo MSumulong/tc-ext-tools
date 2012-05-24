@@ -1,5 +1,5 @@
 PACKAGE="minitube"
-VERSION="1.6"
+VERSION="1.7.1"
 SOURCE="http://flavio.tordini.org/files/minitube/minitube-${VERSION}.tar.gz"
 BUILD_DEPENDS="qt-4.x-base qt-4.x-xml qt-4.x-dbus qt-4.x-dev phonon phonon-dev"
 
@@ -12,5 +12,6 @@ COMMENTS="---"
 CHANGELOG="2011/04/16 First Version 1.4.2
 		2011/04/21 Use phonon backend gstreamer and gst plugins
 		2011/08/06 Updated to 1.5
-		2011/08/09 Dropped phonon backend gstreamer dependency"
+		2011/08/09 Dropped phonon backend gstreamer dependency
+		2011/11/29 Updated to 1.6"
 CURRENT="Updated to $VERSION"

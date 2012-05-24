@@ -1,5 +1,5 @@
 PACKAGE="nspr"
-VERSION="4.8.9"
+VERSION="4.9"
 SOURCE="ftp://ftp.mozilla.org/pub/mozilla.org/nspr/releases/v${VERSION}/src/nspr-${VERSION}.tar.gz"
 BUILD_DEPENDS=""
 
@@ -12,5 +12,6 @@ COMMENTS="---"
 CHANGELOG="2010/06/07 Original 4.8.4
 		2010/10/11 Updated to 4.8.6
 		2011/01/15 Updated to 4.8.7
-		2011/06/02 Updated to 4.8.8"
+		2011/06/02 Updated to 4.8.8
+		2011/09/03 Updated to 4.8.9"
 CURRENT="Updated to $VERSION"

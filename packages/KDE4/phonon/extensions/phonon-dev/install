@@ -1,4 +1,5 @@
 usr/local/include
 usr/local/lib/pkgconfig
+usr/local/lib/cmake
 usr/local/mkspecs
-usr/local/share/phonon-buildsystem
+usr/local/share/phonon/buildsystem

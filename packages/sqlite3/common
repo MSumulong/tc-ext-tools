@@ -1,6 +1,6 @@
 PACKAGE="sqlite3"
-VERSION="3.7.9"
-_VERSION="3070900"
+VERSION="3.7.12.1"
+_VERSION="3071201"
 SOURCE="http://www.sqlite.org/sqlite-autoconf-${_VERSION}.tar.gz"
 BUILD_DEPENDS="readline
 readline-dev
@@ -31,5 +31,6 @@ CHANGELOG="2008/12/24 First version 3.6.7 by stevens
 		2011/05/23 Updated to 3.7.6.3
 		2011/06/24 Updated to 3.7.7
 		2011/08/06 Updated to 3.7.7.1
-		2011/09/20 Updated to 3.7.8"
+		2011/09/20 Updated to 3.7.8
+		2011/11/10 Updated to 3.7.9"
 CURRENT="Updated to $VERSION"

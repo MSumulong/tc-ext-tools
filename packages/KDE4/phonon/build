@@ -14,7 +14,9 @@ build_configure() {
    mkdir build
    cd build
    cmake -DCMAKE_INSTALL_PREFIX=/usr/local -DCMAKE_BUILD_TYPE=Release \
-     -DWITH_QZeitgeist=OFF .. || return 1
+     -DWITH_QZeitgeist=OFF \
+     -DPHONON_QT_MKSPECS_INSTALL_DIR=/usr/local/mkspecs/modules \
+     -DPHONON_QT_PLUGIN_INSTALL_DIR=/usr/local/plugins/designer .. || return 1
 
 }
 
