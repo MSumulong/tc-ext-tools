@@ -95,7 +95,8 @@ set_source() {
 
      # set the source name
      if [ -z "$PACKAGE_SOURCE_NAME" ]; then
-          if [ "$PACKAGE_SOURCE_URL_TYPE" = "generic" ] || [ "$PACKAGE_SOURCE_URL_TYPE" = "custom" ]; then
+          if [ "$PACKAGE_SOURCE_URL_TYPE" = "generic" ] || [ "$PACKAGE_SOURCE_URL_TYPE" = "custom" ] ||
+             [ "$PACKAGE_SOURCE_URL_TYPE" = "file" ]; then
                PACKAGE_SOURCE_NAME="${SOURCE##*/}"
           elif [ "$PACKAGE_SOURCE_URL_TYPE" = "svn" ] || [ "$PACKAGE_SOURCE_URL_TYPE" = "git" ]; then
                PACKAGE_SOURCE_NAME="${PACKAGE}-${VERSION}.tar.xz"
