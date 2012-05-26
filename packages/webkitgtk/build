@@ -8,9 +8,9 @@
 ### Configure
 build_configure() {
 
-  ./configure --prefix=/usr/local \
-              --enable-video --disable-introspection \
-              --with-font-backend=freetype --enable-gtk-doc \
+  ./configure --prefix=/usr/local --with-gtk=2.0 \
+              --enable-video --enable-introspection \
+              --with-font-backend=freetype --disable-gtk-doc \
               --enable-jit --with-unicode-backend=icu \
               --enable-spellcheck || return 1
 

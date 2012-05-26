@@ -1,15 +1,8 @@
 PACKAGE="gtk-doc"
-VERSION="1.15"
+VERSION="1.18"
 SOURCE="http://ftp.gnome.org/pub/gnome/sources/gtk-doc/${VERSION}/gtk-doc-${VERSION}.tar.bz2"
-BUILD_DEPENDS="glib2
-glib2-dev
-libxml2
-libxml2-dev
-libxslt
-python
-gnome-doc-utils
-rarian
-docbook_xsl"
+BUILD_DEPENDS="glib2 glib2-dev libxml2 libxml2-dev libxslt
+               python gnome-doc-utils rarian docbook_xsl"
 
 DESCRIPTION="GTK+ API documentation tools."
 AUTHOR="Damon Chaplin, Owen Taylor"
@@ -18,5 +11,6 @@ COPYING="GPL-2/FDL"
 MAINTAINERS="Arslan S."
 COMMENTS="---"
 CHANGELOG="2010/01/08 Original 1.13
-		2010/07/11 Updated to 1.14"
-CURRENT="Updated to 1.15"
+		2010/07/11 Updated to 1.14
+		2010/11/01 Updated to 1.15"
+CURRENT="Updated to $VERSION"

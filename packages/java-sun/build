@@ -16,6 +16,7 @@ build_unpack() {
    mkdir unbundle-jdk
    cd unbundle-jdk
    sh "$PACKAGE_SOURCE" --accept-license
+   tar xf "$_P_SRC/$JAVA_DEMOS_SOURCE" || return 1
    cd ..
    ./construct.sh unbundle-jdk linux-jdk linux-jre || return 1
 

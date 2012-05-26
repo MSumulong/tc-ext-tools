@@ -1,0 +1,15 @@
+PACKAGE="geoclue"
+VERSION="0.12.0"
+SOURCE="https://launchpad.net/geoclue/trunk/0.12/+download/geoclue-${VERSION}.tar.gz"
+BUILD_DEPENDS="libxml2 libxml2-dev dbus-glib dbus-glib-dev gtk-doc
+               libsoup-gnome libsoup-gnome-dev GConf GConf-dev"
+
+DESCRIPTION="The Geoinformation Service."
+AUTHOR="---"
+SITE="http://geoclue.freedesktop.org/"
+COPYING="LGPL"
+MAINTAINERS="Arslan S."
+TAGS="geoinformation service"
+COMMENTS="---"
+CHANGELOG="---"
+CURRENT="First Version"

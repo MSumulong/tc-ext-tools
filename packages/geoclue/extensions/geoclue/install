@@ -1,0 +1,4 @@
+usr/local/lib/*.so*
+usr/local/libexec
+usr/local/share
+x-usr/local/share/gtk-doc

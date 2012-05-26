@@ -1,8 +1,10 @@
 PACKAGE="java7-sun"
-VERSION="7"
+VERSION="7u4"
+_BUILD="b20"
   [ "${ARCH}" = 'i686' ]   && _ARCH='i586'
   [ "${ARCH}" = 'x86_64' ] && _ARCH='x64'
-SOURCE="http://download.oracle.com/otn-pub/java/jdk/7/jdk-${VERSION}-linux-${_ARCH}.tar.gz"
+SOURCE="http://download.oracle.com/otn-pub/java/jdk/${VERSION}-${_BUILD}/jdk-${VERSION}-linux-${_ARCH}.tar.gz"
+JAVA_DEMOS_SOURCE="jdk-${VERSION}-linux-${_ARCH}-demos.tar.gz"
 BUILD_DEPENDS=""
 
 DESCRIPTION="Sun/Oracle's implementation of tha Java 7 specification."
@@ -10,6 +12,7 @@ AUTHOR="Sun/Oracle"
 SITE="http://java.sun.com"
 COPYING="custom"
 MAINTAINERS="Arslan S."
+TAGS="Sun Java jre7 jdk7"
 COMMENTS="---"
-CHANGELOG="---"
-CURRENT="First Version $VERSION"
+CHANGELOG="2011/08/14 First Version 7"
+CURRENT="Updated to $VERSION"

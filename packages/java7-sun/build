@@ -5,6 +5,14 @@
 #                                                                          #
 ############################################################################
 
+# extract demos and samples
+build_unpack_demos(){
+
+  cd $P_SRC_TMP
+  tar xvf "$_P_SRC/$JAVA_DEMOS_SOURCE" || return 1
+
+}
+
 ############################################################################ 
 #                              Install                                     #
 ############################################################################
@@ -79,6 +87,7 @@ build_rules() {
    tet_download
    tet_convert
    tet_unpack
+   tet_custom unpack_demos
    tet_install
    tet_split
    tet_create

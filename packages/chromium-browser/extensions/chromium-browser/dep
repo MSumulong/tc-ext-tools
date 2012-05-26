@@ -6,5 +6,6 @@ nss.tcz
 libevent.tcz
 libcups.tcz
 libgcrypt.tcz
+udev-lib.tcz
 shared-mime-info.tcz
 hicolor-icon-theme.tcz

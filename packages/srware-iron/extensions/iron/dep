@@ -5,5 +5,5 @@ libgcrypt.tcz
 libcups.tcz
 libasound.tcz
 nss.tcz
-Linux-PAM.tcz
+udev-lib.tcz
 shared-mime-info.tcz

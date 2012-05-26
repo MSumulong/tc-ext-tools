@@ -1,24 +1,20 @@
 PACKAGE="libtorrent-rasterbar"
-VERSION="0.15.7"
+VERSION="0.15.10"
 SOURCE="http://libtorrent.googlecode.com/files/${PACKAGE}-${VERSION}.tar.gz"
-BUILD_DEPENDS="python
-python-dev
-boost
-boost-dev
-openssl-1.0.0
-openssl-1.0.0-dev
-bash"
+BUILD_DEPENDS="python python-dev boost boost-dev openssl-1.0.0 openssl-1.0.0-dev bash"
 
 DESCRIPTION="A C++ bittorrent library."
 AUTHOR="Arvid Norberg"
 SITE="http://code.google.com/p/libtorrent/"
 COPYING="New BSD License"
 MAINTAINERS="Arslan S."
+TAGS="C++ Bittorrent Library"
 COMMENTS="---"
 CHANGELOG="2009/12/08 Original 0.14.7
 		2010/01/28 Updated to 0.14.8
 		2010/07/09 Updated to 0.14.10
 		2010/10/09 Updated to 0.15.4
 		2011/02/03 Updated to 0.15.5
-		2011/04/18 Updated to 0.15.6"
+		2011/04/18 Updated to 0.15.6
+		2011/08/06 Updated to 0.15.7"
 CURRENT="Updated to $VERSION"

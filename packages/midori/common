@@ -1,5 +1,5 @@
 PACKAGE="midori"
-VERSION="0.4.2"
+VERSION="0.4.6"
 SOURCE="http://archive.xfce.org/src/apps/midori/${VERSION%.*}/midori-${VERSION}.tar.bz2"
 BUILD_DEPENDS="glib2 glib2-dev gtk2 gtk2-dev sqlite3 sqlite3-dev enchant enchant-dev
                libsoup libsoup-dev libunique libunique-dev libnotify libnotify-dev
@@ -11,6 +11,7 @@ AUTHOR="Christian Dywan"
 SITE="http://www.twotoasts.de/index.php?/pages/midori_summary.html"
 COPYING="GPL"
 MAINTAINERS="Arslan S."
+TAGS="Lightweight Web Browser Webkit/GTK+"
 COMMENTS="---"
 CHANGELOG="2010/05/30 Original 0.2.6
 		2010/08/25 Updated to 0.2.7
@@ -22,5 +23,6 @@ CHANGELOG="2010/05/30 Original 0.2.6
 		2011/05/08 Updated to 0.3.5
 		2011/05/23 Updated to 0.3.6
 		2011/08/07 Updated to 0.4.0
-		2011/10/11 Updated to 0.4.1"
+		2011/10/11 Updated to 0.4.1
+		2011/11/11 Updated to 0.4.2"
 CURRENT="Updated to $VERSION"

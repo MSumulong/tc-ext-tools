@@ -2,3 +2,5 @@ usr/local/bin/jsc-1
 usr/local/lib/*.so*
 usr/local/share
 x-usr/local/share/locale
+x-usr/local/share/gtk-doc
+x-usr/local/share/gir-1.0

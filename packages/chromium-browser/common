@@ -11,6 +11,7 @@ AUTHOR="Chromium Authors"
 SITE="http://code.google.com/chromium/"
 COPYING="BSD"
 MAINTAINERS="Arslan S."
+TAGS="chromium web browser secure fast"
 COMMENTS="---"
 CHANGELOG="2009/12/17 First Version
 	     	2009/12/19 Updated info

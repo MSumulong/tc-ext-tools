@@ -1665,6 +1665,7 @@ usr/local/java-sun/db/lib/derbyrun.jar
 usr/local/java-sun/db/lib/derbytools.jar
 usr/local/java-sun/db/lib/register.jar
 usr/local/java-sun/db/register.html
+usr/local/java-sun/demo/DEMOS_LICENSE
 usr/local/java-sun/demo/applets.html
 usr/local/java-sun/demo/applets/Animator/Animation.class
 usr/local/java-sun/demo/applets/Animator/AnimationFrame.class
@@ -3211,6 +3212,8 @@ usr/local/java-sun/include/jni.h
 usr/local/java-sun/include/jvmti.h
 usr/local/java-sun/include/linux/jawt_md.h
 usr/local/java-sun/include/linux/jni_md.h
+usr/local/java-sun/jre/.systemPrefs/.system.lock
+usr/local/java-sun/jre/.systemPrefs/.systemRootModFile
 usr/local/java-sun/jre/COPYRIGHT
 usr/local/java-sun/jre/LICENSE
 usr/local/java-sun/jre/README
@@ -3324,8 +3327,8 @@ usr/local/java-sun/jre/lib/fontconfig.RedHat.3.bfc
 usr/local/java-sun/jre/lib/fontconfig.RedHat.3.properties.src
 usr/local/java-sun/jre/lib/fontconfig.RedHat.4.bfc
 usr/local/java-sun/jre/lib/fontconfig.RedHat.4.properties.src
-usr/local/java-sun/jre/lib/fontconfig.RedHat.6.0.bfc
-usr/local/java-sun/jre/lib/fontconfig.RedHat.6.0.properties.src
+usr/local/java-sun/jre/lib/fontconfig.RedHat.6.bfc
+usr/local/java-sun/jre/lib/fontconfig.RedHat.6.properties.src
 usr/local/java-sun/jre/lib/fontconfig.RedHat.bfc
 usr/local/java-sun/jre/lib/fontconfig.RedHat.properties.src
 usr/local/java-sun/jre/lib/fontconfig.SuSE.11.bfc
@@ -3461,6 +3464,7 @@ usr/local/java-sun/jre/lib/security/javaws.policy
 usr/local/java-sun/jre/lib/security/local_policy.jar
 usr/local/java-sun/jre/lib/security/trusted.libraries
 usr/local/java-sun/jre/lib/servicetag/jdk_header.png
+usr/local/java-sun/jre/lib/servicetag/registration.xml
 usr/local/java-sun/jre/lib/sound.properties
 usr/local/java-sun/jre/lib/zi/Africa/Abidjan
 usr/local/java-sun/jre/lib/zi/Africa/Accra
@@ -3487,6 +3491,7 @@ usr/local/java-sun/jre/lib/zi/Africa/Freetown
 usr/local/java-sun/jre/lib/zi/Africa/Gaborone
 usr/local/java-sun/jre/lib/zi/Africa/Harare
 usr/local/java-sun/jre/lib/zi/Africa/Johannesburg
+usr/local/java-sun/jre/lib/zi/Africa/Juba
 usr/local/java-sun/jre/lib/zi/Africa/Kampala
 usr/local/java-sun/jre/lib/zi/Africa/Khartoum
 usr/local/java-sun/jre/lib/zi/Africa/Kigali
@@ -3689,6 +3694,7 @@ usr/local/java-sun/jre/lib/zi/Asia/Dubai
 usr/local/java-sun/jre/lib/zi/Asia/Dushanbe
 usr/local/java-sun/jre/lib/zi/Asia/Gaza
 usr/local/java-sun/jre/lib/zi/Asia/Harbin
+usr/local/java-sun/jre/lib/zi/Asia/Hebron
 usr/local/java-sun/jre/lib/zi/Asia/Ho_Chi_Minh
 usr/local/java-sun/jre/lib/zi/Asia/Hong_Kong
 usr/local/java-sun/jre/lib/zi/Asia/Hovd
@@ -4295,9 +4301,12 @@ usr/local/java-sun/lib/visualvm/visualvm/config/Modules/org-openide-compat.xml_h
 usr/local/java-sun/lib/visualvm/visualvm/config/Modules/org-openide-options.xml_hidden
 usr/local/java-sun/lib/visualvm/visualvm/config/Modules/org-openide-util-enumerations.xml_hidden
 usr/local/java-sun/lib/visualvm/visualvm/core/com-sun-tools-visualvm-modules-startup.jar
+usr/local/java-sun/lib/visualvm/visualvm/core/locale/.svn_ja.jar
+usr/local/java-sun/lib/visualvm/visualvm/core/locale/.svn_zh_CN.jar
 usr/local/java-sun/lib/visualvm/visualvm/core/locale/com-sun-tools-visualvm-modules-startup_ja.jar
 usr/local/java-sun/lib/visualvm/visualvm/core/locale/com-sun-tools-visualvm-modules-startup_zh_CN.jar
 usr/local/java-sun/lib/visualvm/visualvm/core/locale/core_visualvm.jar
+usr/local/java-sun/lib/visualvm/visualvm/modules/all-wcprops
 usr/local/java-sun/lib/visualvm/visualvm/modules/com-sun-tools-visualvm-api-caching.jar
 usr/local/java-sun/lib/visualvm/visualvm/modules/com-sun-tools-visualvm-application-views.jar
 usr/local/java-sun/lib/visualvm/visualvm/modules/com-sun-tools-visualvm-application.jar
@@ -4320,6 +4329,7 @@ usr/local/java-sun/lib/visualvm/visualvm/modules/com-sun-tools-visualvm-sampler.
 usr/local/java-sun/lib/visualvm/visualvm/modules/com-sun-tools-visualvm-threaddump.jar
 usr/local/java-sun/lib/visualvm/visualvm/modules/com-sun-tools-visualvm-tools.jar
 usr/local/java-sun/lib/visualvm/visualvm/modules/com-sun-tools-visualvm-uisupport.jar
+usr/local/java-sun/lib/visualvm/visualvm/modules/entries
 usr/local/java-sun/lib/visualvm/visualvm/modules/locale/com-sun-tools-visualvm-api-caching_ja.jar
 usr/local/java-sun/lib/visualvm/visualvm/modules/locale/com-sun-tools-visualvm-api-caching_zh_CN.jar
 usr/local/java-sun/lib/visualvm/visualvm/modules/locale/com-sun-tools-visualvm-application-views_ja.jar
@@ -4366,7 +4376,17 @@ usr/local/java-sun/lib/visualvm/visualvm/modules/locale/com-sun-tools-visualvm-u
 usr/local/java-sun/lib/visualvm/visualvm/modules/locale/com-sun-tools-visualvm-uisupport_zh_CN.jar
 usr/local/java-sun/lib/visualvm/visualvm/modules/locale/org-netbeans-core-windows_visualvm.jar
 usr/local/java-sun/lib/visualvm/visualvm/modules/locale/org-netbeans-core_visualvm.jar
+usr/local/java-sun/lib/visualvm/visualvm/modules/locale/org-netbeans-modules-.svn_ja.jar
+usr/local/java-sun/lib/visualvm/visualvm/modules/locale/org-netbeans-modules-.svn_zh_CN.jar
 usr/local/java-sun/lib/visualvm/visualvm/modules/locale/org-netbeans-modules-profiler_visualvm.jar
+usr/local/java-sun/lib/visualvm/visualvm/modules/locale/org-netbeans-modules-prop-base_ja.jar
+usr/local/java-sun/lib/visualvm/visualvm/modules/locale/org-netbeans-modules-prop-base_zh_CN.jar
+usr/local/java-sun/lib/visualvm/visualvm/modules/locale/org-netbeans-modules-props_ja.jar
+usr/local/java-sun/lib/visualvm/visualvm/modules/locale/org-netbeans-modules-props_zh_CN.jar
+usr/local/java-sun/lib/visualvm/visualvm/modules/locale/org-netbeans-modules-text-base_ja.jar
+usr/local/java-sun/lib/visualvm/visualvm/modules/locale/org-netbeans-modules-text-base_zh_CN.jar
+usr/local/java-sun/lib/visualvm/visualvm/modules/locale/org-netbeans-modules-tmp_ja.jar
+usr/local/java-sun/lib/visualvm/visualvm/modules/locale/org-netbeans-modules-tmp_zh_CN.jar
 usr/local/java-sun/lib/visualvm/visualvm/update_tracking/com-sun-tools-visualvm-api-caching.xml
 usr/local/java-sun/lib/visualvm/visualvm/update_tracking/com-sun-tools-visualvm-application-views.xml
 usr/local/java-sun/lib/visualvm/visualvm/update_tracking/com-sun-tools-visualvm-application.xml
@@ -4477,6 +4497,10 @@ usr/local/java-sun/man/man1/unpack200.1
 usr/local/java-sun/man/man1/wsgen.1
 usr/local/java-sun/man/man1/wsimport.1
 usr/local/java-sun/man/man1/xjc.1
+usr/local/java-sun/register.html
+usr/local/java-sun/register_ja.html
+usr/local/java-sun/register_zh_CN.html
+usr/local/java-sun/sample/SAMPLES_LICENSE
 usr/local/java-sun/sample/javac/processing/src/CheckNamesProcessor.java
 usr/local/java-sun/sample/jmx/jmx-scandir/build.properties
 usr/local/java-sun/sample/jmx/jmx-scandir/build.xml

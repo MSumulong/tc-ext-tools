@@ -8,6 +8,7 @@ AUTHOR="SRWare"
 SITE="http://www.srware.net/en/software_srware_iron.php"
 COPYING="BSD"
 MAINTAINERS="Arslan S."
+TAGS="chromium based web browser"
 COMMENTS="---"
 CHANGELOG="2011/02/27 First Version 9.0.600.2
 		2011/03/11 Updated to 10.0.650.0
