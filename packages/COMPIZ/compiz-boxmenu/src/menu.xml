@@ -1,0 +1,81 @@
+<menu>
+	<item type="launcher">
+		<name>_Terminal</name>
+		<icon>gnome-terminal</icon>
+		<command>aterm</command>
+	</item>
+	<item type="launcher">
+		<name>_File Manager</name>
+		<icon>system-file-manager</icon>
+		<command>xfe</command>
+	</item>
+	<menu name="_Applications" icon="applications-other">
+		<item type="launcher">
+			<name>Te_xt Editor</name>
+			<icon>accessories-text-editor</icon>
+			<command cache="true">editor</command>
+		</item>
+		<item type="launcher">
+			<name>_Web Browser</name>
+			<icon>web-browser</icon>
+			<command>xdg-open www.google.com</command>
+		</item>
+	</menu>
+	<menu name="_Compiz">
+		<item type="launcher">
+			<name>_Settings Manager</name>
+			<icon>ccsm</icon>
+			<command>ccsm</command>
+		</item>
+		<item type="launcher">
+			<name>_Theme Manager</name>
+			<icon>emerald-theme-manager-icon</icon>
+			<command>emerald-theme-manager</command>
+		</item>
+	</menu>
+	<menu name="_System" icon="applications-system">
+		<item type="launcher">
+			<name>_Applications</name>
+			<icon>apps</icon>
+			<command>apps</command>
+		</item>
+		<item type="launcher">
+			<name>_Scm Applications</name>
+			<icon>scmapps</icon>
+			<command>scmapps</command>
+		</item>
+		<item type="launcher">
+			<name>_Control Panel</name>
+			<icon>cpanel</icon>
+			<command>cpanel</command>
+		</item>
+		<item type="launcher">
+			<name>_Run Command</name>
+			<icon>flrun</icon>
+			<command>flrun</command>
+		</item>
+		<item type="launcher">
+			<name>_Mount</name>
+			<icon>mnttool</icon>
+			<command>mnttool</command>
+		</item>
+		<item type="launcher">
+			<name>_Exit</name>
+			<icon>exittc</icon>
+			<command>exittc</command>
+		</item>
+	</menu>
+	<separator/>
+	<item type="windowlist"/>
+	<item type="viewportlist">
+		<wrap>false</wrap>
+	</item>
+	<item type="launcher">
+		<icon>gtk-edit</icon>
+		<command>compiz-boxmenu-editor</command>
+		<name>E_dit</name>
+	</item>
+	<item type="reload">
+		<icon>reload</icon>
+	</item>
+</menu>

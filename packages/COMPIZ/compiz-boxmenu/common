@@ -1,0 +1,23 @@
+PACKAGE="compiz-boxmenu"
+VERSION="1.1.1"
+SOURCE="http://master.dl.sourceforge.net/project/compizboxmenu/source%20snapshots/compiz-boxmenu_-_${VERSION}.tar.gz"
+BUILD_DEPENDS="dbus-glib dbus-glib-dev libwnck libwnck-dev pygtk-2.7 pygtk-2.7-dev
+               pyxdg python-lxml libstartup-notification libstartup-notification-dev"
+
+DESCRIPTION="A desktop menu for compiz, forked from compiz-deskmenu."
+AUTHOR="---"
+SITE="http://sourceforge.net/projects/compizboxmenu/"
+COPYING="GPL"
+MAINTAINERS="Arslan S."
+TAGS="compiz desktop menu"
+COMMENTS="A default menu is provided within this extension. Edit it to your needs
+		by using compiz-boxmenu-editor or by editing the menu file:
+			~/.config/compiz/boxmenu/menu.xml
+
+		To start boxmenu you need to run command compiz-boxmenu
+		To do this run ccsm, enable commands plugin, add the command and bind it to i.e.
+		<Super>a or <Super>Button2 (number may vary depending on your mouse)
+
+		You have to setup compiz-base to use this extension."
+CHANGELOG="---"
+CURRENT="First Version"

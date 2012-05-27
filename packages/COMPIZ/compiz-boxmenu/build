@@ -1,0 +1,51 @@
+
+############################################################################################
+#                                                                                          #
+#    package build functions: configure, compile, install, rules, and custom functions     #
+#                                                                                          #
+############################################################################################
+
+## configure
+build_configure() {
+
+   grep /usr * | grep -v env | cut -f1 -d: | xargs sed -i -e "s|/usr|/usr/local|" || return 1
+   grep /bash * | cut -f1 -d: | xargs sed -i -e "s|/bash|/sh|" || return 1
+
+}
+
+## compile
+build_compile() {
+
+   make || return 1
+
+}
+
+## install
+build_install() {
+
+   make DESTDIR="$I_ROOT" install || return 1
+
+   cp -f "$P_SRC/menu.xml" "$I_ROOT/etc/xdg/compiz/boxmenu/menu.xml"
+
+}
+
+## rules
+build_rules() {
+
+   tet_load
+   tet_download
+   tet_convert
+   tet_unpack
+   tet_patch
+   tet_configure
+   tet_compile
+   tet_install
+   tet_split
+   tet_strip
+   tet_create
+   tet_generate
+   tet_check
+   tet_package
+
+}
+

@@ -1,0 +1,10 @@
+dbus-glib.tcz
+libwnck.tcz
+libstartup-notification.tcz
+compizconfig-python.tcz
+python-lxml.tcz
+pygtk-2.7.tcz
+pyxdg.tcz
+xdg-utils.tcz
+hicolor-icon-theme.tcz
+gnome-icon-theme.tcz

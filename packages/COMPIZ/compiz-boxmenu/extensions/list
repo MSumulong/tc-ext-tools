@@ -1,0 +1,15 @@
+etc/xdg/compiz/boxmenu/menu.xml
+etc/xdg/compiz/boxmenu/precache.ini
+usr/local/bin/compiz-boxmenu
+usr/local/bin/compiz-boxmenu-daemon
+usr/local/bin/compiz-boxmenu-dlist
+usr/local/bin/compiz-boxmenu-editor
+usr/local/bin/compiz-boxmenu-vplist
+usr/local/bin/compiz-boxmenu-wlist
+usr/local/share/cb-editor/cb-editor
+usr/local/share/cb-editor/cb_itemtypes.py
+usr/local/share/cb-editor/cbmenu.py
+usr/local/share/cb-editor/cbutil.py
+usr/local/share/cb-editor/pyicon_browser.py
+usr/local/share/dbus-1/services/org.compiz_fusion.boxmenu.service
+usr/local/share/icons/hicolor/scalable/apps/cbmenu.svg
