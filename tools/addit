@@ -46,7 +46,7 @@ print_usage(){
    cat << EOF
 ${RED}Usage:${NORMAL}
 
-      ${GREEN}addit --package=<package> --version=<version> --extensions=<extensions> --root-dir=<root-dir>
+      ${GREEN}addit --package=<package> --version=<version> --extensions=<extensions> --group-dir=<group-dir>
 ${BLUE}
       where;
              ${GREEN}<package>${BLUE} is the package name.
