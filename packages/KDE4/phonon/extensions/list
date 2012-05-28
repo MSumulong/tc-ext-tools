@@ -168,7 +168,6 @@ usr/local/lib/libphononexperimental.so.4
 usr/local/lib/libphononexperimental.so.4.6.0
 usr/local/lib/pkgconfig/phonon.pc
 usr/local/mkspecs/modules/qt_phonon.pri
-usr/local/plugins/designer/libphononwidgets.so
 usr/local/share/dbus-1/interfaces/org.kde.Phonon.AudioOutput.xml
 usr/local/share/phonon/buildsystem/COPYING-CMAKE-SCRIPTS
 usr/local/share/phonon/buildsystem/FindAutomoc4.cmake

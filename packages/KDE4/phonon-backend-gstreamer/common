@@ -1,6 +1,6 @@
 PACKAGE="phonon-backend-gstreamer"
-VERSION="4.5.1"
-SOURCE="ftp://ftp.kde.org/pub/kde/stable/phonon/phonon-backend-gstreamer/${VERSION}/src/phonon-backend-gstreamer-${VERSION}.tar.bz2"
+VERSION="4.6.0"
+SOURCE="ftp://ftp.kde.org/pub/kde/stable/phonon/phonon-backend-gstreamer/${VERSION}/src/phonon-backend-gstreamer-${VERSION}.tar.xz"
 BUILD_DEPENDS="cmake automoc4 qt-4.x-base qt-4.x-opengl qt-4.x-dev phonon phonon-dev
                Xorg-7.6-lib Xorg-7.6-dev libasound alsa-dev libxml2 libxml2-dev
                gstreamer gstreamer-dev gst-plugins-base gst-plugins-base-dev"
@@ -11,5 +11,6 @@ SITE="http://www.kde.org/"
 COPYING="LGPL"
 MAINTAINERS="Arslan S."
 COMMENTS="---"
-CHANGELOG="2011/04/16 First Version 4.5.0"
+CHANGELOG="2011/04/16 First Version 4.5.0
+		2011/12/07 Updated to 4.5.1"
 CURRENT="Updated to $VERSION"
