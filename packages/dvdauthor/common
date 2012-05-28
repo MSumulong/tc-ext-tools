@@ -1,24 +1,11 @@
 PACKAGE="dvdauthor"
 VERSION="0.7.0"
 SOURCE="http://downloads.sourceforge.net/project/dvdauthor/dvdauthor/${VERSION}/dvdauthor-${VERSION}.tar.gz"
-BUILD_DEPENDS="ImageMagick
-ImageMagick-dev
-bzip2-lib
-bzip2-dev
-libltdl
-libtool-dev
-libdvdread
-libdvdread-dev
-libxml2
-libxml2-dev
-Xorg-7.6-lib
-Xorg-7.6-dev
-graphics-libs-1
-graphics-libs-1-dev
-fribidi
-glib2
-glib2-dev
-eglibc_gconv"
+BUILD_DEPENDS="ImageMagick ImageMagick-dev bzip2-lib bzip2-dev
+               libltdl libtool-dev libdvdread libdvdread-dev
+               libxml2 libxml2-dev Xorg-7.6-lib Xorg-7.6-dev
+               graphics-libs-1 graphics-libs-1-dev fribidi
+               glib2 glib2-dev eglibc_gconv"
 
 DESCRIPTION="Generates DVD movies from mpeg2 stream."
 AUTHOR="Scott Smith"
@@ -27,5 +14,6 @@ COPYING="GPL-2"
 MAINTAINERS="Arslan S."
 COMMENTS="---"
 CHANGELOG="2010/01/23 First Version 0.6.14
-		2010/09/13 Updated to 0.6.18"
-CURRENT="Updated to $VERSION"
+		2010/09/13 Updated to 0.6.18
+		2011/02/10 Updated to 0.7.0"
+CURRENT="Rebuilt"

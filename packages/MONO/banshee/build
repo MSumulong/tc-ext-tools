@@ -6,8 +6,8 @@
 build_configure() {
 
    ./configure --prefix=/usr/local --localstatedir=/var \
-      --enable-release --disable-appledevice --disable-ipod \
-      --disable-static --disable-scrollkeeper \
+      --enable-release --disable-appledevice \
+      --disable-static --disable-scrollkeeper --disable-gnome \
       --with-vendor-build-id=TinyCoreLinux || return 1
 
 }

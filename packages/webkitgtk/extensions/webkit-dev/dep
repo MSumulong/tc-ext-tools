@@ -6,3 +6,5 @@ icu-dev.tcz
 gst-plugins-base-dev.tcz
 sqlite3-dev.tcz
 enchant-dev.tcz
+liborc-dev.tcz
+geoclue-dev.tcz

@@ -1,7 +1,8 @@
 PACKAGE="banshee"
-VERSION="2.0.1"
-SOURCE="http://download.banshee-project.org/banshee/stable/$VERSION/banshee-${VERSION}.tar.bz2"
-BUILD_DEPENDS="mono
+VERSION="2.4.0"
+SOURCE="http://download.gnome.org/sources/banshee/${VERSION%.*}/banshee-${VERSION}.tar.xz"
+BUILD_DEPENDS="bash
+mono
 mono-dev
 gtk-sharp
 gtk-sharp-dev
@@ -22,8 +23,8 @@ sqlite3-dev
 webkit-sharp
 mono-addins
 notify-sharp
-ndesk-dbus
-ndesk-dbus-glib
+dbus-sharp
+dbus-sharp-glib
 taglib-sharp
 mono-zeroconf
 libgoogle-data-mono
@@ -37,14 +38,16 @@ webkitgtk-1.0-0-dev
 libsoup-gnome
 libsoup-gnome-dev"
 
-DESCRIPTION="A music management and playback application for GNOME."
+DESCRIPTION="A music management and playback application."
 AUTHOR="---"
 SITE="http://banshee-project.org/"
 COPYING="MIT"
 MAINTAINERS="Arslan S."
+TAGS="mono media player"
 COMMENTS="---"
 CHANGELOG="2010/04/20 First Version 1.6.0
 		2010/10/04 Updated to 1.8.0
-		2011/01/30 Updated to 1.8.1"
+		2011/01/30 Updated to 1.8.1
+		2011/08/07 Updated to 2.0.1"
 CURRENT="Updated to $VERSION"
 
