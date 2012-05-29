@@ -1,7 +1,8 @@
 PACKAGE="deadbeef"
 VERSION="0.5.4"
 SOURCE="http://downloads.sourceforge.net/project/deadbeef/deadbeef-${VERSION}.tar.bz2"
-BUILD_DEPENDS="#yasm
+BUILD_DEPENDS="yasm
+yasm-dev
 libasound
 alsa-dev
 pulseaudio

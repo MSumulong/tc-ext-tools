@@ -6,8 +6,7 @@
 build_configure() {
 
   ./configure --prefix=/usr/local \
-              --disable-static \
-              --disable-ffap || return 1
+              --disable-static || return 1
 
 }
 ##

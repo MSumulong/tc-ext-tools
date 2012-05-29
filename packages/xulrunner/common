@@ -1,6 +1,6 @@
 PACKAGE="xulrunner"
-VERSION="7.0.1"
-SOURCE="http://releases.mozilla.org/pub/mozilla.org/xulrunner/releases/${VERSION}/source/xulrunner-${VERSION}.source.tar.bz2"
+VERSION="12.0"
+SOURCE="ftp://ftp.mozilla.org/pub/mozilla.org/firefox/releases/${VERSION}/source/firefox-${VERSION}.source.tar.bz2"
 BUILD_DEPENDS="
 gtk2
 gtk2-dev
@@ -50,5 +50,6 @@ CHANGELOG="2010/01/30 Original 1.9.1.7
 		2010/11/30 Updated to 1.9.2.12
 		2010/12/12 Updated to 1.9.2.13
 		2011/03/03 Updated to 1.9.2.14
-		2011/09/22 Updated to 6.0.2"
+		2011/09/22 Updated to 6.0.2
+		2011/10/28 Updated to 7.0.1"
 CURRENT="Updated to $VERSION"

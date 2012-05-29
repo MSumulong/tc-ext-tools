@@ -158,5 +158,6 @@ CHANGELOG="2009/11/05 First Version
 		2011/02/01 Updated to 1.1.7
 		2011/03/26 Updated to 1.1.8
 		2011/04/22 Updated to 1.1.9
-		2011/08/15 Updated to 1.1.11"
+		2011/08/15 Updated to 1.1.11
+		2011/10/28 Updated to 1.1.12"
 CURRENT="Updated to $VERSION"

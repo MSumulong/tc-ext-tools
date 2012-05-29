@@ -230,7 +230,7 @@ set_extension() {
    PACKAGE_EXTENSION_TCEINSTALLED="$PACKAGE_EXTENSIONS/$EXTENSION/tce.installed"
 
    # extension specific variables
-   unset NAME ICON DESKTOP
+   unset NAME ICON DESKTOP TAGS
 
    # first source the package common file then, if available, source the extension common file
    . "$PACKAGE_COMMON"
