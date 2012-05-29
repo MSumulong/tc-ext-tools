@@ -1,7 +1,8 @@
 PACKAGE="deadbeef"
-VERSION="0.5.1"
+VERSION="0.5.4"
 SOURCE="http://downloads.sourceforge.net/project/deadbeef/deadbeef-${VERSION}.tar.bz2"
-BUILD_DEPENDS="libasound
+BUILD_DEPENDS="#yasm
+libasound
 alsa-dev
 pulseaudio
 pulseaudio-dev
@@ -27,8 +28,8 @@ libmms
 libmms-dev
 wavpack
 wavpack-dev
-ffmpeg-ffserver
-ffmpeg-ffserver-dev
+ffmpeg-0.10
+ffmpeg-0.10-dev
 curl
 openssl-1.0.0-dev
 curl-dev
@@ -38,23 +39,24 @@ dbus
 dbus-dev
 Xorg-7.6-lib
 Xorg-7.6-dev
+libzip
+libzip-dev
 libiconv
 libiconv-dev
 libxcb
 libxcb-dev
 libxcb-util
-libxcb-util-dev
-libzip
-libzip-dev"
+libxcb-util-dev"
 
 DESCRIPTION="DeaDBeeF - ultimate music player for GNU/Linux systems with X11."
 AUTHOR="Alexey Yakovenko, Viktor Semykin, Stas Akimushkin"
 SITE="http://deadbeef.sourceforge.net/"
 COPYING="GPL-2"
 MAINTAINERS="Arslan S."
+TAGS="music player"
 COMMENTS="---" 
 CHANGELOG="2010/09/17 First Version 0.4.1
 		2010/10/17 Updated to 0.4.2
-		2010/11/01 Updated to 0.4.3
-		2010/11/17 Updated to 0.4.4"
-CURRENT="Updated to 0.4.4"
+		2010/11/17 Updated to 0.4.3
+		2011/08/13 Updated to 0.4.4"
+CURRENT="Updated to $VERSION"

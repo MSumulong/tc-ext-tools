@@ -15,8 +15,8 @@ Xorg-7.6-dev
 webkit
 webkit-dev
 pywebkit-2.7
-ffmpeg-ffserver
-ffmpeg-ffserver-dev"
+ffmpeg-0.10
+ffmpeg-0.10-dev"
 
 DESCRIPTION="The free and open source internet TV platform."
 AUTHOR="---"

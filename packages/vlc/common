@@ -2,8 +2,8 @@ PACKAGE="vlc"
 VERSION="1.1.12"
 SOURCE="http://download.videolan.org/pub/videolan/vlc/${VERSION}/vlc-${VERSION}.tar.bz2"
 BUILD_DEPENDS="
-ffmpeg-ffserver
-ffmpeg-ffserver-dev
+ffmpeg-0.10
+ffmpeg-0.10-dev
 glib2
 glib2-dev
 fontconfig

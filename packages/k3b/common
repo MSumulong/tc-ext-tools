@@ -2,7 +2,7 @@ PACKAGE="k3b"
 VERSION="2.0.2"
 SOURCE="http://downloads.sourceforge.net/sourceforge/k3b/k3b-${VERSION}.tar.bz2"
 BUILD_DEPENDS="cmake automoc4 docbook_xsl libxml2-bin kdelibs kdelibs-dev kdebase-runtime kdemultimedia
-               flac flac-dev ffmpeg-ffserver ffmpeg-ffserver-dev libmad libmad-dev libmpcdec libmpcdec-dev
+               flac flac-dev ffmpeg-0.10 ffmpeg-ffserver-dev libmad libmad-dev libmpcdec libmpcdec-dev
                libmusicbrainz libmusicbrainz-dev libsamplerate libsamplerate-dev libsndfile libsndfile-dev
                taglib taglib-dev libvorbis libvorbis-dev libdvdread libdvdread-dev cdrkit cdrdao"
 

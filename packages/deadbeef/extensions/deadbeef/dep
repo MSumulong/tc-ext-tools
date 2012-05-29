@@ -8,9 +8,9 @@ libsndfile.tcz
 dbus.tcz
 flac.tcz
 libmad.tcz
-libavformat.tcz
-libavcodec.tcz
-libavutil.tcz
+libavformat53.tcz
+libavcodec53.tcz
+libavutil51.tcz
 libasound.tcz
 libcdio.tcz
 libcddb.tcz
@@ -18,3 +18,4 @@ libmms.tcz
 faad.tcz
 libxcb-util.tcz
 libzip.tcz
+libffi.tcz

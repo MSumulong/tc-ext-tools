@@ -2,7 +2,7 @@ PACKAGE="bombono-dvd"
 VERSION="1.2.0"
 SOURCE="http://downloads.sourceforge.net/bombono/bombono-dvd-${VERSION}.tar.bz2"
 BUILD_DEPENDS="scons gtk2 gtk2-dev gtkmm gtkmm-dev boost boost-dev libxml++ libxml++-dev
-               libdvdread libdvdread-dev twolame twolame-dev ffmpeg-ffserver ffmpeg-ffserver-dev
+               libdvdread libdvdread-dev twolame twolame-dev ffmpeg-0.10 ffmpeg-ffserver-dev
                enca enca-dev mjpegtools mjpegtools-dev dvd+rwtools dvdauthor eglibc_apps"
 
 DESCRIPTION="Bombono DVD is a DVD authoring program for Linux."

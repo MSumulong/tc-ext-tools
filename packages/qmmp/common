@@ -51,8 +51,8 @@ libmms
 libmms-dev
 libmodplug
 libmodplug-dev
-ffmpeg-ffserver
-ffmpeg-ffserver-dev"
+ffmpeg-0.10
+ffmpeg-0.10-dev"
 
 DESCRIPTION="Qt-based Multimedia Player."
 AUTHOR="Ilya Kotov, Vladimir Kuznetsov, Yuriy Zhuravlev, Andrey Adreev"

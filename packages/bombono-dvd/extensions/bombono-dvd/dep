@@ -3,7 +3,7 @@ gtkmm.tcz
 libxml++.tcz
 libdvdread.tcz
 twolame.tcz
-ffmpeg-ffserver.tcz
+ffmpeg-0.10.tcz
 enca.tcz
 mjpegtools.tcz
 dvd+rwtools.tcz

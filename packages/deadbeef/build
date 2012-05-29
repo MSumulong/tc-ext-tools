@@ -6,7 +6,8 @@
 build_configure() {
 
   ./configure --prefix=/usr/local \
-              --disable-static || return 1
+              --disable-static \
+              --disable-ffap || return 1
 
 }
 ##
@@ -39,7 +40,7 @@ build_rules() {
   tet_compile
   tet_install
   tet_split
-   tet_strip
+  tet_strip
   tet_create
   tet_generate
   tet_check
