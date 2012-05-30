@@ -114,8 +114,15 @@ this_create() {
    echo -e "Checking if the extension has a dep file and is not empty ... \c"
    if [ -f "$PACKAGE_EXTENSION_DEP" ] && [ -s "$PACKAGE_EXTENSION_DEP" ]; then
         echo "yes"
-        echo "Copying it to the extension pkg directory"
-        install -m 644 "$PACKAGE_EXTENSION_DEP" "$_PACKAGE_EXTENSION_DEP" || return 1
+        [ -f "$_PACKAGE_EXTENSION_DEP" ] && rm -f "$_PACKAGE_EXTENSION_DEP"
+        for dep in `cat $PACKAGE_EXTENSION_DEP`
+        do
+            if [ "${dep#\#}" != "$dep" ]; then
+                 continue
+            fi
+            dep=$(eval echo "$dep")
+            echo "$dep" >> "$_PACKAGE_EXTENSION_DEP"
+        done
    else
         echo "no"
    fi

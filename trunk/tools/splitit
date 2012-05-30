@@ -129,6 +129,21 @@ this_split() {
    sudo mkdir -p "$PACKAGE_EXTENSION_BIN"
    sudo tar -C "$PACKAGE_EXTENSION_BIN" -pxzf "$PACKAGE_EXTENSION_BIN_TEMP/pkg.tar.gz" || return 1
 
+   if [ "${PACKAGE_EXTENSION_NAME%-dev}" != "${PACKAGE_EXTENSION_NAME}" ]; then
+        echo "---------------------------------------------------------------"
+        echo "Making dev symlinks full path"
+        echo "---------------------------------------------------------------"
+        LINKS=$(find "$PACKAGE_EXTENSION_BIN" -type l -name "*.so")
+        for link in $LINKS
+        do
+            link_full=`dirname $link`/`readlink $link`
+            link_full=${link_full#$PACKAGE_EXTENSION_BIN}
+            echo "link_full=$link_full"
+            echo "link=$link"
+            sudo ln -sf "$link_full" "$link"
+        done
+   fi
+
    echo "Cleaning the package extension bin temporary directory"
    sudo rm -rf "$PACKAGE_EXTENSION_BIN_TEMP"
 
