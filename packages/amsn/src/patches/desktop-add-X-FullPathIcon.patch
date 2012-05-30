@@ -1,0 +1,7 @@
+--- a/amsn.desktop	2012-05-30 02:38:48.000000000 +0200
++++ b/amsn.desktop	2012-05-30 02:47:09.680072082 +0200
+@@ -14,3 +14,4 @@
+ Terminal=false
+ Type=Application
+ StartupNotify=true
++X-FullPathIcon=/usr/local/share/pixmaps/amsn.png

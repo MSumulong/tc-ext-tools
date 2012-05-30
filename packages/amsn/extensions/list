@@ -1,0 +1,2474 @@
+usr/local/bin/amsn
+usr/local/bin/amsn-remote
+usr/local/bin/amsn-remote-CLI
+usr/local/lib/amsn/utils/TkCximage/TkCximage.so
+usr/local/lib/amsn/utils/TkCximage/pkgIndex.tcl
+usr/local/lib/amsn/utils/asyncresolver/asyncresolver.tcl
+usr/local/lib/amsn/utils/asyncresolver/libasyncresolver.so
+usr/local/lib/amsn/utils/asyncresolver/pkgIndex.tcl
+usr/local/lib/amsn/utils/farsight/pkgIndex.tcl
+usr/local/lib/amsn/utils/farsight/tcl_farsight.so
+usr/local/lib/amsn/utils/gupnp/gupnp.so
+usr/local/lib/amsn/utils/gupnp/pkgIndex.tcl
+usr/local/lib/amsn/utils/linux/capture/capture.so
+usr/local/lib/amsn/utils/linux/capture/libng/libng.so
+usr/local/lib/amsn/utils/linux/capture/libng/plugins/conv-mjpeg.so
+usr/local/lib/amsn/utils/linux/capture/libng/plugins/drv0-v4l2.so
+usr/local/lib/amsn/utils/linux/capture/libng/plugins/sn9c10x.so
+usr/local/lib/amsn/utils/linux/capture/pkgIndex.tcl
+usr/local/lib/amsn/utils/linux/linflash/flash.so
+usr/local/lib/amsn/utils/linux/linflash/pkgIndex.tcl
+usr/local/lib/amsn/utils/linux/traydock/libtray.so
+usr/local/lib/amsn/utils/linux/traydock/pkgIndex.tcl
+usr/local/lib/amsn/utils/tclISF/pkgIndex.tcl
+usr/local/lib/amsn/utils/tclISF/tclISF.so
+usr/local/lib/amsn/utils/tcl_siren/pkgIndex.tcl
+usr/local/lib/amsn/utils/tcl_siren/tcl_siren.so
+usr/local/lib/amsn/utils/webcamsn/pkgIndex.tcl
+usr/local/lib/amsn/utils/webcamsn/webcamsn.so
+usr/local/share/amsn/AGREEMENT
+usr/local/share/amsn/BWidget_mods.tcl
+usr/local/share/amsn/CREDITS
+usr/local/share/amsn/FAQ
+usr/local/share/amsn/GNUGPL
+usr/local/share/amsn/HELP
+usr/local/share/amsn/INSTALL
+usr/local/share/amsn/README
+usr/local/share/amsn/TODO
+usr/local/share/amsn/abook.tcl
+usr/local/share/amsn/addressbook.tcl
+usr/local/share/amsn/alarm.tcl
+usr/local/share/amsn/amsn
+usr/local/share/amsn/amsn-remote
+usr/local/share/amsn/amsn-remote-CLI
+usr/local/share/amsn/amsn.desktop
+usr/local/share/amsn/amsncore.tcl
+usr/local/share/amsn/assistant.tcl
+usr/local/share/amsn/audio.tcl
+usr/local/share/amsn/auth.tcl
+usr/local/share/amsn/automsg.tcl
+usr/local/share/amsn/autoupdate.tcl
+usr/local/share/amsn/balloon.tcl
+usr/local/share/amsn/bugs.tcl
+usr/local/share/amsn/ca-certs/37621ded.0
+usr/local/share/amsn/ca-certs/6e7f22c1.0
+usr/local/share/amsn/ca-certs/75ced341.0
+usr/local/share/amsn/ca-certs/874806e2.0
+usr/local/share/amsn/ca-certs/GTE_CyberTrust_Global_Root.pem
+usr/local/share/amsn/ca-certs/Microsoft_Internet_Authority.pem
+usr/local/share/amsn/ca-certs/Microsoft_Secure_Server_Authority.pem
+usr/local/share/amsn/ca-certs/README
+usr/local/share/amsn/ca-certs/VeriSign_Class3_Extended_Validation_CA.pem
+usr/local/share/amsn/ca-certs/VeriSign_International_Server_Class_3_CA.pem
+usr/local/share/amsn/ca-certs/c692a373.0
+usr/local/share/amsn/chatwindow.tcl
+usr/local/share/amsn/config.tcl
+usr/local/share/amsn/console.tcl
+usr/local/share/amsn/contactlist.tcl
+usr/local/share/amsn/ctthemes.tcl
+usr/local/share/amsn/debug.tcl
+usr/local/share/amsn/desktop-icons/128x128/apps/amsn.png
+usr/local/share/amsn/desktop-icons/16x16/apps/amsn.png
+usr/local/share/amsn/desktop-icons/22x22/apps/amsn.png
+usr/local/share/amsn/desktop-icons/32x32/apps/amsn.png
+usr/local/share/amsn/desktop-icons/48x48/apps/amsn.png
+usr/local/share/amsn/desktop-icons/64x64/apps/amsn.png
+usr/local/share/amsn/desktop-icons/72x72/apps/amsn.png
+usr/local/share/amsn/desktop-icons/96x96/apps/amsn.png
+usr/local/share/amsn/dock.tcl
+usr/local/share/amsn/docs/DOCS-HOWTO
+usr/local/share/amsn/docs/FAQbs
+usr/local/share/amsn/docs/FAQca
+usr/local/share/amsn/docs/FAQca_VC
+usr/local/share/amsn/docs/FAQde
+usr/local/share/amsn/docs/FAQdu
+usr/local/share/amsn/docs/FAQee
+usr/local/share/amsn/docs/FAQel
+usr/local/share/amsn/docs/FAQes
+usr/local/share/amsn/docs/FAQfr
+usr/local/share/amsn/docs/FAQfr.html
+usr/local/share/amsn/docs/FAQfr_CA
+usr/local/share/amsn/docs/FAQfur
+usr/local/share/amsn/docs/FAQhu
+usr/local/share/amsn/docs/FAQit
+usr/local/share/amsn/docs/FAQlt
+usr/local/share/amsn/docs/FAQmn
+usr/local/share/amsn/docs/FAQnl
+usr/local/share/amsn/docs/FAQno
+usr/local/share/amsn/docs/FAQpt
+usr/local/share/amsn/docs/FAQpt_BR
+usr/local/share/amsn/docs/FAQsl
+usr/local/share/amsn/docs/FAQsv
+usr/local/share/amsn/docs/FAQtr
+usr/local/share/amsn/docs/HELPca
+usr/local/share/amsn/docs/HELPca_VC
+usr/local/share/amsn/docs/HELPcs
+usr/local/share/amsn/docs/HELPda
+usr/local/share/amsn/docs/HELPde
+usr/local/share/amsn/docs/HELPee
+usr/local/share/amsn/docs/HELPel
+usr/local/share/amsn/docs/HELPes
+usr/local/share/amsn/docs/HELPfr
+usr/local/share/amsn/docs/HELPfr_CA
+usr/local/share/amsn/docs/HELPfur
+usr/local/share/amsn/docs/HELPhu
+usr/local/share/amsn/docs/HELPit
+usr/local/share/amsn/docs/HELPlt
+usr/local/share/amsn/docs/HELPmn
+usr/local/share/amsn/docs/HELPnl
+usr/local/share/amsn/docs/HELPno
+usr/local/share/amsn/docs/HELPpt
+usr/local/share/amsn/docs/HELPpt_BR
+usr/local/share/amsn/docs/HELPro
+usr/local/share/amsn/docs/HELPru
+usr/local/share/amsn/docs/HELPtr
+usr/local/share/amsn/docs/HELPzh_TW
+usr/local/share/amsn/docs/READMEca
+usr/local/share/amsn/docs/READMEca_VC
+usr/local/share/amsn/docs/READMEcs
+usr/local/share/amsn/docs/READMEda
+usr/local/share/amsn/docs/READMEde
+usr/local/share/amsn/docs/READMEes
+usr/local/share/amsn/docs/READMEfr
+usr/local/share/amsn/docs/READMEfr_CA
+usr/local/share/amsn/docs/READMEfur
+usr/local/share/amsn/docs/READMEhu
+usr/local/share/amsn/docs/READMEit
+usr/local/share/amsn/docs/READMElt
+usr/local/share/amsn/docs/READMEmn
+usr/local/share/amsn/docs/READMEnl
+usr/local/share/amsn/docs/READMEpt
+usr/local/share/amsn/docs/READMEpt_BR
+usr/local/share/amsn/docs/READMEro
+usr/local/share/amsn/docs/READMEru
+usr/local/share/amsn/docs/READMEsv
+usr/local/share/amsn/docs/READMEtr
+usr/local/share/amsn/docs/READMEzh_TW
+usr/local/share/amsn/groups.tcl
+usr/local/share/amsn/gui.tcl
+usr/local/share/amsn/guicontactlist.tcl
+usr/local/share/amsn/hotmail.tcl
+usr/local/share/amsn/hotmlog.htm
+usr/local/share/amsn/lang.tcl
+usr/local/share/amsn/lang/LANG-HOWTO
+usr/local/share/amsn/lang/convert.tcl
+usr/local/share/amsn/lang/langal
+usr/local/share/amsn/lang/langar
+usr/local/share/amsn/lang/langast
+usr/local/share/amsn/lang/langbg
+usr/local/share/amsn/lang/langbs
+usr/local/share/amsn/lang/langca
+usr/local/share/amsn/lang/langca_VC
+usr/local/share/amsn/lang/langcs
+usr/local/share/amsn/lang/langcy
+usr/local/share/amsn/lang/langda
+usr/local/share/amsn/lang/langde
+usr/local/share/amsn/lang/langee
+usr/local/share/amsn/lang/langel
+usr/local/share/amsn/lang/langen
+usr/local/share/amsn/lang/langes
+usr/local/share/amsn/lang/langeu
+usr/local/share/amsn/lang/langfi
+usr/local/share/amsn/lang/langfr
+usr/local/share/amsn/lang/langfr_CA
+usr/local/share/amsn/lang/langfri
+usr/local/share/amsn/lang/langglg
+usr/local/share/amsn/lang/langgr2
+usr/local/share/amsn/lang/langhu
+usr/local/share/amsn/lang/langid
+usr/local/share/amsn/lang/langis
+usr/local/share/amsn/lang/langit
+usr/local/share/amsn/lang/langja
+usr/local/share/amsn/lang/langko
+usr/local/share/amsn/lang/langku
+usr/local/share/amsn/lang/langlt
+usr/local/share/amsn/lang/langmk
+usr/local/share/amsn/lang/langmt
+usr/local/share/amsn/lang/langnl
+usr/local/share/amsn/lang/langno
+usr/local/share/amsn/lang/langoc
+usr/local/share/amsn/lang/langpl
+usr/local/share/amsn/lang/langpt
+usr/local/share/amsn/lang/langpt_BR
+usr/local/share/amsn/lang/langro
+usr/local/share/amsn/lang/langru
+usr/local/share/amsn/lang/langsk
+usr/local/share/amsn/lang/langsl
+usr/local/share/amsn/lang/langsr
+usr/local/share/amsn/lang/langsv
+usr/local/share/amsn/lang/langth
+usr/local/share/amsn/lang/langtr
+usr/local/share/amsn/lang/langvn
+usr/local/share/amsn/lang/langzh-CN
+usr/local/share/amsn/lang/langzh-TW
+usr/local/share/amsn/lang/missing.py
+usr/local/share/amsn/lang/sortlang
+usr/local/share/amsn/langlist
+usr/local/share/amsn/login_screen.tcl
+usr/local/share/amsn/loging.tcl
+usr/local/share/amsn/migmd5.tcl
+usr/local/share/amsn/msncam.tcl
+usr/local/share/amsn/msngames.tcl
+usr/local/share/amsn/msnp2p.tcl
+usr/local/share/amsn/msnp2p/constants.tcl
+usr/local/share/amsn/msnp2p/filetransfer.tcl
+usr/local/share/amsn/msnp2p/message.tcl
+usr/local/share/amsn/msnp2p/msnobject.tcl
+usr/local/share/amsn/msnp2p/p2p.tcl
+usr/local/share/amsn/msnp2p/session.tcl
+usr/local/share/amsn/msnp2p/session_manager.tcl
+usr/local/share/amsn/msnp2p/slp.tcl
+usr/local/share/amsn/msnp2p/sourcefiles.tcl
+usr/local/share/amsn/msnp2p/transport/TLP.tcl
+usr/local/share/amsn/msnp2p/transport/TLPv1.tcl
+usr/local/share/amsn/msnp2p/transport/TLPv2.tcl
+usr/local/share/amsn/msnp2p/transport/base.tcl
+usr/local/share/amsn/msnp2p/transport/constants.tcl
+usr/local/share/amsn/msnp2p/transport/direct.tcl
+usr/local/share/amsn/msnp2p/transport/switchboard.tcl
+usr/local/share/amsn/msnp2p/transport/transport_manager.tcl
+usr/local/share/amsn/msnp2p/webcam.tcl
+usr/local/share/amsn/mutex.tcl
+usr/local/share/amsn/pgu.tcl
+usr/local/share/amsn/picture.tcl
+usr/local/share/amsn/plugins.tcl
+usr/local/share/amsn/plugins/ColoredNicks/colorednicks.tcl
+usr/local/share/amsn/plugins/ColoredNicks/lang/langde
+usr/local/share/amsn/plugins/ColoredNicks/lang/langen
+usr/local/share/amsn/plugins/ColoredNicks/lang/langes
+usr/local/share/amsn/plugins/ColoredNicks/lang/langfr
+usr/local/share/amsn/plugins/ColoredNicks/lang/langhu
+usr/local/share/amsn/plugins/ColoredNicks/lang/langit
+usr/local/share/amsn/plugins/ColoredNicks/lang/langja
+usr/local/share/amsn/plugins/ColoredNicks/lang/langlt
+usr/local/share/amsn/plugins/ColoredNicks/lang/langnl
+usr/local/share/amsn/plugins/ColoredNicks/lang/langno
+usr/local/share/amsn/plugins/ColoredNicks/lang/langpt_BR
+usr/local/share/amsn/plugins/ColoredNicks/lang/langtr
+usr/local/share/amsn/plugins/ColoredNicks/plugininfo.xml
+usr/local/share/amsn/plugins/DBusStateChanger/DBusStateChanger.tcl
+usr/local/share/amsn/plugins/DBusStateChanger/plugininfo.xml
+usr/local/share/amsn/plugins/DualDisplayPicture/DualDisplayPicture.tcl
+usr/local/share/amsn/plugins/DualDisplayPicture/plugininfo.xml
+usr/local/share/amsn/plugins/FPSstats/FPSstats.tcl
+usr/local/share/amsn/plugins/FPSstats/README
+usr/local/share/amsn/plugins/FPSstats/lang/langen
+usr/local/share/amsn/plugins/FPSstats/lang/langes
+usr/local/share/amsn/plugins/FPSstats/lang/langfr
+usr/local/share/amsn/plugins/FPSstats/lang/langlt
+usr/local/share/amsn/plugins/FPSstats/pixmaps/not_playing.gif
+usr/local/share/amsn/plugins/FPSstats/pixmaps/playing.gif
+usr/local/share/amsn/plugins/FPSstats/plugininfo.xml
+usr/local/share/amsn/plugins/Invisibility/Changelog
+usr/local/share/amsn/plugins/Invisibility/Invisibility.tcl
+usr/local/share/amsn/plugins/Invisibility/lang/langen
+usr/local/share/amsn/plugins/Invisibility/lang/langlt
+usr/local/share/amsn/plugins/Invisibility/lang/langtr
+usr/local/share/amsn/plugins/Invisibility/plugininfo.xml
+usr/local/share/amsn/plugins/Kryptonite/kryptonite.tcl
+usr/local/share/amsn/plugins/Kryptonite/lang/langen
+usr/local/share/amsn/plugins/Kryptonite/lang/langes
+usr/local/share/amsn/plugins/Kryptonite/pixmaps/secure.gif
+usr/local/share/amsn/plugins/Kryptonite/plugininfo.xml
+usr/local/share/amsn/plugins/LilyPondIM/Capture.png
+usr/local/share/amsn/plugins/LilyPondIM/LilyPondIM.tcl
+usr/local/share/amsn/plugins/LilyPondIM/datas/advanced.xml
+usr/local/share/amsn/plugins/LilyPondIM/datas/advanced/exemple1.gif
+usr/local/share/amsn/plugins/LilyPondIM/datas/intermediate.xml
+usr/local/share/amsn/plugins/LilyPondIM/datas/intermediate/exemple1.gif
+usr/local/share/amsn/plugins/LilyPondIM/datas/intermediate/exemple2.gif
+usr/local/share/amsn/plugins/LilyPondIM/datas/intermediate/exemple3.gif
+usr/local/share/amsn/plugins/LilyPondIM/datas/menu.xml
+usr/local/share/amsn/plugins/LilyPondIM/datas/simple.xml
+usr/local/share/amsn/plugins/LilyPondIM/datas/simple/doremifa.gif
+usr/local/share/amsn/plugins/LilyPondIM/datas/simple/ornements.gif
+usr/local/share/amsn/plugins/LilyPondIM/datas/simple/triolet.gif
+usr/local/share/amsn/plugins/LilyPondIM/datas/simple/trioletsDeNoires.gif
+usr/local/share/amsn/plugins/LilyPondIM/pixmaps/ly.png
+usr/local/share/amsn/plugins/LilyPondIM/pixmaps/ly_hover.png
+usr/local/share/amsn/plugins/LilyPondIM/plugininfo.xml
+usr/local/share/amsn/plugins/MSNGameTTT/GameTTT.tcl
+usr/local/share/amsn/plugins/MSNGameTTT/lang/langde
+usr/local/share/amsn/plugins/MSNGameTTT/lang/langen
+usr/local/share/amsn/plugins/MSNGameTTT/lang/langes
+usr/local/share/amsn/plugins/MSNGameTTT/lang/langfr
+usr/local/share/amsn/plugins/MSNGameTTT/lang/langhu
+usr/local/share/amsn/plugins/MSNGameTTT/lang/langja
+usr/local/share/amsn/plugins/MSNGameTTT/lang/langlt
+usr/local/share/amsn/plugins/MSNGameTTT/lang/langnl
+usr/local/share/amsn/plugins/MSNGameTTT/lang/langno
+usr/local/share/amsn/plugins/MSNGameTTT/lang/langpt_BR
+usr/local/share/amsn/plugins/MSNGameTTT/lang/langtr
+usr/local/share/amsn/plugins/MSNGameTTT/pixmaps/background.png
+usr/local/share/amsn/plugins/MSNGameTTT/pixmaps/empty_normal.png
+usr/local/share/amsn/plugins/MSNGameTTT/pixmaps/o_hover.png
+usr/local/share/amsn/plugins/MSNGameTTT/pixmaps/o_normal.png
+usr/local/share/amsn/plugins/MSNGameTTT/pixmaps/x_hover.png
+usr/local/share/amsn/plugins/MSNGameTTT/pixmaps/x_normal.png
+usr/local/share/amsn/plugins/MSNGameTTT/plugininfo.xml
+usr/local/share/amsn/plugins/Notes/notes.tcl
+usr/local/share/amsn/plugins/Notes/plugininfo.xml
+usr/local/share/amsn/plugins/Nudge/Nudge.tcl
+usr/local/share/amsn/plugins/Nudge/lang/langca
+usr/local/share/amsn/plugins/Nudge/lang/langda
+usr/local/share/amsn/plugins/Nudge/lang/langde
+usr/local/share/amsn/plugins/Nudge/lang/langee
+usr/local/share/amsn/plugins/Nudge/lang/langel
+usr/local/share/amsn/plugins/Nudge/lang/langen
+usr/local/share/amsn/plugins/Nudge/lang/langes
+usr/local/share/amsn/plugins/Nudge/lang/langfi
+usr/local/share/amsn/plugins/Nudge/lang/langfr
+usr/local/share/amsn/plugins/Nudge/lang/langhu
+usr/local/share/amsn/plugins/Nudge/lang/langit
+usr/local/share/amsn/plugins/Nudge/lang/langja
+usr/local/share/amsn/plugins/Nudge/lang/langlt
+usr/local/share/amsn/plugins/Nudge/lang/langnl
+usr/local/share/amsn/plugins/Nudge/lang/langno
+usr/local/share/amsn/plugins/Nudge/lang/langpt_BR
+usr/local/share/amsn/plugins/Nudge/lang/langsv
+usr/local/share/amsn/plugins/Nudge/lang/langtr
+usr/local/share/amsn/plugins/Nudge/lang/langzh-CN
+usr/local/share/amsn/plugins/Nudge/lang/langzh-TW
+usr/local/share/amsn/plugins/Nudge/nudge.wav
+usr/local/share/amsn/plugins/Nudge/plugininfo.xml
+usr/local/share/amsn/plugins/Restore/plugininfo.xml
+usr/local/share/amsn/plugins/Restore/restore.tcl
+usr/local/share/amsn/plugins/SearchContact/lang/langde
+usr/local/share/amsn/plugins/SearchContact/lang/langen
+usr/local/share/amsn/plugins/SearchContact/lang/langes
+usr/local/share/amsn/plugins/SearchContact/lang/langfr
+usr/local/share/amsn/plugins/SearchContact/lang/langhu
+usr/local/share/amsn/plugins/SearchContact/lang/langja
+usr/local/share/amsn/plugins/SearchContact/lang/langlt
+usr/local/share/amsn/plugins/SearchContact/lang/langnl
+usr/local/share/amsn/plugins/SearchContact/lang/langno
+usr/local/share/amsn/plugins/SearchContact/lang/langpt
+usr/local/share/amsn/plugins/SearchContact/lang/langpt_BR
+usr/local/share/amsn/plugins/SearchContact/lang/langtr
+usr/local/share/amsn/plugins/SearchContact/pixmaps/clear.png
+usr/local/share/amsn/plugins/SearchContact/pixmaps/license.txt
+usr/local/share/amsn/plugins/SearchContact/pixmaps/search.png
+usr/local/share/amsn/plugins/SearchContact/plugininfo.xml
+usr/local/share/amsn/plugins/SearchContact/searchcontact.tcl
+usr/local/share/amsn/plugins/SendRecents/lang/langen
+usr/local/share/amsn/plugins/SendRecents/lang/langes
+usr/local/share/amsn/plugins/SendRecents/lang/langit
+usr/local/share/amsn/plugins/SendRecents/lang/langlt
+usr/local/share/amsn/plugins/SendRecents/plugininfo.xml
+usr/local/share/amsn/plugins/SendRecents/sendrecents.tcl
+usr/local/share/amsn/plugins/SkinColor/pixmaps/colorskin.png
+usr/local/share/amsn/plugins/SkinColor/plugininfo.xml
+usr/local/share/amsn/plugins/SkinColor/skincolor.tcl
+usr/local/share/amsn/plugins/SpellCheck/Changelog.txt
+usr/local/share/amsn/plugins/SpellCheck/ReadMe.txt
+usr/local/share/amsn/plugins/SpellCheck/SpellCheck.tcl
+usr/local/share/amsn/plugins/SpellCheck/lang/langen
+usr/local/share/amsn/plugins/SpellCheck/lang/langes
+usr/local/share/amsn/plugins/SpellCheck/lang/langlt
+usr/local/share/amsn/plugins/SpellCheck/pixmaps/checkSpelling.png
+usr/local/share/amsn/plugins/SpellCheck/pixmaps/checkSpelling_hover.png
+usr/local/share/amsn/plugins/SpellCheck/plugininfo.xml
+usr/local/share/amsn/plugins/TeXIM/TeXIM.tcl
+usr/local/share/amsn/plugins/TeXIM/datas/accents.xml
+usr/local/share/amsn/plugins/TeXIM/datas/accents/acute.gif
+usr/local/share/amsn/plugins/TeXIM/datas/accents/bar.gif
+usr/local/share/amsn/plugins/TeXIM/datas/accents/breve.gif
+usr/local/share/amsn/plugins/TeXIM/datas/accents/check.gif
+usr/local/share/amsn/plugins/TeXIM/datas/accents/ddot.gif
+usr/local/share/amsn/plugins/TeXIM/datas/accents/dot.gif
+usr/local/share/amsn/plugins/TeXIM/datas/accents/grave.gif
+usr/local/share/amsn/plugins/TeXIM/datas/accents/hat.gif
+usr/local/share/amsn/plugins/TeXIM/datas/accents/tilde.gif
+usr/local/share/amsn/plugins/TeXIM/datas/accents/vec.gif
+usr/local/share/amsn/plugins/TeXIM/datas/accents/widehat.gif
+usr/local/share/amsn/plugins/TeXIM/datas/accents/widetilde.gif
+usr/local/share/amsn/plugins/TeXIM/datas/arrows.xml
+usr/local/share/amsn/plugins/TeXIM/datas/arrows/downarrow.gif
+usr/local/share/amsn/plugins/TeXIM/datas/arrows/downarrow2.gif
+usr/local/share/amsn/plugins/TeXIM/datas/arrows/hookleftarrow.gif
+usr/local/share/amsn/plugins/TeXIM/datas/arrows/hookrightarrow.gif
+usr/local/share/amsn/plugins/TeXIM/datas/arrows/leftarrow.gif
+usr/local/share/amsn/plugins/TeXIM/datas/arrows/leftarrow2.gif
+usr/local/share/amsn/plugins/TeXIM/datas/arrows/leftharpoondown.gif
+usr/local/share/amsn/plugins/TeXIM/datas/arrows/leftharpoonup.gif
+usr/local/share/amsn/plugins/TeXIM/datas/arrows/leftrightarrow.gif
+usr/local/share/amsn/plugins/TeXIM/datas/arrows/leftrightarrow2.gif
+usr/local/share/amsn/plugins/TeXIM/datas/arrows/longleftarrow.gif
+usr/local/share/amsn/plugins/TeXIM/datas/arrows/longleftarrow2.gif
+usr/local/share/amsn/plugins/TeXIM/datas/arrows/longleftrightarrow.gif
+usr/local/share/amsn/plugins/TeXIM/datas/arrows/longleftrightarrow2.gif
+usr/local/share/amsn/plugins/TeXIM/datas/arrows/longmapsto.gif
+usr/local/share/amsn/plugins/TeXIM/datas/arrows/longrightarrow.gif
+usr/local/share/amsn/plugins/TeXIM/datas/arrows/longrightarrow2.gif
+usr/local/share/amsn/plugins/TeXIM/datas/arrows/mapsto.gif
+usr/local/share/amsn/plugins/TeXIM/datas/arrows/nearrow.gif
+usr/local/share/amsn/plugins/TeXIM/datas/arrows/nwarrow.gif
+usr/local/share/amsn/plugins/TeXIM/datas/arrows/rightarrow.gif
+usr/local/share/amsn/plugins/TeXIM/datas/arrows/rightarrow2.gif
+usr/local/share/amsn/plugins/TeXIM/datas/arrows/rightharpoondown.gif
+usr/local/share/amsn/plugins/TeXIM/datas/arrows/rightleftharpoons.gif
+usr/local/share/amsn/plugins/TeXIM/datas/arrows/searrow.gif
+usr/local/share/amsn/plugins/TeXIM/datas/arrows/swarrow.gif
+usr/local/share/amsn/plugins/TeXIM/datas/arrows/tightharpoonup.gif
+usr/local/share/amsn/plugins/TeXIM/datas/arrows/uparrow.gif
+usr/local/share/amsn/plugins/TeXIM/datas/arrows/uparrow2.gif
+usr/local/share/amsn/plugins/TeXIM/datas/greek_letters.xml
+usr/local/share/amsn/plugins/TeXIM/datas/greek_letters/alpha.gif
+usr/local/share/amsn/plugins/TeXIM/datas/greek_letters/beta.gif
+usr/local/share/amsn/plugins/TeXIM/datas/greek_letters/chi.gif
+usr/local/share/amsn/plugins/TeXIM/datas/greek_letters/delta.gif
+usr/local/share/amsn/plugins/TeXIM/datas/greek_letters/delta2.gif
+usr/local/share/amsn/plugins/TeXIM/datas/greek_letters/epsilon.gif
+usr/local/share/amsn/plugins/TeXIM/datas/greek_letters/eta.gif
+usr/local/share/amsn/plugins/TeXIM/datas/greek_letters/gamma2.gif
+usr/local/share/amsn/plugins/TeXIM/datas/greek_letters/iota.gif
+usr/local/share/amsn/plugins/TeXIM/datas/greek_letters/kappa.gif
+usr/local/share/amsn/plugins/TeXIM/datas/greek_letters/lambda.gif
+usr/local/share/amsn/plugins/TeXIM/datas/greek_letters/lambda2.gif
+usr/local/share/amsn/plugins/TeXIM/datas/greek_letters/mu.gif
+usr/local/share/amsn/plugins/TeXIM/datas/greek_letters/nu.gif
+usr/local/share/amsn/plugins/TeXIM/datas/greek_letters/omega.gif
+usr/local/share/amsn/plugins/TeXIM/datas/greek_letters/omega2.gif
+usr/local/share/amsn/plugins/TeXIM/datas/greek_letters/phi.gif
+usr/local/share/amsn/plugins/TeXIM/datas/greek_letters/phi2.gif
+usr/local/share/amsn/plugins/TeXIM/datas/greek_letters/pi.gif
+usr/local/share/amsn/plugins/TeXIM/datas/greek_letters/pi2.gif
+usr/local/share/amsn/plugins/TeXIM/datas/greek_letters/psi.gif
+usr/local/share/amsn/plugins/TeXIM/datas/greek_letters/psi2.gif
+usr/local/share/amsn/plugins/TeXIM/datas/greek_letters/rho.gif
+usr/local/share/amsn/plugins/TeXIM/datas/greek_letters/sigma.gif
+usr/local/share/amsn/plugins/TeXIM/datas/greek_letters/sigma2.gif
+usr/local/share/amsn/plugins/TeXIM/datas/greek_letters/tau.gif
+usr/local/share/amsn/plugins/TeXIM/datas/greek_letters/theta.gif
+usr/local/share/amsn/plugins/TeXIM/datas/greek_letters/theta2.gif
+usr/local/share/amsn/plugins/TeXIM/datas/greek_letters/upsilon.gif
+usr/local/share/amsn/plugins/TeXIM/datas/greek_letters/upsilon2.gif
+usr/local/share/amsn/plugins/TeXIM/datas/greek_letters/varepsilon.gif
+usr/local/share/amsn/plugins/TeXIM/datas/greek_letters/varphi.gif
+usr/local/share/amsn/plugins/TeXIM/datas/greek_letters/varpi.gif
+usr/local/share/amsn/plugins/TeXIM/datas/greek_letters/varrho.gif
+usr/local/share/amsn/plugins/TeXIM/datas/greek_letters/varsigma.gif
+usr/local/share/amsn/plugins/TeXIM/datas/greek_letters/vartheta.gif
+usr/local/share/amsn/plugins/TeXIM/datas/greek_letters/xi.gif
+usr/local/share/amsn/plugins/TeXIM/datas/greek_letters/xi2.gif
+usr/local/share/amsn/plugins/TeXIM/datas/greek_letters/zeta.gif
+usr/local/share/amsn/plugins/TeXIM/datas/mathematics.xml
+usr/local/share/amsn/plugins/TeXIM/datas/mathematics/arccos.gif
+usr/local/share/amsn/plugins/TeXIM/datas/mathematics/arcsin.gif
+usr/local/share/amsn/plugins/TeXIM/datas/mathematics/arctan.gif
+usr/local/share/amsn/plugins/TeXIM/datas/mathematics/arg.gif
+usr/local/share/amsn/plugins/TeXIM/datas/mathematics/bicap2.gif
+usr/local/share/amsn/plugins/TeXIM/datas/mathematics/bigcap.gif
+usr/local/share/amsn/plugins/TeXIM/datas/mathematics/bigcup.gif
+usr/local/share/amsn/plugins/TeXIM/datas/mathematics/bigcup2.gif
+usr/local/share/amsn/plugins/TeXIM/datas/mathematics/bigodot.gif
+usr/local/share/amsn/plugins/TeXIM/datas/mathematics/bigodot2.gif
+usr/local/share/amsn/plugins/TeXIM/datas/mathematics/bigoplus.gif
+usr/local/share/amsn/plugins/TeXIM/datas/mathematics/bigoplus2.gif
+usr/local/share/amsn/plugins/TeXIM/datas/mathematics/bigotimes.gif
+usr/local/share/amsn/plugins/TeXIM/datas/mathematics/bigotimes2.gif
+usr/local/share/amsn/plugins/TeXIM/datas/mathematics/bigsqcup.gif
+usr/local/share/amsn/plugins/TeXIM/datas/mathematics/bigsqcup2.gif
+usr/local/share/amsn/plugins/TeXIM/datas/mathematics/biguplus.gif
+usr/local/share/amsn/plugins/TeXIM/datas/mathematics/biguplus2.gif
+usr/local/share/amsn/plugins/TeXIM/datas/mathematics/bigvee.gif
+usr/local/share/amsn/plugins/TeXIM/datas/mathematics/bigvee2.gif
+usr/local/share/amsn/plugins/TeXIM/datas/mathematics/bigwedge.gif
+usr/local/share/amsn/plugins/TeXIM/datas/mathematics/bigwedge2.gif
+usr/local/share/amsn/plugins/TeXIM/datas/mathematics/coprod.gif
+usr/local/share/amsn/plugins/TeXIM/datas/mathematics/coprod2.gif
+usr/local/share/amsn/plugins/TeXIM/datas/mathematics/cos.gif
+usr/local/share/amsn/plugins/TeXIM/datas/mathematics/cosh.gif
+usr/local/share/amsn/plugins/TeXIM/datas/mathematics/cot.gif
+usr/local/share/amsn/plugins/TeXIM/datas/mathematics/coth.gif
+usr/local/share/amsn/plugins/TeXIM/datas/mathematics/csc.gif
+usr/local/share/amsn/plugins/TeXIM/datas/mathematics/deg.gif
+usr/local/share/amsn/plugins/TeXIM/datas/mathematics/det.gif
+usr/local/share/amsn/plugins/TeXIM/datas/mathematics/dim.gif
+usr/local/share/amsn/plugins/TeXIM/datas/mathematics/exp.gif
+usr/local/share/amsn/plugins/TeXIM/datas/mathematics/frac.gif
+usr/local/share/amsn/plugins/TeXIM/datas/mathematics/gcd.gif
+usr/local/share/amsn/plugins/TeXIM/datas/mathematics/hom.gif
+usr/local/share/amsn/plugins/TeXIM/datas/mathematics/inf.gif
+usr/local/share/amsn/plugins/TeXIM/datas/mathematics/int.gif
+usr/local/share/amsn/plugins/TeXIM/datas/mathematics/int2.gif
+usr/local/share/amsn/plugins/TeXIM/datas/mathematics/int_ex1.gif
+usr/local/share/amsn/plugins/TeXIM/datas/mathematics/int_ex2.gif
+usr/local/share/amsn/plugins/TeXIM/datas/mathematics/ker.gif
+usr/local/share/amsn/plugins/TeXIM/datas/mathematics/lg.gif
+usr/local/share/amsn/plugins/TeXIM/datas/mathematics/lim.gif
+usr/local/share/amsn/plugins/TeXIM/datas/mathematics/lim_ex1.gif
+usr/local/share/amsn/plugins/TeXIM/datas/mathematics/liminf.gif
+usr/local/share/amsn/plugins/TeXIM/datas/mathematics/limsup.gif
+usr/local/share/amsn/plugins/TeXIM/datas/mathematics/ln.gif
+usr/local/share/amsn/plugins/TeXIM/datas/mathematics/log.gif
+usr/local/share/amsn/plugins/TeXIM/datas/mathematics/max.gif
+usr/local/share/amsn/plugins/TeXIM/datas/mathematics/min.gif
+usr/local/share/amsn/plugins/TeXIM/datas/mathematics/mod.gif
+usr/local/share/amsn/plugins/TeXIM/datas/mathematics/oint.gif
+usr/local/share/amsn/plugins/TeXIM/datas/mathematics/oint2.gif
+usr/local/share/amsn/plugins/TeXIM/datas/mathematics/pmod.gif
+usr/local/share/amsn/plugins/TeXIM/datas/mathematics/pr.gif
+usr/local/share/amsn/plugins/TeXIM/datas/mathematics/prod.gif
+usr/local/share/amsn/plugins/TeXIM/datas/mathematics/prod2.gif
+usr/local/share/amsn/plugins/TeXIM/datas/mathematics/sec.gif
+usr/local/share/amsn/plugins/TeXIM/datas/mathematics/sin.gif
+usr/local/share/amsn/plugins/TeXIM/datas/mathematics/sinh.gif
+usr/local/share/amsn/plugins/TeXIM/datas/mathematics/sqrt.gif
+usr/local/share/amsn/plugins/TeXIM/datas/mathematics/sqrt2.gif
+usr/local/share/amsn/plugins/TeXIM/datas/mathematics/sum.gif
+usr/local/share/amsn/plugins/TeXIM/datas/mathematics/sum2.gif
+usr/local/share/amsn/plugins/TeXIM/datas/mathematics/sum_ex1.gif
+usr/local/share/amsn/plugins/TeXIM/datas/mathematics/sum_ex2.gif
+usr/local/share/amsn/plugins/TeXIM/datas/mathematics/sup.gif
+usr/local/share/amsn/plugins/TeXIM/datas/mathematics/tan.gif
+usr/local/share/amsn/plugins/TeXIM/datas/mathematics/tanh.gif
+usr/local/share/amsn/plugins/TeXIM/datas/menu.xml
+usr/local/share/amsn/plugins/TeXIM/datas/other.xml
+usr/local/share/amsn/plugins/TeXIM/datas/other/ex_det.gif
+usr/local/share/amsn/plugins/TeXIM/datas/other/ex_equations.gif
+usr/local/share/amsn/plugins/TeXIM/datas/other/ex_mat.gif
+usr/local/share/amsn/plugins/TeXIM/datas/other/ex_mat2.gif
+usr/local/share/amsn/plugins/TeXIM/datas/other/ex_sum.gif
+usr/local/share/amsn/plugins/TeXIM/datas/spaces.xml
+usr/local/share/amsn/plugins/TeXIM/datas/spaces/espace0.gif
+usr/local/share/amsn/plugins/TeXIM/datas/spaces/espace1.gif
+usr/local/share/amsn/plugins/TeXIM/datas/spaces/espace2.gif
+usr/local/share/amsn/plugins/TeXIM/datas/spaces/espace3.gif
+usr/local/share/amsn/plugins/TeXIM/datas/spaces/espace4.gif
+usr/local/share/amsn/plugins/TeXIM/datas/spaces/espace5.gif
+usr/local/share/amsn/plugins/TeXIM/datas/spaces/espace6.gif
+usr/local/share/amsn/plugins/TeXIM/datas/styles.xml
+usr/local/share/amsn/plugins/TeXIM/datas/styles/bar.gif
+usr/local/share/amsn/plugins/TeXIM/datas/styles/indice.gif
+usr/local/share/amsn/plugins/TeXIM/datas/styles/mathcal.gif
+usr/local/share/amsn/plugins/TeXIM/datas/styles/mbox.gif
+usr/local/share/amsn/plugins/TeXIM/datas/styles/overbrace.gif
+usr/local/share/amsn/plugins/TeXIM/datas/styles/overleftarrow.gif
+usr/local/share/amsn/plugins/TeXIM/datas/styles/overline.gif
+usr/local/share/amsn/plugins/TeXIM/datas/styles/overrightarrow.gif
+usr/local/share/amsn/plugins/TeXIM/datas/styles/pow.gif
+usr/local/share/amsn/plugins/TeXIM/datas/styles/stackrel.gif
+usr/local/share/amsn/plugins/TeXIM/datas/styles/underbrace.gif
+usr/local/share/amsn/plugins/TeXIM/datas/styles/underline.gif
+usr/local/share/amsn/plugins/TeXIM/datas/symbols.xml
+usr/local/share/amsn/plugins/TeXIM/datas/symbols/Im.gif
+usr/local/share/amsn/plugins/TeXIM/datas/symbols/Re.gif
+usr/local/share/amsn/plugins/TeXIM/datas/symbols/aleph.gif
+usr/local/share/amsn/plugins/TeXIM/datas/symbols/amalg.gif
+usr/local/share/amsn/plugins/TeXIM/datas/symbols/angle.gif
+usr/local/share/amsn/plugins/TeXIM/datas/symbols/approx.gif
+usr/local/share/amsn/plugins/TeXIM/datas/symbols/ast.gif
+usr/local/share/amsn/plugins/TeXIM/datas/symbols/asymp.gif
+usr/local/share/amsn/plugins/TeXIM/datas/symbols/backslash.gif
+usr/local/share/amsn/plugins/TeXIM/datas/symbols/bigcirc.gif
+usr/local/share/amsn/plugins/TeXIM/datas/symbols/bigtriangledown.gif
+usr/local/share/amsn/plugins/TeXIM/datas/symbols/bigtriangleup.gif
+usr/local/share/amsn/plugins/TeXIM/datas/symbols/bot.gif
+usr/local/share/amsn/plugins/TeXIM/datas/symbols/bowtie.gif
+usr/local/share/amsn/plugins/TeXIM/datas/symbols/bullet.gif
+usr/local/share/amsn/plugins/TeXIM/datas/symbols/cap.gif
+usr/local/share/amsn/plugins/TeXIM/datas/symbols/cdot.gif
+usr/local/share/amsn/plugins/TeXIM/datas/symbols/cdots.gif
+usr/local/share/amsn/plugins/TeXIM/datas/symbols/circ.gif
+usr/local/share/amsn/plugins/TeXIM/datas/symbols/clubsuit.gif
+usr/local/share/amsn/plugins/TeXIM/datas/symbols/cong.gif
+usr/local/share/amsn/plugins/TeXIM/datas/symbols/cup.gif
+usr/local/share/amsn/plugins/TeXIM/datas/symbols/dagger.gif
+usr/local/share/amsn/plugins/TeXIM/datas/symbols/dashv.gif
+usr/local/share/amsn/plugins/TeXIM/datas/symbols/ddagger.gif
+usr/local/share/amsn/plugins/TeXIM/datas/symbols/ddots.gif
+usr/local/share/amsn/plugins/TeXIM/datas/symbols/diamond.gif
+usr/local/share/amsn/plugins/TeXIM/datas/symbols/diamondsuit.gif
+usr/local/share/amsn/plugins/TeXIM/datas/symbols/div.gif
+usr/local/share/amsn/plugins/TeXIM/datas/symbols/doteq.gif
+usr/local/share/amsn/plugins/TeXIM/datas/symbols/ell.gif
+usr/local/share/amsn/plugins/TeXIM/datas/symbols/emptyset.gif
+usr/local/share/amsn/plugins/TeXIM/datas/symbols/equiv.gif
+usr/local/share/amsn/plugins/TeXIM/datas/symbols/exists.gif
+usr/local/share/amsn/plugins/TeXIM/datas/symbols/flat.gif
+usr/local/share/amsn/plugins/TeXIM/datas/symbols/forall.gif
+usr/local/share/amsn/plugins/TeXIM/datas/symbols/frown.gif
+usr/local/share/amsn/plugins/TeXIM/datas/symbols/geq.gif
+usr/local/share/amsn/plugins/TeXIM/datas/symbols/gg.gif
+usr/local/share/amsn/plugins/TeXIM/datas/symbols/hbar.gif
+usr/local/share/amsn/plugins/TeXIM/datas/symbols/heartsuit.gif
+usr/local/share/amsn/plugins/TeXIM/datas/symbols/imath.gif
+usr/local/share/amsn/plugins/TeXIM/datas/symbols/in.gif
+usr/local/share/amsn/plugins/TeXIM/datas/symbols/infty.gif
+usr/local/share/amsn/plugins/TeXIM/datas/symbols/jmath.gif
+usr/local/share/amsn/plugins/TeXIM/datas/symbols/leq.gif
+usr/local/share/amsn/plugins/TeXIM/datas/symbols/ll.gif
+usr/local/share/amsn/plugins/TeXIM/datas/symbols/mid.gif
+usr/local/share/amsn/plugins/TeXIM/datas/symbols/models.gif
+usr/local/share/amsn/plugins/TeXIM/datas/symbols/mp.gif
+usr/local/share/amsn/plugins/TeXIM/datas/symbols/nabla.gif
+usr/local/share/amsn/plugins/TeXIM/datas/symbols/natural.gif
+usr/local/share/amsn/plugins/TeXIM/datas/symbols/neg.gif
+usr/local/share/amsn/plugins/TeXIM/datas/symbols/neq.gif
+usr/local/share/amsn/plugins/TeXIM/datas/symbols/notexists.gif
+usr/local/share/amsn/plugins/TeXIM/datas/symbols/notin.gif
+usr/local/share/amsn/plugins/TeXIM/datas/symbols/odot.gif
+usr/local/share/amsn/plugins/TeXIM/datas/symbols/ominus.gif
+usr/local/share/amsn/plugins/TeXIM/datas/symbols/oplus.gif
+usr/local/share/amsn/plugins/TeXIM/datas/symbols/oslash.gif
+usr/local/share/amsn/plugins/TeXIM/datas/symbols/otimes.gif
+usr/local/share/amsn/plugins/TeXIM/datas/symbols/parallel.gif
+usr/local/share/amsn/plugins/TeXIM/datas/symbols/partial.gif
+usr/local/share/amsn/plugins/TeXIM/datas/symbols/perp.gif
+usr/local/share/amsn/plugins/TeXIM/datas/symbols/pipe.gif
+usr/local/share/amsn/plugins/TeXIM/datas/symbols/pm.gif
+usr/local/share/amsn/plugins/TeXIM/datas/symbols/prec.gif
+usr/local/share/amsn/plugins/TeXIM/datas/symbols/preceq.gif
+usr/local/share/amsn/plugins/TeXIM/datas/symbols/prime.gif
+usr/local/share/amsn/plugins/TeXIM/datas/symbols/propto.gif
+usr/local/share/amsn/plugins/TeXIM/datas/symbols/setminus.gif
+usr/local/share/amsn/plugins/TeXIM/datas/symbols/sharp.gif
+usr/local/share/amsn/plugins/TeXIM/datas/symbols/sim.gif
+usr/local/share/amsn/plugins/TeXIM/datas/symbols/simeq.gif
+usr/local/share/amsn/plugins/TeXIM/datas/symbols/smile.gif
+usr/local/share/amsn/plugins/TeXIM/datas/symbols/spadesuit.gif
+usr/local/share/amsn/plugins/TeXIM/datas/symbols/sqcap.gif
+usr/local/share/amsn/plugins/TeXIM/datas/symbols/sqcup.gif
+usr/local/share/amsn/plugins/TeXIM/datas/symbols/sqsubseteq.gif
+usr/local/share/amsn/plugins/TeXIM/datas/symbols/sqsupseteq.gif
+usr/local/share/amsn/plugins/TeXIM/datas/symbols/star.gif
+usr/local/share/amsn/plugins/TeXIM/datas/symbols/subset.gif
+usr/local/share/amsn/plugins/TeXIM/datas/symbols/subseteq.gif
+usr/local/share/amsn/plugins/TeXIM/datas/symbols/succ.gif
+usr/local/share/amsn/plugins/TeXIM/datas/symbols/succeq.gif
+usr/local/share/amsn/plugins/TeXIM/datas/symbols/supset.gif
+usr/local/share/amsn/plugins/TeXIM/datas/symbols/supseteq.gif
+usr/local/share/amsn/plugins/TeXIM/datas/symbols/surd.gif
+usr/local/share/amsn/plugins/TeXIM/datas/symbols/times.gif
+usr/local/share/amsn/plugins/TeXIM/datas/symbols/top.gif
+usr/local/share/amsn/plugins/TeXIM/datas/symbols/triangle.gif
+usr/local/share/amsn/plugins/TeXIM/datas/symbols/triangleleft.gif
+usr/local/share/amsn/plugins/TeXIM/datas/symbols/triangleright.gif
+usr/local/share/amsn/plugins/TeXIM/datas/symbols/uplus.gif
+usr/local/share/amsn/plugins/TeXIM/datas/symbols/vdash.gif
+usr/local/share/amsn/plugins/TeXIM/datas/symbols/vdots.gif
+usr/local/share/amsn/plugins/TeXIM/datas/symbols/vee.gif
+usr/local/share/amsn/plugins/TeXIM/datas/symbols/wedge.gif
+usr/local/share/amsn/plugins/TeXIM/datas/symbols/wp.gif
+usr/local/share/amsn/plugins/TeXIM/datas/symbols/wr.gif
+usr/local/share/amsn/plugins/TeXIM/pixmaps/tex.png
+usr/local/share/amsn/plugins/TeXIM/pixmaps/tex_hover.png
+usr/local/share/amsn/plugins/TeXIM/plugininfo.xml
+usr/local/share/amsn/plugins/Translate/plugininfo.xml
+usr/local/share/amsn/plugins/Translate/translate.tcl
+usr/local/share/amsn/plugins/WebcamShooter/camshoot.tcl
+usr/local/share/amsn/plugins/WebcamShooter/lang/langde
+usr/local/share/amsn/plugins/WebcamShooter/lang/langen
+usr/local/share/amsn/plugins/WebcamShooter/lang/langes
+usr/local/share/amsn/plugins/WebcamShooter/lang/langfi
+usr/local/share/amsn/plugins/WebcamShooter/lang/langfr
+usr/local/share/amsn/plugins/WebcamShooter/lang/langhu
+usr/local/share/amsn/plugins/WebcamShooter/lang/langit
+usr/local/share/amsn/plugins/WebcamShooter/lang/langja
+usr/local/share/amsn/plugins/WebcamShooter/lang/langlt
+usr/local/share/amsn/plugins/WebcamShooter/lang/langnl
+usr/local/share/amsn/plugins/WebcamShooter/lang/langno
+usr/local/share/amsn/plugins/WebcamShooter/lang/langpt_BR
+usr/local/share/amsn/plugins/WebcamShooter/lang/langsv
+usr/local/share/amsn/plugins/WebcamShooter/lang/langtr
+usr/local/share/amsn/plugins/WebcamShooter/plugininfo.xml
+usr/local/share/amsn/plugins/actionsmenu/actionsmenu.tcl
+usr/local/share/amsn/plugins/actionsmenu/lang/langde
+usr/local/share/amsn/plugins/actionsmenu/lang/langen
+usr/local/share/amsn/plugins/actionsmenu/lang/langes
+usr/local/share/amsn/plugins/actionsmenu/lang/langfr
+usr/local/share/amsn/plugins/actionsmenu/lang/langhu
+usr/local/share/amsn/plugins/actionsmenu/lang/langit
+usr/local/share/amsn/plugins/actionsmenu/lang/langlt
+usr/local/share/amsn/plugins/actionsmenu/lang/langnl
+usr/local/share/amsn/plugins/actionsmenu/lang/langpt_BR
+usr/local/share/amsn/plugins/actionsmenu/lang/langtr
+usr/local/share/amsn/plugins/actionsmenu/pixmaps/actions_addcontact.png
+usr/local/share/amsn/plugins/actionsmenu/pixmaps/actions_collapsecol.png
+usr/local/share/amsn/plugins/actionsmenu/pixmaps/actions_expcol.png
+usr/local/share/amsn/plugins/actionsmenu/pixmaps/actions_find.png
+usr/local/share/amsn/plugins/actionsmenu/pixmaps/actionsbg.png
+usr/local/share/amsn/plugins/actionsmenu/plugininfo.xml
+usr/local/share/amsn/plugins/address_book/addressbook.tcl
+usr/local/share/amsn/plugins/address_book/lang/langen
+usr/local/share/amsn/plugins/address_book/lang/langes
+usr/local/share/amsn/plugins/address_book/lang/langfr
+usr/local/share/amsn/plugins/address_book/plugininfo.xml
+usr/local/share/amsn/plugins/address_book/utils/addressbook/pkgIndex.tcl
+usr/local/share/amsn/plugins/advancedconfigviewer/acv.tcl
+usr/local/share/amsn/plugins/advancedconfigviewer/plugininfo.xml
+usr/local/share/amsn/plugins/amsnplus/Makefile
+usr/local/share/amsn/plugins/amsnplus/amsnplus.tcl
+usr/local/share/amsn/plugins/amsnplus/lang/langca
+usr/local/share/amsn/plugins/amsnplus/lang/langda
+usr/local/share/amsn/plugins/amsnplus/lang/langee
+usr/local/share/amsn/plugins/amsnplus/lang/langen
+usr/local/share/amsn/plugins/amsnplus/lang/langes
+usr/local/share/amsn/plugins/amsnplus/lang/langfr
+usr/local/share/amsn/plugins/amsnplus/lang/langhu
+usr/local/share/amsn/plugins/amsnplus/lang/langit
+usr/local/share/amsn/plugins/amsnplus/lang/langlt
+usr/local/share/amsn/plugins/amsnplus/lang/langnl
+usr/local/share/amsn/plugins/amsnplus/lang/langno
+usr/local/share/amsn/plugins/amsnplus/lang/langpt
+usr/local/share/amsn/plugins/amsnplus/lang/langpt_BR
+usr/local/share/amsn/plugins/amsnplus/pixmaps/multiple_colors.gif
+usr/local/share/amsn/plugins/amsnplus/plugininfo.xml
+usr/local/share/amsn/plugins/amsnplus/readme
+usr/local/share/amsn/plugins/amsnplus/snapshot
+usr/local/share/amsn/plugins/amsnplus/snapshot.c
+usr/local/share/amsn/plugins/bugbuddy/CREDITS
+usr/local/share/amsn/plugins/bugbuddy/bugbuddy.tcl
+usr/local/share/amsn/plugins/bugbuddy/lang/langen
+usr/local/share/amsn/plugins/bugbuddy/lang/langes
+usr/local/share/amsn/plugins/bugbuddy/lang/langhu
+usr/local/share/amsn/plugins/bugbuddy/plugininfo.xml
+usr/local/share/amsn/plugins/camserv/camserv.tcl
+usr/local/share/amsn/plugins/camserv/plugininfo.xml
+usr/local/share/amsn/plugins/chameleon/button.tcl
+usr/local/share/amsn/plugins/chameleon/chameleon.tcl
+usr/local/share/amsn/plugins/chameleon/checkbutton.tcl
+usr/local/share/amsn/plugins/chameleon/combobox.tcl
+usr/local/share/amsn/plugins/chameleon/common.tcl
+usr/local/share/amsn/plugins/chameleon/entry.tcl
+usr/local/share/amsn/plugins/chameleon/frame.tcl
+usr/local/share/amsn/plugins/chameleon/label.tcl
+usr/local/share/amsn/plugins/chameleon/labelframe.tcl
+usr/local/share/amsn/plugins/chameleon/lang/langen
+usr/local/share/amsn/plugins/chameleon/lang/langes
+usr/local/share/amsn/plugins/chameleon/lang/langfr
+usr/local/share/amsn/plugins/chameleon/lang/langhu
+usr/local/share/amsn/plugins/chameleon/lang/langlt
+usr/local/share/amsn/plugins/chameleon/menubutton.tcl
+usr/local/share/amsn/plugins/chameleon/notebook.tcl
+usr/local/share/amsn/plugins/chameleon/pkgIndex.tcl
+usr/local/share/amsn/plugins/chameleon/plugininfo.xml
+usr/local/share/amsn/plugins/chameleon/radiobutton.tcl
+usr/local/share/amsn/plugins/chameleon/scrollbar.tcl
+usr/local/share/amsn/plugins/changeit/changeit.tcl
+usr/local/share/amsn/plugins/changeit/plugininfo.xml
+usr/local/share/amsn/plugins/colorize/colorize.tcl
+usr/local/share/amsn/plugins/colorize/lang/langen
+usr/local/share/amsn/plugins/colorize/lang/langes
+usr/local/share/amsn/plugins/colorize/lang/langhu
+usr/local/share/amsn/plugins/colorize/plugininfo.xml
+usr/local/share/amsn/plugins/countdown/countdown.tcl
+usr/local/share/amsn/plugins/countdown/lang/langen
+usr/local/share/amsn/plugins/countdown/lang/langes
+usr/local/share/amsn/plugins/countdown/lang/langfi
+usr/local/share/amsn/plugins/countdown/lang/langfr
+usr/local/share/amsn/plugins/countdown/lang/langhu
+usr/local/share/amsn/plugins/countdown/lang/langit
+usr/local/share/amsn/plugins/countdown/plugininfo.xml
+usr/local/share/amsn/plugins/dbusviewer/DbusViewer.tcl
+usr/local/share/amsn/plugins/dbusviewer/Readme
+usr/local/share/amsn/plugins/dbusviewer/plugininfo.xml
+usr/local/share/amsn/plugins/desktop_integration/desktop_integration.tcl
+usr/local/share/amsn/plugins/desktop_integration/plugininfo.xml
+usr/local/share/amsn/plugins/devel/devel.tcl
+usr/local/share/amsn/plugins/devel/plugininfo.xml
+usr/local/share/amsn/plugins/ebuddykiller/ebuddykiller.tcl
+usr/local/share/amsn/plugins/ebuddykiller/plugininfo.xml
+usr/local/share/amsn/plugins/emotes/emotes.tcl
+usr/local/share/amsn/plugins/emotes/plugininfo.xml
+usr/local/share/amsn/plugins/emoticons_importer/emoticons_importer.tcl
+usr/local/share/amsn/plugins/emoticons_importer/lang/langen
+usr/local/share/amsn/plugins/emoticons_importer/lang/langes
+usr/local/share/amsn/plugins/emoticons_importer/lang/langhu
+usr/local/share/amsn/plugins/emoticons_importer/plugininfo.xml
+usr/local/share/amsn/plugins/games/Chess.tcl
+usr/local/share/amsn/plugins/games/Dots_and_Boxes.tcl
+usr/local/share/amsn/plugins/games/Games.tcl
+usr/local/share/amsn/plugins/games/Hangman.tcl
+usr/local/share/amsn/plugins/games/Sketch.tcl
+usr/local/share/amsn/plugins/games/changelog
+usr/local/share/amsn/plugins/games/developers.readme
+usr/local/share/amsn/plugins/games/images/Hangman.gif
+usr/local/share/amsn/plugins/games/images/Hangman_small.gif
+usr/local/share/amsn/plugins/games/lang/langen
+usr/local/share/amsn/plugins/games/lang/langes
+usr/local/share/amsn/plugins/games/lang/langfr
+usr/local/share/amsn/plugins/games/lang/langhu
+usr/local/share/amsn/plugins/games/lang/langlt
+usr/local/share/amsn/plugins/games/lang/langnl
+usr/local/share/amsn/plugins/games/lang/langpt_BR
+usr/local/share/amsn/plugins/games/plugininfo.xml
+usr/local/share/amsn/plugins/games/readme
+usr/local/share/amsn/plugins/gename/gename.tcl
+usr/local/share/amsn/plugins/gename/plugininfo.xml
+usr/local/share/amsn/plugins/glogs/glogs.tcl
+usr/local/share/amsn/plugins/glogs/lang/langda
+usr/local/share/amsn/plugins/glogs/lang/langen
+usr/local/share/amsn/plugins/glogs/lang/langes
+usr/local/share/amsn/plugins/glogs/lang/langfr
+usr/local/share/amsn/plugins/glogs/lang/langhu
+usr/local/share/amsn/plugins/glogs/lang/langlt
+usr/local/share/amsn/plugins/glogs/plugininfo.xml
+usr/local/share/amsn/plugins/glogs/smtp.tcl
+usr/local/share/amsn/plugins/gnotify/gnotify.tcl
+usr/local/share/amsn/plugins/gnotify/lang/langen
+usr/local/share/amsn/plugins/gnotify/lang/langes
+usr/local/share/amsn/plugins/gnotify/lang/langfr
+usr/local/share/amsn/plugins/gnotify/lang/langhu
+usr/local/share/amsn/plugins/gnotify/lang/langlt
+usr/local/share/amsn/plugins/gnotify/pixmaps/gnotify_empty.png
+usr/local/share/amsn/plugins/gnotify/pixmaps/gnotify_error.png
+usr/local/share/amsn/plugins/gnotify/pixmaps/gnotify_new.png
+usr/local/share/amsn/plugins/gnotify/pixmaps/paperclip.png
+usr/local/share/amsn/plugins/gnotify/pixmaps/star.png
+usr/local/share/amsn/plugins/gnotify/plugininfo.xml
+usr/local/share/amsn/plugins/growl/growl.png
+usr/local/share/amsn/plugins/growl/growl.tcl
+usr/local/share/amsn/plugins/growl/lang/langen
+usr/local/share/amsn/plugins/growl/lang/langes
+usr/local/share/amsn/plugins/growl/lang/langfr
+usr/local/share/amsn/plugins/growl/lang/langhu
+usr/local/share/amsn/plugins/growl/lang/langlt
+usr/local/share/amsn/plugins/growl/plugininfo.xml
+usr/local/share/amsn/plugins/growl/styles/aMSN.growlStyle/Contents/Info.plist
+usr/local/share/amsn/plugins/growl/styles/aMSN.growlStyle/Contents/Resources/amsnnotify.png
+usr/local/share/amsn/plugins/growl/styles/aMSN.growlStyle/Contents/Resources/default.css
+usr/local/share/amsn/plugins/growl/styles/aMSNMac.growlStyle/Contents/Info.plist
+usr/local/share/amsn/plugins/growl/styles/aMSNMac.growlStyle/Contents/Resources/default.css
+usr/local/share/amsn/plugins/growl/styles/aMSNMac.growlStyle/Contents/Resources/notifyonline.png
+usr/local/share/amsn/plugins/inkdraw/inkdraw.tcl
+usr/local/share/amsn/plugins/inkdraw/pencils/pencil1.png
+usr/local/share/amsn/plugins/inkdraw/pencils/pencil2.png
+usr/local/share/amsn/plugins/inkdraw/pencils/pencil_1.png
+usr/local/share/amsn/plugins/inkdraw/pencils/pencil_3.png
+usr/local/share/amsn/plugins/inkdraw/pencils/pencil_7.png
+usr/local/share/amsn/plugins/inkdraw/pixmaps/butdraw.png
+usr/local/share/amsn/plugins/inkdraw/pixmaps/butdraw_hover.png
+usr/local/share/amsn/plugins/inkdraw/pixmaps/butgridoff.png
+usr/local/share/amsn/plugins/inkdraw/pixmaps/butgridoff_hover.png
+usr/local/share/amsn/plugins/inkdraw/pixmaps/butgridon.png
+usr/local/share/amsn/plugins/inkdraw/pixmaps/butgridon_hover.png
+usr/local/share/amsn/plugins/inkdraw/pixmaps/buttext.png
+usr/local/share/amsn/plugins/inkdraw/pixmaps/buttext_hover.png
+usr/local/share/amsn/plugins/inkdraw/pixmaps/butwipe.png
+usr/local/share/amsn/plugins/inkdraw/pixmaps/butwipe_hover.png
+usr/local/share/amsn/plugins/inkdraw/pixmaps/grid.png
+usr/local/share/amsn/plugins/inkdraw/pixmaps/ink_huge.png
+usr/local/share/amsn/plugins/inkdraw/pixmaps/ink_normal.png
+usr/local/share/amsn/plugins/inkdraw/pixmaps/ink_tiny.png
+usr/local/share/amsn/plugins/inkdraw/plugininfo.xml
+usr/local/share/amsn/plugins/jake/README
+usr/local/share/amsn/plugins/jake/cmdline.tcl
+usr/local/share/amsn/plugins/jake/forget.tcl
+usr/local/share/amsn/plugins/jake/fuzzystringmatch.tcl
+usr/local/share/amsn/plugins/jake/google.tcl
+usr/local/share/amsn/plugins/jake/help.tcl
+usr/local/share/amsn/plugins/jake/htmlparse.tcl
+usr/local/share/amsn/plugins/jake/http.tcl
+usr/local/share/amsn/plugins/jake/jake.tcl
+usr/local/share/amsn/plugins/jake/lang/langen
+usr/local/share/amsn/plugins/jake/lang/langes
+usr/local/share/amsn/plugins/jake/lang/langfi
+usr/local/share/amsn/plugins/jake/lang/langfr
+usr/local/share/amsn/plugins/jake/lang/langit
+usr/local/share/amsn/plugins/jake/lang/langnl
+usr/local/share/amsn/plugins/jake/learn.tcl
+usr/local/share/amsn/plugins/jake/megaupload.tcl
+usr/local/share/amsn/plugins/jake/music.tcl
+usr/local/share/amsn/plugins/jake/plugininfo.xml
+usr/local/share/amsn/plugins/jake/stack.tcl
+usr/local/share/amsn/plugins/jake/state.tcl
+usr/local/share/amsn/plugins/jake/translate.tcl
+usr/local/share/amsn/plugins/jake/youtube.tcl
+usr/local/share/amsn/plugins/keepalive/keepaliveplus.tcl
+usr/local/share/amsn/plugins/keepalive/plugininfo.xml
+usr/local/share/amsn/plugins/movewin/movewin.tcl
+usr/local/share/amsn/plugins/movewin/plugininfo.xml
+usr/local/share/amsn/plugins/music/MusicWin/MusicWin.cpp
+usr/local/share/amsn/plugins/music/MusicWin/MusicWin.dsp
+usr/local/share/amsn/plugins/music/MusicWin/MusicWin.dsw
+usr/local/share/amsn/plugins/music/MusicWin/MusicWin.h
+usr/local/share/amsn/plugins/music/MusicWin/wa_ipc.h
+usr/local/share/amsn/plugins/music/display_and_send.scpt
+usr/local/share/amsn/plugins/music/infoamarok
+usr/local/share/amsn/plugins/music/infoamarok2
+usr/local/share/amsn/plugins/music/infoaudacious
+usr/local/share/amsn/plugins/music/infobanshee
+usr/local/share/amsn/plugins/music/infocog.scpt
+usr/local/share/amsn/plugins/music/infoexaile
+usr/local/share/amsn/plugins/music/infogmusicbrowser
+usr/local/share/amsn/plugins/music/infojuk
+usr/local/share/amsn/plugins/music/infojuk2
+usr/local/share/amsn/plugins/music/infolastfm
+usr/local/share/amsn/plugins/music/infolisten
+usr/local/share/amsn/plugins/music/infomoc
+usr/local/share/amsn/plugins/music/infompris
+usr/local/share/amsn/plugins/music/inforhythmbox
+usr/local/share/amsn/plugins/music/infosongbird
+usr/local/share/amsn/plugins/music/infospotify
+usr/local/share/amsn/plugins/music/infovlc
+usr/local/share/amsn/plugins/music/lang/langda
+usr/local/share/amsn/plugins/music/lang/langee
+usr/local/share/amsn/plugins/music/lang/langen
+usr/local/share/amsn/plugins/music/lang/langes
+usr/local/share/amsn/plugins/music/lang/langfi
+usr/local/share/amsn/plugins/music/lang/langfr
+usr/local/share/amsn/plugins/music/lang/langfr_CA
+usr/local/share/amsn/plugins/music/lang/langhu
+usr/local/share/amsn/plugins/music/lang/langit
+usr/local/share/amsn/plugins/music/lang/langlt
+usr/local/share/amsn/plugins/music/lang/langnl
+usr/local/share/amsn/plugins/music/lang/langpt_BR
+usr/local/share/amsn/plugins/music/lang/langsv
+usr/local/share/amsn/plugins/music/music.tcl
+usr/local/share/amsn/plugins/music/pixmaps/notesdispic.gif
+usr/local/share/amsn/plugins/music/pixmaps/notespic.gif
+usr/local/share/amsn/plugins/music/plugininfo.xml
+usr/local/share/amsn/plugins/music/readme.txt
+usr/local/share/amsn/plugins/notify/notify.tcl
+usr/local/share/amsn/plugins/notify/plugininfo.xml
+usr/local/share/amsn/plugins/openwith/lang/langel
+usr/local/share/amsn/plugins/openwith/lang/langen
+usr/local/share/amsn/plugins/openwith/lang/langes
+usr/local/share/amsn/plugins/openwith/lang/langlt
+usr/local/share/amsn/plugins/openwith/openwith.tcl
+usr/local/share/amsn/plugins/openwith/plugininfo.xml
+usr/local/share/amsn/plugins/organize_received/organize_received.tcl
+usr/local/share/amsn/plugins/organize_received/plugininfo.xml
+usr/local/share/amsn/plugins/pop3/lang/langen
+usr/local/share/amsn/plugins/pop3/lang/langes
+usr/local/share/amsn/plugins/pop3/pixmaps/pop3_mailpic.gif
+usr/local/share/amsn/plugins/pop3/plugininfo.xml
+usr/local/share/amsn/plugins/pop3/pop3.tcl
+usr/local/share/amsn/plugins/remind/lang/langca
+usr/local/share/amsn/plugins/remind/lang/langda
+usr/local/share/amsn/plugins/remind/lang/langde
+usr/local/share/amsn/plugins/remind/lang/langee
+usr/local/share/amsn/plugins/remind/lang/langen
+usr/local/share/amsn/plugins/remind/lang/langes
+usr/local/share/amsn/plugins/remind/lang/langfi
+usr/local/share/amsn/plugins/remind/lang/langfr
+usr/local/share/amsn/plugins/remind/lang/langfr_CA
+usr/local/share/amsn/plugins/remind/lang/langhu
+usr/local/share/amsn/plugins/remind/lang/langit
+usr/local/share/amsn/plugins/remind/lang/langja
+usr/local/share/amsn/plugins/remind/lang/langlt
+usr/local/share/amsn/plugins/remind/lang/langnl
+usr/local/share/amsn/plugins/remind/lang/langno
+usr/local/share/amsn/plugins/remind/lang/langpt_BR
+usr/local/share/amsn/plugins/remind/lang/langsv
+usr/local/share/amsn/plugins/remind/lang/langtr
+usr/local/share/amsn/plugins/remind/plugininfo.xml
+usr/local/share/amsn/plugins/remind/remind.tcl
+usr/local/share/amsn/plugins/sayit/plugininfo.xml
+usr/local/share/amsn/plugins/sayit/sayit.tcl
+usr/local/share/amsn/plugins/transparent/lang/langen
+usr/local/share/amsn/plugins/transparent/lang/langes
+usr/local/share/amsn/plugins/transparent/lang/langfr
+usr/local/share/amsn/plugins/transparent/lang/langhu
+usr/local/share/amsn/plugins/transparent/lang/langit
+usr/local/share/amsn/plugins/transparent/lang/langlt
+usr/local/share/amsn/plugins/transparent/plugininfo.xml
+usr/local/share/amsn/plugins/transparent/transparent.tcl
+usr/local/share/amsn/plugins/userstatus/plugininfo.xml
+usr/local/share/amsn/plugins/userstatus/userstatus.tcl
+usr/local/share/amsn/plugins/whatis/plugininfo.xml
+usr/local/share/amsn/plugins/whatis/whatis.tcl
+usr/local/share/amsn/plugins/winks/README.txt
+usr/local/share/amsn/plugins/winks/lang/langbe
+usr/local/share/amsn/plugins/winks/lang/langde
+usr/local/share/amsn/plugins/winks/lang/langen
+usr/local/share/amsn/plugins/winks/lang/langes
+usr/local/share/amsn/plugins/winks/lang/langfr
+usr/local/share/amsn/plugins/winks/lang/langhu
+usr/local/share/amsn/plugins/winks/lang/langit
+usr/local/share/amsn/plugins/winks/lang/langja
+usr/local/share/amsn/plugins/winks/lang/langlt
+usr/local/share/amsn/plugins/winks/lang/langnl
+usr/local/share/amsn/plugins/winks/lang/langno
+usr/local/share/amsn/plugins/winks/lang/langpt_BR
+usr/local/share/amsn/plugins/winks/lang/langsv
+usr/local/share/amsn/plugins/winks/lang/langtr
+usr/local/share/amsn/plugins/winks/pixmaps/unknown_wink.png
+usr/local/share/amsn/plugins/winks/pixmaps/winksbut.png
+usr/local/share/amsn/plugins/winks/pixmaps/winksbut_hover.png
+usr/local/share/amsn/plugins/winks/pixmaps/winksbut_hover_old.png
+usr/local/share/amsn/plugins/winks/pixmaps/winksbut_old.png
+usr/local/share/amsn/plugins/winks/plugininfo.xml
+usr/local/share/amsn/plugins/winks/winks.tcl
+usr/local/share/amsn/pluginslog.tcl
+usr/local/share/amsn/preferences.tcl
+usr/local/share/amsn/progressbar.tcl
+usr/local/share/amsn/protocol.tcl
+usr/local/share/amsn/proxy.tcl
+usr/local/share/amsn/remote.help
+usr/local/share/amsn/remote.tcl
+usr/local/share/amsn/roaming.tcl
+usr/local/share/amsn/searchdialog.tcl
+usr/local/share/amsn/sip.tcl
+usr/local/share/amsn/skins.tcl
+usr/local/share/amsn/skins/Dark Matter 4.0/desc.txt
+usr/local/share/amsn/skins/Dark Matter 4.0/displaypic/Thumbs.db
+usr/local/share/amsn/skins/Dark Matter 4.0/displaypic/amsnicon.png
+usr/local/share/amsn/skins/Dark Matter 4.0/license
+usr/local/share/amsn/skins/Dark Matter 4.0/pixmapmenu/bindings.tcl
+usr/local/share/amsn/skins/Dark Matter 4.0/pixmapmenu/entries.tcl
+usr/local/share/amsn/skins/Dark Matter 4.0/pixmapmenu/makecommands.tcl
+usr/local/share/amsn/skins/Dark Matter 4.0/pixmapmenu/menushell.tcl
+usr/local/share/amsn/skins/Dark Matter 4.0/pixmapmenu/pixmapmenu.tcl
+usr/local/share/amsn/skins/Dark Matter 4.0/pixmapmenu/pkgIndex.tcl
+usr/local/share/amsn/skins/Dark Matter 4.0/pixmaps/Thumbs.db
+usr/local/share/amsn/skins/Dark Matter 4.0/pixmaps/alarm.png
+usr/local/share/amsn/skins/Dark Matter 4.0/pixmaps/amsn.xbm
+usr/local/share/amsn/skins/Dark Matter 4.0/pixmaps/amsnicon.png
+usr/local/share/amsn/skins/Dark Matter 4.0/pixmaps/amsnmask.xbm
+usr/local/share/amsn/skins/Dark Matter 4.0/pixmaps/amsnplusbutton.png
+usr/local/share/amsn/skins/Dark Matter 4.0/pixmaps/amsnplusbutton_hover.png
+usr/local/share/amsn/skins/Dark Matter 4.0/pixmaps/arrow.gif
+usr/local/share/amsn/skins/Dark Matter 4.0/pixmaps/arrow.png
+usr/local/share/amsn/skins/Dark Matter 4.0/pixmaps/away.png
+usr/local/share/amsn/skins/Dark Matter 4.0/pixmaps/back.png
+usr/local/share/amsn/skins/Dark Matter 4.0/pixmaps/baway.png
+usr/local/share/amsn/skins/Dark Matter 4.0/pixmaps/bbusy.png
+usr/local/share/amsn/skins/Dark Matter 4.0/pixmaps/bell.png
+usr/local/share/amsn/skins/Dark Matter 4.0/pixmaps/belloff.png
+usr/local/share/amsn/skins/Dark Matter 4.0/pixmaps/blocked.png
+usr/local/share/amsn/skins/Dark Matter 4.0/pixmaps/blocked_offline.png
+usr/local/share/amsn/skins/Dark Matter 4.0/pixmaps/boffline.png
+usr/local/share/amsn/skins/Dark Matter 4.0/pixmaps/bonline.png
+usr/local/share/amsn/skins/Dark Matter 4.0/pixmaps/box_body.png
+usr/local/share/amsn/skins/Dark Matter 4.0/pixmaps/box_down.png
+usr/local/share/amsn/skins/Dark Matter 4.0/pixmaps/box_downleft.png
+usr/local/share/amsn/skins/Dark Matter 4.0/pixmaps/box_downright.png
+usr/local/share/amsn/skins/Dark Matter 4.0/pixmaps/box_left.png
+usr/local/share/amsn/skins/Dark Matter 4.0/pixmaps/box_right.png
+usr/local/share/amsn/skins/Dark Matter 4.0/pixmaps/box_up.png
+usr/local/share/amsn/skins/Dark Matter 4.0/pixmaps/box_upleft.png
+usr/local/share/amsn/skins/Dark Matter 4.0/pixmaps/box_upright.png
+usr/local/share/amsn/skins/Dark Matter 4.0/pixmaps/busy.png
+usr/local/share/amsn/skins/Dark Matter 4.0/pixmaps/butblock.png
+usr/local/share/amsn/skins/Dark Matter 4.0/pixmaps/butblock_hover.png
+usr/local/share/amsn/skins/Dark Matter 4.0/pixmaps/butcall.png
+usr/local/share/amsn/skins/Dark Matter 4.0/pixmaps/butcall_hover.png
+usr/local/share/amsn/skins/Dark Matter 4.0/pixmaps/butcallvideo.png
+usr/local/share/amsn/skins/Dark Matter 4.0/pixmaps/butcallvideo_hover.png
+usr/local/share/amsn/skins/Dark Matter 4.0/pixmaps/butdraw.png
+usr/local/share/amsn/skins/Dark Matter 4.0/pixmaps/butdraw_hover.png
+usr/local/share/amsn/skins/Dark Matter 4.0/pixmaps/butfont.png
+usr/local/share/amsn/skins/Dark Matter 4.0/pixmaps/butfont_hover.png
+usr/local/share/amsn/skins/Dark Matter 4.0/pixmaps/butgridoff.png
+usr/local/share/amsn/skins/Dark Matter 4.0/pixmaps/butgridoff_hover.png
+usr/local/share/amsn/skins/Dark Matter 4.0/pixmaps/butgridon.png
+usr/local/share/amsn/skins/Dark Matter 4.0/pixmaps/butgridon_hover.png
+usr/local/share/amsn/skins/Dark Matter 4.0/pixmaps/buthangup.png
+usr/local/share/amsn/skins/Dark Matter 4.0/pixmaps/buthangup_hover.png
+usr/local/share/amsn/skins/Dark Matter 4.0/pixmaps/butinvite.png
+usr/local/share/amsn/skins/Dark Matter 4.0/pixmaps/butinvite_hover.png
+usr/local/share/amsn/skins/Dark Matter 4.0/pixmaps/butsend.png
+usr/local/share/amsn/skins/Dark Matter 4.0/pixmaps/butsend_hover.png
+usr/local/share/amsn/skins/Dark Matter 4.0/pixmaps/butsmile.png
+usr/local/share/amsn/skins/Dark Matter 4.0/pixmaps/butsmile_hover.png
+usr/local/share/amsn/skins/Dark Matter 4.0/pixmaps/buttext.png
+usr/local/share/amsn/skins/Dark Matter 4.0/pixmaps/buttext_hover.png
+usr/local/share/amsn/skins/Dark Matter 4.0/pixmaps/butvoice.png
+usr/local/share/amsn/skins/Dark Matter 4.0/pixmaps/butvoice_hover.png
+usr/local/share/amsn/skins/Dark Matter 4.0/pixmaps/butwebcam.png
+usr/local/share/amsn/skins/Dark Matter 4.0/pixmaps/butwebcam_hover.png
+usr/local/share/amsn/skins/Dark Matter 4.0/pixmaps/butwipe.png
+usr/local/share/amsn/skins/Dark Matter 4.0/pixmaps/butwipe_hover.png
+usr/local/share/amsn/skins/Dark Matter 4.0/pixmaps/cam_in_chatwin.png
+usr/local/share/amsn/skins/Dark Matter 4.0/pixmaps/camempty.png
+usr/local/share/amsn/skins/Dark Matter 4.0/pixmaps/camicon.png
+usr/local/share/amsn/skins/Dark Matter 4.0/pixmaps/checkSpelling.png
+usr/local/share/amsn/skins/Dark Matter 4.0/pixmaps/checkSpelling_hover.png
+usr/local/share/amsn/skins/Dark Matter 4.0/pixmaps/checkbox.png
+usr/local/share/amsn/skins/Dark Matter 4.0/pixmaps/checkbox_on.png
+usr/local/share/amsn/skins/Dark Matter 4.0/pixmaps/checkmark.gif
+usr/local/share/amsn/skins/Dark Matter 4.0/pixmaps/checkmark.png
+usr/local/share/amsn/skins/Dark Matter 4.0/pixmaps/colorbar.png
+usr/local/share/amsn/skins/Dark Matter 4.0/pixmaps/confbut.png
+usr/local/share/amsn/skins/Dark Matter 4.0/pixmaps/confbuth.png
+usr/local/share/amsn/skins/Dark Matter 4.0/pixmaps/contract.png
+usr/local/share/amsn/skins/Dark Matter 4.0/pixmaps/contract_hover.png
+usr/local/share/amsn/skins/Dark Matter 4.0/pixmaps/cwtopback.png
+usr/local/share/amsn/skins/Dark Matter 4.0/pixmaps/daway.png
+usr/local/share/amsn/skins/Dark Matter 4.0/pixmaps/dbrb.png
+usr/local/share/amsn/skins/Dark Matter 4.0/pixmaps/dbusy.png
+usr/local/share/amsn/skins/Dark Matter 4.0/pixmaps/dhidden.png
+usr/local/share/amsn/skins/Dark Matter 4.0/pixmaps/dinactive.png
+usr/local/share/amsn/skins/Dark Matter 4.0/pixmaps/dlunch.png
+usr/local/share/amsn/skins/Dark Matter 4.0/pixmaps/doffline.png
+usr/local/share/amsn/skins/Dark Matter 4.0/pixmaps/donline.png
+usr/local/share/amsn/skins/Dark Matter 4.0/pixmaps/download.png
+usr/local/share/amsn/skins/Dark Matter 4.0/pixmaps/dphone.png
+usr/local/share/amsn/skins/Dark Matter 4.0/pixmaps/expand.png
+usr/local/share/amsn/skins/Dark Matter 4.0/pixmaps/expand_hover.png
+usr/local/share/amsn/skins/Dark Matter 4.0/pixmaps/fticon.png
+usr/local/share/amsn/skins/Dark Matter 4.0/pixmaps/ftreject.png
+usr/local/share/amsn/skins/Dark Matter 4.0/pixmaps/globe.png
+usr/local/share/amsn/skins/Dark Matter 4.0/pixmaps/gnotify_empty.png
+usr/local/share/amsn/skins/Dark Matter 4.0/pixmaps/gnotify_error.png
+usr/local/share/amsn/skins/Dark Matter 4.0/pixmaps/gnotify_new.png
+usr/local/share/amsn/skins/Dark Matter 4.0/pixmaps/greyline.png
+usr/local/share/amsn/skins/Dark Matter 4.0/pixmaps/idle.png
+usr/local/share/amsn/skins/Dark Matter 4.0/pixmaps/imghide.png
+usr/local/share/amsn/skins/Dark Matter 4.0/pixmaps/imghide_hover.png
+usr/local/share/amsn/skins/Dark Matter 4.0/pixmaps/imgshow.png
+usr/local/share/amsn/skins/Dark Matter 4.0/pixmaps/imgshow_hover.png
+usr/local/share/amsn/skins/Dark Matter 4.0/pixmaps/lesstabs.png
+usr/local/share/amsn/skins/Dark Matter 4.0/pixmaps/loganim.gif
+usr/local/share/amsn/skins/Dark Matter 4.0/pixmaps/loginbut.png
+usr/local/share/amsn/skins/Dark Matter 4.0/pixmaps/loginbut_hover.png
+usr/local/share/amsn/skins/Dark Matter 4.0/pixmaps/logolinmsn.png
+usr/local/share/amsn/skins/Dark Matter 4.0/pixmaps/logomacmsn.png
+usr/local/share/amsn/skins/Dark Matter 4.0/pixmaps/menu_arrow_down.gif
+usr/local/share/amsn/skins/Dark Matter 4.0/pixmaps/menu_arrow_right.gif
+usr/local/share/amsn/skins/Dark Matter 4.0/pixmaps/menu_background1.gif
+usr/local/share/amsn/skins/Dark Matter 4.0/pixmaps/menu_background2.gif
+usr/local/share/amsn/skins/Dark Matter 4.0/pixmaps/menu_select.gif
+usr/local/share/amsn/skins/Dark Matter 4.0/pixmaps/menu_separator.gif
+usr/local/share/amsn/skins/Dark Matter 4.0/pixmaps/messenger.png
+usr/local/share/amsn/skins/Dark Matter 4.0/pixmaps/miniinfo.png
+usr/local/share/amsn/skins/Dark Matter 4.0/pixmaps/minijoins.png
+usr/local/share/amsn/skins/Dark Matter 4.0/pixmaps/minileaves.png
+usr/local/share/amsn/skins/Dark Matter 4.0/pixmaps/miniwarn.png
+usr/local/share/amsn/skins/Dark Matter 4.0/pixmaps/mobile.png
+usr/local/share/amsn/skins/Dark Matter 4.0/pixmaps/moretabs.png
+usr/local/share/amsn/skins/Dark Matter 4.0/pixmaps/msnbot.png
+usr/local/share/amsn/skins/Dark Matter 4.0/pixmaps/mystatus_bg.png
+usr/local/share/amsn/skins/Dark Matter 4.0/pixmaps/newline.png
+usr/local/share/amsn/skins/Dark Matter 4.0/pixmaps/no-emblem.png
+usr/local/share/amsn/skins/Dark Matter 4.0/pixmaps/note.png
+usr/local/share/amsn/skins/Dark Matter 4.0/pixmaps/notesdispic.png
+usr/local/share/amsn/skins/Dark Matter 4.0/pixmaps/notespic.png
+usr/local/share/amsn/skins/Dark Matter 4.0/pixmaps/notifclose.png
+usr/local/share/amsn/skins/Dark Matter 4.0/pixmaps/notifico.png
+usr/local/share/amsn/skins/Dark Matter 4.0/pixmaps/notifyemail.png
+usr/local/share/amsn/skins/Dark Matter 4.0/pixmaps/notifymsg.png
+usr/local/share/amsn/skins/Dark Matter 4.0/pixmaps/notifyoffline.png
+usr/local/share/amsn/skins/Dark Matter 4.0/pixmaps/notifyonline.png
+usr/local/share/amsn/skins/Dark Matter 4.0/pixmaps/notifyplugins.png
+usr/local/share/amsn/skins/Dark Matter 4.0/pixmaps/notifystate.png
+usr/local/share/amsn/skins/Dark Matter 4.0/pixmaps/notinlist.png
+usr/local/share/amsn/skins/Dark Matter 4.0/pixmaps/nudge.png
+usr/local/share/amsn/skins/Dark Matter 4.0/pixmaps/nudgebutton.png
+usr/local/share/amsn/skins/Dark Matter 4.0/pixmaps/nudgebutton_hover.png
+usr/local/share/amsn/skins/Dark Matter 4.0/pixmaps/nudgeoff.png
+usr/local/share/amsn/skins/Dark Matter 4.0/pixmaps/offline.png
+usr/local/share/amsn/skins/Dark Matter 4.0/pixmaps/online.png
+usr/local/share/amsn/skins/Dark Matter 4.0/pixmaps/pause.png
+usr/local/share/amsn/skins/Dark Matter 4.0/pixmaps/pausebut.png
+usr/local/share/amsn/skins/Dark Matter 4.0/pixmaps/pausebuth.png
+usr/local/share/amsn/skins/Dark Matter 4.0/pixmaps/playbut.png
+usr/local/share/amsn/skins/Dark Matter 4.0/pixmaps/playbuth.png
+usr/local/share/amsn/skins/Dark Matter 4.0/pixmaps/pop3_mailpic.png
+usr/local/share/amsn/skins/Dark Matter 4.0/pixmaps/prefalerts.png
+usr/local/share/amsn/skins/Dark Matter 4.0/pixmaps/prefaway.png
+usr/local/share/amsn/skins/Dark Matter 4.0/pixmaps/prefemotic.png
+usr/local/share/amsn/skins/Dark Matter 4.0/pixmaps/preffont.png
+usr/local/share/amsn/skins/Dark Matter 4.0/pixmaps/prefhist.png
+usr/local/share/amsn/skins/Dark Matter 4.0/pixmaps/prefhist2.png
+usr/local/share/amsn/skins/Dark Matter 4.0/pixmaps/preflook.png
+usr/local/share/amsn/skins/Dark Matter 4.0/pixmaps/prefmobile.png
+usr/local/share/amsn/skins/Dark Matter 4.0/pixmaps/prefmsg.png
+usr/local/share/amsn/skins/Dark Matter 4.0/pixmaps/prefnat.png
+usr/local/share/amsn/skins/Dark Matter 4.0/pixmaps/prefpers.png
+usr/local/share/amsn/skins/Dark Matter 4.0/pixmaps/prefphone.png
+usr/local/share/amsn/skins/Dark Matter 4.0/pixmaps/prefprofile.png
+usr/local/share/amsn/skins/Dark Matter 4.0/pixmaps/prefproxy.png
+usr/local/share/amsn/skins/Dark Matter 4.0/pixmaps/prefstatus.png
+usr/local/share/amsn/skins/Dark Matter 4.0/pixmaps/radiobox.gif
+usr/local/share/amsn/skins/Dark Matter 4.0/pixmaps/radiomark.gif
+usr/local/share/amsn/skins/Dark Matter 4.0/pixmaps/recordbut.png
+usr/local/share/amsn/skins/Dark Matter 4.0/pixmaps/recordbuth.png
+usr/local/share/amsn/skins/Dark Matter 4.0/pixmaps/select_bg.png
+usr/local/share/amsn/skins/Dark Matter 4.0/pixmaps/select_border.png
+usr/local/share/amsn/skins/Dark Matter 4.0/pixmaps/sendbut.png
+usr/local/share/amsn/skins/Dark Matter 4.0/pixmaps/sendbut_hover.png
+usr/local/share/amsn/skins/Dark Matter 4.0/pixmaps/smile.png
+usr/local/share/amsn/skins/Dark Matter 4.0/pixmaps/space_noupdate.png
+usr/local/share/amsn/skins/Dark Matter 4.0/pixmaps/space_update.png
+usr/local/share/amsn/skins/Dark Matter 4.0/pixmaps/star.png
+usr/local/share/amsn/skins/Dark Matter 4.0/pixmaps/stopbut.png
+usr/local/share/amsn/skins/Dark Matter 4.0/pixmaps/stopbuth.png
+usr/local/share/amsn/skins/Dark Matter 4.0/pixmaps/tab.png
+usr/local/share/amsn/skins/Dark Matter 4.0/pixmaps/tab_close.png
+usr/local/share/amsn/skins/Dark Matter 4.0/pixmaps/tab_close_hover.png
+usr/local/share/amsn/skins/Dark Matter 4.0/pixmaps/tab_current.png
+usr/local/share/amsn/skins/Dark Matter 4.0/pixmaps/tab_flicker.gif
+usr/local/share/amsn/skins/Dark Matter 4.0/pixmaps/tab_hover.png
+usr/local/share/amsn/skins/Dark Matter 4.0/pixmaps/tex.png
+usr/local/share/amsn/skins/Dark Matter 4.0/pixmaps/tex_hover.png
+usr/local/share/amsn/skins/Dark Matter 4.0/pixmaps/typing.png
+usr/local/share/amsn/skins/Dark Matter 4.0/pixmaps/unread.png
+usr/local/share/amsn/skins/Dark Matter 4.0/pixmaps/unread_tray.png
+usr/local/share/amsn/skins/Dark Matter 4.0/pixmaps/voice.png
+usr/local/share/amsn/skins/Dark Matter 4.0/pixmaps/warning.png
+usr/local/share/amsn/skins/Dark Matter 4.0/pixmaps/webcam.png
+usr/local/share/amsn/skins/Dark Matter 4.0/pixmaps/webmsn.png
+usr/local/share/amsn/skins/Dark Matter 4.0/pixmaps/winksbut.png
+usr/local/share/amsn/skins/Dark Matter 4.0/pixmaps/winksbut_hover.png
+usr/local/share/amsn/skins/Dark Matter 4.0/pixmaps/yes-emblem.png
+usr/local/share/amsn/skins/Dark Matter 4.0/pixmapscroll/horizontal/Thumbs.db
+usr/local/share/amsn/skins/Dark Matter 4.0/pixmapscroll/horizontal/arrow1.png
+usr/local/share/amsn/skins/Dark Matter 4.0/pixmapscroll/horizontal/arrow1_disabled.png
+usr/local/share/amsn/skins/Dark Matter 4.0/pixmapscroll/horizontal/arrow1_hover.png
+usr/local/share/amsn/skins/Dark Matter 4.0/pixmapscroll/horizontal/arrow1_pressed.png
+usr/local/share/amsn/skins/Dark Matter 4.0/pixmapscroll/horizontal/arrow2.png
+usr/local/share/amsn/skins/Dark Matter 4.0/pixmapscroll/horizontal/arrow2_disabled.png
+usr/local/share/amsn/skins/Dark Matter 4.0/pixmapscroll/horizontal/arrow2_hover.png
+usr/local/share/amsn/skins/Dark Matter 4.0/pixmapscroll/horizontal/arrow2_pressed.png
+usr/local/share/amsn/skins/Dark Matter 4.0/pixmapscroll/horizontal/sliderbody.png
+usr/local/share/amsn/skins/Dark Matter 4.0/pixmapscroll/horizontal/sliderbody_disabled.png
+usr/local/share/amsn/skins/Dark Matter 4.0/pixmapscroll/horizontal/sliderbody_hover.png
+usr/local/share/amsn/skins/Dark Matter 4.0/pixmapscroll/horizontal/sliderbody_pressed.png
+usr/local/share/amsn/skins/Dark Matter 4.0/pixmapscroll/horizontal/sliderbottom.png
+usr/local/share/amsn/skins/Dark Matter 4.0/pixmapscroll/horizontal/sliderbottom_disabled.png
+usr/local/share/amsn/skins/Dark Matter 4.0/pixmapscroll/horizontal/sliderbottom_hover.png
+usr/local/share/amsn/skins/Dark Matter 4.0/pixmapscroll/horizontal/sliderbottom_pressed.png
+usr/local/share/amsn/skins/Dark Matter 4.0/pixmapscroll/horizontal/slidergrip.png
+usr/local/share/amsn/skins/Dark Matter 4.0/pixmapscroll/horizontal/slidergrip_disabled.png
+usr/local/share/amsn/skins/Dark Matter 4.0/pixmapscroll/horizontal/slidergrip_hover.png
+usr/local/share/amsn/skins/Dark Matter 4.0/pixmapscroll/horizontal/slidergrip_pressed.png
+usr/local/share/amsn/skins/Dark Matter 4.0/pixmapscroll/horizontal/slidertop.png
+usr/local/share/amsn/skins/Dark Matter 4.0/pixmapscroll/horizontal/slidertop_disabled.png
+usr/local/share/amsn/skins/Dark Matter 4.0/pixmapscroll/horizontal/slidertop_hover.png
+usr/local/share/amsn/skins/Dark Matter 4.0/pixmapscroll/horizontal/slidertop_pressed.png
+usr/local/share/amsn/skins/Dark Matter 4.0/pixmapscroll/horizontal/trough.png
+usr/local/share/amsn/skins/Dark Matter 4.0/pixmapscroll/pixmapscroll.tcl
+usr/local/share/amsn/skins/Dark Matter 4.0/pixmapscroll/pkgIndex.tcl
+usr/local/share/amsn/skins/Dark Matter 4.0/pixmapscroll/test.tcl
+usr/local/share/amsn/skins/Dark Matter 4.0/pixmapscroll/vertical/Thumbs.db
+usr/local/share/amsn/skins/Dark Matter 4.0/pixmapscroll/vertical/arrow1.png
+usr/local/share/amsn/skins/Dark Matter 4.0/pixmapscroll/vertical/arrow1_disabled.png
+usr/local/share/amsn/skins/Dark Matter 4.0/pixmapscroll/vertical/arrow1_hover.png
+usr/local/share/amsn/skins/Dark Matter 4.0/pixmapscroll/vertical/arrow1_pressed.png
+usr/local/share/amsn/skins/Dark Matter 4.0/pixmapscroll/vertical/arrow2.png
+usr/local/share/amsn/skins/Dark Matter 4.0/pixmapscroll/vertical/arrow2_disabled.png
+usr/local/share/amsn/skins/Dark Matter 4.0/pixmapscroll/vertical/arrow2_hover.png
+usr/local/share/amsn/skins/Dark Matter 4.0/pixmapscroll/vertical/arrow2_pressed.png
+usr/local/share/amsn/skins/Dark Matter 4.0/pixmapscroll/vertical/sliderbody.png
+usr/local/share/amsn/skins/Dark Matter 4.0/pixmapscroll/vertical/sliderbody_disabled.png
+usr/local/share/amsn/skins/Dark Matter 4.0/pixmapscroll/vertical/sliderbody_hover.png
+usr/local/share/amsn/skins/Dark Matter 4.0/pixmapscroll/vertical/sliderbody_pressed.png
+usr/local/share/amsn/skins/Dark Matter 4.0/pixmapscroll/vertical/sliderbottom.png
+usr/local/share/amsn/skins/Dark Matter 4.0/pixmapscroll/vertical/sliderbottom_disabled.png
+usr/local/share/amsn/skins/Dark Matter 4.0/pixmapscroll/vertical/sliderbottom_hover.png
+usr/local/share/amsn/skins/Dark Matter 4.0/pixmapscroll/vertical/sliderbottom_pressed.png
+usr/local/share/amsn/skins/Dark Matter 4.0/pixmapscroll/vertical/slidergrip.png
+usr/local/share/amsn/skins/Dark Matter 4.0/pixmapscroll/vertical/slidergrip_disabled.png
+usr/local/share/amsn/skins/Dark Matter 4.0/pixmapscroll/vertical/slidergrip_hover.png
+usr/local/share/amsn/skins/Dark Matter 4.0/pixmapscroll/vertical/slidergrip_pressed.png
+usr/local/share/amsn/skins/Dark Matter 4.0/pixmapscroll/vertical/slidertop.png
+usr/local/share/amsn/skins/Dark Matter 4.0/pixmapscroll/vertical/slidertop_disabled.png
+usr/local/share/amsn/skins/Dark Matter 4.0/pixmapscroll/vertical/slidertop_hover.png
+usr/local/share/amsn/skins/Dark Matter 4.0/pixmapscroll/vertical/slidertop_pressed.png
+usr/local/share/amsn/skins/Dark Matter 4.0/pixmapscroll/vertical/trough.png
+usr/local/share/amsn/skins/Dark Matter 4.0/settings.xml
+usr/local/share/amsn/skins/Dark Matter 4.0/smileys/Airplane.gif
+usr/local/share/amsn/skins/Dark Matter 4.0/smileys/Airplane.png
+usr/local/share/amsn/skins/Dark Matter 4.0/smileys/Angel.gif
+usr/local/share/amsn/skins/Dark Matter 4.0/smileys/Angel_smiley.png
+usr/local/share/amsn/skins/Dark Matter 4.0/smileys/Angry_smiley.gif
+usr/local/share/amsn/skins/Dark Matter 4.0/smileys/Angry_smiley.png
+usr/local/share/amsn/skins/Dark Matter 4.0/smileys/Ashamed_smiley.png
+usr/local/share/amsn/skins/Dark Matter 4.0/smileys/Asl.gif
+usr/local/share/amsn/skins/Dark Matter 4.0/smileys/Auto.gif
+usr/local/share/amsn/skins/Dark Matter 4.0/smileys/Auto.png
+usr/local/share/amsn/skins/Dark Matter 4.0/smileys/Baring_teeth_smiley.gif
+usr/local/share/amsn/skins/Dark Matter 4.0/smileys/Baring_teeth_smiley.png
+usr/local/share/amsn/skins/Dark Matter 4.0/smileys/Bat.png
+usr/local/share/amsn/skins/Dark Matter 4.0/smileys/Be_Right_Back.gif
+usr/local/share/amsn/skins/Dark Matter 4.0/smileys/Be_Right_Back_smiley.png
+usr/local/share/amsn/skins/Dark Matter 4.0/smileys/Beer.gif
+usr/local/share/amsn/skins/Dark Matter 4.0/smileys/Beer.png
+usr/local/share/amsn/skins/Dark Matter 4.0/smileys/Birthday_cake.gif
+usr/local/share/amsn/skins/Dark Matter 4.0/smileys/Birthday_cake.png
+usr/local/share/amsn/skins/Dark Matter 4.0/smileys/Black_sheep.gif
+usr/local/share/amsn/skins/Dark Matter 4.0/smileys/Bowl.gif
+usr/local/share/amsn/skins/Dark Matter 4.0/smileys/Bowl.png
+usr/local/share/amsn/skins/Dark Matter 4.0/smileys/Boy.gif
+usr/local/share/amsn/skins/Dark Matter 4.0/smileys/Boy.png
+usr/local/share/amsn/skins/Dark Matter 4.0/smileys/Broken_heart.gif
+usr/local/share/amsn/skins/Dark Matter 4.0/smileys/Broken_heart.png
+usr/local/share/amsn/skins/Dark Matter 4.0/smileys/Camera.gif
+usr/local/share/amsn/skins/Dark Matter 4.0/smileys/Camera.png
+usr/local/share/amsn/skins/Dark Matter 4.0/smileys/Cat.png
+usr/local/share/amsn/skins/Dark Matter 4.0/smileys/Cat_face.gif
+usr/local/share/amsn/skins/Dark Matter 4.0/smileys/Cigarette.gif
+usr/local/share/amsn/skins/Dark Matter 4.0/smileys/Cigarette.png
+usr/local/share/amsn/skins/Dark Matter 4.0/smileys/Clapping_hands.png
+usr/local/share/amsn/skins/Dark Matter 4.0/smileys/Clock.gif
+usr/local/share/amsn/skins/Dark Matter 4.0/smileys/Clock.png
+usr/local/share/amsn/skins/Dark Matter 4.0/smileys/Coffee_cup.gif
+usr/local/share/amsn/skins/Dark Matter 4.0/smileys/Coffee_cup.png
+usr/local/share/amsn/skins/Dark Matter 4.0/smileys/Computer.gif
+usr/local/share/amsn/skins/Dark Matter 4.0/smileys/Computer.png
+usr/local/share/amsn/skins/Dark Matter 4.0/smileys/Confused_smiley.gif
+usr/local/share/amsn/skins/Dark Matter 4.0/smileys/Confused_smiley.png
+usr/local/share/amsn/skins/Dark Matter 4.0/smileys/Crying_face.gif
+usr/local/share/amsn/skins/Dark Matter 4.0/smileys/Crying_smiley.png
+usr/local/share/amsn/skins/Dark Matter 4.0/smileys/Devil.gif
+usr/local/share/amsn/skins/Dark Matter 4.0/smileys/Devil.png
+usr/local/share/amsn/skins/Dark Matter 4.0/smileys/Disappointed_smiley.gif
+usr/local/share/amsn/skins/Dark Matter 4.0/smileys/Dog.png
+usr/local/share/amsn/skins/Dark Matter 4.0/smileys/Dog_face.gif
+usr/local/share/amsn/skins/Dark Matter 4.0/smileys/Dont_know_smiley.png
+usr/local/share/amsn/skins/Dark Matter 4.0/smileys/Dont_tell_anyone.gif
+usr/local/share/amsn/skins/Dark Matter 4.0/smileys/Dont_tell_anyone_smiley.png
+usr/local/share/amsn/skins/Dark Matter 4.0/smileys/Dry_martini.gif
+usr/local/share/amsn/skins/Dark Matter 4.0/smileys/Dry_martini.png
+usr/local/share/amsn/skins/Dark Matter 4.0/smileys/Email.gif
+usr/local/share/amsn/skins/Dark Matter 4.0/smileys/Email.png
+usr/local/share/amsn/skins/Dark Matter 4.0/smileys/Embarrassed_smiley.gif
+usr/local/share/amsn/skins/Dark Matter 4.0/smileys/Eye_rolling_smiley.gif
+usr/local/share/amsn/skins/Dark Matter 4.0/smileys/Eye_rolling_smiley.png
+usr/local/share/amsn/skins/Dark Matter 4.0/smileys/Filmstrip.gif
+usr/local/share/amsn/skins/Dark Matter 4.0/smileys/Filmstrip.png
+usr/local/share/amsn/skins/Dark Matter 4.0/smileys/Fingerscrossed.gif
+usr/local/share/amsn/skins/Dark Matter 4.0/smileys/Fingerscrossed.png
+usr/local/share/amsn/skins/Dark Matter 4.0/smileys/Gift.png
+usr/local/share/amsn/skins/Dark Matter 4.0/smileys/Gift_with_a_bow.gif
+usr/local/share/amsn/skins/Dark Matter 4.0/smileys/Girl.gif
+usr/local/share/amsn/skins/Dark Matter 4.0/smileys/Girl.png
+usr/local/share/amsn/skins/Dark Matter 4.0/smileys/Goat.png
+usr/local/share/amsn/skins/Dark Matter 4.0/smileys/Handcuffs.gif
+usr/local/share/amsn/skins/Dark Matter 4.0/smileys/Handcuffs.png
+usr/local/share/amsn/skins/Dark Matter 4.0/smileys/Happy_smiley.png
+usr/local/share/amsn/skins/Dark Matter 4.0/smileys/Heart.png
+usr/local/share/amsn/skins/Dark Matter 4.0/smileys/Hi_five.gif
+usr/local/share/amsn/skins/Dark Matter 4.0/smileys/Hot_smiley.gif
+usr/local/share/amsn/skins/Dark Matter 4.0/smileys/Hot_smiley.png
+usr/local/share/amsn/skins/Dark Matter 4.0/smileys/IM.png
+usr/local/share/amsn/skins/Dark Matter 4.0/smileys/Island.png
+usr/local/share/amsn/skins/Dark Matter 4.0/smileys/Island_with_a_palm_tree.gif
+usr/local/share/amsn/skins/Dark Matter 4.0/smileys/Kiss.png
+usr/local/share/amsn/skins/Dark Matter 4.0/smileys/Left_hug.gif
+usr/local/share/amsn/skins/Dark Matter 4.0/smileys/Left_hug.png
+usr/local/share/amsn/skins/Dark Matter 4.0/smileys/Light.png
+usr/local/share/amsn/skins/Dark Matter 4.0/smileys/Light_bulb.gif
+usr/local/share/amsn/skins/Dark Matter 4.0/smileys/Lightning.gif
+usr/local/share/amsn/skins/Dark Matter 4.0/smileys/Messenger.gif
+usr/local/share/amsn/skins/Dark Matter 4.0/smileys/Messenger.png
+usr/local/share/amsn/skins/Dark Matter 4.0/smileys/Mobile_phone.gif
+usr/local/share/amsn/skins/Dark Matter 4.0/smileys/Mobile_phone.png
+usr/local/share/amsn/skins/Dark Matter 4.0/smileys/Money.gif
+usr/local/share/amsn/skins/Dark Matter 4.0/smileys/Money.png
+usr/local/share/amsn/skins/Dark Matter 4.0/smileys/Moon.png
+usr/local/share/amsn/skins/Dark Matter 4.0/smileys/Nerd_smiley.gif
+usr/local/share/amsn/skins/Dark Matter 4.0/smileys/Nerd_smiley.png
+usr/local/share/amsn/skins/Dark Matter 4.0/smileys/Note.gif
+usr/local/share/amsn/skins/Dark Matter 4.0/smileys/Note.png
+usr/local/share/amsn/skins/Dark Matter 4.0/smileys/Oh_my_God_smiley.png
+usr/local/share/amsn/skins/Dark Matter 4.0/smileys/Open_mouthed_smiley.gif
+usr/local/share/amsn/skins/Dark Matter 4.0/smileys/Party_smiley.png
+usr/local/share/amsn/skins/Dark Matter 4.0/smileys/Pizza.gif
+usr/local/share/amsn/skins/Dark Matter 4.0/smileys/Pizza.png
+usr/local/share/amsn/skins/Dark Matter 4.0/smileys/Plate.gif
+usr/local/share/amsn/skins/Dark Matter 4.0/smileys/Plate.png
+usr/local/share/amsn/skins/Dark Matter 4.0/smileys/Rain.png
+usr/local/share/amsn/skins/Dark Matter 4.0/smileys/Rainbow.gif
+usr/local/share/amsn/skins/Dark Matter 4.0/smileys/Rainbow.png
+usr/local/share/amsn/skins/Dark Matter 4.0/smileys/Red_heart.gif
+usr/local/share/amsn/skins/Dark Matter 4.0/smileys/Red_lips.gif
+usr/local/share/amsn/skins/Dark Matter 4.0/smileys/Red_rose.gif
+usr/local/share/amsn/skins/Dark Matter 4.0/smileys/Right_hug.gif
+usr/local/share/amsn/skins/Dark Matter 4.0/smileys/Right_hug.png
+usr/local/share/amsn/skins/Dark Matter 4.0/smileys/Rose.png
+usr/local/share/amsn/skins/Dark Matter 4.0/smileys/Sad_smiley.gif
+usr/local/share/amsn/skins/Dark Matter 4.0/smileys/Sad_smiley.png
+usr/local/share/amsn/skins/Dark Matter 4.0/smileys/Sarcastic_smiley.gif
+usr/local/share/amsn/skins/Dark Matter 4.0/smileys/Sarcastic_smiley.png
+usr/local/share/amsn/skins/Dark Matter 4.0/smileys/Secret_telling_smiley.gif
+usr/local/share/amsn/skins/Dark Matter 4.0/smileys/Secret_telling_smiley.png
+usr/local/share/amsn/skins/Dark Matter 4.0/smileys/Sheep.png
+usr/local/share/amsn/skins/Dark Matter 4.0/smileys/Shocked_smiley.png
+usr/local/share/amsn/skins/Dark Matter 4.0/smileys/Sick_smiley.gif
+usr/local/share/amsn/skins/Dark Matter 4.0/smileys/Sick_smiley.png
+usr/local/share/amsn/skins/Dark Matter 4.0/smileys/Sleeping_half-moon.gif
+usr/local/share/amsn/skins/Dark Matter 4.0/smileys/Sleepy_smiley.gif
+usr/local/share/amsn/skins/Dark Matter 4.0/smileys/Sleepy_smiley.png
+usr/local/share/amsn/skins/Dark Matter 4.0/smileys/Smiley.gif
+usr/local/share/amsn/skins/Dark Matter 4.0/smileys/Smiley_with_tonque_out.gif
+usr/local/share/amsn/skins/Dark Matter 4.0/smileys/Snail.gif
+usr/local/share/amsn/skins/Dark Matter 4.0/smileys/Snail.png
+usr/local/share/amsn/skins/Dark Matter 4.0/smileys/Soccer_ball.gif
+usr/local/share/amsn/skins/Dark Matter 4.0/smileys/Soccer_ball.png
+usr/local/share/amsn/skins/Dark Matter 4.0/smileys/Star.gif
+usr/local/share/amsn/skins/Dark Matter 4.0/smileys/Star.png
+usr/local/share/amsn/skins/Dark Matter 4.0/smileys/Storm.png
+usr/local/share/amsn/skins/Dark Matter 4.0/smileys/Sun.gif
+usr/local/share/amsn/skins/Dark Matter 4.0/smileys/Sun.png
+usr/local/share/amsn/skins/Dark Matter 4.0/smileys/Surprised_smiley.gif
+usr/local/share/amsn/skins/Dark Matter 4.0/smileys/Telephone_receiver.gif
+usr/local/share/amsn/skins/Dark Matter 4.0/smileys/Telephone_receiver.png
+usr/local/share/amsn/skins/Dark Matter 4.0/smileys/Thinking_smiley.gif
+usr/local/share/amsn/skins/Dark Matter 4.0/smileys/Thinking_smiley.png
+usr/local/share/amsn/skins/Dark Matter 4.0/smileys/Thumbs.db
+usr/local/share/amsn/skins/Dark Matter 4.0/smileys/Thumbs_down.gif
+usr/local/share/amsn/skins/Dark Matter 4.0/smileys/Thumbs_down.png
+usr/local/share/amsn/skins/Dark Matter 4.0/smileys/Thumbs_up.gif
+usr/local/share/amsn/skins/Dark Matter 4.0/smileys/Thumbs_up.png
+usr/local/share/amsn/skins/Dark Matter 4.0/smileys/Tonque_out_smiley.png
+usr/local/share/amsn/skins/Dark Matter 4.0/smileys/Turtle.gif
+usr/local/share/amsn/skins/Dark Matter 4.0/smileys/Turtle.png
+usr/local/share/amsn/skins/Dark Matter 4.0/smileys/Umbrella.gif
+usr/local/share/amsn/skins/Dark Matter 4.0/smileys/Umbrella.png
+usr/local/share/amsn/skins/Dark Matter 4.0/smileys/Vampire_bat.gif
+usr/local/share/amsn/skins/Dark Matter 4.0/smileys/Very_happy_smiley.png
+usr/local/share/amsn/skins/Dark Matter 4.0/smileys/What_The_Fuck.gif
+usr/local/share/amsn/skins/Dark Matter 4.0/smileys/Wilted_rose.gif
+usr/local/share/amsn/skins/Dark Matter 4.0/smileys/Wilted_rose.png
+usr/local/share/amsn/skins/Dark Matter 4.0/smileys/Winking_smiley.gif
+usr/local/share/amsn/skins/Dark Matter 4.0/smileys/Winking_smiley.png
+usr/local/share/amsn/skins/Dark Matter 4.0/smileys/Xbox.gif
+usr/local/share/amsn/skins/Dark Matter 4.0/smileys/Xbox.png
+usr/local/share/amsn/skins/Dark Matter 4.0/smileys/i_dont_know.gif
+usr/local/share/amsn/skins/Dark Matter 4.0/smileys/null
+usr/local/share/amsn/skins/Dark Matter 4.0/smileys/party_smiley.gif
+usr/local/share/amsn/skins/Dark Matter 4.0/smileys/rain.gif
+usr/local/share/amsn/skins/Dark Matter 4.0/sounds/alarm.wav
+usr/local/share/amsn/skins/Dark Matter 4.0/sounds/newemail.wav
+usr/local/share/amsn/skins/Dark Matter 4.0/sounds/nudge.wav
+usr/local/share/amsn/skins/Dark Matter 4.0/sounds/offline.wav
+usr/local/share/amsn/skins/Dark Matter 4.0/sounds/online.wav
+usr/local/share/amsn/skins/Dark Matter 4.0/sounds/type.wav
+usr/local/share/amsn/skins/Dark Matter 4.0/winicons/Thumbs.db
+usr/local/share/amsn/skins/Dark Matter 4.0/winicons/away.ico
+usr/local/share/amsn/skins/Dark Matter 4.0/winicons/bossmode.ico
+usr/local/share/amsn/skins/Dark Matter 4.0/winicons/brb.ico
+usr/local/share/amsn/skins/Dark Matter 4.0/winicons/busy.ico
+usr/local/share/amsn/skins/Dark Matter 4.0/winicons/hidden.ico
+usr/local/share/amsn/skins/Dark Matter 4.0/winicons/inactive.ico
+usr/local/share/amsn/skins/Dark Matter 4.0/winicons/lunch.ico
+usr/local/share/amsn/skins/Dark Matter 4.0/winicons/msn.ico
+usr/local/share/amsn/skins/Dark Matter 4.0/winicons/offline.ico
+usr/local/share/amsn/skins/Dark Matter 4.0/winicons/online.ico
+usr/local/share/amsn/skins/Dark Matter 4.0/winicons/phone.ico
+usr/local/share/amsn/skins/Dark Matter 4.0/winicons/unread.ico
+usr/local/share/amsn/skins/Oxygen/desc.txt
+usr/local/share/amsn/skins/Oxygen/displaypic/Curls_on_Green.dat
+usr/local/share/amsn/skins/Oxygen/displaypic/Curls_on_Green.png
+usr/local/share/amsn/skins/Oxygen/displaypic/EOS.dat
+usr/local/share/amsn/skins/Oxygen/displaypic/EOS.png
+usr/local/share/amsn/skins/Oxygen/displaypic/Fields_of_Peace.dat
+usr/local/share/amsn/skins/Oxygen/displaypic/Fields_of_Peace.png
+usr/local/share/amsn/skins/Oxygen/displaypic/Finally_Summer_in_Germany.dat
+usr/local/share/amsn/skins/Oxygen/displaypic/Finally_Summer_in_Germany.png
+usr/local/share/amsn/skins/Oxygen/displaypic/Flower_drops.dat
+usr/local/share/amsn/skins/Oxygen/displaypic/Flower_drops.png
+usr/local/share/amsn/skins/Oxygen/displaypic/Fresh_Morning.dat
+usr/local/share/amsn/skins/Oxygen/displaypic/Fresh_Morning.png
+usr/local/share/amsn/skins/Oxygen/displaypic/HighTide.dat
+usr/local/share/amsn/skins/Oxygen/displaypic/HighTide.png
+usr/local/share/amsn/skins/Oxygen/displaypic/Ladybuggin.dat
+usr/local/share/amsn/skins/Oxygen/displaypic/Ladybuggin.png
+usr/local/share/amsn/skins/Oxygen/displaypic/Plasmalicious.dat
+usr/local/share/amsn/skins/Oxygen/displaypic/Plasmalicious.png
+usr/local/share/amsn/skins/Oxygen/displaypic/Red_Leaf.dat
+usr/local/share/amsn/skins/Oxygen/displaypic/Red_Leaf.png
+usr/local/share/amsn/skins/Oxygen/displaypic/There_is_Rain_on_the_Table.dat
+usr/local/share/amsn/skins/Oxygen/displaypic/There_is_Rain_on_the_Table.png
+usr/local/share/amsn/skins/Oxygen/displaypic/air.dat
+usr/local/share/amsn/skins/Oxygen/displaypic/air.png
+usr/local/share/amsn/skins/Oxygen/displaypic/bluecurl.dat
+usr/local/share/amsn/skins/Oxygen/displaypic/bluecurl.png
+usr/local/share/amsn/skins/Oxygen/displaypic/codepoetsdream.dat
+usr/local/share/amsn/skins/Oxygen/displaypic/codepoetsdream.png
+usr/local/share/amsn/skins/Oxygen/displaypic/nopic.png
+usr/local/share/amsn/skins/Oxygen/license
+usr/local/share/amsn/skins/Oxygen/pixmaps/alarm.png
+usr/local/share/amsn/skins/Oxygen/pixmaps/ampli.png
+usr/local/share/amsn/skins/Oxygen/pixmaps/ampli_pressed.png
+usr/local/share/amsn/skins/Oxygen/pixmaps/amsnicon.png
+usr/local/share/amsn/skins/Oxygen/pixmaps/arrow.png
+usr/local/share/amsn/skins/Oxygen/pixmaps/arrowmac.png
+usr/local/share/amsn/skins/Oxygen/pixmaps/assistant.png
+usr/local/share/amsn/skins/Oxygen/pixmaps/assistant_audio.png
+usr/local/share/amsn/skins/Oxygen/pixmaps/assistant_webcam.png
+usr/local/share/amsn/skins/Oxygen/pixmaps/away.png
+usr/local/share/amsn/skins/Oxygen/pixmaps/away_emblem.png
+usr/local/share/amsn/skins/Oxygen/pixmaps/away_emblem_detailedview.png
+usr/local/share/amsn/skins/Oxygen/pixmaps/back.png
+usr/local/share/amsn/skins/Oxygen/pixmaps/baway.png
+usr/local/share/amsn/skins/Oxygen/pixmaps/bbusy.png
+usr/local/share/amsn/skins/Oxygen/pixmaps/bell.png
+usr/local/share/amsn/skins/Oxygen/pixmaps/belloff.png
+usr/local/share/amsn/skins/Oxygen/pixmaps/blocked.png
+usr/local/share/amsn/skins/Oxygen/pixmaps/blocked_emblem.png
+usr/local/share/amsn/skins/Oxygen/pixmaps/blocked_emblem_detailedview.png
+usr/local/share/amsn/skins/Oxygen/pixmaps/blocked_off.png
+usr/local/share/amsn/skins/Oxygen/pixmaps/boffline.png
+usr/local/share/amsn/skins/Oxygen/pixmaps/bonline.png
+usr/local/share/amsn/skins/Oxygen/pixmaps/box_body.png
+usr/local/share/amsn/skins/Oxygen/pixmaps/box_down.png
+usr/local/share/amsn/skins/Oxygen/pixmaps/box_down2.png
+usr/local/share/amsn/skins/Oxygen/pixmaps/box_down3.png
+usr/local/share/amsn/skins/Oxygen/pixmaps/box_downleft.png
+usr/local/share/amsn/skins/Oxygen/pixmaps/box_downright.png
+usr/local/share/amsn/skins/Oxygen/pixmaps/box_left.png
+usr/local/share/amsn/skins/Oxygen/pixmaps/box_right.png
+usr/local/share/amsn/skins/Oxygen/pixmaps/box_up.png
+usr/local/share/amsn/skins/Oxygen/pixmaps/box_upleft.png
+usr/local/share/amsn/skins/Oxygen/pixmaps/box_upright.png
+usr/local/share/amsn/skins/Oxygen/pixmaps/busy.png
+usr/local/share/amsn/skins/Oxygen/pixmaps/busy_emblem.png
+usr/local/share/amsn/skins/Oxygen/pixmaps/busy_emblem_detailedview.png
+usr/local/share/amsn/skins/Oxygen/pixmaps/butblock.png
+usr/local/share/amsn/skins/Oxygen/pixmaps/butblock_hover.png
+usr/local/share/amsn/skins/Oxygen/pixmaps/butcall.png
+usr/local/share/amsn/skins/Oxygen/pixmaps/butcall_hover.png
+usr/local/share/amsn/skins/Oxygen/pixmaps/butcallvideo.png
+usr/local/share/amsn/skins/Oxygen/pixmaps/butcallvideo_hover.png
+usr/local/share/amsn/skins/Oxygen/pixmaps/butdraw.png
+usr/local/share/amsn/skins/Oxygen/pixmaps/butdraw_hover.png
+usr/local/share/amsn/skins/Oxygen/pixmaps/butfont.png
+usr/local/share/amsn/skins/Oxygen/pixmaps/butfont_hover.png
+usr/local/share/amsn/skins/Oxygen/pixmaps/butgridoff.png
+usr/local/share/amsn/skins/Oxygen/pixmaps/butgridoff_hover.png
+usr/local/share/amsn/skins/Oxygen/pixmaps/butgridon.png
+usr/local/share/amsn/skins/Oxygen/pixmaps/butgridon_hover.png
+usr/local/share/amsn/skins/Oxygen/pixmaps/buthangup.png
+usr/local/share/amsn/skins/Oxygen/pixmaps/buthangup_hover.png
+usr/local/share/amsn/skins/Oxygen/pixmaps/buthangupvideo.png
+usr/local/share/amsn/skins/Oxygen/pixmaps/buthangupvideo_hover.png
+usr/local/share/amsn/skins/Oxygen/pixmaps/butinvite.png
+usr/local/share/amsn/skins/Oxygen/pixmaps/butinvite_hover.png
+usr/local/share/amsn/skins/Oxygen/pixmaps/butsend.png
+usr/local/share/amsn/skins/Oxygen/pixmaps/butsend_hover.png
+usr/local/share/amsn/skins/Oxygen/pixmaps/butsmile.png
+usr/local/share/amsn/skins/Oxygen/pixmaps/butsmile_hover.png
+usr/local/share/amsn/skins/Oxygen/pixmaps/buttext.png
+usr/local/share/amsn/skins/Oxygen/pixmaps/buttext_hover.png
+usr/local/share/amsn/skins/Oxygen/pixmaps/butvoice.png
+usr/local/share/amsn/skins/Oxygen/pixmaps/butvoice_hover.png
+usr/local/share/amsn/skins/Oxygen/pixmaps/butwebcam.png
+usr/local/share/amsn/skins/Oxygen/pixmaps/butwebcam_hover.png
+usr/local/share/amsn/skins/Oxygen/pixmaps/butwipe.png
+usr/local/share/amsn/skins/Oxygen/pixmaps/butwipe_hover.png
+usr/local/share/amsn/skins/Oxygen/pixmaps/cam_in_chatwin.png
+usr/local/share/amsn/skins/Oxygen/pixmaps/camicon.png
+usr/local/share/amsn/skins/Oxygen/pixmaps/ccard_bg.png
+usr/local/share/amsn/skins/Oxygen/pixmaps/ccard_bpborder.png
+usr/local/share/amsn/skins/Oxygen/pixmaps/ccard_chat.png
+usr/local/share/amsn/skins/Oxygen/pixmaps/ccard_chat_hover.png
+usr/local/share/amsn/skins/Oxygen/pixmaps/ccard_close.png
+usr/local/share/amsn/skins/Oxygen/pixmaps/ccard_close_hover.png
+usr/local/share/amsn/skins/Oxygen/pixmaps/ccard_dn.png
+usr/local/share/amsn/skins/Oxygen/pixmaps/ccard_email.png
+usr/local/share/amsn/skins/Oxygen/pixmaps/ccard_email_hover.png
+usr/local/share/amsn/skins/Oxygen/pixmaps/ccard_left.png
+usr/local/share/amsn/skins/Oxygen/pixmaps/ccard_left_hover.png
+usr/local/share/amsn/skins/Oxygen/pixmaps/ccard_mobile.png
+usr/local/share/amsn/skins/Oxygen/pixmaps/ccard_mobile_hover.png
+usr/local/share/amsn/skins/Oxygen/pixmaps/ccard_nudge.png
+usr/local/share/amsn/skins/Oxygen/pixmaps/ccard_nudge_hover.png
+usr/local/share/amsn/skins/Oxygen/pixmaps/ccard_right.png
+usr/local/share/amsn/skins/Oxygen/pixmaps/ccard_right_hover.png
+usr/local/share/amsn/skins/Oxygen/pixmaps/ccard_up.png
+usr/local/share/amsn/skins/Oxygen/pixmaps/ccard_x.png
+usr/local/share/amsn/skins/Oxygen/pixmaps/ccard_x_hl.png
+usr/local/share/amsn/skins/Oxygen/pixmaps/checkSpelling.png
+usr/local/share/amsn/skins/Oxygen/pixmaps/checkSpelling_hover.png
+usr/local/share/amsn/skins/Oxygen/pixmaps/checkbox.png
+usr/local/share/amsn/skins/Oxygen/pixmaps/checkbox_on.png
+usr/local/share/amsn/skins/Oxygen/pixmaps/checkmark.png
+usr/local/share/amsn/skins/Oxygen/pixmaps/colorbar.png
+usr/local/share/amsn/skins/Oxygen/pixmaps/colorskin.png
+usr/local/share/amsn/skins/Oxygen/pixmaps/confbut.png
+usr/local/share/amsn/skins/Oxygen/pixmaps/confbuth.png
+usr/local/share/amsn/skins/Oxygen/pixmaps/contract.png
+usr/local/share/amsn/skins/Oxygen/pixmaps/contract_hover.png
+usr/local/share/amsn/skins/Oxygen/pixmaps/cwtopback.png
+usr/local/share/amsn/skins/Oxygen/pixmaps/daway.png
+usr/local/share/amsn/skins/Oxygen/pixmaps/dbrb.png
+usr/local/share/amsn/skins/Oxygen/pixmaps/dbusy.png
+usr/local/share/amsn/skins/Oxygen/pixmaps/dhidden.png
+usr/local/share/amsn/skins/Oxygen/pixmaps/dinactive.png
+usr/local/share/amsn/skins/Oxygen/pixmaps/dlunch.png
+usr/local/share/amsn/skins/Oxygen/pixmaps/doffline.png
+usr/local/share/amsn/skins/Oxygen/pixmaps/donline.png
+usr/local/share/amsn/skins/Oxygen/pixmaps/download.png
+usr/local/share/amsn/skins/Oxygen/pixmaps/dphone.png
+usr/local/share/amsn/skins/Oxygen/pixmaps/expand.png
+usr/local/share/amsn/skins/Oxygen/pixmaps/expand_hover.png
+usr/local/share/amsn/skins/Oxygen/pixmaps/fticon.png
+usr/local/share/amsn/skins/Oxygen/pixmaps/ftreject.png
+usr/local/share/amsn/skins/Oxygen/pixmaps/globe.png
+usr/local/share/amsn/skins/Oxygen/pixmaps/gnotify_empty.png
+usr/local/share/amsn/skins/Oxygen/pixmaps/gnotify_error.png
+usr/local/share/amsn/skins/Oxygen/pixmaps/gnotify_new.png
+usr/local/share/amsn/skins/Oxygen/pixmaps/greyline.png
+usr/local/share/amsn/skins/Oxygen/pixmaps/grouptopback_dark.png
+usr/local/share/amsn/skins/Oxygen/pixmaps/grouptopback_light.png
+usr/local/share/amsn/skins/Oxygen/pixmaps/hoverbuttons.xcf
+usr/local/share/amsn/skins/Oxygen/pixmaps/idle.png
+usr/local/share/amsn/skins/Oxygen/pixmaps/imghide.png
+usr/local/share/amsn/skins/Oxygen/pixmaps/imghide_hover.png
+usr/local/share/amsn/skins/Oxygen/pixmaps/imgshow.png
+usr/local/share/amsn/skins/Oxygen/pixmaps/imgshow_hover.png
+usr/local/share/amsn/skins/Oxygen/pixmaps/info.png
+usr/local/share/amsn/skins/Oxygen/pixmaps/ink_huge.png
+usr/local/share/amsn/skins/Oxygen/pixmaps/ink_normal.png
+usr/local/share/amsn/skins/Oxygen/pixmaps/ink_tiny.png
+usr/local/share/amsn/skins/Oxygen/pixmaps/lang2.png
+usr/local/share/amsn/skins/Oxygen/pixmaps/lesstabs.png
+usr/local/share/amsn/skins/Oxygen/pixmaps/loganim.gif
+usr/local/share/amsn/skins/Oxygen/pixmaps/loginbut.png
+usr/local/share/amsn/skins/Oxygen/pixmaps/loginbut_hover.png
+usr/local/share/amsn/skins/Oxygen/pixmaps/logolinmsn.png
+usr/local/share/amsn/skins/Oxygen/pixmaps/mailbox.png
+usr/local/share/amsn/skins/Oxygen/pixmaps/mailbox_unread.png
+usr/local/share/amsn/skins/Oxygen/pixmaps/menu_arrow_down.png
+usr/local/share/amsn/skins/Oxygen/pixmaps/menu_arrow_right.png
+usr/local/share/amsn/skins/Oxygen/pixmaps/menu_background1.png
+usr/local/share/amsn/skins/Oxygen/pixmaps/menu_background2.png
+usr/local/share/amsn/skins/Oxygen/pixmaps/menu_select.png
+usr/local/share/amsn/skins/Oxygen/pixmaps/menu_separator.png
+usr/local/share/amsn/skins/Oxygen/pixmaps/messenger.png
+usr/local/share/amsn/skins/Oxygen/pixmaps/mic.png
+usr/local/share/amsn/skins/Oxygen/pixmaps/mic_muted.png
+usr/local/share/amsn/skins/Oxygen/pixmaps/miniinfo.png
+usr/local/share/amsn/skins/Oxygen/pixmaps/minijoins.png
+usr/local/share/amsn/skins/Oxygen/pixmaps/minileaves.png
+usr/local/share/amsn/skins/Oxygen/pixmaps/miniwarn.png
+usr/local/share/amsn/skins/Oxygen/pixmaps/mobile.png
+usr/local/share/amsn/skins/Oxygen/pixmaps/moretabs.png
+usr/local/share/amsn/skins/Oxygen/pixmaps/msnbot.png
+usr/local/share/amsn/skins/Oxygen/pixmaps/mystatus_bg.png
+usr/local/share/amsn/skins/Oxygen/pixmaps/mystatus_bg_hover.png
+usr/local/share/amsn/skins/Oxygen/pixmaps/newline.png
+usr/local/share/amsn/skins/Oxygen/pixmaps/no-emblem.png
+usr/local/share/amsn/skins/Oxygen/pixmaps/nonim.png
+usr/local/share/amsn/skins/Oxygen/pixmaps/note.png
+usr/local/share/amsn/skins/Oxygen/pixmaps/notesdispic.png
+usr/local/share/amsn/skins/Oxygen/pixmaps/notespic.png
+usr/local/share/amsn/skins/Oxygen/pixmaps/notifclose.png
+usr/local/share/amsn/skins/Oxygen/pixmaps/notifico.png
+usr/local/share/amsn/skins/Oxygen/pixmaps/notifyemail.png
+usr/local/share/amsn/skins/Oxygen/pixmaps/notifymsg.png
+usr/local/share/amsn/skins/Oxygen/pixmaps/notifyoffline.png
+usr/local/share/amsn/skins/Oxygen/pixmaps/notifyonline.png
+usr/local/share/amsn/skins/Oxygen/pixmaps/notifyplugins.png
+usr/local/share/amsn/skins/Oxygen/pixmaps/notifystate.png
+usr/local/share/amsn/skins/Oxygen/pixmaps/notinlist.png
+usr/local/share/amsn/skins/Oxygen/pixmaps/notinlist_emblem.png
+usr/local/share/amsn/skins/Oxygen/pixmaps/notinlist_emblem_detailedview.png
+usr/local/share/amsn/skins/Oxygen/pixmaps/nudgebutton.png
+usr/local/share/amsn/skins/Oxygen/pixmaps/nudgebutton_hover.png
+usr/local/share/amsn/skins/Oxygen/pixmaps/null
+usr/local/share/amsn/skins/Oxygen/pixmaps/offline.png
+usr/local/share/amsn/skins/Oxygen/pixmaps/online.png
+usr/local/share/amsn/skins/Oxygen/pixmaps/pause.png
+usr/local/share/amsn/skins/Oxygen/pixmaps/pausebut.png
+usr/local/share/amsn/skins/Oxygen/pixmaps/pausebuth.png
+usr/local/share/amsn/skins/Oxygen/pixmaps/plain_emblem.png
+usr/local/share/amsn/skins/Oxygen/pixmaps/plain_emblem_detailedview.png
+usr/local/share/amsn/skins/Oxygen/pixmaps/playbut.png
+usr/local/share/amsn/skins/Oxygen/pixmaps/playbuth.png
+usr/local/share/amsn/skins/Oxygen/pixmaps/pop3_mailpic.png
+usr/local/share/amsn/skins/Oxygen/pixmaps/prefalerts.png
+usr/local/share/amsn/skins/Oxygen/pixmaps/prefaway.png
+usr/local/share/amsn/skins/Oxygen/pixmaps/prefemotic.png
+usr/local/share/amsn/skins/Oxygen/pixmaps/preffont.png
+usr/local/share/amsn/skins/Oxygen/pixmaps/prefhist.png
+usr/local/share/amsn/skins/Oxygen/pixmaps/prefhist2.png
+usr/local/share/amsn/skins/Oxygen/pixmaps/preflook.png
+usr/local/share/amsn/skins/Oxygen/pixmaps/prefmobile.png
+usr/local/share/amsn/skins/Oxygen/pixmaps/prefmsg.png
+usr/local/share/amsn/skins/Oxygen/pixmaps/prefnat.png
+usr/local/share/amsn/skins/Oxygen/pixmaps/prefpers.png
+usr/local/share/amsn/skins/Oxygen/pixmaps/prefphone.png
+usr/local/share/amsn/skins/Oxygen/pixmaps/prefprofile.png
+usr/local/share/amsn/skins/Oxygen/pixmaps/prefproxy.png
+usr/local/share/amsn/skins/Oxygen/pixmaps/prefstatus.png
+usr/local/share/amsn/skins/Oxygen/pixmaps/radiobox.png
+usr/local/share/amsn/skins/Oxygen/pixmaps/radiomark.png
+usr/local/share/amsn/skins/Oxygen/pixmaps/recordbut.png
+usr/local/share/amsn/skins/Oxygen/pixmaps/recordbuth.png
+usr/local/share/amsn/skins/Oxygen/pixmaps/sendbut.png
+usr/local/share/amsn/skins/Oxygen/pixmaps/sendbut_hover.png
+usr/local/share/amsn/skins/Oxygen/pixmaps/senddrawbut.png
+usr/local/share/amsn/skins/Oxygen/pixmaps/senddrawbut_hover.png
+usr/local/share/amsn/skins/Oxygen/pixmaps/sipicon.png
+usr/local/share/amsn/skins/Oxygen/pixmaps/smile.png
+usr/local/share/amsn/skins/Oxygen/pixmaps/space_noupdate.png
+usr/local/share/amsn/skins/Oxygen/pixmaps/space_update.gif
+usr/local/share/amsn/skins/Oxygen/pixmaps/spaces_dock.png
+usr/local/share/amsn/skins/Oxygen/pixmaps/spaces_undock.png
+usr/local/share/amsn/skins/Oxygen/pixmaps/speaker.png
+usr/local/share/amsn/skins/Oxygen/pixmaps/speaker_muted.png
+usr/local/share/amsn/skins/Oxygen/pixmaps/star.png
+usr/local/share/amsn/skins/Oxygen/pixmaps/stopbut.png
+usr/local/share/amsn/skins/Oxygen/pixmaps/stopbuth.png
+usr/local/share/amsn/skins/Oxygen/pixmaps/tab.png
+usr/local/share/amsn/skins/Oxygen/pixmaps/tab_close.png
+usr/local/share/amsn/skins/Oxygen/pixmaps/tab_close_hover.png
+usr/local/share/amsn/skins/Oxygen/pixmaps/tab_current.png
+usr/local/share/amsn/skins/Oxygen/pixmaps/tab_flicker.png
+usr/local/share/amsn/skins/Oxygen/pixmaps/tab_hover.png
+usr/local/share/amsn/skins/Oxygen/pixmaps/tex.png
+usr/local/share/amsn/skins/Oxygen/pixmaps/tex_hover.png
+usr/local/share/amsn/skins/Oxygen/pixmaps/typing.png
+usr/local/share/amsn/skins/Oxygen/pixmaps/unknown_wink.png
+usr/local/share/amsn/skins/Oxygen/pixmaps/unread.png
+usr/local/share/amsn/skins/Oxygen/pixmaps/unread_tray.png
+usr/local/share/amsn/skins/Oxygen/pixmaps/voice.png
+usr/local/share/amsn/skins/Oxygen/pixmaps/warning.png
+usr/local/share/amsn/skins/Oxygen/pixmaps/webcam.png
+usr/local/share/amsn/skins/Oxygen/pixmaps/webmsn.png
+usr/local/share/amsn/skins/Oxygen/pixmaps/webmsn_dp.png
+usr/local/share/amsn/skins/Oxygen/pixmaps/winksbut.png
+usr/local/share/amsn/skins/Oxygen/pixmaps/winksbut_hover.png
+usr/local/share/amsn/skins/Oxygen/pixmaps/yes-emblem.png
+usr/local/share/amsn/skins/Oxygen/pixmapscroll/horizontal/arrow1.png
+usr/local/share/amsn/skins/Oxygen/pixmapscroll/horizontal/arrow1_disabled.png
+usr/local/share/amsn/skins/Oxygen/pixmapscroll/horizontal/arrow1_hover.png
+usr/local/share/amsn/skins/Oxygen/pixmapscroll/horizontal/arrow1_pressed.png
+usr/local/share/amsn/skins/Oxygen/pixmapscroll/horizontal/arrow2.png
+usr/local/share/amsn/skins/Oxygen/pixmapscroll/horizontal/arrow2_disabled.png
+usr/local/share/amsn/skins/Oxygen/pixmapscroll/horizontal/arrow2_hover.png
+usr/local/share/amsn/skins/Oxygen/pixmapscroll/horizontal/arrow2_pressed.png
+usr/local/share/amsn/skins/Oxygen/pixmapscroll/horizontal/sliderbody.png
+usr/local/share/amsn/skins/Oxygen/pixmapscroll/horizontal/sliderbody_disabled.png
+usr/local/share/amsn/skins/Oxygen/pixmapscroll/horizontal/sliderbody_hover.png
+usr/local/share/amsn/skins/Oxygen/pixmapscroll/horizontal/sliderbody_pressed.png
+usr/local/share/amsn/skins/Oxygen/pixmapscroll/horizontal/sliderbottom.png
+usr/local/share/amsn/skins/Oxygen/pixmapscroll/horizontal/sliderbottom_disabled.png
+usr/local/share/amsn/skins/Oxygen/pixmapscroll/horizontal/sliderbottom_hover.png
+usr/local/share/amsn/skins/Oxygen/pixmapscroll/horizontal/sliderbottom_pressed.png
+usr/local/share/amsn/skins/Oxygen/pixmapscroll/horizontal/slidergrip.png
+usr/local/share/amsn/skins/Oxygen/pixmapscroll/horizontal/slidergrip_disabled.png
+usr/local/share/amsn/skins/Oxygen/pixmapscroll/horizontal/slidergrip_hover.png
+usr/local/share/amsn/skins/Oxygen/pixmapscroll/horizontal/slidergrip_pressed.png
+usr/local/share/amsn/skins/Oxygen/pixmapscroll/horizontal/slidertop.png
+usr/local/share/amsn/skins/Oxygen/pixmapscroll/horizontal/slidertop_disabled.png
+usr/local/share/amsn/skins/Oxygen/pixmapscroll/horizontal/slidertop_hover.png
+usr/local/share/amsn/skins/Oxygen/pixmapscroll/horizontal/slidertop_pressed.png
+usr/local/share/amsn/skins/Oxygen/pixmapscroll/horizontal/trough.png
+usr/local/share/amsn/skins/Oxygen/pixmapscroll/pixmapscroll.tcl
+usr/local/share/amsn/skins/Oxygen/pixmapscroll/pkgIndex.tcl
+usr/local/share/amsn/skins/Oxygen/pixmapscroll/test.tcl
+usr/local/share/amsn/skins/Oxygen/pixmapscroll/vertical/arrow1.png
+usr/local/share/amsn/skins/Oxygen/pixmapscroll/vertical/arrow1_disabled.png
+usr/local/share/amsn/skins/Oxygen/pixmapscroll/vertical/arrow1_hover.png
+usr/local/share/amsn/skins/Oxygen/pixmapscroll/vertical/arrow1_pressed.png
+usr/local/share/amsn/skins/Oxygen/pixmapscroll/vertical/arrow2.png
+usr/local/share/amsn/skins/Oxygen/pixmapscroll/vertical/arrow2_disabled.png
+usr/local/share/amsn/skins/Oxygen/pixmapscroll/vertical/arrow2_hover.png
+usr/local/share/amsn/skins/Oxygen/pixmapscroll/vertical/arrow2_pressed.png
+usr/local/share/amsn/skins/Oxygen/pixmapscroll/vertical/sliderbody.png
+usr/local/share/amsn/skins/Oxygen/pixmapscroll/vertical/sliderbody_disabled.png
+usr/local/share/amsn/skins/Oxygen/pixmapscroll/vertical/sliderbody_hover.png
+usr/local/share/amsn/skins/Oxygen/pixmapscroll/vertical/sliderbody_pressed.png
+usr/local/share/amsn/skins/Oxygen/pixmapscroll/vertical/sliderbottom.png
+usr/local/share/amsn/skins/Oxygen/pixmapscroll/vertical/sliderbottom_disabled.png
+usr/local/share/amsn/skins/Oxygen/pixmapscroll/vertical/sliderbottom_hover.png
+usr/local/share/amsn/skins/Oxygen/pixmapscroll/vertical/sliderbottom_pressed.png
+usr/local/share/amsn/skins/Oxygen/pixmapscroll/vertical/slidergrip.png
+usr/local/share/amsn/skins/Oxygen/pixmapscroll/vertical/slidergrip_disabled.png
+usr/local/share/amsn/skins/Oxygen/pixmapscroll/vertical/slidergrip_hover.png
+usr/local/share/amsn/skins/Oxygen/pixmapscroll/vertical/slidergrip_pressed.png
+usr/local/share/amsn/skins/Oxygen/pixmapscroll/vertical/slidertop.png
+usr/local/share/amsn/skins/Oxygen/pixmapscroll/vertical/slidertop_disabled.png
+usr/local/share/amsn/skins/Oxygen/pixmapscroll/vertical/slidertop_hover.png
+usr/local/share/amsn/skins/Oxygen/pixmapscroll/vertical/slidertop_pressed.png
+usr/local/share/amsn/skins/Oxygen/pixmapscroll/vertical/trough.png
+usr/local/share/amsn/skins/Oxygen/settings.xml
+usr/local/share/amsn/skins/Oxygen/smileys/Airplane.png
+usr/local/share/amsn/skins/Oxygen/smileys/Angel_smiley.png
+usr/local/share/amsn/skins/Oxygen/smileys/Angry_smiley.png
+usr/local/share/amsn/skins/Oxygen/smileys/Ashamed_smiley.png
+usr/local/share/amsn/skins/Oxygen/smileys/Asl.png
+usr/local/share/amsn/skins/Oxygen/smileys/Auto.png
+usr/local/share/amsn/skins/Oxygen/smileys/Baring_teeth_smiley.png
+usr/local/share/amsn/skins/Oxygen/smileys/Bat.png
+usr/local/share/amsn/skins/Oxygen/smileys/Be_Right_Back_smiley.png
+usr/local/share/amsn/skins/Oxygen/smileys/Beer.png
+usr/local/share/amsn/skins/Oxygen/smileys/Birthday_cake.png
+usr/local/share/amsn/skins/Oxygen/smileys/Bowl.png
+usr/local/share/amsn/skins/Oxygen/smileys/Boy.png
+usr/local/share/amsn/skins/Oxygen/smileys/Broken_heart.png
+usr/local/share/amsn/skins/Oxygen/smileys/Camera.png
+usr/local/share/amsn/skins/Oxygen/smileys/Cat.png
+usr/local/share/amsn/skins/Oxygen/smileys/Cigarette.png
+usr/local/share/amsn/skins/Oxygen/smileys/Clapping_hands.png
+usr/local/share/amsn/skins/Oxygen/smileys/Clock.png
+usr/local/share/amsn/skins/Oxygen/smileys/Coffee_cup.png
+usr/local/share/amsn/skins/Oxygen/smileys/Computer.png
+usr/local/share/amsn/skins/Oxygen/smileys/Confused_smiley.png
+usr/local/share/amsn/skins/Oxygen/smileys/Crying_smiley.png
+usr/local/share/amsn/skins/Oxygen/smileys/Devil.png
+usr/local/share/amsn/skins/Oxygen/smileys/Dog.png
+usr/local/share/amsn/skins/Oxygen/smileys/Dont_know_smiley.png
+usr/local/share/amsn/skins/Oxygen/smileys/Dont_tell_anyone_smiley.png
+usr/local/share/amsn/skins/Oxygen/smileys/Dry_martini.png
+usr/local/share/amsn/skins/Oxygen/smileys/Email.png
+usr/local/share/amsn/skins/Oxygen/smileys/Eye_rolling_smiley.png
+usr/local/share/amsn/skins/Oxygen/smileys/Filmstrip.png
+usr/local/share/amsn/skins/Oxygen/smileys/Fingerscrossed.png
+usr/local/share/amsn/skins/Oxygen/smileys/Gift.png
+usr/local/share/amsn/skins/Oxygen/smileys/Girl.png
+usr/local/share/amsn/skins/Oxygen/smileys/Goat.png
+usr/local/share/amsn/skins/Oxygen/smileys/Handcuffs.png
+usr/local/share/amsn/skins/Oxygen/smileys/Happy_smiley.png
+usr/local/share/amsn/skins/Oxygen/smileys/Heart.png
+usr/local/share/amsn/skins/Oxygen/smileys/Hot_smiley.png
+usr/local/share/amsn/skins/Oxygen/smileys/IM.png
+usr/local/share/amsn/skins/Oxygen/smileys/Island.png
+usr/local/share/amsn/skins/Oxygen/smileys/Kiss.png
+usr/local/share/amsn/skins/Oxygen/smileys/Left_hug.png
+usr/local/share/amsn/skins/Oxygen/smileys/Light.png
+usr/local/share/amsn/skins/Oxygen/smileys/MSO.png
+usr/local/share/amsn/skins/Oxygen/smileys/Messenger.png
+usr/local/share/amsn/skins/Oxygen/smileys/Mobile_phone.png
+usr/local/share/amsn/skins/Oxygen/smileys/Money.png
+usr/local/share/amsn/skins/Oxygen/smileys/Moon.png
+usr/local/share/amsn/skins/Oxygen/smileys/Nerd_smiley.png
+usr/local/share/amsn/skins/Oxygen/smileys/Note.png
+usr/local/share/amsn/skins/Oxygen/smileys/Oh_my_God_smiley.png
+usr/local/share/amsn/skins/Oxygen/smileys/Party_smiley.png
+usr/local/share/amsn/skins/Oxygen/smileys/Pizza.png
+usr/local/share/amsn/skins/Oxygen/smileys/Plate.png
+usr/local/share/amsn/skins/Oxygen/smileys/Rabbit.png
+usr/local/share/amsn/skins/Oxygen/smileys/Rain.png
+usr/local/share/amsn/skins/Oxygen/smileys/Rainbow.png
+usr/local/share/amsn/skins/Oxygen/smileys/Right_hug.png
+usr/local/share/amsn/skins/Oxygen/smileys/Rose.png
+usr/local/share/amsn/skins/Oxygen/smileys/Sad_smiley.png
+usr/local/share/amsn/skins/Oxygen/smileys/Sarcastic_smiley.png
+usr/local/share/amsn/skins/Oxygen/smileys/Secret_telling_smiley.png
+usr/local/share/amsn/skins/Oxygen/smileys/Sheep.png
+usr/local/share/amsn/skins/Oxygen/smileys/Shocked_smiley.png
+usr/local/share/amsn/skins/Oxygen/smileys/Sick_smiley.png
+usr/local/share/amsn/skins/Oxygen/smileys/Sleepy_smiley.png
+usr/local/share/amsn/skins/Oxygen/smileys/Snail.png
+usr/local/share/amsn/skins/Oxygen/smileys/Soccer_ball.png
+usr/local/share/amsn/skins/Oxygen/smileys/Star.png
+usr/local/share/amsn/skins/Oxygen/smileys/Storm.png
+usr/local/share/amsn/skins/Oxygen/smileys/Sun.png
+usr/local/share/amsn/skins/Oxygen/smileys/Telephone_receiver.png
+usr/local/share/amsn/skins/Oxygen/smileys/Thinking_smiley.png
+usr/local/share/amsn/skins/Oxygen/smileys/Thumbs_down.png
+usr/local/share/amsn/skins/Oxygen/smileys/Thumbs_up.png
+usr/local/share/amsn/skins/Oxygen/smileys/Tonque_out_smiley.png
+usr/local/share/amsn/skins/Oxygen/smileys/Turtle.png
+usr/local/share/amsn/skins/Oxygen/smileys/Umbrella.png
+usr/local/share/amsn/skins/Oxygen/smileys/Very_happy_smiley.png
+usr/local/share/amsn/skins/Oxygen/smileys/Wilted_rose.png
+usr/local/share/amsn/skins/Oxygen/smileys/Winking_smiley.png
+usr/local/share/amsn/skins/Oxygen/smileys/XD.png
+usr/local/share/amsn/skins/Oxygen/smileys/Xbox.png
+usr/local/share/amsn/skins/Oxygen/smileys/YIM.png
+usr/local/share/amsn/skins/Oxygen/smileys/im_xbox.gif
+usr/local/share/amsn/skins/Oxygen/smileys/null
+usr/local/share/amsn/skins/Oxygen/sounds/alarm.wav
+usr/local/share/amsn/skins/Oxygen/sounds/newemail.wav
+usr/local/share/amsn/skins/Oxygen/sounds/nudge.wav
+usr/local/share/amsn/skins/Oxygen/sounds/offline.wav
+usr/local/share/amsn/skins/Oxygen/sounds/online.wav
+usr/local/share/amsn/skins/Oxygen/sounds/type.wav
+usr/local/share/amsn/skins/Oxygen/winicons/away.ico
+usr/local/share/amsn/skins/Oxygen/winicons/bossmode.ico
+usr/local/share/amsn/skins/Oxygen/winicons/brb.ico
+usr/local/share/amsn/skins/Oxygen/winicons/busy.ico
+usr/local/share/amsn/skins/Oxygen/winicons/hidden.ico
+usr/local/share/amsn/skins/Oxygen/winicons/inactive.ico
+usr/local/share/amsn/skins/Oxygen/winicons/lunch.ico
+usr/local/share/amsn/skins/Oxygen/winicons/msn.ico
+usr/local/share/amsn/skins/Oxygen/winicons/offline.ico
+usr/local/share/amsn/skins/Oxygen/winicons/online.ico
+usr/local/share/amsn/skins/Oxygen/winicons/phone.ico
+usr/local/share/amsn/skins/Oxygen/winicons/unread.ico
+usr/local/share/amsn/skins/default/desc.txt
+usr/local/share/amsn/skins/default/displaypic/amsn.dat
+usr/local/share/amsn/skins/default/displaypic/amsn.png
+usr/local/share/amsn/skins/default/displaypic/ball.dat
+usr/local/share/amsn/skins/default/displaypic/ball.png
+usr/local/share/amsn/skins/default/displaypic/blood.dat
+usr/local/share/amsn/skins/default/displaypic/blood.png
+usr/local/share/amsn/skins/default/displaypic/car.dat
+usr/local/share/amsn/skins/default/displaypic/car.png
+usr/local/share/amsn/skins/default/displaypic/castle.dat
+usr/local/share/amsn/skins/default/displaypic/castle.png
+usr/local/share/amsn/skins/default/displaypic/doggie.dat
+usr/local/share/amsn/skins/default/displaypic/doggie.png
+usr/local/share/amsn/skins/default/displaypic/female.dat
+usr/local/share/amsn/skins/default/displaypic/female.png
+usr/local/share/amsn/skins/default/displaypic/lightbulb.dat
+usr/local/share/amsn/skins/default/displaypic/lightbulb.png
+usr/local/share/amsn/skins/default/displaypic/loading.png
+usr/local/share/amsn/skins/default/displaypic/lock.dat
+usr/local/share/amsn/skins/default/displaypic/lock.png
+usr/local/share/amsn/skins/default/displaypic/male.dat
+usr/local/share/amsn/skins/default/displaypic/male.png
+usr/local/share/amsn/skins/default/displaypic/nopic.png
+usr/local/share/amsn/skins/default/displaypic/phone.dat
+usr/local/share/amsn/skins/default/displaypic/phone.png
+usr/local/share/amsn/skins/default/displaypic/rubberduck.dat
+usr/local/share/amsn/skins/default/displaypic/rubberduck.png
+usr/local/share/amsn/skins/default/displaypic/shell.dat
+usr/local/share/amsn/skins/default/displaypic/shell.png
+usr/local/share/amsn/skins/default/license
+usr/local/share/amsn/skins/default/pixmaps/alarm.png
+usr/local/share/amsn/skins/default/pixmaps/ampli.png
+usr/local/share/amsn/skins/default/pixmaps/ampli_pressed.png
+usr/local/share/amsn/skins/default/pixmaps/amsnicon.png
+usr/local/share/amsn/skins/default/pixmaps/arrow.png
+usr/local/share/amsn/skins/default/pixmaps/arrowmac.png
+usr/local/share/amsn/skins/default/pixmaps/assistant.png
+usr/local/share/amsn/skins/default/pixmaps/assistant_audio.png
+usr/local/share/amsn/skins/default/pixmaps/assistant_webcam.png
+usr/local/share/amsn/skins/default/pixmaps/away.png
+usr/local/share/amsn/skins/default/pixmaps/away_emblem.png
+usr/local/share/amsn/skins/default/pixmaps/away_emblem_detailedview.png
+usr/local/share/amsn/skins/default/pixmaps/back.png
+usr/local/share/amsn/skins/default/pixmaps/baway.png
+usr/local/share/amsn/skins/default/pixmaps/bbusy.png
+usr/local/share/amsn/skins/default/pixmaps/bell.png
+usr/local/share/amsn/skins/default/pixmaps/belloff.png
+usr/local/share/amsn/skins/default/pixmaps/blocked.png
+usr/local/share/amsn/skins/default/pixmaps/blocked_emblem.png
+usr/local/share/amsn/skins/default/pixmaps/blocked_emblem_detailedview.png
+usr/local/share/amsn/skins/default/pixmaps/blocked_off.png
+usr/local/share/amsn/skins/default/pixmaps/boffline.png
+usr/local/share/amsn/skins/default/pixmaps/bonline.png
+usr/local/share/amsn/skins/default/pixmaps/box_body.png
+usr/local/share/amsn/skins/default/pixmaps/box_down.png
+usr/local/share/amsn/skins/default/pixmaps/box_downleft.png
+usr/local/share/amsn/skins/default/pixmaps/box_downright.png
+usr/local/share/amsn/skins/default/pixmaps/box_left.png
+usr/local/share/amsn/skins/default/pixmaps/box_right.png
+usr/local/share/amsn/skins/default/pixmaps/box_up.png
+usr/local/share/amsn/skins/default/pixmaps/box_upleft.png
+usr/local/share/amsn/skins/default/pixmaps/box_upright.png
+usr/local/share/amsn/skins/default/pixmaps/busy.png
+usr/local/share/amsn/skins/default/pixmaps/busy_emblem.png
+usr/local/share/amsn/skins/default/pixmaps/busy_emblem_detailedview.png
+usr/local/share/amsn/skins/default/pixmaps/butblock.png
+usr/local/share/amsn/skins/default/pixmaps/butblock_hover.png
+usr/local/share/amsn/skins/default/pixmaps/butcall.png
+usr/local/share/amsn/skins/default/pixmaps/butcall_hover.png
+usr/local/share/amsn/skins/default/pixmaps/butcallvideo.png
+usr/local/share/amsn/skins/default/pixmaps/butcallvideo_hover.png
+usr/local/share/amsn/skins/default/pixmaps/butdraw.png
+usr/local/share/amsn/skins/default/pixmaps/butdraw_hover.png
+usr/local/share/amsn/skins/default/pixmaps/butfont.png
+usr/local/share/amsn/skins/default/pixmaps/butfont_hover.png
+usr/local/share/amsn/skins/default/pixmaps/butgridoff.png
+usr/local/share/amsn/skins/default/pixmaps/butgridoff_hover.png
+usr/local/share/amsn/skins/default/pixmaps/butgridon.png
+usr/local/share/amsn/skins/default/pixmaps/butgridon_hover.png
+usr/local/share/amsn/skins/default/pixmaps/buthangup.png
+usr/local/share/amsn/skins/default/pixmaps/buthangup_hover.png
+usr/local/share/amsn/skins/default/pixmaps/buthangup_mini.png
+usr/local/share/amsn/skins/default/pixmaps/buthangupvideo.png
+usr/local/share/amsn/skins/default/pixmaps/buthangupvideo_hover.png
+usr/local/share/amsn/skins/default/pixmaps/butinvite.png
+usr/local/share/amsn/skins/default/pixmaps/butinvite_hover.png
+usr/local/share/amsn/skins/default/pixmaps/butsend.png
+usr/local/share/amsn/skins/default/pixmaps/butsend_hover.png
+usr/local/share/amsn/skins/default/pixmaps/butsmile.png
+usr/local/share/amsn/skins/default/pixmaps/butsmile_hover.png
+usr/local/share/amsn/skins/default/pixmaps/buttext.png
+usr/local/share/amsn/skins/default/pixmaps/buttext_hover.png
+usr/local/share/amsn/skins/default/pixmaps/butvoice.png
+usr/local/share/amsn/skins/default/pixmaps/butvoice_hover.png
+usr/local/share/amsn/skins/default/pixmaps/butwebcam.png
+usr/local/share/amsn/skins/default/pixmaps/butwebcam_hover.png
+usr/local/share/amsn/skins/default/pixmaps/butwipe.png
+usr/local/share/amsn/skins/default/pixmaps/butwipe_hover.png
+usr/local/share/amsn/skins/default/pixmaps/cam_in_chatwin.png
+usr/local/share/amsn/skins/default/pixmaps/camicon.png
+usr/local/share/amsn/skins/default/pixmaps/ccard_bg.png
+usr/local/share/amsn/skins/default/pixmaps/ccard_bpborder.png
+usr/local/share/amsn/skins/default/pixmaps/ccard_chat.png
+usr/local/share/amsn/skins/default/pixmaps/ccard_chat_hover.png
+usr/local/share/amsn/skins/default/pixmaps/ccard_close.png
+usr/local/share/amsn/skins/default/pixmaps/ccard_close_hover.png
+usr/local/share/amsn/skins/default/pixmaps/ccard_dn.png
+usr/local/share/amsn/skins/default/pixmaps/ccard_email.png
+usr/local/share/amsn/skins/default/pixmaps/ccard_email_hover.png
+usr/local/share/amsn/skins/default/pixmaps/ccard_left.png
+usr/local/share/amsn/skins/default/pixmaps/ccard_left_hover.png
+usr/local/share/amsn/skins/default/pixmaps/ccard_mobile.png
+usr/local/share/amsn/skins/default/pixmaps/ccard_mobile_hover.png
+usr/local/share/amsn/skins/default/pixmaps/ccard_nudge.png
+usr/local/share/amsn/skins/default/pixmaps/ccard_nudge_hover.png
+usr/local/share/amsn/skins/default/pixmaps/ccard_right.png
+usr/local/share/amsn/skins/default/pixmaps/ccard_right_hover.png
+usr/local/share/amsn/skins/default/pixmaps/ccard_up.png
+usr/local/share/amsn/skins/default/pixmaps/ccard_x.png
+usr/local/share/amsn/skins/default/pixmaps/ccard_x_hl.png
+usr/local/share/amsn/skins/default/pixmaps/checkSpelling.png
+usr/local/share/amsn/skins/default/pixmaps/checkSpelling_hover.png
+usr/local/share/amsn/skins/default/pixmaps/checkbox.png
+usr/local/share/amsn/skins/default/pixmaps/checkbox_on.png
+usr/local/share/amsn/skins/default/pixmaps/checkmark.png
+usr/local/share/amsn/skins/default/pixmaps/colorbar.png
+usr/local/share/amsn/skins/default/pixmaps/colorskin.png
+usr/local/share/amsn/skins/default/pixmaps/confbut.png
+usr/local/share/amsn/skins/default/pixmaps/confbuth.png
+usr/local/share/amsn/skins/default/pixmaps/contract.png
+usr/local/share/amsn/skins/default/pixmaps/contract_hover.png
+usr/local/share/amsn/skins/default/pixmaps/cwtopback.png
+usr/local/share/amsn/skins/default/pixmaps/daway.png
+usr/local/share/amsn/skins/default/pixmaps/dawayb.png
+usr/local/share/amsn/skins/default/pixmaps/dbrb.png
+usr/local/share/amsn/skins/default/pixmaps/dbrbb.png
+usr/local/share/amsn/skins/default/pixmaps/dbusy.png
+usr/local/share/amsn/skins/default/pixmaps/dbusyb.png
+usr/local/share/amsn/skins/default/pixmaps/dhidden.png
+usr/local/share/amsn/skins/default/pixmaps/dhiddenb.png
+usr/local/share/amsn/skins/default/pixmaps/dinactive.png
+usr/local/share/amsn/skins/default/pixmaps/dinactiveb.png
+usr/local/share/amsn/skins/default/pixmaps/dlunch.png
+usr/local/share/amsn/skins/default/pixmaps/dlunchb.png
+usr/local/share/amsn/skins/default/pixmaps/doffline.png
+usr/local/share/amsn/skins/default/pixmaps/dofflineb.png
+usr/local/share/amsn/skins/default/pixmaps/donline.png
+usr/local/share/amsn/skins/default/pixmaps/donlineb.png
+usr/local/share/amsn/skins/default/pixmaps/download.png
+usr/local/share/amsn/skins/default/pixmaps/dphone.png
+usr/local/share/amsn/skins/default/pixmaps/dphoneb.png
+usr/local/share/amsn/skins/default/pixmaps/expand.png
+usr/local/share/amsn/skins/default/pixmaps/expand_hover.png
+usr/local/share/amsn/skins/default/pixmaps/fticon.png
+usr/local/share/amsn/skins/default/pixmaps/ftreject.png
+usr/local/share/amsn/skins/default/pixmaps/globe.png
+usr/local/share/amsn/skins/default/pixmaps/gnotify_empty.png
+usr/local/share/amsn/skins/default/pixmaps/gnotify_error.png
+usr/local/share/amsn/skins/default/pixmaps/gnotify_new.png
+usr/local/share/amsn/skins/default/pixmaps/greyline.png
+usr/local/share/amsn/skins/default/pixmaps/grouptopback_dark.png
+usr/local/share/amsn/skins/default/pixmaps/grouptopback_light.png
+usr/local/share/amsn/skins/default/pixmaps/idle.png
+usr/local/share/amsn/skins/default/pixmaps/imghide.png
+usr/local/share/amsn/skins/default/pixmaps/imghide_hover.png
+usr/local/share/amsn/skins/default/pixmaps/imgshow.png
+usr/local/share/amsn/skins/default/pixmaps/imgshow_hover.png
+usr/local/share/amsn/skins/default/pixmaps/info.png
+usr/local/share/amsn/skins/default/pixmaps/lesstabs.png
+usr/local/share/amsn/skins/default/pixmaps/loganim.gif
+usr/local/share/amsn/skins/default/pixmaps/loginbut.png
+usr/local/share/amsn/skins/default/pixmaps/loginbut_hover.png
+usr/local/share/amsn/skins/default/pixmaps/logolinmsn.png
+usr/local/share/amsn/skins/default/pixmaps/logomacmsn.png
+usr/local/share/amsn/skins/default/pixmaps/mailbox.png
+usr/local/share/amsn/skins/default/pixmaps/mailbox_unread.png
+usr/local/share/amsn/skins/default/pixmaps/menu_arrow_down.png
+usr/local/share/amsn/skins/default/pixmaps/menu_arrow_right.png
+usr/local/share/amsn/skins/default/pixmaps/menu_background1.png
+usr/local/share/amsn/skins/default/pixmaps/menu_background2.png
+usr/local/share/amsn/skins/default/pixmaps/menu_select.png
+usr/local/share/amsn/skins/default/pixmaps/menu_separator.png
+usr/local/share/amsn/skins/default/pixmaps/messenger.png
+usr/local/share/amsn/skins/default/pixmaps/mic.png
+usr/local/share/amsn/skins/default/pixmaps/mic_muted.png
+usr/local/share/amsn/skins/default/pixmaps/miniinfo.png
+usr/local/share/amsn/skins/default/pixmaps/minijoins.png
+usr/local/share/amsn/skins/default/pixmaps/minileaves.png
+usr/local/share/amsn/skins/default/pixmaps/miniwarn.png
+usr/local/share/amsn/skins/default/pixmaps/mobile.png
+usr/local/share/amsn/skins/default/pixmaps/moretabs.png
+usr/local/share/amsn/skins/default/pixmaps/msnbot.png
+usr/local/share/amsn/skins/default/pixmaps/mystatus_bg.png
+usr/local/share/amsn/skins/default/pixmaps/mystatus_bg_hover.png
+usr/local/share/amsn/skins/default/pixmaps/newline.png
+usr/local/share/amsn/skins/default/pixmaps/no-emblem.png
+usr/local/share/amsn/skins/default/pixmaps/nonim.png
+usr/local/share/amsn/skins/default/pixmaps/note.png
+usr/local/share/amsn/skins/default/pixmaps/notesdispic.png
+usr/local/share/amsn/skins/default/pixmaps/notespic.png
+usr/local/share/amsn/skins/default/pixmaps/notifclose.png
+usr/local/share/amsn/skins/default/pixmaps/notifico.png
+usr/local/share/amsn/skins/default/pixmaps/notifyemail.png
+usr/local/share/amsn/skins/default/pixmaps/notifymsg.png
+usr/local/share/amsn/skins/default/pixmaps/notifyoffline.png
+usr/local/share/amsn/skins/default/pixmaps/notifyonline.png
+usr/local/share/amsn/skins/default/pixmaps/notifyplugins.png
+usr/local/share/amsn/skins/default/pixmaps/notifystate.png
+usr/local/share/amsn/skins/default/pixmaps/notinlist.png
+usr/local/share/amsn/skins/default/pixmaps/notinlist_emblem.png
+usr/local/share/amsn/skins/default/pixmaps/notinlist_emblem_detailedview.png
+usr/local/share/amsn/skins/default/pixmaps/nudgebutton.png
+usr/local/share/amsn/skins/default/pixmaps/nudgebutton_hover.png
+usr/local/share/amsn/skins/default/pixmaps/null
+usr/local/share/amsn/skins/default/pixmaps/offline.png
+usr/local/share/amsn/skins/default/pixmaps/online.png
+usr/local/share/amsn/skins/default/pixmaps/pause.png
+usr/local/share/amsn/skins/default/pixmaps/pausebut.png
+usr/local/share/amsn/skins/default/pixmaps/pausebuth.png
+usr/local/share/amsn/skins/default/pixmaps/plain_emblem.png
+usr/local/share/amsn/skins/default/pixmaps/plain_emblem_detailedview.png
+usr/local/share/amsn/skins/default/pixmaps/playbut.png
+usr/local/share/amsn/skins/default/pixmaps/playbuth.png
+usr/local/share/amsn/skins/default/pixmaps/pop3_mailpic.png
+usr/local/share/amsn/skins/default/pixmaps/prefalerts.png
+usr/local/share/amsn/skins/default/pixmaps/prefaway.png
+usr/local/share/amsn/skins/default/pixmaps/prefemotic.png
+usr/local/share/amsn/skins/default/pixmaps/preffont.png
+usr/local/share/amsn/skins/default/pixmaps/prefhist.png
+usr/local/share/amsn/skins/default/pixmaps/prefhist2.png
+usr/local/share/amsn/skins/default/pixmaps/preflook.png
+usr/local/share/amsn/skins/default/pixmaps/prefmobile.png
+usr/local/share/amsn/skins/default/pixmaps/prefmsg.png
+usr/local/share/amsn/skins/default/pixmaps/prefnat.png
+usr/local/share/amsn/skins/default/pixmaps/prefpers.png
+usr/local/share/amsn/skins/default/pixmaps/prefphone.png
+usr/local/share/amsn/skins/default/pixmaps/prefprofile.png
+usr/local/share/amsn/skins/default/pixmaps/prefproxy.png
+usr/local/share/amsn/skins/default/pixmaps/prefstatus.png
+usr/local/share/amsn/skins/default/pixmaps/radiobox.png
+usr/local/share/amsn/skins/default/pixmaps/radiomark.png
+usr/local/share/amsn/skins/default/pixmaps/recordbut.png
+usr/local/share/amsn/skins/default/pixmaps/recordbuth.png
+usr/local/share/amsn/skins/default/pixmaps/sendbut.png
+usr/local/share/amsn/skins/default/pixmaps/sendbut_hover.png
+usr/local/share/amsn/skins/default/pixmaps/sipicon.png
+usr/local/share/amsn/skins/default/pixmaps/smallanim.gif
+usr/local/share/amsn/skins/default/pixmaps/smile.png
+usr/local/share/amsn/skins/default/pixmaps/space_noupdate.png
+usr/local/share/amsn/skins/default/pixmaps/space_update.png
+usr/local/share/amsn/skins/default/pixmaps/spaces_dock.png
+usr/local/share/amsn/skins/default/pixmaps/spaces_undock.png
+usr/local/share/amsn/skins/default/pixmaps/speaker.png
+usr/local/share/amsn/skins/default/pixmaps/speaker_muted.png
+usr/local/share/amsn/skins/default/pixmaps/star.png
+usr/local/share/amsn/skins/default/pixmaps/stopbut.png
+usr/local/share/amsn/skins/default/pixmaps/stopbuth.png
+usr/local/share/amsn/skins/default/pixmaps/tab.png
+usr/local/share/amsn/skins/default/pixmaps/tab_close.png
+usr/local/share/amsn/skins/default/pixmaps/tab_close_hover.png
+usr/local/share/amsn/skins/default/pixmaps/tab_current.png
+usr/local/share/amsn/skins/default/pixmaps/tab_flicker.png
+usr/local/share/amsn/skins/default/pixmaps/tab_hover.png
+usr/local/share/amsn/skins/default/pixmaps/tex.png
+usr/local/share/amsn/skins/default/pixmaps/tex_hover.png
+usr/local/share/amsn/skins/default/pixmaps/trayblink.png
+usr/local/share/amsn/skins/default/pixmaps/typing.png
+usr/local/share/amsn/skins/default/pixmaps/unread.png
+usr/local/share/amsn/skins/default/pixmaps/unread_tray.png
+usr/local/share/amsn/skins/default/pixmaps/voice.png
+usr/local/share/amsn/skins/default/pixmaps/warning.png
+usr/local/share/amsn/skins/default/pixmaps/webcam.png
+usr/local/share/amsn/skins/default/pixmaps/webmsn.png
+usr/local/share/amsn/skins/default/pixmaps/webmsn_dp.png
+usr/local/share/amsn/skins/default/pixmaps/winksbut.png
+usr/local/share/amsn/skins/default/pixmaps/winksbut_hover.png
+usr/local/share/amsn/skins/default/pixmaps/yes-emblem.png
+usr/local/share/amsn/skins/default/settings.xml
+usr/local/share/amsn/skins/default/smileys/Airplane.png
+usr/local/share/amsn/skins/default/smileys/Angel_smiley.png
+usr/local/share/amsn/skins/default/smileys/Angry_smiley.png
+usr/local/share/amsn/skins/default/smileys/Ashamed_smiley.png
+usr/local/share/amsn/skins/default/smileys/Auto.png
+usr/local/share/amsn/skins/default/smileys/Baring_teeth_smiley.png
+usr/local/share/amsn/skins/default/smileys/Bat.png
+usr/local/share/amsn/skins/default/smileys/Be_Right_Back_smiley.png
+usr/local/share/amsn/skins/default/smileys/Beer.png
+usr/local/share/amsn/skins/default/smileys/Birthday_cake.png
+usr/local/share/amsn/skins/default/smileys/Bowl.png
+usr/local/share/amsn/skins/default/smileys/Boy.png
+usr/local/share/amsn/skins/default/smileys/Broken_heart.png
+usr/local/share/amsn/skins/default/smileys/Camera.png
+usr/local/share/amsn/skins/default/smileys/Cat.png
+usr/local/share/amsn/skins/default/smileys/Cigarette.png
+usr/local/share/amsn/skins/default/smileys/Clapping_hands.png
+usr/local/share/amsn/skins/default/smileys/Clock.png
+usr/local/share/amsn/skins/default/smileys/Coffee_cup.png
+usr/local/share/amsn/skins/default/smileys/Computer.png
+usr/local/share/amsn/skins/default/smileys/Confused_smiley.png
+usr/local/share/amsn/skins/default/smileys/Crying_smiley.png
+usr/local/share/amsn/skins/default/smileys/Devil.png
+usr/local/share/amsn/skins/default/smileys/Dog.png
+usr/local/share/amsn/skins/default/smileys/Dont_know_smiley.png
+usr/local/share/amsn/skins/default/smileys/Dont_tell_anyone_smiley.png
+usr/local/share/amsn/skins/default/smileys/Dry_martini.png
+usr/local/share/amsn/skins/default/smileys/Email.png
+usr/local/share/amsn/skins/default/smileys/Eye_rolling_smiley.png
+usr/local/share/amsn/skins/default/smileys/Filmstrip.png
+usr/local/share/amsn/skins/default/smileys/Fingerscrossed.png
+usr/local/share/amsn/skins/default/smileys/Gift.png
+usr/local/share/amsn/skins/default/smileys/Girl.png
+usr/local/share/amsn/skins/default/smileys/Goat.png
+usr/local/share/amsn/skins/default/smileys/Handcuffs.png
+usr/local/share/amsn/skins/default/smileys/Happy_smiley.png
+usr/local/share/amsn/skins/default/smileys/Heart.png
+usr/local/share/amsn/skins/default/smileys/Hot_smiley.png
+usr/local/share/amsn/skins/default/smileys/IM.png
+usr/local/share/amsn/skins/default/smileys/Island.png
+usr/local/share/amsn/skins/default/smileys/Kiss.png
+usr/local/share/amsn/skins/default/smileys/Left_hug.png
+usr/local/share/amsn/skins/default/smileys/Light.png
+usr/local/share/amsn/skins/default/smileys/Messenger.png
+usr/local/share/amsn/skins/default/smileys/Mobile_phone.png
+usr/local/share/amsn/skins/default/smileys/Money.png
+usr/local/share/amsn/skins/default/smileys/Moon.png
+usr/local/share/amsn/skins/default/smileys/Nerd_smiley.png
+usr/local/share/amsn/skins/default/smileys/Note.png
+usr/local/share/amsn/skins/default/smileys/Oh_my_God_smiley.png
+usr/local/share/amsn/skins/default/smileys/Party_smiley.png
+usr/local/share/amsn/skins/default/smileys/Pizza.png
+usr/local/share/amsn/skins/default/smileys/Plate.png
+usr/local/share/amsn/skins/default/smileys/Rabbit.png
+usr/local/share/amsn/skins/default/smileys/Rain.png
+usr/local/share/amsn/skins/default/smileys/Rainbow.png
+usr/local/share/amsn/skins/default/smileys/Right_hug.png
+usr/local/share/amsn/skins/default/smileys/Rose.png
+usr/local/share/amsn/skins/default/smileys/Sad_smiley.png
+usr/local/share/amsn/skins/default/smileys/Sarcastic_smiley.png
+usr/local/share/amsn/skins/default/smileys/Secret_telling_smiley.png
+usr/local/share/amsn/skins/default/smileys/Sheep.png
+usr/local/share/amsn/skins/default/smileys/Shocked_smiley.png
+usr/local/share/amsn/skins/default/smileys/Sick_smiley.png
+usr/local/share/amsn/skins/default/smileys/Sleepy_smiley.png
+usr/local/share/amsn/skins/default/smileys/Snail.png
+usr/local/share/amsn/skins/default/smileys/Soccer_ball.png
+usr/local/share/amsn/skins/default/smileys/Star.png
+usr/local/share/amsn/skins/default/smileys/Storm.png
+usr/local/share/amsn/skins/default/smileys/Sun.png
+usr/local/share/amsn/skins/default/smileys/Telephone_receiver.png
+usr/local/share/amsn/skins/default/smileys/Thinking_smiley.png
+usr/local/share/amsn/skins/default/smileys/Thumbs_down.png
+usr/local/share/amsn/skins/default/smileys/Thumbs_up.png
+usr/local/share/amsn/skins/default/smileys/Tonque_out_smiley.png
+usr/local/share/amsn/skins/default/smileys/Turtle.png
+usr/local/share/amsn/skins/default/smileys/Umbrella.png
+usr/local/share/amsn/skins/default/smileys/Very_happy_smiley.png
+usr/local/share/amsn/skins/default/smileys/Wilted_rose.png
+usr/local/share/amsn/skins/default/smileys/Winking_smiley.png
+usr/local/share/amsn/skins/default/smileys/Xbox.png
+usr/local/share/amsn/skins/default/smileys/null
+usr/local/share/amsn/skins/default/sounds/alarm.wav
+usr/local/share/amsn/skins/default/sounds/newemail.wav
+usr/local/share/amsn/skins/default/sounds/nudge.wav
+usr/local/share/amsn/skins/default/sounds/offline.wav
+usr/local/share/amsn/skins/default/sounds/online.wav
+usr/local/share/amsn/skins/default/sounds/ring.wav
+usr/local/share/amsn/skins/default/sounds/type.wav
+usr/local/share/amsn/skins/default/winicons/away.ico
+usr/local/share/amsn/skins/default/winicons/awayb.ico
+usr/local/share/amsn/skins/default/winicons/bossmode.ico
+usr/local/share/amsn/skins/default/winicons/brb.ico
+usr/local/share/amsn/skins/default/winicons/brbb.ico
+usr/local/share/amsn/skins/default/winicons/busy.ico
+usr/local/share/amsn/skins/default/winicons/busyb.ico
+usr/local/share/amsn/skins/default/winicons/hidden.ico
+usr/local/share/amsn/skins/default/winicons/hiddenb.ico
+usr/local/share/amsn/skins/default/winicons/inactive.ico
+usr/local/share/amsn/skins/default/winicons/inactiveb.ico
+usr/local/share/amsn/skins/default/winicons/lunch.ico
+usr/local/share/amsn/skins/default/winicons/lunchb.ico
+usr/local/share/amsn/skins/default/winicons/msn.ico
+usr/local/share/amsn/skins/default/winicons/offline.ico
+usr/local/share/amsn/skins/default/winicons/offlineb.ico
+usr/local/share/amsn/skins/default/winicons/online.ico
+usr/local/share/amsn/skins/default/winicons/onlineb.ico
+usr/local/share/amsn/skins/default/winicons/phone.ico
+usr/local/share/amsn/skins/default/winicons/phoneb.ico
+usr/local/share/amsn/skins/default/winicons/trayblink.ico
+usr/local/share/amsn/skins/default/winicons/unread.ico
+usr/local/share/amsn/smileys.tcl
+usr/local/share/amsn/soap.tcl
+usr/local/share/amsn/socks.tcl
+usr/local/share/amsn/spaces.tcl
+usr/local/share/amsn/sxml.tcl
+usr/local/share/amsn/trayicon.tcl
+usr/local/share/amsn/utils/BWidget-1.9.0/LICENSE.txt
+usr/local/share/amsn/utils/BWidget-1.9.0/arrow.tcl
+usr/local/share/amsn/utils/BWidget-1.9.0/bitmap.tcl
+usr/local/share/amsn/utils/BWidget-1.9.0/button.tcl
+usr/local/share/amsn/utils/BWidget-1.9.0/buttonbox.tcl
+usr/local/share/amsn/utils/BWidget-1.9.0/color.tcl
+usr/local/share/amsn/utils/BWidget-1.9.0/combobox.tcl
+usr/local/share/amsn/utils/BWidget-1.9.0/dialog.tcl
+usr/local/share/amsn/utils/BWidget-1.9.0/dragsite.tcl
+usr/local/share/amsn/utils/BWidget-1.9.0/dropsite.tcl
+usr/local/share/amsn/utils/BWidget-1.9.0/dynhelp.tcl
+usr/local/share/amsn/utils/BWidget-1.9.0/entry.tcl
+usr/local/share/amsn/utils/BWidget-1.9.0/font.tcl
+usr/local/share/amsn/utils/BWidget-1.9.0/images/bold.gif
+usr/local/share/amsn/utils/BWidget-1.9.0/images/copy.gif
+usr/local/share/amsn/utils/BWidget-1.9.0/images/cut.gif
+usr/local/share/amsn/utils/BWidget-1.9.0/images/dragfile.gif
+usr/local/share/amsn/utils/BWidget-1.9.0/images/dragicon.gif
+usr/local/share/amsn/utils/BWidget-1.9.0/images/error.gif
+usr/local/share/amsn/utils/BWidget-1.9.0/images/file.gif
+usr/local/share/amsn/utils/BWidget-1.9.0/images/folder.gif
+usr/local/share/amsn/utils/BWidget-1.9.0/images/hourglass.gif
+usr/local/share/amsn/utils/BWidget-1.9.0/images/info.gif
+usr/local/share/amsn/utils/BWidget-1.9.0/images/italic.gif
+usr/local/share/amsn/utils/BWidget-1.9.0/images/minus.xbm
+usr/local/share/amsn/utils/BWidget-1.9.0/images/new.gif
+usr/local/share/amsn/utils/BWidget-1.9.0/images/opcopy.xbm
+usr/local/share/amsn/utils/BWidget-1.9.0/images/open.gif
+usr/local/share/amsn/utils/BWidget-1.9.0/images/openfold.gif
+usr/local/share/amsn/utils/BWidget-1.9.0/images/oplink.xbm
+usr/local/share/amsn/utils/BWidget-1.9.0/images/opmove.xbm
+usr/local/share/amsn/utils/BWidget-1.9.0/images/overstrike.gif
+usr/local/share/amsn/utils/BWidget-1.9.0/images/palette.gif
+usr/local/share/amsn/utils/BWidget-1.9.0/images/passwd.gif
+usr/local/share/amsn/utils/BWidget-1.9.0/images/paste.gif
+usr/local/share/amsn/utils/BWidget-1.9.0/images/plus.xbm
+usr/local/share/amsn/utils/BWidget-1.9.0/images/print.gif
+usr/local/share/amsn/utils/BWidget-1.9.0/images/question.gif
+usr/local/share/amsn/utils/BWidget-1.9.0/images/redo.gif
+usr/local/share/amsn/utils/BWidget-1.9.0/images/save.gif
+usr/local/share/amsn/utils/BWidget-1.9.0/images/target.xbm
+usr/local/share/amsn/utils/BWidget-1.9.0/images/underline.gif
+usr/local/share/amsn/utils/BWidget-1.9.0/images/undo.gif
+usr/local/share/amsn/utils/BWidget-1.9.0/images/warning.gif
+usr/local/share/amsn/utils/BWidget-1.9.0/init.tcl
+usr/local/share/amsn/utils/BWidget-1.9.0/label.tcl
+usr/local/share/amsn/utils/BWidget-1.9.0/labelentry.tcl
+usr/local/share/amsn/utils/BWidget-1.9.0/labelframe.tcl
+usr/local/share/amsn/utils/BWidget-1.9.0/lang/da.rc
+usr/local/share/amsn/utils/BWidget-1.9.0/lang/de.rc
+usr/local/share/amsn/utils/BWidget-1.9.0/lang/en.rc
+usr/local/share/amsn/utils/BWidget-1.9.0/lang/es.rc
+usr/local/share/amsn/utils/BWidget-1.9.0/lang/fr.rc
+usr/local/share/amsn/utils/BWidget-1.9.0/lang/hu.rc
+usr/local/share/amsn/utils/BWidget-1.9.0/lang/nl.rc
+usr/local/share/amsn/utils/BWidget-1.9.0/lang/no.rc
+usr/local/share/amsn/utils/BWidget-1.9.0/listbox.tcl
+usr/local/share/amsn/utils/BWidget-1.9.0/mainframe.tcl
+usr/local/share/amsn/utils/BWidget-1.9.0/messagedlg.tcl
+usr/local/share/amsn/utils/BWidget-1.9.0/notebook.tcl
+usr/local/share/amsn/utils/BWidget-1.9.0/pagesmgr.tcl
+usr/local/share/amsn/utils/BWidget-1.9.0/panedw.tcl
+usr/local/share/amsn/utils/BWidget-1.9.0/panelframe.tcl
+usr/local/share/amsn/utils/BWidget-1.9.0/passwddlg.tcl
+usr/local/share/amsn/utils/BWidget-1.9.0/pkgIndex.tcl
+usr/local/share/amsn/utils/BWidget-1.9.0/progressbar.tcl
+usr/local/share/amsn/utils/BWidget-1.9.0/progressdlg.tcl
+usr/local/share/amsn/utils/BWidget-1.9.0/scrollframe.tcl
+usr/local/share/amsn/utils/BWidget-1.9.0/scrollview.tcl
+usr/local/share/amsn/utils/BWidget-1.9.0/scrollw.tcl
+usr/local/share/amsn/utils/BWidget-1.9.0/separator.tcl
+usr/local/share/amsn/utils/BWidget-1.9.0/spinbox.tcl
+usr/local/share/amsn/utils/BWidget-1.9.0/statusbar.tcl
+usr/local/share/amsn/utils/BWidget-1.9.0/titleframe.tcl
+usr/local/share/amsn/utils/BWidget-1.9.0/tree.tcl
+usr/local/share/amsn/utils/BWidget-1.9.0/utils.tcl
+usr/local/share/amsn/utils/BWidget-1.9.0/widget.tcl
+usr/local/share/amsn/utils/BWidget-1.9.0/wizard.tcl
+usr/local/share/amsn/utils/BWidget-1.9.0/xpm2image.tcl
+usr/local/share/amsn/utils/base64/base64.tcl
+usr/local/share/amsn/utils/base64/license.terms
+usr/local/share/amsn/utils/base64/pkgIndex.tcl
+usr/local/share/amsn/utils/base64/uuencode.tcl
+usr/local/share/amsn/utils/base64/yencode.tcl
+usr/local/share/amsn/utils/combobox/combobox.tcl
+usr/local/share/amsn/utils/combobox/pkgIndex.tcl
+usr/local/share/amsn/utils/contentmanager/contentmanager.tcl
+usr/local/share/amsn/utils/contentmanager/pkgIndex.tcl
+usr/local/share/amsn/utils/des/des.tcl
+usr/local/share/amsn/utils/des/pkgIndex.tcl
+usr/local/share/amsn/utils/des/tcldes.tcl
+usr/local/share/amsn/utils/des/tcldesjr.tcl
+usr/local/share/amsn/utils/dpbrowser/dpbrowser.tcl
+usr/local/share/amsn/utils/dpbrowser/pkgIndex.tcl
+usr/local/share/amsn/utils/drawboard/drawboard.tcl
+usr/local/share/amsn/utils/drawboard/grid.png
+usr/local/share/amsn/utils/drawboard/pkgIndex.tcl
+usr/local/share/amsn/utils/framec/framec.tcl
+usr/local/share/amsn/utils/framec/pkgIndex.tcl
+usr/local/share/amsn/utils/http/http.tcl
+usr/local/share/amsn/utils/http/license.terms
+usr/local/share/amsn/utils/http/pkgIndex.tcl
+usr/local/share/amsn/utils/log/license.terms
+usr/local/share/amsn/utils/log/log.tcl
+usr/local/share/amsn/utils/log/logger.tcl
+usr/local/share/amsn/utils/log/loggerAppender.tcl
+usr/local/share/amsn/utils/log/loggerUtils.tcl
+usr/local/share/amsn/utils/log/msgs/en.msg
+usr/local/share/amsn/utils/log/pkgIndex.tcl
+usr/local/share/amsn/utils/md4/md4.tcl
+usr/local/share/amsn/utils/md4/md4c.tcl
+usr/local/share/amsn/utils/md4/pkgIndex.tcl
+usr/local/share/amsn/utils/pixmapmenu/bindings.tcl
+usr/local/share/amsn/utils/pixmapmenu/entries.tcl
+usr/local/share/amsn/utils/pixmapmenu/makecommands.tcl
+usr/local/share/amsn/utils/pixmapmenu/menushell.tcl
+usr/local/share/amsn/utils/pixmapmenu/pixmapmenu.tcl
+usr/local/share/amsn/utils/pixmapmenu/pkgIndex.tcl
+usr/local/share/amsn/utils/pixmapscroll/horizontal/arrow1.png
+usr/local/share/amsn/utils/pixmapscroll/horizontal/arrow1_disabled.png
+usr/local/share/amsn/utils/pixmapscroll/horizontal/arrow1_hover.png
+usr/local/share/amsn/utils/pixmapscroll/horizontal/arrow1_pressed.png
+usr/local/share/amsn/utils/pixmapscroll/horizontal/arrow2.png
+usr/local/share/amsn/utils/pixmapscroll/horizontal/arrow2_disabled.png
+usr/local/share/amsn/utils/pixmapscroll/horizontal/arrow2_hover.png
+usr/local/share/amsn/utils/pixmapscroll/horizontal/arrow2_pressed.png
+usr/local/share/amsn/utils/pixmapscroll/horizontal/sliderbody.png
+usr/local/share/amsn/utils/pixmapscroll/horizontal/sliderbody_disabled.png
+usr/local/share/amsn/utils/pixmapscroll/horizontal/sliderbody_hover.png
+usr/local/share/amsn/utils/pixmapscroll/horizontal/sliderbody_pressed.png
+usr/local/share/amsn/utils/pixmapscroll/horizontal/sliderbottom.png
+usr/local/share/amsn/utils/pixmapscroll/horizontal/sliderbottom_disabled.png
+usr/local/share/amsn/utils/pixmapscroll/horizontal/sliderbottom_hover.png
+usr/local/share/amsn/utils/pixmapscroll/horizontal/sliderbottom_pressed.png
+usr/local/share/amsn/utils/pixmapscroll/horizontal/slidergrip.png
+usr/local/share/amsn/utils/pixmapscroll/horizontal/slidergrip_disabled.png
+usr/local/share/amsn/utils/pixmapscroll/horizontal/slidergrip_hover.png
+usr/local/share/amsn/utils/pixmapscroll/horizontal/slidergrip_pressed.png
+usr/local/share/amsn/utils/pixmapscroll/horizontal/slidertop.png
+usr/local/share/amsn/utils/pixmapscroll/horizontal/slidertop_disabled.png
+usr/local/share/amsn/utils/pixmapscroll/horizontal/slidertop_hover.png
+usr/local/share/amsn/utils/pixmapscroll/horizontal/slidertop_pressed.png
+usr/local/share/amsn/utils/pixmapscroll/horizontal/trough.png
+usr/local/share/amsn/utils/pixmapscroll/pixmapscroll.tcl
+usr/local/share/amsn/utils/pixmapscroll/pkgIndex.tcl
+usr/local/share/amsn/utils/pixmapscroll/test.tcl
+usr/local/share/amsn/utils/pixmapscroll/vertical/arrow1.png
+usr/local/share/amsn/utils/pixmapscroll/vertical/arrow1_disabled.png
+usr/local/share/amsn/utils/pixmapscroll/vertical/arrow1_hover.png
+usr/local/share/amsn/utils/pixmapscroll/vertical/arrow1_pressed.png
+usr/local/share/amsn/utils/pixmapscroll/vertical/arrow2.png
+usr/local/share/amsn/utils/pixmapscroll/vertical/arrow2_disabled.png
+usr/local/share/amsn/utils/pixmapscroll/vertical/arrow2_hover.png
+usr/local/share/amsn/utils/pixmapscroll/vertical/arrow2_pressed.png
+usr/local/share/amsn/utils/pixmapscroll/vertical/sliderbody.png
+usr/local/share/amsn/utils/pixmapscroll/vertical/sliderbody_disabled.png
+usr/local/share/amsn/utils/pixmapscroll/vertical/sliderbody_hover.png
+usr/local/share/amsn/utils/pixmapscroll/vertical/sliderbody_pressed.png
+usr/local/share/amsn/utils/pixmapscroll/vertical/sliderbottom.png
+usr/local/share/amsn/utils/pixmapscroll/vertical/sliderbottom_disabled.png
+usr/local/share/amsn/utils/pixmapscroll/vertical/sliderbottom_hover.png
+usr/local/share/amsn/utils/pixmapscroll/vertical/sliderbottom_pressed.png
+usr/local/share/amsn/utils/pixmapscroll/vertical/slidergrip.png
+usr/local/share/amsn/utils/pixmapscroll/vertical/slidergrip_disabled.png
+usr/local/share/amsn/utils/pixmapscroll/vertical/slidergrip_hover.png
+usr/local/share/amsn/utils/pixmapscroll/vertical/slidergrip_pressed.png
+usr/local/share/amsn/utils/pixmapscroll/vertical/slidertop.png
+usr/local/share/amsn/utils/pixmapscroll/vertical/slidertop_disabled.png
+usr/local/share/amsn/utils/pixmapscroll/vertical/slidertop_hover.png
+usr/local/share/amsn/utils/pixmapscroll/vertical/slidertop_pressed.png
+usr/local/share/amsn/utils/pixmapscroll/vertical/trough.png
+usr/local/share/amsn/utils/sasl/gtoken.tcl
+usr/local/share/amsn/utils/sasl/ntlm.tcl
+usr/local/share/amsn/utils/sasl/pkgIndex.tcl
+usr/local/share/amsn/utils/sasl/sasl.tcl
+usr/local/share/amsn/utils/scalable-bg/pkgIndex.tcl
+usr/local/share/amsn/utils/scalable-bg/scalable-bg.tcl
+usr/local/share/amsn/utils/scalable-bg/test.tcl
+usr/local/share/amsn/utils/sexytile/pkgIndex.tcl
+usr/local/share/amsn/utils/sexytile/sexytile.tcl
+usr/local/share/amsn/utils/sexytile/testlines.tcl
+usr/local/share/amsn/utils/sexytile/transp.png
+usr/local/share/amsn/utils/sha1/pkgIndex.tcl
+usr/local/share/amsn/utils/sha1/sha1.tcl
+usr/local/share/amsn/utils/snit/main1.tcl
+usr/local/share/amsn/utils/snit/main1_83.tcl
+usr/local/share/amsn/utils/snit/main2.tcl
+usr/local/share/amsn/utils/snit/pkgIndex.tcl
+usr/local/share/amsn/utils/snit/snit.tcl
+usr/local/share/amsn/utils/snit/snit2.tcl
+usr/local/share/amsn/utils/snit/snit83.tcl
+usr/local/share/amsn/utils/snit/snit_tcl83_utils.tcl
+usr/local/share/amsn/utils/snit/validate.tcl
+usr/local/share/amsn/utils/uri/pkgIndex.tcl
+usr/local/share/amsn/utils/uri/uri.tcl
+usr/local/share/amsn/utils/uri/urn-scheme.tcl
+usr/local/share/amsn/utils/voipcontrols/pkgIndex.tcl
+usr/local/share/amsn/utils/voipcontrols/test.tcl
+usr/local/share/amsn/utils/voipcontrols/voipcontrols.tcl
+usr/local/share/applications/amsn.desktop
+usr/local/share/pixmaps/amsn.png

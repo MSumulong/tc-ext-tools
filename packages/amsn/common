@@ -1,0 +1,18 @@
+PACKAGE="amsn"
+VERSION="0.98.9"
+SOURCE="http://downloads.sourceforge.net/project/amsn/amsn/0.98.9/amsn-0.98.9-src.tar.gz"
+BUILD_DEPENDS="tk-dev.tcz
+		farstream-dev.tcz
+		libv4l-dev.tcz"
+
+DESCRIPTION="a free open source MSN Messenger clone"
+AUTHOR="amsn team"
+SITE="http://www.amsn-project.net/"
+COPYING="GPL-2"
+MAINTAINERS="jls_legalize (jlslegalize at gmail dot com)"
+TAGS="MSN Messenger"
+COMMENTS="Optional deps:
+		   farstream for webcam
+		   snack for microphone"
+CHANGELOG="2010/10/15 First version"
+CURRENT="Updated to ${VERSION}"
