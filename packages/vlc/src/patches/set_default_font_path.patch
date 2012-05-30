@@ -1,7 +1,7 @@
-diff -Naur a/modules/misc/freetype.c b/modules/misc/freetype.c
---- a/modules/misc/freetype.c	2011-07-09 15:18:51.000000000 +0000
-+++ b/modules/misc/freetype.c	2011-08-15 00:25:19.321749993 +0000
-@@ -55,8 +55,8 @@
+diff -Naur a/modules/text_renderer/freetype.c b/modules/text_renderer/freetype.c
+--- a/modules/text_renderer/freetype.c	2012-03-02 01:04:07.000000000 +0000
++++ b/modules/text_renderer/freetype.c	2012-05-30 08:51:46.313412632 +0000
+@@ -58,8 +58,8 @@
  # define DEFAULT_FONT_FILE "/usr/share/fonts/nokia/nosnb.ttf"
  # define DEFAULT_FAMILY "Nokia Sans Bold"
  #else

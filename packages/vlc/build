@@ -2,8 +2,16 @@
 # tc-ext-tools build functions: configure, compile, install, rules
 #
 
+export CPPFLAGS="$CPPFLAGS -I/usr/local/lib/live/BasicUsageEnvironment/include"
+
 ### Configure
 build_configure() {
+
+   sed -e "s|/usr/include/groupsock|/usr/local/include/groupsock|" \
+       -e "s|/usr/include/liveMedia|/usr/local/include/liveMedia|" \
+       -e "s|/usr/include/BasicUsageEnvironment|/usr/local/include/BasicUsageEnvironment|" \
+       -e "s|/usr/include/UsageEnvironment|/usr/local/include/UsageEnvironment|" \
+       -i configure || return 1
 
    ./configure --prefix=/usr/local --disable-rpath --enable-glx --enable-opengl \
        --enable-dbus --enable-dbus-control --enable-fribidi --enable-nls --enable-x264 \

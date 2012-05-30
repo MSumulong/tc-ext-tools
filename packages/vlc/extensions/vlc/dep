@@ -22,10 +22,9 @@ libass.tcz
 libmodplug.tcz
 libshout.tcz
 libmatroska.tcz
-libavcodec.tcz
-libavformat.tcz
-libswscale.tcz
-libpostproc.tcz
+libavformat53.tcz
+libswscale2.tcz
+libpostproc52.tcz
 libgcrypt.tcz
 lua.tcz
 fribidi.tcz

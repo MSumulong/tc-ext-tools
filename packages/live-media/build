@@ -33,8 +33,10 @@ build_install() {
 
    for dir in BasicUsageEnvironment UsageEnvironment groupsock liveMedia
    do
-     mkdir -p ${INSTALL_ROOT}/usr/local/lib/live/${dir}
-     cp -r ${dir}/*.a ${dir}/include ${INSTALL_ROOT}/usr/local/lib/live/${dir} || return 1
+     mkdir -p ${INSTALL_ROOT}/usr/local/include/${dir}
+     mkdir -p ${INSTALL_ROOT}/usr/local/lib
+     cp -r ${dir}/include/* ${INSTALL_ROOT}/usr/local/include/${dir} || return 1
+     cp ${dir}/*.a ${INSTALL_ROOT}/usr/local/lib || return 1
    done
 
    mkdir -p ${INSTALL_ROOT}/usr/local/bin

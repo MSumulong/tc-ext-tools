@@ -1,6 +1,6 @@
 PACKAGE="vlc"
-VERSION="1.1.12"
-SOURCE="http://download.videolan.org/pub/videolan/vlc/${VERSION}/vlc-${VERSION}.tar.bz2"
+VERSION="2.0.1"
+SOURCE="http://download.videolan.org/pub/videolan/vlc/${VERSION}/vlc-${VERSION}.tar.xz"
 BUILD_DEPENDS="
 ffmpeg-0.10
 ffmpeg-0.10-dev
@@ -43,7 +43,6 @@ speex-dev
 taglib
 taglib-dev
 fribidi
-x264
 x264-dev
 libcdio
 libcdio-dev
@@ -131,6 +130,7 @@ AUTHOR="VideoLAN Team"
 SITE="http://www.videolan.org"
 COPYING="GPL-2"
 MAINTAINERS="Arslan S."
+TAGS="multimedia player"
 COMMENTS="---"
 CHANGELOG="2009/11/05 First Version
 		2009/11/06 Updated to 1.0.3
