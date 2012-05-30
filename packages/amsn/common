@@ -11,8 +11,6 @@ SITE="http://www.amsn-project.net/"
 COPYING="GPL-2"
 MAINTAINERS="jls_legalize (jlslegalize at gmail dot com)"
 TAGS="MSN Messenger"
-COMMENTS="Optional deps:
-		   farstream for webcam
-		   snack for microphone"
+COMMENTS="Optional dep: snack for audio calls"
 CHANGELOG="2010/10/15 First version"
 CURRENT="Updated to ${VERSION}"
