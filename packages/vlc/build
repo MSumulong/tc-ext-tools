@@ -13,20 +13,19 @@ build_configure() {
        -e "s|/usr/include/UsageEnvironment|/usr/local/include/UsageEnvironment|" \
        -i configure || return 1
 
-   ./configure --prefix=/usr/local --disable-rpath --enable-glx --enable-opengl \
+   ./configure --prefix=/usr/local --disable-rpath --enable-glx \
        --enable-dbus --enable-dbus-control --enable-fribidi --enable-nls --enable-x264 \
-       --enable-ncurses --enable-libtar --enable-skins2 --enable-mkv --enable-pulse --enable-oss --enable-alsa \
-       --enable-xvideo --enable-theora --disable-caca --enable-xcb \
-       --enable-avformat --enable-avcodec --enable-postproc --enable-swscale \
-       --enable-a52 --enable-dca --enable-faad --enable-libmpeg2 --enable-live555 --with-live555-tree=/usr/local/lib/live \
-       --enable-mad --enable-v4l --enable-libcddb --disable-vcdx --enable-vcd --disable-zvbi --enable-taglib \
-       --disable-hd1000v --disable-hd1000a --enable-lua --disable-telx \
-       --enable-dvb --enable-dvbpsi --enable-libxml2 --enable-ogg --enable-vorbis --enable-speex \
+       --enable-ncurses --enable-libtar --enable-skins2 --enable-mkv --enable-pulse \
+       --enable-xvideo --enable-theora --disable-caca --enable-xcb --enable-alsa \
+       --enable-avformat --enable-avcodec --enable-postproc --enable-swscale --enable-oss \
+       --enable-a52 --enable-dca --enable-faad --enable-libmpeg2 --enable-live555 \
+       --enable-mad --enable-libcddb --disable-vcdx --enable-vcd --enable-zvbi \
+       --enable-lua --disable-telx --enable-lirc --enable-pvr --enable-goom --enable-taglib \
+       --enable-dvbpsi --enable-libxml2 --enable-ogg --enable-vorbis --enable-speex \
        --enable-dvdread --enable-dvdnav --enable-shout --enable-notify --enable-screen \
-       --enable-mpc --disable-gme --enable-twolame --enable-flac --enable-schroedinger \
-       --enable-mozilla --enable-mtp --enable-png --enable-sdl --enable-realrtsp \
-       --enable-visual --enable-snapshot --enable-gnutls --disable-projectm --enable-svg \
-       --enable-lirc --enable-pvr || return 1
+       --enable-mpc --enable-gme --enable-twolame --enable-flac --enable-schroedinger \
+       --enable-mtp --enable-png --enable-sdl --enable-realrtsp \
+       --enable-visual --enable-gnutls --disable-projectm --enable-svg || return 1
 
 }
 ##

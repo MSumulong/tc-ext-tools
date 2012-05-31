@@ -85,11 +85,11 @@ libraw1394
 libraw1394-dev
 libdc1394
 libdc1394-dev
+libavc1394
+libavc1394-dev
 libproxy-2.7
 jack
 jack-dev
-xulrunner
-xulrunner-dev
 librsvg
 librsvg-dev
 libshout
@@ -120,10 +120,20 @@ libsndfile-dev
 pulseaudio-dev
 libiconv
 libiconv-dev
-ncurses
-ncurses-dev
+ncursesw
+ncursesw-dev
 gnutls
-gnutls-dev"
+gnutls-dev
+libgme-svn
+libgme-svn-dev
+zvbi
+zvbi-dev
+libbluray
+libbluray-dev
+goom
+goom-dev
+libupnp
+libupnp-dev"
 
 DESCRIPTION="VLC is a free and open source cross-platform multimedia player."
 AUTHOR="VideoLAN Team"

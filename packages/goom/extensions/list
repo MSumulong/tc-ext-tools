@@ -1,0 +1,17 @@
+usr/local/include/goom/goom.h
+usr/local/include/goom/goom_config.h
+usr/local/include/goom/goom_config_param.h
+usr/local/include/goom/goom_filters.h
+usr/local/include/goom/goom_graphic.h
+usr/local/include/goom/goom_plugin_info.h
+usr/local/include/goom/goom_tools.h
+usr/local/include/goom/goom_typedefs.h
+usr/local/include/goom/goom_visual_fx.h
+usr/local/include/goom/goomsl.h
+usr/local/include/goom/goomsl_hash.h
+usr/local/include/goom/goomsl_heap.h
+usr/local/lib/libgoom2.la
+usr/local/lib/libgoom2.so
+usr/local/lib/libgoom2.so.0
+usr/local/lib/libgoom2.so.0.0.0
+usr/local/lib/pkgconfig/libgoom2.pc
