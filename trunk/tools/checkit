@@ -41,6 +41,14 @@ fi
 
 this_check() {
 
+   echo -e "Checking if the package extension is empty ... \c"
+   if [ -z "$(cat $PACKAGE_EXTENSION_LIST)" ]; then
+        echo "yes"
+        return 0
+   else
+        echo "no"
+   fi
+
    echo "Cleaning the package extension bin temporary directory"
    [ -d "$PACKAGE_EXTENSION_BIN_TEMP" ] && sudo rm -rf "$PACKAGE_EXTENSION_BIN_TEMP"
    mkdir -p "$PACKAGE_BIN_TEMP"
