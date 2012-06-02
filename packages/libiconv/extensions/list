@@ -1,7 +1,7 @@
 usr/local/bin/iconv
-usr/local/include/iconv.h
-usr/local/include/libcharset.h
-usr/local/include/localcharset.h
+usr/local/include/iconv/iconv.h
+usr/local/include/iconv/libcharset.h
+usr/local/include/iconv/localcharset.h
 usr/local/lib/charset.alias
 usr/local/lib/libcharset.la
 usr/local/lib/libcharset.so

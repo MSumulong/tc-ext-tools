@@ -1,0 +1,15 @@
+PACKAGE="musique"
+VERSION="1.1"
+SOURCE="http://flavio.tordini.org/files/musique/musique-${VERSION}.tar.gz"
+BUILD_DEPENDS="qt-4.x-base qt-4.x-dev qt-4.x-xml qt-4.x-sql
+               phonon phonon-dev taglib taglib-dev sqlite3 sqlite3-dev"
+
+DESCRIPTION="A music player from the creator of minitube."
+AUTHOR="Flavio Tordini"
+SITE="http://flavio.tordini.org/musique"
+COPYING="GPL-3"
+MAINTAINERS="Arslan S."
+TAGS="music player"
+COMMENTS="---"
+CHANGELOG="---"
+CURRENT="First Version"

@@ -1,6 +1,6 @@
 PACKAGE="phonon-backend-vlc"
-VERSION="0.4.1"
-SOURCE="ftp://ftp.kde.org/pub/kde/stable/phonon/phonon-backend-vlc/${VERSION}/src/phonon-backend-vlc-${VERSION}.tar.bz2"
+VERSION="0.5.0"
+SOURCE="ftp://ftp.kde.org/pub/kde/stable/phonon/phonon-backend-vlc/${VERSION}/src/phonon-backend-vlc-${VERSION}.tar.xz"
 BUILD_DEPENDS="cmake automoc4 qt-4.x-base qt-4.x-dev vlc vlc-dev
                phonon phonon-dev Xorg-7.6-lib Xorg-7.6-dev"
 

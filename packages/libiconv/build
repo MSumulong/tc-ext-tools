@@ -9,6 +9,7 @@
 build_configure() {
 
    ./configure --prefix=/usr/local \
+       --includedir=/usr/local/include/iconv \
        --disable-static --enable-shared || return 1
 
 }

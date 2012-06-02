@@ -1,0 +1,8 @@
+qt-4.x-base.tcz
+qt-4.x-xml.tcz
+qt-4.x-sql.tcz
+phonon.tcz
+sqlite3.tcz
+taglib.tcz
+hicolor-icon-theme.tcz
+shared-mime-info.tcz

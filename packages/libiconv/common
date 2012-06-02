@@ -12,5 +12,6 @@ COMMENTS="---"
 CHANGELOG="2009/01/23 First version by jpeters
 		2009/07/09 Updated to 1.13.1 by jpeters
 		2010/01/30 Rebuilt & separated files
-		2010/04/08 Separated doc files"
-CURRENT="Updated to $VERSION"
+		2010/04/08 Separated doc files
+		2011/10/28 Updated to 1.14"
+CURRENT="Moved include dir"
