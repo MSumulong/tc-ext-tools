@@ -22,6 +22,9 @@ build_configure() {
    ## waf
    #./waf configure --prefix=/usr/local || return 1
 
+   ## qmake
+   #qmake PREFIX="/usr/local" || return 1
+
 }
 
 ## compile
