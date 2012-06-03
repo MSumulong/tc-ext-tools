@@ -1,5 +1,5 @@
 PACKAGE="stellarium"
-VERSION="0.11.0"
+VERSION="0.11.3"
 SOURCE="http://downloads.sourceforge.net/stellarium/stellarium-${VERSION}.tar.gz"
 BUILD_DEPENDS="cmake
 boost
@@ -20,7 +20,7 @@ SITE="http://www.stellarium.org/"
 COPYING="GPL-2"
 MAINTAINERS="Arslan S."
 COMMENTS="It shows a realistic sky in 3D, just like what you see with the naked eye,
-		binoculars or a telescope.
-		"
-CHANGELOG="2011/01/16 First Version 0.10.6"
+		binoculars or a telescope."
+CHANGELOG="2011/01/16 First Version 0.10.6
+		2011/09/04 Updated to 0.11.0"
 CURRENT="Updated to $VERSION"

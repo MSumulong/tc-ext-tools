@@ -28,7 +28,7 @@ fi
 
 LOG=/tmp/${THIS}.log
 TCUSER=$(cat /etc/sysconfig/tcuser)
-TCEDIR=$(cat /opt/.tce_dir)
+TCEDIR=/etc/sysconfig/tcedir
 KERNEL=$(uname -r)
 
 if [ -z "$(echo $KERNEL | grep 64)" ]

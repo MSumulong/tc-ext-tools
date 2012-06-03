@@ -41,7 +41,7 @@ install -Dm755 backfire.ko "pkg/usr/local/lib/modules/${KERNEL}/kernel/extra/bac
 mksquashfs pkg "rt-tests-backfire-${KERNEL}.tcz"
 
 if [ "$KERNEL" = "$(uname -r)" ]; then
-   TCE_DIR=`cat /opt/.tce_dir`
+   TCE_DIR="/etc/sysconfig/tcedir"
    if [ -f "${TCE_DIR}/optional/rt-tests-backfire-${KERNEL}.tcz" ]; then
       mkdir "${TCE_DIR}/optional/upgrade"
       cp "rt-tests-backfire-${KERNEL}.tcz" "${TCE_DIR}/optional/upgrade"

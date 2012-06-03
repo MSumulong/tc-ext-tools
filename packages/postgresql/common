@@ -1,5 +1,5 @@
 PACKAGE="postgresql"
-VERSION="9.1.1"
+VERSION="9.1.3"
 SOURCE="ftp://ftp.postgresql.org/pub/source/v${VERSION}/postgresql-${VERSION}.tar.bz2"
 BUILD_DEPENDS="libxml2 libxml2-dev libxslt tcl tcl-dev tk tk-dev readline readline-dev
                openssl-1.0.0 openssl-1.0.0-dev Linux-PAM Linux-PAM-dev krb5
@@ -18,6 +18,7 @@ CHANGELOG="2010/07/01 First Version 8.4.4
 		2011/01/31 Updated to 9.0.3
 		2011/04/17 Updated to 9.0.4
 		2011/09/14 Updated to 9.1.0
-		2011/10/01 Updated to 9.1.1"
-CURRENT="Rebuilt and disabled ldap"
+		2011/10/01 Updated to 9.1.1
+		2011/12/02 Rebuilt and disabled ldap"
+CURRENT="Updated to $VERSION"
 
