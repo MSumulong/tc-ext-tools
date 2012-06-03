@@ -1,37 +1,20 @@
 PACKAGE="clementine"
-VERSION="0.7.1"
+VERSION="1.0.1"
 SOURCE="http://clementine-player.googlecode.com/files/clementine-${VERSION}.tar.gz"
-BUILD_DEPENDS="cmake
-boost
-boost-dev
-taglib
-taglib-dev
-liblastfm
-liblastfm-dev
-glew
-libgpod
-libgpod-dev
-libmtp
-libmtp-dev
-libusb
-libusb-dev
-gtk2
-gtk2-dev
-gstreamer
-gstreamer-dev
-qt-4.x-base
-qt-4.x-xml
-qt-4.x-sql
-qt-4.x-dbus
-qt-4.x-opengl
-qt-4.x-webkit
-qt-4.x-dev"
+BUILD_DEPENDS="cmake boost boost-dev taglib taglib-dev liblastfm liblastfm-dev glew
+               libgpod libgpod-dev libmtp libmtp-dev libusb libusb-dev gtk2 gtk2-dev
+               gstreamer gstreamer-dev qt-4.x-base qt-4.x-xml qt-4.x-sql qt-4.x-dbus
+               qt-4.x-opengl qt-4.x-webkit qt-4.x-dev protobuf protobuf-dev libplist
+               libcdio libcdio-dev qca-ossl qca qca-dev qjson qjson-dev fftw fftw-dev
+               gst-plugins-base gst-plugins-base-dev"
 
 DESCRIPTION="Clementine is a modern music player and library organiser."
 AUTHOR="David Sansome, John Maguire"
 SITE="http://code.google.com/p/clementine-player/"
 COPYING="GPL-3"
 MAINTAINERS="Arslan S."
+TAGS="music player"
 COMMENTS="---"
-CHANGELOG="2011/01/25 First Version 0.6"
+CHANGELOG="2011/01/25 First Version 0.6
+		2011/04/09 Updated to 0.7.1"
 CURRENT="Updated to $VERSION"

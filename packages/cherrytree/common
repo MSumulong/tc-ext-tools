@@ -1,7 +1,8 @@
 PACKAGE="cherrytree"
-VERSION="0.23.1"
-SOURCE="http://www.giuspen.com/software/cherrytree-${VERSION}.tar.gz"
-BUILD_DEPENDS="gtk2 gtk2-dev pygtk-2.7 pygtk-2.7-dev pygtksourceview ImageMagick"
+VERSION="0.26"
+SOURCE="http://www.giuspen.com/software/cherrytree-${VERSION}.tar.bz2"
+BUILD_DEPENDS="gtk2 gtk2-dev pygtk-2.7 pygtk-2.7-dev pygtksourceview
+               p7zip-full ImageMagick desktop-file-utils"
 
 DESCRIPTION="A hierarchical note taking application featuring rich text and syntax highlighting."
 AUTHOR="Giuseppe Penone"

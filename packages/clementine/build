@@ -13,7 +13,8 @@ build_configure() {
 
    mkdir build
    cd build
-   cmake -DCMAKE_INSTALL_PREFIX=/usr/local -DCMAKE_BUILD_TYPE=Release .. || return 1
+   cmake -DCMAKE_INSTALL_PREFIX=/usr/local -DCMAKE_BUILD_TYPE=Release \
+       -DENABLE_REMOTE=ON .. || return 1
 
 }
 
@@ -36,6 +37,9 @@ build_install() {
 
    cd build
    make DESTDIR="$INSTALL_ROOT" install || return 1
+
+   # removed ayatana desktop shortcuts from clementine.desktop file
+   cp -f "$PACKAGE_SRC/clementine.desktop" "$INSTALL_ROOT/usr/local/share/applications/clementine.desktop"
 
 }
 

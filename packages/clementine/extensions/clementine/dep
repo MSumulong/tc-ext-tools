@@ -1,3 +1,8 @@
+libplist.tcz
+qca-ossl.tcz
+libcdio.tcz
+qjson.tcz
+protobuf.tcz
 libusb.tcz
 libmtp.tcz
 libgpod.tcz

@@ -21,6 +21,7 @@ build_compile() {
 
 build_install() {
 
+   sed -i "s|/usr/share/icons/hicolor/scalable/apps/cherrytree.svg|cherrytree|" linux/cherrytree.desktop || return 1
    python setup.py install --prefix=/usr/local --root="$INSTALL_ROOT" || return 1
 
    install -d -m 755 "$INSTALL_ROOT/usr/local/share/pixmaps"

@@ -1,9 +1,8 @@
 usr/local/bin/cherrytree
-usr/local/lib/python2.7/site-packages/CherryTree-0.22.2-py2.7.egg-info
+usr/local/lib/python2.7/site-packages/CherryTree-0.26-py2.7.egg-info
 usr/local/share/application-registry/cherrytree.applications
 usr/local/share/applications/cherrytree.desktop
 usr/local/share/cherrytree/glade/anchor.png
-usr/local/share/cherrytree/glade/anchor_char.png
 usr/local/share/cherrytree/glade/anchor_edit.png
 usr/local/share/cherrytree/glade/anchor_insert.png
 usr/local/share/cherrytree/glade/case_lower.png
@@ -41,7 +40,11 @@ usr/local/share/cherrytree/glade/find_back.png
 usr/local/share/cherrytree/glade/find_replace.png
 usr/local/share/cherrytree/glade/format-text-large.png
 usr/local/share/cherrytree/glade/format-text-large2.png
+usr/local/share/cherrytree/glade/format-text-large3.png
+usr/local/share/cherrytree/glade/format-text-monospace.png
 usr/local/share/cherrytree/glade/format-text-small.png
+usr/local/share/cherrytree/glade/format-text-subscript.png
+usr/local/share/cherrytree/glade/format-text-superscript.png
 usr/local/share/cherrytree/glade/format_text.png
 usr/local/share/cherrytree/glade/format_text_latest.png
 usr/local/share/cherrytree/glade/help-contents.png
@@ -67,6 +70,7 @@ usr/local/share/cherrytree/glade/quit-app.png
 usr/local/share/cherrytree/glade/table_edit.png
 usr/local/share/cherrytree/glade/table_insert.png
 usr/local/share/cherrytree/glade/table_save.png
+usr/local/share/cherrytree/glade/timestamp.png
 usr/local/share/cherrytree/glade/to_html.png
 usr/local/share/cherrytree/glade/to_txt.png
 usr/local/share/cherrytree/glade/toolbar.png
@@ -77,6 +81,7 @@ usr/local/share/cherrytree/modules/codeboxes.py
 usr/local/share/cherrytree/modules/config.py
 usr/local/share/cherrytree/modules/cons.py
 usr/local/share/cherrytree/modules/core.py
+usr/local/share/cherrytree/modules/ctdb.py
 usr/local/share/cherrytree/modules/exports.py
 usr/local/share/cherrytree/modules/findreplace.py
 usr/local/share/cherrytree/modules/imports.py
@@ -95,6 +100,7 @@ usr/local/share/locale/it/LC_MESSAGES/cherrytree.mo
 usr/local/share/locale/pl/LC_MESSAGES/cherrytree.mo
 usr/local/share/locale/ru/LC_MESSAGES/cherrytree.mo
 usr/local/share/locale/uk/LC_MESSAGES/cherrytree.mo
+usr/local/share/man/man1/cherrytree.1.gz
 usr/local/share/mime-info/cherrytree.keys
 usr/local/share/mime-info/cherrytree.mime
 usr/local/share/mime/packages/cherrytree.xml
