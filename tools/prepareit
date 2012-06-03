@@ -42,7 +42,7 @@ fi
 LINUX_DIR="linux-${KERNEL_VER}"
 LINUX_SRC="${TET_LINUX}/${KERNEL}/${LINUX_DIR}"
 LINUX_BUILD="$LINUX_SRC"
-LINUX_SOURCE="linux-${KERNEL_VER}-patched.tar.xz"
+LINUX_SOURCE="linux-${KERNEL_VER}-patched.txz"
 KERNEL_MIRROR="${TCMIRROR}/${TCVER}/x86/release/src/kernel"
 KERNEL_CONFIG="config-${KERNEL}"
 DL="${TET_LINUX}/dl"
@@ -50,10 +50,10 @@ DL="${TET_LINUX}/dl"
 this_prepare() {
 
    [ -d "$TET_LINUX" ] || mkdir -p "$TET_LINUX"
+   cd "$TET_LINUX"
+
    [ -d "$KERNEL" ] || mkdir -p "$KERNEL"
    [ -d "$DL" ] || mkdir -p "$DL"
-
-   cd "$TET_LINUX"
 
    echo -e "Checking if the linux source is downloaded before ... \c"
    if [ ! -f "${DL}/${LINUX_SOURCE}" ]; then
