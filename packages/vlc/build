@@ -25,7 +25,8 @@ build_configure() {
        --enable-dvdread --enable-dvdnav --enable-shout --enable-notify --enable-screen \
        --enable-mpc --enable-gme --enable-twolame --enable-flac --enable-schroedinger \
        --enable-mtp --enable-png --enable-sdl --enable-realrtsp \
-       --enable-visual --enable-gnutls --disable-projectm --enable-svg || return 1
+       --enable-visual --enable-gnutls --disable-projectm --enable-svg \
+       --disable-libva || return 1
 
 }
 ##

@@ -33,6 +33,8 @@ speex.tcz
 twolame.tcz
 libschroedinger.tcz
 libdvbpsi.tcz
+libsamplerate.tcz
+fribidi.tcz
 zvbi.tcz
 goom.tcz
 libproxy-2.7.tcz

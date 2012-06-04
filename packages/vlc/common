@@ -118,8 +118,6 @@ coreutils
 pulseaudio
 libsndfile-dev
 pulseaudio-dev
-libiconv
-libiconv-dev
 ncursesw
 ncursesw-dev
 gnutls
@@ -133,7 +131,8 @@ libbluray-dev
 goom
 goom-dev
 libupnp
-libupnp-dev"
+libupnp-dev
+eglibc_gconv"
 
 DESCRIPTION="VLC is a free and open source cross-platform multimedia player."
 AUTHOR="VideoLAN Team"
@@ -169,5 +168,6 @@ CHANGELOG="2009/11/05 First Version
 		2011/03/26 Updated to 1.1.8
 		2011/04/22 Updated to 1.1.9
 		2011/08/15 Updated to 1.1.11
-		2011/10/28 Updated to 1.1.12"
-CURRENT="Updated to $VERSION"
+		2011/10/28 Updated to 1.1.12
+		2012/05/31 Updated to 2.0.1"
+CURRENT="Disabled libva"
