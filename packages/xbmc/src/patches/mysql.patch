@@ -6,9 +6,9 @@
  
 +# fix mysql library path
 +if [ -z "$LD_LIBRARY_PATH" ]; then
-+     LD_LIBRARY_PATH="/usr/local/lib/mysql"
++     LD_LIBRARY_PATH="/usr/local/mysql/lib"
 +else
-+     LD_LIBRARY_PATH="/usr/local/lib/mysql:$LD_LIBRARY_PATH"
++     LD_LIBRARY_PATH="/usr/local/mysql/lib:$LD_LIBRARY_PATH"
 +fi
 +export LD_LIBRARY_PATH
 +

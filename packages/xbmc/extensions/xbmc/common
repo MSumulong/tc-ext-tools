@@ -1,1 +1,5 @@
-ICON="/usr/local/share/pixmaps/xbmc.png" 
+ICON="/usr/local/share/icons/hicolor/48x48/apps/xbmc.png" 
+COMMENTS="System Requirements:
+			- XORG
+			- GPU accelerated graphics for smooth experience
+			- ALSA or PULSEAUDIO for sound"

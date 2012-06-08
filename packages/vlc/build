@@ -2,8 +2,6 @@
 # tc-ext-tools build functions: configure, compile, install, rules
 #
 
-export CPPFLAGS="$CPPFLAGS -I/usr/local/lib/live/BasicUsageEnvironment/include"
-
 ### Configure
 build_configure() {
 

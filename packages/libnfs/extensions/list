@@ -1,0 +1,12 @@
+usr/local/include/nfsc/libnfs-raw-mount.h
+usr/local/include/nfsc/libnfs-raw-nfs.h
+usr/local/include/nfsc/libnfs-raw-portmap.h
+usr/local/include/nfsc/libnfs-raw-rquota.h
+usr/local/include/nfsc/libnfs-raw.h
+usr/local/include/nfsc/libnfs.h
+usr/local/lib/libnfs.a
+usr/local/lib/libnfs.la
+usr/local/lib/libnfs.so
+usr/local/lib/libnfs.so.1
+usr/local/lib/libnfs.so.1.0.3
+usr/local/lib/pkgconfig/libnfs.pc

@@ -3,3 +3,23 @@
 [ $(which gtk-update-icon-cache) ] && gtk-update-icon-cache -q -f -t /usr/local/share/icons/hicolor > /dev/null 2>&1
 [ $(which update-desktop-database) ] && update-desktop-database -q > /dev/null 2>&1
 
+# start hal daemon
+this_start() {
+
+ DBUS_SERVICE=/usr/local/etc/init.d/dbus
+ HALDAEMON_SERVICE=/usr/local/etc/init.d/haldaemon
+
+ $HALDAEMON_SERVICE status
+ if [ $? -gt 0 ]; then
+      $DBUS_SERVICE status
+      if [ $? -gt 0 ]; then
+           $DBUS_SERVICE start
+      else
+           $DBUS_SERVICE restart
+      fi
+      $HALDAEMON_SERVICE start
+ fi
+
+}
+
+this_start > /dev/null 2>&1

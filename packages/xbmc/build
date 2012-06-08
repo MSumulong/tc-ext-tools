@@ -5,28 +5,68 @@
 #                                                                          #
 ############################################################################
 
-# fix for lzo1x.h not found error
-export CFLAGS="$CFLAGS -I/usr/local/include/lzo"
-export CXXFLAGS="$CXXFLAGS -I/usr/local/include/lzo"
+# make sure mysql_config is in path
+export PATH="$PATH:/usr/local/mysql/bin"
 
-unset LDFLAGS; export LDFLAGS="-Wl,--hash-style=gnu"
+fix_mysql_include() {
+
+  if [ -f /usr/local/tce.installed/mysql-dev -a ! -f "/usr/local/mysql/include/mysql/mysql.h" ]
+  then
+     cd /usr/local/mysql/include/
+     sudo mv mysql mysql2
+     sudo mkdir mysql
+     sudo mv * mysql
+     sudo mv mysql/mysql2 mysql/mysql
+     cd -
+  fi
+
+}
 
 ## configure
 build_configure() {
 
-   # fix for finding full path to libraries
-   sudo busybox cp -Lf /usr/local/bin/gcc /usr/local/bin/gcc
-   sudo busybox cp -Lf /usr/local/bin/ld /usr/local/bin/ld
+   fix_mysql_include
 
-   rm -f configure
-   ./bootstrap || return 1
-   ./configure --prefix=/usr/local --docdir=/usr/local/share/doc/xbmc \
-       --disable-debug --enable-external-libraries --disable-external-python \
-       --enable-faac --disable-ccache --enable-goom --enable-gl --enable-webserver --enable-xrandr \
-       --disable-gles --enable-vdpau --disable-external-ffmpeg \
-       --enable-joystick --enable-pulse --enable-rtmp --enable-ffmpeg-libvorbis --disable-mid \
-       --disable-hal --disable-avahi --disable-asap-codec --enable-external-libass \
-       --disable-libdts --disable-liba52 || return 1
+   bash bootstrap
+
+   bash configure --prefix=/usr/local \
+    --disable-static \
+    --disable-debug \
+    --enable-optimizations \
+    --enable-external-libraries \
+    --enable-gl \
+    --enable-sdl \
+    --enable-vaapi \
+    --enable-vdpau \
+    --enable-joystick \
+    --enable-xrandr \
+    --enable-rsxs \
+    --enable-projectm \
+    --enable-x11 \
+    --enable-pulse \
+    --enable-rtmp \
+    --enable-ffmpeg-libvorbis \
+    --enable-webserver \
+    --enable-optical-drive \
+    --enable-libbluray \
+    --enable-texturepacker \
+    --enable-hal \
+    --enable-udev \
+    --enable-nfs \
+    --disable-dvdcss \
+    --disable-non-free \
+    --disable-libcec \
+    --disable-afpclient \
+    --disable-airplay \
+    --disable-airtunes \
+    --disable-samba \
+    --disable-avahi \
+    --disable-vdadecoder \
+    --disable-vtbdecoder \
+    --disable-openmax \
+    --disable-tegra \
+    --disable-profiling \
+    --disable-external-ffmpeg
 
 }
 
@@ -34,8 +74,6 @@ build_configure() {
 build_compile() {
 
    make || return 1
-   make -C lib/addons/script.module.pil || return 1
-   make -C lib/addons/script.module.pysqlite || return 1
 
 }
 
@@ -44,24 +82,14 @@ build_install() {
 
    make DESTDIR="$I_ROOT" install || return 1
 
-   # Replace FEH.py with FEH.sh (and thus remove external python dependency)
-   install -D -m 0755 "${PACKAGE_SRC}/FEH.sh" "${I_ROOT}/usr/local/share/xbmc/FEH.sh" || return 1
-   sed -i -e 's/^python \(.*\)FEH.py \(.*\)$/\1FEH.sh \2/' "${I_ROOT}/usr/local/bin/xbmc" || return 1
-
    # lsb_release fix
    install -D -m 0755 "${PACKAGE_SRC}/lsb_release.sh" "${I_ROOT}/usr/local/bin/lsb_release" || return 1
-
-   # .desktop files
-   install -D -m 0644 tools/Linux/xbmc.desktop "${I_ROOT}/usr/local/share/applications/xbmc.desktop" || return 1
-   install -D -m 0644 tools/Linux/xbmc-48x48.png "${I_ROOT}/usr/local/share/pixmaps/xbmc.png" || return 1
 
    # Tools
    install -D -m 0755 xbmc-xrandr "${I_ROOT}/usr/local/share/xbmc/xbmc-xrandr" || return 1
    install -D -m 0755 tools/TexturePacker/TexturePacker "${I_ROOT}/usr/local/share/xbmc/" || return 1
 
    # clean up unneccessary files
-   rm -rf "${I_ROOT}/usr/local/share/xsessions"
-   rm -f "${I_ROOT}/usr/local/share/xbmc/FEH.py"
    rm -f "${I_ROOT}/usr/local/share/icons/hicolor/icon-theme.cache"
 }
 

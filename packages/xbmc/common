@@ -1,13 +1,10 @@
-#VERSION="vcs-20110908"
-#SOURCE="git::git://github.com/xbmc/xbmc.git"
-#SOURCE="https://launchpad.net/~team-xbmc/+archive/ppa/+files/xbmc_${VERSION}~ppa1~lucid.tar.gz"
-
 PACKAGE="xbmc"
-VERSION="10.1"
+VERSION="11.0"
 SOURCE="http://mirrors.xbmc.org/releases/source/xbmc-${VERSION}.tar.gz"
 BUILD_DEPENDS="
 cmake
-cvs
+bash
+gperf
 zip-unzip
 coreutils
 faac
@@ -18,8 +15,10 @@ libmms
 libmms-dev
 libvorbis
 libvorbis-dev
-#hal
-#hal-dev
+udisks
+upower-dev
+udev-lib
+udev-dev
 bzip2
 bzip2-lib
 bzip2-dev
@@ -75,9 +74,6 @@ pcre
 pcre-dev
 glib2
 glib2-dev
-mysql
-mysql-dev
-samba3
 jasper
 jasper-dev
 libvdpau
@@ -92,8 +88,7 @@ SDL_gfx-dev
 nasm
 libmicrohttpd
 libmicrohttpd-dev
-libiconv
-libiconv-dev
+eglibc_gconv
 yasm
 yasm-dev
 pulseaudio
@@ -101,13 +96,24 @@ pulseaudio-dev
 libxcb
 libxcb-dev
 rtmpdump
-rtmpdump-dev"
+rtmpdump-dev
+libbluray
+libbluray-dev
+bluez
+bluez-dev
+mysql
+mysql-dev
+hal
+hal-dev
+libnfs
+libnfs-dev"
 
 DESCRIPTION="XBMC is a free and open source media-player and entertainment hub."
 AUTHOR="---"
 SITE="http://xbmc.org/"
-COPYING="GPL-2"
+COPYING="GPL"
 MAINTAINERS="Arslan S."
+TAGS="media player entertainment hub"
 COMMENTS="---"
 CHANGELOG="---"
 CURRENT="First Version"
