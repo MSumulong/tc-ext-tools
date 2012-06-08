@@ -1,0 +1,15 @@
+diff -Naur a/tools/Linux/xbmc.sh.in b/tools/Linux/xbmc.sh.in
+--- a/tools/Linux/xbmc.sh.in	2012-06-07 16:00:18.000000000 +0000
++++ b/tools/Linux/xbmc.sh.in	2012-06-07 16:05:25.910572683 +0000
+@@ -18,6 +18,11 @@
+ #  the Free Software Foundation, 675 Mass Ave, Cambridge, MA 02139, USA.
+ #  http://www.gnu.org/copyleft/gpl.html
+ 
++# direct rendering must be enabled
++if [ -n "$LIBGL_ALWAYS_INDIRECT" ]; then
++     unset LIBGL_ALWAYS_INDIRECT
++fi
++
+ SAVED_ARGS="$@"
+ prefix="@prefix@"
+ exec_prefix="@exec_prefix@"

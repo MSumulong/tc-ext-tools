@@ -1,0 +1,13 @@
+diff -Naur a/xbmc/guilib/JpegIO.h b/xbmc/guilib/JpegIO.h
+--- a/xbmc/guilib/JpegIO.h	2012-03-21 22:07:50.000000000 +0000
++++ b/xbmc/guilib/JpegIO.h	2012-06-07 11:29:55.450076210 +0000
+@@ -27,7 +27,9 @@
+ #pragma comment(lib, "jpeg-static.lib")
+ #endif
+ 
++extern "C" {
+ #include <jpeglib.h>
++}
+ #include "utils/StdString.h"
+ 
+ class CJpegIO
