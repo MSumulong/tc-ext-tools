@@ -1,0 +1,5 @@
+usr/local/include/ethumb-1/*.h
+usr/local/lib/ethumb/plugins/*.la
+usr/local/lib/*.a
+usr/local/lib/*.la
+usr/local/lib/pkgconfig/
