@@ -1,0 +1,5 @@
+usr/local/include
+usr/local/lib/edje/modules/emotion/linux-gnu-i686-1.0.0/*.la
+usr/local/lib/emotion/*.la
+usr/local/lib/*.a
+usr/local/lib/pkgconfig
