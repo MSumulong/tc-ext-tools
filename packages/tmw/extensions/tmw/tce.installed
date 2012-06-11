@@ -1,0 +1,10 @@
+#!/bin/sh
+
+THIS=`basename $0`
+
+# mana does not run with symlinks
+if [ -d "/tmp/tcloop/${THIS}" ]
+then
+  rm -rf /usr/local/share/mana
+  ln -s /tmp/tcloop/${THIS}/usr/local/share/mana /usr/local/share/mana
+fi
