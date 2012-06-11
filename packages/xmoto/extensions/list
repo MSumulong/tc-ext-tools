@@ -29,6 +29,7 @@ usr/local/share/locale/zh_TW/LC_MESSAGES/xmoto.mo
 usr/local/share/man/man6/xmoto.6
 usr/local/share/pixmaps/xmoto.xpm
 usr/local/share/xmoto/Textures/Fonts/DejaVuSans.ttf
+usr/local/share/xmoto/Textures/Fonts/DejaVuSansMono.ttf
 usr/local/share/xmoto/Textures/Musics/MadeiraStew.ogg
 usr/local/share/xmoto/Textures/Musics/batcave.ogg
 usr/local/share/xmoto/Textures/Musics/foxrun.ogg

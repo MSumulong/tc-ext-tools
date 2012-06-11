@@ -1,0 +1,58 @@
+
+############################################################################################
+#                                                                                          #
+#    package build functions: configure, compile, install, rules, and custom functions     #
+#                                                                                          #
+############################################################################################
+
+export CFLAGS="$CFLAGS -fno-strict-aliasing"
+export CXXFLAGS="$CXXFLAGS -fno-strict-aliasing"
+
+## configure
+build_configure() {
+
+   sed -i 's/-Werror//' CMakeLists.txt
+
+   mkdir build
+   cd build
+   cmake -DCMAKE_INSTALL_PREFIX=/usr/local -DCMAKE_BUILD_TYPE=Release \
+     -DPHYSFS_BUILD_TEST=OFF -DPHYSFS_BUILD_WX_TEST=OFF .. || return 1
+
+}
+
+## compile
+build_compile() {
+
+   cd build
+   make || return 1
+
+}
+
+## install
+build_install() {
+
+   cd build
+   make DESTDIR="$I_ROOT" install || return 1
+
+}
+
+## rules
+build_rules() {
+
+   tet_load
+   tet_download
+   tet_convert
+   tet_unpack
+   tet_patch
+   tet_configure
+   tet_compile
+   tet_install
+   tet_split
+   tet_strip
+   tet_create
+   tet_generate
+   tet_check
+   tet_package
+
+}
+

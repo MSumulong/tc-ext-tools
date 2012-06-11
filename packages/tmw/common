@@ -1,0 +1,16 @@
+PACKAGE="tmw"
+VERSION="0.5.2"
+SOURCE="http://downloads.sourceforge.net/sourceforge/themanaworld/tmw-${VERSION}.tar.bz2"
+BUILD_DEPENDS="cmake Xorg-7.6-lib Xorg-7.6-dev SDL SDL-dev
+               SDL_gfx SDL_gfx-dev guichan guichan-dev 
+               physfs physfs-dev curl curl-dev libxml2 libxml2-dev"
+
+DESCRIPTION="The Mana World (TMW) is a free and open source MMORPG."
+AUTHOR="---"
+SITE="http://themanaworld.org"
+COPYING="GPL"
+MAINTAINERS="Arslan S."
+TAGS="2D game mmorpg"
+COMMENTS="---"
+CHANGELOG="---"
+CURRENT="First Version 0.5.2"

@@ -1,5 +1,5 @@
 PACKAGE="xmoto"
-VERSION="0.5.4"
+VERSION="0.5.9"
 SOURCE="http://download.tuxfamily.org/xmoto/xmoto/${VERSION}/xmoto-${VERSION}-src.tar.gz"
 BUILD_DEPENDS="ode
 ode-dev
@@ -21,6 +21,7 @@ AUTHOR="---"
 SITE="http://xmoto.tuxfamily.org/"
 COPYING="GPL"
 MAINTAINERS="Arslan S."
+TAGS="2D motocross platform game"
 COMMENTS="---"
-CHANGELOG="---"
-CURRENT="First Version"
+CHANGELOG="2010/12/10 First Version 0.5.4"
+CURRENT="Updated to $VERSION"

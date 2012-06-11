@@ -4,6 +4,8 @@ libxslt.tcz
 sqlite3.tcz
 libnotify.tcz
 lua.tcz
-webkit.tcz
+webkitgtk-1.0-0.tcz
+json-glib.tcz
+libunique.tcz
 hicolor-icon-theme.tcz
 shared-mime-info.tcz

@@ -1,0 +1,59 @@
+
+############################################################################################
+#                                                                                          #
+#    package build functions: configure, compile, install, rules, and custom functions     #
+#                                                                                          #
+############################################################################################
+
+## configure
+build_configure() {
+
+   mkdir build
+   cd build
+   cmake -DCMAKE_INSTALL_PREFIX=/usr/local -DCMAKE_BUILD_TYPE=Release .. || return 1
+
+}
+
+## compile
+build_compile() {
+
+   cd build
+   make || return 1
+
+}
+
+## install
+build_install() {
+
+   cd build
+   make DESTDIR="$I_ROOT" install || return 1
+
+   cd ..
+   mv "$I_ROOT"/usr/local/share/applications/mana.desktop "$I_ROOT"/usr/local/share/applications/tmw.desktop
+   install -d -m 755 "$I_ROOT"/usr/local/share/mana/data/graphics/gui/wood/
+   install -m 644 data/graphics/gui/wood/* "$I_ROOT"/usr/local/share/mana/data/graphics/gui/wood/
+   install -m 644 data/graphics/images/*.png "$I_ROOT"/usr/local/share/mana/data/graphics/images/
+   ln -s /usr/local/share/tmw/data/music "$I_ROOT"/usr/local/share/mana/data/music
+
+}
+
+## rules
+build_rules() {
+
+   tet_load
+   tet_download
+   tet_convert
+   tet_unpack
+   tet_patch
+   tet_configure
+   tet_compile
+   tet_install
+   tet_split
+   tet_strip
+   tet_create
+   tet_generate
+   tet_check
+   tet_package
+
+}
+

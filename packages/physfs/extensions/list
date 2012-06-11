@@ -1,0 +1,5 @@
+usr/local/include/physfs.h
+usr/local/lib/libphysfs.a
+usr/local/lib/libphysfs.so
+usr/local/lib/libphysfs.so.1
+usr/local/lib/libphysfs.so.2.0.2

@@ -1,10 +1,10 @@
 PACKAGE="liferea"
-VERSION="1.6.5"
+VERSION="1.8.5"
 SOURCE="http://downloads.sourceforge.net/sourceforge/liferea/liferea-${VERSION}.tar.gz"
 BUILD_DEPENDS="GConf
 GConf-dev
-webkit
-webkit-dev
+webkitgtk-1.0-0
+webkitgtk-1.0-0-dev
 libxslt
 libglade
 libglade-dev
@@ -18,8 +18,10 @@ dbus
 dbus-dev
 Xorg-7.6-lib
 Xorg-7.6-dev
-#NetworkManager
-#NetworkManager-dev"
+libunique
+libunique-dev
+json-glib
+json-glib-dev"
 
 DESCRIPTION="Liferea (Linux Feed Reader) is an aggregator for online news feeds."
 AUTHOR="---"
@@ -27,5 +29,6 @@ SITE="http://liferea.sourceforge.net/"
 COPYING="GPL"
 MAINTAINERS="Arslan S."
 COMMENTS="---"
-CHANGELOG="2011/01/03 First Version 1.6.5"
-CURRENT="Disabled nm support"
+CHANGELOG="2011/01/03 First Version 1.6.5
+		2011/01/05 Disabled nm support"
+CURRENT="Updated to $VERSION"
