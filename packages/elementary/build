@@ -9,7 +9,11 @@
 build_configure() {
 
    ## autotools
-   ./configure --prefix=/usr/local || return 1
+   ./configure --prefix=/usr/local \
+	--enable-edbus \
+	--enable-efreet \
+	--enable-eweather \
+	--disable-doc || return 1
 
    ## cmake
    #mkdir build
