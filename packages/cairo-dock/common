@@ -1,7 +1,6 @@
 PACKAGE="cairo-dock"
-_VERSION="2.4.0"
-VERSION="${_VERSION}~2"
-SOURCE="http://launchpad.net/cairo-dock-core/${_VERSION%.*}/${_VERSION}/+download/cairo-dock-${VERSION}.tar.gz"
+VERSION="3.0.1"
+SOURCE="http://launchpad.net/cairo-dock-core/3.0/${VERSION}/+download/cairo-dock-${VERSION}.tar.gz"
 BUILD_DEPENDS="
 cmake
 glib2
@@ -30,4 +29,4 @@ COPYING="GPL-3"
 MAINTAINERS="Arslan S."
 COMMENTS="---"
 CHANGELOG="2010/12/04 First Version 2.2.0-4"
-CURRENT="Updated to $VERSION and built for TCL 4.x"
+CURRENT="Updated to $VERSION"

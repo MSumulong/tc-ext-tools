@@ -1,31 +1,34 @@
 PACKAGE="cairo-dock-plugins"
-_VERSION="2.4.0"
-VERSION="${_VERSION}~2"
-SOURCE="http://launchpad.net/cairo-dock-plug-ins/${_VERSION%.*}/${_VERSION}/+download/cairo-dock-plugins-${VERSION}.tar.gz"
+VERSION="3.0.1"
+SOURCE="http://launchpad.net/cairo-dock-plug-ins/3.0/${VERSION}/+download/cairo-dock-plugins-${VERSION}.tar.gz"
 BUILD_DEPENDS="
 cmake
 cairo-dock-core
 cairo-dock-core-dev
 libasound
 alsa-dev
-vte
-vte-dev
 gtkglext
 gtkglext-dev
 librsvg
 librsvg-dev
-libical
-libical-dev
 Xorg-7.6-lib
 Xorg-7.6-dev
-gnome-menus
-gnome-menus-dev
+vte
+vte-dev
+libical
+libical-dev
 libxklavier
 libxklavier-dev
 libexif
 libexif-dev
 webkitgtk-1.0-0
-webkitgtk-1.0-0-dev"
+webkitgtk-1.0-0-dev
+upower
+upower-dev
+lm_sensors
+lm_sensors-dev
+libetpan
+libetpan-dev"
 
 DESCRIPTION="Cairo-Dock plugins package."
 AUTHOR="Cairo-Dock Team"
@@ -34,4 +37,4 @@ COPYING="GPL"
 MAINTAINERS="Arslan S."
 COMMENTS="---"
 CHANGELOG="2010/12/04 First Version 2.2.0-4"
-CURRENT="Updated to $VERSION and built for TCL 4.x"
+CURRENT="Updated to $VERSION"
