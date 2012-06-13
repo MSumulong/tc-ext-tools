@@ -1,0 +1,15 @@
+PACKAGE="xine"
+VERSION="0.99.7"
+SOURCE="http://sourceforge.net/projects/xine/files/xine-ui/$VERSION/${PACKAGE}-ui-${VERSION}.tar.xz"
+BUILD_DEPENDS="xine-lib-dev.tcz libiconv.tcz fontconfig.tcz"
+
+DESCRIPTION="a free high-performance, portable and reusable multimedia player"
+AUTHOR="Xine Project Team"
+SITE="http://www.xine-project.org/home"
+COPYING="GPL-2"
+MAINTAINERS="jls_legalize (jlslegalize at gmail dot com)"
+TAGS="multimedia player"
+COMMENTS="---"
+CHANGELOG="2010/07/01 First version 0.99.6
+		2012/04/07 Rebuilt"
+CURRENT="Updated to ${Version}, renamed xine"
