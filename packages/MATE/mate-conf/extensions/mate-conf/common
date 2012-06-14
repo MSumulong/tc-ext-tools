@@ -1,0 +1,4 @@
+COMMENTS="Run update-mateconf-database for help
+
+		It is recommended to add to backup (/opt/.filetool.lst):
+		usr/local/etc/mateconf/mateconf.xml.defaults"

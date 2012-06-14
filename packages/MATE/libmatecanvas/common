@@ -1,0 +1,16 @@
+PACKAGE="libmatecanvas"
+VERSION="1.2.0"
+MATE_VERSION="1.2"
+SOURCE="http://pub.mate-desktop.org/releases/${MATE_VERSION}/${PACKAGE}-${VERSION}.tar.xz"
+BUILD_DEPENDS="docbook_xsl gtk-doc mate-common libart libart-dev
+               gtk2 gtk2-dev libglade libglade-dev"
+
+DESCRIPTION="Powerful object-oriented display engine"
+AUTHOR="perberos"
+SITE="http://mate-desktop.org/"
+COPYING="GPL"
+MAINTAINERS="Arslan S."
+TAGS="mate canvas"
+COMMENTS="---"
+CHANGELOG="---"
+CURRENT="First Version"

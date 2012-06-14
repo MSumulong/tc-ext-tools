@@ -1,0 +1,5 @@
+usr/local/bin
+x-usr/local/bin/matecorba2-config
+usr/local/lib/*.so*
+usr/local/lib/matecorba-2.0/*.so
+usr/local/share/idl

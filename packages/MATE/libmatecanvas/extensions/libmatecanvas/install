@@ -1,0 +1,2 @@
+usr/local/lib/*.so*
+usr/local/lib/libglade/2.0/*.so

@@ -1,0 +1,9 @@
+usr/local/bin/matecorba2-config
+usr/local/include
+usr/local/lib/pkgconfig
+usr/local/lib/*.a
+usr/local/lib/*.la
+usr/local/lib/matecorba-2.0/*.a
+usr/local/lib/matecorba-2.0/*.la
+usr/local/share/aclocal
+usr/local/share/gtk-doc

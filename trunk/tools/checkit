@@ -61,11 +61,11 @@ this_check() {
    sudo find -not -type d -exec file "{}" \; || return 1
    cd -
 
-   echo -e "Checking if the package extension tce.installed script exists ... \c"
+   echo -e "Checking if the package extension has a tce.installed script ... \c"
    if [ -e "$PACKAGE_EXTENSION_BIN_TEMP/usr/local/tce.installed/$PACKAGE_EXTENSION_NAME" ]; then
         echo "yes"
 
-        echo -e "Checking if the permission and ownership of the package extension tce.installed directory is correct ... \c"
+        echo -e "Checking if the permissions of tce.installed directory is correct ... \c"
         OUT=$(sudo busybox ls -d -l "$PACKAGE_EXTENSION_BIN_TEMP/usr/local/tce.installed")
         PERM=$(echo $OUT | cut -d" " -f1)
         OWNER=$(echo $OUT | cut -d" " -f3-4)
@@ -77,7 +77,7 @@ this_check() {
              return 1
         fi
 
-        echo -e "Checking if the permissions and ownership of the package extension tce.installed script is correct ... \c"
+        echo -e "Checking if the permissions of tce.installed script is correct ... \c"
         OUT=$(sudo busybox ls -l "$PACKAGE_EXTENSION_BIN_TEMP/usr/local/tce.installed/$PACKAGE_EXTENSION_NAME")
         PERM=$(echo $OUT | cut -d" " -f1)
         OWNER=$(echo $OUT | cut -d" " -f3-4)

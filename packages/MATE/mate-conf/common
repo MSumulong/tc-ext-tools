@@ -1,0 +1,18 @@
+PACKAGE="mate-conf"
+VERSION="1.2.1"
+MATE_VERSION="1.2"
+SOURCE="http://pub.mate-desktop.org/releases/${MATE_VERSION}/${PACKAGE}-${VERSION}.tar.xz"
+BUILD_DEPENDS="glib2 glib2-dev docbook_xsl gtk-doc mate-common polkit polkit-dev
+               mate-corba mate-corba-dev dbus dbus-dev dbus-glib dbus-glib-dev
+               libxml2 libxml2-dev gtk2 gtk2-dev gobject-introspection
+               gobject-introspection-dev openldap openldap-dev python python-dev"
+
+DESCRIPTION="MATE configuration database system"
+AUTHOR="perberos"
+SITE="http://mate-desktop.org/"
+COPYING="GPL"
+MAINTAINERS="Arslan S."
+TAGS="mate conf"
+COMMENTS="---"
+CHANGELOG="---"
+CURRENT="First Version"

@@ -1,0 +1,6 @@
+libmatecomponent.tcz
+glib2-dev.tcz
+libxml2-dev.tcz
+mate-corba-dev.tcz
+popt-dev.tcz
+dbus-glib-dev.tcz

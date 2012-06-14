@@ -1,0 +1,10 @@
+usr/local/etc
+usr/local/bin
+usr/local/lib/*.so*
+usr/local/lib/matecomponent-2.0
+usr/local/lib/matecomponent/monikers/*.so
+usr/local/lib/matecomponent/servers
+usr/local/lib/matecorba-2.0/*.so
+usr/local/sbin
+usr/local/share/idl
+usr/local/share/man

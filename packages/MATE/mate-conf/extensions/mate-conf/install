@@ -1,0 +1,12 @@
+usr/local/etc
+usr/local/bin
+usr/local/lib/*.so*
+usr/local/lib/MateConf/2/*.so
+usr/local/lib/gio/modules/*.so
+usr/local/libexec
+usr/local/sbin
+usr/local/share/MateConf
+usr/local/share/dbus-1
+usr/local/share/man
+usr/local/share/polkit-1
+usr/local/share/sgml

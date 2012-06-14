@@ -1,0 +1,5 @@
+gtk-doc.tcz
+automake.tcz
+gettext.tcz
+intltool.tcz
+pkg-config.tcz

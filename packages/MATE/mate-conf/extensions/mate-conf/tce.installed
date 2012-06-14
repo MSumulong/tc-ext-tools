@@ -1,0 +1,6 @@
+#!/bin/sh
+
+[ -d /usr/local/etc/mateconf/mateconf.xml.system ] || mkdir -p /usr/local/etc/mateconf/mateconf.xml.system
+[ -d /usr/local/etc/mateconf/mateconf.xml.defaults ] || mkdir -p /usr/local/etc/mateconf/mateconf.xml.defaults
+[ -d /usr/local/etc/mateconf/mateconf.xml.mandatory ] || mkdir -p /usr/local/etc/mateconf/mateconf.xml.mandatory
+
