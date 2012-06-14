@@ -1,5 +1,5 @@
 PACKAGE="doxygen"
-VERSION="1.7.6"
+VERSION="1.8.1.1"
 SOURCE="ftp://ftp.stack.nl/pub/users/dimitri/${PACKAGE}-${VERSION}.src.tar.gz"
 BUILD_DEPENDS="coreutils qt-4.x-base qt-4.x-xml qt-4.x-dev graphviz eglibc_gconv"
 
@@ -8,11 +8,13 @@ AUTHOR="Dimitri van Heesch"
 SITE="http://www.stack.nl/~dimitri/doxygen/"
 COPYING="GPL"
 MAINTAINERS="Arslan S."
+TAGS="documentation system"
 COMMENTS="---"
 CHANGELOG="2009/10/16 Original 1.6.1
 		2010/04/29 Updated to 1.6.3 & splitted doxygen-gui(doxywizard)
 		2010/10/10 Updated to 1.7.2
 		2011/01/05 Updated to 1.7.3
 		2011/03/29 Updated to 1.7.4
-		2011/08/18 Updated to 1.7.5"
+		2011/08/18 Updated to 1.7.5
+		2011/12/04 Updated to 1.7.6"
 CURRENT="Updated to $VERSION"
