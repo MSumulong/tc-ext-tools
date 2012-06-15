@@ -1,0 +1,16 @@
+PACKAGE="mate-doc-utils"
+VERSION="1.2.1"
+MATE_VERSION="1.2"
+SOURCE="http://pub.mate-desktop.org/releases/${MATE_VERSION}/${PACKAGE}-${VERSION}.tar.xz"
+BUILD_DEPENDS="mate-common rarian rarian-dev libxslt libxml2 libxml2-dev
+               python python-dev python-libxml2-2.7"
+
+DESCRIPTION="MATE documentation utilities"
+AUTHOR="perberos"
+SITE="http://mate-desktop.org/"
+COPYING="GPL"
+MAINTAINERS="Arslan S."
+TAGS="mate mime"
+COMMENTS="---"
+CHANGELOG="---"
+CURRENT="First Version"

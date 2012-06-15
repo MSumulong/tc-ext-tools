@@ -1,0 +1,17 @@
+PACKAGE="mate-keyring"
+VERSION="1.2.1"
+MATE_VERSION="1.2"
+SOURCE="http://pub.mate-desktop.org/releases/${MATE_VERSION}/${PACKAGE}-${VERSION}.tar.xz"
+BUILD_DEPENDS="docbook_xsl gtk-doc mate-common dbus dbus-dev
+               gtk2 gtk2-dev Linux-PAM Linux-PAM-dev
+               libgcrypt libgcrypt-dev libtasn1 libtasn1-dev"
+
+DESCRIPTION="MATE Password Management daemon"
+AUTHOR="perberos"
+SITE="http://mate-desktop.org/"
+COPYING="GPL"
+MAINTAINERS="Arslan S."
+TAGS="mate keyring service"
+COMMENTS="---"
+CHANGELOG="---"
+CURRENT="First Version"

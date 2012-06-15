@@ -1,0 +1,10 @@
+usr/local/bin
+usr/local/etc
+usr/local/lib/*.so*
+usr/local/lib/mate-keyring/*.so
+usr/local/lib/mate-keyring/*/*.so
+usr/local/lib/security/*.so
+usr/local/libexec
+usr/local/share
+x-usr/local/share/gtk-doc
+x-usr/local/share/locale

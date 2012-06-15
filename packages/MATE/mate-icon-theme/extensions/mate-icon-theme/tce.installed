@@ -1,0 +1,20 @@
+#!/bin/sh
+
+tcuser=`cat /etc/sysconfig/tcuser`
+file="/home/${tcuser}/.gtkrc-2.0"
+
+if [ ! -e "$file" ]; then
+
+cat > $file << "EOF"
+gtk-icon-theme-name = "mate"
+EOF
+
+elif ! grep -q icon-theme $file; then
+
+cat >> $file << "EOF"
+gtk-icon-theme-name = "mate"
+EOF
+
+fi
+
+chown ${tcuser}.staff $file

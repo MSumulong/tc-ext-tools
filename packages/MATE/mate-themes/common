@@ -1,0 +1,16 @@
+PACKAGE="mate-themes"
+VERSION="1.2.2"
+MATE_VERSION="1.2"
+SOURCE="http://pub.mate-desktop.org/releases/${MATE_VERSION}/${PACKAGE}-${VERSION}.tar.xz"
+BUILD_DEPENDS="icon-naming-utils librsvg librsvg-dev
+               gtk2 gtk2-dev gtk-engines advcomp"
+
+DESCRIPTION="MATE Desktop themes"
+AUTHOR="perberos"
+SITE="http://mate-desktop.org/"
+COPYING="GPL"
+MAINTAINERS="Arslan S."
+TAGS="mate desktop themes"
+COMMENTS="---"
+CHANGELOG="---"
+CURRENT="First Version"

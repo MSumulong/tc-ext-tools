@@ -1,0 +1,16 @@
+PACKAGE="libmatekeyring"
+VERSION="1.2.0"
+MATE_VERSION="1.2"
+SOURCE="http://pub.mate-desktop.org/releases/${MATE_VERSION}/${PACKAGE}-${VERSION}.tar.xz"
+BUILD_DEPENDS="docbook_xsl gtk-doc mate-common glib2 glib2-dev
+               dbus dbus-dev libgcrypt libgcrypt-dev"
+
+DESCRIPTION="MATE keyring services library"
+AUTHOR="perberos"
+SITE="http://mate-desktop.org/"
+COPYING="GPL"
+MAINTAINERS="Arslan S."
+TAGS="mate keyring lib"
+COMMENTS="---"
+CHANGELOG="---"
+CURRENT="First Version"
