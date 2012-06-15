@@ -1,5 +1,11 @@
 mate-common
+mate-icon-theme
+mate-themes
+mate-mime-data
+mate-doc-utils
 mate-corba
 mate-conf
 libmatecomponent
 libmatecanvas
+libmatekeyring
+mate-keyring
