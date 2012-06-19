@@ -8,7 +8,8 @@
 ## configure
 build_configure() {
 
-   ./autogen.sh --prefix=/usr/local || return 1
+   ./autogen.sh --prefix=/usr/local \
+        --disable-static || return 1
 
 }
 
@@ -23,8 +24,6 @@ build_compile() {
 build_install() {
 
    make DESTDIR="$I_ROOT" install || return 1
-
-   find "$I_ROOT" -type f -name "*.png" -exec advdef -z4 '{}' \;
 
 }
 

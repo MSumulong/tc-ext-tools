@@ -1,0 +1,5 @@
+usr/local/include
+usr/local/lib/*.la
+usr/local/lib/mate-vfs-2.0/include
+usr/local/lib/pkgconfig
+usr/local/share/gtk-doc

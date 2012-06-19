@@ -8,7 +8,8 @@
 ## configure
 build_configure() {
 
-   ./autogen.sh --prefix=/usr/local || return 1
+   ./autogen.sh --prefix=/usr/local \
+       --enable-pulseaudio || return 1
 
 }
 

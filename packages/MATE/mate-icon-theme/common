@@ -2,7 +2,7 @@ PACKAGE="mate-icon-theme"
 VERSION="1.2.0"
 MATE_VERSION="1.2"
 SOURCE="http://pub.mate-desktop.org/releases/${MATE_VERSION}/${PACKAGE}-${VERSION}.tar.xz"
-BUILD_DEPENDS="mate-common hicolor-icon-theme icon-naming-utils librsvg librsvg-dev"
+BUILD_DEPENDS="mate-common hicolor-icon-theme icon-naming-utils librsvg librsvg-dev advcomp"
 
 DESCRIPTION="MATE Desktop icon theme"
 AUTHOR="perberos"

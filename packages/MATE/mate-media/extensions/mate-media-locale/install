@@ -1,0 +1,5 @@
+usr/local/share/locale
+usr/local/share/mate/help
+usr/local/share/omf
+x-usr/local/share/mate/help/*/C
+x-usr/local/share/omf/*/*-C.omf

@@ -9,3 +9,5 @@ libmatecomponent
 libmatecanvas
 libmatekeyring
 mate-keyring
+mate-media
+mate-vfs

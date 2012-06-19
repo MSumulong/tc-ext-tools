@@ -1,0 +1,13 @@
+dbus-glib.tcz
+udev-lib.tcz
+libarchive.tcz
+libcdio.tcz
+bzip2-lib.tcz
+acl.tcz
+krb5.tcz
+gamin.tcz
+libimobiledevice.tcz
+bluez.tcz
+libavahi.tcz
+mate-conf.tcz
+gvfs.tcz

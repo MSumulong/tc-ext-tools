@@ -1,0 +1,20 @@
+PACKAGE="mate-media"
+VERSION="1.2.1"
+MATE_VERSION="1.2"
+SOURCE="http://pub.mate-desktop.org/releases/${MATE_VERSION}/${PACKAGE}-${VERSION}.tar.xz"
+BUILD_DEPENDS="advcomp mate-common mate-doc-utils rarian mate-conf mate-conf-dev
+               gtk2 gtk2-dev libglade libglade-dev libunique libunique-dev
+               libxml2 libxml2-dev gstreamer gstreamer-dev gst-plugins-base
+               gst-plugins-base-dev libcanberra libcanberra-dev pulseaudio
+               pulseaudio-dev dbus-glib dbus-glib-dev libsndfile libsndfile-dev
+               flac flac-dev"
+
+DESCRIPTION="MATE media utilities"
+AUTHOR="perberos"
+SITE="http://mate-desktop.org/"
+COPYING="GPL"
+MAINTAINERS="Arslan S."
+TAGS="mate media"
+COMMENTS="---"
+CHANGELOG="---"
+CURRENT="First Version"
