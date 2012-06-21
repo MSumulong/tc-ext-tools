@@ -1,0 +1,11 @@
+usr/local
+x-usr/local/share/locale
+x-usr/local/include/
+x-usr/local/lib/edje/modules/elm/linux-gnu-i686-1.0.0/*.la
+x-usr/local/lib/elementary/modules/access_output/linux-gnu-i686-1.0.1/*.la
+x-usr/local/lib/elementary/modules/datetime_input_ctxpopup/linux-gnu-i686-1.0.1/*.la
+x-usr/local/lib/elementary/modules/test_entry/linux-gnu-i686-1.0.1/*.la
+x-usr/local/lib/elementary/modules/test_map/linux-gnu-i686-1.0.1/*.la
+x-usr/local/lib/*.a
+x-usr/local/lib/*.la
+x-usr/local/lib/pkgconfig/
