@@ -46,45 +46,6 @@ fi
 
 this_create() {
 
-   echo -e "Checking if the extension has a tce.installed script ... \c"
-   if [ -f "$PACKAGE_EXTENSION_TCEINSTALLED" ]; then
-        echo "yes"
-        echo "Installing the extension tce.installed script"
-        sudo install -D -m 775 "$PACKAGE_EXTENSION_TCEINSTALLED" "$PACKAGE_EXTENSION_BIN/usr/local/tce.installed/$PACKAGE_EXTENSION_NAME" || return 1
-        sudo chown -R root:staff "$PACKAGE_EXTENSION_BIN/usr/local/tce.installed" || return 1
-        sudo chmod -R 775 "$PACKAGE_EXTENSION_BIN/usr/local/tce.installed" || return 1
-   else
-        echo "no"
-   fi
-
-   echo -e "Checking if the extension icon is set ... \c"
-   if [ -n "$PACKAGE_EXTENSION_ICON" ]; then
-        echo "yes"
-
-        echo -e "Checking if the extension desktop file exists ... \c"
-        if [ -f "$PACKAGE_EXTENSION_DESKTOP" ]; then
-             echo "yes"
-
-             echo -e "Checking if the extension desktop has X-FullPathIcon line ... \c"
-             if [ $(grep "X-FullPathIcon=" "$PACKAGE_EXTENSION_DESKTOP") ]; then
-                  echo "yes"
-                  echo "Deleting the line with X-FullPathIcon"
-                  sudo sed -i -e "/X-FullPathIcon=/d" "$PACKAGE_EXTENSION_DESKTOP"
-             else
-                  echo "no"
-             fi
-
-             echo "Writing the extension icon to the extension desktop file"
-             sudo sh -c "echo \"X-FullPathIcon=$PACKAGE_EXTENSION_ICON\" >> $PACKAGE_EXTENSION_DESKTOP" || return 1
-        else
-             echo "no"
-             echo "Error! The extension desktop file can not be found but the icon is set."
-             return 1
-        fi
-   else
-        echo "no"
-   fi
-
    echo "Cleaning the package bin directory extension files"
    sudo rm -f "$PACKAGE_BIN"/*.tcz*
 
