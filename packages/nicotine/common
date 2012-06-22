@@ -1,0 +1,23 @@
+PACKAGE="nicotine"
+VERSION="1.0.8"
+SOURCE="http://nicotine.thegraveyard.org/$PACKAGE-$VERSION.tar.bz2"
+BUILD_DEPENDS="python"
+
+DESCRIPTION="a client for the SoulSeek filesharing network"
+AUTHOR="Hyriand"
+SITE="http://sensi.org/~ak/pyslsk"
+COPYING="GPL-2"
+MAINTAINERS="Jason W, jls_legalize <jlslegalize@gmail.com>"
+TAGS="SoulSeek filesharing"
+COMMENTS="nicotine is a client for the SoulSeek 
+		filesharing network. It was forked
+		(and thus reuses a lot of code) from the
+		PySoulSeek project by Alexander Kanavin,
+		and features (among other things) a
+		completely new graphical user interface.
+
+		extension made using 
+			http://code.google.com/p/tc-ext-tools/"
+CHANGELOG="2009/25/3 Initial packaging (jls_legalize)
+		2009/09/06 Built for python2.6 (Jason W)"
+CURRENT="Rebuilt against python 2.7 (jls_legalize)"
