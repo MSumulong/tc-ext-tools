@@ -262,6 +262,7 @@ set_extension() {
    PACKAGE_EXTENSION_ZSYNC="$PACKAGE_EXTENSION_PKG/${PACKAGE_EXTENSION_NAME}.tcz.zsync"
 
    # application icon is set here
+   unset PACKAGE_EXTENSION_ICON PACKAGE_EXTENSION_DESKTOP
    if [ -n "$ICON" ]; then
         PACKAGE_EXTENSION_ICON="$ICON"
         if [ -n "$DESKTOP" ]; then
