@@ -1,0 +1,4 @@
+COMMENTS="Xorg is needed.
+		Composite e17 module must be unloaded.
+	
+		Extension made using http://code.google.com/p/tc-ext-tools"
