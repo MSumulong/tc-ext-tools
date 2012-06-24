@@ -1,4 +1,4 @@
-COMMENTS="Xorg is needed.
+COMMENTS="3d acceleration is needed.
 		Composite e17 module must be unloaded.
 	
 		Extension made using http://code.google.com/p/tc-ext-tools"

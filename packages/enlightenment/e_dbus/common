@@ -7,14 +7,15 @@ ecore-dev"
 
 DESCRIPTION="A brief description of package."
 AUTHOR="Brian Mattern <rephorm@rephorm.com>
-Mathieu Taillefumier <mathieu.taillefumier@free.fr>
-Mike Blumenkrantz (zmike/discomfitor) michael.blumenkrantz@gmail.com
-Bruno Dilly <bdilly@profusion.mobi>
-Gustavo F. Padovan <padovan@profusion.mobi>
-João Paulo Rechi Vita <jprvita@profusion.mobi>
-Sebastian Dransfeld <sd@tango.flipp.net>
-Lucas De Marchi <lucas.demarchi@profusion.mobi>
-Halton Huo <halton.huo@intel.com>"
+	Mathieu Taillefumier <mathieu.taillefumier@free.fr>
+	Mike Blumenkrantz (zmike/discomfitor)
+	michael.blumenkrantz@gmail.com
+	Bruno Dilly <bdilly@profusion.mobi>
+	Gustavo F. Padovan <padovan@profusion.mobi>
+	João Paulo Rechi Vita <jprvita@profusion.mobi>
+	Sebastian Dransfeld <sd@tango.flipp.net>
+	Lucas De Marchi <lucas.demarchi@profusion.mobi>
+	Halton Huo <halton.huo@intel.com>"
 
 SITE="enlightenment.org"
 COPYING="GPL-2"
