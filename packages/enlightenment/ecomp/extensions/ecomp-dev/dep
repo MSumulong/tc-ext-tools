@@ -1,9 +1,7 @@
 ecomp.tcz
-Xorg-7.6-dev 
-Xorg-7.6
-eet-dev
-libxml2-dev
-glib2-dev
-libxslt
-pango-dev
-bash
+eet-dev.tcz
+libxml2-dev.tcz
+glib2-dev.tcz
+libxslt.tcz
+pango-dev.tcz
+bash.tcz
