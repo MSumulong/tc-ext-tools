@@ -55,8 +55,9 @@ ${ERROR_COLOR}Usage:${NORMAL}
              ${WARNING_COLOR}--split${MESSAGE_COLOR} to split package into extensions.
              ${WARNING_COLOR}--strip${MESSAGE_COLOR} to strip extension files.
              ${WARNING_COLOR}--create${MESSAGE_COLOR} to create extensions.
-             ${WARNING_COLOR}--check${MESSAGE_COLOR} to check extensions.
              ${WARNING_COLOR}--generate${MESSAGE_COLOR} to generate extension info files.
+             ${WARNING_COLOR}--check${MESSAGE_COLOR} to check extensions.
+             ${WARNING_COLOR}--test${MESSAGE_COLOR} to test extensions.
              ${WARNING_COLOR}--package${MESSAGE_COLOR} to create package tarball.
              ${WARNING_COLOR}--encrypt${MESSAGE_COLOR} to encrypt package tarball.
              ${WARNING_COLOR}--custom <function>${MESSAGE_COLOR} to execute custom defined function. Where ${MESSAGE_COLOR_H}build_<function>${MESSAGE_COLOR} is the name of the custom function which must be defined in the package build file.
@@ -139,6 +140,10 @@ generate_it() {
 
 check_it() {
    checkit || exit 1
+}
+
+test_it() {
+   testit || exit 1
 }
 
 package_it() {
@@ -279,6 +284,10 @@ tet_check() {
    buildit --check || exit 1
 }
 
+tet_test() {
+   buildit --test || exit 1
+}
+
 tet_package() {
    buildit --package || exit 1
 }
@@ -313,8 +322,9 @@ do
       --split) split_it ;;
       --strip) strip_it ;;
       --create) create_it ;;
-      --check) check_it ;;
       --generate) generate_it ;;
+      --check) check_it ;;
+      --test) test_it ;;
       --package) package_it ;;
       --encrypt) encrypt_it ;;
       --print) print_it "$2"; shift;;

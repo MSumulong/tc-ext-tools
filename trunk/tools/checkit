@@ -42,7 +42,7 @@ fi
 this_check() {
 
    echo -e "Checking if the package extension is empty ... \c"
-   if [ -z "$(cat $PACKAGE_EXTENSION_LIST)" ]; then
+   if [ -z "$(cat $PACKAGE_EXTENSION_TCZ_LIST)" ]; then
         echo "yes"
         return 0
    else
