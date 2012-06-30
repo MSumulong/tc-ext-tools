@@ -1,0 +1,52 @@
+
+############################################################################################
+#                                                                                          #
+#    package build functions: configure, compile, install, rules, and custom functions     #
+#                                                                                          #
+############################################################################################
+
+## compile
+build_download_elementary() {
+   cd "$PACKAGE_SRC_TEMP"/..
+   echo "downloading elementary"
+   svn co http://svn.enlightenment.org/svn/e/trunk/elementary
+}
+build_compile() {
+
+   build_download_elementary
+
+   cd "$PACKAGE_SOURCE_TOPDIR"
+   ## cmake
+   #cd build
+   make || return 1
+}
+
+## install
+build_install() {
+   mkdir -p $I_ROOT/usr/local/share/enlightenment/data/themes/
+   cp "$PACKAGE_SOURCE_TOPDIR"/efenniht.edj $I_ROOT/usr/local/share/enlightenment/data/themes/
+   chmod "u=rw","g=r","o=r" $I_ROOT/usr/local/share/enlightenment/data/themes/efenniht.edj
+
+   mkdir -p $I_ROOT/usr/local/share/elementary/themes/
+   cp "$PACKAGE_SOURCE_TOPDIR"/elm-efenniht.edj $I_ROOT/usr/local/share/elementary/themes/
+   chmod "u=rw","g=r","o=r" $I_ROOT/usr/local/share/elementary/themes/elm-efenniht.edj
+}
+
+## rules
+build_rules() {
+   tet_load
+   tet_download
+   tet_convert
+   tet_unpack
+   tet_patch
+   tet_compile
+   tet_install
+   tet_split
+   tet_strip
+   tet_create
+   tet_generate
+   tet_check
+   tet_test
+   tet_package
+}
+
