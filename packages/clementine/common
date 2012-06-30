@@ -6,7 +6,7 @@ BUILD_DEPENDS="cmake boost boost-dev taglib taglib-dev liblastfm liblastfm-dev g
                gstreamer gstreamer-dev qt-4.x-base qt-4.x-xml qt-4.x-sql qt-4.x-dbus
                qt-4.x-opengl qt-4.x-webkit qt-4.x-dev protobuf protobuf-dev libplist
                libcdio libcdio-dev qca-ossl qca qca-dev qjson qjson-dev fftw fftw-dev
-               gst-plugins-base gst-plugins-base-dev"
+               gst-plugins-base gst-plugins-base-dev libimobiledevice libimobiledevice-dev"
 
 DESCRIPTION="Clementine is a modern music player and library organiser."
 AUTHOR="David Sansome, John Maguire"
@@ -16,5 +16,6 @@ MAINTAINERS="Arslan S."
 TAGS="music player"
 COMMENTS="---"
 CHANGELOG="2011/01/25 First Version 0.6
-		2011/04/09 Updated to 0.7.1"
-CURRENT="Updated to $VERSION"
+		2011/04/09 Updated to 0.7.1
+		2012/06/03 Updated to 1.0.1"
+CURRENT="Rebuild"

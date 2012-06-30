@@ -17,6 +17,7 @@ build_install() {
    install -m755 -d "${INSTALL_ROOT}/etc/profile.d"
    install -m755 -d "${INSTALL_ROOT}/etc/acpi/events"
    install -m755 -d "${INSTALL_ROOT}/etc/security/console.apps"
+   install -m755 -d "${INSTALL_ROOT}/etc/OpenCL/vendors"
 
    install -m755 -d "${INSTALL_ROOT}/usr/local/lib/X11/modules/dri"
    install -m755 -d "${INSTALL_ROOT}/usr/local/lib/X11/modules/drivers"
@@ -82,6 +83,7 @@ build_install() {
    ln -sf libfglrx_dm.so.1.0 "${INSTALL_ROOT}/usr/local/lib/libfglrx_dm.so"
    ln -sf libatiuki.so.1.0 "${INSTALL_ROOT}/usr/local/lib/libatiuki.so.1"
    ln -sf libatiuki.so.1.0 "${INSTALL_ROOT}/usr/local/lib/libatiuki.so"
+   ln -snf libOpenCL.so.1 "${INSTALL_ROOT}/usr/local/lib/libOpenCL.so"
 
    cd "${PACKAGE_SOURCE_TOPDIR}/common"
 
@@ -113,6 +115,13 @@ build_install() {
    # License
    install -m644 "${PACKAGE_SOURCE_TOPDIR}/LICENSE.TXT" "${INSTALL_ROOT}/usr/local/share/doc/ati-fglrx/ATI_LICENSE.TXT" || return 1
    install -m644 "${PACKAGE_SOURCE_TOPDIR}/LICENSE.TXT" "${INSTALL_ROOT}/usr/local/share/doc/ati-fglrx-kernel-source/ATI_LICENSE.TXT" || return 1
+
+   # OpenCL files
+   cd "${PACKAGE_SOURCE_TOPDIR}/arch/x86" || return 1
+   # amd's vendor file for it's opencl library
+   install -m644 etc/OpenCL/vendors/amdocl32.icd "${I_ROOT}/etc/OpenCL/vendors/" || return 1
+   # clinfo binary
+   install -m755 usr/bin/clinfo "${I_ROOT}/usr/local/bin/" || return 1
 
    # kernel module installer
    install -m755 "${PACKAGE_SRC}/ati-fglrx-kernel-module-installer.sh" "${INSTALL_ROOT}/usr/local/sbin/ati-fglrx-kernel-module-installer"

@@ -1,3 +1,4 @@
+etc/OpenCL/vendors/amdocl32.icd
 etc/acpi/ati-powermode.sh
 etc/acpi/events/a-ac-aticonfig
 etc/acpi/events/a-lid-aticonfig
@@ -15,6 +16,7 @@ usr/local/bin/amdupdaterandrconfig
 usr/local/bin/aticonfig
 usr/local/bin/atiodcli
 usr/local/bin/atiode
+usr/local/bin/clinfo
 usr/local/bin/fgl_glxgears
 usr/local/bin/fglrxinfo
 usr/local/etc/init.d/atieventsd
@@ -38,9 +40,14 @@ usr/local/lib/libAMDXvBA.so.1.0
 usr/local/lib/libGL.so
 usr/local/lib/libGL.so.1
 usr/local/lib/libGL.so.1.2
+usr/local/lib/libOpenCL.so
+usr/local/lib/libOpenCL.so.1
+usr/local/lib/libSlotMaximizerAg.so
+usr/local/lib/libSlotMaximizerBe.so
 usr/local/lib/libXvBAW.so
 usr/local/lib/libXvBAW.so.1
 usr/local/lib/libXvBAW.so.1.0
+usr/local/lib/libamdocl32.so
 usr/local/lib/libatiadlxx.so
 usr/local/lib/libaticalcl.so
 usr/local/lib/libaticaldd.so
