@@ -1,0 +1,2 @@
+to use git as a source use this syntax in the file common:
+SOURCE="git::git@wherever.com:whatever"
