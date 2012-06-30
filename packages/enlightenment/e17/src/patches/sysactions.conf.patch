@@ -1,0 +1,13 @@
+--- a/data/etc/sysactions.conf.in	2012-06-29 16:36:42.000000000 +0200
++++ b/data/etc/sysactions.conf.in	2012-06-29 16:44:41.065358705 +0200
+@@ -43,8 +43,8 @@
+ # user and group name can use glob matches (* == all for example) like the
+ # shell. as can action names allowed or denied. 
+ 
+-action:   halt      /sbin/shutdown -h now
+-action:   reboot    /sbin/shutdown -r now
++action:   halt      [ $BACKUP = 1 ] && filetool.sh -b; exitcheck.sh
++action:   reboot    [ $BACKUP = 1 ] && filetool.sh -b; exitcheck.sh reboot
+ action:   suspend   @SUSPEND@
+ action:   hibernate @HIBERNATE@
+ action:   /bin/mount /bin/mount
