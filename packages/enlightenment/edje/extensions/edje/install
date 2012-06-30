@@ -1,0 +1,4 @@
+usr/local/bin
+usr/local/lib/edje/modules/multisense_factory/*/*.so
+usr/local/lib/edje/utils
+usr/local/lib/*.so*
