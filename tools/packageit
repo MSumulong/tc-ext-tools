@@ -110,6 +110,12 @@ this_main() {
         fi
    fi
 
+   echo "Adding a note to package"
+   cat > "${PACKAGE_PKG_TEMP}/${PACKAGE}"/readme.txt << _EOF
+This package was built by $PACKAGE_MAINTAINER on $DATE using tc-ext-tools.
+tc-ext-tools is a package build system hosted at code.google.com/p/tc-ext-tools
+_EOF
+
    echo -e "Checking if the package $PACKAGE tarball exists ... \c"
    if [ -f "$PACKAGE_PACKAGE" ]; then
         echo "yes"

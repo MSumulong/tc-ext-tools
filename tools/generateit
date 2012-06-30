@@ -65,7 +65,7 @@ this_generate() {
    [ -z "$TAGS" ] && TAGS="$DESCRIPTION"
 
    echo "Creating the extension info"
-   cat > "$PACKAGE_EXTENSION_INFO" << _EOF
+   cat > "$PACKAGE_EXTENSION_TCZ_INFO" << _EOF
 Title:		${PACKAGE_EXTENSION_NAME}.tcz
 Description:	${DESCRIPTION}
 Version:	${VERSION}
