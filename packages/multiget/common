@@ -1,5 +1,5 @@
 PACKAGE="multiget"
-VERSION="svn"
+VERSION="svn~r3"
 SOURCE="svn::https://multiget.svn.sourceforge.net/svnroot/multiget"
 BUILD_DEPENDS="gtk2
 gtk2-dev

@@ -98,20 +98,20 @@ this_main() {
    if [ -f "$PACKAGE_SOURCE_CONV" ]; then
         echo "yes"
         echo "Packaging it instead of the original source"
-        cp -f "$PACKAGE_SOURCE_CONV" "$PACKAGE_PKG_TEMP/$PACKAGE" || return 1
+        cp -f "$PACKAGE_SOURCE_CONV" "$PACKAGE_PKG_TEMP_PACKAGE" || return 1
    else
         echo "no"
         echo -e "Checking if the package source exists ... \c"
         if [ -f "$PACKAGE_SOURCE_ORIG" ]; then
              echo "yes"
-             cp -f "$PACKAGE_SOURCE_ORIG" "$PACKAGE_PKG_TEMP/$PACKAGE" || return 1
+             cp -f "$PACKAGE_SOURCE_ORIG" "$PACKAGE_PKG_TEMP_PACKAGE" || return 1
         else
              echo "no"
         fi
    fi
 
    echo "Adding a note to package"
-   cat > "${PACKAGE_PKG_TEMP}/${PACKAGE}"/readme.txt << _EOF
+   cat > "${PACKAGE_PKG_TEMP_PACKAGE}/readme.txt" << _EOF
 This package was built by $PACKAGE_MAINTAINER on $DATE using tc-ext-tools.
 tc-ext-tools is a package build system hosted at code.google.com/p/tc-ext-tools
 _EOF
@@ -128,7 +128,7 @@ _EOF
    echo "---------------------------------------------------------------"
    echo "Creating the package $PACKAGE tarball"
    echo "---------------------------------------------------------------"
-   tar -C "$PACKAGE_PKG_TEMP" -cvjf "$PACKAGE_PACKAGE" "$PACKAGE" || return 1
+   tar -C "$PACKAGE_PKG_TEMP" -cvjf "$PACKAGE_PACKAGE" "$PACKAGE-$VERSION" || return 1
 
    echo "---------------------------------------------------------------"
    echo "Cleaning the package pkg temporary directory"
