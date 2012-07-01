@@ -55,7 +55,37 @@ this_main() {
 
         if [ "$PACKAGE_SOURCE_URL_TYPE" = "svn" ]; then
              echo "Checking out the svn repository $SOURCE"
-             svn --non-interactive --trust-server-cert co "$SOURCE" "$PACKAGE_SOURCE_TOPDIR" || return 1
+             SVN_CMD="svn --non-interactive --trust-server-cert co $SOURCE $PACKAGE_SOURCE_TOPDIR"
+             if [ -n "$SVN_FLAGS" ]; then
+                  $SVN_CMD $SVN_FLAGS || return 1
+             else
+                  $SVN_CMD || return 1
+             fi
+
+             echo -e "Getting svn repository revision number ... \c"
+             SVN_REVISION=$(grep "Checked out revision" "$PACKAGE_MESSAGE_LOG" | cut -f4 -d" " | sed 's/\.//')
+
+             if [ -n "$SVN_REVISION" -a -z "$SKIP_SVN_REVISION" ]; then
+                  echo "$SVN_REVISION"
+                  VERSION_NEW="svn~r${SVN_REVISION}"
+                  if [ "$VERSION_NEW" != "$VERSION" ]; then
+                       VERSION="$VERSION_NEW"
+
+                       echo "Adjusting the package version according to svn revision number"
+                       sed -i "s/VERSION=.*/VERSION=\"${VERSION}\"/" "$PACKAGE_COMMON" || return 1
+
+                       echo "Renaming the package source top level directory"
+                       SOURCE_TOPDIR="${PACKAGE}-${VERSION}"
+                       mv "$PACKAGE_SOURCE_TOPDIR" "$PACKAGE_SRC_TEMP/$SOURCE_TOPDIR" || return 1
+
+                       PACKAGE_SOURCE_TOPDIR="$PACKAGE_SRC_TEMP/$PACKAGE-$VERSION"
+                       PACKAGE_SOURCE_NAME="${PACKAGE}-${VERSION}.tar.xz"
+                  else
+                       echo "No version change, skipping ..."
+                  fi
+             else
+                  echo "failed!"
+             fi
 
              echo "Creating a tarball from the source"
              tar --exclude-vcs -cvJf "$PACKAGE_SOURCE_NAME" "$SOURCE_TOPDIR" || return 1
