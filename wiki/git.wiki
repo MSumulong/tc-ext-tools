@@ -1,2 +1,24 @@
-to use git as a source use this syntax in the file common:
-SOURCE="git::git@wherever.com:whatever"
+== VCS support in tc-ext-tools ===
+
+Version Control Systems (VCS) such as svn and git supported
+
+=== svn ===
+Set SOURCE in package common
+{{{
+SOURCE="svn::REPOSITORY_URL"
+}}}
+
+The download tool will check out the head revision however if you wish an older revision set SVN_FLAGS
+{{{
+SVN_FLAGS="-rXYZ"
+}}}
+
+Where XYZ is the revision number.
+
+=== git ===
+Set SOURCE in package common
+{{{
+SOURCE="git::REPOSITORY_URL"
+}}}
+
+There is no revision support for git currently.
