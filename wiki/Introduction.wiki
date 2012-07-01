@@ -65,7 +65,7 @@ buildit
 }}}
   * When creating a package for the first time you better advance step by step.
 {{{
-buildit --clean|--load|--download|--convert|--unpack|--patch|--configure|--compile|--install|--split|--strip|--create|--generate|--check|--package|--encrypt|--print|--help
+buildit --clean|--load|--download|--convert|--unpack|--patch|--configure|--compile|--install|--split|--strip|--create|--generate|--check|--test|--package|--encrypt|--print|--help
 }}}
   * There is also custom build function support which can be used for defining custom build rules.
 {{{
