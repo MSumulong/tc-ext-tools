@@ -158,6 +158,14 @@ this_split() {
    if [ -n "$PACKAGE_EXTENSION_ICON" ]; then
         echo "yes"
 
+        if [ -n "$PACKAGE_EXTENSION_DESKTOP_ORIG" ] &&
+           [ "$PACKAGE_EXTENSION_DESKTOP_ORIG" != "$PACKAGE_EXTENSION_DESKTOP" ]; then
+             [ -f "$PACKAGE_EXTENSION_DESKTOP_ORIG" ] || { echo "Original desktop file $PACKAGE_EXTENSION_DESKTOP_ORIG not found" ; return 1; }
+             echo "Renaming desktop file to match with extension name"
+             sudo install -Dm644 "$PACKAGE_EXTENSION_DESKTOP_ORIG" "$PACKAGE_EXTENSION_DESKTOP"
+             sudo rm "$PACKAGE_EXTENSION_DESKTOP_ORIG"
+        fi
+
         echo -e "Checking if the extension desktop file exists ... \c"
         if [ -f "$PACKAGE_EXTENSION_DESKTOP" ]; then
              echo "yes"
