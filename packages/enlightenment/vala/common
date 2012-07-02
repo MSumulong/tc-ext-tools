@@ -1,0 +1,18 @@
+PACKAGE="vala"
+VERSION="0.17.2"
+SOURCE="http://download.gnome.org/sources/vala/0.17/$PACKAGE-0.17.2.tar.xz"
+BUILD_DEPENDS="glib2-dev"
+
+DESCRIPTION="Compiler for the GObject type system"
+AUTHOR="Joerg Billeter, Raffaele Sandrini"
+SITE="http://live.gnome.org/Vala"
+COPYING="GPL-2.1"
+MAINTAINERS="TaoTePuh, jls_legalize <jlslegalize@gmail.com>"
+TAGS="Compiler GObject type system"
+COMMENTS="Vala is a new programming language that aims to bring modern
+                programming language features to GNOME developers without
+                imposing any additional runtime requirements and without
+                using a different ABI compared to applications and libraries
+                written in C. "
+CHANGELOG="2010/08/25 First Version, 0.9.7"
+CURRENT="Updated to ${VERSION}"
