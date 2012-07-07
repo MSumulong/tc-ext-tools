@@ -1,12 +1,13 @@
 PACKAGE="elementary"
-VERSION="1.0.1"
-SOURCE="http://download.enlightenment.org/releases/${PACKAGE}-${VERSION}.tar.bz2"
+VERSION="svn~r73410"
+SOURCE="svn::http://svn.enlightenment.org/svn/e/trunk/$PACKAGE"
 BUILD_DEPENDS="ethumb-dev.tcz 
 	efreet-dev.tcz
 	libeweather-dev.tcz
 	curl-dev.tcz
 	libcares-dev.tcz
-	e_dbus-dev.tcz"
+	e_dbus-dev.tcz
+	cvs"
 
 DESCRIPTION="Enlightenment's basic widget set, based on EFL with focus mobile touch-screen devices"
 AUTHOR="See http://enlightenment.org/p.php?p=contact&l=en"

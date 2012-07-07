@@ -1,6 +1,6 @@
 PACKAGE="emotion"
-VERSION="1.0.1"
-SOURCE="http://download.enlightenment.org/releases/${PACKAGE}-${VERSION}.tar.bz2"
+VERSION="svn~r73410"
+SOURCE="svn::http://svn.enlightenment.org/svn/e/trunk/$PACKAGE"
 BUILD_DEPENDS="eio-dev.tcz
 		edje-dev.tcz
 		eeze-dev.tcz
@@ -22,5 +22,6 @@ CHANGELOG="2010/11/17  First version
 		2011/12/01 Updated to 0.2.0.65643
 		2012/04/05 Updated to 1.0.0-alpha, disabled IPv6
 		2012/04/23 Updated to 1.0.0-beta. Vlc disabled
-		2012/04/27 Updated to 1.0.0. Vlc enabled"
+		2012/04/27 Updated to 1.0.0. Vlc enabled
+		012/06/11 Updated to 1.0.1"
 CURRENT="Updated to ${VERSION}"

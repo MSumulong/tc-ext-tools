@@ -9,7 +9,7 @@
 build_configure() {
 
    ## autotools
-   ./configure --prefix=/usr/local || return 1
+   ./autogen.sh --prefix=/usr/local || return 1
 
    ## cmake
    #mkdir build
@@ -83,6 +83,7 @@ build_rules() {
    tet_create
    tet_generate
    tet_check
+   tet_test
    tet_package
 
 }

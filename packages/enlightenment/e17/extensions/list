@@ -1,5 +1,7 @@
 usr/local/bin/enlightenment
+usr/local/bin/enlightenment_filemanager
 usr/local/bin/enlightenment_imc
+usr/local/bin/enlightenment_open
 usr/local/bin/enlightenment_remote
 usr/local/bin/enlightenment_start
 usr/local/etc/enlightenment/sysactions.conf
@@ -462,6 +464,7 @@ usr/local/lib/enlightenment/utils/enlightenment_sys
 usr/local/lib/enlightenment/utils/enlightenment_thumb
 usr/local/lib/pkgconfig/enlightenment.pc
 usr/local/lib/pkgconfig/everything.pc
+usr/local/share/applications/enlightenment_filemanager.desktop
 usr/local/share/enlightenment/AUTHORS
 usr/local/share/enlightenment/COPYING
 usr/local/share/enlightenment/data/backgrounds/Dark_Gradient.edj
