@@ -44,7 +44,7 @@ this_copy(){
   COPYDIR="$1"
   cp -f "$PACKAGE_EXTENSION_TCZ" "$PACKAGE_EXTENSION_TCZ_MD5_TXT" "$COPYDIR" || return 1
   if [ -f "$PACKAGE_EXTENSION_TCZ_DEP" ]; then
-       cp -f "$PACKAGE_EXTENSION_TCZ_DEP" "${TCE_DIR}/optional" || return 1
+       cp -f "$PACKAGE_EXTENSION_TCZ_DEP" "$COPYDIR" || return 1
   fi
 
 }
