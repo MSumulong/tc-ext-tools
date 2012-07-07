@@ -39,6 +39,16 @@ if [ -n "$HAVE_TET_CREATE" -a ! -f "$PACKAGE_CREATE_STAMP" ]; then
      exit 1
 fi
 
+this_copy(){
+
+  COPYDIR="$1"
+  cp -f "$PACKAGE_EXTENSION_TCZ" "$PACKAGE_EXTENSION_TCZ_MD5_TXT" "$COPYDIR" || return 1
+  if [ -f "$PACKAGE_EXTENSION_TCZ_DEP" ]; then
+       cp -f "$PACKAGE_EXTENSION_TCZ_DEP" "${TCE_DIR}/optional" || return 1
+  fi
+
+}
+
 this_test() {
 
    echo -e "Checking if the extension is installed ... \c"
@@ -46,14 +56,12 @@ this_test() {
        echo "yes"
        echo "Copying the extension to tce upgrade directory"
        [ -d "${TCE_DIR}/optional/upgrade" ] || mkdir "${TCE_DIR}/optional/upgrade"
-       cp -f "$PACKAGE_EXTENSION_TCZ" \
-          "$PACKAGE_EXTENSION_TCZ_DEP" "${TCE_DIR}/optional/upgrade" || return 1
+       this_copy "${TCE_DIR}/optional/upgrade" || return 1
        echo "You must reboot to test $PACKAGE_EXTENSION_NAME"
    else
        echo "no"
        echo "Copying the extension to tce optional directory"
-       cp -f "$PACKAGE_EXTENSION_TCZ" \
-          "$PACKAGE_EXTENSION_TCZ_DEP" "${TCE_DIR}/optional" || return 1
+       this_copy "${TCE_DIR}/optional" || return 1
        echo "To test it: tce-load -i $PACKAGE_EXTENSION_NAME"
    fi
 
