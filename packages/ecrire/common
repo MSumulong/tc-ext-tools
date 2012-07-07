@@ -1,0 +1,15 @@
+PACKAGE="ecrire"
+VERSION="svn~r73419"
+SOURCE="svn::http://svn.enlightenment.org/svn/e/trunk//$PACKAGE"
+BUILD_DEPENDS="cmake
+		elementary-dev"
+
+DESCRIPTION="Text Editor"
+AUTHOR="Tom Hacohen <tom@stosb.com>"
+SITE="enlightenment.org"
+COPYING="GPL-2"
+MAINTAINERS="jls_legalize <jlslegalize@gmail.com>"
+TAGS="text editor"
+COMMENTS="---"
+CHANGELOG="---"
+CURRENT="First Version "
