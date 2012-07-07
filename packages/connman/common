@@ -1,0 +1,23 @@
+PACKAGE="connman"
+VERSION="1.3"
+SOURCE="http://www.kernel.org/pub/linux/network/connman/${PACKAGE}-${VERSION}.tar.xz"
+BUILD_DEPENDS="dbus-dev
+	wpa_supplicant
+	glib2-dev
+	gnutls-dev
+	iptables"
+
+DESCRIPTION="a daemon for managing internet connections"
+AUTHOR="Marcel Holtmann and Samuel Ortiz"
+SITE="http://connman.net"
+COPYING="GPL-2"
+MAINTAINERS="jls_legalize <jlslegalize@gmail.com>"
+TAGS="daemon internet connections"
+COMMENTS="Add to /opt/bootlocal.sh :
+			/usr/local/etc/init.d/dbus start
+			connmand
+		U need  dbus-python-2.7 to use the scripts
+		located in /usr/local/lib/connman/scripts"
+CHANGELOG="2011/11/16 first version 0.76
+		2012/04/29 Updated to 0.77"
+CURRENT="Updated to ${VERSION}"

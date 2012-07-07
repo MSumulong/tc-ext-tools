@@ -1,0 +1,15 @@
+usr/local/etc/dbus-1/system.d/connman.conf
+usr/local/include/connman/device.h
+usr/local/include/connman/inet.h
+usr/local/include/connman/ipconfig.h
+usr/local/include/connman/log.h
+usr/local/include/connman/network.h
+usr/local/include/connman/notifier.h
+usr/local/include/connman/plugin.h
+usr/local/include/connman/resolver.h
+usr/local/include/connman/service.h
+usr/local/include/connman/storage.h
+usr/local/include/connman/types.h
+usr/local/include/connman/version.h
+usr/local/lib/pkgconfig/connman.pc
+usr/local/sbin/connmand
