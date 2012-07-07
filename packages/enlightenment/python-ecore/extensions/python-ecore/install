@@ -1,0 +1,4 @@
+usr/local/lib/python2.7/site-packages/ecore/*.py
+usr/local/lib/python2.7/site-packages/ecore/*.so
+usr/local/lib/python2.7/site-packages/ecore/*/*.py
+usr/local/lib/python2.7/site-packages/ecore/*/*.so
