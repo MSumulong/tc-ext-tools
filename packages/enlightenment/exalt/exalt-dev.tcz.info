@@ -1,0 +1,13 @@
+Title:		exalt-dev.tcz
+Description:	efl based front end network manager dev files
+Version:	svn 53237
+Author:		See http://enlightenment.org/p.php?p=contact&l=en
+Original-site:	enlightenment.org
+Copying-policy:	GPL
+Size:		104.0K
+Extension_by:	Althalus,jls_legalize (unsenepopiu at tin dot it)
+Comments:	dev files
+				
+		This extension is PPI compatible
+Change-log:	-------
+Current:	2010/10/10 First Version svn 53237

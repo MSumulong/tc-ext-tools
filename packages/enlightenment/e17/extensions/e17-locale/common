@@ -1,0 +1,5 @@
+COMMENTS="In order to have e17 localized u have 3 options:
+		1- put this extension in the copy2fs.lst
+	        2- create copy2fs.flg
+		3- in the e17 configuration, advanced, directory,
+		   messages add /usr/local/share/locale"
