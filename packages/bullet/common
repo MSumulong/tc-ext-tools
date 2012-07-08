@@ -1,5 +1,5 @@
 PACKAGE="bullet"
-VERSION="2.78-r2387"
+VERSION="2.80-rev2531"
 SOURCE="http://bullet.googlecode.com/files/bullet-${VERSION}.tgz"
 BUILD_DEPENDS="cmake
 freeglut
