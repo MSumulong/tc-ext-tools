@@ -1,0 +1,7 @@
+usr/local/bin
+usr/local/lib/*.so*
+x-usr/local/include
+x-usr/local/lib/*.la
+x-usr/local/lib/pkgconfig
+x-usr/local/share/gtk-doc
+x-usr/local/share/locale
