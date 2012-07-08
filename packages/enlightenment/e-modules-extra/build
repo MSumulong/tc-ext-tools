@@ -8,7 +8,7 @@
 ## configure
 build_configure() {
    rm -rf exalt-client
-   rm -rf eektool
+#   rm -rf eektool
    rm -rf itask-ng
    rm -rf tiling
 
@@ -104,6 +104,7 @@ build_rules() {
    tet_create
    tet_generate
    tet_check
+   tet_test
    tet_package
 
 }

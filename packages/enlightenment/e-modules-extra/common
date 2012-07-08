@@ -1,5 +1,5 @@
 PACKAGE="e-modules-extra"
-VERSION="svn20120611"
+VERSION="svn~r73476"
 SOURCE="svn::http://svn.enlightenment.org/svn/e/trunk/E-MODULES-EXTRA"
 BUILD_DEPENDS="cvs.tcz
 	e17-dev.tcz
@@ -8,6 +8,7 @@ BUILD_DEPENDS="cvs.tcz
 	libmpd.tcz
 	elementary-dev.tcz
 	emprint.tcz
+	libssh2-dev.tcz
 	curl-dev.tcz"
 
 DESCRIPTION="Extra modules for The Enlightenment DR17 Desktop Environment"
@@ -16,21 +17,7 @@ SITE="enlightenment.org"
 COPYING="GPL-2"
 MAINTAINERS="jls_legalize (jlslegalize at gmail dot com)"
 TAGS="Extra modules Enlightenment DR17 Desktop Environment"
-COMMENTS="In case u use this extension in loop u need to add the 
-                following dir to the enlightenment search directories 
-                configurations (module section):
-                /tmp/tcloop/e-modules-extra/usr/local/lib/enlightenment/modules/
-		optional deps:
-	                libeweather for eweather
-	                emprint for screenshot
-	                libmpd & mpd or mpd-minimal for mpdule
-	                hal for places
-	                elementary for elfe
-			curl for everything-websearch
-		modules left out: exalt-client 	(exalt.tcz doesn't exist)
-				  eektool 	(error during compiling)
-				  itask-ng 	(replaced by engage)
-				  tiling 	(already in e17)"
+COMMENTS="---"
 CHANGELOG="2010/10/13 First version svn-3237
                 2010/11/17 Updated to svn-4629
                 2011/04/24 Updated to svn-58869
@@ -38,5 +25,6 @@ CHANGELOG="2010/10/13 First version svn-3237
                 2011/12/01 Updated to svn-65784 with help by enry44 AT jabber dot linux dot it
                 2012/04/06 Updated to svn-69935
                 2012/04/23 Updated to svn-70400
-	        2012/04/27 Updated to svn-70512. Added drawer module"
-CURRENT="Updated to ${VERSION}"
+	        2012/04/27 Updated to svn-70512. Added drawer module
+		2012/06/12 Updated"
+CURRENT="Updated to ${VERSION}, added eektool module"

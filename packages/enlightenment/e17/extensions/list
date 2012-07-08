@@ -363,6 +363,10 @@ usr/local/lib/enlightenment/modules/pager/e-module-pager.edj
 usr/local/lib/enlightenment/modules/pager/linux-gnu-i686-ver-pre-svn-08/module.la
 usr/local/lib/enlightenment/modules/pager/linux-gnu-i686-ver-pre-svn-08/module.so
 usr/local/lib/enlightenment/modules/pager/module.desktop
+usr/local/lib/enlightenment/modules/physics/e-module-physics.edj
+usr/local/lib/enlightenment/modules/physics/linux-gnu-i686-ver-pre-svn-08/module.la
+usr/local/lib/enlightenment/modules/physics/linux-gnu-i686-ver-pre-svn-08/module.so
+usr/local/lib/enlightenment/modules/physics/module.desktop
 usr/local/lib/enlightenment/modules/shot/e-module-shot.edj
 usr/local/lib/enlightenment/modules/shot/linux-gnu-i686-ver-pre-svn-08/module.la
 usr/local/lib/enlightenment/modules/shot/linux-gnu-i686-ver-pre-svn-08/module.so
@@ -456,7 +460,6 @@ usr/local/lib/enlightenment/modules/xkbswitch/module.desktop
 usr/local/lib/enlightenment/preload/e_precache.la
 usr/local/lib/enlightenment/preload/e_precache.so
 usr/local/lib/enlightenment/utils/enlightenment_alert
-usr/local/lib/enlightenment/utils/enlightenment_backlight
 usr/local/lib/enlightenment/utils/enlightenment_fm
 usr/local/lib/enlightenment/utils/enlightenment_fm_op
 usr/local/lib/enlightenment/utils/enlightenment_init

@@ -1,33 +1,39 @@
 PACKAGE="e17"
-VERSION="svn~r73450"
+VERSION="svn~r73475"
 SOURCE="svn::http://svn.enlightenment.org/svn/e/trunk/e"
 BUILD_DEPENDS="alsa-dev
 	edje-dev
-	eeze-dev
 	efreet-dev
 	e_dbus-dev
-	cvs"
-DESCRIPTION="a clean and tiny event loop library with many modules"
+	cvs
+	eeze-dev
+	ephysics-dev"
+DESCRIPTION="The Enlightenment DR17 Desktop Environment"
 AUTHOR="See http://enlightenment.org/p.php?p=contact&l=e"
 SITE="enlightenment.org"
 COPYING="BSD"
 MAINTAINERS="Althalus, jls_legalize (jlslegalize at gmail dot com)"
-TAGS="clean tiny event loop library many modules"
+TAGS="Enlightenment DR17 Desktop Environment"
 COMMENTS="-----"
-CHANGELOG="2010/03/06 First release
-                2010/03/31 Updated SVN version
-                2010/03/31 Updated SVN version
-                2010/10/09 Updated to version 1.0.0.beta
-                2010/11/14 Updated to version 1.0.0.beta2
-                2010/12/29 Updated to version 1.0.0.beta3
-                2011/02/03 Updated to version 1.0.0
-                2011/03/12 Updated to version 57707
-                2011/06/05 Updated to 1.0.1
-                2011/06/09 Updated to svn-60146
-                2011/11/25 Updated to svn-65595
-                2011/12/02 Updated to 1.1.0
-                2012/03/26 Updated to 1.2.0-alpha, disabled openssl
-                2012/04/22 Updated to 1.2.0-beta, re-enabled openssl
-                2012/04/27 Updated to 1.2.0, re-enabled openssl
-		2012/06/10 Updated to 1.2.1, re-enabled openssl"
-CURRENT="Updated to ${VERSION}"
+CHANGELOG="First release 2010-03-06
+		2010-03-08 Fixed permissions, fixed mixer gadget, set wm
+		2010-03-31 Updated SVN Version
+		2010/10/01 Updated to 0.16.999.52908
+		2010/10/09 Updated to 0.16.999.52995
+		2010/10/11 Rebuilt due to invalid host, target, build
+		2010/11/14 Updated to 0.16.999.54504
+		2010/11/14 Updated to 0.16.999.55225 
+		2011/02/03 Updated to 0.16.999.56699
+		2011/03/20 Updated to 0.16.999.57925 
+		2011/06/09 Updated to 0.16.999.60138
+		2011/11/25 Updated to 0.16.999.65589
+		2011/12/02 Updated to 0.16.999.65643
+		2012/03/27 Updated to 0.16.999.69662. added 
+			openssl-1.0.0.tcz & libssh2.tcz as dep
+			Enabled mount & device hal. Illume2 module disabled
+		2012/04/22 Updated to 0.16.999.70387 
+			Removed openssl-1.0.0.tcz dep 
+			Re-enabled Illume2 module
+		2012/04/27 Updated to 0.16.999.70512
+		2012/06/10 Updated to 0.16.999.71888"
+CURRENT="Updated to ${VERSION}. new module: physics"

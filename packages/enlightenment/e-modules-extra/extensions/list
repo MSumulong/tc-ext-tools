@@ -172,6 +172,15 @@ usr/local/lib/enlightenment/modules/drawer/locale/tr/LC_MESSAGES/drawer.mo
 usr/local/lib/enlightenment/modules/drawer/locale/uk/LC_MESSAGES/drawer.mo
 usr/local/lib/enlightenment/modules/drawer/locale/zh_CN/LC_MESSAGES/drawer.mo
 usr/local/lib/enlightenment/modules/drawer/module.desktop
+usr/local/lib/enlightenment/modules/eektool/e-module-eektool.edj
+usr/local/lib/enlightenment/modules/eektool/images/icon.png
+usr/local/lib/enlightenment/modules/eektool/linux-gnu-i686-ver-pre-svn-08/module.a
+usr/local/lib/enlightenment/modules/eektool/linux-gnu-i686-ver-pre-svn-08/module.la
+usr/local/lib/enlightenment/modules/eektool/linux-gnu-i686-ver-pre-svn-08/module.so
+usr/local/lib/enlightenment/modules/eektool/locale/de/LC_MESSAGES/eektool.mo
+usr/local/lib/enlightenment/modules/eektool/locale/fr/LC_MESSAGES/eektool.mo
+usr/local/lib/enlightenment/modules/eektool/locale/it/LC_MESSAGES/eektool.mo
+usr/local/lib/enlightenment/modules/eektool/module.desktop
 usr/local/lib/enlightenment/modules/elfe/default.edj
 usr/local/lib/enlightenment/modules/elfe/linux-gnu-i686-ver-pre-svn-08/module.a
 usr/local/lib/enlightenment/modules/elfe/linux-gnu-i686-ver-pre-svn-08/module.la

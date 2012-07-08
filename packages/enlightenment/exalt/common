@@ -1,9 +1,9 @@
 PACKAGE="exalt"
 VERSION="svn-"
-SOURCE=""
+SOURCE="svn::http://svn.enlightenment.org/svn/e/trunk/$PACKAGE"
 BUILD_DEPENDS=""
 
-DESCRIPTION="A brief description of package."
+DESCRIPTION="efl based front end network manager"
 AUTHOR="authors of package"
 SITE="http://www.package.com"
 COPYING="GPL-2"
