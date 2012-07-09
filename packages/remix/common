@@ -1,0 +1,15 @@
+PACKAGE="remix"
+VERSION="0.2.4"
+SOURCE="http://www.metadecks.org/software/remix/download/$PACKAGE-$VERSION.tar.gz"
+BUILD_DEPENDS=""
+
+DESCRIPTION="library for audio sequencing and mixing"
+
+AUTHOR="Conrad Parker <conrad@metadecks.org>"
+SITE="http://www.metadecks.org/software/remix/"
+COPYING="GPL-2"
+MAINTAINERS="jls_legalize <jlslegalize@gmail.com>"
+TAGS="library audio sequencing mixing"
+COMMENTS="---"
+CHANGELOG="---"
+CURRENT="First Version"
