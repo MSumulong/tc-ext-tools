@@ -1,0 +1,32 @@
+--- a/configure.ac	2012-07-08 15:14:33.533304659 +0200
++++ b/configure.ac	2012-07-08 15:53:09.599903937 +0200
+@@ -138,10 +138,10 @@
+     eina >= 1.2.99
+     evas >= 1.2.99
+     ecore >= 1.2.99
+-    bullet >= 2.79
++    bullet >= VERSION
+    ])
+ 
+-requirement_ephysics="bullet >= 2.79 ecore >= 1.2.99 evas >= 1.2.99 eina >= 1.2.99 ${requirement_ephysics}"
++requirement_ephysics="bullet >= VERSION ecore >= 1.2.99 evas >= 1.2.99 eina >= 1.2.99 ${requirement_ephysics}"
+ 
+ ### Checks for header files
+ AC_CHECK_HEADERS([locale.h sys/resource.h])
+@@ -197,7 +197,7 @@
+     evas >= 1.2.99
+     ecore >= 1.2.99
+     elementary >= 1.0.99
+-    bullet >= 2.79
++    bullet >= VERSION
+    ])
+ fi
+ 
+@@ -208,7 +208,6 @@
+ Makefile
+ data/Makefile
+ data/logo_images/Makefile
+-data/themes/Makefile
+ doc/Makefile
+ doc/Doxyfile
+ src/Makefile

@@ -1,0 +1,15 @@
+PACKAGE="ephysics"
+VERSION="svn~r73478"
+SOURCE="svn::http://svn.enlightenment.org/svn/e/trunk/$PACKAGE"
+BUILD_DEPENDS="bullet-dev ecore-dev edje"
+
+DESCRIPTION="A library that manages Ecore, Evas and Bullet Physics into	an easy to use way."
+AUTHOR="Bruno Dilly <bdilly@profusion.mobi>
+	Leandro Dorileo <dorileo@profusion.mobi>"
+SITE="http://trac.enlightenment.org/e/wiki/Enki"
+COPYING="GPL-2"
+MAINTAINERS="jls_legalize <jlslegalize@gmail.com>"
+TAGS="library Ecore Evas Bullet Physics"
+COMMENTS="---"
+CHANGELOG="---"
+CURRENT="First Version"
