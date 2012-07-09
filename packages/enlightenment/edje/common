@@ -1,18 +1,21 @@
 PACKAGE="edje"
-VERSION="svn20120629"
+VERSION="svn~r73502"
 SOURCE="svn::http://svn.enlightenment.org/svn/e/trunk/${PACKAGE}"
 BUILD_DEPENDS="eina-dev
-libtool-dev
-ecore-dev
-embryo-dev
-libsndfile-dev
-flac-dev
-libvorbis-dev
-libogg-dev
-lua-dev
-libsndfile
-flac
-libvorbis"
+	libtool-dev
+	ecore-dev
+	embryo-dev
+	libsndfile-dev
+	flac-dev
+	libvorbis-dev
+	libogg-dev
+	lua-dev
+	libsndfile
+	flac
+	libvorbis
+	eio-dev
+	remix-dev
+	lua"
 DESCRIPTION="a complex graphical design & layout library based on Evas"
 AUTHOR=" See http://enlightenment.org/p.php?p=contact&l=en"
 SITE="enlightenment.org"

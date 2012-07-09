@@ -1,5 +1,5 @@
 PACKAGE="eet"
-VERSION="svn20120628"
+VERSION="svn~r73499"
 SOURCE="svn::http://svn.enlightenment.org/svn/e/trunk/${PACKAGE}"
 BUILD_DEPENDS="eina-dev
 	libtool-dev
@@ -10,7 +10,7 @@ DESCRIPTION="a tiny library designed to write an arbitary set of chunks of data 
 AUTHOR="See http://enlightenment.org/p.php?p=contact&l=en"
 SITE="enlightenment.org"
 COPYING="GPL-2"
-MAINTAINERS="Althalus, jls_legalize (jlslegalize at gmail dot com)"
+MAINTAINERS="Althalus, jls_legalize <jlslegalize@gmail.com>"
 TAGS="a tiny library designed to write an arbitary set of chunks of data to a file"
 COMMENTS="---"
 CHANGELOG="2010/03/06 First release

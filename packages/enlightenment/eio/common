@@ -1,5 +1,5 @@
 PACKAGE="eio"
-VERSION="svn20120629"
+VERSION="svn~r73503"
 SOURCE="svn::http://svn.enlightenment.org/svn/e/trunk/${PACKAGE}"
 BUILD_DEPENDS="eio
 	ecore-dev"

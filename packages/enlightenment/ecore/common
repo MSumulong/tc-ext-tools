@@ -1,5 +1,5 @@
 PACKAGE="ecore"
-VERSION="svn~r73412"
+VERSION="svn~r73502"
 SOURCE="svn::http://svn.enlightenment.org/svn/e/trunk/${PACKAGE}"
 BUILD_DEPENDS="gettext
 	libtool-dev

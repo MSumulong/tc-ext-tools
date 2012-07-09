@@ -4,6 +4,7 @@ usr/local/bin/edje_external_inspector
 usr/local/bin/edje_inspector
 usr/local/bin/edje_player
 usr/local/bin/edje_recc
+usr/local/bin/edje_watch
 usr/local/include/edje-1/Edje.h
 usr/local/include/edje-1/Edje_Edit.h
 usr/local/lib/edje/modules/multisense_factory/linux-gnu-i686-1.0.0/module.la
@@ -13,8 +14,10 @@ usr/local/lib/libedje.a
 usr/local/lib/libedje.la
 usr/local/lib/libedje.so
 usr/local/lib/libedje.so.1
-usr/local/lib/libedje.so.1.2.99
+usr/local/lib/libedje.so.1.6.99
 usr/local/lib/pkgconfig/edje.pc
+usr/local/lib/remix/libeet_sndfile_reader.la
+usr/local/lib/remix/libeet_sndfile_reader.so
 usr/local/share/edje/examples/Vera.ttf
 usr/local/share/edje/examples/animations.edc
 usr/local/share/edje/examples/animations2.c

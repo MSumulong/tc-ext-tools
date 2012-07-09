@@ -1,8 +1,8 @@
 PACKAGE="eeze"
-VERSION="svn20120629"
+VERSION="svn~r73504"
 SOURCE="svn::http://svn.enlightenment.org/svn/e/trunk/${PACKAGE}"
 BUILD_DEPENDS="ecore-dev
-udev-dev"
+	udev-dev"
 DESCRIPTION="a library for manipulating devices through udev"
 AUTHOR="See http://enlightenment.org/p.php?p=contact&l=e"
 SITE="enlightenment.org"

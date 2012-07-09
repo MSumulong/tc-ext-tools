@@ -1,5 +1,5 @@
 PACKAGE="e17"
-VERSION="svn~r73475"
+VERSION="svn~r73504"
 SOURCE="svn::http://svn.enlightenment.org/svn/e/trunk/e"
 BUILD_DEPENDS="alsa-dev
 	edje-dev
@@ -7,6 +7,7 @@ BUILD_DEPENDS="alsa-dev
 	e_dbus-dev
 	cvs
 	eeze-dev
+	eio-dev
 	ephysics-dev"
 DESCRIPTION="The Enlightenment DR17 Desktop Environment"
 AUTHOR="See http://enlightenment.org/p.php?p=contact&l=e"

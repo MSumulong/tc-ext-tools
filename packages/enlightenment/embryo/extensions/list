@@ -4,6 +4,6 @@ usr/local/lib/libembryo.a
 usr/local/lib/libembryo.la
 usr/local/lib/libembryo.so
 usr/local/lib/libembryo.so.1
-usr/local/lib/libembryo.so.1.2.99
+usr/local/lib/libembryo.so.1.6.99
 usr/local/lib/pkgconfig/embryo.pc
 usr/local/share/embryo/include/default.inc

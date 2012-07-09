@@ -8,3 +8,5 @@ flac-dev.tcz
 libvorbis-dev.tcz
 libogg-dev.tcz
 lua-dev.tcz
+remix-dev.tcz
+eio-dev.tcz

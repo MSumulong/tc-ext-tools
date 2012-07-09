@@ -1,5 +1,5 @@
 PACKAGE="embryo"
-VERSION="svn20120629"
+VERSION="svn~r73502"
 SOURCE="svn::http://svn.enlightenment.org/svn/e/trunk/${PACKAGE}"
 BUILD_DEPENDS="eina-dev
 		libtool-dev"
@@ -8,7 +8,7 @@ AUTHOR=" See http://enlightenment.org/p.php?p=contact&l=en"
 SITE="enlightenment.org"
 COPYING="BSD"
 MAINTAINERS="jls_legalize (jlslegalize at gmail dot com)"
-TAGS=" tiny library designed interpret limited Small programs compiled by included compiler embryo_cc"
+TAGS="tiny library designed interpret limited Small programs compiled by included compiler embryo_cc"
 COMMENTS="One of the core libraries forming the EFL
 		extension made using http://code.google.com/p/tc-ext-tools/"
 CHANGELOG="2010/03/06 First release

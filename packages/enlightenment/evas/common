@@ -1,5 +1,5 @@
 PACKAGE="evas"
-VERSION="svn~r73411"
+VERSION="svn~r73499"
 SOURCE="svn::http://svn.enlightenment.org/svn/e/trunk/${PACKAGE}"
 BUILD_DEPENDS="eet-dev
 	fontconfig-dev

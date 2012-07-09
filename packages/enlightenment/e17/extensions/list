@@ -460,6 +460,7 @@ usr/local/lib/enlightenment/modules/xkbswitch/module.desktop
 usr/local/lib/enlightenment/preload/e_precache.la
 usr/local/lib/enlightenment/preload/e_precache.so
 usr/local/lib/enlightenment/utils/enlightenment_alert
+usr/local/lib/enlightenment/utils/enlightenment_backlight
 usr/local/lib/enlightenment/utils/enlightenment_fm
 usr/local/lib/enlightenment/utils/enlightenment_fm_op
 usr/local/lib/enlightenment/utils/enlightenment_init
@@ -471,11 +472,17 @@ usr/local/share/applications/enlightenment_filemanager.desktop
 usr/local/share/enlightenment/AUTHORS
 usr/local/share/enlightenment/COPYING
 usr/local/share/enlightenment/data/backgrounds/Dark_Gradient.edj
+usr/local/share/enlightenment/data/backgrounds/Darkconcrete.edj
 usr/local/share/enlightenment/data/backgrounds/Japanesemaple.edj
+usr/local/share/enlightenment/data/backgrounds/Lakegrass.edj
 usr/local/share/enlightenment/data/backgrounds/Light_Gradient.edj
 usr/local/share/enlightenment/data/backgrounds/Mossstring.edj
+usr/local/share/enlightenment/data/backgrounds/Newgrowth.edj
+usr/local/share/enlightenment/data/backgrounds/Skywall.edj
+usr/local/share/enlightenment/data/backgrounds/Stringflower.edj
 usr/local/share/enlightenment/data/backgrounds/Wetgrass.edj
 usr/local/share/enlightenment/data/backgrounds/Wetleaf.edj
+usr/local/share/enlightenment/data/backgrounds/Whiterock.edj
 usr/local/share/enlightenment/data/config/default/e.cfg
 usr/local/share/enlightenment/data/config/default/icon.png
 usr/local/share/enlightenment/data/config/default/profile.desktop

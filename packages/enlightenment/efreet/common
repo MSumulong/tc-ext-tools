@@ -1,15 +1,15 @@
 PACKAGE="efreet"
-VERSION="svn20120629"
+VERSION="svn~r73504"
 SOURCE="svn::http://svn.enlightenment.org/svn/e/trunk/${PACKAGE}"
 BUILD_DEPENDS="libtool-dev
-ecore-dev"
+	ecore-dev
+	cvs"
 DESCRIPTION=" a library designed to help apps work several of the Freedesktop.org standards regarding Icons, Desktop files and Menu"
 AUTHOR=" See http://enlightenment.org/p.php?p=contact&l=en"
 SITE="enlightenment.org"
 COPYING="BSD"
 MAINTAINERS="Althalus, jls_legalize <jlslegalize@gmail.com>"
-TAGS="library designed help apps work several Freedesktop.org standards rega
-rding Icons Desktop files Menu"
+TAGS="library Freedesktop.org Icons Desktop files Menu"
 COMMENTS="One of the core libraries forming the EFL
 		extension made using http://code.google.com/p/tc-ext-tools/"
 CHANGELOG="2010/03/06 First release 

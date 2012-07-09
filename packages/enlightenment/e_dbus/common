@@ -1,9 +1,9 @@
 PACKAGE="e_dbus"
-VERSION="svn20120621"
+VERSION="svn~r73504"
 SOURCE="svn::http://svn.enlightenment.org/svn/e/trunk/${PACKAGE}"
 BUILD_DEPENDS="dbus-dev
-libtool-dev
-ecore-dev"
+	libtool-dev
+	ecore-dev"
 
 DESCRIPTION="A brief description of package."
 AUTHOR="Brian Mattern <rephorm@rephorm.com>

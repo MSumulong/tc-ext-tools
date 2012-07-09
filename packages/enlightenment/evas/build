@@ -9,9 +9,20 @@
 build_configure() {
 
    ## autotools
-   ./autogen.sh --enable-line-dither-mask \
-	--enable-small-dither-mask \
-	--disable-install-examples || return 1
+   ./autogen.sh	\
+	--enable-image-loader-eet \
+	--enable-image-loader-jpeg \
+	--enable-image-loader-wbmp \
+	--enable-image-loader-ico \
+	--enable-image-loader-xpm \
+	--enable-image-loader-psd \
+	--enable-image-loader-pmaps \
+	--enable-image-loader-bmp \
+	--disable-install-examples \
+	|| return 1
+#--enable-buffer=static \
+#	--enable-static-software-generic \
+
 
    ## cmake
    #mkdir build
@@ -68,17 +79,7 @@ build_install() {
    #scons prefix="$I_ROOT/usr/local" install || return 1
 
 }
-build_cp2tce() {
-	echo "copying the packages in the tce dir"
 
-	cp $PACKAGE_PKG/$PACKAGE/$PACKAGE.tcz "${TCE_DIR}/optional" 
-	cp $PACKAGE_PKG/$PACKAGE/$PACKAGE.tcz.md5.txt "${TCE_DIR}/optional" 
-	cp $PACKAGE_PKG/$PACKAGE/$PACKAGE.tcz.dep "${TCE_DIR}/optional" 
-
-	cp $PACKAGE_PKG/$PACKAGE-dev/$PACKAGE-dev.tcz "${TCE_DIR}/optional" 
-	cp $PACKAGE_PKG/$PACKAGE-dev/$PACKAGE-dev.tcz.md5.txt "${TCE_DIR}/optional" 
-	cp $PACKAGE_PKG/$PACKAGE-dev/$PACKAGE-dev.tcz.dep "${TCE_DIR}/optional" 
-}
 ## rules
 build_rules() {
 
@@ -95,8 +96,8 @@ build_rules() {
    tet_create
    tet_generate
    tet_check
+   tet_test
    tet_package
 
-   build_cp2tce
 }
 
