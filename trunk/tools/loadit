@@ -58,7 +58,7 @@ this_load() {
    fi
 
    echo -e "Checking if the extension $EXTENSION_NAME exists ... \c"
-   if [ -f "$TCE_DIR/optional/$EXTENSION_TCZ" ]; then
+   if [ -f "$TCEDIR/optional/$EXTENSION_TCZ" ]; then
         echo "yes"
    else
         echo "no"
