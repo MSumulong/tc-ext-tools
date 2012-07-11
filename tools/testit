@@ -55,13 +55,13 @@ this_test() {
    if [ -f "/usr/local/tce.installed/${PACKAGE_EXTENSION_NAME}" ]; then
        echo "yes"
        echo "Copying the extension to tce upgrade directory"
-       [ -d "${TCE_DIR}/optional/upgrade" ] || mkdir "${TCE_DIR}/optional/upgrade"
-       this_copy "${TCE_DIR}/optional/upgrade" || return 1
+       [ -d "${TCEDIR}/optional/upgrade" ] || mkdir "${TCEDIR}/optional/upgrade"
+       this_copy "${TCEDIR}/optional/upgrade" || return 1
        echo "You must reboot to test $PACKAGE_EXTENSION_NAME"
    else
        echo "no"
        echo "Copying the extension to tce optional directory"
-       this_copy "${TCE_DIR}/optional" || return 1
+       this_copy "${TCEDIR}/optional" || return 1
        echo "To test it: tce-load -i $PACKAGE_EXTENSION_NAME"
    fi
 

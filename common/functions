@@ -261,6 +261,10 @@ set_extension() {
    PACKAGE_EXTENSION_TCZ_MD5_TXT="$PACKAGE_EXTENSION_PKG/${PACKAGE_EXTENSION_NAME}.tcz.md5.txt"
    PACKAGE_EXTENSION_TCZ_ZSYNC="$PACKAGE_EXTENSION_PKG/${PACKAGE_EXTENSION_NAME}.tcz.zsync"
 
+   TCZREPO_EXTENSION_INFO="${TCZREPO}/${PACKAGE_EXTENSION_NAME}.tcz.info"
+   PACKAGE_EXTENSION_TEMP_INFO="${PACKAGE_EXTENSION_PKG_TEMP}/${PACKAGE_EXTENSION_NAME}.tcz.info"
+   PACKAGE_EXTENSION_TEMP_COMMON="${PACKAGE_EXTENSION_PKG_TEMP}/${PACKAGE_EXTENSION_NAME}.common"
+
    # application icon is set here
    unset PACKAGE_EXTENSION_ICON PACKAGE_EXTENSION_DESKTOP PACKAGE_EXTENSION_DESKTOP_ORIG
    if [ -n "$ICON" ]; then
@@ -289,10 +293,10 @@ set_tcl_system() {
 
    TCMIRROR=http://distro.ibiblio.org/pub/linux/distributions/tinycorelinux/
    TCVER=4.x
-
-   TCE_DIR=/etc/sysconfig/tcedir
+   ARCH=x86
    KERNEL=$(uname -r)
-   ARCH=i686
+   TCZREPO="${TCMIRROR}/${TCVER}/${ARCH}/tcz"
+   TCEDIR=/etc/sysconfig/tcedir
 
    # which kernel
    if [ -n "$(echo $KERNEL | grep -w tinycore64)" ]; then
