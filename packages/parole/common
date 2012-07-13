@@ -1,0 +1,17 @@
+PACKAGE="parole"
+VERSION="0.2.0.6"
+SOURCE="http://archive.xfce.org/src/apps/parole/0.2/parole-${VERSION}.tar.bz2"
+BUILD_DEPENDS="gstreamer gstreamer-dev gst-plugins-base gst-plugins-base-dev
+               libnotify libnotify-dev taglib taglib-dev libxfcegui4 libxfcegui4-dev
+               #xfce4-dev-tools liborc-dev"
+
+DESCRIPTION="Parole is a media player based on gstreamer."
+AUTHOR="Ali Abdallah"
+SITE="http://goodies.xfce.org/projects/applications/parole"
+COPYING="GPL-2"
+MAINTAINERS="Arslan S."
+TAGS="media player gstreamer"
+COMMENTS="Optional dependencies: gst-plugins-bad, gst-plugins-good, gst-plugins-ugly, gst-ffmpeg
+		ALSA or OSS for sound."
+CHANGELOG="---"
+CURRENT="Updated to $VERSION"
