@@ -7,5 +7,6 @@ totem-pl-parser.tcz
 libunique.tcz
 libcanberra.tcz
 librsvg.tcz
+libiconv.tcz
 shared-mime-info.tcz
 hicolor-icon-theme.tcz

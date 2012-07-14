@@ -1,6 +1,6 @@
 PACKAGE="brasero"
 VERSION="2.32.1"
-SOURCE="http://ftp.gnome.org/pub/GNOME/sources/brasero/${VERSION%.*}/brasero-${VERSION}.tar.bz2"
+SOURCE="http://ftp.gnome.org/pub/GNOME/sources/brasero/2.32/brasero-${VERSION}.tar.bz2"
 BUILD_DEPENDS="gnome-doc-utils
 rarian
 glib2
@@ -17,6 +17,7 @@ gst-plugins-base-dev
 libxml2
 libxml2-dev
 dbus-glib
+dbus-glib-dev
 libcanberra
 libcanberra-dev
 totem-pl-parser
@@ -30,6 +31,7 @@ libnautilus-extension-dev
 libburn
 libburn-dev
 libisofs
+libiconv-dev
 libisofs-dev"
 
 DESCRIPTION="CD/DVD Burning Application of GNOME."
@@ -38,7 +40,5 @@ SITE="http://live.gnome.org/Brasero"
 COPYING="GPL-2"
 MAINTAINERS="Arslan S."
 COMMENTS="---"
-CHANGELOG="2010/01/23 First Version 2.29.4
-		2010/02/07 Updated init script
-		2010/07/29 Updated to 2.30.2"
-CURRENT="Updated to $VERSION"
+CHANGELOG="---"
+CURRENT="Rebuilt"
