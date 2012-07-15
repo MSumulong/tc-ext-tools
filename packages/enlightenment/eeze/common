@@ -1,9 +1,4 @@
 PACKAGE="eeze"
-<<<<<<< .mine
-VERSION="svn~r73546"
-=======
-VERSION="svn~r73504"
->>>>>>> .r735
 SOURCE="svn::http://svn.enlightenment.org/svn/e/trunk/${PACKAGE}"
 BUILD_DEPENDS="ecore-dev
 	udev-dev"
