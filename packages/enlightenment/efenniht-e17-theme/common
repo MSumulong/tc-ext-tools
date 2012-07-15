@@ -1,5 +1,5 @@
 PACKAGE="efenniht-e17-theme"
-VERSION="svn~r73860"
+VERSION="svn~r73885"
 SOURCE="svn::http://svn.enlightenment.org/svn/e/trunk/THEMES/efenniht"
 BUILD_DEPENDS="edje-dev"
 
