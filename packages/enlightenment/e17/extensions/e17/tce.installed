@@ -1,3 +1,0 @@
-#!/bin/sh
-[ -e /usr/local/tce.installed/ecomp ] || echo "enlightenment_start" > /etc/sysconfig/desktop
-
