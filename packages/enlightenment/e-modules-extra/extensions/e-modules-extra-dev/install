@@ -1,7 +1,0 @@
-usr/local/include
-usr/*/*/*/*/*/*/*.a
-usr/*/*/*/*/*/*/*.la
-x-usr/*/*/*/*/*/*/*/*/*.mo
-usr/*/*/*/*/*/*/*/*/*.a
-usr/*/*/*/*/*/*/*/*/*.la
-usr/local/lib/pkgconfig
