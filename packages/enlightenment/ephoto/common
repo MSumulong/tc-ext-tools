@@ -1,0 +1,17 @@
+PACKAGE="ephoto"
+VERSION="svn~r73893"
+SOURCE="svn::http://svn.enlightenment.org/svn/e/trunk/$PACKAGE"
+BUILD_DEPENDS="cvs
+		elementary-dev"
+
+DESCRIPTION="a picture viewer"
+AUTHOR="Stephen "okra" Houston <UnixTitan@gmail.com>
+	Gustavo Sverzut Barbieri <barbieri@profusion.mobi>
+	Otávio Pontes <otavio@profusion.mobi>"
+SITE="enlightenment.org"
+COPYING="GPL-2"
+MAINTAINERS="jls_legalize <jlslegalize@gmail.com>"
+TAGS="picture viewer"
+COMMENTS="---"
+CHANGELOG="---"
+CURRENT="Updated to ${VERSION}"
