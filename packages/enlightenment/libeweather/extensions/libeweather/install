@@ -1,4 +1,0 @@
-usr/local/bin/eweather_test
-usr/local/lib/eweather/plugins/*.so
-usr/local/lib/*.so*
-usr/local/share/

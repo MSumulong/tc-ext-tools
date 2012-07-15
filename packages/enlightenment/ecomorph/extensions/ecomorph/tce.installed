@@ -1,2 +1,0 @@
-#!/bin/sh
-echo "enlightenment_start.sh" > /etc/sysconfig/desktop

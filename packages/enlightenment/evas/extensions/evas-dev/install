@@ -1,5 +1,0 @@
-usr/local/include
-usr/local/lib/evas/modules/*/*/*/*.la
-usr/local/lib/*.a
-usr/local/lib/*.la
-usr/local/lib/pkgconfig

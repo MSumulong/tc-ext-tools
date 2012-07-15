@@ -1,5 +1,0 @@
-usr/local/bin
-usr/local/lib/enlightenment/modules/ecomorph
-x-usr/local/lib/enlightenment/modules/ecomorph/*/*.a
-x-usr/local/lib/enlightenment/modules/ecomorph/*/*.la
-usr/share/xsessions

@@ -1,5 +1,0 @@
-usr/local/include
-usr/local/lib/pkgconfig
-usr/local/lib/*/*/*/*.pyc
-usr/local/lib/*/*/*/*.pyo
-usr/local/lib/*/*/*/*.la

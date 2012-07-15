@@ -1,5 +1,0 @@
-usr/local/include
-usr/local/lib/ecomp/*.a
-usr/local/lib/ecomp/*.la
-usr/local/lib/pkgconfig
-usr/local/share/pkgconfig

@@ -1,8 +1,0 @@
-x-usr/local/include
-x-usr/local/lib/pkgconfig
-usr/local/lib/*/*/*/*.py
-x-usr/local/lib/*/*/*/*.pyc
-x-usr/local/lib/*/*/*/*.pyo
-x-usr/local/lib/*/*/*/*.la
-usr/local/lib/*/*/*/*.so
-usr/local/share
