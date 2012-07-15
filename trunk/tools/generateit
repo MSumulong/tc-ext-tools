@@ -173,7 +173,8 @@ this_generate() {
    fi
 
    echo -e "Checking if the extension temp common exists ... \c"
-   if [ -f "$PACKAGE_EXTENSION_TEMP_COMMON" ]; then
+   if [ -f "$PACKAGE_EXTENSION_TEMP_COMMON" ] && 
+      [ "$CHANGELOG" == "---" -o "$CHANGELOG" == "" ]; then
         echo "yes"
         . "$PACKAGE_EXTENSION_TEMP_COMMON"
    else
