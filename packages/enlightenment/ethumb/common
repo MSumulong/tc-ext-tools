@@ -1,0 +1,26 @@
+PACKAGE="ethumb"
+VERSION="svn~r73410"
+SOURCE="svn::http://svn.enlightenment.org/svn/e/trunk/$PACKAGE"
+BUILD_DEPENDS="libexif-dev.tcz
+		emotion-dev.tcz
+		epdf-dev.tcz
+		eio-dev.tcz
+		e_dbus-dev.tcz
+		edje-dev.tcz"
+
+DESCRIPTION="Enlightenment's thumbnailing library and dbus service"
+AUTHOR="Rafael Antognolli, Cedric Bail, Mikael SANS, Jérôme Pinot"
+
+SITE="http://trac.enlightenment.org/e/wiki/Ethumb"
+COPYING="GPL-2"
+MAINTAINERS="jls_legalize (jlslegalize at gmail dot com)"
+TAGS="Enlightenment's thumbnailing library dbus service"
+COMMENTS="optional deps: emotion, epdf"
+CHANGELOG="2010/11/18 First Version 0.1.1.54472
+		2010/12/31 Updated to 0.1.1.55225
+		2011/12/01 Updated to 0.1.1.65643
+		2012/04/08 Updated to 1.0.0-alpha-svn-69957
+		2012/04/23 Updated to 1.0.0-beta
+		2012/04/27 Updated to 1.0.0 Changed deps
+		2012/06/12 Updated to 1.0.1"
+CURRENT="Updated to ${VERSION}"

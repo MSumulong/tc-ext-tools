@@ -1,0 +1,7 @@
+--- a/data/Makefile.am	2012-07-08 15:54:20.000000000 +0200
++++ b/data/Makefile.am	2012-07-08 16:07:21.136545903 +0200
+@@ -1,3 +1,3 @@
+ MAINTAINERCLEANFILES = Makefile.in
+ 
+-SUBDIRS = logo_images themes
++SUBDIRS = logo_images

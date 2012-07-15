@@ -1,0 +1,7 @@
+usr/local/etc/elsa.conf
+usr/local/etc/pam.d/elsa
+usr/local/lib/elsa/elsa_client
+usr/local/lib/elsa/elsa_wait
+usr/local/sbin/elsa
+usr/local/share/elsa/themes/default.edj
+usr/local/share/elsa/themes/old/old.edj

@@ -1,0 +1,15 @@
+PACKAGE="libeweather"
+VERSION="svn20120611"
+SOURCE="svn::http://svn.enlightenment.org/svn/e/trunk/PROTO/${PACKAGE}"
+BUILD_DEPENDS="edje-dev.tcz"
+
+DESCRIPTION="weather library"
+AUTHOR="Matthew Mullins, Christopher 'devilhorns'  Michael,  Jonathan 'Watchwolf' Atton"
+SITE="enlightenment.org"
+COPYING="GPL-2"
+MAINTAINERS="jls_legalize (jlslegalize at gmail dot com)"
+TAGS="weather library"
+COMMENTS="---"
+CHANGELOG="2010/10/10 First version
+		2011/12/01 Updated to svn-65784"
+CURRENT="Updated to ${VERSION}"

@@ -1,0 +1,3 @@
+usr/local/bin
+usr/local/lib/evas/modules/*/*/*/*.so
+usr/local/lib/*.so*

@@ -1,0 +1,17 @@
+PACKAGE="efenniht-e17-theme"
+VERSION="svn~r73860"
+SOURCE="svn::http://svn.enlightenment.org/svn/e/trunk/THEMES/efenniht"
+BUILD_DEPENDS="edje-dev"
+
+DESCRIPTION="e17 & elementary dark theme"
+AUTHOR="ProFUSION Embedded Systems"
+SITE="http://trac.enlightenment.org/e/wiki/Themes"
+COPYING="BSD"
+MAINTAINERS="jls_legalize <jlslegalize@gmail.com>"
+TAGS="e17 elementary dark theme"
+COMMENTS="---"
+CHANGELOG="2011/01/17 First version 0.2
+		2011/04/16 Updated 2 version 0.2-svn-58700, removed elementary theme 
+		2011/06/25 Updated to 0.2-svn-60674
+		2012/04/07 Updated to 0.2-svn-69955 & added elementary theme"
+CURRENT="Updated to ${VERSION}"

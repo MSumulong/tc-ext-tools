@@ -1,0 +1,5 @@
+usr/local/include/
+usr/local/lib/eweather/plugins/*.la
+usr/local/lib/*.a
+usr/local/lib/*.la
+usr/local/lib/pkgconfig/

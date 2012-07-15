@@ -1,0 +1,18 @@
+PACKAGE="python-edje"
+VERSION="svn~r73455"
+SOURCE="svn::http://svn.enlightenment.org/svn/e/trunk/BINDINGS/python/$PACKAGE"
+BUILD_DEPENDS="edje-dev
+	cython-dev
+	python-evas-dev
+	python
+	python-dev"
+
+DESCRIPTION="PYTHON BINDINGS FOR EDJE"
+AUTHOR="Gustavo Sverzut Barbieri <barbieri@gmail.com>, Fabiano Fid?ncio <fidencio@profusion.mobi>, Tiago Falc?o <tiago@profusion.mobi>"
+SITE="enlightenment.org"
+COPYING="GPL-2"
+MAINTAINERS="jls_legalize <jlslegalize@gmail.com>"
+TAGS="PYTHON BINDINGS EDJE"
+COMMENTS="---"
+CHANGELOG="---"
+CURRENT="First Version "

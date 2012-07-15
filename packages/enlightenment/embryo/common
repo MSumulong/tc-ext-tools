@@ -1,0 +1,27 @@
+PACKAGE="embryo"
+VERSION="svn~r73502"
+SOURCE="svn::http://svn.enlightenment.org/svn/e/trunk/${PACKAGE}"
+BUILD_DEPENDS="eina-dev
+		libtool-dev"
+DESCRIPTION="a tiny library designed to interpret limited Small programs compiled by the included compiler, embryo_cc"
+AUTHOR=" See http://enlightenment.org/p.php?p=contact&l=en"
+SITE="enlightenment.org"
+COPYING="BSD"
+MAINTAINERS="jls_legalize (jlslegalize at gmail dot com)"
+TAGS="tiny library designed interpret limited Small programs compiled by included compiler embryo_cc"
+COMMENTS="One of the core libraries forming the EFL
+		extension made using http://code.google.com/p/tc-ext-tools/"
+CHANGELOG="2010/03/06 First release
+                2010/03/31 Updated to 16.999.063
+                2010/09/30 Updated to svn 52907
+                2010/10/09 Updated to 1.0.0.beta
+                2010/11/14 Updated to 1.0.0.beta2
+                2010/12/29 Updated to 1.0.0.beta3
+                2011/02/02 Updated to 1.0.0
+                2011/11/24 Updated to svn-65589
+                2011/12/02 Updated to 1.1.0
+                2012/03/26 Updated to 1.2.0-alpha
+                2012/04/22 Updated to 1.2.0-beta
+                2012/04/27 Updated to 1.2.0, added eina dep
+		2012/06/10 Rebuilt against eina 1.2.1"
+CURRENT="Updated to ${VERSION}"

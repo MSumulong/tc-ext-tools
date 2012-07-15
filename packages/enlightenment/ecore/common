@@ -1,0 +1,33 @@
+PACKAGE="ecore"
+VERSION="svn~r73502"
+SOURCE="svn::http://svn.enlightenment.org/svn/e/trunk/${PACKAGE}"
+BUILD_DEPENDS="gettext
+	libtool-dev
+	evas-dev
+	libcares-dev
+	libxcb-util-dev
+	cvs"
+DESCRIPTION="a clean and tiny event loop library with many modules"
+AUTHOR="See http://enlightenment.org/p.php?p=contact&l=e"
+SITE="enlightenment.org"
+COPYING="BSD"
+MAINTAINERS="Althalus, jls_legalize (jlslegalize at gmail dot com)"
+TAGS="clean tiny event loop library many modules"
+COMMENTS="-----"
+CHANGELOG="2010/03/06 First release
+                2010/03/31 Updated SVN version
+                2010/03/31 Updated SVN version
+                2010/10/09 Updated to version 1.0.0.beta
+                2010/11/14 Updated to version 1.0.0.beta2
+                2010/12/29 Updated to version 1.0.0.beta3
+                2011/02/03 Updated to version 1.0.0
+                2011/03/12 Updated to version 57707
+                2011/06/05 Updated to 1.0.1
+                2011/06/09 Updated to svn-60146
+                2011/11/25 Updated to svn-65595
+                2011/12/02 Updated to 1.1.0
+                2012/03/26 Updated to 1.2.0-alpha, disabled openssl
+                2012/04/22 Updated to 1.2.0-beta, re-enabled openssl
+                2012/04/27 Updated to 1.2.0, re-enabled openssl
+		2012/06/10 Updated to 1.2.1, re-enabled openssl"
+CURRENT="Updated to ${VERSION}"

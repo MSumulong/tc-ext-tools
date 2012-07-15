@@ -1,0 +1,43 @@
+PACKAGE="evas"
+VERSION="svn~r73499"
+SOURCE="svn::http://svn.enlightenment.org/svn/e/trunk/${PACKAGE}"
+BUILD_DEPENDS="eet-dev
+	fontconfig-dev
+	libgsf-dev
+	librsvg-dev
+	glew
+	graphics-libs-1-dev
+	libgdiplus
+	libxcb-dev
+	libx11-xcb
+	libtool-dev
+	ftgl-dev
+	Xorg-7.6-dev
+	Xorg-7.6
+	SDL-dev
+	libnsfb
+	fribidi
+	valgrind"
+DESCRIPTION="a clean display canvas API"
+AUTHOR="See http://enlightenment.org/p.php?p=contact&l=e"
+SITE="enlightenment.org"
+COPYING="BSD"
+MAINTAINERS="Althalus, jls_legalize (jlslegalize at gmail dot com)"
+TAGS="clean display canvas API"
+COMMENTS="-----"
+CHANGELOG="2010/03/06 First release
+                2010/03/31 Updated to 16.999.063
+                2010/09/30 updated to svn 52903
+                2010/10/09 updated to 1.0.0.beta
+                2010/11/14 Updated to 1.0.0.beta2
+                2010/12/29 Updated to 1.0.0.beta3
+                2011/02/03 Updated to 1.0.0
+                2011/06/05 Updated to 1.0.1
+                2011/06/09 Updated to svn-60142
+                2011/11/25 Updated to svn-65595
+                2011/12/02 Updated to 1.1.0
+                2012/03/26 Updated to 1.2.0-alpha
+                2012/04/22 Updated to 1.2.0-beta
+                2012/04/27 Updated to 1.2.0
+	        2012/06/10 Updated to 1.2.1"
+CURRENT="Updated to ${VERSION}"

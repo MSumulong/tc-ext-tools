@@ -1,0 +1,16 @@
+PACKAGE="enki"
+VERSION="svn~r73456"
+SOURCE="svn::http://svn.enlightenment.org/svn/e/trunk/$PACKAGE"
+BUILD_DEPENDS="cvs
+		enlil-dev
+		elementary-dev"
+
+DESCRIPTION="a photo manager using the EFL and allows the user to manage a list of albums and photos."
+AUTHOR="Atton Jonathan alias Watchwolf (jonathan.atton@gmail.com)"
+SITE="http://trac.enlightenment.org/e/wiki/Enki"
+COPYING="GPL-2"
+MAINTAINERS="jls_legalize <jlslegalize@gmail.com>"
+TAGS="photo album manager efl"
+COMMENTS="---"
+CHANGELOG="---"
+CURRENT="First Version"
