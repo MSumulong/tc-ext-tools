@@ -90,6 +90,7 @@ usr/local/iron/resources/inspector/Images/disclosureTriangleSmallRightDown.png
 usr/local/iron/resources/inspector/Images/disclosureTriangleSmallRightDownBlack.png
 usr/local/iron/resources/inspector/Images/disclosureTriangleSmallRightDownWhite.png
 usr/local/iron/resources/inspector/Images/disclosureTriangleSmallRightWhite.png
+usr/local/iron/resources/inspector/Images/domain.png
 usr/local/iron/resources/inspector/Images/errorIcon.png
 usr/local/iron/resources/inspector/Images/errorMediumIcon.png
 usr/local/iron/resources/inspector/Images/errorRedDot.png
@@ -102,7 +103,12 @@ usr/local/iron/resources/inspector/Images/glossyHeaderSelectedPressed.png
 usr/local/iron/resources/inspector/Images/goArrow.png
 usr/local/iron/resources/inspector/Images/graphLabelCalloutLeft.png
 usr/local/iron/resources/inspector/Images/graphLabelCalloutRight.png
+usr/local/iron/resources/inspector/Images/indexedDB.png
+usr/local/iron/resources/inspector/Images/indexedDBIndex.png
+usr/local/iron/resources/inspector/Images/indexedDBObjectStore.png
 usr/local/iron/resources/inspector/Images/localStorage.png
+usr/local/iron/resources/inspector/Images/navigatorPinButton.png
+usr/local/iron/resources/inspector/Images/navigatorShowHideButton.png
 usr/local/iron/resources/inspector/Images/paneAddButtons.png
 usr/local/iron/resources/inspector/Images/paneBottomGrow.png
 usr/local/iron/resources/inspector/Images/paneBottomGrowActive.png
@@ -219,7 +225,9 @@ usr/local/iron/resources/inspector/devTools.css
 usr/local/iron/resources/inspector/devtools.html
 usr/local/iron/resources/inspector/devtools_extension_api.js
 usr/local/iron/resources/inspector/elementsPanel.css
+usr/local/iron/resources/inspector/filteredItemSelectionDialog.css
 usr/local/iron/resources/inspector/heapProfiler.css
+usr/local/iron/resources/inspector/indexedDBViews.css
 usr/local/iron/resources/inspector/inspectorCommon.css
 usr/local/iron/resources/inspector/networkLogView.css
 usr/local/iron/resources/inspector/networkPanel.css
@@ -229,6 +237,7 @@ usr/local/iron/resources/inspector/resourceView.css
 usr/local/iron/resources/inspector/resourcesPanel.css
 usr/local/iron/resources/inspector/scriptsPanel.css
 usr/local/iron/resources/inspector/splitView.css
+usr/local/iron/resources/inspector/tabbedPane.css
 usr/local/iron/resources/inspector/textPrompt.css
 usr/local/iron/resources/inspector/textViewer.css
 usr/local/iron/resources/inspector/timelinePanel.css
