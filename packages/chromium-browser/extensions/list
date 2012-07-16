@@ -132,6 +132,8 @@ usr/local/chromium-browser/resources/inspector/Images/resourcePlainIconSmall.png
 usr/local/chromium-browser/resources/inspector/Images/resourcesSizeGraphIcon.png
 usr/local/chromium-browser/resources/inspector/Images/resourcesTimeGraphIcon.png
 usr/local/chromium-browser/resources/inspector/Images/scriptsSilhouette.png
+usr/local/chromium-browser/resources/inspector/Images/searchNext.png
+usr/local/chromium-browser/resources/inspector/Images/searchPrev.png
 usr/local/chromium-browser/resources/inspector/Images/searchSmallBlue.png
 usr/local/chromium-browser/resources/inspector/Images/searchSmallBrightBlue.png
 usr/local/chromium-browser/resources/inspector/Images/searchSmallGray.png
@@ -227,6 +229,7 @@ usr/local/chromium-browser/resources/inspector/filteredItemSelectionDialog.css
 usr/local/chromium-browser/resources/inspector/heapProfiler.css
 usr/local/chromium-browser/resources/inspector/indexedDBViews.css
 usr/local/chromium-browser/resources/inspector/inspectorCommon.css
+usr/local/chromium-browser/resources/inspector/navigatorView.css
 usr/local/chromium-browser/resources/inspector/networkLogView.css
 usr/local/chromium-browser/resources/inspector/networkPanel.css
 usr/local/chromium-browser/resources/inspector/panelEnablerView.css
@@ -239,6 +242,8 @@ usr/local/chromium-browser/resources/inspector/tabbedPane.css
 usr/local/chromium-browser/resources/inspector/textPrompt.css
 usr/local/chromium-browser/resources/inspector/textViewer.css
 usr/local/chromium-browser/resources/inspector/timelinePanel.css
+usr/local/chromium-browser/theme_resources_standard.pak
+usr/local/chromium-browser/ui_resources_standard.pak
 usr/local/chromium-browser/xdg-settings
 usr/local/share/applications/chromium-browser.desktop
 usr/local/share/doc/chromium-browser/AUTHORS

@@ -5,8 +5,6 @@
 ### Configure
 build_configure() {
 
-  cp "$P_SRC/nacl.gypi" chrome/
-
   build/gyp_chromium -f make build/all.gyp --depth=. \
     -Ddisable_sse2=1 \
     -Dno_strict_aliasing=1 \
@@ -50,10 +48,8 @@ build_install() {
 
   install -m 755 -D out/Release/chrome "$INSTALL_ROOT/usr/local/chromium-browser/chromium-browser" || return 1
   install -m 4755 out/Release/chrome_sandbox "$INSTALL_ROOT/usr/local/chromium-browser/chromium-browser-sandbox" || return 1
-  install -m 644 -D out/Release/chrome.pak "$INSTALL_ROOT/usr/local/chromium-browser/chrome.pak" || return 1
+  install -m 644 -D out/Release/*.pak "$INSTALL_ROOT/usr/local/chromium-browser" || return 1
   install -m 755 -D out/Release/libffmpegsumo.so ${INSTALL_ROOT}/usr/local/chromium-browser/libffmpegsumo.so || return 1
-  install -m 644 -D out/Release/resources.pak ${INSTALL_ROOT}/usr/local/chromium-browser/resources.pak || return 1
-  install -m 644 -D out/Release/content_resources.pak ${INSTALL_ROOT}/usr/local/chromium-browser/content_resources.pak || return 1
   install -m 755 -D out/Release/xdg-settings ${INSTALL_ROOT}/usr/local/chromium-browser/xdg-settings || return 1
   install -m 644 -D out/Release/chrome.1 ${INSTALL_ROOT}/usr/local/share/man/man1/chromium-browser.1 || return 1
   cp -a out/Release/resources ${INSTALL_ROOT}/usr/local/chromium-browser || return 1
@@ -95,6 +91,7 @@ build_rules() {
   tet_create
   tet_generate
   tet_check
+  tet_test
   tet_package
 
 }

@@ -1,10 +1,11 @@
 PACKAGE="chromium-browser"
-VERSION="19.0.1084.52"
+VERSION="20.0.1132.57"
 SOURCE="http://commondatastorage.googleapis.com/chromium-browser-official/chromium-${VERSION}.tar.bz2"
 BUILD_DEPENDS="python python-dev gtk2 gtk2-dev bzip2-lib bzip2-dev nspr nspr-dev
      nss nss-dev libasound alsa-dev Xorg-7.6-lib Xorg-7.6-dev GConf GConf-dev dbus dbus-dev
      dbus-glib dbus-glib-dev libgnome-keyring libgnome-keyring-dev libxcb libxcb-dev
-     libevent libevent-dev libcups cups-dev krb5 gperf udev-lib udev-dev openssl-1.0.0 openssl-1.0.0-dev"
+     libevent libevent-dev libcups cups-dev krb5 gperf udev-lib udev-dev openssl-1.0.0 openssl-1.0.0-dev
+     libgcrypt libgcrypt-dev elfutils-dev bash"
 
 DESCRIPTION="Chromium Web Browser."
 AUTHOR="Chromium Authors"
@@ -13,40 +14,5 @@ COPYING="BSD"
 MAINTAINERS="Arslan S."
 TAGS="chromium web browser secure fast"
 COMMENTS="---"
-CHANGELOG="2009/12/17 First Version
-	     	2009/12/19 Updated info
-	     	2009/12/31 Updated to 4.0.286.0
-			   -Now wrapper passes user flags to the browser
-			   -Making chromium the default browser fixed for Freedesktops
-	     	2010/03/02 Updated to 5.0.343.0 (40399)
-		2010/03/08 Recovered desktop entry and fixed dep list	
-		2010/04/13 Updated to 5.0.376.0 (44267)
-		2010/06/05 Updated to 6.0.424.0 (48744)
-		2010/07/09 Updated to 6.0.462.0 (51950)
-		2010/08/29 Switched to stable channel & Updated to 5.0.375.127
-		2010/09/04 Updated to 6.0.472.53
-		2010/09/17 Updated to 6.0.472.59
-		2010/10/23 Updated to 7.0.517.43
-		2010/11/07 Updated to 7.0.517.44
-		2010/12/03 Updated to 8.0.552.215
-		   -Built with system libevent
-		   -Added proprietary codecs (aac/ac3/mpeg4audio/h264/mov/mp3) support to the bundled ffmpeg library
-		2010/12/23 Updated to 8.0.552.231
-		2011/01/17 Updated to 8.0.552.237
-		2011/02/06 Updated to 9.0.597.84
-		2011/02/20 Updated to 9.0.597.94
-		2011/03/02 Updated to 9.0.597.107
-		2011/03/12 Updated to 10.0.648.127
-		2011/03/26 Updated to 10.0.648.204
-		2011/05/08 Updated to 11.0.696.65
-		    -Disabled GConf
-		2011/06/12 Updated to 12.0.742.91
-		2011/07/01 Updated to 12.0.742.112
-		2011/08/07 Updated to 13.0.782.107
-		2011/08/20 Updated to 13.0.782.112
-		2011/09/08 Updated to 13.0.782.218
-		2011/09/21 Updated to 14.0.835.186
-		2011/10/26 Updated to 15.0.874.102
-		2011/12/11 Updated to 15.0.874.121"
+CHANGELOG="---"
 CURRENT="Updated to $VERSION"
-
