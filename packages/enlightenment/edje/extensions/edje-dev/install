@@ -3,5 +3,4 @@ usr/local/lib/edje/modules/multisense_factory/*/*.la
 usr/local/lib/*.a
 usr/local/lib/*.la
 usr/local/lib/pkgconfig
-usr/local/lib/remix/*.la
 usr/local/share/edje/include

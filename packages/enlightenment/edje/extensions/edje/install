@@ -2,5 +2,4 @@ usr/local/bin
 usr/local/lib/edje/modules/multisense_factory/*/*.so
 usr/local/lib/edje/utils
 usr/local/lib/*.so*
-usr/local/lib/remix/*.so*
 usr/local/share/mime/packages

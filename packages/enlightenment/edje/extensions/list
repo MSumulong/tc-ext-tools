@@ -16,8 +16,6 @@ usr/local/lib/libedje.so
 usr/local/lib/libedje.so.1
 usr/local/lib/libedje.so.1.6.99
 usr/local/lib/pkgconfig/edje.pc
-usr/local/lib/remix/libeet_sndfile_reader.la
-usr/local/lib/remix/libeet_sndfile_reader.so
 usr/local/share/edje/examples/Vera.ttf
 usr/local/share/edje/examples/animations.edc
 usr/local/share/edje/examples/animations2.c
