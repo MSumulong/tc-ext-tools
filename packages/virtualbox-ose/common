@@ -1,5 +1,5 @@
 PACKAGE="virtualbox-ose"
-VERSION="4.1.4"
+VERSION="4.1.18"
 SOURCE="http://download.virtualbox.org/virtualbox/${VERSION}/VirtualBox-${VERSION}.tar.bz2"
 BUILD_DEPENDS="
 coreutils
@@ -52,12 +52,5 @@ SITE="http://www.virtualbox.org/"
 COPYING="GPL-2"
 MAINTAINERS="Arslan S."
 COMMENTS="---"
-CHANGELOG="2010/10/16 First Version 3.2.10
-		2010/12/02 Updated to 3.2.12
-		2011/01/29 Updated to 4.0.2
-		2011/02/20 Updated to 4.0.4
-		2011/04/30 Updated to 4.0.6
-		2011/05/23 Updated to 4.0.8
-		2011/06/02 Fixed USB devices support for virtualbox-ose
-		2011/08/07 Updated to 4.1.0"
-CURRENT="Updated to $VERSION and built for TCL 4.x"
+CHANGELOG="---"
+CURRENT="Updated to $VERSION"

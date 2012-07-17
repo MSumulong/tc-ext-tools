@@ -38,6 +38,7 @@ build_install() {
   mkdir -p "$INSTALL_ROOT/usr/local/bin"
   mkdir -p "$INSTALL_ROOT/usr/local/sbin"
   mkdir -p "$INSTALL_ROOT/usr/local/lib/virtualbox/components"
+  mkdir -p "$INSTALL_ROOT/usr/local/lib/virtualbox/ExtensionPacks"
   mkdir -p "$INSTALL_ROOT/usr/local/share/virtualbox/nls"
   mkdir -p "$INSTALL_ROOT/usr/local/share/doc/virtualbox-ose"
 
@@ -113,12 +114,12 @@ build_install() {
 
   install -D -m644 "$PACKAGE_SRC/xorg.conf.sample" "$INSTALL_ROOT/usr/local/share/virtualbox-ose-additions/xorg.conf.sample" || return 1
 
-  install -Dm755 vboxmouse_drv_111.so "$INSTALL_ROOT/usr/local/lib/X11/modules/input/vboxmouse.so" || return 1
   install -Dm755 vboxvideo_drv_111.so "$INSTALL_ROOT/usr/local/lib/X11/modules/drivers/vboxvideo.so" || return 1
 
   install -m755 VBoxOGL*.so "$INSTALL_ROOT/usr/local/lib" || return 1
   install -d -m755 "$INSTALL_ROOT/usr/local/lib/X11/modules/dri"
   ln -s /usr/local/lib/VBoxOGL.so "$INSTALL_ROOT/usr/local/lib/X11/modules/dri/vboxvideo_dri.so" || return 1
+  #install -m755 -D pam_vbox.so "$INSTALL_ROOT/usr/local/lib/security/pam_vbox.so" || return 1
 
   # virtualbox-ose guest additions kernel modules
   cd "$PACKAGE_SOURCE_TOPDIR/out/linux.x86/release/bin/additions/src"
@@ -156,6 +157,7 @@ build_rules() {
    tet_create
    tet_generate
    tet_check
+   tet_test
    tet_package
 
 }
