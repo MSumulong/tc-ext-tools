@@ -1,0 +1,15 @@
+PACKAGE="envision"
+VERSION="svn~r74152"
+SOURCE="svn::http://svn.enlightenment.org/svn/e/trunk/$PACKAGE"
+BUILD_DEPENDS="cvs elementary-dev epdf-dev"
+
+DESCRIPTION="pdf reader"
+AUTHOR="Thiago Ribeiro Masaki <contact@profusion.mobi>, 
+		 Otavio Pontes <otavio@profusion.mobi>"
+SITE="http://trac.enlightenment.org/e/wiki/Envision"
+COPYING="GPL-2"
+MAINTAINERS="jls_legalize <jlslegalize@gmail.com>"
+TAGS="pdf reader"
+COMMENTS="---"
+CHANGELOG="---"
+CURRENT="Updated to ${VERSION}"

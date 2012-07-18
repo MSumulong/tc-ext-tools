@@ -1,0 +1,8 @@
+usr/local/bin/envision
+usr/local/bin/envision_ql
+usr/local/lib/envision_ql.a
+usr/local/lib/envision_ql.la
+usr/local/lib/envision_ql.so
+usr/local/share/applications/envision.desktop
+usr/local/share/envision/default.edj
+usr/local/share/icons/envision.png
