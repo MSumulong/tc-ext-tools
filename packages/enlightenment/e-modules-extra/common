@@ -1,5 +1,5 @@
 PACKAGE="e-modules-extra"
-VERSION="svn~r73476"
+VERSION="svn~r74145"
 SOURCE="svn::http://svn.enlightenment.org/svn/e/trunk/E-MODULES-EXTRA"
 BUILD_DEPENDS="cvs.tcz
 	e17-dev.tcz
@@ -9,7 +9,9 @@ BUILD_DEPENDS="cvs.tcz
 	elementary-dev.tcz
 	emprint.tcz
 	libssh2-dev.tcz
-	curl-dev.tcz"
+	curl-dev.tcz
+	curl.tcz
+	remix-dev.tcz"
 
 DESCRIPTION="Extra modules for The Enlightenment DR17 Desktop Environment"
 AUTHORS="See http://enlightenment.org/p.php?p=contact&l=en"

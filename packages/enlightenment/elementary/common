@@ -1,5 +1,5 @@
 PACKAGE="elementary"
-VERSION="svn~r73410"
+VERSION="svn~r74145"
 SOURCE="svn::http://svn.enlightenment.org/svn/e/trunk/$PACKAGE"
 BUILD_DEPENDS="ethumb-dev.tcz 
 	efreet-dev.tcz
