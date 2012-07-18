@@ -70,17 +70,17 @@ build_install() {
 build_cp2tce() {
 	echo "copying the packages in the tce dir"
 
-	cp $PACKAGE_PKG/$PACKAGE/$PACKAGE.tcz "${TCEDIR}/optional" 
-	cp $PACKAGE_PKG/$PACKAGE/$PACKAGE.tcz.md5.txt "${TCEDIR}/optional" 
-	cp $PACKAGE_PKG/$PACKAGE/$PACKAGE.tcz.dep "${TCEDIR}/optional" 
+	cp $PACKAGE_PKG/$PACKAGE/$PACKAGE.tcz "${TCE_DIR}/optional" 
+	cp $PACKAGE_PKG/$PACKAGE/$PACKAGE.tcz.md5.txt "${TCE_DIR}/optional" 
+	cp $PACKAGE_PKG/$PACKAGE/$PACKAGE.tcz.dep "${TCE_DIR}/optional" 
 
-#	cp $PACKAGE_PKG/$PACKAGE-locale/$PACKAGE-locale.tcz "${TCEDIR}/optional" 
-#	cp $PACKAGE_PKG/$PACKAGE-locale/$PACKAGE-locale.tcz.md5.txt "${TCEDIR}/optional" 
-#	cp $PACKAGE_PKG/$PACKAGE-locale/$PACKAGE-locale.tcz.dep "${TCEDIR}/optional" 
+#	cp $PACKAGE_PKG/$PACKAGE-locale/$PACKAGE-locale.tcz "${TCE_DIR}/optional" 
+#	cp $PACKAGE_PKG/$PACKAGE-locale/$PACKAGE-locale.tcz.md5.txt "${TCE_DIR}/optional" 
+#	cp $PACKAGE_PKG/$PACKAGE-locale/$PACKAGE-locale.tcz.dep "${TCE_DIR}/optional" 
 
-	cp $PACKAGE_PKG/$PACKAGE-dev/$PACKAGE-dev.tcz "${TCEDIR}/optional" 
-	cp $PACKAGE_PKG/$PACKAGE-dev/$PACKAGE-dev.tcz.md5.txt "${TCEDIR}/optional" 
-	cp $PACKAGE_PKG/$PACKAGE-dev/$PACKAGE-dev.tcz.dep "${TCEDIR}/optional" 
+	cp $PACKAGE_PKG/$PACKAGE-dev/$PACKAGE-dev.tcz "${TCE_DIR}/optional" 
+	cp $PACKAGE_PKG/$PACKAGE-dev/$PACKAGE-dev.tcz.md5.txt "${TCE_DIR}/optional" 
+	cp $PACKAGE_PKG/$PACKAGE-dev/$PACKAGE-dev.tcz.dep "${TCE_DIR}/optional" 
 }
 ## rules
 build_rules() {

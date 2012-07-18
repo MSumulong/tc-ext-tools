@@ -1,5 +1,5 @@
 PACKAGE="edje"
-VERSION="svn~r73978"
+VERSION="svn~r74004"
 SOURCE="svn::http://svn.enlightenment.org/svn/e/trunk/${PACKAGE}"
 BUILD_DEPENDS="eina-dev
 	libtool-dev
