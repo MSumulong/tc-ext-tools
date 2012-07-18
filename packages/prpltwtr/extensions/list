@@ -1,0 +1,14 @@
+usr/local/lib/pidgin/libgtkprpltwtr.la
+usr/local/lib/pidgin/libgtkprpltwtr.so
+usr/local/lib/purple-2/libprpltwtr.la
+usr/local/lib/purple-2/libprpltwtr.so
+usr/local/lib/purple-2/libprpltwtr.so.0
+usr/local/lib/purple-2/libprpltwtr.so.0.0.0
+usr/local/lib/purple-2/libprpltwtr_statusnet.la
+usr/local/lib/purple-2/libprpltwtr_statusnet.so
+usr/local/lib/purple-2/libprpltwtr_twitter.la
+usr/local/lib/purple-2/libprpltwtr_twitter.so
+usr/local/share/locale/es/LC_MESSAGES/prpltwtr.mo
+usr/local/share/pixmaps/pidgin/protocols/16/prpltwtr.png
+usr/local/share/pixmaps/pidgin/protocols/22/prpltwtr.png
+usr/local/share/pixmaps/pidgin/protocols/48/prpltwtr.png

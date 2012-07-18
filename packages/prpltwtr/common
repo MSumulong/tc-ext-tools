@@ -1,0 +1,23 @@
+PACKAGE="prpltwtr"
+VERSION="0.12.0"
+SOURCE="http://prpltwtr.googlecode.com/files/prpltwtr-$VERSION.tar.gz"
+BUILD_DEPENDS="pidgin-dev"
+
+DESCRIPTION="This is a libpurple (Pidgin, Finch, Empathy* etc) plugin 
+		which treats microblogging (Twitter, identi.ca, 
+		status.net, etc) as IM protocols." 
+AUTHOR="neaveru <http://code.google.com/u/neaveru>
+		Tan Miaoqing <rabbitrun84@gmail.com>
+		anarchocptlist <http://code.google.com/u/anarchocptlist>
+		Dossy Shiobara <dossy@panoptic.com>
+		Yoshiaki Yazawa <http://www.honeyplanet.jp/>
+		Mike "Mikeage" Miller <http://mikeage.net/>
+		Fabián Bonetti <mama21mama@mamalibre.com.ar>"
+
+SITE="http://code.google.com/p/prpltwtr/"
+COPYING="GPL-2"
+MAINTAINERS="jls_legalize <jlslegalize@gmail.com>"
+TAGS="pidgin twitter"
+COMMENTS="---"
+CHANGELOG="---"
+CURRENT="First Version"
