@@ -1,0 +1,18 @@
+PACKAGE="epdf"
+VERSION="svn~r74152"
+SOURCE="svn::http://svn.enlightenment.org/svn/e/trunk/PROTO/$PACKAGE"
+BUILD_DEPENDS="ecore-dev.tcz"
+
+DESCRIPTION="a library that provides a C interface to the Poppler library 
+		to render PDF documents in different way"
+AUTHOR="Vincent 'caro' Torri <vtorri at univ-evry dot fr>, 
+		Rawnar, 
+		Mikhail 'dottedmag' Gusarov <dottedmag at dottedmag dot net>, 
+		Alexander 'LunohoD' Kerner <alexander dot kerner at googlemail dot com>"
+SITE="enlightenment.org"
+COPYING="GPL-2"
+MAINTAINERS="jls_legalize <jlslegalize@gmail.com>"
+TAGS="library interface Poppler PDF"
+COMMENTS="---"
+CHANGELOG="---"
+CURRENT="Updated to ${VERSION}"
