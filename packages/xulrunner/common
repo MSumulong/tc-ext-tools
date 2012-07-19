@@ -1,5 +1,5 @@
 PACKAGE="xulrunner"
-VERSION="12.0"
+VERSION="14.0.1"
 SOURCE="ftp://ftp.mozilla.org/pub/mozilla.org/firefox/releases/${VERSION}/source/firefox-${VERSION}.source.tar.bz2"
 BUILD_DEPENDS="
 gtk2
@@ -44,12 +44,5 @@ SITE="https://developer.mozilla.org/en/XULRunner"
 COPYING="MPL/GPL/LGPL"
 MAINTAINERS="Arslan S."
 COMMENTS="---"
-CHANGELOG="2010/01/30 Original 1.9.1.7
-		2010/06/09 Updated to 1.9.2
-		2010/08/24 Updated to 1.9.2.8
-		2010/11/30 Updated to 1.9.2.12
-		2010/12/12 Updated to 1.9.2.13
-		2011/03/03 Updated to 1.9.2.14
-		2011/09/22 Updated to 6.0.2
-		2011/10/28 Updated to 7.0.1"
+CHANGELOG="---"
 CURRENT="Updated to $VERSION"
