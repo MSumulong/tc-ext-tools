@@ -13,7 +13,7 @@ _stagedir="${S_ROOT}/stagedir"
 
 build_compile() {
 
-   cd tools/build/v2/engine/src
+   cd tools/build/v2/engine
    ./build.sh cc || return 1
 
    _bindir="bin.linuxx86"
@@ -21,21 +21,21 @@ build_compile() {
    install -m755 -d "${_stagedir}"/usr/local/bin
    install -m755 "${_bindir}"/bjam "${_stagedir}"/usr/local/bin/bjam
 
-   cd "$S_ROOT/tools/bcp"
-   ../build/v2/engine/src/bin.linuxx86/bjam --toolset=gcc || return 1
+   cd "$S_ROOT/tools"
+   "${_stagedir}"/usr/local/bin/bjam --toolset=gcc || return 1
 
-   install -m755 "${S_ROOT}/dist/bin/bcp" ${_stagedir}/usr/local/bin/bcp
+   install -m755 ${S_ROOT}/dist/bin/* ${_stagedir}/usr/local/bin
 
    cd "$S_ROOT"
 
-   ./tools/build/v2/engine/src/${_bindir}/bjam \
-      release debug-symbols=off threading=single,multi \
+   "${_stagedir}"/usr/local/bin/bjam \
+      release debug-symbols=off threading=multi \
       runtime-link=shared link=shared,static \
       cflags=-fno-strict-aliasing \
       toolset=gcc \
       --prefix="${_stagedir}/usr/local" \
       -sTOOLS=gcc \
-      --layout=tagged \
+      --layout=system \
       install || return 1
 
 }
@@ -68,6 +68,7 @@ build_rules() {
    tet_create
    tet_generate
    tet_check
+   tet_test
    tet_package
 
 }

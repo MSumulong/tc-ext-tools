@@ -1,17 +1,13 @@
 PACKAGE="boost"
-VERSION="1.45.0"
-_VERSION="${VERSION//./_}"
-SOURCE="http://downloads.sourceforge.net/sourceforge/boost/boost_${_VERSION}.tar.bz2"
-BUILD_DEPENDS="python
-python-dev
-bzip2-lib
-bzip2-dev"
+VERSION="1.50.0"
+SOURCE="http://downloads.sourceforge.net/sourceforge/boost/boost_${VERSION//./_}.tar.bz2"
+BUILD_DEPENDS="python python-dev bzip2-lib bzip2-dev icu49 icu49-dev"
 
 DESCRIPTION="Peer-reviewed portable C++ source shared libraries."
 AUTHOR="Various (http://www.boost.org/users/people.html)"
 SITE="http://www.boost.org/"
 COPYING="Boost Software License v1.0 (http://www.boost.org/LICENSE_1_0.txt)"
-MAINTAINERS="robc"
+MAINTAINERS="robc, Arslan S."
 COMMENTS="
 		
 		----------------------------------------------
@@ -24,9 +20,5 @@ COMMENTS="
 		
 		----------------------------------------------
 		"
-CHANGELOG="2009/08/05 Original
-		2009/10/28 Updated to v1.40.0
-		2010/01/22 Updated to v1.41.0
-		2010/06/04 Updated to v1.43.0
-		2010/09/30 Updated to v1.44.0, added static libs"
-CURRENT="Updated to v${VERSION}, added multi thread libraries"
+CHANGELOG="---"
+CURRENT="Updated to v${VERSION}"
