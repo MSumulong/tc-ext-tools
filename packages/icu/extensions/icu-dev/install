@@ -2,5 +2,6 @@ usr/local/bin
 usr/local/sbin
 usr/local/include
 usr/local/lib/icu
+usr/local/lib/*.so
 usr/local/share/icu
 usr/local/share/man
