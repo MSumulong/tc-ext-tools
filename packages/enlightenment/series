@@ -10,7 +10,7 @@
 #e_dbus 
 #eeze
 #ephysics
-#e17 
+e17 
 #emotion
 #ethumb
 #libeweather
@@ -24,15 +24,15 @@
 #terminology
 #ephoto
 #epdf
-envision
+#envision
+#enlil
+#enki
 #python-evas
 #python-ecore
 #python-edje
 #python-e_dbus
 #python-elementary
 #econnman
-#enlil
-#enki
 #enjoy
 #elsa
 #ecomp

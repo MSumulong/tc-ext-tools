@@ -1,5 +1,5 @@
 PACKAGE="enki"
-VERSION="svn~r73456"
+VERSION="svn~r74181"
 SOURCE="svn::http://svn.enlightenment.org/svn/e/trunk/$PACKAGE"
 BUILD_DEPENDS="cvs
 		enlil-dev
