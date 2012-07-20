@@ -10,8 +10,8 @@ libevent
 libevent-dev
 boost
 boost-dev
-icu
-icu-dev
+icu49
+icu49-dev
 util-linux-ng
 util-linux-ng-dev
 Linux-PAM

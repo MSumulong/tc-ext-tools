@@ -1,9 +1,9 @@
 PACKAGE="spring"
-VERSION="0.82.7.1"
+VERSION="0.89"
 SOURCE="http://downloads.sourceforge.net/sourceforge/springrts/spring_${VERSION}_src.tar.lzma"
 BUILD_DEPENDS="cmake
-boost
-boost-dev
+boost-1.50
+boost-1.50-dev
 zip-unzip
 xz
 python

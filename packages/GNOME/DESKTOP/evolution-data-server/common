@@ -34,8 +34,8 @@ libgweather
 libgweather-dev
 libical
 libical-dev
-icu
-icu-dev
+icu49
+icu49-dev
 libiconv
 libiconv-dev
 libgdata

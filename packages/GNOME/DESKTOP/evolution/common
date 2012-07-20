@@ -45,8 +45,8 @@ flac-dev
 gstreamer-dev
 libical
 libical-dev
-icu
-icu-dev
+icu49
+icu49-dev
 libgweather
 libgweather-dev
 libgnome-desktop

@@ -1,5 +1,5 @@
 PACKAGE="conkeror"
-VERSION="git111123"
+VERSION="git${_DATE}"
 SOURCE="git::git://repo.or.cz/conkeror.git"
 BUILD_DEPENDS=""
 
@@ -13,10 +13,5 @@ COMMENTS="Conkeror is a keyboard-oriented, highly-customizable,
 		written mainly in JavaScript, and inspired by exceptional
 		software such as Emacs and vi."
 
-CHANGELOG="2010/06/09 First Version git100609
-		2010/08/24 Updated to git100824
-		2010/11/18 Updated to git101118
-		2010/12/15 Updated to git101215
-		2011/02/20 Updated to git110220
-		2011/09/22 Updated to git110922"
+CHANGELOG="---"
 CURRENT="Updated to $VERSION"

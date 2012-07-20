@@ -1,8 +1,9 @@
 PACKAGE="qbittorrent"
-VERSION="2.9.9"
+VERSION="2.9.11"
 SOURCE="http://downloads.sourceforge.net/sourceforge/qbittorrent/${PACKAGE}-${VERSION}.tar.gz"
 BUILD_DEPENDS="glib2 glib2-dev expat2 expat2-dev fontconfig fontconfig-dev openssl-1.0.0 openssl-1.0.0-dev
-               qt-4.x-base qt-4.x-xml qt-4.x-dbus qt-4.x-dev boost boost-dev libtorrent-rasterbar libtorrent-rasterbar-dev"
+               qt-4.x-base qt-4.x-xml qt-4.x-dbus qt-4.x-dev libtorrent-rasterbar libtorrent-rasterbar-dev
+               boost-1.50 boost-1.50-dev"
 
 DESCRIPTION="Free Software alternative to utorrent."
 AUTHOR="Christophe Dumez"
@@ -10,18 +11,6 @@ SITE="http://qbittorrent.sourceforge.net/"
 COPYING="GPL-2 with openssl exception"
 MAINTAINERS="Arslan S."
 TAGS="Qt Bittorrent Client"
-COMMENTS="Please do for the first time due to a bug:
-		Options->Preferences->Download and tick \"Pre-allocate all files\"
-		If you don't do this qbittorrent crashes when you press pause button while downloading.
-		Optional dependency: python (required for only torrent search engine)"
-CHANGELOG="2009/12/08 First Version 1.5.6
-		2010/01/28 Updated to 2.1.2
-		2010/07/09 Updated to 2.2.10
-		2010/10/09 Updated to 2.4.4
-		2010/11/09 Updated to 2.4.9
-		2010/12/15 Updated to 2.5.1
-		2011/02/03 Updated to 2.6.5
-		2011/03/14 Updated to 2.6.9
-		2011/04/18 Updated to 2.7.3
-		2011/08/06 Updated to 2.8.3"
+COMMENTS="---"
+CHANGELOG="---"
 CURRENT="Updated to $VERSION"

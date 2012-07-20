@@ -3,7 +3,7 @@ VERSION="1.2.7"
 SOURCE="http://webkitgtk.org/webkit-${VERSION}.tar.gz"
 BUILD_DEPENDS="gtk-doc gtk2 gtk2-dev Xorg-7.6-lib Xorg-7.6-dev libxcb libxcb-dev libxslt
                libsoup libsoup-dev sqlite3 sqlite3-dev gst-plugins-base gst-plugins-base-dev enchant enchant-dev
-               librsvg librsvg-dev icu icu-dev gobject-introspection gobject-introspection-dev"
+               librsvg librsvg-dev icu49 icu49-dev gobject-introspection gobject-introspection-dev"
 
 DESCRIPTION="WebKit/GTK+ is the GTK+ port of WebKit."
 AUTHOR="---"
