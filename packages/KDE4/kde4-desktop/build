@@ -25,7 +25,9 @@ build_rules() {
   tet_create
   tet_check
   tet_generate
+   tet_test
   tet_package
+   tet_encrypt
 
 }
 

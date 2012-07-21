@@ -24,6 +24,7 @@ build_rules() {
   tet_check
   tet_test
   tet_package
+  tet_encrypt
 
 }
 ##
