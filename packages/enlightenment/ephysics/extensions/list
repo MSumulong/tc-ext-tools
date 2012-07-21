@@ -5,6 +5,7 @@ usr/local/lib/libephysics.so
 usr/local/lib/libephysics.so.0
 usr/local/lib/libephysics.so.0.1.0
 usr/local/lib/pkgconfig/ephysics.pc
+usr/local/share/ephysics/ephysics_test.edj
 usr/local/share/ephysics/logo_background.png
 usr/local/share/ephysics/logo_letter-C.png
 usr/local/share/ephysics/logo_letter-E.png

@@ -1,5 +1,5 @@
 PACKAGE="e17"
-VERSION="svn~r74192"
+VERSION="svn~r74293"
 SOURCE="svn::http://svn.enlightenment.org/svn/e/trunk/e"
 BUILD_DEPENDS="alsa-dev
 	edje-dev

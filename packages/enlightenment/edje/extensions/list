@@ -7,8 +7,6 @@ usr/local/bin/edje_recc
 usr/local/bin/edje_watch
 usr/local/include/edje-1/Edje.h
 usr/local/include/edje-1/Edje_Edit.h
-usr/local/lib/edje/modules/multisense_factory/linux-gnu-i686-1.0.0/module.la
-usr/local/lib/edje/modules/multisense_factory/linux-gnu-i686-1.0.0/module.so
 usr/local/lib/edje/utils/epp
 usr/local/lib/libedje.a
 usr/local/lib/libedje.la
@@ -34,7 +32,6 @@ usr/local/share/edje/examples/edje-box.c
 usr/local/share/edje/examples/edje-box2.c
 usr/local/share/edje/examples/edje-color-class.c
 usr/local/share/edje/examples/edje-drag.c
-usr/local/share/edje/examples/edje-multisense.c
 usr/local/share/edje/examples/edje-perspective.c
 usr/local/share/edje/examples/edje-signals-messages.c
 usr/local/share/edje/examples/edje-swallow.c
@@ -55,7 +52,6 @@ usr/local/share/edje/examples/external_elm_check.edc
 usr/local/share/edje/examples/external_elm_panes.edc
 usr/local/share/edje/examples/external_emotion_elm.edc
 usr/local/share/edje/examples/lua_script.edc
-usr/local/share/edje/examples/multisense.edc
 usr/local/share/edje/examples/perspective.edc
 usr/local/share/edje/examples/red.png
 usr/local/share/edje/examples/signals-messages.edc

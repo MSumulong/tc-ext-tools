@@ -8,8 +8,8 @@
 #edje 
 #efreet 
 #e_dbus 
-#eeze
-#ephysics
+eeze
+ephysics
 e17 
 #emotion
 #ethumb
@@ -21,7 +21,7 @@ e17
 #edje_viewer
 #efenniht-e17-theme
 #detourious-e17-theme
-#terminology
+terminology
 #ephoto
 #epdf
 #envision
@@ -32,7 +32,7 @@ e17
 #python-edje
 #python-e_dbus
 #python-elementary
-#econnman
+econnman
 #enjoy
 #elsa
 #ecomp

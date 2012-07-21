@@ -1,5 +1,5 @@
 PACKAGE="econnman"
-VERSION="svn~r73455"
+VERSION="svn~r74293"
 SOURCE="svn::http://svn.enlightenment.org/svn/e/trunk//$PACKAGE"
 BUILD_DEPENDS="python-dev edje"
 
