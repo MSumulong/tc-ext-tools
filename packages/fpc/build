@@ -15,6 +15,10 @@ build_install() {
 
   make -j1 NOGDB=1 PREFIX=${INSTALL_ROOT}/usr/local install || return 1
 
+  export PATH="${INSTALL_ROOT}/usr/local/bin:$PATH"
+
+  fpc -iV
+
   install -m 755 -d ${INSTALL_ROOT}/usr/local/share/doc/${PACKAGE}
   install -m 644 fpcsrc/rtl/COPYING.FPC ${INSTALL_ROOT}/usr/local/share/doc/${PACKAGE}/COPYING || return 1
 
@@ -22,7 +26,7 @@ build_install() {
 
   mkdir -p ${INSTALL_ROOT}/etc
   ${INSTALL_ROOT}/usr/local/lib/fpc/${VERSION}/samplecfg /usr/local/lib/fpc/${VERSION} ${INSTALL_ROOT}/etc || return 1
-
+arch 
   mv $INSTALL_ROOT/usr/local/man $INSTALL_ROOT/usr/local/share/ || return 1
 
   tar -C $I_ROOT/usr/local/lib/fpc -xvf $PACKAGE_SOURCE || return 1
@@ -47,6 +51,7 @@ build_rules() {
   tet_create
   tet_generate
   tet_check
+  tet_test
   tet_package
 
 }

@@ -1,9 +1,7 @@
 PACKAGE="fpc"
-VERSION="2.4.4"
+VERSION="2.6.0"
 SOURCE="ftp://ftp.freepascal.org/pub/fpc/dist/${VERSION}/source/fpcbuild-${VERSION}.tar.gz"
-BUILD_DEPENDS="ncurses
-ncurses-dev
-fpc"
+BUILD_DEPENDS="ncurses ncurses-dev fpc"
 
 DESCRIPTION="Open source compiler for Pascal and Object Pascal."
 AUTHOR="---"
@@ -11,7 +9,5 @@ SITE="http://www.freepascal.org/"
 COPYING="GPL/LGPL/Custom"
 MAINTAINERS="Arslan S."
 COMMENTS="---"
-CHANGELOG="2010/08/31 First Version 2.4.0
-		2011/02/24 Updated to 2.4.2
-		2011/09/16 Updated to 2.4.4"
-CURRENT="Added fpc-src extension"
+CHANGELOG="---"
+CURRENT="Updated to $VERSION"

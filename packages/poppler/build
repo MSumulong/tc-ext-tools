@@ -33,10 +33,21 @@ build_install() {
   make DESTDIR="$INSTALL_ROOT" install || return 1
 
   # preserve old libs
+  # libpoppler-glib.so.4
   cp -L /usr/local/lib/libpoppler-glib.so.4.0.0 "$INSTALL_ROOT"/usr/local/lib
   ln -s libpoppler-glib.so.4.0.0 "$INSTALL_ROOT"/usr/local/lib/libpoppler-glib.so.4
+  # libpoppler.so.5
   cp -L /usr/local/lib/libpoppler.so.5.0.0 "$INSTALL_ROOT"/usr/local/lib
   ln -s libpoppler.so.5.0.0 "$INSTALL_ROOT"/usr/local/lib/libpoppler.so.5
+  # libpoppler-glib.so.5
+  cp -L /usr/local/lib/libpoppler-glib.so.5.0.0 "$INSTALL_ROOT"/usr/local/lib
+  ln -s libpoppler-glib.so.5.0.0 "$INSTALL_ROOT"/usr/local/lib/libpoppler-glib.so.5
+  # libpoppler.so.7
+  cp -L /usr/local/lib/libpoppler.so.7.0.0 "$INSTALL_ROOT"/usr/local/lib
+  ln -s libpoppler.so.7.0.0 "$INSTALL_ROOT"/usr/local/lib/libpoppler.so.7
+  # libpoppler-qt4.so.3
+  cp -L /usr/local/lib/libpoppler-qt4.so.3.3.0 "$INSTALL_ROOT"/usr/local/lib
+  ln -s libpoppler-qt4.so.3.3.0 "$INSTALL_ROOT"/usr/local/lib/libpoppler-qt4.so.3
 
 }
 ##
@@ -53,10 +64,11 @@ build_rules() {
   tet_compile
   tet_install
   tet_split
-   tet_strip
+  tet_strip
   tet_create
   tet_generate
   tet_check
+  tet_test
   tet_package
 
 }

@@ -1,5 +1,5 @@
 PACKAGE="poppler-data"
-VERSION="0.4.4"
+VERSION="0.4.5"
 SOURCE="http://poppler.freedesktop.org/poppler-data-${VERSION}.tar.gz"
 BUILD_DEPENDS=""
 
@@ -9,7 +9,5 @@ SITE="poppler.freedesktop.org/"
 COPYING="GPL/Adobe"
 MAINTAINERS="Jason W, Arslan S."
 COMMENTS="---"
-CHANGELOG="2008/10/22 First version 0.2.1 by Jason W
-		2010/02/21 Updated to 0.4.0 by Arslan S.
-		2010/09/05 Updated to 0.4.3 by Arslan S."
-CURRENT="Updated to 0.4.4 by Arslan S."
+CHANGELOG="---"
+CURRENT="Updated to $VERSION by Arslan S."
