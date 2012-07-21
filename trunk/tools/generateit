@@ -161,6 +161,8 @@ this_generate() {
    [ ! "${EXTENSION%-dev}" = "$EXTENSION" ] && DESCRIPTION="${DESCRIPTION%.}, development files."
    [ ! "${EXTENSION%-dbg}" = "$EXTENSION" ] && DESCRIPTION="${DESCRIPTION%.}, debugging symbols."
    [ ! "${EXTENSION%-doc}" = "$EXTENSION" ] && DESCRIPTION="${DESCRIPTION%.}, documentation files."
+   [ ! "${EXTENSION%-src}" = "$EXTENSION" ] && DESCRIPTION="${DESCRIPTION%.}, source files."
+   [ ! "${EXTENSION%-python}" = "$EXTENSION" ] && DESCRIPTION="${DESCRIPTION%.}, python bindings."
    [ ! "${EXTENSION%-locale}" = "$EXTENSION" ] && DESCRIPTION="${DESCRIPTION%.}, locale files."
    [ ! "${EXTENSION%-gir}" = "$EXTENSION" ] && DESCRIPTION="${DESCRIPTION%.}, gobject introspection data."
 

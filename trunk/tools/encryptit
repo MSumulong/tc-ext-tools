@@ -41,54 +41,70 @@ fi
 
 this_main() {
 
-   echo "---------------------------------------------------------------" > "$PACKAGE_MESSAGE_LOG"
-   echo "" >> "$PACKAGE_MESSAGE_LOG"
-   echo "Encrypting the package $PACKAGE ..." >> "$PACKAGE_MESSAGE_LOG"
-   echo "" >> "$PACKAGE_MESSAGE_LOG"
-   echo "---------------------------------------------------------------" >> "$PACKAGE_MESSAGE_LOG"
+   echo "---------------------------------------------------------------"
+   echo ""
+   echo "Encrypting the package $PACKAGE ..."
+   echo ""
+   echo "---------------------------------------------------------------"
 
-   echo -e "Checking if the package $PACKAGE tarball encrypted exists ... \c" >> "$PACKAGE_MESSAGE_LOG"
+   echo -e "Checking if the package $PACKAGE tarball encrypted exists ... \c"
    if [ -f "$PACKAGE_PACKAGE_ENCRYPTED" ]; then
-        echo "yes" >> "$PACKAGE_MESSAGE_LOG"
-        echo "Removing the package $PACKAGE tarball encrypted." >> "$PACKAGE_MESSAGE_LOG"
+        echo "yes"
+        echo -e "Removing the package $PACKAGE tarball encrypted ... \c"
         sudo rm -f "$PACKAGE_PACKAGE_ENCRYPTED"
+        echo "done"
    else
-        echo "no" >> "$PACKAGE_MESSAGE_LOG"
+        echo "no"
    fi
 
-   echo "---------------------------------------------------------------" >> "$PACKAGE_MESSAGE_LOG"
-   echo "Running bcrypt to encrypt the package $PACKAGE tarball."  >> "$PACKAGE_MESSAGE_LOG"
-   echo "---------------------------------------------------------------" >> "$PACKAGE_MESSAGE_LOG"
-   echo "${MESSAGE_COLOR}Please enter the encryption key: ${MESSAGE_COLOR_H}$PACKAGE_ENCRYPTION_KEY${NORMAL}"
+   echo -e "Checking if the package $PACKAGE tarball exists ... \c"
+   if [ -f "$PACKAGE_PACKAGE" ]; then
+        echo "yes"
+   else
+        echo "no"
+        echo "Error! the package tarball does not exist ..."
+        return 1
+   fi
 
-   bcrypt "$PACKAGE_PACKAGE"
+   echo "---------------------------------------------------------------"
+   echo "Using bcrypt to encrypt the package $PACKAGE tarball with the encryption key: $PACKAGE_ENCRYPTION_KEY"
+   echo "---------------------------------------------------------------"
+
+   bcrypt "$PACKAGE_PACKAGE" << EOS
+${PACKAGE_ENCRYPTION_KEY}
+${PACKAGE_ENCRYPTION_KEY}
+EOS
    if [ "$?" -gt 0 ]; then
-        echo "---------------------------------------------------------------" >> "$PACKAGE_MESSAGE_LOG"
-        echo "" >> "$PACKAGE_MESSAGE_LOG"
-        echo "Encrypting the package $PACKAGE failed." >> "$PACKAGE_MESSAGE_LOG"
-        echo "" >> "$PACKAGE_MESSAGE_LOG"
-        echo "---------------------------------------------------------------" >> "$PACKAGE_MESSAGE_LOG"
+        echo "---------------------------------------------------------------"
+        echo ""
+        echo "Encrypting the package $PACKAGE failed."
+        echo ""
+        echo "---------------------------------------------------------------"
         return 1
    else
-        echo "---------------------------------------------------------------" >> "$PACKAGE_MESSAGE_LOG"
-        echo "" >> "$PACKAGE_MESSAGE_LOG"
-        echo "Encrypted the package $PACKAGE successfully." >> "$PACKAGE_MESSAGE_LOG"
-        echo "" >> "$PACKAGE_MESSAGE_LOG"
-        echo "---------------------------------------------------------------" >> "$PACKAGE_MESSAGE_LOG"
+        echo "---------------------------------------------------------------"
+        echo ""
+        echo "Encrypted the package $PACKAGE successfully."
+        echo ""
+        echo "---------------------------------------------------------------"
    fi
 
    return 0
 
 }
 
-echo -e "${MESSAGE_COLOR}Encrypting the package ${MESSAGE_COLOR_H}$PACKAGE${MESSAGE_COLOR} ...${NORMAL}"
-this_main
+[ -f "$PACKAGE_ENCRYPT_STAMP" ] && sudo rm -f "$PACKAGE_ENCRYPT_STAMP"
+
+echo -e "${MESSAGE_COLOR}Encrypting the package ${MESSAGE_COLOR_H}$PACKAGE${MESSAGE_COLOR} with the encryption key: ${MESSAGE_COLOR_H}$PACKAGE_ENCRYPTION_KEY${MESSAGE_COLOR} ... ${NORMAL}\c"
+this_main > "$PACKAGE_MESSAGE_LOG" 2>&1
 if [ "$?" -gt 0 ]; then
      echo "${ERROR_COLOR}failed!${NORMAL}"
      echo "${WARNING_COLOR}For details: ${WARNING_COLOR_H}buildit --print message${NORMAL}"
      exit 1
 fi
 echo "${MESSAGE_COLOR_H}successful!${NORMAL}"
+
+touch "$PACKAGE_ENCRYPT_STAMP"
 
 exit 0
 
