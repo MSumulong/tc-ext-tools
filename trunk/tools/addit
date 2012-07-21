@@ -225,6 +225,13 @@ _EOF
           echo "x-$TET_PREFIX/share/locale" >> "$PACKAGE_EXTENSIONS/$EXTENSION/install" || return 1
        elif [ "${EXTENSION%-dev}" != "$EXTENSION" ]; then
           echo "${EXTENSION%-dev}.tcz" > "$PACKAGE_EXTENSIONS/$EXTENSION/dep" || return 1
+          echo "$TET_PREFIX/include" > "$PACKAGE_EXTENSIONS/$EXTENSION/install" || return 1
+          echo "$TET_PREFIX/lib/pkgconfig" >> "$PACKAGE_EXTENSIONS/$EXTENSION/install" || return 1
+          echo "$TET_PREFIX/lib/*.a" >> "$PACKAGE_EXTENSIONS/$EXTENSION/install" || return 1
+          echo "$TET_PREFIX/lib/*.la" >> "$PACKAGE_EXTENSIONS/$EXTENSION/install" || return 1
+       elif [ "${EXTENSION%-python}" != "$EXTENSION" ]; then
+          echo "${EXTENSION%-python}.tcz" > "$PACKAGE_EXTENSIONS/$EXTENSION/dep" || return 1
+          echo "$TET_PREFIX/lib/python*" > "$PACKAGE_EXTENSIONS/$EXTENSION/install" || return 1
        fi
    done
 
