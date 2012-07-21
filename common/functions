@@ -437,6 +437,7 @@ get_rules() {
    [ $(grep -v '^#' $PACKAGE_BUILD | grep -w tet_check) ] && HAVE_TET_CHECK=y
    [ $(grep -v '^#' $PACKAGE_BUILD | grep -w tet_test) ] && HAVE_TET_TEST=y
    [ $(grep -v '^#' $PACKAGE_BUILD | grep -w tet_package) ] && HAVE_TET_PACKAGE=y
+   [ $(grep -v '^#' $PACKAGE_BUILD | grep -w tet_encrypt) ] && HAVE_TET_ENCRYPT=y
 
 }
 
@@ -460,6 +461,7 @@ set_stamps() {
    PACKAGE_CHECK_STAMP="$PACKAGE_PKG/check.stamp"
    PACKAGE_TEST_STAMP="$PACKAGE_PKG/test.stamp"
    PACKAGE_PACKAGE_STAMP="$PACKAGE_PKG/package.stamp"
+   PACKAGE_ENCRYPT_STAMP="$PACKAGE_PKG/encrypt.stamp"
 
 }
 
