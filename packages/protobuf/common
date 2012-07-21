@@ -1,9 +1,7 @@
 PACKAGE="protobuf"
-VERSION="2.3.0"
+VERSION="2.4.1"
 SOURCE="http://protobuf.googlecode.com/files/protobuf-${VERSION}.tar.bz2"
-BUILD_DEPENDS="python
-python-dev
-python_setuptools-2.7"
+BUILD_DEPENDS="protobuf python python-dev python_setuptools-2.7"
 
 DESCRIPTION="Protocol buffers C++ library."
 AUTHOR="---"
@@ -13,8 +11,6 @@ MAINTAINERS="Arslan S."
 COMMENTS="Protocol Buffers are a way of encoding structured
 		data in an efficient yet extensible format. Google
 		uses Protocol Buffers for almost all of its internal
-		RPC protocols and file formats.
-
-		"
-CHANGELOG="2010/05/17 Original 2.3.0"
-CURRENT="Rebuilt against python 2.7"
+		RPC protocols and file formats."
+CHANGELOG="---"
+CURRENT="Updated to $VERSION"

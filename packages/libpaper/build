@@ -55,6 +55,7 @@ build_rules() {
    tet_generate
    tet_check
    tet_package
+   tet_encrypt
 
 }
 

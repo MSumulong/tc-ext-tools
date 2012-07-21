@@ -1,18 +1,9 @@
 PACKAGE="lyx"
-VERSION="2.0.1"
+VERSION="2.0.4"
 SOURCE="ftp://ftp.lip6.fr/pub/lyx/stable/2.0.x/lyx-${VERSION}.tar.xz"
-BUILD_DEPENDS="qt-4.x-base
-qt-4.x-dev
-fontconfig
-fontconfig-dev
-Xorg-7.6-lib
-Xorg-7.6-dev
-aiksaurus
-python
-enchant
-enchant-dev
-libiconv
-libiconv-dev"
+BUILD_DEPENDS="qt-4.x-base qt-4.x-dev fontconfig fontconfig-dev
+               Xorg-7.6-lib Xorg-7.6-dev aiksaurus python
+               enchant enchant-dev libiconv libiconv-dev"
 
 DESCRIPTION="LyX is a document processor."
 AUTHOR="LyX Team"
@@ -20,9 +11,5 @@ SITE="http://www.lyx.org"
 COPYING="GPL-2"
 MAINTAINERS="Arslan S."
 COMMENTS="---"
-CHANGELOG="2009/10/29 First Version
-		2009/12/13 Updated to 1.6.5
-		2010/08/26 Updated to 1.6.7
-		2010/11/16 Updated to 1.6.8
-		2011/02/07 Updated to 1.6.9"
+CHANGELOG="---"
 CURRENT="Updated to $VERSION"
