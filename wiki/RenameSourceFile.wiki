@@ -1,1 +1,2 @@
+#labels rename,source,file
 http://code.google.com/p/tc-ext-tools/issues/detail?id=17
