@@ -1,16 +1,19 @@
 PACKAGE="minidlna"
-VERSION="1.0.24"
-SOURCE="http://downloads.sourceforge.net/project/minidlna/minidlna/1.0.24/minidlna_1.0.24_src.tar.gz"
-BUILD_DEPENDS="sqlite3-dev.tcz \
-		flac-dev.tcz
-		libexif-dev.tcz
-		libexif.tcz
+VERSION="1.0.25"
+SOURCE="http://minidlna.cvs.sourceforge.net/viewvc/minidlna/?view=tar->${PACKAGE}-${VERSION}.tar.gz"
+#SOURCE="http://downloads.sourceforge.net/project/minidlna/minidlna/$VERSION/minidlna_"$VERSION"_src.tar.gz"
+BUILD_DEPENDS="sqlite3-dev.tcz 
 		libid3tag.tcz
 		libid3tag-dev.tcz
+		libexif-dev.tcz
+		libexif.tcz
 		libogg-dev.tcz
 		libvorbis-dev.tcz
-		ffmpeg-0.10-dev.tcz
+		flac-dev.tcz
+		ffmpeg-0.11-dev.tcz
 		jpeg_base-dev.tcz"
+#		ffmpeg-0.7-dev.tcz
+#		ffmpeg-0.10-dev.tcz
 
 DESCRIPTION="server software with the aim of being fully compliant with DLNA/UPnP-AV clients"
 AUTHOR="Justin Maggard, Portions:  Thomas Bernard"
@@ -19,5 +22,5 @@ COPYING="GPL-2"
 MAINTAINERS="jls_legalize <unsenepopiu at tin dot it>"
 TAGS="server DLNA/UPnP-AV"
 COMMENTS="Configuration file is /etc/minidlna.conf"
-CHANGELOG="2012/05/06 First Version 1.0.24"
-CURRENT="Rebuilt against ffmpeg-0.10"
+CHANGELOG=""
+CURRENT="Updated to $VERSION, changed deps cause built against ffmpeg-0.11"
