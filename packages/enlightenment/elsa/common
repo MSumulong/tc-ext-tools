@@ -1,5 +1,5 @@
 PACKAGE="elsa"
-VERSION="svn~r73113"
+VERSION="svn~r74295"
 SOURCE="svn::http://svn.enlightenment.org/svn/e/trunk/PROTO/$PACKAGE"
 BUILD_DEPENDS="elementary-dev"
 

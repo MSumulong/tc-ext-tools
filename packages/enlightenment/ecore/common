@@ -1,5 +1,5 @@
 PACKAGE="ecore"
-VERSION="svn~r73502"
+VERSION="svn~r74356"
 SOURCE="svn::http://svn.enlightenment.org/svn/e/trunk/${PACKAGE}"
 BUILD_DEPENDS="gettext
 	libtool-dev
@@ -7,6 +7,8 @@ BUILD_DEPENDS="gettext
 	libcares-dev
 	libxcb-util-dev
 	cvs"
+#	curl-dev
+#	libssh2-dev"
 DESCRIPTION="a clean and tiny event loop library with many modules"
 AUTHOR="See http://enlightenment.org/p.php?p=contact&l=e"
 SITE="enlightenment.org"
