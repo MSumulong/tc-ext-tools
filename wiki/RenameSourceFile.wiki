@@ -1,3 +1,5 @@
+#summary Facts about setting the source file name
+
 == Source File Name ==
 
 Name of a source file is determined simply by cutting the variable with "##`*`/".
