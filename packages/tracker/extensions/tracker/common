@@ -1,0 +1,8 @@
+COMMENTS="to start tracker use this command:
+		tracker-control -s
+
+		optional dep: gtk3.scm for tracker-preferences & tracker-needle
+
+		In case u are upgrading delete 
+                ~/.X.d/tracker-miner-fs,  ~/.X.d/tracker-writeback and
+		~/.X.d/tracker"

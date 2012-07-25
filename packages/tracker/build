@@ -1,0 +1,88 @@
+
+############################################################################################
+#                                                                                          #
+#    package build functions: configure, compile, install, rules, and custom functions     #
+#                                                                                          #
+############################################################################################
+export LDFLAGS="-L/apps/gtk3/lib"
+export CPPFLAGS="-I/apps/gtk3/include"
+export PATH="/apps/gtk3/bin:$PATH"
+export PKG_CONFIG_PATH="/apps/gtk3/lib/pkgconfig:$PKG_CONFIG_PATH"
+
+## configure
+build_scm_load() {
+   scm-load -i gtk3
+}
+build_configure() {
+   ## autotools
+   ./configure --prefix=/usr/local \
+	--enable-gtk-doc-html=no \
+	--enable-unit-tests=no \
+	--enable-tracker-preferences \
+	--enable-libgsf=no \
+	--enable-gnome-keyring=no \
+	--disable-upower \
+	--enable-journal=no || return 1
+#	--enable-tracker-search-bar=yes
+#	--enable-taglib=no \
+#	--enable-exempi=no \
+#	--enable-libiptcdata=no \
+#	--enable-libexif=no \
+#	--enable-tracker-status-icon=no \
+#	--enable-miner-kmail=no \
+#	--enable-tracker-explorer=no \
+}
+
+## compile
+build_compile() {
+
+
+   ## cmake
+   make || return 1
+
+}
+
+## install
+build_install() {
+
+   ## cmake
+   #cd build
+   make DESTDIR="$I_ROOT" install || return 1
+
+   BINROOT="$I_ROOT"/usr/local/bin
+  
+   sudo mv "$BINROOT"/tracker-preferences "$BINROOT"/tracker-preferences-bin
+   sudo cp "$P_SRC"/tracker-preferences.wrapper "$BINROOT"/tracker-preferences
+   sudo chmod +x "$BINROOT"/tracker-preferences 
+   sudo chmod +x "$BINROOT"/tracker-preferences-bin 
+
+   sudo mv "$BINROOT"/tracker-needle "$BINROOT"/tracker-needle-bin
+   sudo cp "$P_SRC"/tracker-needle.wrapper "$BINROOT"/tracker-needle
+   sudo chmod +x "$BINROOT"/tracker-needle 
+   sudo chmod +x "$BINROOT"/tracker-needle-bin 
+}
+## rules
+build_rules() {
+
+   tet_load
+
+   build_scm_load
+   sudo ln -s /apps/gtk3/include/gtk-3.0 /usr/local/include/
+
+   tet_download
+   tet_convert
+   tet_unpack
+   tet_patch
+   tet_configure
+   tet_compile
+   tet_install
+   tet_split
+   tet_strip
+   tet_create
+   tet_generate
+   tet_check
+   tet_test
+   tet_package
+
+}
+

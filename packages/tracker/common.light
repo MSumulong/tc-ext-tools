@@ -1,0 +1,25 @@
+PACKAGE="tracker"
+VERSION="0.14.2"
+#VERSION="0.10.37"
+SOURCE="http://ftp.gnome.org/pub/GNOME/sources/tracker/0.14/tracker-$VERSION.tar.xz"
+BUILD_DEPENDS="	sqlite3-dev.tcz
+Xorg-7.6-dev
+libpthread-stubs.tcz
+	glib2-dev
+gdk-pixbuf2-dev.tcz
+pango-dev
+		libunistring-dev.tcz"
+#		dbus-glib-dev.tcz 
+#icu-dev
+#libgee-dev.tcz"
+#		taglib-dev"
+
+DESCRIPTION="a search engine"
+AUTHOR="various"
+SITE="http://projects.gnome.org/tracker/"
+COPYING="GPL-2"
+MAINTAINERS="jls_legalize <jlselgalize@gmail.com>"
+TAGS="search"
+COMMENTS=""
+CHANGELOG=""
+CURRENT="Upated to ${VERSION}"

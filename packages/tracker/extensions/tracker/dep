@@ -1,0 +1,9 @@
+gsettings-desktop-schemas.tcz
+sqlite3.tcz
+libunistring.tcz
+dbus.tcz
+dconf.tcz
+libexif.tcz
+libiptcdata.tcz
+libexempi.tcz
+enca.tcz

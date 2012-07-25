@@ -1,0 +1,90 @@
+
+############################################################################################
+#                                                                                          #
+#    package build functions: configure, compile, install, rules, and custom functions     #
+#                                                                                          #
+############################################################################################
+export LDFLAGS="-L/apps/gtk3/lib"
+export CPPFLAGS="-I/apps/gtk3/include"
+export PATH="/apps/gtk3/bin:$PATH"
+export PKG_CONFIG_PATH="/apps/gtk3/lib/pkgconfig:$PKG_CONFIG_PATH"
+
+## configure
+scm_load() {
+   scm-load -i gtk3
+}
+build_configure() {
+   ## autotools
+   ./configure --prefix=/usr/local \
+	--enable-gtk-doc-html=no \
+	--enable-unit-tests=no \
+	--enable-tracker-preferences \
+	--enable-taglib=no \
+	--enable-exempi=no \
+	--enable-libiptcdata=no \
+	--enable-libexif=no \
+	--enable-journal=no || return 1
+
+#	--enable-tracker-search-bar=no \
+#	--enable-tracker-status-icon=no \
+#	--enable-miner-kmail=no \
+#	--enable-tracker-explorer=no \
+	
+
+   ## cmake
+   #mkdir build
+   #cd build
+   #cmake -DCMAKE_INSTALL_PREFIX=/usr/local -DCMAKE_BUILD_TYPE=Release .. || return 1
+
+   ## python
+   #python setup.py configure || return 1
+
+   ## waf
+   #./waf configure --prefix=/usr/local || return 1
+
+   ## qmake
+   #qmake PREFIX="/usr/local" || return 1
+
+}
+
+## compile
+build_compile() {
+
+   ln -s /apps/gtk3/include/gtk-3.0 /usr/local/include/
+   ## cmake
+   make || return 1
+
+}
+
+## install
+build_install() {
+
+   ## cmake
+   #cd build
+   make DESTDIR="$I_ROOT" install || return 1
+   #make INSTALL_ROOT="$I_ROOT" install || return 1
+
+}
+
+## rules
+build_rules() {
+
+   tet_load
+   scm_load
+   tet_download
+   tet_convert
+   tet_unpack
+   tet_patch
+   tet_configure
+   tet_compile
+   tet_install
+   tet_split
+   tet_strip
+   tet_create
+   tet_generate
+   tet_check
+   tet_test
+   tet_package
+
+}
+
