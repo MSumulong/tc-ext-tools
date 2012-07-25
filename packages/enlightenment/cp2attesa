@@ -1,0 +1,6 @@
+#!/bin/sh
+
+for i in $(cat series); do
+	cp "${HOME}"/tc-ext-tools/storage/$i/pkg/*.tar.bz2 \
+		"${HOME}/hd-tcbuild/attesa"
+done
