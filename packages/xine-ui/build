@@ -9,7 +9,10 @@
 build_configure() {
 
    ## autotools
-   ./configure --prefix=/usr/local --disable-lirc --without-curl || return 1
+   ./configure --prefix=/usr/local \
+		--disable-lirc \
+		--without-curl \
+		--without-iconv || return 1
 
    ## cmake
    #mkdir build
