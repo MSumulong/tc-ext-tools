@@ -1,0 +1,48 @@
+PACKAGE="pidgin"
+VERSION="2.10.6"
+SOURCE="http://sourceforge.net/projects/pidgin/files/Pidgin/$VERSION/${PACKAGE}-${VERSION}.tar.bz2"
+BUILD_DEPENDS="gtk2-dev
+	gstreamer-dev
+	farstream-dev
+	libidn-dev
+	gnutls2-dev
+	libiconv-dev"
+#	nobus-dev
+
+DESCRIPTION="A multi-protocol instant messaging (IM) client"
+AUTHOR="Sean Egan"
+SITE="http://pidgin.im/"
+COPYING="GPL-2"
+MAINTAINERS="Róbinson J. Araújo, jls_legalize <jlslegalize@gmail.com>"
+TAGS="messaging IM client"
+COMMENTS="Optional deps: 
+		   gst-plugins-good (for sounds & xmpp calls)
+		   gst-plugins-bad (for xmpp calls)
+		   gst-plugins-ugly
+		   gst-ffmpeg"
+CHANGELOG="2009/04/28 First Version by Róbinson J. Araújo
+		2009/11/28 Updated to 2.6.3
+		2009/11/30 Updated to 2.6.4
+		2010/01/12 Updated to 2.6.5
+		2010/02/13 Recompiled with voice & video support
+		2010/02/18 Updated to 2.6.6
+		2010/06/13 Updated to 2.7.0
+		2010/07/24 Updated to 2.7.2
+		2010/08/12 Updated to 2.7.3
+	        2010/10/22 Updated to 2.7.4
+		2010/10/24 Removed libv4l check and fixed error
+			in the desktop file
+		2010/11/02 updated to 2.7.5
+		2010/11/28 updated to 2.7.7
+		2010/12/30 updated to 2.7.9
+		2011/02/12 updated to 2.7.10, removed deps:
+		                         gst-plugins-bad, gst-plugins-good & nss
+		2011/03/12 updated to 2.7.11
+		2011/06/09 Updated to 2.8.0
+		2011/06/24 Updated to 2.9.0
+		2011/11/14 Updated to 2.10.0
+		2011/12/27 Updated to 2.10.1
+		2012/03/25 Updated to 2.10.2
+		2012/04/05 Updated to 2.10.3
+		2012/05/08 Updated to 2.10.4, disabled console ui (finch), enabled farstream, removed farsight, changed deps"
+CURRENT="Updated to ${VERSION}"
