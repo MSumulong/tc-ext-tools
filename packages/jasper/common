@@ -1,0 +1,16 @@
+PACKAGE="jasper"
+VERSION="1.900.1"
+SOURCE="http://www.ece.uvic.ca/~frodo/jasper/software/$PACKAGE-$VERSION.zip"
+BUILD_DEPENDS="Xorg-7.6-dev"
+
+DESCRIPTION="an open-source initiative to provide a free software-based
+		reference implementation of the codec specified in the 
+		JPEG-2000 Part-1 standard (i.e., ISO/IEC 15444-1)."
+AUTHOR="Michael Adams and others" 
+SITE="http://www.ece.uvic.ca/~frodo/jasper"
+COPYING="JasPer License Version 2.0"
+MAINTAINERS="jls_legalize <jlslegalize@gmail.com>"
+TAGS="codec JPEG-2000 Part-1 ISO/IEC 15444-1."
+COMMENTS="---"
+CHANGELOG="---"
+CURRENT="First Version"
