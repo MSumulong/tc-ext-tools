@@ -1,0 +1,21 @@
+PACKAGE="nobus"
+VERSION="git20120705"
+SOURCE="git::git://github.com/clbr/nobus.git"
+BUILD_DEPENDS="glib2-dev"
+DESCRIPTION="dbus replacement"
+AUTHOR="authors of package"
+SITE="https://github.com/clbr/nobus"
+COPYING="Zlib"
+MAINTAINERS="jls_legalize <jlslegalize@gmail.com>"
+TAGS="dbus"
+COMMENTS="Your favorite application requires dbus, 
+		uses it for nothing important,
+		and gives no option to disable it?
+
+		Forcing you to waste disk space and run an unnecessary 
+		daemon?
+
+
+		Fear no more, for NoBus is here!"
+CHANGELOG="---"
+CURRENT="First Version"
