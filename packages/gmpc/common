@@ -1,0 +1,43 @@
+PACKAGE="gmpc"
+VERSION="11.8.16"
+SOURCE="http://download.sarine.nl/Programs/gmpc/11.8/$PACKAGE-$VERSION.tar.gz"
+BUILD_DEPENDS="libmpd-dev 
+	libmpd
+	libsoup-dev
+	sqlite3-dev
+	libunique-dev 
+	gob2
+	dbus-glib-dev
+	vala"
+DESCRIPTION="Gnome Music Player Client - a GTK2 frontend for mpd"
+AUTHOR="Qball"
+SITE="http://gmpc.wikia.com/wiki/Gnome_Music_Player_Client"
+COPYING="GPL-2"
+MAINTAINERS="TaoTePuh, jls_legalize (jlslegalize at gmail dot com)"
+TAGS="Gnome Music Player Client GTK2 frontend mpd"
+COMMENTS="Hint (meta-extension)
+                ---------------------
+                There is also a meta-extension available in the repo (gmpc-full).
+                It loads gmpc and all available plugins.
+
+                Screenshots
+                -----------
+                http://gmpc.wikia.com/wiki/GMPC_SCREENSHOST
+
+                About
+                -----
+                GMPC is a GTK2 frontend for Music Player Daemon.
+
+                It is designed to be lightweight and easy to use, while
+                providing full access to all of MPD's features. Users are
+                presented with several different methods to browse through
+                their music.
+
+                It can be extended by plugins, of which many are available.
+
+                GMPC is the oldest maintained Graphical client for MPD. The
+                project was started in 2003 and been under constant development
+                ever since."
+CHANGELOG="2010/08/26 First Version, git, (0.20.95)
+		2011/01/09 added shared-mime-info.tcz as a dependency"
+CURRENT="Updated to ${VERSION}"

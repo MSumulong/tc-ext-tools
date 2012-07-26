@@ -1,0 +1,6 @@
+usr/local
+x-usr/local/include
+x-usr/local/lib/pkgconfig
+x-usr/local/share/gnome/help
+x-usr/local/share/locale
+x-usr/local/share/man
