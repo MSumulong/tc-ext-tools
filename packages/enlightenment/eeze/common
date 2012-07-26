@@ -1,5 +1,5 @@
 PACKAGE="eeze"
-VERSION="svn~r74330"
+VERSION="svn~r74401"
 SOURCE="svn::http://svn.enlightenment.org/svn/e/trunk/${PACKAGE}"
 BUILD_DEPENDS="ecore-dev
 	udev-dev"
