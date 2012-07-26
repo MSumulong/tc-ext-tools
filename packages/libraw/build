@@ -9,7 +9,6 @@ build_download_demosaic() {
    busybox wget -P "$_PACKAGE_SRC" http://www.libraw.org/data/LibRaw-demosaic-pack-GPL$1-$VERSION.tar.gz
 }
 build_unpack_demosaic() {
-#   busybox tar xzvf "$_PACKAGE_SRC"/LibRaw-demosaic-pack-GPL$1-$VERSION.tar.gz -C "$_PACKAGE_SRC"/Libraw-$VERSION 
    busybox tar xzvf "$_PACKAGE_SRC"/LibRaw-demosaic-pack-GPL$1-$VERSION.tar.gz -C "$PACKAGE_SOURCE_TOPDIR"
 }
 ## configure
@@ -104,7 +103,6 @@ build_rules() {
    tet_check
    tet_test
    tet_package
-   tet_encrypt
 
 }
 
