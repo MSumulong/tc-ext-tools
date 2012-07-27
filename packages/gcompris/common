@@ -1,5 +1,5 @@
 PACKAGE="gcompris"
-VERSION="11.09"
+VERSION="12.01"
 SOURCE="http://garr.dl.sourceforge.net/project/gcompris/${VERSION}/gcompris-${VERSION}.tar.gz"
 BUILD_DEPENDS="texinfo texi2html gettext intltool gnuchess pyxml pygtk-2.7 pygtk-2.7-dev
                librsvg librsvg-dev gtk2 gtk2-dev libxcb libxcb-dev gnet gnet-dev
@@ -10,7 +10,9 @@ AUTHOR="---"
 SITE="http://gcompris.net/"
 COPYING="GPL-3"
 MAINTAINERS="Arslan S."
+TAGS="education suite children"
 COMMENTS="---"
 CHANGELOG="2010/12/26 First Version 9.5
-		2011/03/02 Updated to 9.6"
+		2011/03/02 Updated to 9.6
+		2011/11/27 Updated to 11.09"
 CURRENT="Updated to $VERSION"

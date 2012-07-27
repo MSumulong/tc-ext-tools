@@ -653,6 +653,7 @@ usr/local/share/gcompris/boards/clickgame/teeth_7.png
 usr/local/share/gcompris/boards/clockgame.svg
 usr/local/share/gcompris/boards/clockgame.xml
 usr/local/share/gcompris/boards/clockgame/clockgame-bg.svgz
+usr/local/share/gcompris/boards/clockgame/clockgame-bg0.svgz
 usr/local/share/gcompris/boards/colors.svg
 usr/local/share/gcompris/boards/colors.xml
 usr/local/share/gcompris/boards/colors/activity.desktop
@@ -1917,6 +1918,20 @@ usr/local/share/gcompris/boards/instruments/violin.ogg
 usr/local/share/gcompris/boards/instruments/violin.svg
 usr/local/share/gcompris/boards/keyboard.svg
 usr/local/share/gcompris/boards/keyboard.xml
+usr/local/share/gcompris/boards/lang.svg
+usr/local/share/gcompris/boards/lang.xml
+usr/local/share/gcompris/boards/lang/lang.xml
+usr/local/share/gcompris/boards/lang/numbers/banana.svg
+usr/local/share/gcompris/boards/lang/numbers/empty.svg
+usr/local/share/gcompris/boards/lang/numbers/lemon.svg
+usr/local/share/gcompris/boards/lang/numbers/mango.svg
+usr/local/share/gcompris/boards/lang/numbers/one.svg
+usr/local/share/gcompris/boards/lang/numbers/orange.svg
+usr/local/share/gcompris/boards/lang/numbers/peach.svg
+usr/local/share/gcompris/boards/lang/numbers/pear.svg
+usr/local/share/gcompris/boards/lang/numbers/pineapples.svg
+usr/local/share/gcompris/boards/lang/numbers/raspberries.svg
+usr/local/share/gcompris/boards/lang/numbers/strawberries.svg
 usr/local/share/gcompris/boards/leftright.svg
 usr/local/share/gcompris/boards/leftright.xml
 usr/local/share/gcompris/boards/leftright/leftright-bg.svgz
@@ -2720,7 +2735,6 @@ usr/local/share/gcompris/boards/railroad/wagon6.png
 usr/local/share/gcompris/boards/railroad/wagon7.png
 usr/local/share/gcompris/boards/railroad/wagon8.png
 usr/local/share/gcompris/boards/railroad/wagon9.png
-usr/local/share/gcompris/boards/read_colors.svg
 usr/local/share/gcompris/boards/reading.svg
 usr/local/share/gcompris/boards/reading.xml
 usr/local/share/gcompris/boards/readingh.svg
@@ -9392,6 +9406,9 @@ usr/local/share/gcompris/python/guessnumber.py
 usr/local/share/gcompris/python/hangman.py
 usr/local/share/gcompris/python/hexagon.py
 usr/local/share/gcompris/python/hydroelectric.py
+usr/local/share/gcompris/python/lang.py
+usr/local/share/gcompris/python/langFindit.py
+usr/local/share/gcompris/python/langLib.py
 usr/local/share/gcompris/python/lightsoff.py
 usr/local/share/gcompris/python/login.py
 usr/local/share/gcompris/python/louis_braille.py
