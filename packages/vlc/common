@@ -87,7 +87,8 @@ libdc1394
 libdc1394-dev
 libavc1394
 libavc1394-dev
-libproxy-2.7
+libproxy
+libproxy-dev
 jack
 jack-dev
 librsvg

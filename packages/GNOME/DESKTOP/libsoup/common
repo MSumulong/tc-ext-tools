@@ -3,7 +3,7 @@ VERSION="2.38.1"
 SOURCE="http://ftp.gnome.org/pub/GNOME/sources/libsoup/2.38/libsoup-${VERSION}.tar.xz"
 BUILD_DEPENDS="glib2 glib2-dev libxml2 libxml2-dev glib-networking
                sqlite3 sqlite3-dev libgcrypt libgcrypt-dev shared-mime-info
-               libgnome-keyring libgnome-keyring-dev libproxy-2.7
+               libgnome-keyring libgnome-keyring-dev libproxy libproxy-dev
                gobject-introspection gobject-introspection-dev"
 
 DESCRIPTION="An HTTP client/server library for GNOME."

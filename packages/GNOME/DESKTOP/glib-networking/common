@@ -8,7 +8,8 @@ libgcrypt-dev
 gnutls
 gnutls-dev
 gsettings-desktop-schemas
-libproxy-2.7"
+libproxy
+libproxy-dev"
 
 DESCRIPTION="Network-related gio modules for glib."
 AUTHOR="---"
@@ -16,5 +17,5 @@ SITE="http://www.gtk.org/"
 COPYING="GPL-2"
 MAINTAINERS="Arslan S."
 COMMENTS="---"
-CHANGELOG="2011/05/07 First Version 2.28.6.1"
-CURRENT="Updated to $VERSION"
+CHANGELOG="---"
+CURRENT="Rebuilt"
