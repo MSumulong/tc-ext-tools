@@ -1,1 +1,2 @@
 ICON="/usr/local/share/pixmaps/mumble.png"
+COMMENTS="Requires OpenGL so Xorg must be installed."

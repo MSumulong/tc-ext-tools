@@ -1,0 +1,3 @@
+COMMENTS="To start murmur: sudo /usr/local/etc/init.d/murmur start
+		The configuration is set by /usr/local/etc/murmur.ini
+		See /usr/local/share/doc/murmur/README for details."

@@ -1,0 +1,7 @@
+usr/local/etc/conf.d/murmur
+usr/local/etc/dbus-1/system.d/murmur.conf
+usr/local/etc/init.d/murmur
+usr/local/etc/murmur.ini
+usr/local/sbin/murmurd
+usr/local/share/doc/murmur/README
+usr/local/share/man/man1/murmurd.1

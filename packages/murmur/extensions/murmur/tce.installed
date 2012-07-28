@@ -1,0 +1,10 @@
+#!/bin/sh
+
+getent group murmur > /dev/null || addgroup -g 86 murmur > /dev/null 2>&1
+getent passwd murmur > /dev/null || adduser -u 86 -G murmur -s /bin/false murmur > /dev/null 2>&1
+
+[ -d /var/run/murmur ] || install -d -m 775 /var/run/murmur -o murmur -g murmur > /dev/null 2>&1
+[ -d /var/lib/murmur ] || install -d -m 775 /var/lib/murmur -o murmur -g murmur > /dev/null 2>&1
+[ -d /var/log/murmur ] || install -d -m 775 /var/log/murmur -o murmur -g murmur > /dev/null 2>&1
+
+/usr/local/etc/init.d/dbus reload > /dev/null 2>&1

@@ -1,0 +1,17 @@
+PACKAGE="murmur"
+VERSION="1.2.3"
+SOURCE="http://downloads.sourceforge.net/mumble/mumble-${VERSION}.tar.gz"
+BUILD_DEPENDS="boost-1.50 boost-1.50-dev protobuf protobuf-dev icu49 icu49-dev
+               qt-4.x-base qt-4.x-dev qt-4.x-xml qt-4.x-sql qt-4.x-opengl qt-4.x-dbus
+               qt-4.x-extended Xorg-7.6-lib Xorg-7.6-dev libxcb libxcb-dev
+               libavahi avahi-dev libcap openssl-1.0.0 openssl-1.0.0-dev"
+
+DESCRIPTION="Server for mumble voice chat application."
+AUTHOR="---"
+SITE="http://mumble.sourceforge.net/"
+COPYING="GPL"
+MAINTAINERS="Arslan S."
+TAGS="voice chat server"
+COMMENTS="---"
+CHANGELOG="---"
+CURRENT="First Version"

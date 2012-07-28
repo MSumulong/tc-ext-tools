@@ -1,0 +1,11 @@
+eglibc_apps.tcz
+protobuf.tcz
+qt-4.x-base.tcz
+qt-4.x-sql.tcz
+qt-4.x-xml.tcz
+qt-4.x-dbus.tcz
+openssl-1.0.0.tcz
+icu49.tcz
+dbus.tcz
+libavahi.tcz
+libcap.tcz
