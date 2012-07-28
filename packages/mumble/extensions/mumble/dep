@@ -1,0 +1,14 @@
+qt-4.x-base.tcz
+qt-4.x-xml.tcz
+qt-4.x-sql.tcz
+qt-4.x-dbus.tcz
+qt-4.x-opengl.tcz
+qt-4.x-extended.tcz
+openssl-1.0.0.tcz
+libavahi.tcz
+libasound.tcz
+libpulseaudio.tcz
+speex.tcz
+libsndfile.tcz
+protobuf.tcz
+libogg.tcz

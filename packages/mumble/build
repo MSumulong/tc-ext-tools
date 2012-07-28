@@ -1,0 +1,75 @@
+
+############################################################################################
+#                                                                                          #
+#    package build functions: configure, compile, install, rules, and custom functions     #
+#                                                                                          #
+############################################################################################
+
+## configure
+build_configure() {
+
+   qmake main.pro PREFIX="/usr/local/local" \
+      CONFIG+="bundled-celt no-bundled-speex no-speechd no-g15 no-xevie no-server \
+      no-embed-qt-translations no-update packaged" \
+      DEFINES+="PLUGIN_PATH=/usr/local/local/lib/mumble" || return 1
+
+}
+
+## compile
+build_compile() {
+
+   make release || return 1
+
+}
+
+## install
+build_install() {
+
+  # bin stuff
+  install -m755 -D ./release/mumble $I_ROOT/usr/local/bin/mumble
+  install -m755 -D ./release/mumble11x $I_ROOT/usr/local/bin/mumble11x
+  install -m755 -D ./scripts/mumble-overlay $I_ROOT/usr/local/bin/mumble-overlay
+
+  sed -i 's|/bin/bash|/bin/sh|' $I_ROOT/usr/local/bin/mumble-overlay
+  sed -i 's|/usr|/usr/local|g' $I_ROOT/usr/local/bin/mumble-overlay
+
+  # lib stuff
+  install -m755 -D ./release/libmumble.so.$VERSION $I_ROOT/usr/local/lib/mumble/libmumble.so.$VERSION
+  ln -s libmumble.so.$VERSION $I_ROOT/usr/local/lib/mumble/libmumble.so
+  ln -s libmumble.so.$VERSION $I_ROOT/usr/local/lib/mumble/libmumble.so.${VERSION%.*.*}
+  ln -s libmumble.so.$VERSION $I_ROOT/usr/local/lib/mumble/libmumble.so.${VERSION%.*}
+  install -m755 -D ./release/plugins/liblink.so $I_ROOT/usr/local/lib/mumble/liblink.so
+  install -m755 -D ./release/plugins/libmanual.so $I_ROOT/usr/local/lib/mumble/libmanual.so
+  install -m755 -D ./release/libcelt* $I_ROOT/usr/local/lib/mumble/
+
+  # other stuff
+  install -m644 -D ./scripts/mumble.desktop $I_ROOT/usr/local/share/applications/mumble.desktop
+  install -m755 -d $I_ROOT/usr/local/share/man/man1
+  install -m644 -D ./man/mum* $I_ROOT/usr/local/share/man/man1/
+  install -m644 -D ./icons/mumble.svg $I_ROOT/usr/local/share/icons/hicolor/scalable/apps/mumble.svg
+  install -m644 -D ./icons/mumble.osx.png $I_ROOT/usr/local/share/pixmaps/mumble.png
+
+}
+
+## rules
+build_rules() {
+
+   tet_load
+   tet_download
+   tet_convert
+   tet_unpack
+   tet_patch
+   tet_configure
+   tet_compile
+   tet_install
+   tet_split
+   tet_strip
+   tet_create
+   tet_generate
+   tet_check
+   tet_test
+   tet_package
+   tet_encrypt
+
+}
+
