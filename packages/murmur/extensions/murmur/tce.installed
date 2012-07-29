@@ -1,10 +1,24 @@
 #!/bin/sh
 
-getent group murmur > /dev/null || addgroup -g 86 murmur > /dev/null 2>&1
-getent passwd murmur > /dev/null || adduser -u 86 -G murmur -s /bin/false murmur > /dev/null 2>&1
+this_main() {
 
-[ -d /var/run/murmur ] || install -d -m 775 /var/run/murmur -o murmur -g murmur > /dev/null 2>&1
-[ -d /var/lib/murmur ] || install -d -m 775 /var/lib/murmur -o murmur -g murmur > /dev/null 2>&1
-[ -d /var/log/murmur ] || install -d -m 775 /var/log/murmur -o murmur -g murmur > /dev/null 2>&1
+  getent group murmur || addgroup murmur
+  getent passwd murmur || adduser -S -G murmur -h /var/lib/murmur murmur
 
-/usr/local/etc/init.d/dbus reload > /dev/null 2>&1
+  for i in lib log run
+  do
+     [ -d /var/$i ] || mkdir -p /var/$i
+     [ -d /var/$i/murmur ] || install -d -m 775 /var/$i/murmur -o murmur -g murmur
+  done
+
+  if [ -L /usr/local/etc/murmur.ini ]; then
+    cp -L /usr/local/etc/murmur.ini /usr/local/etc/murmur.ini
+  fi
+
+  chown murmur:murmur /usr/local/etc/murmur.ini
+
+  /usr/local/etc/init.d/dbus reload
+
+}
+
+this_main >/dev/null 2>&1

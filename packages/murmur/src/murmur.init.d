@@ -12,9 +12,6 @@ case "$1" in
   start)
     echo -e "\nStarting murmur ... \c"
 
-    [ -d /var/run/murmur ] || mkdir -p /var/run/murmur
-    chown murmur:murmur /var/run/murmur
-
     [ -z "$PID" ] && $MURMURD $PARAMS
     if [ $? -gt 0 ]; then
       echo -e "failed!\n"

@@ -1,0 +1,15 @@
+#!/bin/sh
+
+HOOKSDIR=/usr/local/etc/ca-certificates/update.d
+ETCCERTSDIR=/usr/local/etc/ssl/certs
+
+this_main(){
+
+  [ -d "$HOOKSDIR" ] || mkdir -p "$HOOKSDIR"
+  [ -d "$ETCCERTSDIR" ] || mkdir -p "$ETCCERTSDIR"
+
+  update-ca-certificates --fresh
+
+}
+
+this_main >/dev/null 2>&1
