@@ -1,0 +1,6 @@
+etc/udev/rules.d/95-keyboard-force-release.rules
+etc/udev/rules.d/95-keymap.rules
+lib/udev/findkeyboards
+lib/udev/keyboard-force-release.sh
+lib/udev/keymap
+lib/udev/keymaps

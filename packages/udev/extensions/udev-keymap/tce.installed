@@ -1,0 +1,10 @@
+#!/bin/sh
+
+this_main(){
+
+  udevadm control --reload-rules
+  udevadm trigger
+
+}
+
+this_main >/dev/null 2>&1

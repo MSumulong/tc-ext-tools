@@ -1,0 +1,4 @@
+DESCRIPTION="udev extension for computer model specific key mappings."
+COMMENTS="This is particularly necessary for the non-standard extra keys found on many laptops,
+		such as \"brightness up\", \"next song\", \"www browser\", or \"suspend\". Often these
+		are accessed with the Fn key."

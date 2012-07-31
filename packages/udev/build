@@ -36,6 +36,9 @@ build_install() {
    mkdir -p "$I_ROOT/usr/local/lib"
    mv "$I_ROOT/usr/lib/ConsoleKit" "$I_ROOT/usr/local/lib/ConsoleKit"
 
+   mkdir -p "$I_ROOT/etc/udev"
+   mv "$I_ROOT/lib/udev/rules.d" "$I_ROOT/etc/udev"
+
 }
 
 ## rules

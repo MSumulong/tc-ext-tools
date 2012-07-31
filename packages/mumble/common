@@ -2,7 +2,7 @@ PACKAGE="mumble"
 VERSION="1.2.3"
 SOURCE="http://downloads.sourceforge.net/mumble/mumble-${VERSION}.tar.gz"
 BUILD_DEPENDS="boost-1.50 boost-1.50-dev protobuf protobuf-dev libsndfile libsndfile-dev
-               qt-4.x-base qt-4.x-dev qt-4.x-xml qt-4.x-sql qt-4.x-opengl qt-4.x-dbus qt-4.x-extended
+               qt-4.x-base qt-4.x-dev qt-4.x-xml qt-4.x-sql qt-4.x-dbus qt-4.x-extended
                Xorg-7.6-lib Xorg-7.6-dev libxcb libxcb-dev pulseaudio pulseaudio-dev
                speex speex-dev libasound alsa-dev openssl-1.0.0 openssl-1.0.0-dev
                libavahi avahi-dev"

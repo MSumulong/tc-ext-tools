@@ -9,7 +9,5 @@ SITE="http://www.kernel.org/pub/linux/utils/kernel/hotplug/udev.html"
 COPYING="GPL-2"
 MAINTAINERS="Curaga, Arslan S."
 COMMENTS="---"
-CHANGELOG="2010/01/31 Original
-		2010/02/23 split libudev
-		2011/08/10 Update to 2a30eaa"
-CURRENT="Updated to $VERSION and moved other files to udev-extra (Arslan S.)"
+CHANGELOG="---"
+CURRENT="Added more rules and new extension udev-keymap (Arslan S.)"
