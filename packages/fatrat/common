@@ -12,7 +12,9 @@ qt-4.x-dev
 libtorrent-rasterbar
 libtorrent-rasterbar-dev
 curl
-curl-dev"
+curl-dev
+pion-net
+pion-net-dev"
 
 DESCRIPTION="An open source download manager for Linux."
 AUTHOR="Lubos Dolezel"

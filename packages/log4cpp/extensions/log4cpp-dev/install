@@ -1,0 +1,7 @@
+usr/local/bin/log4cpp-config
+usr/local/include
+usr/local/lib/pkgconfig
+usr/local/lib/*.so
+usr/local/lib/*.a
+usr/local/lib/*.la
+usr/local/share/aclocal

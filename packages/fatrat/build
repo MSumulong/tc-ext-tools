@@ -26,6 +26,7 @@ build_compile() {
 ## install
 build_install() {
 
+   ln -s build/config.h
    cd build
    make DESTDIR="$I_ROOT" install || return 1
 
