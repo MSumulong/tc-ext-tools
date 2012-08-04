@@ -8,6 +8,7 @@ polkit-dev
 Linux-PAM
 Linux-PAM-dev
 dbus-glib
+dbus-glib-dev
 glib2
 glib2-dev
 expat2
@@ -19,5 +20,5 @@ SITE="http://www.freedesktop.org/wiki/Software/ConsoleKit"
 COPYING="GPL-2"
 MAINTAINERS="Arslan S."
 COMMENTS="---"
-CHANGELOG="2010/02/13 Original 0.4.1"
-CURRENT="Rebuilt with patches"
+CHANGELOG="---"
+CURRENT="Rebuilt"

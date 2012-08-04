@@ -23,6 +23,8 @@ build_install() {
    install -m 755 -d "$INSTALL_ROOT"/usr/local/lib/ConsoleKit/run-session.d
    install -m 755 "$PACKAGE_SRC"/pam-foreground-compat.ck "$INSTALL_ROOT"/usr/local/lib/ConsoleKit/run-session.d || return 1
 
+   install -m 755 "$P_SRC"/start-desktop.sh "$I_ROOT"/usr/local/sbin/start-desktop 
+
 }
 
 build_rules() {
@@ -36,12 +38,12 @@ build_rules() {
   tet_compile
   tet_install
   tet_split
-   tet_strip
+  tet_strip
   tet_create
   tet_generate
   tet_check
-   tet_test
+  tet_test
   tet_package
-   tet_encrypt
+  tet_encrypt
 
 }

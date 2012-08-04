@@ -2,4 +2,4 @@ ConsoleKit.tcz
 expat2-dev.tcz
 Linux-PAM-dev.tcz
 polkit-dev.tcz
-dbus-dev.tcz
+dbus-glib-dev.tcz
