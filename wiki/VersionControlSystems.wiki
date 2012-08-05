@@ -24,3 +24,16 @@ SOURCE="git::REPOSITORY_URL"
 }}}
 
 There is no revision support for git currently.
+
+=== hg (mercurial) ===
+Set SOURCE in package common
+{{{
+SOURCE="hg::REPOSITORY_URL"
+}}}
+
+The download tool will check out the head revision however if you wish an older revision set HG_FLAGS
+{{{
+HG_FLAGS="-rXYZ"
+}}}
+
+Where XYZ is the revision number.
