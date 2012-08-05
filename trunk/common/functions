@@ -98,7 +98,9 @@ set_source() {
           if [ "$PACKAGE_SOURCE_URL_TYPE" = "generic" ] || [ "$PACKAGE_SOURCE_URL_TYPE" = "custom" ] ||
              [ "$PACKAGE_SOURCE_URL_TYPE" = "file" ]; then
                PACKAGE_SOURCE_NAME="${SOURCE##*/}"
-          elif [ "$PACKAGE_SOURCE_URL_TYPE" = "svn" ] || [ "$PACKAGE_SOURCE_URL_TYPE" = "git" ]; then
+          elif [ "$PACKAGE_SOURCE_URL_TYPE" = "svn" ] || [ "$PACKAGE_SOURCE_URL_TYPE" = "git" ] || 
+               [ "$PACKAGE_SOURCE_URL_TYPE" = "hg" ]; then
+               VERSION_CONTROL_SYSTEM="$PACKAGE_SOURCE_URL_TYPE"
                PACKAGE_SOURCE_NAME="${PACKAGE}-${VERSION}.tar.xz"
           fi
      fi
@@ -140,7 +142,7 @@ set_source() {
      # you may need to define the variable SOURCE_TOPDIR in the package common file
      if [ -z "$SOURCE_TOPDIR" ]; then
           # source's top level directory is specificly defined for vcs type sources
-          if [ "$PACKAGE_SOURCE_URL_TYPE" = "svn" ] || [ "$PACKAGE_SOURCE_URL_TYPE" = "git" ]; then
+          if [ -n "$VERSION_CONTROL_SYSTEM" ]; then
                SOURCE_TOPDIR=${PACKAGE}-${VERSION}
           # the source is unpacked inside the package's temporary src directory
           elif [ -d "$PACKAGE_SRC_TEMP" ]; then
@@ -183,6 +185,8 @@ set_depends() {
           TET_DEPENDS="$TET_DEPENDS svn"
      elif [ "$PACKAGE_SOURCE_URL_TYPE" = git ]; then
           TET_DEPENDS="$TET_DEPENDS git"
+     elif [ "$PACKAGE_SOURCE_URL_TYPE" = hg ]; then
+          TET_DEPENDS="$TET_DEPENDS mercurial"
      fi
 
      if [ "$PACKAGE_SOURCE_TYPE" = zip ]; then
