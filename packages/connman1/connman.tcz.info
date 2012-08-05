@@ -1,0 +1,16 @@
+Title:		connman.tcz
+Description:	a daemon for managing internet connections
+Version:	0.77
+Author:		Marcel Holtmann and Samuel Ortiz
+Original-site:	http://connman.net
+Copying-policy:	GPLv2
+Size:		200K
+Extension_by:	jls_legalize <unsenepopiu at tin dot it>
+Tags:	 	daemon managing internet connections
+Comments:	Add to /opt/bootlocal.sh :
+			/usr/local/etc/init.d/dbus start
+			connmand
+		U need  dbus-python-2.7 to use the scripts
+		located in /usr/local/lib/connman/scripts
+Change-log:     2011/11/16 first version 0.76
+Current:	2012/04/29 Updated to 0.77

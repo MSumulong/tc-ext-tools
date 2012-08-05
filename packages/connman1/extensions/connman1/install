@@ -1,0 +1,4 @@
+usr/local/etc
+x-usr/local/include
+x-usr/local/lib/pkgconfig/connman.pc
+usr/local/sbin
