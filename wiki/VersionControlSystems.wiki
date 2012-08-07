@@ -10,9 +10,9 @@ Set SOURCE in package common
 SOURCE="svn::REPOSITORY_URL"
 }}}
 
-The download tool will check out the head revision however if you wish an older revision set SVN_FLAGS
+The download tool will check out the head revision however if you wish an older revision set VCS_FLAGS
 {{{
-SVN_FLAGS="-rXYZ"
+VCS_FLAGS="-rXYZ"
 }}}
 
 Where XYZ is the revision number.
@@ -31,9 +31,22 @@ Set SOURCE in package common
 SOURCE="hg::REPOSITORY_URL"
 }}}
 
-The download tool will check out the head revision however if you wish an older revision set HG_FLAGS
+The download tool will check out the head revision however if you wish an older revision set VCS_FLAGS
 {{{
-HG_FLAGS="-rXYZ"
+VCS_FLAGS="-rXYZ"
+}}}
+
+Where XYZ is the revision number.
+
+=== bzr (bazaar) ===
+Set SOURCE in package common
+{{{
+SOURCE="bzr::REPOSITORY_URL"
+}}}
+
+The download tool will check out the head revision however if you wish an older revision set VCS_FLAGS
+{{{
+VCS_FLAGS="-rXYZ"
 }}}
 
 Where XYZ is the revision number.
