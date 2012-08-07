@@ -1,0 +1,14 @@
+COMMENTS="WM/DE integration:
+		1-) Add ConsoleKit.tcz to onboot.lst
+		2-) For flwm_topside:
+			\$ echo start-desktop > /etc/sysconfig/desktop
+		    For compiz:
+			\$ echo \"start-desktop compiz\" > /etc/sysconfig/desktop
+		    For others:
+			\$ echo \"start-desktop <xxx>\" > /etc/sysconfig/desktop
+			where <xxx> is a window manager or a desktop session manager
+
+		3-) Add etc/sysconfig/desktop to backup (/opt/.filetool.lst) for persistency
+			\$ echo etc/sysconfig/desktop >> /opt/.filetool.lst
+		4-) Backup and reboot
+			\$ filetool.sh -b && sudo reboot"

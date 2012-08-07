@@ -34,6 +34,38 @@ else
      exit 1
 fi
 
+this_checkout() {
+
+   echo "Checking out the source from $SOURCE"
+   if [ -n "$VCS_FLAGS" ]; then
+        $VCS_CMD $VCS_FLAGS || return 1
+   else
+        $VCS_CMD || return 1
+   fi
+
+}
+
+this_revise() {
+
+   echo "Revising with respect to new version $VERSION_NEW"
+   if [ "$VERSION_NEW" != "$VERSION" ]; then
+        VERSION="$VERSION_NEW"
+
+        echo "Adjusting the package version according to revision number"
+        sed -i "s/VERSION=.*/VERSION=\"${VERSION}\"/" "$PACKAGE_COMMON" || return 1
+
+        echo "Renaming the package source top level directory"
+        SOURCE_TOPDIR="${PACKAGE}-${VERSION}"
+        mv "$PACKAGE_SOURCE_TOPDIR" "$PACKAGE_SRC_TEMP/$SOURCE_TOPDIR" || return 1
+
+        PACKAGE_SOURCE_TOPDIR="$PACKAGE_SRC_TEMP/$PACKAGE-$VERSION"
+        PACKAGE_SOURCE_NAME="${PACKAGE}-${VERSION}.tar.xz"
+   else
+        echo "No version change, skipping ..."
+   fi
+
+}
+
 this_main() {
 
    echo "---------------------------------------------------------------"
@@ -54,36 +86,57 @@ this_main() {
         cd "$PACKAGE_SRC_TEMP"
 
         if [ "$PACKAGE_SOURCE_URL_TYPE" = "svn" ]; then
-             echo "Checking out the svn repository $SOURCE"
-             SVN_CMD="svn --non-interactive --trust-server-cert co $SOURCE $PACKAGE_SOURCE_TOPDIR"
-             if [ -n "$SVN_FLAGS" ]; then
-                  $SVN_CMD $SVN_FLAGS || return 1
-             else
-                  $SVN_CMD || return 1
-             fi
+             VCS_CMD="svn --non-interactive --trust-server-cert co $SOURCE $PACKAGE_SOURCE_TOPDIR"
+             this_checkout
 
              echo -e "Getting svn repository revision number ... \c"
              if [ -z "$SKIP_REVISION" ]; then
-                  SVN_REVISION=$(grep "Checked out revision" "$PACKAGE_MESSAGE_LOG" | cut -f4 -d" " | sed 's/\.//')
+                  VCS_REVISION=$(grep "Checked out revision" "$PACKAGE_MESSAGE_LOG" | cut -f4 -d" " | sed 's/\.//')
 
-                  if [ -n "$SVN_REVISION" ]; then
-                       echo "$SVN_REVISION"
-                       VERSION_NEW="svn~r${SVN_REVISION}"
-                       if [ "$VERSION_NEW" != "$VERSION" ]; then
-                            VERSION="$VERSION_NEW"
+                  if [ -n "$VCS_REVISION" ]; then
+                       echo "$VCS_REVISION"
+                       VERSION_NEW="${VCS}~r${VCS_REVISION}"
+                       this_revise || return 1
+                  else
+                       echo "failed!"
+                  fi
+             else
+                  echo "skipping"
+             fi
+        elif [ "$PACKAGE_SOURCE_URL_TYPE" = "hg" ]; then
+             VCS_CMD="hg clone $SOURCE $PACKAGE_SOURCE_TOPDIR"
+             this_checkout || return 1
 
-                            echo "Adjusting the package version according to revision number"
-                            sed -i "s/VERSION=.*/VERSION=\"${VERSION}\"/" "$PACKAGE_COMMON" || return 1
+             echo -e "Getting mercurial repository revision number ... \c"
+             if [ -z "$SKIP_REVISION" ]; then
+                  cd "$PACKAGE_SOURCE_TOPDIR"
+                  VCS_REVISION=$(hg identify -i)
+                  cd - >/dev/null
 
-                            echo "Renaming the package source top level directory"
-                            SOURCE_TOPDIR="${PACKAGE}-${VERSION}"
-                            mv "$PACKAGE_SOURCE_TOPDIR" "$PACKAGE_SRC_TEMP/$SOURCE_TOPDIR" || return 1
+                  if [ -n "$VCS_REVISION" ]; then
+                       echo "$VCS_REVISION"
+                       VERSION_NEW="${VCS}~${VCS_REVISION}"
+                       this_revise || return 1
+                  else
+                       echo "failed!"
+                  fi
+             else
+                  echo "skipping"
+             fi
+        elif [ "$PACKAGE_SOURCE_URL_TYPE" = "bzr" ]; then
+             VCS_CMD="bzr branch $SOURCE $PACKAGE_SOURCE_TOPDIR"
+             this_checkout || return 1
 
-                            PACKAGE_SOURCE_TOPDIR="$PACKAGE_SRC_TEMP/$PACKAGE-$VERSION"
-                            PACKAGE_SOURCE_NAME="${PACKAGE}-${VERSION}.tar.xz"
-                       else
-                            echo "No version change, skipping ..."
-                       fi
+             echo -e "Getting bzr repository revision number ... \c"
+             if [ -z "$SKIP_REVISION" ]; then
+                  cd "$PACKAGE_SOURCE_TOPDIR"
+                  VCS_REVISION=$(bzr log -r-1 | grep revno | cut -f2 -d: | xargs echo)
+                  cd - >/dev/null
+
+                  if [ -n "$VCS_REVISION" ]; then
+                       echo "$VCS_REVISION"
+                       VERSION_NEW="${VCS}~r${VCS_REVISION}"
+                       this_revise || return 1
                   else
                        echo "failed!"
                   fi
@@ -93,45 +146,6 @@ this_main() {
         elif [ "$PACKAGE_SOURCE_URL_TYPE" = "git" ]; then
              echo "Cloning the git repository $SOURCE"
              git clone "$SOURCE" "$PACKAGE_SOURCE_TOPDIR" || return 1
-        elif [ "$PACKAGE_SOURCE_URL_TYPE" = "hg" ]; then
-             echo "Checking out the mercurial repository $SOURCE"
-             HG_CMD="hg clone $SOURCE $PACKAGE_SOURCE_TOPDIR"
-             if [ -n "$HG_FLAGS" ]; then
-                  $HG_CMD $HG_FLAGS || return 1
-             else
-                  $HG_CMD || return 1
-             fi
-
-             echo -e "Getting mercurial repository revision number ... \c"
-             if [ -z "$SKIP_REVISION" ]; then
-                  cd "$PACKAGE_SOURCE_TOPDIR"
-                  HG_REVISION=$(hg identify -i)
-                  cd - >/dev/null
-
-                  if [ -n "$HG_REVISION" ]; then
-                       echo "$HG_REVISION"
-                       VERSION_NEW="~${HG_REVISION}"
-                       if [ "$VERSION_NEW" != "$VERSION" ]; then
-                            VERSION="$VERSION_NEW"
-
-                            echo "Adjusting the package version according to revision number"
-                            sed -i "s/VERSION=.*/VERSION=\"${VERSION}\"/" "$PACKAGE_COMMON" || return 1
-
-                            echo "Renaming the package source top level directory"
-                            SOURCE_TOPDIR="${PACKAGE}-${VERSION}"
-                            mv "$PACKAGE_SOURCE_TOPDIR" "$PACKAGE_SRC_TEMP/$SOURCE_TOPDIR" || return 1
-
-                            PACKAGE_SOURCE_TOPDIR="$PACKAGE_SRC_TEMP/$PACKAGE-$VERSION"
-                            PACKAGE_SOURCE_NAME="${PACKAGE}-${VERSION}.tar.xz"
-                       else
-                            echo "No version change, skipping ..."
-                       fi
-                  else
-                       echo "failed!"
-                  fi
-             else
-                  echo "skipping"
-             fi
         fi
 
         echo "Creating a tarball from the source"
