@@ -99,7 +99,7 @@ set_source() {
              [ "$PACKAGE_SOURCE_URL_TYPE" = "file" ]; then
                PACKAGE_SOURCE_NAME="${SOURCE##*/}"
           elif [ "$PACKAGE_SOURCE_URL_TYPE" = "svn" ] || [ "$PACKAGE_SOURCE_URL_TYPE" = "git" ] || 
-               [ "$PACKAGE_SOURCE_URL_TYPE" = "hg" ]; then
+               [ "$PACKAGE_SOURCE_URL_TYPE" = "hg" ] || [ "$PACKAGE_SOURCE_URL_TYPE" = "bzr" ]; then
                VERSION_CONTROL_SYSTEM="$PACKAGE_SOURCE_URL_TYPE"
                PACKAGE_SOURCE_NAME="${PACKAGE}-${VERSION}.tar.xz"
           fi
@@ -187,6 +187,8 @@ set_depends() {
           TET_DEPENDS="$TET_DEPENDS git"
      elif [ "$PACKAGE_SOURCE_URL_TYPE" = hg ]; then
           TET_DEPENDS="$TET_DEPENDS mercurial"
+     elif [ "$PACKAGE_SOURCE_URL_TYPE" = bzr ]; then
+          TET_DEPENDS="$TET_DEPENDS bzr"
      fi
 
      if [ "$PACKAGE_SOURCE_TYPE" = zip ]; then
@@ -388,7 +390,7 @@ if [ "$THIS" != "addit" ] && [ -f "$PACKAGE_COMMON" ]; then
      set_extensions
      set_depends
 
-     # shortened variables for use in package build
+     # short variables
      P_ROOT="$PACKAGE_ROOT"
      _P_ROOT="$_PACKAGE_ROOT"
      P_NAM="$PACKAGE"
@@ -401,6 +403,7 @@ if [ "$THIS" != "addit" ] && [ -f "$PACKAGE_COMMON" ]; then
      S_ROOT="$PACKAGE_SOURCE_TOPDIR"
      INSTALL_ROOT="$PACKAGE_INSTALL_ROOT"
      I_ROOT="$INSTALL_ROOT"
+     VCS="$VERSION_CONTROL_SYSTEM"
 
      # create directories
      [ -d "$TET_STORAGE" ] || sudo install -m 755 -d -o "$TCUSER" -g staff "$TET_STORAGE"
