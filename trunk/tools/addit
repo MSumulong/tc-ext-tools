@@ -222,11 +222,6 @@ _EOF
           echo "$TET_PREFIX/share/locale" > "$PACKAGE_EXTENSIONS/$EXTENSION/install" || return 1
        elif [ "${EXTENSION%-dev}" != "$EXTENSION" ]; then
           echo "${EXTENSION%-dev}.tcz" > "$PACKAGE_EXTENSIONS/$EXTENSION/dep" || return 1
-	  c
-	  c
-	  c
-	  c
-	  c
           echo "$TET_PREFIX/include" > "$PACKAGE_EXTENSIONS/$EXTENSION/install" || return 1
           echo "$TET_PREFIX/lib/pkgconfig" >> "$PACKAGE_EXTENSIONS/$EXTENSION/install" || return 1
           echo "$TET_PREFIX/lib/*.a" >> "$PACKAGE_EXTENSIONS/$EXTENSION/install" || return 1
