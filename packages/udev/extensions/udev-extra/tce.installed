@@ -5,9 +5,11 @@ THIS=`basename $0`
 this_main(){
 
   if [ -d "/tmp/tcloop/${THIS}" ]; then
-    cp -a /tmp/tcloop/${THIS}/etc/udev/rules.d/* /etc/udev/rules.d
+    cp -a /tmp/tcloop/${THIS}/lib/udev/rules.d/* /etc/udev/rules.d
+  else
+    cp -a /lib/udev/rules.d/* /etc/udev/rules.d
   fi
-
+ 
   udevadm control --reload-rules
   udevadm trigger
 
