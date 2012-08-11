@@ -2,14 +2,20 @@
 
 THIS=`basename $0`
 
+if [ -e /usr/local/etc/${THIS}.conf ]; then
+  . /usr/local/etc/${THIS}.conf
+fi
+
 this_main(){
 
-  if [ -d "/tmp/tcloop/${THIS}" ]; then
-    cp -a /tmp/tcloop/${THIS}/lib/udev/rules.d/* /etc/udev/rules.d
-  else
-    cp -a /lib/udev/rules.d/* /etc/udev/rules.d
+  if [ -n "$OVERWRITE_RULES" -a "$OVERWRITE_RULES" != "n" ]; then
+    if [ -d "/tmp/tcloop/${THIS}" ]; then
+      cp -a /tmp/tcloop/${THIS}/lib/udev/rules.d/* /etc/udev/rules.d
+    else
+      cp -a /lib/udev/rules.d/* /etc/udev/rules.d
+    fi
   fi
- 
+
   udevadm control --reload-rules
   udevadm trigger
 

@@ -1,6 +1,5 @@
 etc/udev/udev.conf
 lib/udev/rules.d/60-cdrom_id.rules
-lib/udev/rules.d/60-persistent-storage-tape.rules
 lib/udev/rules.d/60-persistent-storage.rules
 lib/udev/rules.d/60-persistent-v4l.rules
 lib/udev/rules.d/61-accelerometer.rules
@@ -28,4 +27,5 @@ lib/udev/udev-acl
 lib/udev/usb-db
 lib/udev/usb_id
 lib/udev/v4l_id
+usr/local/etc/udev-extra.conf
 usr/local/lib/ConsoleKit/run-seat.d/udev-acl.ck

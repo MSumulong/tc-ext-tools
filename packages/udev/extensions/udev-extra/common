@@ -1,1 +1,2 @@
 DESCRIPTION="The userspace dev tools (udev), extra files."
+COMMENTS="See udev-extra.conf to avoid overwriting existing rules"

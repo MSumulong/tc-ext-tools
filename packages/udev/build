@@ -36,6 +36,8 @@ build_install() {
    mkdir -p "$I_ROOT/usr/local/lib"
    mv "$I_ROOT/usr/lib/ConsoleKit" "$I_ROOT/usr/local/lib/ConsoleKit"
 
+   install -Dm644 "$P_SRC/udev-extra.conf" "$I_ROOT/usr/local/etc/udev-extra.conf"
+
 }
 
 ## rules
