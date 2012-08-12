@@ -1,5 +1,5 @@
 PACKAGE="emprint"
-VERSION="svn~r74145"
+VERSION="svn~r75112"
 SOURCE="svn::http://svn.enlightenment.org/svn/e/trunk/$PACKAGE"
 BUILD_DEPENDS="ecore-dev.tcz"
 

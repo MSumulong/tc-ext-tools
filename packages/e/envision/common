@@ -1,5 +1,5 @@
 PACKAGE="envision"
-VERSION="svn~r74152"
+VERSION="svn~r75112"
 SOURCE="svn::http://svn.enlightenment.org/svn/e/trunk/$PACKAGE"
 BUILD_DEPENDS="cvs elementary-dev epdf-dev"
 

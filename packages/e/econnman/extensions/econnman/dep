@@ -2,4 +2,5 @@ python-elementary.tcz
 python-ecore.tcz
 python-e_dbus.tcz
 python.tcz
-connman.tcz
+connman1.tcz
+python-edje.tcz

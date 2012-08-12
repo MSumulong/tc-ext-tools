@@ -1,6 +1,8 @@
 PACKAGE="eet"
-VERSION="svn~r73499"
-SOURCE="svn::http://svn.enlightenment.org/svn/e/trunk/${PACKAGE}"
+VERSION="1.7.0-alpha"
+#VERSION="svn~r74988"
+SOURCE="http://download.enlightenment.org/releases/$PACKAGE-$VERSION.tar.bz2"
+#SOURCE="svn::http://svn.enlightenment.org/svn/e/trunk/${PACKAGE}"
 BUILD_DEPENDS="eina-dev
 	libtool-dev
 	libiconv-dev
@@ -13,18 +15,5 @@ COPYING="GPL-2"
 MAINTAINERS="Althalus, jls_legalize <jlslegalize@gmail.com>"
 TAGS="a tiny library designed to write an arbitary set of chunks of data to a file"
 COMMENTS="---"
-CHANGELOG="2010/03/06 First release
-		2010/03/31 Updated to 16.999.063
-		2010/09/30 Updated to svn 52903
-		2010/10/09 Updated to 1.4.0.beta
-		2010/11/14 Updated to 1.4.0.beta2
-		2010/12/29 Updated to 1.4.0.beta3
-		2011/02/02 Updated to 1.4.0
-		2011/06/05 Updated to 1.4.1
-		2011/11/24 Updated to svn-65588
-		2011/12/02 Updated to 1.5.0
-		2012/03/26 Updated to 1.6.0-alpha, disabled openssl
-		2012/04/22 Updated to 1.6.0-beta, re-enabled openssl
-		2012/04/27 Updated to 1.6.0, re-enabled openssl
-		2012/06/10 Updated to 1.6.1, disabled openssl"
+CHANGELOG=""
 CURRENT="Updated to ${VERSION}"

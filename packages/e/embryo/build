@@ -9,7 +9,8 @@
 build_configure() {
 
    ## autotools
-   ./autogen.sh --prefix=/usr/local || return 1
+   ./configure --prefix=/usr/local || return 1
+#   ./autogen.sh --prefix=/usr/local || return 1
 
 }
 

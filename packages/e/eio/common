@@ -1,24 +1,19 @@
 PACKAGE="eio"
-VERSION="svn~r73503"
-SOURCE="svn::http://svn.enlightenment.org/svn/e/trunk/${PACKAGE}"
+VERSION="1.7.0-alpha"
+#VERSION="svn~r74988"
+SOURCE="http://download.enlightenment.org/releases/$PACKAGE-$VERSION.tar.bz2"
+#SOURCE="svn::http://svn.enlightenment.org/svn/e/trunk/${PACKAGE}"
 BUILD_DEPENDS="eio
 	ecore-dev"
 DESCRIPTION="Efficient I/O over file system (cp, mv, rm, stat, ls...)"
-AUTHOR="Cedric Bail <cedric.bail@free.fr> Stephen Houston <UnixTitan@gmail.com> Gustavo
- Sverzut Barbieri <barbieri@gmail.com> Vincent caro Torri <vtorri at univ-evry dot fr>"
+AUTHOR="Cedric Bail <cedric.bail@free.fr>,
+		 Stephen Houston <UnixTitan@gmail.com>,
+		 Gustavo Sverzut Barbieri <barbieri@gmail.com>,
+		 Vincent caro Torri <vtorri at univ-evry dot fr>"
 SITE="enlightenment.org"
 COPYING="BSD"
 MAINTAINERS="jls_legalize (jlslegalize at gmail dot com)"
 TAGS="Efficient I O over file system cp mv rm stat ls"
 COMMENTS="-----"
-CHANGELOG="2010/11/18 First version 0.1.0.54504
-                2010/12/29 Updated to 0.1.0.55225
-                2011/11/21 Updated to 0.1.0.65643
-                2011/12/02 Rebuilt
-                2012/04/05 Updated to 1.0.0-alpha, disabled IPv6
-                2012/04/23 Updated to 1.0.0-beta
-                2012/04/27 Updated to 1.0.0
-                2012/04/27 Updated to 1.0.0
-                2012/04/27 Updated to 1.0.0. Removed eet dep
-	        2012/06/10 Updated to 1.0.1"
+CHANGELOG=""
 CURRENT="Updated to ${VERSION}"

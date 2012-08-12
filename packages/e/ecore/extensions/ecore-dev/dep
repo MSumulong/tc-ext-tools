@@ -1,6 +1,5 @@
-ecore.tcz
-gettext.tcz
-libtool-dev.tcz
 evas-dev.tcz
 libcares-dev.tcz
-libxcb-util-dev.tcz
+curl-dev.tcz
+libssh2.tcz
+curl.tcz

@@ -1,8 +1,9 @@
 PACKAGE="eina"
-VERSION="svn~r73499"
-SOURCE="svn::http://svn.enlightenment.org/svn/e/trunk/${PACKAGE}"
+VERSION="1.7.0-alpha"
+#VERSION="svn~r74988"
+SOURCE="http://download.enlightenment.org/releases/$PACKAGE-$VERSION.tar.bz2"
+#SOURCE="svn::http://svn.enlightenment.org/svn/e/trunk/${PACKAGE}"
 BUILD_DEPENDS=""
-
 DESCRIPTION="multi-platform library that provides optimized data types and useful tools for projects"
 AUTHOR="Jorge Luis turran Zapata <jorgeluis.zapata@gmail.com>
 		Carsten Haitzler <raster@rasterman.com> 
@@ -25,19 +26,5 @@ COPYING="GPL-2"
 MAINTAINERS="jls_legalize <jlslegalize@gmail.com>"
 TAGS="library data types tools projects"
 COMMENTS="---"
-CHANGELOG="2010/03/31 First version
-		2010/03/31 Updated
-		2010/09/30 Updated to svn 52903
-		2010/10/09 Updated to 1.0.0.beta
-		2010/11/14 Updated to 1.0.0.beta2
-		2010/12/29 Updated to 1.0.0.beta3
-		2011/02/03 Updated to 1.0.0
-		2011/06/05 Updated to 1.0.1
-		2011/06/09 Updated to svn-60137
-		2011/11/24 Updated to svn-65588
-		2011/12/02 Updated to 1.1.0
-		2012/03/26 Updated to 1.2.0-alpha
-		2012/04/22 Updated to 1.2.0-beta
-		2012/04/27 Updated to 1.2.0
-		2012/06/10 Updated to 1.2.1"
+CHANGELOG="---"
 CURRENT="Updated to ${VERSION}"

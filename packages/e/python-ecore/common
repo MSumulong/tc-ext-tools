@@ -1,5 +1,5 @@
 PACKAGE="python-ecore"
-VERSION="svn~r73386"
+VERSION="svn~r74988"
 SOURCE="svn::http://svn.enlightenment.org/svn/e/trunk/BINDINGS/python/$PACKAGE"
 BUILD_DEPENDS="evas-dev
 	ecore-dev

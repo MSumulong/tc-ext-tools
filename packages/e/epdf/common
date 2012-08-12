@@ -1,5 +1,5 @@
 PACKAGE="epdf"
-VERSION="svn~r74152"
+VERSION="svn~r75110"
 SOURCE="svn::http://svn.enlightenment.org/svn/e/trunk/PROTO/$PACKAGE"
 BUILD_DEPENDS="ecore-dev.tcz"
 

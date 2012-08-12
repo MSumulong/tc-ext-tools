@@ -1,6 +1,8 @@
 PACKAGE="elementary"
-VERSION="svn~r74145"
-SOURCE="svn::http://svn.enlightenment.org/svn/e/trunk/$PACKAGE"
+VERSION="1.7.0-alpha"
+#VERSION="svn~r74988"
+SOURCE="http://download.enlightenment.org/releases/$PACKAGE-$VERSION.tar.bz2"
+#SOURCE="svn::http://svn.enlightenment.org/svn/e/trunk/${PACKAGE}"
 BUILD_DEPENDS="ethumb-dev.tcz 
 	efreet-dev.tcz
 	libeweather-dev.tcz
@@ -15,13 +17,5 @@ SITE="http://trac.enlightenment.org/e/wiki/Elementary"
 COPYING="GPL-2"
 MAINTAINERS="jls_legalize (jlslegalize at gmail dot com)"
 TAGS="Enlightenment's widget set, EFL mobile touch-screen devices"
-COMMENTS="In order to launch elementary configuration/test libeweather is needed"
-CHANGELOG="2010/03/06 First release 
-		2010/03/31 Updated
-		2010/11/18 Updated to 0.7.0.54504
-		2010/12/31 Updated to 0.7.0.55225
-		2011/12/03 Updated to 0.8.0.65643
-		2012/04/09 Updated to 1.0.0-alpha_svn-69975
-		2012/04/23 Updated to 1.0.0-beta
-		2012/04/27 Updated to 1.0.0. Changed deps"
+CHANGELOG=""
 CURRENT="Updated to ${VERSION}"

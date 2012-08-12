@@ -1,7 +1,7 @@
 PACKAGE="econnman"
-VERSION="svn~r74293"
+VERSION="svn~r74997"
 SOURCE="svn::http://svn.enlightenment.org/svn/e/trunk//$PACKAGE"
-BUILD_DEPENDS="python-dev edje"
+BUILD_DEPENDS="python-dev edje edje-dev"
 
 DESCRIPTION="ConnMan User Interface in EFL"
 AUTHOR="Gustavo Sverzut Barbieri <barbieri@profusion.mobi>"

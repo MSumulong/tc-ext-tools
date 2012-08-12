@@ -69,5 +69,5 @@ usr/local/lib/libeina.a
 usr/local/lib/libeina.la
 usr/local/lib/libeina.so
 usr/local/lib/libeina.so.1
-usr/local/lib/libeina.so.1.6.99
+usr/local/lib/libeina.so.1.7.0
 usr/local/lib/pkgconfig/eina.pc

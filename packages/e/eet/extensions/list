@@ -4,7 +4,7 @@ usr/local/lib/libeet.a
 usr/local/lib/libeet.la
 usr/local/lib/libeet.so
 usr/local/lib/libeet.so.1
-usr/local/lib/libeet.so.1.6.99
+usr/local/lib/libeet.so.1.7.0
 usr/local/lib/pkgconfig/eet.pc
 usr/local/share/eet/examples/eet-basic.c
 usr/local/share/eet/examples/eet-data-cipher_decipher.c

@@ -1,6 +1,8 @@
 PACKAGE="e_dbus"
-VERSION="svn~r74004"
-SOURCE="svn::http://svn.enlightenment.org/svn/e/trunk/${PACKAGE}"
+VERSION="1.7.0-alpha"
+#VERSION="svn~r74988"
+SOURCE="http://download.enlightenment.org/releases/$PACKAGE-$VERSION.tar.bz2"
+#SOURCE="svn::http://svn.enlightenment.org/svn/e/trunk/${PACKAGE}"
 BUILD_DEPENDS="dbus-dev
 	libtool-dev
 	ecore-dev"
@@ -21,20 +23,7 @@ SITE="enlightenment.org"
 COPYING="GPL-2"
 MAINTAINERS="Althalus, jls_legalize (jlslegalize at gmail dot com)"
 TAGS="set wrappers around DBus APIs by third party"
-COMMENTS="One of the core libraries that make up EFL"
-CHANGELOG="2010/03/06 First release
-		2010/03/31 Updated SVN version
-		2010/09/30 Updated to 52908
-		2010/10/09 Updated to 1.0.0.beta
-		2010/11/14 Updated to 1.0.0.beta2
-		2010/12/30 Updated to 1.0.0.beta3
-		2011/02/03 Updated to 1.0.0
-		2011/06/05 Updated to 1.0.1
-		2011/06/09 Updated to svn-60146
-		2011/11/24 Updated to svn-65589
-		2011/12/02 Updated to 1.1.0
-		2012/03/26 Updated to 1.2.0-alpha
-		2012/04/22 Updated to 1.2.0-beta
-		2012/04/27 Updated to 1.2.0
-		2012/06/10 rebuilt against ecore 1.2.1, disabled econnman 0.7x build due to error during compiling"
+COMMENTS="One of the core libraries that make up EFL
+		extension made using http://code.google.com/p/tc-ext-tools/"
+CHANGELOG="---"
 CURRENT="Updated to ${VERSION}"

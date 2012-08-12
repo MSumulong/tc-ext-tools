@@ -1,6 +1,6 @@
 PACKAGE="ecomp"
 VERSION="git20120624"
-SOURCE="git:://github.com/jeffdameth/${PACKAGE}.git"
+SOURCE="git::git://github.com/jeffdameth/${PACKAGE}.git"
 BUILD_DEPENDS="Xorg-7.6-dev 
 	Xorg-7.6
 	eet-dev

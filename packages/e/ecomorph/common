@@ -1,7 +1,7 @@
 PACKAGE="ecomorph"
 VERSION="git20120624"
-SOURCE="git:://github.com/jeffdameth/${PACKAGE}.git"
-BUILD_DEPENDS="cvs e17-dev"
+SOURCE="git::git://github.com/jeffdameth/${PACKAGE}.git"
+BUILD_DEPENDS="cvs enlightenment"
 
 DESCRIPTION="OpenGL compositing manager module for e17 window manager"
 AUTHOR="Hannes Janetzek <hannes.janetzek@gmail.com> Davide Andreoli <dave@gurumeditation.it>"
@@ -12,3 +12,4 @@ TAGS="OpenGL compositing manager module e17 window manager"
 COMMENTS="---"
 CHANGELOG="2011/01/05 first version git 2011/01/05"
 CURRENT="Updated to ${VERSION}"
+
