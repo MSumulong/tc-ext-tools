@@ -1,0 +1,16 @@
+PACKAGE="exquisite"
+VERSION="svn~r75102"
+SOURCE="svn::http://svn.enlightenment.org/svn/e/trunk/$PACKAGE"
+BUILD_DEPENDS="edje-dev"
+
+DESCRIPTION="psplash replacement"
+AUTHOR="Carsten Haitzler (Rasterman) <raster@rasterman.com>
+		Mekius <mekius@mekius.net>
+		Youness Alaoui <kakaroto@kakaroto.homelinux.net>"
+SITE="enlightenment.org"
+COPYING="GPL-2"
+MAINTAINERS="jlslegalize@gmail.com"
+TAGS="psplash "
+COMMENTS="---"
+CHANGELOG="---"
+CURRENT="First Version"
