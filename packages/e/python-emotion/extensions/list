@@ -1,0 +1,7 @@
+usr/local/lib/pkgconfig/python-emotion.pc
+usr/local/lib/python2.7/site-packages/emotion/__init__.py
+usr/local/lib/python2.7/site-packages/emotion/__init__.pyc
+usr/local/lib/python2.7/site-packages/emotion/__init__.pyo
+usr/local/lib/python2.7/site-packages/emotion/c_emotion.la
+usr/local/lib/python2.7/site-packages/emotion/c_emotion.so
+usr/local/share/python-emotion/examples/emotion_test.py

@@ -1,0 +1,17 @@
+PACKAGE="python-emotion"
+VERSION="svn~r74988"
+SOURCE="svn::http://svn.enlightenment.org/svn/e/trunk/BINDINGS/python/$PACKAGE"
+BUILD_DEPENDS="emotion-dev
+	python-evas-dev
+	cython-dev
+	python-dev"
+
+DESCRIPTION="Python bindings for emotion"
+AUTHOR="Gustavo Sverzut Barbieri <barbieri@gmail.com>"
+SITE="enlightenment.org"
+COPYING="GPL-2"
+MAINTAINERS="jls_legalize <jlslegalize@gmail.com>"
+TAGS="Python bindings emotion"
+COMMENTS="---"
+CHANGELOG="---"
+CURRENT="First Version "
