@@ -198,6 +198,12 @@ set_depends() {
      # replace KERNEL pattern with kernel name
      PACKAGE_BUILD_DEPENDS=$(echo "$TET_DEPENDS $BUILD_DEPENDS" | sed -e "s/KERNEL/${KERNEL}/")
 
+     if [ "$KERNEL_ARCH" == "x86_64" ]; then
+          TET_DEPENDS="$TET_DEPENDS toolchain64"
+          CROSS_COMPILE=x86_64-unknown-linux-gnu-
+          export PATH="/usr/local/x64/bin:$PATH"
+     fi
+
 }
 
 # sets the package extensions variables
@@ -298,31 +304,17 @@ set_date() {
 set_tcl_system() {
 
    TCMIRROR=http://distro.ibiblio.org/pub/linux/distributions/tinycorelinux/
-   TCVER=4.x
+   TCVER="$(version | cut -f1 -d.)".x
    ARCH=x86
    KERNEL=$(uname -r)
    TCZREPO="${TCMIRROR}/${TCVER}/${ARCH}/tcz"
    TCEDIR=/etc/sysconfig/tcedir
 
-   # which kernel
-   if [ -n "$(echo $KERNEL | grep -w tinycore64)" ]; then
-        KERNEL_ARCH=x86_64
-        KERNEL_VER="${KERNEL%-tinycore64}"
-        TET_DEPENDS="$TET_DEPENDS toolchain64"
-        CROSS_COMPILE=x86_64-unknown-linux-gnu-
-        export PATH="/usr/local/x64/bin:$PATH"
-   elif [ -n "$(echo $KERNEL | grep -w tinycore)" ]; then
-        KERNEL_ARCH=x86
-        KERNEL_VER="${KERNEL%-tinycore}"
-   else
-        # we are probably running custom kernel
-        # TODO: add partial support for custom kernels
-        KERNEL_VER="${KERNEL%%-*}"
-   fi
-
-   TET_LINUX="$TET_STORAGE/linux"
-   TET_LINUX_BUILD="${TET_LINUX}/${KERNEL}/linux-${KERNEL_VER}"
-   LINUX_BUILD="$TET_LINUX_BUILD"
+   TET_PACKAGES_LINUX="$TET_PACKAGES/linux"
+   TET_STORAGE_LINUX="$TET_STORAGE/linux"
+   TET_LINUX="$TET_PACKAGES_LINUX/$KERNEL"
+   TET_LINUX_COMMON="$TET_LINUX/common"
+   TET_LINUX_PATCHES="$TET_LINUX/patches"
 
 }
 
@@ -453,7 +445,7 @@ set_stamps() {
 
    PACKAGE_LOAD_STAMP="$PACKAGE_PKG/load.stamp"
    PACKAGE_PREPARE_STAMP="$PACKAGE_PKG/prepare.stamp"
-   LINUX_PREPARE_STAMP="$TET_LINUX/$KERNEL/prepare.stamp"
+   LINUX_PREPARE_STAMP="$TET_STORAGE_LINUX/$KERNEL/prepare.stamp"
    PACKAGE_DOWNLOAD_STAMP="$_PACKAGE_SRC/download.stamp"
    PACKAGE_CONVERT_STAMP="$_PACKAGE_SRC/convert.stamp"
    PACKAGE_UNPACK_STAMP="$PACKAGE_SRC_TEMP/unpack.stamp"

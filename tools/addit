@@ -224,6 +224,7 @@ _EOF
           echo "${EXTENSION%-dev}.tcz" > "$PACKAGE_EXTENSIONS/$EXTENSION/dep" || return 1
           echo "$TET_PREFIX/include" > "$PACKAGE_EXTENSIONS/$EXTENSION/install" || return 1
           echo "$TET_PREFIX/lib/pkgconfig" >> "$PACKAGE_EXTENSIONS/$EXTENSION/install" || return 1
+          echo "$TET_PREFIX/lib/*.so" >> "$PACKAGE_EXTENSIONS/$EXTENSION/install" || return 1
           echo "$TET_PREFIX/lib/*.a" >> "$PACKAGE_EXTENSIONS/$EXTENSION/install" || return 1
           echo "$TET_PREFIX/lib/*.la" >> "$PACKAGE_EXTENSIONS/$EXTENSION/install" || return 1
        elif [ "${EXTENSION%-python}" != "$EXTENSION" ]; then
@@ -251,6 +252,7 @@ _EOF
        if [ -n "$HAS_DEV" ]; then
           echo "x-$TET_PREFIX/include" >> "$PACKAGE_EXTENSIONS/$EXTENSION/install" || return 1
           echo "x-$TET_PREFIX/lib/pkgconfig" >> "$PACKAGE_EXTENSIONS/$EXTENSION/install" || return 1
+          echo "x-$TET_PREFIX/lib/*.so" >> "$PACKAGE_EXTENSIONS/$EXTENSION/install" || return 1
           echo "x-$TET_PREFIX/lib/*.a" >> "$PACKAGE_EXTENSIONS/$EXTENSION/install" || return 1
           echo "x-$TET_PREFIX/lib/*.la" >> "$PACKAGE_EXTENSIONS/$EXTENSION/install" || return 1
        fi
