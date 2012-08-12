@@ -1,0 +1,4 @@
+usr/local/include
+usr/local/lib/enlightenment/modules/*/*/*.la
+usr/local/lib/enlightenment/preload/*.la
+usr/local/lib/pkgconfig

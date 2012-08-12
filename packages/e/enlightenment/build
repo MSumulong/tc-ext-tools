@@ -1,0 +1,104 @@
+
+############################################################################################
+#                                                                                          #
+#    package build functions: configure, compile, install, rules, and custom functions     #
+#                                                                                          #
+############################################################################################
+
+## configure
+build_configure() {
+
+   ## autotools
+   ./autogen.sh --disable-doc  \
+		--enable-mount-eeze \
+		--disable-mount-udisks \
+		--disable-mount-hal || return 1
+#		--enable-device-udev=yes \
+#		--enable-mount-eeze=no \
+#--disable-install-sysactions \
+#--disable-exchange \
+#--disable-enotify \
+#--disable-ephysics \
+#--disable-ibar \
+#--disable-dropshadow \
+#--disable-clock \
+#--disable-pager \
+#--disable-battery \
+#--disable-temperature \
+#--disable-notification \
+#--disable-cpufreq \
+#--disable-ibox \
+#--disable-start \
+#--disable-winlist \
+#--disable-wizard \
+#--disable-conf-wallpaper2 \
+#--disable-conf-theme \
+#--disable-conf-intl \
+#--disable-conf-applications \
+#--disable-conf-display \
+#--disable-conf-shelves \
+#--disable-conf-keybindings \
+#--disable-conf-edgebindings \
+#--disable-conf-window-remembers \
+#--disable-conf-window-manipulation \
+#--disable-conf-menus \
+#--disable-conf-dialogs \
+#--disable-conf-performance \
+#--disable-conf-paths \
+#--disable-conf-interaction \
+#--disable-gadman 
+
+#--disable-enlightenment-menu \
+#--disable-access 
+#--disable-tiling \
+#--disable-xkbswitch \
+#--disable-conf-randr \
+#--disable-tasks \
+#--disable-syscon \   
+#--disable-backlight \
+#--disable-shot \
+#  --disable-mixer \
+#  --disable-everything \
+#  --disable-connman \
+#  --disable-systray \
+#--disable-bluez \
+#--disable-comp \
+#--disable-ofono \
+#--disable-physics \
+#--disable-illume2 \
+}
+
+## compile
+build_compile() {
+
+   sudo ln -s /usr/lib/libblkid.la /usr/local/lib
+   sudo ln -s /usr/lib/libuuid.la /usr/local/lib
+   make || return 1
+
+}
+
+build_install() {
+
+   make DESTDIR="$I_ROOT" install || return 1
+}
+
+## rules
+build_rules() {
+
+   tet_load
+   tet_download
+   tet_convert
+   tet_unpack
+   tet_patch
+   tet_configure
+   tet_compile
+   tet_install
+   tet_split
+   tet_strip
+   tet_create
+   tet_generate
+   tet_check
+   tet_test
+   tet_package
+}
+
