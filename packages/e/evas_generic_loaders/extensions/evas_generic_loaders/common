@@ -1,0 +1,9 @@
+COMMENTS="Optional deps:
+			gst-plugins-good
+			gst-plugins-bad
+			gst-plugins-ugly
+			gst-ffmpeg
+			libspectre
+			libraw
+			librsvg
+			poppler"

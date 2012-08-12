@@ -1,0 +1,32 @@
+PACKAGE="evas_generic_loaders"
+VERSION="1.7.0-alpha"
+#VERSION="svn~r74988"
+SOURCE="http://download.enlightenment.org/releases/$PACKAGE-$VERSION.tar.bz2"
+#SOURCE="svn::http://svn.enlightenment.org/svn/e/trunk/${PACKAGE}"
+BUILD_DEPENDS="eina-dev
+	gst-plugins-base-dev
+	libspectre-dev
+	libraw-dev
+	librsvg-dev
+	poppler-dev"
+
+DESCRIPTION="Extra loaders for GPL loaders and unstable libraries"
+AUTHOR="The Rasterman (Carsten Haitzler) <raster@rasterman.com>,
+		Christian Kreibich <cK@whoop.org>,
+		Vincent Torri <vtorri at univ-evry dot fr>,
+		Michael Bouchaud <michael.bouchaud@gmail.com>"
+SITE="http://trac.enlightenment.org/e/wiki/Evas_Generic_Loaders"
+COPYING="BSD"
+MAINTAINERS="jls_legalize <jlslegalize@gmail.com>"
+TAGS="Extra loaders GPL loaders unstable libraries"
+COMMENTS="Optional deps:
+			gst-plugins-good
+			gst-plugins-bad
+			gst-plugins-ugly
+			gst-ffmpeg
+			libspectre
+			libraw
+			librsvg
+			poppler"
+CHANGELOG="---"
+CURRENT="Updated to ${VERSION}"
