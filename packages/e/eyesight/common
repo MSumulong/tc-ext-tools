@@ -1,0 +1,18 @@
+PACKAGE="eyesight"
+VERSION="svn~r74988"
+SOURCE="svn::http://svn.enlightenment.org/svn/e/trunk/PROTO/eyesight"
+BUILD_DEPENDS="	elementary-dev 
+		openjpeg-dev 
+		jbig2dec-dev
+		mupdf-dev.tcz
+		libspectre-dev.tcz"
+
+DESCRIPTION="A brief description of package."
+AUTHOR="authors of package"
+SITE="http://www.package.com"
+COPYING="GPL-2"
+MAINTAINERS="tc"
+TAGS=""
+COMMENTS="---"
+CHANGELOG="---"
+CURRENT="First Version"
