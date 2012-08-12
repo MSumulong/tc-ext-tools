@@ -39,18 +39,84 @@ if [ -n "$HAVE_TET_LOAD" -a ! -f "$PACKAGE_LOAD_STAMP" ]; then
      exit 1
 fi
 
+if [ -f "$TET_LINUX_COMMON" ]; then
+     . "$TET_LINUX_COMMON"
+else
+     echo "${ERROR_COLOR}Linux $KERNEL common file not found!${NORMAL}"
+     exit 1
+fi
+
 LINUX_DIR="linux-${KERNEL_VER}"
-LINUX_SRC="${TET_LINUX}/${KERNEL}/${LINUX_DIR}"
+LINUX_SRC="${TET_STORAGE_LINUX}/${KERNEL}/${LINUX_DIR}"
 LINUX_BUILD="$LINUX_SRC"
-LINUX_SOURCE="linux-${KERNEL_VER}-patched.txz"
-KERNEL_MIRROR="${TCMIRROR}/${TCVER}/x86/release/src/kernel"
-KERNEL_CONFIG="config-${KERNEL}"
-DL="${TET_LINUX}/dl"
+DL="${TET_STORAGE_LINUX}/dl"
+
+this_patch() {
+
+   unset PATCHES
+
+   echo -e "Checking if the linux patches directory exists ... \c"
+   if [ -d "$LINUX_PATCHES" ]; then
+        echo "yes"
+        echo -e "Checking if the linux patches series file exists ... \c"
+        if [ -f "$LINUX_PATCHES/series" ]; then
+             echo "yes"
+             PATCHES=$(cat "$LINUX_PATCHES/series" | grep -v '^#')
+        else
+             echo "no"
+             PATCHES=$(ls "$LINUX_PATCHES")
+        fi
+   else
+        echo "no"
+   fi
+
+   if [ -n "$PATCHES" ]; then
+        echo "---------------------------------------------------------------"
+        echo "Patches found, applying patches ..."
+        echo "---------------------------------------------------------------"
+        for PATCH in $PATCHES
+        do
+           echo "---------------------------------------------------------------"
+           echo "Processing the patch $PATCH"
+           echo "---------------------------------------------------------------"
+
+           if [ ! -f "$LINUX_PATCHES/$PATCH" ]; then
+                echo "Skipping the patch $PATCH because it is not a file!"
+                continue
+           fi
+
+           echo -e "Detecting the patch level ... \c"
+           PATCH_LEVEL=1
+           for FILE in $(cat $LINUX_PATCHES/$PATCH | grep -e "---" -e "+++" | cut -f2 -d" "; cat $LINUX_PATCHES/$PATCH | grep -e "---" -e "+++" | cut -f2 -d" " | cut -f1 -s)
+           do
+               if [ -f "$LINUX_SRC/$FILE" ]; then
+                    PATCH_LEVEL=0
+                    break
+               elif [ -f "$LINUX_SRC/${FILE#*/}" ]; then
+                    PATCH_LEVEL=1
+                    break
+               elif [ -f "$LINUX_SRC/${FILE#*/*/}" ]; then
+                    PATCH_LEVEL=2
+                    break
+               fi
+           done
+
+           echo "Applying the patch $PATCH with patch level $PATCH_LEVEL"
+           patch --directory="$LINUX_SRC" -Np$PATCH_LEVEL -i "$LINUX_PATCHES/$PATCH" || return 1
+        done
+   else
+        echo "---------------------------------------------------------------"
+        echo "There is no patch available for the linux $KERNEL"
+        echo "---------------------------------------------------------------"
+        return 0
+   fi
+
+}
 
 this_prepare() {
 
-   [ -d "$TET_LINUX" ] || mkdir -p "$TET_LINUX"
-   cd "$TET_LINUX"
+   [ -d "$TET_STORAGE_LINUX" ] || mkdir -p "$TET_STORAGE_LINUX"
+   cd "$TET_STORAGE_LINUX"
 
    [ -d "$KERNEL" ] || mkdir -p "$KERNEL"
    [ -d "$DL" ] || mkdir -p "$DL"
@@ -58,8 +124,16 @@ this_prepare() {
    echo -e "Checking if the linux source is downloaded before ... \c"
    if [ ! -f "${DL}/${LINUX_SOURCE}" ]; then
         echo "no"
-        echo "Downloading the linux source"
-        wget "${KERNEL_MIRROR}/${LINUX_SOURCE}" -O "${DL}/${LINUX_SOURCE}" || return 1
+        echo -e "Checking if the linux source is a file ... \c"
+        if [ -f "${KERNEL_MIRROR}/${LINUX_SOURCE}" ]; then
+             echo "yes"
+             echo "Copying the linux source"
+             cp "${KERNEL_MIRROR}/${LINUX_SOURCE}" "${DL}/${LINUX_SOURCE}" || return 1
+        else
+             echo "no"
+             echo "Downloading the linux source"
+             wget "${KERNEL_MIRROR}/${LINUX_SOURCE}" -O "${DL}/${LINUX_SOURCE}" || return 1
+       fi
    else
         echo "yes"
    fi
@@ -67,8 +141,16 @@ this_prepare() {
    echo -e "Checking if the kernel config is downloaded before ... \c"
    if [ ! -f "${DL}/${KERNEL_CONFIG}" ]; then
         echo "no"
-        echo "Downloading the kernel config"
-        wget "${KERNEL_MIRROR}/${KERNEL_CONFIG}" -O "${DL}/${KERNEL_CONFIG}" || return 1
+        echo -e "Checking if the kernel config is a file ... \c"
+        if [ -f "${KERNEL_MIRROR}/${KERNEL_CONFIG}" ]; then
+             echo "yes"
+             echo "Copying the kernel config"
+             cp "${KERNEL_MIRROR}/${KERNEL_CONFIG}" "${DL}/${KERNEL_CONFIG}" || return 1
+        else 
+             echo "no"
+             echo "Downloading the kernel config"
+             wget "${KERNEL_MIRROR}/${KERNEL_CONFIG}" -O "${DL}/${KERNEL_CONFIG}" || return 1
+       fi
    else
         echo "yes"
    fi
@@ -80,6 +162,9 @@ this_prepare() {
 
    echo "Extracting the linux source"
    tar -xf "${DL}/${LINUX_SOURCE}" || return 1
+
+   echo "Patching the linux source"
+   this_patch || return 1
 
    cd "$LINUX_DIR"
 
