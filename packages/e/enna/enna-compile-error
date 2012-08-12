@@ -1,0 +1,363 @@
+make  all-recursive
+make[1]: Entering directory `/mnt/sda2/tcbuild/storage/enna/src/temp/enna-git20120731'
+Making all in po
+make[2]: Entering directory `/mnt/sda2/tcbuild/storage/enna/src/temp/enna-git20120731/po'
+make enna.pot-update
+make[3]: Entering directory `/mnt/sda2/tcbuild/storage/enna/src/temp/enna-git20120731/po'
+sed -e '/^#/d' remove-potcdate.sin > t-remove-potcdate.sed
+mv t-remove-potcdate.sed remove-potcdate.sed
+if LC_ALL=C grep 'GNU enna' ../* 2>/dev/null | grep -v 'libtool:' >/dev/null; then \
+  package_gnu='GNU '; \
+else \
+  package_gnu=''; \
+fi; \
+if test -n 'http://enna.geexbox.org' || test 'http://enna.geexbox.org' = '@'PACKAGE_BUGREPORT'@'; then \
+  msgid_bugs_address='http://enna.geexbox.org'; \
+else \
+  msgid_bugs_address='http://enna.geexbox.org'; \
+fi; \
+case `/usr/local/bin/xgettext --version | sed 1q | sed -e 's,^[^0-9]*,,'` in \
+  '' | 0.[0-9] | 0.[0-9].* | 0.1[0-5] | 0.1[0-5].* | 0.16 | 0.16.[0-1]*) \
+    /usr/local/bin/xgettext --default-domain=enna --directory=.. \
+      --add-comments=TRANSLATORS: --keyword=_ --keyword=N_ --from-code=UTF-8  \
+      --files-from=./POTFILES.in \
+      --copyright-holder='The Enna Project' \
+      --msgid-bugs-address="$msgid_bugs_address" \
+    ;; \
+  *) \
+    /usr/local/bin/xgettext --default-domain=enna --directory=.. \
+      --add-comments=TRANSLATORS: --keyword=_ --keyword=N_ --from-code=UTF-8  \
+      --files-from=./POTFILES.in \
+      --copyright-holder='The Enna Project' \
+      --package-name="${package_gnu}enna" \
+      --package-version='0.4.0' \
+      --msgid-bugs-address="$msgid_bugs_address" \
+    ;; \
+esac
+test ! -f enna.po || { \
+  if test -f ./enna.pot; then \
+    sed -f remove-potcdate.sed < ./enna.pot > enna.1po && \
+    sed -f remove-potcdate.sed < enna.po > enna.2po && \
+    if cmp enna.1po enna.2po >/dev/null 2>&1; then \
+      rm -f enna.1po enna.2po enna.po; \
+    else \
+      rm -f enna.1po enna.2po ./enna.pot && \
+      mv enna.po ./enna.pot; \
+    fi; \
+  else \
+    mv enna.po ./enna.pot; \
+  fi; \
+}
+make[3]: Leaving directory `/mnt/sda2/tcbuild/storage/enna/src/temp/enna-git20120731/po'
+test ! -f ./enna.pot || \
+  test -z "da.gmo de.gmo el.gmo en@boldquot.gmo en@quot.gmo es.gmo fr.gmo it.gmo nl.gmo pl.gmo pt_BR.gmo ru.gmo tr.gmo uk.gmo zh_CN.gmo zh_TW.gmo" || make da.gmo de.gmo el.gmo en@boldquot.gmo en@quot.gmo es.gmo fr.gmo it.gmo nl.gmo pl.gmo pt_BR.gmo ru.gmo tr.gmo uk.gmo zh_CN.gmo zh_TW.gmo
+make[3]: Entering directory `/mnt/sda2/tcbuild/storage/enna/src/temp/enna-git20120731/po'
+/usr/local/bin/msgmerge --update da.po enna.pot
+................ done.
+rm -f da.gmo && /usr/local/bin/msgfmt -c --statistics -o da.gmo da.po
+151 translated messages, 1 fuzzy translation.
+/usr/local/bin/msgmerge --update de.po enna.pot
+................ done.
+rm -f de.gmo && /usr/local/bin/msgfmt -c --statistics -o de.gmo de.po
+151 translated messages, 1 fuzzy translation.
+/usr/local/bin/msgmerge --update el.po enna.pot
+................ done.
+rm -f el.gmo && /usr/local/bin/msgfmt -c --statistics -o el.gmo el.po
+57 translated messages, 50 fuzzy translations, 45 untranslated messages.
+make[4]: Entering directory `/mnt/sda2/tcbuild/storage/enna/src/temp/enna-git20120731/po'
+make en@boldquot.po-update
+make[5]: Entering directory `/mnt/sda2/tcbuild/storage/enna/src/temp/enna-git20120731/po'
+sed -e '/^#/d' -e 's/HEADER/en@boldquot.header/g' ./insert-header.sin > en@boldquot.insert-header
+en@boldquot:
+en@boldquot:
+msgmerge en@boldquot.po enna.pot -o en@boldquot.new.po
+................ done.
+make[5]: Leaving directory `/mnt/sda2/tcbuild/storage/enna/src/temp/enna-git20120731/po'
+make[4]: Leaving directory `/mnt/sda2/tcbuild/storage/enna/src/temp/enna-git20120731/po'
+rm -f en@boldquot.gmo && /usr/local/bin/msgfmt -c --statistics -o en@boldquot.gmo en@boldquot.po
+152 translated messages.
+make[4]: Entering directory `/mnt/sda2/tcbuild/storage/enna/src/temp/enna-git20120731/po'
+make en@quot.po-update
+make[5]: Entering directory `/mnt/sda2/tcbuild/storage/enna/src/temp/enna-git20120731/po'
+sed -e '/^#/d' -e 's/HEADER/en@quot.header/g' ./insert-header.sin > en@quot.insert-header
+en@quot:
+en@quot:
+msgmerge en@quot.po enna.pot -o en@quot.new.po
+................ done.
+make[5]: Leaving directory `/mnt/sda2/tcbuild/storage/enna/src/temp/enna-git20120731/po'
+make[4]: Leaving directory `/mnt/sda2/tcbuild/storage/enna/src/temp/enna-git20120731/po'
+rm -f en@quot.gmo && /usr/local/bin/msgfmt -c --statistics -o en@quot.gmo en@quot.po
+152 translated messages.
+/usr/local/bin/msgmerge --update es.po enna.pot
+................ done.
+rm -f es.gmo && /usr/local/bin/msgfmt -c --statistics -o es.gmo es.po
+122 translated messages, 30 fuzzy translations.
+/usr/local/bin/msgmerge --update fr.po enna.pot
+................ done.
+rm -f fr.gmo && /usr/local/bin/msgfmt -c --statistics -o fr.gmo fr.po
+151 translated messages, 1 fuzzy translation.
+/usr/local/bin/msgmerge --update it.po enna.pot
+................ done.
+rm -f it.gmo && /usr/local/bin/msgfmt -c --statistics -o it.gmo it.po
+152 translated messages.
+/usr/local/bin/msgmerge --update nl.po enna.pot
+................ done.
+rm -f nl.gmo && /usr/local/bin/msgfmt -c --statistics -o nl.gmo nl.po
+124 translated messages, 28 fuzzy translations.
+/usr/local/bin/msgmerge --update pl.po enna.pot
+................ done.
+rm -f pl.gmo && /usr/local/bin/msgfmt -c --statistics -o pl.gmo pl.po
+151 translated messages, 1 fuzzy translation.
+/usr/local/bin/msgmerge --update pt_BR.po enna.pot
+................ done.
+rm -f pt_BR.gmo && /usr/local/bin/msgfmt -c --statistics -o pt_BR.gmo pt_BR.po
+151 translated messages, 1 fuzzy translation.
+/usr/local/bin/msgmerge --update ru.po enna.pot
+................ done.
+rm -f ru.gmo && /usr/local/bin/msgfmt -c --statistics -o ru.gmo ru.po
+110 translated messages, 42 fuzzy translations.
+/usr/local/bin/msgmerge --update tr.po enna.pot
+................ done.
+rm -f tr.gmo && /usr/local/bin/msgfmt -c --statistics -o tr.gmo tr.po
+151 translated messages, 1 fuzzy translation.
+/usr/local/bin/msgmerge --update uk.po enna.pot
+................ done.
+rm -f uk.gmo && /usr/local/bin/msgfmt -c --statistics -o uk.gmo uk.po
+98 translated messages, 54 fuzzy translations.
+/usr/local/bin/msgmerge --update zh_CN.po enna.pot
+................ done.
+rm -f zh_CN.gmo && /usr/local/bin/msgfmt -c --statistics -o zh_CN.gmo zh_CN.po
+137 translated messages, 15 fuzzy translations.
+/usr/local/bin/msgmerge --update zh_TW.po enna.pot
+................ done.
+rm -f zh_TW.gmo && /usr/local/bin/msgfmt -c --statistics -o zh_TW.gmo zh_TW.po
+151 translated messages, 1 fuzzy translation.
+make[3]: Leaving directory `/mnt/sda2/tcbuild/storage/enna/src/temp/enna-git20120731/po'
+touch stamp-po
+make[2]: Leaving directory `/mnt/sda2/tcbuild/storage/enna/src/temp/enna-git20120731/po'
+Making all in src
+make[2]: Entering directory `/mnt/sda2/tcbuild/storage/enna/src/temp/enna-git20120731/src'
+Making all in bin
+make[3]: Entering directory `/mnt/sda2/tcbuild/storage/enna/src/temp/enna-git20120731/src/bin'
+  CC     enna.o
+  CC     enna_config.o
+  CC     utils.o
+  CC     buffer.o
+  CC     metadata.o
+  CC     mainmenu.o
+  CC     module.o
+  CC     activity.o
+  CC     vfs.o
+  CC     volumes.o
+  CC     file.o
+  CC     browser.o
+  CC     browser_obj.o
+browser_obj.c: In function '_add_header':
+browser_obj.c:318:5: warning: 'elm_icon_file_set' is deprecated (declared at /usr/local/include/elementary-1/elm_icon.h:159) [-Wdeprecated-declarations]
+browser_obj.c:331:9: warning: 'elm_icon_file_set' is deprecated (declared at /usr/local/include/elementary-1/elm_icon.h:159) [-Wdeprecated-declarations]
+browser_obj.c:333:9: warning: 'elm_icon_file_set' is deprecated (declared at /usr/local/include/elementary-1/elm_icon.h:159) [-Wdeprecated-declarations]
+  CC     infos.o
+infos.c:46:13: warning: '_set_text' defined but not used [-Wunused-function]
+  CC     infos_video_flags.o
+infos_video_flags.c: In function 'flag_set':
+infos_video_flags.c:145:5: warning: 'elm_icon_file_set' is deprecated (declared at /usr/local/include/elementary-1/elm_icon.h:159) [-Wdeprecated-declarations]
+  CC     content.o
+  CC     view_list.o
+  CC     view_list2.o
+  CC     view_wall.o
+view_wall.c: In function 'enna_wall_add':
+view_wall.c:231:5: warning: 'elm_gengrid_bounce_set' is deprecated (declared at /usr/local/include/elementary-1/elm_gengrid.h:412) [-Wdeprecated-declarations]
+  CC     mediaplayer_obj.o
+  CC     xml_utils.o
+  CC     url_utils.o
+url_utils.c: In function 'url_save_to_disk':
+url_utils.c:126:9: warning: variable 'n' set but not used [-Wunused-but-set-variable]
+  CC     logs.o
+  CC     parser_cdda.o
+  CC     box.o
+  CC     exit.o
+  CC     weather_api.o
+  CC     volume_notification.o
+  CC     ini_parser.o
+ini_parser.c: In function 'ini_dump_section':
+ini_parser.c:137:13: warning: variable 'n' set but not used [-Wunused-but-set-variable]
+  CC     input.o
+  CC     geoip.o
+geoip.c: In function 'enna_get_geo_by_ip':
+geoip.c:139:26: warning: variable 'handler' set but not used [-Wunused-but-set-variable]
+geoip.c:138:20: warning: variable 'url' set but not used [-Wunused-but-set-variable]
+  CC     search.o
+search.c: In function '_entry_input_listener_cb':
+search.c:39:17: warning: unused variable 'sd' [-Wunused-variable]
+search.c: In function 'enna_search_focus_set':
+search.c:165:17: warning: variable 'sd' set but not used [-Wunused-but-set-variable]
+  CC     gadgets.o
+gadgets.c: In function 'enna_gadgets_hide':
+gadgets.c:66:18: warning: variable 'gad' set but not used [-Wunused-but-set-variable]
+  CC     kbdnav.o
+  CC     mediaplayer.o
+  CC     configuration.o
+  CC     configuration_credits.o
+  CC     configuration_sysinfo.o
+../../src/modules/activity/configuration/configuration_sysinfo.c: In function '_update_infos_cb':
+../../src/modules/activity/configuration/configuration_sysinfo.c:341:13: warning: 'ld' may be used uninitialized in this function [-Wuninitialized]
+../../src/modules/activity/configuration/configuration_sysinfo.c:321:11: note: 'ld' was declared here
+  CC     music.o
+../../src/modules/activity/music/music.c: In function '_panel_infos_display':
+../../src/modules/activity/music/music.c:172:18: warning: variable 'o_edje' set but not used [-Wunused-but-set-variable]
+  CC     photo.o
+  CC     photo_infos.o
+../../src/modules/activity/photo/photo_infos.c: In function 'photo_panel_infos_set_cover':
+../../src/modules/activity/photo/photo_infos.c:229:5: warning: 'elm_icon_file_set' is deprecated (declared at /usr/local/include/elementary-1/elm_icon.h:159) [-Wdeprecated-declarations]
+  CC     photo_slideshow_view.o
+../../src/modules/activity/photo/photo_slideshow_view.c: In function '_mouse_in':
+../../src/modules/activity/photo/photo_slideshow_view.c:137:17: warning: unused variable 'sd' [-Wunused-variable]
+../../src/modules/activity/photo/photo_slideshow_view.c: In function '_mouse_out':
+../../src/modules/activity/photo/photo_slideshow_view.c:144:17: warning: unused variable 'sd' [-Wunused-variable]
+  CC     video.o
+../../src/modules/activity/video/video.c: In function 'browser_cb_select':
+../../src/modules/activity/video/video.c:577:24: warning: variable 'm' set but not used [-Wunused-but-set-variable]
+../../src/modules/activity/video/video.c: At top level:
+../../src/modules/activity/video/video.c:343:1: warning: 'snapshot_show' defined but not used [-Wunused-function]
+  CC     video_picture.o
+../../src/modules/activity/video/video_picture.c: In function 'enna_video_picture_set':
+../../src/modules/activity/video/video_picture.c:91:7: warning: 'elm_icon_file_set' is deprecated (declared at /usr/local/include/elementary-1/elm_icon.h:159) [-Wdeprecated-declarations]
+  CC     video_resume.o
+  CC     weather.o
+  CC     dvd.o
+  CC     localfiles.o
+  CC     valhalla.o
+  CC     gad_date.o
+../../src/modules/gadgets/date/gad_date.c: In function '_date_add':
+../../src/modules/gadgets/date/gad_date.c:46:19: warning: unused variable 'h' [-Wunused-variable]
+../../src/modules/gadgets/date/gad_date.c:46:16: warning: unused variable 'w' [-Wunused-variable]
+  CC     gad_weather.o
+../../src/modules/gadgets/weather/gad_weather.c: In function 'enna_weather_notification_update':
+../../src/modules/gadgets/weather/gad_weather.c:68:3: warning: 'elm_icon_file_set' is deprecated (declared at /usr/local/include/elementary-1/elm_icon.h:159) [-Wdeprecated-declarations]
+../../src/modules/gadgets/weather/gad_weather.c: In function 'enna_weather_notification_smart_add':
+../../src/modules/gadgets/weather/gad_weather.c:92:18: warning: unused variable 'o_edje' [-Wunused-variable]
+../../src/modules/gadgets/weather/gad_weather.c:91:19: warning: unused variable 'h' [-Wunused-variable]
+../../src/modules/gadgets/weather/gad_weather.c:91:16: warning: unused variable 'w' [-Wunused-variable]
+  CC     kbd.o
+  CC     mtab.o
+  CC     udev.o
+../../src/modules/volume/udev/udev.c: In function 'handle_partition':
+../../src/modules/volume/udev/udev.c:385:17: warning: variable 'devname' set but not used [-Wunused-but-set-variable]
+  CCLD   enna
+/usr/local/bin/ld: warning: libssl.so.0.9.8, needed by /usr/local/lib/libssh2.so, may conflict with libssl.so.1.0.0
+/usr/local/bin/ld: warning: libcrypto.so.0.9.8, needed by /usr/local/lib/libssh2.so, may conflict with libcrypto.so.1.0.0
+mediaplayer.o: In function `enna_mediaplayer_seek':
+mediaplayer.c:(.text+0x20b): undefined reference to `player_playback_seek'
+mediaplayer.o: In function `set_network_stream':
+mediaplayer.c:(.text+0x279): undefined reference to `mrl_new'
+mediaplayer.o: In function `set_dvd_stream':
+mediaplayer.c:(.text+0x2f8): undefined reference to `mrl_new'
+mediaplayer.c:(.text+0x313): undefined reference to `mrl_get_metadata_dvd'
+mediaplayer.c:(.text+0x399): undefined reference to `mrl_get_metadata_dvd_title'
+mediaplayer.c:(.text+0x3b1): undefined reference to `mrl_get_metadata_dvd_title'
+mediaplayer.c:(.text+0x3ce): undefined reference to `mrl_get_metadata_dvd_title'
+mediaplayer.o: In function `mp_play':
+mediaplayer.c:(.text+0xa23): undefined reference to `player_playback_get_state'
+mediaplayer.c:(.text+0xa3b): undefined reference to `player_playback_pause'
+mediaplayer.c:(.text+0xa51): undefined reference to `player_playback_start'
+mediaplayer.o: In function `event_mouse_move':
+mediaplayer.c:(.text+0xa82): undefined reference to `mrl_get_resource'
+mediaplayer.c:(.text+0xaa2): undefined reference to `player_set_mouse_position'
+mediaplayer.o: In function `event_mouse_button':
+mediaplayer.c:(.text+0xad6): undefined reference to `mrl_get_resource'
+mediaplayer.c:(.text+0xb1e): undefined reference to `player_set_mouse_position'
+mediaplayer.c:(.text+0xb33): undefined reference to `player_dvd_nav'
+mediaplayer.o: In function `enna_mediaplayer_supported_uri_type':
+mediaplayer.c:(.text+0xc8f): undefined reference to `libplayer_wrapper_supported_res'
+mediaplayer.o: In function `enna_mediaplayer_shutdown':
+mediaplayer.c:(.text+0xd75): undefined reference to `player_playback_stop'
+mediaplayer.c:(.text+0xd8e): undefined reference to `player_uninit'
+mediaplayer.o: In function `enna_mediaplayer_init':
+mediaplayer.c:(.text+0xdfa): undefined reference to `libplayer_wrapper_enabled'
+mediaplayer.c:(.text+0xe2e): undefined reference to `libplayer_wrapper_enabled'
+mediaplayer.c:(.text+0xe62): undefined reference to `libplayer_wrapper_enabled'
+mediaplayer.c:(.text+0xe96): undefined reference to `libplayer_wrapper_enabled'
+mediaplayer.c:(.text+0xf61): undefined reference to `player_init'
+mediaplayer.c:(.text+0xf96): undefined reference to `player_init'
+mediaplayer.c:(.text+0x1004): undefined reference to `player_init'
+mediaplayer.c:(.text+0x1072): undefined reference to `player_init'
+mediaplayer.o: In function `mp_stop':
+mediaplayer.c:(.text+0x11d4): undefined reference to `player_get_percent_pos'
+mediaplayer.c:(.text+0x11f6): undefined reference to `player_playback_stop'
+mediaplayer.o: In function `enna_mediaplayer_pause':
+mediaplayer.c:(.text+0x136c): undefined reference to `player_playback_get_state'
+mediaplayer.c:(.text+0x1384): undefined reference to `player_playback_pause'
+mediaplayer.o: In function `enna_mediaplayer_play':
+mediaplayer.c:(.text+0x16ab): undefined reference to `mrl_new'
+mediaplayer.c:(.text+0x171c): undefined reference to `mrl_new'
+mediaplayer.c:(.text+0x1763): undefined reference to `mrl_new'
+mediaplayer.c:(.text+0x17f0): undefined reference to `mrl_new'
+mediaplayer.c:(.text+0x1a57): undefined reference to `player_mrl_set'
+mediaplayer.c:(.text+0x1a72): undefined reference to `player_subtitle_set_alignment'
+mediaplayer.c:(.text+0x1a8d): undefined reference to `player_subtitle_set_position'
+mediaplayer.c:(.text+0x1aa9): undefined reference to `player_subtitle_scale'
+mediaplayer.c:(.text+0x1abe): undefined reference to `player_subtitle_set_visibility'
+mediaplayer.c:(.text+0x1ad8): undefined reference to `player_set_framedrop'
+mediaplayer.o: In function `enna_mediaplayer_position_get':
+mediaplayer.c:(.text+0x1c19): undefined reference to `player_get_time_pos'
+mediaplayer.o: In function `enna_mediaplayer_position_percent_get':
+mediaplayer.c:(.text+0x1c54): undefined reference to `player_get_percent_pos'
+mediaplayer.o: In function `enna_mediaplayer_length_get':
+mediaplayer.c:(.text+0x1c85): undefined reference to `mrl_get_property'
+mediaplayer.o: In function `enna_mediaplayer_video_resize':
+mediaplayer.c:(.text+0x1d10): undefined reference to `player_x_window_set_properties'
+mediaplayer.o: In function `enna_mediaplayer_send_input':
+mediaplayer.c:(.text+0x2031): undefined reference to `player_vdr'
+mediaplayer.o: In function `enna_mediaplayer_volume_get':
+mediaplayer.c:(.text+0x205e): undefined reference to `player_audio_volume_get'
+mediaplayer.o: In function `enna_mediaplayer_volume_set':
+mediaplayer.c:(.text+0x2079): undefined reference to `player_audio_volume_set'
+mediaplayer.o: In function `enna_mediaplayer_default_increase_volume':
+mediaplayer.c:(.text+0x20a6): undefined reference to `player_audio_volume_set'
+mediaplayer.o: In function `enna_mediaplayer_default_decrease_volume':
+mediaplayer.c:(.text+0x20d0): undefined reference to `player_audio_volume_set'
+mediaplayer.o: In function `enna_mediaplayer_mute':
+mediaplayer.c:(.text+0x20e8): undefined reference to `player_audio_mute_get'
+mediaplayer.c:(.text+0x2100): undefined reference to `player_audio_mute_set'
+mediaplayer.o: In function `enna_mediaplayer_mute_get':
+mediaplayer.c:(.text+0x2122): undefined reference to `player_audio_mute_get'
+mediaplayer.o: In function `enna_mediaplayer_audio_previous':
+mediaplayer.c:(.text+0x2141): undefined reference to `player_audio_prev'
+mediaplayer.o: In function `enna_mediaplayer_audio_next':
+mediaplayer.c:(.text+0x2159): undefined reference to `player_audio_next'
+mediaplayer.o: In function `enna_mediaplayer_audio_increase_delay':
+mediaplayer.c:(.text+0x217d): undefined reference to `player_audio_set_delay'
+mediaplayer.o: In function `enna_mediaplayer_audio_decrease_delay':
+mediaplayer.c:(.text+0x21a1): undefined reference to `player_audio_set_delay'
+mediaplayer.o: In function `enna_mediaplayer_subtitle_set_visibility':
+mediaplayer.c:(.text+0x21c6): undefined reference to `player_subtitle_set_visibility'
+mediaplayer.o: In function `enna_mediaplayer_subtitle_previous':
+mediaplayer.c:(.text+0x21de): undefined reference to `player_subtitle_prev'
+mediaplayer.o: In function `enna_mediaplayer_subtitle_next':
+mediaplayer.c:(.text+0x21f6): undefined reference to `player_subtitle_next'
+mediaplayer.o: In function `enna_mediaplayer_subtitle_set_alignment':
+mediaplayer.c:(.text+0x2220): undefined reference to `player_subtitle_set_alignment'
+mediaplayer.o: In function `enna_mediaplayer_subtitle_increase_position':
+mediaplayer.c:(.text+0x2243): undefined reference to `player_subtitle_set_position'
+mediaplayer.o: In function `enna_mediaplayer_subtitle_decrease_position':
+mediaplayer.c:(.text+0x2263): undefined reference to `player_subtitle_set_position'
+mediaplayer.o: In function `enna_mediaplayer_subtitle_increase_scale':
+mediaplayer.c:(.text+0x2285): undefined reference to `player_subtitle_scale'
+mediaplayer.o: In function `enna_mediaplayer_subtitle_decrease_scale':
+mediaplayer.c:(.text+0x22a7): undefined reference to `player_subtitle_scale'
+mediaplayer.o: In function `enna_mediaplayer_subtitle_increase_delay':
+mediaplayer.c:(.text+0x22c9): undefined reference to `player_subtitle_set_delay'
+mediaplayer.o: In function `enna_mediaplayer_subtitle_decrease_delay':
+mediaplayer.c:(.text+0x22eb): undefined reference to `player_subtitle_set_delay'
+mediaplayer.o: In function `enna_mediaplayer_set_framedrop':
+mediaplayer.c:(.text+0x2315): undefined reference to `player_set_framedrop'
+configuration_sysinfo.o: In function `_update_infos_cb':
+configuration_sysinfo.c:(.text+0x3c0): undefined reference to `libplayer_version'
+collect2: ld returned 1 exit status
+make[3]: *** [enna] Error 1
+make[3]: Leaving directory `/mnt/sda2/tcbuild/storage/enna/src/temp/enna-git20120731/src/bin'
+make[2]: *** [all-recursive] Error 1
+make[2]: Leaving directory `/mnt/sda2/tcbuild/storage/enna/src/temp/enna-git20120731/src'
+make[1]: *** [all-recursive] Error 1
+make[1]: Leaving directory `/mnt/sda2/tcbuild/storage/enna/src/temp/enna-git20120731'
+make: *** [all] Error 2

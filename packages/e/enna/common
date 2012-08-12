@@ -1,0 +1,18 @@
+PACKAGE="enna"
+VERSION="git20120731"
+SOURCE="git::git://github.com/naguirre/enna.git"
+BUILD_DEPENDS="	libvalhalla-dev 
+		elementary-dev 
+		cvs 
+		libssh2"
+#		libplayer-dev 
+
+DESCRIPTION="A brief description of package."
+AUTHOR="authors of package"
+SITE="http://www.package.com"
+COPYING="GPL-2"
+MAINTAINERS="tc"
+TAGS=""
+COMMENTS="---"
+CHANGELOG="---"
+CURRENT="First Version"
