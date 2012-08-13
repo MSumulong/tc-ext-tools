@@ -1,0 +1,4 @@
+#!/bin/sh
+
+ln -s /usr/local/bin/tclsh /usr/bin/
+udevadm trigger

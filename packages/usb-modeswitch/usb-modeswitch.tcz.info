@@ -1,0 +1,16 @@
+Title:		usb-modeswitch.tcz (TESTING)
+Description:	Activating Switchable USB Devices
+Version:	1.2.3
+Author:		Josua Dietze
+Original-site:	http://www.draisberghof.de/usb-modeswitch/
+Copying-policy:	GPLv2
+Size:		36K
+Extension_by:	jls_legalize <unsenepopiu at tin dot it>
+Tags:		Activating Switchable USB Devices
+Comments:	Reboot is needed.
+Change-log:     2010/06/11 First Version 1.1.2
+		2011/01/21 updated to 1.1.6
+		2011/03/08 updated to 1.1.7
+		2011/10/26 updated to 1.2.0
+		2012/01/04 Updated to 1.2.1
+Current:	2012/02/22 Updated to 1.2.3
