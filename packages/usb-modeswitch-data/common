@@ -1,5 +1,5 @@
 PACKAGE="usb-modeswitch-data"
-VERSION="20120531"
+VERSION="20120812"
 SOURCE="http://www.draisberghof.de/usb_modeswitch/usb-modeswitch-data-$VERSION.tar.bz2"
 BUILD_DEPENDS="coreutils.tcz"
 
