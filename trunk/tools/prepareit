@@ -39,16 +39,8 @@ if [ -n "$HAVE_TET_LOAD" -a ! -f "$PACKAGE_LOAD_STAMP" ]; then
      exit 1
 fi
 
-if [ -f "$TET_LINUX_COMMON" ]; then
-     . "$TET_LINUX_COMMON"
-else
-     echo "${ERROR_COLOR}Linux $KERNEL common file not found!${NORMAL}"
-     exit 1
-fi
-
 LINUX_DIR="linux-${KERNEL_VER}"
-LINUX_SRC="${TET_STORAGE_LINUX}/${KERNEL}/${LINUX_DIR}"
-LINUX_BUILD="$LINUX_SRC"
+LINUX_BUILD="${TET_STORAGE_LINUX}/${KERNEL}/${LINUX_DIR}"
 DL="${TET_STORAGE_LINUX}/dl"
 
 this_patch() {
@@ -89,20 +81,20 @@ this_patch() {
            PATCH_LEVEL=1
            for FILE in $(cat $LINUX_PATCHES/$PATCH | grep -e "---" -e "+++" | cut -f2 -d" "; cat $LINUX_PATCHES/$PATCH | grep -e "---" -e "+++" | cut -f2 -d" " | cut -f1 -s)
            do
-               if [ -f "$LINUX_SRC/$FILE" ]; then
+               if [ -f "$LINUX_BUILD/$FILE" ]; then
                     PATCH_LEVEL=0
                     break
-               elif [ -f "$LINUX_SRC/${FILE#*/}" ]; then
+               elif [ -f "$LINUX_BUILD/${FILE#*/}" ]; then
                     PATCH_LEVEL=1
                     break
-               elif [ -f "$LINUX_SRC/${FILE#*/*/}" ]; then
+               elif [ -f "$LINUX_BUILD/${FILE#*/*/}" ]; then
                     PATCH_LEVEL=2
                     break
                fi
            done
 
            echo "Applying the patch $PATCH with patch level $PATCH_LEVEL"
-           patch --directory="$LINUX_SRC" -Np$PATCH_LEVEL -i "$LINUX_PATCHES/$PATCH" || return 1
+           patch --directory="$LINUX_BUILD" -Np$PATCH_LEVEL -i "$LINUX_PATCHES/$PATCH" || return 1
         done
    else
         echo "---------------------------------------------------------------"
@@ -138,23 +130,6 @@ this_prepare() {
         echo "yes"
    fi
 
-   echo -e "Checking if the kernel config is downloaded before ... \c"
-   if [ ! -f "${DL}/${KERNEL_CONFIG}" ]; then
-        echo "no"
-        echo -e "Checking if the kernel config is a file ... \c"
-        if [ -f "${KERNEL_MIRROR}/${KERNEL_CONFIG}" ]; then
-             echo "yes"
-             echo "Copying the kernel config"
-             cp "${KERNEL_MIRROR}/${KERNEL_CONFIG}" "${DL}/${KERNEL_CONFIG}" || return 1
-        else 
-             echo "no"
-             echo "Downloading the kernel config"
-             wget "${KERNEL_MIRROR}/${KERNEL_CONFIG}" -O "${DL}/${KERNEL_CONFIG}" || return 1
-       fi
-   else
-        echo "yes"
-   fi
-
    cd "$KERNEL"
 
    echo "Cleaning the linux directory"
@@ -169,7 +144,7 @@ this_prepare() {
    cd "$LINUX_DIR"
 
    echo "Configuring the linux source"
-   cp -f "${DL}/${KERNEL_CONFIG}" .config
+   cp -f "$LINUX_CONFIG" .config
 
    if [ "$KERNEL_ARCH" = x86_64 ]; then
         make ARCH="$KERNEL_ARCH" CROSS_COMPILE="$CROSS_COMPILE" oldconfig || return 1
@@ -205,7 +180,7 @@ this_main() {
 
    echo "Creating the required symlinks in the root file system"
    [ -d /usr/src ] || sudo mkdir -p /usr/src
-   sudo ln -sf "$LINUX_SRC" /usr/src/linux || return 1
+   sudo ln -sf "$LINUX_BUILD" /usr/src/linux || return 1
    sudo ln -sf "$LINUX_BUILD" /lib/modules/${KERNEL}/build || return 1
 
    echo "---------------------------------------------------------------"
