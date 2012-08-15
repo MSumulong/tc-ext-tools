@@ -1,11 +1,9 @@
 PACKAGE="python-edje"
-VERSION="svn~r74988"
+VERSION="svn~r75273"
 SOURCE="svn::http://svn.enlightenment.org/svn/e/trunk/BINDINGS/python/$PACKAGE"
 BUILD_DEPENDS="edje-dev
-	cython-dev
 	python-evas-dev
-	python
-	python-dev"
+	cython"
 
 DESCRIPTION="PYTHON BINDINGS FOR EDJE"
 AUTHOR="Gustavo Sverzut Barbieri <barbieri@gmail.com>, Fabiano Fid?ncio <fidencio@profusion.mobi>, Tiago Falc?o <tiago@profusion.mobi>"

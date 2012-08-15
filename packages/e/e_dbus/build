@@ -8,8 +8,8 @@
 ## configure
 build_configure() {
 
-#   ./autogen.sh	--disable-doc \
-   ./configure	--disable-doc \
+#   ./configure	--disable-doc \
+   ./autogen.sh	--disable-doc \
 	--disable-edbus-performance-test  || return 1
 #	--enable-eofono \
 #	--enable-eukit \

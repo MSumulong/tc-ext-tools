@@ -1,10 +1,9 @@
 PACKAGE="python-elementary"
-VERSION="svn~r74988"
+VERSION="svn~r75273"
 SOURCE="svn::http://svn.enlightenment.org/svn/e/trunk/BINDINGS/python/$PACKAGE"
 BUILD_DEPENDS="elementary-dev
 	python-evas-dev
-	python-dev
-	cython-dev"
+	cython"
 
 DESCRIPTION="Python bindings for the Elementary widget set library"
 AUTHOR="authors of package"

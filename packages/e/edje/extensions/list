@@ -5,7 +5,6 @@ usr/local/bin/edje_inspector
 usr/local/bin/edje_player
 usr/local/bin/edje_recc
 usr/local/bin/edje_watch
-usr/local/bin/inkscape2edc
 usr/local/include/edje-1/Edje.h
 usr/local/include/edje-1/Edje_Edit.h
 usr/local/lib/edje/utils/epp

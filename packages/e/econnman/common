@@ -1,14 +1,26 @@
 PACKAGE="econnman"
-VERSION="svn~r74997"
+VERSION="svn~r75273"
 SOURCE="svn::http://svn.enlightenment.org/svn/e/trunk//$PACKAGE"
-BUILD_DEPENDS="python-dev edje edje-dev"
+BUILD_DEPENDS="python-elementary-dev python-e_dbus-dev"
+
 
 DESCRIPTION="ConnMan User Interface in EFL"
 AUTHOR="Gustavo Sverzut Barbieri <barbieri@profusion.mobi>"
 SITE="enlightenment.org"
 COPYING="GPL-2"
 MAINTAINERS="jls_legalize <jlslegalize@gmail.com>"
+COMMENTS="connmand needs to be running, please read connman1 info file.
+		Executing econnman without arguments will start it WITHOUT the agent
+		support. Any requested interaction will be left to existing agents, if
+		any. This means that if you need to input passwords, it will use
+		another agent.
+
+		If you do not have another agent and need to type in passwords, then
+		start econnman with the agent support:
+		
+		        econnman-bin --agent
+		
+		Extensions build system is tc-ext-tools"
 TAGS="ConnMan EFL"
-COMMENTS="---"
 CHANGELOG="---"
 CURRENT="First Version "

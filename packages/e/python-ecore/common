@@ -1,11 +1,11 @@
 PACKAGE="python-ecore"
-VERSION="svn~r74988"
+#VERSION="svn~r75273"
+VERSION="svn~r75273"
+#SOURCE="http://download.enlightenment.org/releases/BINDINGS/python/$PACKAGE-$VERSION.tar.bz2"
 SOURCE="svn::http://svn.enlightenment.org/svn/e/trunk/BINDINGS/python/$PACKAGE"
-BUILD_DEPENDS="evas-dev
-	ecore-dev
-	cython-dev
+BUILD_DEPENDS="	ecore-dev
 	python-evas-dev
-	python"
+	cython"
 
 DESCRIPTION="PYTHON BINDINGS FOR ECORE"
 AUTHOR="Gustavo Sverzut Barbieri <barbieri@gmail.com>i, Davide 'DaveMDS' Andreoli <dave@gurumeditation.it>"

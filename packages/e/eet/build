@@ -9,8 +9,8 @@
 build_configure() {
 
    ## autotools
-#   ./autogen.sh --enable-amalgamation \
-   ./configure --enable-amalgamation \
+#   ./configure --enable-amalgamation \
+   ./autogen.sh --enable-amalgamation \
 	--enable-build-examples=no \
 	--disable-doc \
 	--disable-old-eet-file-format || return 1

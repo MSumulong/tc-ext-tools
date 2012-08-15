@@ -8,8 +8,8 @@
 ## configure
 build_configure() {
 
-#   ./autogen.sh	\
-   ./configure	\
+#   ./configure	\
+   ./autogen.sh	\
 	--enable-image-loader-eet \
 	--enable-image-loader-jpeg \
 	--enable-image-loader-wbmp \

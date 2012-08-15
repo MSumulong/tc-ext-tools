@@ -9,8 +9,8 @@
 build_configure() {
 
    ## autotools
-#   ./autogen.sh --enable-multisense \
-   ./configure --enable-multisense \
+#   ./configure --enable-multisense \
+   ./autogen.sh --enable-multisense \
 	--disable-build-examples \
 	--enable-edje-program-cache \
 	--enable-edje-calc-cache \

@@ -9,6 +9,7 @@
 build_configure() {
 
    ## autotools
+#   ./configure --prefix=/usr/local \
    ./autogen.sh --prefix=/usr/local \
 	--enable-edbus \
 	--enable-efreet \

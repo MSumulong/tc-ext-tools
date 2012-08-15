@@ -1,8 +1,8 @@
 PACKAGE="e_dbus"
-VERSION="1.7.0-alpha"
-#VERSION="svn~r74988"
-SOURCE="http://download.enlightenment.org/releases/$PACKAGE-$VERSION.tar.bz2"
-#SOURCE="svn::http://svn.enlightenment.org/svn/e/trunk/${PACKAGE}"
+#VERSION="svn~r75211"
+VERSION="svn~r75211"
+#SOURCE="http://download.enlightenment.org/releases/$PACKAGE-$VERSION.tar.bz2"
+SOURCE="svn::http://svn.enlightenment.org/svn/e/trunk/${PACKAGE}"
 BUILD_DEPENDS="dbus-dev
 	libtool-dev
 	ecore-dev"
