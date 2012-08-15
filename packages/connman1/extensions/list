@@ -6,7 +6,6 @@ usr/local/include/connman/log.h
 usr/local/include/connman/network.h
 usr/local/include/connman/notifier.h
 usr/local/include/connman/plugin.h
-usr/local/include/connman/provision.h
 usr/local/include/connman/resolver.h
 usr/local/include/connman/service.h
 usr/local/include/connman/storage.h
