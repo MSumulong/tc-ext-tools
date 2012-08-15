@@ -310,12 +310,6 @@ set_tcl_system() {
    TCZREPO="${TCMIRROR}/${TCVER}/${ARCH}/tcz"
    TCEDIR=/etc/sysconfig/tcedir
 
-   TET_PACKAGES_LINUX="$TET_PACKAGES/linux"
-   TET_STORAGE_LINUX="$TET_STORAGE/linux"
-   TET_LINUX="$TET_PACKAGES_LINUX/$KERNEL"
-   TET_LINUX_COMMON="$TET_LINUX/common"
-   TET_LINUX_PATCHES="$TET_LINUX/patches"
-
 }
 
 # set compiler and linker flags if not already set
@@ -331,6 +325,23 @@ set_flags() {
 set_date
 set_tcl_system
 set_flags
+
+# linux root file system
+TET_PACKAGES_LINUX="$TET_PACKAGES/linux"
+TET_STORAGE_LINUX="$TET_STORAGE/linux"
+TET_LINUX="$TET_PACKAGES_LINUX/$KERNEL"
+LINUX_COMMON="$TET_LINUX/common"
+
+if [ "$THIS" == "prepareit" ] && [ -f "$LINUX_COMMON" ]; then
+     . "$LINUX_COMMON"
+
+     LINUX_SRC="$TET_LINUX/src"
+     LINUX_PATCHES="$LINUX_SRC/patches"
+     LINUX_CONFIG="$LINUX_SRC/$KERNEL_CONFIG"
+else
+     echo "${ERROR_COLOR}Linux $KERNEL common file not found!${NORMAL}"
+     exit 1
+fi
 
 # package root file system
 PACKAGE_ROOT="$PWD"
