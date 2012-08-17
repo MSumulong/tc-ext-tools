@@ -1,0 +1,2 @@
+ICON=/usr/local/share/icons/enjoy.png
+COMMENTS="either gst-plugins, xine-lib or vlc are needed."

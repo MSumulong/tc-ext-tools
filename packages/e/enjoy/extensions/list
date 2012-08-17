@@ -1,0 +1,12 @@
+usr/local/bin/enjoy
+usr/local/bin/enjoy_ql
+usr/local/lib/enjoy/albumart-lastfm.la
+usr/local/lib/enjoy/albumart-lastfm.so
+usr/local/lib/enjoy/mpris.la
+usr/local/lib/enjoy/mpris.so
+usr/local/lib/enjoy_ql.a
+usr/local/lib/enjoy_ql.la
+usr/local/lib/enjoy_ql.so
+usr/local/share/applications/enjoy.desktop
+usr/local/share/enjoy/default.edj
+usr/local/share/icons/enjoy.png
