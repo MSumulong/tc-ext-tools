@@ -1,0 +1,11 @@
+usr/local/bin/ender_generator
+usr/local/bin/ender_inspect
+usr/local/include/Ender.h
+usr/local/lib/libender.a
+usr/local/lib/libender.la
+usr/local/lib/libender.so
+usr/local/lib/libender.so.0
+usr/local/lib/libender.so.0.0.6
+usr/local/lib/pkgconfig/ender.pc
+usr/local/share/ender/enesim.ender
+usr/local/share/ender/etex.ender
