@@ -1,10 +1,11 @@
 PACKAGE="enesim"
 VERSION="svn~r2280"
 SOURCE="svn::http://enesim.googlecode.com/svn/trunk/enesim"
-BUILD_DEPENDS="eina-dev Xorg-7.6-dev Xorg-7.6"
+BUILD_DEPENDS="eina-dev"
+# Xorg-7.6-dev Xorg-7.6"
 
 DESCRIPTION="rendering libray"
-AUTHOR="authors of package"
+AUTHOR='Jorge Luis "turran" Zapata'
 SITE="http://enesim.googlecode.com"
 COPYING="GPL-2"
 MAINTAINERS="jlslegalize@gmail.com"
