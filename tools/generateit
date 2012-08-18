@@ -165,6 +165,7 @@ this_generate() {
    [ ! "${EXTENSION%-python}" = "$EXTENSION" ] && DESCRIPTION="${DESCRIPTION%.}, python bindings."
    [ ! "${EXTENSION%-locale}" = "$EXTENSION" ] && DESCRIPTION="${DESCRIPTION%.}, locale files."
    [ ! "${EXTENSION%-gir}" = "$EXTENSION" ] && DESCRIPTION="${DESCRIPTION%.}, gobject introspection data."
+   [ ! "${EXTENSION%-$KERNEL}" = "$EXTENSION" ] && DESCRIPTION="${DESCRIPTION%.}, kernel module."
 
    echo -e "Checking if the extension has a common file ... \c"
    if [ -f "$PACKAGE_EXTENSION_COMMON" ]; then

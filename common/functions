@@ -338,8 +338,10 @@ if [ "$THIS" == "prepareit" ] && [ -f "$LINUX_COMMON" ]; then
      LINUX_SRC="$TET_LINUX/src"
      LINUX_PATCHES="$LINUX_SRC/patches"
      LINUX_CONFIG="$LINUX_SRC/$KERNEL_CONFIG"
-else
-     echo "${ERROR_COLOR}Linux $KERNEL common file not found!${NORMAL}"
+     LINUX_BUILD="${TET_STORAGE_LINUX}/${KERNEL}/${LINUX_DIR}"
+     LINUX_DL="${TET_STORAGE_LINUX}/dl"
+elif [ "$THIS" == "prepareit" ]; then
+     echo "${ERROR_COLOR}Linux $KERNEL common $LINUX_COMMON file not found!${NORMAL}"
      exit 1
 fi
 
