@@ -1,8 +1,7 @@
 PACKAGE="nvidia-x86_64"
 VERSION="280.13"
 SOURCE="ftp://download.nvidia.com/XFree86/Linux-x86_64/${VERSION}/NVIDIA-Linux-x86_64-${VERSION}.run"
-BUILD_DEPENDS="toolchain64
-#linux-headers-2.6.33.3-tinycore64"
+BUILD_DEPENDS=""
 
 DESCRIPTION="NVIDIA Linux Drivers."
 AUTHOR="NVIDIA"
@@ -10,7 +9,5 @@ SITE="http://www.nvidia.com"
 COPYING="Proprietary"
 MAINTAINERS="Arslan S."
 COMMENTS="---"
-CHANGELOG="2010/05/24 Original 195.36.24
-		2010/11/17 Updated to 260.19.21
-		2011/08/20 Updated to 280.13"
+CHANGELOG="---"
 CURRENT="Rebuilt for TCL 4.x"

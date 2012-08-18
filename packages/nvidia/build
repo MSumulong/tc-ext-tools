@@ -19,7 +19,7 @@ build_configure() {
 build_compile() {
 
    cd kernel
-   make SYSSRC="$TET_LINUX_BUILD" module || return 1
+   make SYSSRC=/usr/src/linux module || return 1
 
 }
 

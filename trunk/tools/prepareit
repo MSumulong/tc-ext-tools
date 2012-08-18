@@ -39,10 +39,6 @@ if [ -n "$HAVE_TET_LOAD" -a ! -f "$PACKAGE_LOAD_STAMP" ]; then
      exit 1
 fi
 
-LINUX_DIR="linux-${KERNEL_VER}"
-LINUX_BUILD="${TET_STORAGE_LINUX}/${KERNEL}/${LINUX_DIR}"
-DL="${TET_STORAGE_LINUX}/dl"
-
 this_patch() {
 
    unset PATCHES
@@ -111,20 +107,20 @@ this_prepare() {
    cd "$TET_STORAGE_LINUX"
 
    [ -d "$KERNEL" ] || mkdir -p "$KERNEL"
-   [ -d "$DL" ] || mkdir -p "$DL"
+   [ -d "$LINUX_DL" ] || mkdir -p "$LINUX_DL"
 
    echo -e "Checking if the linux source is downloaded before ... \c"
-   if [ ! -f "${DL}/${LINUX_SOURCE}" ]; then
+   if [ ! -f "${LINUX_DL}/${LINUX_SOURCE}" ]; then
         echo "no"
         echo -e "Checking if the linux source is a file ... \c"
         if [ -f "${KERNEL_MIRROR}/${LINUX_SOURCE}" ]; then
              echo "yes"
              echo "Copying the linux source"
-             cp "${KERNEL_MIRROR}/${LINUX_SOURCE}" "${DL}/${LINUX_SOURCE}" || return 1
+             cp "${KERNEL_MIRROR}/${LINUX_SOURCE}" "${LINUX_DL}/${LINUX_SOURCE}" || return 1
         else
              echo "no"
              echo "Downloading the linux source"
-             wget "${KERNEL_MIRROR}/${LINUX_SOURCE}" -O "${DL}/${LINUX_SOURCE}" || return 1
+             wget "${KERNEL_MIRROR}/${LINUX_SOURCE}" -O "${LINUX_DL}/${LINUX_SOURCE}" || return 1
        fi
    else
         echo "yes"
@@ -136,7 +132,7 @@ this_prepare() {
    [ -d "$LINUX_DIR" ] && sudo rm -rf "$LINUX_DIR"
 
    echo "Extracting the linux source"
-   tar -xf "${DL}/${LINUX_SOURCE}" || return 1
+   tar -xf "${LINUX_DL}/${LINUX_SOURCE}" || return 1
 
    echo "Patching the linux source"
    this_patch || return 1

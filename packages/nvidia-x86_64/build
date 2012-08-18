@@ -12,7 +12,7 @@ build_unpack() {
 build_compile() {
 
    cd kernel
-   make SYSSRC="$TET_LINUX_BUILD" CC="${CROSS_COMPILE}gcc" LD="${CROSS_COMPILE}ld" IGNORE_CC_MISMATCH=1 module || return 1
+   make SYSSRC=/usr/src/linux CC="${CROSS_COMPILE}gcc" LD="${CROSS_COMPILE}ld" IGNORE_CC_MISMATCH=1 module || return 1
 
 }
 
