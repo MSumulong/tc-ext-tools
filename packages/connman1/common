@@ -1,10 +1,11 @@
 PACKAGE="connman1"
-VERSION="1.2"
+VERSION="1.6"
 SOURCE="http://www.kernel.org/pub/linux/network/connman/connman-${VERSION}.tar.xz"
 BUILD_DEPENDS="dbus-dev
-	wpa_supplicant
+	wpa_supplicant-dbus
 	glib2-dev
-	gnutls-dev
+	gnutls2-dev
+	libtasn1-dev
 	iptables"
 
 DESCRIPTION="a daemon for managing internet connections"
@@ -14,4 +15,5 @@ COPYING="GPL-2"
 MAINTAINERS="jls_legalize <jlslegalize@gmail.com>"
 TAGS="daemon internet connections"
 CHANGELOG="---"
-CURRENT="First version"
+CURRENT="rebuilt fixing configure options, modified dbus config to enable 
+		user to control the program"

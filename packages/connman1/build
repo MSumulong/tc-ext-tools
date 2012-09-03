@@ -9,9 +9,18 @@
 build_configure() {
 
    ## autotools
-   ./configure  || return 1
-#--enable-ethernet \
-#		--enable-wifi \
+      ./configure \
+	--localstatedir=/var \
+	--enable-client \
+	--enable-datafiles \
+	--disable-iospm \
+	--disable-hh2serial-gps \
+	--disable-openconnect \
+	--enable-loopback=builtin \
+	--enable-wifi=builtin \
+	--enable-ethernet=builtin \
+	--enable-test \
+	|| return 1
 #		--enable-bluetooth \
 #		--enable-client \
 #		--enable-tools \
