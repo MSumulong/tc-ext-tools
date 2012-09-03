@@ -383,3 +383,7 @@ CONFIG_DEBUG_FILE=y
 # Enable mitigation against certain attacks against TKIP by delaying Michael
 # MIC error reports by a random amount of time between 0 and 60 seconds
 #CONFIG_DELAYED_MIC_ERROR_REPORT=y
+
+CONFIG_AP=y
+CONFIG_CTRL_IFACE_DBUS_NEW=y
+CONFIG_BGSCAN_SIMPLE=y

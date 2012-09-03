@@ -1,5 +1,5 @@
 PACKAGE="wpa_supplicant"
-VERSION="0.7.3"
+VERSION="1.0"
 SOURCE="http://hostap.epitest.fi/releases/wpa_supplicant-${VERSION}.tar.gz"
 BUILD_DEPENDS="openssl-1.0.0 openssl-1.0.0-dev dbus dbus-dev
                dbus-glib dbus-glib-dev libnl1 libnl1-dev
@@ -9,7 +9,7 @@ DESCRIPTION="WPA Supplicant with dbus support."
 AUTHOR="Jouni Malinen"
 SITE="http://hostap.epitest.fi/wpa_supplicant"
 COPYING="GPL-2"
-MAINTAINERS="Arslan S."
+MAINTAINERS="Arslan S., jlslegalize@gmail.com"
 COMMENTS="This extension conflicts with wpa_supplicant.tcz"
 CHANGELOG="2010/07/05 First Version 0.6.10
 		2010/11/18 Updated to 0.7.3
