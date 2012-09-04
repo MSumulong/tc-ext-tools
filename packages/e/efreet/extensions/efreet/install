@@ -1,4 +1,7 @@
-usr/local/bin
-usr/local/lib/efreet
-usr/local/lib/*.so*
-usr/local/share/efreet/test
+usr/local
+x-usr/local/include
+x-usr/local/lib/*.a
+x-usr/local/lib/*.la
+x-usr/local/lib/*.so
+x-usr/local/lib/pkgconfig
+x-usr/local/share/locale

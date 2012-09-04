@@ -1,10 +1,9 @@
 PACKAGE="efreet"
-VERSION="1.7.0-alpha"
-#VERSION="svn~r74988"
+VERSION="1.7.0"
 SOURCE="http://download.enlightenment.org/releases/$PACKAGE-$VERSION.tar.bz2"
+#VERSION="svn~r74988"
 #SOURCE="svn::http://svn.enlightenment.org/svn/e/trunk/${PACKAGE}"
-BUILD_DEPENDS="libtool-dev
-	ecore-dev
+BUILD_DEPENDS="	ecore-dev
 	cvs"
 DESCRIPTION=" a library designed to help apps work several of the 
 		Freedesktop.org standards regarding Icons, Desktop files and Menu"
@@ -13,7 +12,7 @@ AUTHOR="dan 'dj2' sinclaira, Brian 'rephorm' Mattern, Sebastian Dransfeld <sd@ta
 		Mathieu Taillefumier <mathieu.taillefumier@free.fr>"
 SITE="enlightenment.org"
 COPYING="BSD"
-MAINTAINERS="Althalus, jls_legalize <jlslegalize@gmail.com>"
+MAINTAINERS="Althalus, (nomore) jls_legalize <jlslegalize@gmail.com>"
 TAGS="library Freedesktop.org Icons Desktop files Menu"
 COMMENTS="One of the core libraries forming the EFL
 		extension made using http://code.google.com/p/tc-ext-tools/"

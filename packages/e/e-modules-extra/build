@@ -20,6 +20,8 @@ build_configure() {
 ## compile
 build_compile() {
 
+   sudo ln -s /usr/lib/libblkid.la /usr/local/lib
+   sudo ln -s /usr/lib/libuuid.la /usr/local/lib
 #  make || return 1
    for i in *; do
 	echo $i

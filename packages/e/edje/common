@@ -1,14 +1,10 @@
 PACKAGE="edje"
-#VERSION="svn~r75210"
-VERSION="svn~r75210"
-#SOURCE="http://download.enlightenment.org/releases/$PACKAGE-$VERSION.tar.bz2"
-SOURCE="svn::http://svn.enlightenment.org/svn/e/trunk/${PACKAGE}"
-BUILD_DEPENDS="eina-dev
-	libtool-dev
-	ecore-dev
-	embryo-dev
-	eio-dev
-	lua-dev"
+VERSION="1.7.0"
+SOURCE="http://download.enlightenment.org/releases/$PACKAGE-$VERSION.tar.bz2"
+#VERSION="svn~r75825"
+#SOURCE="svn::http://svn.enlightenment.org/svn/e/trunk/${PACKAGE}"
+BUILD_DEPENDS="embryo-dev eio-dev lua-dev"
+#	
 #	remix-dev
 #	alsa-dev
 #	libsndfile-dev
@@ -24,8 +20,8 @@ DESCRIPTION="a complex graphical design & layout library based on Evas"
 AUTHOR=" See http://enlightenment.org/p.php?p=contact&l=en"
 SITE="enlightenment.org"
 COPYING="BSD"
-MAINTAINERS="Althalus, jls_legalize <jlslegalize@gmail.com>"
-TAGS="complex graphical design & layout library based Evas"
+MAINTAINERS="Althalus (nomore), jls_legalize <jlslegalize@gmail.com>"
+TAGS="graphical design layout library Evas"
 COMMENTS="One of the core libraries forming the EFL
 		extension made using http://code.google.com/p/tc-ext-tools/"
 CHANGELOG=""

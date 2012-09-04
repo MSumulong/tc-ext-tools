@@ -9,10 +9,14 @@
 build_configure() {
 
    ## autotools
-#   ./configure --disable-ecore-timer-dump \
-   ./autogen.sh --disable-ecore-timer-dump \
-	--enable-ecore-evas-fb \
-	--with-internal-maximum-log-level=2 || return 1
+#   ./autogen.sh \
+   ./configure \
+	--enable-ecore-fb \
+	--enable-ecore-evas-fb  || return 1
+#	--enable-ecore-sdl
+#	--with-internal-maximum-log-level=2 
+#	--disable-ecore-timer-dump \
+#--disable-ecore-timer-dump \
 }
 
 ## compile

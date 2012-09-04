@@ -1,15 +1,9 @@
-COMMENTS="In case u use this extension in loop u need to add the 
-                following dir to the enlightenment search directories 
-                configurations (module section):
-                /tmp/tcloop/e-modules-extra/usr/local/lib/enlightenment/modules/
-		optional deps:
+COMMENTS="optional deps:
 	                libeweather for eweather
 	                emprint for screenshot
 	                libmpd & mpd or mpd-minimal for mpdule
 	                hal for places
 	                elementary for elfe
-			curl,  libssh2 & openssl-1.0.0 for everything-websearch
 		modules left out: exalt-client 	(exalt.tcz doesn't exist)
 				  itask-ng 	(replaced by engage)
 				  tiling 	(already in e17)"
-

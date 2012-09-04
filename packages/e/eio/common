@@ -1,10 +1,9 @@
 PACKAGE="eio"
-VERSION="1.7.0-alpha"
-#VERSION="svn~r74988"
+VERSION="1.7.0"
 SOURCE="http://download.enlightenment.org/releases/$PACKAGE-$VERSION.tar.bz2"
+#VERSION="svn~r75825"
 #SOURCE="svn::http://svn.enlightenment.org/svn/e/trunk/${PACKAGE}"
-BUILD_DEPENDS="eio
-	ecore-dev"
+BUILD_DEPENDS="ecore-dev"
 DESCRIPTION="Efficient I/O over file system (cp, mv, rm, stat, ls...)"
 AUTHOR="Cedric Bail <cedric.bail@free.fr>,
 		 Stephen Houston <UnixTitan@gmail.com>,

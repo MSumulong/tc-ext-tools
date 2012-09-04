@@ -1,14 +1,14 @@
 PACKAGE="elementary"
-#VERSION="svn~r75211"
-VERSION="svn~r75211"
-#SOURCE="http://download.enlightenment.org/releases/$PACKAGE-$VERSION.tar.bz2"
-SOURCE="svn::http://svn.enlightenment.org/svn/e/trunk/${PACKAGE}"
-BUILD_DEPENDS="ethumb-dev.tcz 
-	efreet-dev.tcz
-	libeweather-dev.tcz
-	curl-dev.tcz
-	libcares-dev.tcz
-	e_dbus-dev.tcz
+VERSION="1.7.0"
+SOURCE="http://download.enlightenment.org/releases/$PACKAGE-$VERSION.tar.bz2"
+#VERSION="svn~r75700"
+#SOURCE="svn::http://svn.enlightenment.org/svn/e/trunk/${PACKAGE}"
+BUILD_DEPENDS="ethumb-dev
+	efreet-dev
+	libeweather-dev
+	eio-dev
+	emotion-dev
+	libssh2-dev
 	cvs"
 
 DESCRIPTION="Enlightenment's basic widget set, based on EFL with focus mobile touch-screen devices"

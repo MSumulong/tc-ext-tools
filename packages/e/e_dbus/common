@@ -1,10 +1,9 @@
 PACKAGE="e_dbus"
-#VERSION="svn~r75211"
-VERSION="svn~r75211"
-#SOURCE="http://download.enlightenment.org/releases/$PACKAGE-$VERSION.tar.bz2"
-SOURCE="svn::http://svn.enlightenment.org/svn/e/trunk/${PACKAGE}"
+VERSION="1.7.0"
+SOURCE="http://download.enlightenment.org/releases/$PACKAGE-$VERSION.tar.bz2"
+#VERSION="svn~r75685"
+#SOURCE="svn::http://svn.enlightenment.org/svn/e/trunk/${PACKAGE}"
 BUILD_DEPENDS="dbus-dev
-	libtool-dev
 	ecore-dev"
 
 DESCRIPTION="A brief description of package."
@@ -21,7 +20,7 @@ AUTHOR="Brian Mattern <rephorm@rephorm.com>
 
 SITE="enlightenment.org"
 COPYING="GPL-2"
-MAINTAINERS="Althalus, jls_legalize (jlslegalize at gmail dot com)"
+MAINTAINERS="Althalus (nomore), jls_legalize (jlslegalize at gmail dot com)"
 TAGS="set wrappers around DBus APIs by third party"
 COMMENTS="One of the core libraries that make up EFL
 		extension made using http://code.google.com/p/tc-ext-tools/"

@@ -1,4 +1,5 @@
 usr/local/lib
 x-usr/local/lib/*.la
 x-usr/local/lib/*.a
+x-usr/local/lib/*.so
 x-usr/local/lib/pkgconfig

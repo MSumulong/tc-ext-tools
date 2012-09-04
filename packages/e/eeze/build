@@ -6,7 +6,7 @@
 ############################################################################################
 
 build_configure() {
-   ./autogen.sh  || return 1
+   ./configure  || return 1
 }
 build_compile() {
    sudo ln -s /usr/lib/libblkid.la /usr/local/lib

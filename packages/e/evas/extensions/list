@@ -57,6 +57,8 @@ usr/local/lib/evas/modules/loaders/png/linux-gnu-i686-1.7.0/module.la
 usr/local/lib/evas/modules/loaders/png/linux-gnu-i686-1.7.0/module.so
 usr/local/lib/evas/modules/loaders/psd/linux-gnu-i686-1.7.0/module.la
 usr/local/lib/evas/modules/loaders/psd/linux-gnu-i686-1.7.0/module.so
+usr/local/lib/evas/modules/loaders/svg/linux-gnu-i686-1.7.0/module.la
+usr/local/lib/evas/modules/loaders/svg/linux-gnu-i686-1.7.0/module.so
 usr/local/lib/evas/modules/loaders/tga/linux-gnu-i686-1.7.0/module.la
 usr/local/lib/evas/modules/loaders/tga/linux-gnu-i686-1.7.0/module.so
 usr/local/lib/evas/modules/loaders/tiff/linux-gnu-i686-1.7.0/module.la

@@ -9,11 +9,10 @@
 build_configure() {
 
    ## autotools
-#   ./autogen.sh --enable-amalgamation \
-   ./configure --enable-amalgamation \
-	--disable-assert \
-	--disable-doc \
-	--with-internal-maximum-log-level=2 || return 1
+#   ./autogen.sh \
+   ./configure --disable-doc \
+	--enable-amalgamation \
+	--disable-valgrind || return 1
 }
 
 ## compile

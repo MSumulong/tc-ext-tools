@@ -1,6 +1,8 @@
-usr/local/bin/
-usr/local/lib/edje/modules/emotion/linux-gnu-i686-1.0.0/*.so*
-usr/local/lib/emotion/*.so*
-usr/local/lib/emotion/utils/
-usr/local/lib/*.so*
-usr/local/share/emotion/data/
+usr/local
+x-usr/local/include
+x-usr/local/lib/edje/modules/emotion/linux-gnu-i686-1.0.0/*.la
+x-usr/local/lib/emotion/*.la
+x-usr/local/lib/*.a
+x-usr/local/lib/*.la
+x-usr/local/lib/*.so
+x-usr/local/lib/pkgconfig

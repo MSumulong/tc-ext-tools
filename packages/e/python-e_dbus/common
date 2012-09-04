@@ -1,12 +1,13 @@
 PACKAGE="python-e_dbus"
-VERSION="svn~r75273"
-#SOURCE="http://download.enlightenment.org/releases/BINDINGS/python/$PACKAGE-$VERSION.tar.bz2"
-SOURCE="svn::http://svn.enlightenment.org/svn/e/trunk/BINDINGS/python/$PACKAGE"
+VERSION="1.7.0-beta"
+SOURCE="http://download.enlightenment.org/releases/BINDINGS/python/$PACKAGE-$VERSION.tar.bz2"
+#VERSION="svn~r75273"
+#SOURCE="svn::http://svn.enlightenment.org/svn/e/trunk/BINDINGS/python/$PACKAGE"
 BUILD_DEPENDS="e_dbus-dev
 		python-dev
 		ecore-dev
-		dbus-python-2.7
-		cython.tcz"
+		dbus-python-2.7"
+#		cython.tcz"
 
 DESCRIPTION="DBUS PYTHON INTEGRATION FOR ECORE"
 AUTHOR="Ulisses Furquim <ulissesf@gmail.com>"

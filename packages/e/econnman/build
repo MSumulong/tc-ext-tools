@@ -22,6 +22,7 @@ build_compile() {
 ## install
 build_install() {
 
+   install -D -m 644 $P_SRC/econnman.png $INSTALL_ROOT/usr/local/share/pixmaps/econnman.png  || return 1
    ## cmake
    make DESTDIR="$I_ROOT" install || return 1
 }

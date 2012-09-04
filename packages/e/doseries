@@ -5,5 +5,6 @@ for i in $(grep -v "^#" series); do
 	sudo rm -rf "$HOME/tc-ext-tools/storage/$i"
 	cd $THISDIR/$i
 	buildit || exit 1
-	mv "${HOME}"/tc-ext-tools/storage/$i/pkg/*.tar.bz2 "${HOME}"/hd-tcbuild/dasped
+	mv "${HOME}"/tc-ext-tools/storage/$i/pkg/*.tar.bz2 	"${HOME}"/hd-tcbuild/dasped
+	mv "${HOME}"/tc-ext-tools/storage/$i/pkg/*.tar.bz2.bfe 	"${HOME}"/hd-tcbuild/dasped
 done

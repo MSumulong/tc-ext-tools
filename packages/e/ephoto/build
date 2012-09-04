@@ -14,6 +14,7 @@ build_configure() {
 ## compile
 build_compile() {
 
+   sudo ln -s /usr/lib/libuuid.la /usr/local/lib
    ## cmake
    make || return 1
 }

@@ -180,6 +180,7 @@ usr/local/lib/enlightenment/modules/eektool/linux-gnu-i686-ver-pre-svn-08/module
 usr/local/lib/enlightenment/modules/eektool/locale/de/LC_MESSAGES/eektool.mo
 usr/local/lib/enlightenment/modules/eektool/locale/fr/LC_MESSAGES/eektool.mo
 usr/local/lib/enlightenment/modules/eektool/locale/it/LC_MESSAGES/eektool.mo
+usr/local/lib/enlightenment/modules/eektool/locale/pt/LC_MESSAGES/eektool.mo
 usr/local/lib/enlightenment/modules/eektool/module.desktop
 usr/local/lib/enlightenment/modules/elfe/default.edj
 usr/local/lib/enlightenment/modules/elfe/linux-gnu-i686-ver-pre-svn-08/module.a
@@ -715,10 +716,6 @@ usr/local/lib/enlightenment/modules/places/locale/tr/LC_MESSAGES/places.mo
 usr/local/lib/enlightenment/modules/places/locale/uk/LC_MESSAGES/places.mo
 usr/local/lib/enlightenment/modules/places/locale/zh_CN/LC_MESSAGES/places.mo
 usr/local/lib/enlightenment/modules/places/module.desktop
-usr/local/lib/enlightenment/modules/quickaccess/e-module-quickaccess.edj
-usr/local/lib/enlightenment/modules/quickaccess/linux-gnu-i686-ver-pre-svn-08/module.la
-usr/local/lib/enlightenment/modules/quickaccess/linux-gnu-i686-ver-pre-svn-08/module.so
-usr/local/lib/enlightenment/modules/quickaccess/module.desktop
 usr/local/lib/enlightenment/modules/rain/cloud.png
 usr/local/lib/enlightenment/modules/rain/drop-l.png
 usr/local/lib/enlightenment/modules/rain/drop-m.png

@@ -1,14 +1,15 @@
 PACKAGE="ethumb"
-VERSION="1.7.0-alpha"
-#VERSION="svn~r74988"
+VERSION="1.7.0"
 SOURCE="http://download.enlightenment.org/releases/$PACKAGE-$VERSION.tar.bz2"
+#VERSION="svn~r74988"
 #SOURCE="svn::http://svn.enlightenment.org/svn/e/trunk/${PACKAGE}"
 BUILD_DEPENDS="libexif-dev.tcz
+		libexif.tcz
 		emotion-dev.tcz
 		epdf-dev.tcz
-		eio-dev.tcz
 		e_dbus-dev.tcz
 		edje-dev.tcz"
+#		eio-dev.tcz
 
 DESCRIPTION="Enlightenment's thumbnailing library and dbus service"
 AUTHOR="Rafael Antognolli, Cedric Bail, Mikael SANS, Jérôme Pinot"

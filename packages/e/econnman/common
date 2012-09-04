@@ -1,5 +1,5 @@
 PACKAGE="econnman"
-VERSION="svn~r75273"
+VERSION="svn~r75789"
 SOURCE="svn::http://svn.enlightenment.org/svn/e/trunk//$PACKAGE"
 BUILD_DEPENDS="python-elementary-dev python-e_dbus-dev"
 

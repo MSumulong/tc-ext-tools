@@ -1,5 +1,5 @@
 PACKAGE="detourious-e17-theme"
-VERSION="svn~r75112"
+VERSION="svn~r75555"
 SOURCE="svn::http://svn.enlightenment.org/svn/e/trunk/THEMES/detourious"
 BUILD_DEPENDS="edje-dev"
 
@@ -11,4 +11,4 @@ MAINTAINERS="jls_legalize <jlslegalize@gmail.com>"
 TAGS="e17 theme"
 COMMENTS="---"
 CHANGELOG="---"
-CURRENT="First version" 
+CURRENT="Updated to ${VERSION}"

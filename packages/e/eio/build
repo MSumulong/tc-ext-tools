@@ -8,7 +8,8 @@
 ## configure
 build_configure() {
 
-   ## autotools
+#   ## autotools
+#   ./autogen.sh || return 1
    ./configure || return 1
 }
 

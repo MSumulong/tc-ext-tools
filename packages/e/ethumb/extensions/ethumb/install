@@ -1,6 +1,7 @@
-usr/local/bin/
-usr/local/lib/ethumb/plugins/data/emotion_template.edj
-usr/local/lib/ethumb/plugins/*.so*
-usr/local/lib/*.so*
-usr/local/libexec/
-usr/local/share/
+usr/local
+x-usr/local/include/ethumb-1/*.h
+x-usr/local/lib/ethumb/plugins/*.la
+x-usr/local/lib/*.a
+x-usr/local/lib/*.la
+x-usr/local/lib/*.so
+x-usr/local/lib/pkgconfig/

@@ -1,18 +1,16 @@
 PACKAGE="emotion"
-VERSION="1.7.0-alpha"
-#VERSION="svn~r74988"
+VERSION="1.7.0"
 SOURCE="http://download.enlightenment.org/releases/$PACKAGE-$VERSION.tar.bz2"
+#VERSION="svn~r75633"
 #SOURCE="svn::http://svn.enlightenment.org/svn/e/trunk/${PACKAGE}"
 BUILD_DEPENDS="eio-dev.tcz
 		edje-dev.tcz
 		eeze-dev.tcz
 		xine-lib-dev.tcz
 		gst-plugins-base-dev.tcz
-		vlc-dev.tcz
-		xine-lib.tcz
 		liborc-dev.tcz
-		vlc.tcz
-		dbus-dev.tcz"
+		dbus-dev.tcz
+		vlc-dev.tcz"
 
 DESCRIPTION="Enlightenment's (Ecore/Evas?) audio and video integration"
 AUTHOR="Carsten Haitzler, Vincent Torri, Nicolas Aguirre, 
@@ -20,8 +18,7 @@ AUTHOR="Carsten Haitzler, Vincent Torri, Nicolas Aguirre,
 SITE="http://docs.enlightenment.org/auto/emotion/"
 COPYING="GPL-2"
 MAINTAINERS="jls_legalize (jlslegalize at gmail dot com)"
-TAGS="Enlightenment's (Ecore/Evas?) audio video"
-COMMENTS="optional deps: gst-plugins-base, xine-lib or vlc;
-			edje"
+TAGS="Enlightenment audio video"
+COMMENTS="optional deps: gst-plugins-base, xine-lib or vlc."
 CHANGELOG="---"
 CURRENT="Updated to ${VERSION}"

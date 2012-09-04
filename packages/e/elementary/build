@@ -9,8 +9,8 @@
 build_configure() {
 
    ## autotools
-#   ./configure --prefix=/usr/local \
-   ./autogen.sh --prefix=/usr/local \
+#   ./autogen.sh \
+   ./configure \
 	--enable-edbus \
 	--enable-efreet \
 	--enable-eweather \
@@ -20,6 +20,8 @@ build_configure() {
 ## compile
 build_compile() {
 
+   sudo ln -s /usr/lib/libblkid.la /usr/local/lib
+   sudo ln -s /usr/lib/libuuid.la /usr/local/lib
    ## cmake
    make || return 1
 }

@@ -1,9 +1,8 @@
 PACKAGE="empower"
-VERSION="svn~r73455"
+VERSION="svn~r75394"
 SOURCE="svn::http://svn.enlightenment.org/svn/e/trunk/$PACKAGE"
 BUILD_DEPENDS="cvs
-		elementary-dev
-		libeweather-dev"
+		elementary-dev"
 
 DESCRIPTION="A graphical sudo tool based on the Enlightenment Foundation Libraries"
 AUTHOR="Mekius_ (Nick Hughart) <mekius_@satus.net> (EWL version maintainer)
@@ -15,4 +14,4 @@ MAINTAINERS="jls_legalize <jlslegalize@gmail.com>"
 TAGS="sudo gksu gksudo graphical Enlightenment efl"
 COMMENTS="---"
 CHANGELOG="---"
-CURRENT="First Version"
+CURRENT="Updated to ${VERSION}"

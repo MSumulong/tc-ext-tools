@@ -1,6 +1,8 @@
 PACKAGE="terminology"
-VERSION="svn~r75112"
-SOURCE="svn::http://svn.enlightenment.org/svn/e/trunk/$PACKAGE"
+VERSION="0.1.0"
+SOURCE="http://download.enlightenment.org/releases/$PACKAGE-$VERSION.tar.bz2"
+#VERSION="svn~r75633"
+#SOURCE="svn::http://svn.enlightenment.org/svn/e/trunk/$PACKAGE"
 BUILD_DEPENDS="elementary-dev
 	libeweather-dev"
 
@@ -12,4 +14,4 @@ MAINTAINERS="jls_legalize <jlslegalize@gmail.com>"
 TAGS="EFL terminal emulator"
 COMMENTS="---"
 CHANGELOG="---"
-CURRENT="First Version "
+CURRENT="Updated to ${VERSION}"

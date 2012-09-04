@@ -1,33 +1,37 @@
 PACKAGE="evas"
-#VERSION="svn~r75208"
-VERSION="svn~r75208"
-#SOURCE="http://download.enlightenment.org/releases/$PACKAGE-$VERSION.tar.bz2"
-SOURCE="svn::http://svn.enlightenment.org/svn/e/trunk/${PACKAGE}"
+VERSION="1.7.0"
+SOURCE="http://download.enlightenment.org/releases/$PACKAGE-$VERSION.tar.bz2"
+#VERSION="svn~r75819"
+#SOURCE="svn::http://svn.enlightenment.org/svn/e/trunk/${PACKAGE}"
 BUILD_DEPENDS="eet-dev
 	fontconfig-dev
-	libgsf-dev
-	librsvg-dev
-	glew
-	graphics-libs-1-dev
-	libgdiplus
-	libtool-dev
-	ftgl-dev
 	Xorg-7.6-dev
 	Xorg-7.6
-	libnsfb
-	fribidi
-	valgrind"
+	egueb-dev
+	graphics-libs-1-dev
+	pixman-dev
+	fribidi"
+#	libxcb-dev
+#	libxcb-util-dev
+#	libx11-xcb
 #	SDL-dev
+#	SDL
+#	libgsf-dev
+#	librsvg-dev
+#	glew
+#	libgdiplus
+#	ftgl-dev
+#	libnsfb
+#	libtool-dev
+#	evas_generic_loaders
 #	SDL_gfx-dev
 #	directfb-dev
-#	libx11-xcb
-#	libxcb-dev
 DESCRIPTION="a clean display canvas API"
 AUTHOR="See http://enlightenment.org/p.php?p=contact&l=e"
 SITE="enlightenment.org"
 COPYING="BSD"
-MAINTAINERS="Althalus, jls_legalize (jlslegalize at gmail dot com)"
+MAINTAINERS="Althalus (nomore), jls_legalize (jlslegalize at gmail dot com)"
 TAGS="clean display canvas API"
 COMMENTS="-----"
 CHANGELOG="---"
-CURRENT="Updated to ${VERSION}"
+CURRENT="Updated to ${VERSION}, added SDL, aopenssl-1.0.0 & graphics-libs-1"

@@ -1,6 +1,5 @@
 ecore.tcz
 evas-dev.tcz
-libcares-dev.tcz
 curl-dev.tcz
-libssh2.tcz
+glib2-dev.tcz
 curl.tcz

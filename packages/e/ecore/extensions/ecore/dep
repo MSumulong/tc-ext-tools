@@ -1,6 +1,3 @@
-glib2.tcz
-Xorg-7.6-lib.tcz
 evas.tcz
 curl.tcz
-libssh2.tcz
-openssl-1.0.0.tcz
+glib2.tcz

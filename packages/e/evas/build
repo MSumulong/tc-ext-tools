@@ -10,18 +10,29 @@ build_configure() {
 
 #   ./configure	\
    ./autogen.sh	\
-	--enable-image-loader-eet \
-	--enable-image-loader-jpeg \
-	--enable-image-loader-wbmp \
-	--enable-image-loader-ico \
-	--enable-image-loader-xpm \
-	--enable-image-loader-psd \
-	--enable-image-loader-pmaps \
-	--enable-image-loader-bmp \
 	--disable-install-examples \
 	--enable-fb \
+	--enable-evas-magic-debug \
+	--disable-static-software-generic \
+	--enable-image-loader-generic \
+	--enable-cpu-altivec \
+	--disable-harfbuzz \
+	--disable-image-loader-edb \
 	--disable-wayland-shm || return 1
-#	--enable-directfb \
+#--enable-gl-xcb \
+#--enable-software-xcb \
+#	--enable-cpu-c \
+#	--enable-image-loader-eet \
+#	--enable-image-loader-jpeg \
+#	--enable-image-loader-wbmp \
+#	--enable-image-loader-ico \
+#	--enable-image-loader-xpm \
+#	--enable-image-loader-psd \
+#	--enable-image-loader-pmaps \
+#	--enable-image-loader-bmp \
+#	--enable-image-loader-svg \
+
+##	--enable-directfb \
 #--enable-buffer=static \
 #	--enable-static-software-generic \
 }

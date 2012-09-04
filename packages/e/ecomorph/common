@@ -12,4 +12,3 @@ TAGS="OpenGL compositing manager module e17 window manager"
 COMMENTS="---"
 CHANGELOG="2011/01/05 first version git 2011/01/05"
 CURRENT="Updated to ${VERSION}"
-

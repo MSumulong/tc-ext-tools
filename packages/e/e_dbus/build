@@ -8,14 +8,16 @@
 ## configure
 build_configure() {
 
-#   ./configure	--disable-doc \
-   ./autogen.sh	--disable-doc \
-	--disable-edbus-performance-test  || return 1
+   ./configure	--disable-doc \
+#   ./autogen.sh	--disable-doc \
+#	--build=i686-pc-linux-gnu \
+#	--host=i686-pc-linux-gnu || return 1
+#
+#	--disable-edbus-performance-test 
 #	--enable-eofono \
 #	--enable-eukit \
 #	--enable-enotify \
 #	--enable-ebluez \
-#	--enable-econnman0_7x \
 
 }
 

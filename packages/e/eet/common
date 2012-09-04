@@ -1,19 +1,19 @@
 PACKAGE="eet"
-#VERSION="svn~r75208"
-VERSION="svn~r75208"
-#SOURCE="http://download.enlightenment.org/releases/$PACKAGE-$VERSION.tar.bz2"
-SOURCE="svn::http://svn.enlightenment.org/svn/e/trunk/${PACKAGE}"
+VERSION="1.7.0"
+SOURCE="http://download.enlightenment.org/releases/$PACKAGE-$VERSION.tar.bz2"
+#VERSION="svn~r75819"
+#SOURCE="svn::http://svn.enlightenment.org/svn/e/trunk/${PACKAGE}"
 BUILD_DEPENDS="eina-dev
 	libtool-dev
-	libiconv-dev
-	valgrind"
+	openssl-1.0.0-dev
+	libiconv"
 
 DESCRIPTION="a tiny library designed to write an arbitary set of chunks of data to a file"
 AUTHOR="See http://enlightenment.org/p.php?p=contact&l=en"
-SITE="enlightenment.org"
-COPYING="GPL-2"
-MAINTAINERS="Althalus, jls_legalize <jlslegalize@gmail.com>"
-TAGS="a tiny library designed to write an arbitary set of chunks of data to a file"
+SITE="http://docs.enlightenment.org/auto/eet/"
+COPYING="BSD"
+MAINTAINERS="Althalus (nomore), jls_legalize <jlslegalize@gmail.com>"
+TAGS="library arbitary chunks data file"
 COMMENTS="---"
 CHANGELOG=""
-CURRENT="Updated to ${VERSION}"
+CURRENT="Updated to ${VERSION}, added openssl dep"
