@@ -28,11 +28,7 @@ build_install() {
 
   mkdir -p ${INSTALL_ROOT}/usr/local/lib/mozilla/plugins
 
-  if [ "$ARCH" = i686 ]; then
-       ln -s /usr/local/java-sun/jre/lib/i386/libnpjp2.so ${INSTALL_ROOT}/usr/local/lib/mozilla/plugins
-  elif [ "$ARCH" = x86_64 ]; then
-       ln -s /usr/local/java-sun/jre/lib/amd64/libnpjp2.so ${INSTALL_ROOT}/usr/local/lib/mozilla/plugins
-  fi
+  ln -s /usr/local/java-sun/jre/lib/i386/libnpjp2.so ${INSTALL_ROOT}/usr/local/lib/mozilla/plugins
 
   # licenses
   install -d -m 755 ${INSTALL_ROOT}/usr/local/share/licenses/sun-jre
