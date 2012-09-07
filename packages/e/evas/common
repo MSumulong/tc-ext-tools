@@ -1,8 +1,8 @@
 PACKAGE="evas"
-VERSION="1.7.0"
-SOURCE="http://download.enlightenment.org/releases/$PACKAGE-$VERSION.tar.bz2"
-#VERSION="svn~r75819"
-#SOURCE="svn::http://svn.enlightenment.org/svn/e/trunk/${PACKAGE}"
+#VERSION="svn~r76250"
+#SOURCE="http://download.enlightenment.org/releases/$PACKAGE-$VERSION.tar.bz2"
+VERSION="svn~r76250"
+SOURCE="svn::http://svn.enlightenment.org/svn/e/trunk/${PACKAGE}"
 BUILD_DEPENDS="eet-dev
 	fontconfig-dev
 	Xorg-7.6-dev

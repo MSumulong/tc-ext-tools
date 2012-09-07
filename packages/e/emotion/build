@@ -9,8 +9,8 @@
 build_configure() {
 
    ## autotools
-#   ./autogen.sh || return 1
-   ./configure \
+#   ./configure \
+   ./autogen.sh \
 	--disable-emotion-test \
 	--disable-build-examples \
 	--disable-install-examples || return 1

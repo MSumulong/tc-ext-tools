@@ -9,8 +9,8 @@
 build_configure() {
 
    ## autotools
-#   ./autogen.sh \
-   ./configure --disable-doc \
+#   ./configure --disable-doc \
+   ./autogen.sh \
 	--enable-amalgamation \
 	--disable-valgrind || return 1
 }

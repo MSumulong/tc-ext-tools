@@ -9,8 +9,8 @@
 build_configure() {
 
    ## autotools
-#   ./autogen.sh 
-   ./configure  \
+#   ./configure  \
+   ./autogen.sh \
 	--disable-build-examples \
 	--enable-amalgamation || return 1
 

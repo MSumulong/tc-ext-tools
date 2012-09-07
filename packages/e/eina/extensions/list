@@ -1,3 +1,4 @@
+usr/local/bin/eina-bench-cmp
 usr/local/include/eina-1/Eina.h
 usr/local/include/eina-1/eina/eina_accessor.h
 usr/local/include/eina-1/eina/eina_array.h
@@ -69,5 +70,5 @@ usr/local/lib/libeina.a
 usr/local/lib/libeina.la
 usr/local/lib/libeina.so
 usr/local/lib/libeina.so.1
-usr/local/lib/libeina.so.1.7.0
+usr/local/lib/libeina.so.1.7.99
 usr/local/lib/pkgconfig/eina.pc

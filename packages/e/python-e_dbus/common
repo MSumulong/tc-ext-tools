@@ -1,5 +1,5 @@
 PACKAGE="python-e_dbus"
-VERSION="1.7.0-beta"
+VERSION="1.7.0"
 SOURCE="http://download.enlightenment.org/releases/BINDINGS/python/$PACKAGE-$VERSION.tar.bz2"
 #VERSION="svn~r75273"
 #SOURCE="svn::http://svn.enlightenment.org/svn/e/trunk/BINDINGS/python/$PACKAGE"

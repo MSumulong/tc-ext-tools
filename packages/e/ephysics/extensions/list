@@ -3,5 +3,5 @@ usr/local/lib/libephysics.a
 usr/local/lib/libephysics.la
 usr/local/lib/libephysics.so
 usr/local/lib/libephysics.so.0
-usr/local/lib/libephysics.so.0.1.0
+usr/local/lib/libephysics.so.0.1.99
 usr/local/lib/pkgconfig/ephysics.pc

@@ -1,8 +1,8 @@
 PACKAGE="eina"
-VERSION="1.7.0"
-SOURCE="http://download.enlightenment.org/releases/$PACKAGE-$VERSION.tar.bz2"
-#SOURCE="svn::http://svn.enlightenment.org/svn/e/trunk/${PACKAGE}"
-#VERSION="svn~r75831"
+#VERSION="svn~r76250"
+#SOURCE="http://download.enlightenment.org/releases/$PACKAGE-$VERSION.tar.bz2"
+SOURCE="svn::http://svn.enlightenment.org/svn/e/trunk/${PACKAGE}"
+VERSION="svn~r76250"
 BUILD_DEPENDS="libiconv"
 DESCRIPTION="multi-platform library that provides optimized data types and useful tools for projects"
 AUTHOR="Jorge Luis turran Zapata <jorgeluis.zapata@gmail.com>

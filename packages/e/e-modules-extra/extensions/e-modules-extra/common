@@ -6,4 +6,5 @@ COMMENTS="optional deps:
 	                elementary for elfe
 		modules left out: exalt-client 	(exalt.tcz doesn't exist)
 				  itask-ng 	(replaced by engage)
-				  tiling 	(already in e17)"
+				  tiling 	(already in e17)
+				  iiirk		(error on compiling)"

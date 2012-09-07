@@ -9,8 +9,8 @@
 build_configure() {
 
    ## autotools
-#   ./autogen.sh --enable-amalgamation \
-   ./configure 	--disable-build-examples \
+#   ./configure 	--disable-build-examples \
+   ./autogen.sh --enable-amalgamation \
 	--disable-doc \
 	--disable-old-eet-file-format || return 1
 #	--build=i686-pc-linux-gnu \

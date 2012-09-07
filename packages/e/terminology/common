@@ -1,8 +1,8 @@
 PACKAGE="terminology"
-VERSION="0.1.0"
-SOURCE="http://download.enlightenment.org/releases/$PACKAGE-$VERSION.tar.bz2"
-#VERSION="svn~r75633"
-#SOURCE="svn::http://svn.enlightenment.org/svn/e/trunk/$PACKAGE"
+#VERSION="svn~r76260"
+#SOURCE="http://download.enlightenment.org/releases/$PACKAGE-$VERSION.tar.bz2"
+VERSION="svn~r76260"
+SOURCE="svn::http://svn.enlightenment.org/svn/e/trunk/$PACKAGE"
 BUILD_DEPENDS="elementary-dev
 	libeweather-dev"
 

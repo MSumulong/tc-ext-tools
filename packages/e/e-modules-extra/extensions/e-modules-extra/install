@@ -1,8 +1,4 @@
 usr/local
-x-usr/local/include
 x-usr/*/*/*/*/*/*/*.a
 x-usr/*/*/*/*/*/*/*.la
 x-usr/*/*/*/*/*/*/*/*/*.mo
-x-usr/*/*/*/*/*/*/*/*/*.a
-x-usr/*/*/*/*/*/*/*/*/*.la
-x-usr/local/lib/pkgconfig

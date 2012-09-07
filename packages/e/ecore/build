@@ -9,8 +9,8 @@
 build_configure() {
 
    ## autotools
-#   ./autogen.sh \
-   ./configure \
+#   ./configure \
+   ./autogen.sh \
 	--enable-ecore-fb \
 	--enable-ecore-evas-fb  || return 1
 #	--enable-ecore-sdl

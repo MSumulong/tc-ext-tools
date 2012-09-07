@@ -1,5 +1,5 @@
 PACKAGE="e-modules-extra"
-VERSION="svn~r76015"
+VERSION="svn~r76259"
 SOURCE="svn::http://svn.enlightenment.org/svn/e/trunk/E-MODULES-EXTRA"
 BUILD_DEPENDS="cvs.tcz
 	enlightenment-dev.tcz
@@ -20,6 +20,4 @@ MAINTAINERS="jls_legalize (jlslegalize at gmail dot com)"
 TAGS="Extra modules Enlightenment DR17 Desktop Environment"
 COMMENTS="---"
 CHANGELOG="---"
-CURRENT='Updated to ${VERSION}. 
-		This extension now should work "out of the box".
-		Removed quickacces since it is now on enlightenment'
+CURRENT="Updated to ${VERSION}. removed iiirk"

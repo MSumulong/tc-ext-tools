@@ -1,5 +1,5 @@
 PACKAGE="ephysics"
-VERSION="svn~r76015"
+VERSION="svn~r76209"
 SOURCE="svn::http://svn.enlightenment.org/svn/e/trunk/$PACKAGE"
 BUILD_DEPENDS="bullet-dev ecore-dev edje edje-dev"
 

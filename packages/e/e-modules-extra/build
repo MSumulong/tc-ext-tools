@@ -11,6 +11,7 @@ build_configure() {
 #   rm -rf eektool
    rm -rf itask-ng
    rm -rf tiling
+   rm -rf iiirk
 
    ## autotools
    ./autogen.sh --prefix=/usr/local || return 1
@@ -19,6 +20,8 @@ build_configure() {
 
 ## compile
 build_compile() {
+
+   rm -rf iiirk
 
    sudo ln -s /usr/lib/libblkid.la /usr/local/lib
    sudo ln -s /usr/lib/libuuid.la /usr/local/lib

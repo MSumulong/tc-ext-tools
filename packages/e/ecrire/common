@@ -1,5 +1,5 @@
 PACKAGE="ecrire"
-VERSION="svn~r76015"
+VERSION="svn~r76260"
 SOURCE="svn::http://svn.enlightenment.org/svn/e/trunk//$PACKAGE"
 BUILD_DEPENDS="cmake
 		elementary-dev"

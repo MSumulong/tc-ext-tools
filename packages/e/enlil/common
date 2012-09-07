@@ -1,5 +1,5 @@
 PACKAGE="enlil"
-VERSION="svn~r74988"
+VERSION="svn~r76260"
 SOURCE="svn::http://svn.enlightenment.org/svn/e/trunk/$PACKAGE"
 BUILD_DEPENDS="libiptcdata-dev
 	ethumb-dev

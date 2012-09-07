@@ -1,15 +1,15 @@
 PACKAGE="ecore"
-VERSION="1.7.0"
-SOURCE="http://download.enlightenment.org/releases/$PACKAGE-$VERSION.tar.bz2"
-#VERSION="svn~r75825"
-#SOURCE="svn::http://svn.enlightenment.org/svn/e/trunk/${PACKAGE}"
+#VERSION="svn~r76255"
+#SOURCE="http://download.enlightenment.org/releases/$PACKAGE-$VERSION.tar.bz2"
+VERSION="svn~r76255"
+SOURCE="svn::http://svn.enlightenment.org/svn/e/trunk/${PACKAGE}"
 BUILD_DEPENDS="evas-dev
 	cvs
 	curl-dev
 	glib2-dev
+	libssh2
 	curl"
 #	libcares-dev
-#	libssh2
 #	libxcb-util-dev
 DESCRIPTION="a clean and tiny event loop library with many modules"
 AUTHOR="See http://enlightenment.org/p.php?p=contact&l=e"

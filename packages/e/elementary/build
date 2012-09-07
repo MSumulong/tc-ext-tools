@@ -9,8 +9,8 @@
 build_configure() {
 
    ## autotools
-#   ./autogen.sh \
-   ./configure \
+#   ./configure \
+   ./autogen.sh \
 	--enable-edbus \
 	--enable-efreet \
 	--enable-eweather \

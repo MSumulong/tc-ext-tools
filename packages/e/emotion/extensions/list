@@ -13,6 +13,6 @@ usr/local/lib/libemotion.a
 usr/local/lib/libemotion.la
 usr/local/lib/libemotion.so
 usr/local/lib/libemotion.so.1
-usr/local/lib/libemotion.so.1.7.0
+usr/local/lib/libemotion.so.1.7.99
 usr/local/lib/pkgconfig/emotion.pc
 usr/local/share/emotion/data/icon.edj
