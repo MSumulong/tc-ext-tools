@@ -1,5 +1,5 @@
 PACKAGE="gbrainy"
-VERSION="1.61"
+VERSION="2.1.4"
 SOURCE="http://gent.softcatala.org/jmas/gbrainy/gbrainy-${VERSION}.tar.gz"
 BUILD_DEPENDS="rarian
 gnome-doc-utils
@@ -22,6 +22,6 @@ SITE="http://live.gnome.org/gbrainy"
 COPYING="GPL-2"
 MAINTAINERS="Arslan S."
 COMMENTS="---"
-CHANGELOG="2010/04/16 First Version 1.41"
+CHANGELOG="---"
 CURRENT="Updated to $VERSION"
 
