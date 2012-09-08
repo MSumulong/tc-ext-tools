@@ -1,6 +1,6 @@
 PACKAGE="gtk-sharp"
 VERSION="2.12.10"
-SOURCE="http://ftp.novell.com/pub/mono/sources/gtk-sharp212/gtk-sharp-${VERSION}.tar.bz2"
+SOURCE="http://download.mono-project.com/sources/gtk-sharp212/gtk-sharp-${VERSION}.tar.bz2"
 BUILD_DEPENDS="gtk2
 gtk2-dev
 libglade
@@ -16,5 +16,5 @@ SITE="http://www.mono-project.com/GtkSharp"
 COPYING="LGPL"
 MAINTAINERS="Arslan S."
 COMMENTS="---"
-CHANGELOG="2010/05/10 Original 2.12.10"
-CURRENT="Rebuilt"
+CHANGELOG="---"
+CURRENT="Updated to $VERSION"
