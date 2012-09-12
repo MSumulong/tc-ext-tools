@@ -1,0 +1,16 @@
+PACKAGE="efbb"
+VERSION="svn~r76549"
+SOURCE="svn::http://svn.enlightenment.org/svn/e/trunk/GAMES/${PACKAGE}"
+BUILD_DEPENDS="ephysics-dev libcanberra-dev etrophy-dev geneet pyparsing"
+
+DESCRIPTION="a physics game"
+AUTHOR="Bruno Dilly <bdilly@profusion.mobi>, 
+		Marina Proni <marina.proni@profusion.mobi>, 
+		Ricardo de Almeida Gonzaga <ricardo@profusion.mobi>"
+SITE="http://brunodilly.org/blog/escape-from-booty-bay/"
+COPYING="GPL-2"
+MAINTAINERS="jlslegalize@gmail.com"
+TAGS="physics game enlightenment e17 efl"
+COMMENTS="Escape from Booty Bay is a physics game that explore EPhysics amazing features."
+CHANGELOG="---"
+CURRENT="First Version"
