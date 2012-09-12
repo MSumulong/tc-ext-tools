@@ -1,0 +1,19 @@
+PACKAGE="etrophy"
+VERSION="svn~r76544"
+SOURCE="svn::http://svn.enlightenment.org/svn/e/trunk/PROTO/${PACKAGE}"
+BUILD_DEPENDS="elementary-dev"
+
+DESCRIPTION="add library to manage game scores"
+AUTHOR="authors of package"
+SITE="http://www.package.com"
+COPYING="Copyright (C) 2012 ProFUSION Embedded Systems and various
+		contributors (see AUTHORS)."
+MAINTAINERS="jlslegalize@gmail.com"
+TAGS="library game scores enlightenment e17 efl elementary"
+COMMENTS="a library that manages scores, trophies and unlockables. It will
+		store them and provide views to display them. Could be used by games based
+		on EFL.
+
+		Right now it just stores on EET, but a remote backend is planned."
+CHANGELOG="---"
+CURRENT="First Version"
