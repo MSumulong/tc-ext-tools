@@ -1,0 +1,11 @@
+usr/local/bin/java-installer
+usr/local/java-installer/derby-network-server.conf
+usr/local/java-installer/derby-network-server.sh
+usr/local/java-installer/java-monitoring-and-management-console.desktop
+usr/local/java-installer/java-policy-settings.desktop
+usr/local/java-installer/java-visualvm.desktop
+usr/local/java-installer/javaws-launcher
+usr/local/java-installer/jdk.profile
+usr/local/java-installer/jre.profile
+usr/local/java-installer/tce.installed.jdk
+usr/local/java-installer/tce.installed.jre

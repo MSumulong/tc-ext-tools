@@ -1,0 +1,13 @@
+#!/bin/sh
+
+THIS=$(basename $0)
+
+. /etc/profile.d/jdk.sh
+
+if [ -d "/tmp/tcloop/$THIS" ]; then
+     for dir in bin lib
+     do
+        cp -a "/tmp/tcloop/$THIS/$JAVA_HOME/$dir" "$JAVA_HOME"
+     done
+fi
+

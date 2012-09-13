@@ -1,0 +1,38 @@
+
+############################################################################
+#                                                                          #
+#  tc-ext-tools build functions: configure, compile, install, rules, etc.  #
+#                                                                          #
+############################################################################
+
+############################################################################ 
+#                              Install                                     #
+############################################################################
+
+build_install() {
+
+  install -D -m 755 "$PACKAGE_SRC"/java-installer.sh "$I_ROOT"/usr/local/bin/java-installer 
+  mkdir -p "$I_ROOT"/usr/local/java-installer
+  cp "$P_SRC"/* "$I_ROOT"/usr/local/java-installer
+  rm -f "$I_ROOT"/usr/local/java-installer/java-installer.sh
+
+}
+
+############################################################################ 
+#                                Rules                                     #
+############################################################################
+
+build_rules() {
+
+   tet_load
+   tet_install
+   tet_split
+   tet_create
+   tet_generate
+   tet_check
+   tet_test
+   tet_package
+   tet_encrypt
+
+}
+
