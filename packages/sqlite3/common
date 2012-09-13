@@ -1,6 +1,6 @@
 PACKAGE="sqlite3"
-VERSION="3.7.13"
-_VERSION="3071300"
+VERSION="3.7.14"
+_VERSION="3071400"
 SOURCE="http://www.sqlite.org/sqlite-autoconf-${_VERSION}.tar.gz"
 BUILD_DEPENDS="readline
 readline-dev
