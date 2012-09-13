@@ -1,2 +1,2 @@
-webkitgtk-1.0.0.tcz
+webkitgtk-${API}-${MJR}.tcz
 gtk2-gir.tcz

@@ -1,5 +1,5 @@
 PACKAGE="webkitgtk"
-VERSION="1.8.1"
+VERSION="1.8.3"
 API="1.0"
 MJR="0"
 SOURCE="http://webkitgtk.org/releases/webkit-${VERSION}.tar.xz"

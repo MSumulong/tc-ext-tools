@@ -280,11 +280,11 @@ usr/local/lib/girepository-1.0/WebKit-1.0.typelib
 usr/local/lib/libjavascriptcoregtk-1.0.la
 usr/local/lib/libjavascriptcoregtk-1.0.so
 usr/local/lib/libjavascriptcoregtk-1.0.so.0
-usr/local/lib/libjavascriptcoregtk-1.0.so.0.13.2
+usr/local/lib/libjavascriptcoregtk-1.0.so.0.13.4
 usr/local/lib/libwebkitgtk-1.0.la
 usr/local/lib/libwebkitgtk-1.0.so
 usr/local/lib/libwebkitgtk-1.0.so.0
-usr/local/lib/libwebkitgtk-1.0.so.0.13.2
+usr/local/lib/libwebkitgtk-1.0.so.0.13.4
 usr/local/lib/pkgconfig/javascriptcoregtk-1.0.pc
 usr/local/lib/pkgconfig/webkit-1.0.pc
 usr/local/share/gir-1.0/JSCore-1.0.gir
