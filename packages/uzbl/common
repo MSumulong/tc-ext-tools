@@ -1,8 +1,7 @@
 PACKAGE="uzbl"
-VERSION="2011.02.15"
+VERSION="2012.05.14"
 SOURCE="http://github.com/Dieterbe/uzbl/tarball/${VERSION}->uzbl-${VERSION}.tar.gz"
-BUILD_DEPENDS="webkit
-webkit-dev"
+BUILD_DEPENDS="webkitgtk-1.0-0 webkitgtk-1.0-0-dev"
 
 DESCRIPTION="The uzbl web interface tools."
 AUTHOR="---"
@@ -11,4 +10,4 @@ COPYING="GPL-3"
 MAINTAINERS="Arslan S."
 COMMENTS="---"
 CHANGELOG="---"
-CURRENT="First Version"
+CURRENT="Updated to $VERSION"

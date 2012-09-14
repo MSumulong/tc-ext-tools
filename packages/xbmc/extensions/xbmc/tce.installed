@@ -15,7 +15,7 @@ this_start() {
       if [ $? -gt 0 ]; then
            $DBUS_SERVICE start
       else
-           $DBUS_SERVICE restart
+           $DBUS_SERVICE reload
       fi
       $HALDAEMON_SERVICE start
  fi

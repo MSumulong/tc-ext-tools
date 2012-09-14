@@ -1,5 +1,5 @@
 PACKAGE="java-installer"
-VERSION="7"
+VERSION="7u7"
 SOURCE=""
 BUILD_DEPENDS=""
 
@@ -15,12 +15,12 @@ COMMENTS="You must accept Oracle's license and download jdk tarball from
 		Usage:
 		* Run java-installer in a terminal. It will create two extensions in your tce optional folder:
 		jre7 (java run time) and jdk7 (java development kit)
-		$ sudo UPD=7 java-installer
+		$ sudo java-installer
 
 		* You need to relogin or reboot for JAVA to be in PATH and JAVA_HOME
 		to be set properly.
 
-		* If a newer version than $VERSION is available, set UPD variable:
+		* If a newer version is available, set UPD variable:
 		$ sudo UPD=8 java-installer (that is 7u8)"
 CHANGELOG="---"
-CURRENT="First Version"
+CURRENT="First Version $VERSION"
