@@ -1,6 +1,3 @@
 #!/bin/sh
-
 cd /usr/local/dooble
-
-./Dooble "$@"
-
+exec ./Dooble "$@"

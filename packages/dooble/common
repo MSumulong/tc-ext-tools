@@ -1,6 +1,6 @@
 PACKAGE="dooble"
-VERSION="1.24"
-SOURCE="http://sourceforge.net/projects/dooble/files/Version%20${VERSION}/Dooble.d.tar.gz"
+VERSION="1.35"
+SOURCE="http://sourceforge.net/projects/dooble/files/Version%20${VERSION}/Dooble.d.tar.gz->Dooble-${VERSION}.tgz"
 BUILD_DEPENDS="qt-4.x-base
 qt-4.x-webkit
 qt-4.x-dbus
@@ -18,6 +18,5 @@ SITE="http://dooble.sourceforge.net/"
 COPYING="GPL-2"
 MAINTAINERS="Arslan S."
 COMMENTS="---"
-CHANGELOG="2010/06/10 First Version 0.09.01~100607
-		2011/04/04 Updated to 1.20.1"
+CHANGELOG="---"
 CURRENT="Updated to $VERSION"
