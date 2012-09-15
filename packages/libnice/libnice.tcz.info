@@ -1,0 +1,17 @@
+Title:		libnice.tcz
+Description:	an implementation of the IETF's draft Interactice Connectivity Establishment standard (ICE)
+Version:	0.1.2
+Author:		?
+Original-site:	http://nice.freedesktop.org
+Copying-policy:	GPL
+Size:		116K
+Extension_by:	jls_legalize (unsenepopiu at tin dot it)
+Tags:		an implementation IETF's draft Interactice Connectivity Establishment standard ICE
+Comments:	This extension is PPI compatible
+Change-log:	2010/02/13 First version (0.0.10)
+		2010/03/24 updated 2 0.0.11
+		2010/06/05 updated 2 0.0.12
+		2010/07/31 updated 2 0.0.13
+		2011/02/09 updated 2 0.1.0
+		2011/11/14 Updated to 0.1.1
+Current:	2012/04/05 Updated to 0.1.2

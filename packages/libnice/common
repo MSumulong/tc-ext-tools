@@ -1,0 +1,17 @@
+PACKAGE="libnice"
+VERSION="0.1.3"
+SOURCE="http://nice.freedesktop.org/releases/$PACKAGE-$VERSION.tar.gz"
+BUILD_DEPENDS="glib2-dev gstreamer-dev gupnp-dev gupnp-igd-dev"
+
+DESCRIPTION="an implementation of the IETF's draft Interactice Connectivity Establishment standard (ICE)"
+AUTHOR="Dafydd Harries <dafydd.harries@collabora.co.uk>,
+	Rémi Denis-Courmont <remi.denis-courmont@nokia.com>,
+	Kai Vehmanen <kai.vehmanen@nokia.com>,
+	Youness Alaoui <youness.alaoui@collabora.co.uk>"
+SITE="http://nice.freedesktop.org"
+COPYING="GPL-2"
+MAINTAINERS="jlslegalize@gmail.com"
+TAGS="IETF's draft Interactice Connectivity ICE"
+COMMENTS="---"
+CHANGELOG="---"
+CURRENT="Updated to $VERSION"
