@@ -1,7 +1,7 @@
 drizzle-server.tcz
 libdrizzle-dev.tcz
-boost-dev.tcz
-util-linux-ng-dev.tcz
+boost-1.50-dev.tcz
+util-linux-dev.tcz
 Linux-PAM-dev.tcz
 curl-dev.tcz
 libgcrypt-dev.tcz

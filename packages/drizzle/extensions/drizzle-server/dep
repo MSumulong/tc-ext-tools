@@ -2,5 +2,5 @@ drizzle-client.tcz
 pcre.tcz
 curl.tcz
 libgcrypt.tcz
-util-linux-ng.tcz
+util-linux.tcz
 eglibc_apps.tcz

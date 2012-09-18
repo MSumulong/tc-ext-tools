@@ -1,3 +1,3 @@
-usr/local/include/drizzle7
-usr/local/lib/drizzle7/*.la
-usr/local/lib/pkgconfig/drizzle7.pc
+usr/local/include/drizzle
+usr/local/lib/drizzle/*.la
+usr/local/lib/pkgconfig/drizzle.pc

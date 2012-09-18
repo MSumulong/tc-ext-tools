@@ -1,3 +1,5 @@
 usr/local/include/libdrizzle
+usr/local/include/libdrizzle-1.0
 usr/local/lib/pkgconfig/libdrizzle.pc
+usr/local/lib/pkgconfig/libdrizzle-1.0.pc
 usr/local/lib/*.la

@@ -1,0 +1,60 @@
+diff -Naur a/client/drizzleslap.cc b/client/drizzleslap.cc
+--- a/client/drizzleslap.cc	2012-05-06 01:58:09.000000000 +0000
++++ b/client/drizzleslap.cc	2012-09-18 09:32:59.153434429 +0000
+@@ -1934,7 +1934,7 @@
+     boost::mutex::scoped_lock scopedLock(timer_alarm_mutex);
+ 
+     boost::xtime xt; 
+-    xtime_get(&xt, boost::TIME_UTC); 
++    xtime_get(&xt, boost::TIME_UTC_); 
+     xt.sec += opt_timer_length; 
+ 
+     (void)timer_alarm_threshold.timed_wait(scopedLock, xt);
+diff -Naur a/drizzled/drizzled.cc b/drizzled/drizzled.cc
+--- a/drizzled/drizzled.cc	2012-05-06 01:58:09.000000000 +0000
++++ b/drizzled/drizzled.cc	2012-09-18 09:32:59.160101101 +0000
+@@ -450,7 +450,7 @@
+     while (select_thread_in_use)
+     {
+       boost::xtime xt;
+-      xtime_get(&xt, boost::TIME_UTC);
++      xtime_get(&xt, boost::TIME_UTC_);
+       xt.sec += 2;
+ 
+       for (uint32_t tmp=0 ; tmp < 10 && select_thread_in_use; tmp++)
+diff -Naur a/drizzled/table/cache.cc b/drizzled/table/cache.cc
+--- a/drizzled/table/cache.cc	2012-05-06 01:58:09.000000000 +0000
++++ b/drizzled/table/cache.cc	2012-09-18 09:32:59.163434435 +0000
+@@ -263,7 +263,7 @@
+             table::Cache::removeTable routine.
+           */
+           boost::xtime xt;
+-          xtime_get(&xt, boost::TIME_UTC);
++          xtime_get(&xt, boost::TIME_UTC_);
+           xt.sec += 10;
+           boost::mutex::scoped_lock scoped(table::Cache::mutex(), boost::adopt_lock_t());
+           COND_refresh.timed_wait(scoped, xt);
+diff -Naur a/drizzled/thr_lock.cc b/drizzled/thr_lock.cc
+--- a/drizzled/thr_lock.cc	2012-05-06 01:58:09.000000000 +0000
++++ b/drizzled/thr_lock.cc	2012-09-18 09:32:59.163434435 +0000
+@@ -170,7 +170,7 @@
+     if (can_deadlock)
+     {
+       boost::xtime xt; 
+-      xtime_get(&xt, boost::TIME_UTC); 
++      xtime_get(&xt, boost::TIME_UTC_); 
+       xt.sec += table_lock_wait_timeout; 
+       if (not cond->timed_wait(scoped, xt))
+       {
+diff -Naur a/plugin/sleep/sleep.cc b/plugin/sleep/sleep.cc
+--- a/plugin/sleep/sleep.cc	2012-05-06 01:58:09.000000000 +0000
++++ b/plugin/sleep/sleep.cc	2012-09-18 09:32:59.163434435 +0000
+@@ -98,7 +98,7 @@
+ 
+     try {
+       boost::xtime xt; 
+-      xtime_get(&xt, boost::TIME_UTC); 
++      xtime_get(&xt, boost::TIME_UTC_); 
+       xt.nsec += (uint64_t)(dtime * 1000000000ULL); 
+       session.getThread()->sleep(xt);
+     }

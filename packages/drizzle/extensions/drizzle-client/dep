@@ -1,5 +1,5 @@
 libdrizzle.tcz
-boost.tcz
-icu.tcz
+boost-1.50.tcz
+icu49.tcz
 ncurses.tcz
 readline.tcz

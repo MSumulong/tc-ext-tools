@@ -1,4 +1,4 @@
 usr/local/etc/init.d
 usr/local/sbin
-usr/local/lib/drizzle7/*.so
+usr/local/lib/drizzle/*.so
 usr/local/share/man/man8
