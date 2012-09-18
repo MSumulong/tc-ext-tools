@@ -8,11 +8,12 @@
 ## configure
 build_configure() {
 
-   sed -i 's|$prefix/foobillardplus|$prefix|' configure
-   sed -i 's|$prefix/data|$prefix/share/foobillardplus|' configure
-   sed -i 's|"/data"|"/share/foobillardplus"|' src/language.c
    sed -i 's|/opt/foobillardplus/bin/||' foobillardplus.desktop
    sed -i 's|/opt/foobillardplus/||' foobillardplus.desktop
+   aclocal --force
+   autoconf -f
+   autoheader -f
+   automake -a -c -f
    ./configure --prefix=/usr/local || return 1
 
 }
@@ -27,13 +28,16 @@ build_compile() {
 ## install
 build_install() {
 
-   install -Dm755 src/foobillardplus "${I_ROOT}/usr/local/bin/foobillardplus"
-   install -d "${I_ROOT}/usr/local/share/foobillardplus"
-   cp -R data/* "${I_ROOT}/usr/local/share/foobillardplus"
+   make DESTDIR="${I_ROOT}" datadir="${I_ROOT}/usr/local/foobillardplus/data" \
+      prefix="${I_ROOT}/usr/local" install || return 1
+
+   install -d "${I_ROOT}/usr/local/bin"
    install -Dm644 foobillardplus.desktop "${I_ROOT}/usr/local/share/applications/foobillardplus.desktop"
    install -Dm644 foobillardplus.png "${I_ROOT}/usr/local/share/pixmaps/foobillardplus.png"
    install -Dm644 foobillardplus.xbm "${I_ROOT}/usr/local/share/pixmaps/foobillardplus.xbm"
-   find "${I_ROOT}" -depth  -type d -name .svn -exec rm -rf  {} \;
+   ln -s "/usr/local/foobillardplus/bin/foobillardplus" "${I_ROOT}/usr/local/bin/foobillardplus"
+
+   rm -f "${I_ROOT}"/usr/local/* || /bin/true
 
 }
 
