@@ -1,0 +1,16 @@
+ICON="/usr/local/share/pixmaps/gnome-balsa2.png"
+COMMENTS="Edit-->Preferences & modify incoming/outgoing server settings
+		A typical gmail setup:
+		incoming: 	IMAP: imap.gmail.com:993 (recommended)
+				POP3: pop3.gmail.com:995
+				Required SSL
+		outgoing: 	smtp.gmail.com:587
+				Required TLS
+		
+		A typical hotmail setup:
+		incoming: 	pop3.live.com:995
+				Required SSL
+		outgoing: 	smtp.live.com:587
+				Required TLS
+		
+		aspell-en & gnome-icon-theme are recommended."

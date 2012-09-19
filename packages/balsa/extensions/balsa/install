@@ -1,0 +1,11 @@
+usr/local/bin
+usr/local/etc
+usr/local/lib
+usr/local/share/applications
+usr/local/share/balsa
+usr/local/share/icons
+usr/local/share/gnome/help/*/C
+usr/local/share/omf/*/*-C.omf
+usr/local/share/man
+usr/local/share/pixmaps
+usr/local/share/sounds

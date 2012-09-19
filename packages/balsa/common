@@ -1,0 +1,18 @@
+PACKAGE="balsa"
+VERSION="2.4.12"
+SOURCE="http://pawsa.fedorapeople.org/balsa/balsa-${VERSION}.tar.bz2"
+BUILD_DEPENDS="gmime gmime-dev webkitgtk-1.0-0 webkitgtk-1.0-0-dev
+               libesmtp libesmtp-dev libnotify libnotify-dev gpgme
+               gpgme-dev gtksourceview gtksourceview-dev gtkspell
+               gtkspell-dev gnome-doc-utils rarian krb5 openldap
+               openldap-dev"
+
+DESCRIPTION="An e-mail client for GNOME."
+AUTHOR="---"
+SITE="http://pawsa.fedorapeople.org/balsa/"
+COPYING="GPL-2"
+MAINTAINERS="Arslan S."
+TAGS="e-mail client gnome"
+COMMENTS="---"
+CHANGELOG="---"
+CURRENT="Updated to $VERSION"
