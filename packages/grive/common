@@ -1,0 +1,26 @@
+PACKAGE="grive"
+VERSION="git20120921"
+SOURCE="git::git://github.com/Grive/grive.git"
+BUILD_DEPENDS="cmake boost-1.50 boost-1.50-dev json-c json-c-dev
+               libgcrypt libgcrypt-dev curl curl-dev expat2 expat2-dev"
+
+DESCRIPTION="An open source Linux client for Google Drive."
+AUTHOR="---"
+SITE="https://github.com/Grive"
+COPYING="GPL-2"
+MAINTAINERS="Arslan S."
+TAGS="google drive client"
+COMMENTS="Installation:
+		1) You need to create a folder and authenticate it with your google account.
+			\$ mkdir grive
+			\$ cd grive
+			\$ grive -a
+		2) Once you have your folder authenticated run grived as a user
+			\$ grived
+
+		Configuration:
+			Default folder is ~/grive and it is synced with an interval of 300 seconds.
+		If your folder path is different and/or you want to change sync interval then
+		create a file in ~/.config/grived/grived.conf and set GRIVE_FOLDER and SYNC_INTERVAL variables."
+CHANGELOG="---"
+CURRENT="First Version"

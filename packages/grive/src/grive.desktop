@@ -1,0 +1,9 @@
+[Desktop Entry]
+Name=Grive
+GenericName=Google Drive
+Comment=An open source linux client for Google Drive
+Categories=Application;Network;
+Icon=grive
+Exec=xterm -bg black -fg white -cr yellow +tr -e grived
+Terminal=false
+Type=Application
