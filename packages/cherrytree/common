@@ -1,5 +1,5 @@
 PACKAGE="cherrytree"
-VERSION="0.26"
+VERSION="0.26.3"
 SOURCE="http://www.giuspen.com/software/cherrytree-${VERSION}.tar.bz2"
 BUILD_DEPENDS="gtk2 gtk2-dev pygtk-2.7 pygtk-2.7-dev pygtksourceview
                p7zip-full ImageMagick desktop-file-utils"
@@ -10,10 +10,5 @@ SITE="http://www.giuspen.com/cherrytree/"
 COPYING="GPL"
 MAINTAINERS="Arslan S."
 COMMENTS="---"
-CHANGELOG="2011/01/03 First Version 0.19
-		2011/01/09 Added wbar icon
-		2011/01/18 Updated to 0.19.3
-		2011/04/02 Updated to 0.20.1
-		2011/06/18 Updated to 0.22
-		2011/08/13 Updated to 0.22.2"
+CHANGELOG="---"
 CURRENT="Updated to $VERSION"
