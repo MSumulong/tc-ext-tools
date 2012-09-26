@@ -1,0 +1,4 @@
+usr/local/etc/OpenCL
+usr/local/lib/libOpenCL.so*
+usr/local/lib/libnvidia-compiler.so*
+usr/local/lib/libnvidia-opencl.so*

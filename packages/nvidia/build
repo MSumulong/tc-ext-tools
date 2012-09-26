@@ -11,7 +11,8 @@ build_unpack() {
 # Configure
 build_configure() {
 
-   sed -e "s/^.*XYZ=.*$/XYZ=$VERSION/" -i "$PACKAGE_EXTENSIONS/nvidia-glx/tce.installed" || return 1
+   echo "$VERSION $PACKAGE_EXTENSIONS"
+   sed -e "s/^.*VERSION=.*$/VERSION=$VERSION/" -i "$PACKAGE_EXTENSIONS/nvidia-glx/tce.installed" || return 1
 
 }
 
@@ -64,15 +65,20 @@ build_install() {
    install -m 755 "libvdpau_nvidia.so.${VERSION}" "$INSTALL_ROOT/usr/local/lib/vdpau" || return 1
    # CUDA
    install -m 755 "libcuda.so.${VERSION}" "$INSTALL_ROOT/usr/local/lib" || return 1
+   install -m 755 "libnvcuvid.so.${VERSION}" "${INSTALL_ROOT}/usr/local/lib"
    # nvidia-tls library
    install -m 755 "tls/libnvidia-tls.so.${VERSION}" "$INSTALL_ROOT/usr/local/lib" || return 1
    # OpenCL
+   install -m 755 libOpenCL.so.1.0.0 "$INSTALL_ROOT/usr/local/lib/libOpenCL.so.1.0.0"
+   ln -s libOpenCL.so.1.0.0 "$INSTALL_ROOT/usr/local/lib/libOpenCL.so.1"
+   ln -s libOpenCL.so.1 "$INSTALL_ROOT/usr/local/lib/libOpenCL.so"
    install -m 755 "libnvidia-compiler.so.${VERSION}" "$INSTALL_ROOT/usr/local/lib" || return 1
+   install -m 755 "libnvidia-opencl.so.${VERSION}" "$INSTALL_ROOT/usr/local/lib" || return 1
    install -m 644 nvidia.icd "$INSTALL_ROOT/usr/local/etc/OpenCL/vendors/nvidia.icd" || return 1
-   install -m 755 "libnvcuvid.so.${VERSION}" "${INSTALL_ROOT}/usr/local/lib"
 
    install -m 755 "libnvidia-cfg.so.${VERSION}" "$INSTALL_ROOT/usr/local/lib" || return 1
    install -m 755 "libnvidia-ml.so.${VERSION}" "$INSTALL_ROOT/usr/local/lib" || return 1
+   install -m 755 "libnvidia-wfb.so.${VERSION}" "$INSTALL_ROOT/usr/local/lib" || return 1
 
    # create soname links
    for _lib in $(find $INSTALL_ROOT -name '*.so*'); do
@@ -80,6 +86,8 @@ build_install() {
          if [ ! -e "${_soname}" ]; then
                 ln -s "$(basename ${_lib})" "${_soname}"
                 ln -s "$(basename ${_soname})" "${_soname/.[0-9]*/}"
+         else
+                ln -s "$(basename ${_lib})" "${_soname/.[0-9]*/}"
          fi
    done
 

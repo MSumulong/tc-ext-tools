@@ -1,5 +1,5 @@
 PACKAGE="nvidia"
-VERSION="280.13"
+VERSION="304.51"
 SOURCE="ftp://download.nvidia.com/XFree86/Linux-x86/${VERSION}/NVIDIA-Linux-x86-${VERSION}.run"
 BUILD_DEPENDS="coreutils"
 
@@ -10,4 +10,4 @@ COPYING="Proprietary"
 MAINTAINERS="Arslan S."
 COMMENTS="---"
 CHANGELOG="---"
-CURRENT="Rebuilt"
+CURRENT="Updated to $VERSION"
