@@ -1,5 +1,0 @@
-usr/local/include
-usr/local/lib/pkgconfig
-usr/local/lib/*.la
-usr/local/lib/*.so
-usr/local/share/aclocal/gst-element-check-1.0.m4
