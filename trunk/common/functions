@@ -195,14 +195,14 @@ set_depends() {
           TET_DEPENDS="$TET_DEPENDS zip-unzip"
      fi
 
-     # replace KERNEL pattern with kernel name
-     PACKAGE_BUILD_DEPENDS=$(echo "$TET_DEPENDS $BUILD_DEPENDS" | sed -e "s/KERNEL/${KERNEL}/")
-
      if [ "$KERNEL_ARCH" == "x86_64" ]; then
           TET_DEPENDS="$TET_DEPENDS toolchain64"
           CROSS_COMPILE=x86_64-unknown-linux-gnu-
           export PATH="/usr/local/x64/bin:$PATH"
      fi
+
+     # replace KERNEL pattern with kernel name and set package build depends
+     PACKAGE_BUILD_DEPENDS=$(echo "$TET_DEPENDS $BUILD_DEPENDS" | sed -e "s/KERNEL/${KERNEL}/")
 
 }
 
@@ -324,7 +324,10 @@ set_flags() {
 # call system functions
 set_date
 set_tcl_system
-set_flags
+
+if [ "$THIS" != "prepareit" ]; then
+     set_flags
+fi
 
 # linux root file system
 TET_PACKAGES_LINUX="$TET_PACKAGES/linux"
@@ -332,7 +335,7 @@ TET_STORAGE_LINUX="$TET_STORAGE/linux"
 TET_LINUX="$TET_PACKAGES_LINUX/$KERNEL"
 LINUX_COMMON="$TET_LINUX/common"
 
-if [ "$THIS" == "prepareit" ] && [ -f "$LINUX_COMMON" ]; then
+if [ -f "$LINUX_COMMON" ]; then
      . "$LINUX_COMMON"
 
      LINUX_SRC="$TET_LINUX/src"
