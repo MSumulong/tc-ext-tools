@@ -1,5 +1,5 @@
 PACKAGE="nvidia-x86_64"
-VERSION="280.13"
+VERSION="304.51"
 SOURCE="ftp://download.nvidia.com/XFree86/Linux-x86_64/${VERSION}/NVIDIA-Linux-x86_64-${VERSION}.run"
 BUILD_DEPENDS=""
 
@@ -9,5 +9,10 @@ SITE="http://www.nvidia.com"
 COPYING="Proprietary"
 MAINTAINERS="Arslan S."
 COMMENTS="---"
-CHANGELOG="---"
-CURRENT="Rebuilt for TCL 4.x"
+CHANGELOG="2010/05/24 First Version 195.36.24
+		2010/11/17 Updated to 260.19.21
+		2011/08/20 Updated to 280.13
+		2011/10/04 Rebuilt for kernel 3.0.3-tinycore64
+		2012/04/18 Rebuilt for kernel 3.0.21-tinycore64 by robc"
+CURRENT="Updated to $VERSION"
+

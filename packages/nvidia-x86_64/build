@@ -11,6 +11,8 @@ build_unpack() {
 # Compile
 build_compile() {
 
+   unset CFLAGS CXXFLAGS LDFLAGS
+
    cd kernel
    make SYSSRC=/usr/src/linux CC="${CROSS_COMPILE}gcc" LD="${CROSS_COMPILE}ld" IGNORE_CC_MISMATCH=1 module || return 1
 
