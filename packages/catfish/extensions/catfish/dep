@@ -5,3 +5,5 @@ pyxdg.tcz
 xdg-utils.tcz
 findutils.tcz
 bash.tcz
+hicolor-icon-theme.tcz
+shared-mime-info.tcz

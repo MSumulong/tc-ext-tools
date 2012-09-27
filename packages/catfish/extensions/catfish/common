@@ -1,3 +1,2 @@
-COMMENTS="gnome-icon-theme or any other compatible icon theme is recommended.
-
-		" 
+ICON="/usr/local/share/pixmaps/catfish.png"
+COMMENTS="gnome-icon-theme or any other compatible icon theme is recommended." 

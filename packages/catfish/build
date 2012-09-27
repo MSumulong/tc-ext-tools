@@ -8,7 +8,7 @@ build_configure() {
   ./configure --prefix=/usr/local || return 1
 
   sed -i 's|ln -sf $(DESTDIR)/$(PREFIX)/share|ln -sf ..|' Makefile || return 1
-  
+
 }
 ##
 
@@ -25,28 +25,34 @@ build_install() {
 
   make DESTDIR="$INSTALL_ROOT" install || return 1
 
+  ln -sf "/usr/local/share/locale" "$I_ROOT/usr/local/share/catfish/locale"
+
+  install -d -m 755 "$I_ROOT/usr/local/share/pixmaps"
+  convert -background None "$I_ROOT/usr/local/share/icons/hicolor/scalable/apps/catfish.svg" \
+        -compress none -depth 16 "$I_ROOT/usr/local/share/pixmaps/catfish.png"
+
 }
 ##
 
 ### Rules
 build_rules() {
 
+  tet_load
   tet_download
   tet_convert
   tet_unpack
   tet_patch
-  tet_load
   tet_configure
   tet_compile
   tet_install
   tet_split
-   tet_strip
+  tet_strip
   tet_create
   tet_generate
   tet_check
-   tet_test
+  tet_test
   tet_package
-   tet_encrypt
+  tet_encrypt
 
 }
 ##

@@ -68,8 +68,12 @@ build_install() {
   ln -s /usr/local/chromium-browser-addons/plugins ${INSTALL_ROOT}/usr/local/chromium-browser/plugins || return 1
   ln -s /usr/local/chromium-browser-addons/locales ${INSTALL_ROOT}/usr/local/chromium-browser/locales || return 1
 
-  for size in 16 22 24 32 48 64 128 256; do
+  for size in 22 24 48 64 128 256; do
     sudo install -m 644 -D chrome/app/theme/chromium/product_logo_${size}.png ${INSTALL_ROOT}/usr/local/share/icons/hicolor/${size}x${size}/apps/chromium-browser.png || return 1
+  done
+
+  for size in 16 32; do
+    sudo install -m 644 -D chrome/app/theme/default_100_percent/chromium/product_logo_${size}.png ${INSTALL_ROOT}/usr/local/share/icons/hicolor/${size}x${size}/apps/chromium-browser.png || return 1
   done
 
 }
