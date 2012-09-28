@@ -1,5 +1,5 @@
 PACKAGE="qbittorrent"
-VERSION="2.9.11"
+VERSION="3.0.4"
 SOURCE="http://downloads.sourceforge.net/sourceforge/qbittorrent/${PACKAGE}-${VERSION}.tar.gz"
 BUILD_DEPENDS="glib2 glib2-dev expat2 expat2-dev fontconfig fontconfig-dev openssl-1.0.0 openssl-1.0.0-dev
                qt-4.x-base qt-4.x-xml qt-4.x-dbus qt-4.x-dev libtorrent-rasterbar libtorrent-rasterbar-dev
