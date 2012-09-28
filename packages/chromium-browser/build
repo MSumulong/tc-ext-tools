@@ -17,18 +17,19 @@ build_configure() {
     -Dproprietary_codecs=1 \
     -Drelease_extra_cflags="${CFLAGS}" \
     -Dremoting=0 \
-    -Duse_cups=1 \
-    -Duse_system_libjpeg=1 \
+    -Duse_cups=0 \
+    -Duse_system_libjpeg=0 \
     -Duse_system_libxslt=0 \
     -Duse_system_libxml=0 \
-    -Duse_system_bzip2=1 \
-    -Duse_system_zlib=1 \
-    -Duse_system_libpng=1 \
-    -Duse_system_libevent=1 \
+    -Duse_system_bzip2=0 \
+    -Duse_system_zlib=0 \
+    -Duse_system_libpng=0 \
+    -Duse_system_libevent=0 \
     -Duse_system_ssl=0 \
     -Duse_system_ffmpeg=0 \
     -Ddisable_nacl=1 \
-    -Duse_gconf=0 || return 1
+    -Duse_gconf=0 \
+    -Ddisable_glibc=1 || return 1
 
 }
 ##

@@ -1,11 +1,7 @@
 gtk2.tcz
 dbus-glib.tcz
-bzip2-lib.tcz
 libasound.tcz
 nss.tcz
-libevent.tcz
-libcups.tcz
-libgcrypt.tcz
 udev-lib.tcz
 shared-mime-info.tcz
 hicolor-icon-theme.tcz
