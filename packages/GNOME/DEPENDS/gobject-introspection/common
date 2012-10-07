@@ -1,6 +1,6 @@
 PACKAGE="gobject-introspection"
-VERSION="1.31.22"
-SOURCE="http://ftp.gnome.org/pub/GNOME/sources/gobject-introspection/1.31/gobject-introspection-$VERSION.tar.xz"
+VERSION="1.32.1"
+SOURCE="http://ftp.gnome.org/pub/GNOME/sources/gobject-introspection/1.32/gobject-introspection-$VERSION.tar.xz"
 BUILD_DEPENDS="python python-dev libffi libffi-dev glib2 glib2-dev cairo cairo-dev Xorg-7.6-lib Xorg-7.6-dev"
 
 DESCRIPTION="A project for providing machine readable introspection data of the API of C libraries."
@@ -9,10 +9,5 @@ SITE="http://live.gnome.org/GObjectIntrospection"
 COPYING="GPL/LGPL"
 MAINTAINERS="Arslan S., jls_legalize (jlslegalize@gmail.com)"
 COMMENTS="---"
-CHANGELOG="2010/03/14 Original 0.6.7
-		2010/05/05 Updated to 0.6.10
-		2010/07/23 Updated to 0.6.14
-		2010/11/14 Updated to 0.9.12
-		2011/05/08 Updated to 0.10.8
-		2011/10/26 Updated to 1.30.0"
-CURRENT="Updated to $VERSION (jls_legalize)"
+CHANGELOG="---"
+CURRENT="Updated to $VERSION"

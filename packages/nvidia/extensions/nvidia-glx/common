@@ -3,7 +3,7 @@ COMMENTS="To install nvidia glx driver:
 		-----------------------------------------------------------------------------
 		1) Load nvidia-glx extension
 			$ tce-load -wi nvidia-glx
-		2) Click on Exit button, select `Exit to Prompt` and then press Ok button
+		2) Click on Exit button, select \"Exit to Prompt\" and then press Ok button
 		3) Create xorg.conf
 			$ sudo Xorg -configure
 			$ sudo mv xorg.conf.new /etc/X11/xorg.conf
@@ -27,6 +27,4 @@ COMMENTS="To install nvidia glx driver:
 
 		-----------------------------------------------------------------------------
 
-		This extension requires Xorg.
-		This extension is not compatible with Xorg-7.6 so Xorg-7.5 is recommended.
-		"
+		This extension requires Xorg."
