@@ -2,6 +2,9 @@
 # tc-ext-tools build functions: configure, compile, install, rules
 #
 
+# gtk3 requires libx11 from libx11-xcb
+export LDFLAGS="-Wl,-O1,-enable-new-dtags,-rpath,/usr/local/lib"
+
 ### Configure
 build_configure() {
 
