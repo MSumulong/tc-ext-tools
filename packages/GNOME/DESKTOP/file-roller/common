@@ -1,18 +1,13 @@
 PACKAGE="file-roller"
-VERSION="2.32.1"
-SOURCE="http://ftp.se.debian.org/pub/gnome/sources/file-roller/${VERSION%.*}/file-roller-${VERSION}.tar.bz2"
+VERSION="3.6.0"
+SOURCE="http://ftp.se.debian.org/pub/gnome/sources/file-roller/${VERSION%.*}/file-roller-${VERSION}.tar.xz"
 BUILD_DEPENDS="gnome-doc-utils
 rarian
-gtk2
-gtk2-dev
-libnautilus-extension
-libnautilus-extension-dev
-GConf
-GConf-dev
-dbus
-dbus-dev
-dbus-glib
-dbus-glib-dev"
+gtk3
+gtk3-dev
+dconf
+dconf-dev
+itstool"
 
 DESCRIPTION="An archive manager for GNOME."
 AUTHOR="Paolo Bacchilega"
@@ -20,8 +15,5 @@ SITE="http://www.gnome.org"
 COPYING="GPL-2"
 MAINTAINERS="Arslan S."
 COMMENTS="---"
-CHANGELOG="2010/01/23 Original 2.29.3
-		2010/02/07 Updated init script
-		2010/02/20 Added nautilus plugin
-		2010/08/02 Updated to 2.30.2"
+CHANGELOG="---"
 CURRENT="Updated to $VERSION"

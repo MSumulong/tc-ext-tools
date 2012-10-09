@@ -1,5 +1,3 @@
 usr/local/share/locale
-usr/local/share/gnome/help
-usr/local/share/omf
-x-usr/local/share/gnome/help/*/C
-x-usr/local/share/omf/*/*-C.omf
+usr/local/share/help
+x-usr/local/share/help/C
