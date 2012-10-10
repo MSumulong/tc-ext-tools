@@ -1,5 +1,5 @@
 PACKAGE="dropbox"
-VERSION="1.4.3"
+VERSION="1.4.17"
 SOURCE="https://dl-web.dropbox.com/u/17/dropbox-lnx.x86-${VERSION}.tar.gz"
 SOURCE_TOPDIR=".dropbox-dist"
 BUILD_DEPENDS=""
@@ -10,12 +10,9 @@ SITE="http://www.dropbox.com"
 COPYING="Approved by legal@dropbox.com"
 MAINTAINERS="Arslan S."
 COMMENTS="Works best if you have a panel where you can right click
-		on the application icon (e.g. works fine with LXDE).
+		on the application icon (e.g. LXDE, XFCE4, GNOME, KDE4).
 		
-		First time started a GUI shows up that assists you.
+		A GUI shows up that assists you when you start dropbox for the first time.
 		Subsequent activations enters daemon mode silently."
-CHANGELOG="2010/02/01 Initial Version 0.7.97 by helander
-		2010/08/04 Updated to 0.7.110 & added a wrapper and freedesktop autostart entry
-		2011/06/02 Updated to 1.1.35
-		2011/11/29 Updated to 1.2.48"
+CHANGELOG="---"
 CURRENT="Updated to $VERSION"
