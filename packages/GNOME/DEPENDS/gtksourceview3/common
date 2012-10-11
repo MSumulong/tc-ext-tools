@@ -1,0 +1,13 @@
+PACKAGE="gtksourceview3"
+VERSION="3.6.0"
+SOURCE="http://ftp.gnome.org/pub/GNOME/sources/gtksourceview/${VERSION%.*}/gtksourceview-${VERSION}.tar.xz"
+BUILD_DEPENDS="glib2 glib2-dev libxml2 libxml2-dev gtk3 gtk3-dev"
+
+DESCRIPTION="A text widget that extends gtk+ widget GtkTextView."
+AUTHOR="Paolo Maggi, Paolo Borelli, Yevgen Muntyan"
+SITE="http://projects.gnome.org/gtksourceview/"
+COPYING="GPL"
+MAINTAINERS="Arslan S."
+COMMENTS="---"
+CHANGELOG="---"
+CURRENT="Updated to $VERSION"
