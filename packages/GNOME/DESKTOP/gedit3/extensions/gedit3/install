@@ -1,0 +1,10 @@
+usr/local/bin
+usr/local/etc
+usr/local/lib/gedit-3
+x-usr/local/lib/gedit-3/*/*.la
+usr/local/libexec
+usr/local/share/applications
+usr/local/share/gedit-3
+usr/local/share/pixmaps
+usr/local/share/man
+usr/local/share/help/gedit/C

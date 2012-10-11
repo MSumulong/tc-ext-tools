@@ -1,0 +1,35 @@
+PACKAGE="gedit"
+VERSION="3.6.0"
+SOURCE="http://ftp.gnome.org/pub/GNOME/sources/gedit/${VERSION%.*}/gedit-${VERSION}.tar.xz"
+BUILD_DEPENDS="gnome-doc-utils
+rarian
+enchant
+enchant-dev
+iso-codes
+libattr
+attr-dev
+libxml2
+libxml2-dev
+Xorg-7.6-lib
+Xorg-7.6-dev
+glib2
+glib2-dev
+gtk3
+gtk3-dev
+gtksourceview3
+gtksourceview3-dev
+dconf
+dconf-dev
+python
+python-dev
+pygobject-2.7
+pygobject-2.7-dev"
+
+DESCRIPTION="gedit is a text editor for the GNOME desktop."
+AUTHOR="Paolo Maggi, Paolo Borelli, Steve Frecinaux, Jesse van den Kieboom"
+SITE="http://projects.gnome.org/gedit/"
+COPYING="GPL"
+MAINTAINERS="Arslan S."
+COMMENTS="---"
+CHANGELOG="---"
+CURRENT="Updated to $VERSION"

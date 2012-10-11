@@ -1,0 +1,6 @@
+#!/bin/sh
+
+[ -x "$(which gtk-update-icon-cache-3.0)" ] && gtk-update-icon-cache-3.0 -q -f -t /usr/local/share/icons/hicolor
+[ -x "$(which glib-compile-schemas)" ] && glib-compile-schemas /usr/local/share/glib-2.0/schemas > /dev/null 2>&1
+[ -x "$(which update-desktop-database)" ] && update-desktop-database -q
+
