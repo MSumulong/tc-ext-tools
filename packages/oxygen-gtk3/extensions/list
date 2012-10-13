@@ -1,0 +1,10 @@
+usr/local/bin/oxygen-gtk3-demo
+usr/local/lib/gtk-3.0/3.0.0/theming-engines/liboxygen-gtk.so
+usr/local/share/themes/oxygen-gtk/gtk-3.0/argb-apps.conf
+usr/local/share/themes/oxygen-gtk/gtk-3.0/gtk.css
+usr/local/share/themes/oxygen-gtk/gtk-3.0/icons4
+usr/local/share/themes/oxygen-gtk/gtk-3.0/kdeglobals
+usr/local/share/themes/oxygen-gtk/gtk-3.0/oxygenrc
+usr/local/share/themes/oxygen-gtk/gtk-3.0/special-icons/standardbutton-closetab-16.png
+usr/local/share/themes/oxygen-gtk/gtk-3.0/special-icons/standardbutton-closetab-down-16.png
+usr/local/share/themes/oxygen-gtk/gtk-3.0/special-icons/standardbutton-closetab-hover-16.png

@@ -1,5 +1,5 @@
 PACKAGE="gtk3-engine-murrine"
-VERSION="git"
+VERSION="git~${_DATE}"
 SOURCE="git::git://git.gnome.org/murrine.git"
 GIT_FLAGS="-b gtk+3"
 BUILD_DEPENDS="gtk3 gtk3-dev"

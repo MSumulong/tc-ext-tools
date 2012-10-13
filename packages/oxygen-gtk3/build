@@ -1,0 +1,70 @@
+
+############################################################################
+#                                                                          #
+#  tc-ext-tools build functions: configure, compile, install, rules, etc.  #
+#                                                                          #
+############################################################################
+
+############################################################################ 
+#                            Configure                                     #
+############################################################################
+
+# gtk3 requires libx11 from libx11-xcb
+export LDFLAGS="-Wl,-O1,-enable-new-dtags,-rpath,/usr/local/lib"
+
+build_configure() {
+
+   mkdir build
+   cd build
+   cmake -DCMAKE_INSTALL_PREFIX=/usr/local -DCMAKE_BUILD_TYPE=Release \
+        -DCMAKE_SKIP_RPATH=ON .. || return 1
+
+}
+
+############################################################################ 
+#                              Compile                                     #
+############################################################################
+
+build_compile() {
+
+   cd build
+   make VERBOSE=1 || return 1
+
+}
+
+############################################################################ 
+#                              Install                                     #
+############################################################################
+
+build_install() {
+
+   cd build
+   make VERBOSE=1 DESTDIR="$INSTALL_ROOT" install || return 1
+
+}
+
+############################################################################ 
+#                                Rules                                     #
+############################################################################
+
+build_rules() {
+
+   tet_load
+   tet_download
+   tet_convert
+   tet_unpack
+   tet_patch
+   tet_configure
+   tet_compile
+   tet_install
+   tet_split
+   tet_strip
+   tet_create
+   tet_generate
+   tet_check
+   tet_test
+   tet_package
+   tet_encrypt
+
+}
+
