@@ -34,17 +34,6 @@ else
      exit 1
 fi
 
-this_checkout() {
-
-   echo "Checking out the source from $SOURCE"
-   if [ -n "$VCS_FLAGS" ]; then
-        $VCS_CMD $VCS_FLAGS || return 1
-   else
-        $VCS_CMD || return 1
-   fi
-
-}
-
 this_revise() {
 
    echo "Revising with respect to new version $VERSION_NEW"
@@ -86,16 +75,22 @@ this_main() {
         cd "$PACKAGE_SRC_TEMP"
 
         if [ "$PACKAGE_SOURCE_URL_TYPE" = "svn" ]; then
-             VCS_CMD="svn --non-interactive --trust-server-cert co $SOURCE $PACKAGE_SOURCE_TOPDIR"
-             this_checkout
+             if [ -n "$SVN_FLAGS" ]; then
+                  SVN_FLAGS="--non-interactive --trust-server-cert co $SVN_FLAGS"
+             else
+                  SVN_FLAGS="--non-interactive --trust-server-cert co"
+             fi
+
+             echo "Checking out svn repository $SOURCE"
+             svn $SVN_FLAGS "$SOURCE" "$PACKAGE_SOURCE_TOPDIR" || return 1
 
              echo -e "Getting svn repository revision number ... \c"
              if [ -z "$SKIP_REVISION" ]; then
-                  VCS_REVISION=$(grep "Checked out revision" "$PACKAGE_MESSAGE_LOG" | cut -f4 -d" " | sed 's/\.//')
+                  SVN_REVISION=$(grep "Checked out revision" "$PACKAGE_MESSAGE_LOG" | cut -f4 -d" " | sed 's/\.//')
 
-                  if [ -n "$VCS_REVISION" ]; then
-                       echo "$VCS_REVISION"
-                       VERSION_NEW="${VCS}~r${VCS_REVISION}"
+                  if [ -n "$SVN_REVISION" ]; then
+                       echo "$SVN_REVISION"
+                       VERSION_NEW="svn~r${SVN_REVISION}"
                        this_revise || return 1
                   else
                        echo "failed!"
@@ -104,18 +99,24 @@ this_main() {
                   echo "skipping"
              fi
         elif [ "$PACKAGE_SOURCE_URL_TYPE" = "hg" ]; then
-             VCS_CMD="hg clone $SOURCE $PACKAGE_SOURCE_TOPDIR"
-             this_checkout || return 1
+             if [ -n "$HG_FLAGS" ]; then
+                  HG_FLAGS="clone $HG_FLAGS"
+             else
+                  HG_FLAGS="clone"
+             fi
+
+             echo "Checking out mercurial/hg repository $SOURCE"
+             hg $HG_FLAGS "$SOURCE" "$PACKAGE_SOURCE_TOPDIR" || return 1
 
              echo -e "Getting mercurial repository revision number ... \c"
              if [ -z "$SKIP_REVISION" ]; then
                   cd "$PACKAGE_SOURCE_TOPDIR"
-                  VCS_REVISION=$(hg identify -i)
+                  HG_REVISION=$(hg identify -i)
                   cd - >/dev/null
 
-                  if [ -n "$VCS_REVISION" ]; then
-                       echo "$VCS_REVISION"
-                       VERSION_NEW="${VCS}~${VCS_REVISION}"
+                  if [ -n "$HG_REVISION" ]; then
+                       echo "$HG_REVISION"
+                       VERSION_NEW="hg~${HG_REVISION}"
                        this_revise || return 1
                   else
                        echo "failed!"
@@ -124,18 +125,24 @@ this_main() {
                   echo "skipping"
              fi
         elif [ "$PACKAGE_SOURCE_URL_TYPE" = "bzr" ]; then
-             VCS_CMD="bzr branch $SOURCE $PACKAGE_SOURCE_TOPDIR"
-             this_checkout || return 1
+             if [ -n "$BZR_FLAGS" ]; then
+                  BZR_FLAGS="branch $BZR_FLAGS"
+             else
+                  BZR_FLAGS="branch"
+             fi
+
+             echo "Checking out bzr repository $SOURCE"
+             bzr $BZR_FLAGS "$SOURCE" "$PACKAGE_SOURCE_TOPDIR" || return 1
 
              echo -e "Getting bzr repository revision number ... \c"
              if [ -z "$SKIP_REVISION" ]; then
                   cd "$PACKAGE_SOURCE_TOPDIR"
-                  VCS_REVISION=$(bzr log -r-1 | grep revno | cut -f2 -d: | xargs echo)
+                  BZR_REVISION=$(bzr log -r-1 | grep revno | cut -f2 -d: | xargs echo)
                   cd - >/dev/null
 
-                  if [ -n "$VCS_REVISION" ]; then
-                       echo "$VCS_REVISION"
-                       VERSION_NEW="${VCS}~r${VCS_REVISION}"
+                  if [ -n "$BZR_REVISION" ]; then
+                       echo "$BZR_REVISION"
+                       VERSION_NEW="$bzr~r${BZR_REVISION}"
                        this_revise || return 1
                   else
                        echo "failed!"
@@ -144,8 +151,14 @@ this_main() {
                   echo "skipping"
              fi
         elif [ "$PACKAGE_SOURCE_URL_TYPE" = "git" ]; then
-             echo "Cloning the git repository $SOURCE"
-             git clone "$SOURCE" "$PACKAGE_SOURCE_TOPDIR" || return 1
+             if [ -n "$GIT_FLAGS" ]; then
+                  GIT_FLAGS="clone $GIT_FLAGS"
+             else
+                  GIT_FLAGS="clone"
+             fi
+
+             echo "Checking out git repository $SOURCE"
+             git $GIT_FLAGS "$SOURCE" "$PACKAGE_SOURCE_TOPDIR" || return 1
         fi
 
         echo "Creating a tarball from the source"
