@@ -1,0 +1,35 @@
+PACKAGE="gtk-themes"
+VERSION="0.1"
+SOURCES="http://gnome-look.org/CONTENT/content-files/140562-Zukitwo.zip
+        http://gnome-look.org/CONTENT/content-files/154296-FlatStudio.tar.gz
+        http://gnome-look.org/CONTENT/content-files/148398-MediterraneanNight.tar.gz
+        http://fc00.deviantart.net/fs70/f/2012/167/6/b/orion___gtk3_theme_by_satya164-d4nk24s.zip
+        http://gnome-look.org/CONTENT/content-files/147061-Adwaita-Cupertino.tar.gz"
+BUILD_DEPENDS="zip-unzip tar"
+
+DESCRIPTION="GTK+ themes collection from gnome-look.org."
+AUTHOR="---"
+SITE="http://gnome-look.org/"
+COPYING="GPL"
+MAINTAINERS="Arslan S."
+TAGS="gtk+ themes gtk2 gtk3"
+COMMENTS="This collection contains the following themes:
+			Zukitwo
+			Adwaita Cupertino
+			Orion
+			Mediterranean
+			FlatStudio
+
+		Choose a theme from /usr/local/share/themes
+		and edit ~/.gtkrc-2.0 and ~/.config/gtk-3.0/settings.ini such as:
+			gtk-theme-name = \"Zukitwo\" (Default)
+			gtk-theme-name = \"Orion\"
+			gtk-theme-name = \"Adwaita Cupertino L\"
+			gtk-theme-name = \"MediterraneanLight\"
+			gtk-theme-name = \"FlatStudio\"
+
+		Important: Remove quotation marks \"\" from theme name in gtk-3.0/settings.ini
+
+		gnome-icon-theme is recommended."
+CHANGELOG="---"
+CURRENT="First Version"

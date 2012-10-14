@@ -1,0 +1,76 @@
+
+############################################################################################
+#                                                                                          #
+#    package build functions: configure, compile, install, rules, and custom functions     #
+#                                                                                          #
+############################################################################################
+
+
+build_download() {
+
+   cd $_P_SRC
+   if [ ! -e themes/download.stamp ]
+   then
+     rm -rf themes
+     mkdir themes
+
+     echo "Downloading themes ..."
+     cd themes
+     for SOURCE in $SOURCES
+     do
+         wget $SOURCE
+     done
+     touch download.stamp
+   else
+     echo "themes are already downloaded."
+   fi
+
+}
+
+build_unpack() {
+
+   cd $P_SRC_TMP
+   for SOURCE in $SOURCES
+   do
+       FILE=$(basename $SOURCE)
+       TYPE=${FILE%.zip}
+       if [ "$TYPE" == "$FILE" ]; then
+            tar xf $_P_SRC/themes/$FILE
+       else
+            unzip -o $_P_SRC/themes/$FILE
+       fi
+   done
+
+}
+
+## install
+build_install() {
+
+   cd $P_SRC_TMP
+
+   # remove unnecessary files
+   rm -f ./*
+   rm -rf debian
+
+   mkdir -p $I_ROOT/usr/local/share/themes
+   cp -rf ./* $I_ROOT/usr/local/share/themes
+
+}
+
+## rules
+build_rules() {
+
+   tet_load
+   tet_custom download
+   tet_custom unpack
+   tet_install
+   tet_split
+   tet_create
+   tet_generate
+   tet_check
+   tet_test
+   tet_package
+   tet_encrypt
+
+}
+

@@ -1,0 +1,50 @@
+#!/bin/sh
+
+tcuser=`cat /etc/sysconfig/tcuser`
+
+# default theme
+default="Zukitwo"
+
+# gtk2
+file="/home/${tcuser}/.gtkrc-2.0"
+
+if [ ! -e "$file" ]; then
+
+cat > $file << EOF
+gtk-theme-name = "$default"
+EOF
+
+elif ! grep -q gtk-theme-name $file && ! grep -q $default $file ; then
+
+cat >> $file << EOF
+gtk-theme-name = "$default"
+EOF
+
+fi
+
+chown ${tcuser}.staff $file
+
+# gtk3
+dir="/home/${tcuser}/.config/gtk-3.0"
+file="$dir/settings.ini"
+
+if [ ! -d "$dir" ]; then
+    su $tcuser -c "mkdir -p $dir"
+fi
+
+if [ ! -e "$file" ]; then
+
+cat > $file << EOF
+[Settings]
+gtk-theme-name = $default
+EOF
+
+elif ! grep -q gtk-theme-name $file && ! grep -q $default $file ; then
+
+cat >> $file << EOF
+gtk-theme-name = $default
+EOF
+
+fi
+
+chown ${tcuser}.staff $file
