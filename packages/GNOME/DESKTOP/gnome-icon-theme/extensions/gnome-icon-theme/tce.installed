@@ -18,3 +18,5 @@ EOF
 fi
 
 chown ${tcuser}.staff $file
+
+gtk-update-icon-cache -q -f -t /usr/local/share/icons/gnome

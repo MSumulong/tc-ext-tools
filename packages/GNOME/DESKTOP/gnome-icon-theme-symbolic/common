@@ -1,0 +1,13 @@
+PACKAGE="gnome-icon-theme-symbolic"
+VERSION="3.6.0"
+SOURCE="http://ftp.gnome.org/pub/GNOME/sources/gnome-icon-theme-symbolic/${VERSION%.*}/gnome-icon-theme-symbolic-${VERSION}.tar.xz"
+BUILD_DEPENDS="icon-naming-utils hicolor-icon-theme"
+
+DESCRIPTION="Symbolic icons for GNOME."
+AUTHOR="---"
+SITE="http://ftp.gnome.org/pub/gnome/sources/gnome-icon-theme-symbolic/"
+COPYING="GPL"
+MAINTAINERS="Arslan S."
+COMMENTS="---"
+CHANGELOG="---"
+CURRENT="First Version $VERSION"

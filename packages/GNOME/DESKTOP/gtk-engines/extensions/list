@@ -27,6 +27,7 @@ usr/local/share/locale/af/LC_MESSAGES/gtk-engines.mo
 usr/local/share/locale/ar/LC_MESSAGES/gtk-engines.mo
 usr/local/share/locale/as/LC_MESSAGES/gtk-engines.mo
 usr/local/share/locale/ast/LC_MESSAGES/gtk-engines.mo
+usr/local/share/locale/be/LC_MESSAGES/gtk-engines.mo
 usr/local/share/locale/be@latin/LC_MESSAGES/gtk-engines.mo
 usr/local/share/locale/bg/LC_MESSAGES/gtk-engines.mo
 usr/local/share/locale/bn/LC_MESSAGES/gtk-engines.mo
@@ -75,6 +76,7 @@ usr/local/share/locale/pt_BR/LC_MESSAGES/gtk-engines.mo
 usr/local/share/locale/ro/LC_MESSAGES/gtk-engines.mo
 usr/local/share/locale/ru/LC_MESSAGES/gtk-engines.mo
 usr/local/share/locale/si/LC_MESSAGES/gtk-engines.mo
+usr/local/share/locale/sk/LC_MESSAGES/gtk-engines.mo
 usr/local/share/locale/sl/LC_MESSAGES/gtk-engines.mo
 usr/local/share/locale/sq/LC_MESSAGES/gtk-engines.mo
 usr/local/share/locale/sr/LC_MESSAGES/gtk-engines.mo

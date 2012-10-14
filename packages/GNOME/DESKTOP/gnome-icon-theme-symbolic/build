@@ -5,7 +5,7 @@
 build_configure() {
 
    ./configure --prefix=/usr/local \
-        --enable-icon-mapping --disable-nls || return 1
+        --enable-icon-mapping || return 1
 
 }
 
@@ -18,10 +18,6 @@ build_compile() {
 build_install() {
 
    make DESTDIR="$INSTALL_ROOT" install || return 1
-
-   rm -f  "${I_ROOT}/usr/local/share/icons/gnome/icon-theme.cache"
-
-   install -D -m 644 "$P_SRC"/settings.ini "$I_ROOT"/usr/local/etc/gtk-3.0/settings.ini
 
 }
 
