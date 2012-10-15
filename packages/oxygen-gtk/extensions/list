@@ -1,6 +1,7 @@
+usr/local/bin/oxygen-gtk-deco
+usr/local/bin/oxygen-gtk-demo
 usr/local/lib/gtk-2.0/2.10.0/engines/liboxygen-gtk.so
 usr/local/share/themes/oxygen-gtk/gtk-2.0/argb-apps.conf
-usr/local/share/themes/oxygen-gtk/gtk-2.0/argb-blacklist.conf
 usr/local/share/themes/oxygen-gtk/gtk-2.0/gtkrc
 usr/local/share/themes/oxygen-gtk/gtk-2.0/icons4
 usr/local/share/themes/oxygen-gtk/gtk-2.0/kdeglobals

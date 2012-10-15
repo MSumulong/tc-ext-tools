@@ -1,0 +1,4 @@
+etc/fonts/conf.avail/31-cantarell.conf
+etc/fonts/conf.d/31-cantarell.conf
+usr/local/share/fonts/cantarell/Cantarell-Bold.otf
+usr/local/share/fonts/cantarell/Cantarell-Regular.otf
