@@ -2,8 +2,13 @@
 # tc-ext-tools build functions: configure, compile, install, rules
 #
 
+# link against libx11 from libx11-xcb
+export LDFLAGS="-Wl,-O1,-rpath,/usr/local/lib"
+
 ### Configure
 build_configure() {
+
+   sudo install -m 644 "$P_SRC"/ncursesw.pc /usr/local/lib/pkgconfig/ncursesw.pc
 
    sed -e "s|/usr/include/groupsock|/usr/local/include/groupsock|" \
        -e "s|/usr/include/liveMedia|/usr/local/include/liveMedia|" \
