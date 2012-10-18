@@ -8,8 +8,6 @@ export LDFLAGS="-Wl,-O1,-rpath,/usr/local/lib"
 ### Configure
 build_configure() {
 
-   sudo install -m 644 "$P_SRC"/ncursesw.pc /usr/local/lib/pkgconfig/ncursesw.pc
-
    sed -e "s|/usr/include/groupsock|/usr/local/include/groupsock|" \
        -e "s|/usr/include/liveMedia|/usr/local/include/liveMedia|" \
        -e "s|/usr/include/BasicUsageEnvironment|/usr/local/include/BasicUsageEnvironment|" \
@@ -17,22 +15,41 @@ build_configure() {
        -i configure || return 1
 
    ./configure --prefix=/usr/local --disable-rpath --enable-glx \
-       --enable-dbus --enable-dbus-control --enable-fribidi --enable-nls --enable-x264 \
-       --enable-ncurses --enable-libtar --enable-skins2 --enable-mkv --enable-pulse \
+       --disable-dbus --disable-dbus-control --enable-fribidi --enable-nls --enable-x264 \
+       --disable-ncurses --enable-libtar --enable-skins2 --enable-mkv --enable-pulse \
        --enable-xvideo --enable-theora --disable-caca --enable-xcb --enable-alsa \
        --enable-avformat --enable-avcodec --enable-postproc --enable-swscale --enable-oss \
        --enable-a52 --enable-dca --enable-faad --enable-libmpeg2 --enable-live555 \
-       --enable-mad --enable-libcddb --disable-vcdx --enable-vcd --enable-zvbi \
-       --enable-lua --disable-telx --enable-lirc --enable-pvr --enable-goom --enable-taglib \
-       --enable-dvbpsi --enable-libxml2 --enable-ogg --enable-vorbis --enable-speex \
+       --enable-mad --disable-libcddb --disable-vcdx --enable-vcd --enable-zvbi \
+       --disable-lua --disable-telx --disable-lirc --disable-pvr --enable-goom --enable-taglib \
+       --enable-dvbpsi --enable-libxml2 --enable-ogg --enable-vorbis --disable-speex \
        --enable-dvdread --enable-dvdnav --enable-shout --enable-notify --enable-screen \
-       --enable-mpc --enable-gme --enable-twolame --enable-flac --enable-schroedinger \
-       --enable-mtp --enable-png --enable-sdl --enable-realrtsp \
+       --enable-mpc --disable-gme --enable-twolame --enable-flac --enable-schroedinger \
+       --disable-mtp --enable-png --disable-sdl --disable-sdl-image --enable-realrtsp \
        --enable-visual --enable-gnutls --disable-projectm --enable-svg \
-       --disable-libva || return 1
+       --disable-libva --disable-udev --enable-v4l2 --disable-sse --disable-mmx \
+       --enable-libproxy --disable-opencv --disable-dc1394 --disable-dv \
+       --disable-smb || return 1
 
 }
 ##
+
+# remove symlinks to link static
+build_static() {
+
+   cd /usr/local/lib
+   sudo rm -f liba52.so* liba52.la
+   sudo rm -f libdca.so* libdca.la
+   sudo rm -f libfaad.so* libfaad.la
+   sudo rm -f libmad.so* libmad.la
+   sudo rm -f libmpcdec.so* libmpcdec.la
+   sudo rm -f libmpeg2*.so* libmpeg2*.la
+   sudo rm -f libebml.so* libebmla.la
+   sudo rm -f libmatroska.so* libmatroska.la
+   sudo rm -f libshout.so* libshout.la
+   sudo rm -f libtwolame.so* libtwolame.la
+
+}
 
 ### Compile
 build_compile() {
@@ -63,6 +80,7 @@ build_rules() {
    tet_unpack
    tet_patch
    tet_configure
+   tet_custom static
    tet_compile
    tet_install
    tet_split
