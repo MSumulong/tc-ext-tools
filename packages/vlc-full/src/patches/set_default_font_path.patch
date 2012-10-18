@@ -1,0 +1,14 @@
+diff -Naur a/modules/text_renderer/freetype.c b/modules/text_renderer/freetype.c
+--- a/modules/text_renderer/freetype.c	2012-03-02 01:04:07.000000000 +0000
++++ b/modules/text_renderer/freetype.c	2012-05-30 08:51:46.313412632 +0000
+@@ -58,8 +58,8 @@
+ # define DEFAULT_FONT_FILE "/usr/share/fonts/nokia/nosnb.ttf"
+ # define DEFAULT_FAMILY "Nokia Sans Bold"
+ #else
+-# define DEFAULT_FONT_FILE "/usr/share/fonts/truetype/freefont/FreeSerifBold.ttf"
+-# define DEFAULT_FAMILY "Serif Bold"
++# define DEFAULT_FONT_FILE "/usr/local/share/vlc/skins2/fonts/FreeSansBold.ttf"
++# define DEFAULT_FAMILY "Sans Bold"
+ #endif
+ 
+ /* Freetype */

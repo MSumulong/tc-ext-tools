@@ -1,0 +1,78 @@
+#
+# tc-ext-tools build functions: configure, compile, install, rules
+#
+
+# link against libx11 from libx11-xcb
+export LDFLAGS="-Wl,-O1,-rpath,/usr/local/lib"
+
+### Configure
+build_configure() {
+
+   sudo install -m 644 "$P_SRC"/ncursesw.pc /usr/local/lib/pkgconfig/ncursesw.pc
+
+   sed -e "s|/usr/include/groupsock|/usr/local/include/groupsock|" \
+       -e "s|/usr/include/liveMedia|/usr/local/include/liveMedia|" \
+       -e "s|/usr/include/BasicUsageEnvironment|/usr/local/include/BasicUsageEnvironment|" \
+       -e "s|/usr/include/UsageEnvironment|/usr/local/include/UsageEnvironment|" \
+       -i configure || return 1
+
+   ./configure --prefix=/usr/local --disable-rpath --enable-glx \
+       --enable-dbus --enable-dbus-control --enable-fribidi --enable-nls --enable-x264 \
+       --enable-ncurses --enable-libtar --enable-skins2 --enable-mkv --enable-pulse \
+       --enable-xvideo --enable-theora --disable-caca --enable-xcb --enable-alsa \
+       --enable-avformat --enable-avcodec --enable-postproc --enable-swscale --enable-oss \
+       --enable-a52 --enable-dca --enable-faad --enable-libmpeg2 --enable-live555 \
+       --enable-mad --enable-libcddb --disable-vcdx --enable-vcd --enable-zvbi \
+       --enable-lua --disable-telx --enable-lirc --enable-pvr --enable-goom --enable-taglib \
+       --enable-dvbpsi --enable-libxml2 --enable-ogg --enable-vorbis --enable-speex \
+       --enable-dvdread --enable-dvdnav --enable-shout --enable-notify --enable-screen \
+       --enable-mpc --enable-gme --enable-twolame --enable-flac --enable-schroedinger \
+       --enable-mtp --enable-png --enable-sdl --enable-realrtsp \
+       --enable-visual --enable-gnutls --disable-projectm --enable-svg \
+       --disable-libva || return 1
+
+}
+##
+
+### Compile
+build_compile() {
+
+   make || return 1
+
+}
+##
+
+### Install
+build_install() {
+
+   make DESTDIR="$INSTALL_ROOT" install || return 1
+
+   for res in 16 32 48 128; do
+     install -D -m644 "share/icons/${res}x${res}/vlc.png" "$INSTALL_ROOT/usr/local/share/icons/hicolor/${res}x${res}/apps/vlc.png" || return 1
+   done
+
+}
+##
+
+### Rules
+build_rules() {
+
+   tet_load
+   tet_download
+   tet_convert
+   tet_unpack
+   tet_patch
+   tet_configure
+   tet_compile
+   tet_install
+   tet_split
+   tet_strip
+   tet_create
+   tet_generate
+   tet_check
+   tet_test
+   tet_package
+   tet_encrypt
+
+}
+##
