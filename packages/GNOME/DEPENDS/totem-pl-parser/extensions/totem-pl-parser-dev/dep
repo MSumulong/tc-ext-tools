@@ -2,6 +2,5 @@ totem-pl-parser.tcz
 glib2-dev.tcz
 libxml2-dev.tcz
 gmime-dev.tcz
-GConf-dev.tcz
 libsoup-gnome-dev.tcz
-
+libarchive-dev.tcz
