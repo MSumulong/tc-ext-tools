@@ -1,5 +1,5 @@
 PACKAGE="qmmp"
-VERSION="0.5.5"
+VERSION="0.6.3"
 SOURCE="http://qmmp.ylsoftware.com/files/qmmp-${VERSION}.tar.bz2"
 BUILD_DEPENDS="cmake
 libmpcdec
@@ -49,8 +49,8 @@ libmms
 libmms-dev
 libmodplug
 libmodplug-dev
-ffmpeg-0.10
-ffmpeg-0.10-dev"
+ffmpeg-0.11
+ffmpeg-0.11-dev"
 
 DESCRIPTION="Qt-based Multimedia Player."
 AUTHOR="Ilya Kotov, Vladimir Kuznetsov, Yuriy Zhuravlev, Andrey Adreev"
@@ -59,12 +59,5 @@ COPYING="GPL-2"
 MAINTAINERS="Arslan S."
 TAGS="qt multimedia player"
 COMMENTS="---"
-CHANGELOG="2010/02/07 Original 0.3.2
-		2010/04/06 Updated to 0.3.4-svn-r1660
-		2010/05/31 Updated to 0.4.0
-		2010/08/26 Updated to 0.4.1
-		2010/09/05 Updated to 0.4.2
-		2010/11/06 Updated to 0.4.3
-		2011/04/04 Updated to 0.5.0
-		2011/08/13 Updated to 0.5.1"
+CHANGELOG="--"
 CURRENT="Updated to $VERSION"

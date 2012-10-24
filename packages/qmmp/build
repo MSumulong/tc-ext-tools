@@ -7,7 +7,8 @@ build_configure() {
 
   [ -d build ] || mkdir build
   cd build
-  cmake -DCMAKE_INSTALL_PREFIX=/usr/local -DCMAKE_BUILD_TYPE=Release .. || return 1
+  cmake -DCMAKE_INSTALL_PREFIX=/usr/local -DCMAKE_BUILD_TYPE=Release \
+     -DUSE_OSS=1 .. || return 1
 
 }
 ##
