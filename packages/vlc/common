@@ -80,6 +80,8 @@ libass
 libass-dev
 faac
 faac-dev
+jack
+jack-dev
 live-media
 libtar
 libx11-xcb
@@ -121,8 +123,6 @@ libshout-dev
 #libdc1394-dev
 #libavc1394
 #libavc1394-dev
-#jack
-#jack-dev
 #libcddb
 #libcddb-dev
 #libmtp

@@ -21,14 +21,5 @@ SITE="http://gstreamer.freedesktop.org"
 COPYING="LGPL"
 MAINTAINERS="Juanito, Arslan S., jls_legalize <unsenepopiu at tin dot it>"
 COMMENTS="---"
-CHANGELOG="2009/11/08 First version by Juanito
-		2010/01/08 Updated to 0.10.17 & Added gconfelements plugin (Arslan S.)
-		2010/03/16 Updated to 0.10.21 (Arslan S.)
-		2010/04/11 Added pulseaudio module by juanito
-		2010/07/19 Updated to 0.10.24 by Arslan S.
-		2010/10/22 Updated to 0.10.25 by juanito (fixes jpeg bug)
-		2010/12/08 Updated to 0.10.26 by Arslan S.
-		2011/02/08 Updated to 0.10.27 by Arslan S.
-		2011/06/12 Updated to 0.10.29 by Arslan S.
-		2011/10/29 Updated to 0.10.30 by Arslan S."
-CURRENT="Updated to $VERSION by jls_legalize"
+CHANGELOG="---"
+CURRENT="Rebuilt $VERSION by $PACKAGE_MAINTAINER"

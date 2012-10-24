@@ -8,12 +8,12 @@ usr/local/lib/libtotem-plparser-mini.a
 usr/local/lib/libtotem-plparser-mini.la
 usr/local/lib/libtotem-plparser-mini.so
 usr/local/lib/libtotem-plparser-mini.so.17
-usr/local/lib/libtotem-plparser-mini.so.17.0.1
+usr/local/lib/libtotem-plparser-mini.so.17.0.3
 usr/local/lib/libtotem-plparser.a
 usr/local/lib/libtotem-plparser.la
 usr/local/lib/libtotem-plparser.so
 usr/local/lib/libtotem-plparser.so.17
-usr/local/lib/libtotem-plparser.so.17.0.1
+usr/local/lib/libtotem-plparser.so.17.0.3
 usr/local/lib/pkgconfig/totem-plparser-mini.pc
 usr/local/lib/pkgconfig/totem-plparser.pc
 usr/local/share/gtk-doc/html/totem-pl-parser/TotemPlParser.html
@@ -31,10 +31,11 @@ usr/local/share/gtk-doc/html/totem-pl-parser/right.png
 usr/local/share/gtk-doc/html/totem-pl-parser/style.css
 usr/local/share/gtk-doc/html/totem-pl-parser/totem-pl-parser-TotemDisc.html
 usr/local/share/gtk-doc/html/totem-pl-parser/totem-pl-parser-TotemPlPlaylistIter.html
-usr/local/share/gtk-doc/html/totem-pl-parser/totem-pl-parser.devhelp
 usr/local/share/gtk-doc/html/totem-pl-parser/totem-pl-parser.devhelp2
 usr/local/share/gtk-doc/html/totem-pl-parser/up.png
+usr/local/share/locale/af/LC_MESSAGES/totem-pl-parser.mo
 usr/local/share/locale/am/LC_MESSAGES/totem-pl-parser.mo
+usr/local/share/locale/an/LC_MESSAGES/totem-pl-parser.mo
 usr/local/share/locale/ar/LC_MESSAGES/totem-pl-parser.mo
 usr/local/share/locale/as/LC_MESSAGES/totem-pl-parser.mo
 usr/local/share/locale/ast/LC_MESSAGES/totem-pl-parser.mo
@@ -75,6 +76,7 @@ usr/local/share/locale/is/LC_MESSAGES/totem-pl-parser.mo
 usr/local/share/locale/it/LC_MESSAGES/totem-pl-parser.mo
 usr/local/share/locale/ja/LC_MESSAGES/totem-pl-parser.mo
 usr/local/share/locale/ka/LC_MESSAGES/totem-pl-parser.mo
+usr/local/share/locale/km/LC_MESSAGES/totem-pl-parser.mo
 usr/local/share/locale/kn/LC_MESSAGES/totem-pl-parser.mo
 usr/local/share/locale/ko/LC_MESSAGES/totem-pl-parser.mo
 usr/local/share/locale/ku/LC_MESSAGES/totem-pl-parser.mo
@@ -115,6 +117,7 @@ usr/local/share/locale/th/LC_MESSAGES/totem-pl-parser.mo
 usr/local/share/locale/tr/LC_MESSAGES/totem-pl-parser.mo
 usr/local/share/locale/ug/LC_MESSAGES/totem-pl-parser.mo
 usr/local/share/locale/uk/LC_MESSAGES/totem-pl-parser.mo
+usr/local/share/locale/uz@cyrillic/LC_MESSAGES/totem-pl-parser.mo
 usr/local/share/locale/vi/LC_MESSAGES/totem-pl-parser.mo
 usr/local/share/locale/wa/LC_MESSAGES/totem-pl-parser.mo
 usr/local/share/locale/xh/LC_MESSAGES/totem-pl-parser.mo

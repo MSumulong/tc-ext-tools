@@ -11,6 +11,8 @@ libdvdnav.tcz
 libass.tcz
 flac.tcz
 faac.tcz
+fribidi.tcz
+libproxy.tcz
 libavformat54.tcz
 libswscale2.tcz
 libpostproc52.tcz

@@ -24,5 +24,5 @@ COMMENTS="VLC media player is a highly portable multimedia player supporting mos
 
 		Optional dependencies: Xorg, oss, alsa, pulseaudio, libbluray, goom,
 		libnotify, librsvg, goom, libdvbpsi, libmodplug, libsamplerate,
-		libschroedinger, x264, fluidsynth, libproxy, fribidi, zvbi, libcdio,
-		libcdaudio, libv4l, libdvdcss, ..."
+		libschroedinger, x264, fluidsynth, zvbi, libcdio,
+		libcdaudio, libv4l, libdvdcss, jack, ..."

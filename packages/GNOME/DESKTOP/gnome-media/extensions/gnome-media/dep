@@ -2,7 +2,7 @@ gtk2.tcz
 GConf.tcz
 libcanberra.tcz
 libpulseaudio.tcz
+libunique.tcz
 gst-plugins-good.tcz
 hicolor-icon-theme.tcz
 shared-mime-info.tcz
-

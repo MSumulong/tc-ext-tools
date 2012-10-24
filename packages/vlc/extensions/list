@@ -117,6 +117,8 @@ usr/local/lib/vlc/plugins/access/libaccess_http_plugin.la
 usr/local/lib/vlc/plugins/access/libaccess_http_plugin.so
 usr/local/lib/vlc/plugins/access/libaccess_imem_plugin.la
 usr/local/lib/vlc/plugins/access/libaccess_imem_plugin.so
+usr/local/lib/vlc/plugins/access/libaccess_jack_plugin.la
+usr/local/lib/vlc/plugins/access/libaccess_jack_plugin.so
 usr/local/lib/vlc/plugins/access/libaccess_mms_plugin.la
 usr/local/lib/vlc/plugins/access/libaccess_mms_plugin.so
 usr/local/lib/vlc/plugins/access/libaccess_oss_plugin.la
@@ -237,6 +239,8 @@ usr/local/lib/vlc/plugins/audio_output/libamem_plugin.la
 usr/local/lib/vlc/plugins/audio_output/libamem_plugin.so
 usr/local/lib/vlc/plugins/audio_output/libaout_file_plugin.la
 usr/local/lib/vlc/plugins/audio_output/libaout_file_plugin.so
+usr/local/lib/vlc/plugins/audio_output/libjack_plugin.la
+usr/local/lib/vlc/plugins/audio_output/libjack_plugin.so
 usr/local/lib/vlc/plugins/audio_output/liboss_plugin.la
 usr/local/lib/vlc/plugins/audio_output/liboss_plugin.so
 usr/local/lib/vlc/plugins/audio_output/libpulse_plugin.la
