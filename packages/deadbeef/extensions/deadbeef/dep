@@ -1,4 +1,4 @@
-gtk2.tcz
+gtk3.tcz
 libiconv.tcz
 libsamplerate.tcz
 curl.tcz
@@ -8,7 +8,6 @@ libsndfile.tcz
 dbus.tcz
 flac.tcz
 libmad.tcz
-libavformat53.tcz
 libasound.tcz
 libcdio.tcz
 libcddb.tcz
