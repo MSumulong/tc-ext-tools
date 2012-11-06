@@ -1,0 +1,18 @@
+PACKAGE="gnomad2"
+VERSION="2.9.6"
+SOURCE="http://sourceforge.net/projects/gnomad2/files/gnomad2/Gnomad%20${VERSION}/gnomad2-${VERSION}.tar.gz"
+BUILD_DEPENDS="libnjb-dev
+libid3tag-dev
+libmtp-dev
+taglib-dev
+gtk2-dev"
+
+DESCRIPTION="A GTK+ music manager for various portable MP3 audio players."
+AUTHOR="Linus Walleij"
+SITE="http://gnomad2.sourceforge.net"
+COPYING="GPLv2"
+MAINTAINERS="AmatCoder"
+TAGS="gtk2 mp3 manager PMP DAP"
+COMMENTS="Compiled without gudev support."
+CHANGELOG="---"
+CURRENT="First Version ${VERSION}"

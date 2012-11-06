@@ -1,0 +1,15 @@
+PACKAGE="libnjb"
+VERSION="2.2.7"
+SOURCE="http://sourceforge.net/projects/libnjb/files/libnjb/${VERSION}/libnjb-${VERSION}.tar.gz"
+BUILD_DEPENDS="libusb-dev
+ncurses-dev"
+
+DESCRIPTION="A C library and API for communicating with various portable MP3 audio players."
+AUTHOR="John Mechalas, Linus Walleij and others"
+SITE="http://libnjb.sourceforge.net/"
+COPYING="BSD"
+MAINTAINERS="AmatCoder"
+TAGS="API usb mp3 PMP DAP"
+COMMENTS="---"
+CHANGELOG="---"
+CURRENT="First Version ${VERSION}"

@@ -1,0 +1,3 @@
+usr/local/lib
+usr/local/include
+x-usr/local/lib/*.so*
