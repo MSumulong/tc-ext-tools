@@ -1,0 +1,22 @@
+PACKAGE="boinc"
+VERSION="7.0.28"
+SOURCE="svn::http://boinc.berkeley.edu/svn/tags/boinc_core_release_7_0_28"
+BUILD_DEPENDS="Xorg-7.6
+wxgtk-dev
+gtk2-dev
+curl-dev
+curl
+openssl-1.0.0-dev
+libssh2-dev
+sqlite3-dev
+libnotify-dev"
+
+DESCRIPTION="BOINC lets you contribute computing power on your home PC to projects doing research in many scientific areas."
+AUTHOR="David Anderson and others from U.C. Berkeley"
+SITE="http://boinc.berkeley.edu"
+COPYING="LGPL"
+MAINTAINERS="AmatCoder"
+TAGS="grid middleware scientific"
+COMMENTS="---"
+CHANGELOG="---"
+CURRENT="First Version 7.0.28"

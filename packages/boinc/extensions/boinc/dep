@@ -1,0 +1,6 @@
+curl.tcz
+libssh2.tcz
+openssl-1.0.0.tcz
+wxgtk.tcz
+sqlite3.tcz
+libnotify.tcz
