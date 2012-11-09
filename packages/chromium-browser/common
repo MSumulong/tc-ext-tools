@@ -1,5 +1,5 @@
 PACKAGE="chromium-browser"
-VERSION="22.0.1229.79"
+VERSION="23.0.1271.64"
 SOURCE="http://commondatastorage.googleapis.com/chromium-browser-official/chromium-${VERSION}.tar.bz2"
 BUILD_DEPENDS="python python-dev gtk2 gtk2-dev bzip2-lib bzip2-dev nspr nspr-dev
      nss nss-dev libasound alsa-dev Xorg-7.6-lib Xorg-7.6-dev GConf GConf-dev dbus dbus-dev

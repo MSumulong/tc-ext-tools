@@ -53,6 +53,7 @@ usr/local/chromium-browser-addons/locales/vi.pak
 usr/local/chromium-browser-addons/locales/zh-CN.pak
 usr/local/chromium-browser-addons/locales/zh-TW.pak
 usr/local/chromium-browser/chrome.pak
+usr/local/chromium-browser/chrome_100_percent.pak
 usr/local/chromium-browser/chromium-browser
 usr/local/chromium-browser/chromium-browser-sandbox
 usr/local/chromium-browser/content_resources.pak
@@ -61,7 +62,10 @@ usr/local/chromium-browser/locales
 usr/local/chromium-browser/plugins
 usr/local/chromium-browser/resources.pak
 usr/local/chromium-browser/resources/extension/demo/library.js
+usr/local/chromium-browser/resources/inspector/AuditsPanel.js
+usr/local/chromium-browser/resources/inspector/CodeMirrorTextEditor.js
 usr/local/chromium-browser/resources/inspector/DevTools.js
+usr/local/chromium-browser/resources/inspector/ElementsPanel.js
 usr/local/chromium-browser/resources/inspector/HeapSnapshotWorker.js
 usr/local/chromium-browser/resources/inspector/Images/applicationCache.png
 usr/local/chromium-browser/resources/inspector/Images/back.png
@@ -107,6 +111,7 @@ usr/local/chromium-browser/resources/inspector/Images/indexedDB.png
 usr/local/chromium-browser/resources/inspector/Images/indexedDBIndex.png
 usr/local/chromium-browser/resources/inspector/Images/indexedDBObjectStore.png
 usr/local/chromium-browser/resources/inspector/Images/localStorage.png
+usr/local/chromium-browser/resources/inspector/Images/namedFlowOverflow.png
 usr/local/chromium-browser/resources/inspector/Images/navigatorShowHideButton.png
 usr/local/chromium-browser/resources/inspector/Images/paneAddButtons.png
 usr/local/chromium-browser/resources/inspector/Images/paneBottomGrow.png
@@ -124,6 +129,9 @@ usr/local/chromium-browser/resources/inspector/Images/profileSmallIcon.png
 usr/local/chromium-browser/resources/inspector/Images/profilesSilhouette.png
 usr/local/chromium-browser/resources/inspector/Images/programCounterBorder.png
 usr/local/chromium-browser/resources/inspector/Images/radioDot.png
+usr/local/chromium-browser/resources/inspector/Images/regionEmpty.png
+usr/local/chromium-browser/resources/inspector/Images/regionFit.png
+usr/local/chromium-browser/resources/inspector/Images/regionOverset.png
 usr/local/chromium-browser/resources/inspector/Images/resourceCSSIcon.png
 usr/local/chromium-browser/resources/inspector/Images/resourceDocumentIcon.png
 usr/local/chromium-browser/resources/inspector/Images/resourceDocumentIconSmall.png
@@ -159,6 +167,7 @@ usr/local/chromium-browser/resources/inspector/Images/spinnerInactiveSelected.gi
 usr/local/chromium-browser/resources/inspector/Images/splitviewDimple.png
 usr/local/chromium-browser/resources/inspector/Images/splitviewDividerBackground.png
 usr/local/chromium-browser/resources/inspector/Images/statusbarButtonGlyphs.png
+usr/local/chromium-browser/resources/inspector/Images/statusbarButtonGlyphs2x.png
 usr/local/chromium-browser/resources/inspector/Images/statusbarResizerHorizontal.png
 usr/local/chromium-browser/resources/inspector/Images/statusbarResizerVertical.png
 usr/local/chromium-browser/resources/inspector/Images/successGreenDot.png
@@ -201,8 +210,17 @@ usr/local/chromium-browser/resources/inspector/Images/warningIcon.png
 usr/local/chromium-browser/resources/inspector/Images/warningMediumIcon.png
 usr/local/chromium-browser/resources/inspector/Images/warningOrangeDot.png
 usr/local/chromium-browser/resources/inspector/Images/warningsErrors.png
+usr/local/chromium-browser/resources/inspector/NetworkPanel.js
+usr/local/chromium-browser/resources/inspector/ProfilesPanel.js
+usr/local/chromium-browser/resources/inspector/ResourcesPanel.js
 usr/local/chromium-browser/resources/inspector/ScriptFormatterWorker.js
+usr/local/chromium-browser/resources/inspector/ScriptsPanel.js
+usr/local/chromium-browser/resources/inspector/TimelinePanel.js
 usr/local/chromium-browser/resources/inspector/auditsPanel.css
+usr/local/chromium-browser/resources/inspector/breadcrumbList.css
+usr/local/chromium-browser/resources/inspector/cmdevtools.css
+usr/local/chromium-browser/resources/inspector/codemirror.css
+usr/local/chromium-browser/resources/inspector/cssNamedFlows.css
 usr/local/chromium-browser/resources/inspector/dataGrid.css
 usr/local/chromium-browser/resources/inspector/devTools.css
 usr/local/chromium-browser/resources/inspector/devtools.html
@@ -228,8 +246,7 @@ usr/local/chromium-browser/resources/inspector/tabbedPane.css
 usr/local/chromium-browser/resources/inspector/textEditor.css
 usr/local/chromium-browser/resources/inspector/textPrompt.css
 usr/local/chromium-browser/resources/inspector/timelinePanel.css
-usr/local/chromium-browser/theme_resources_100_percent.pak
-usr/local/chromium-browser/ui_resources_100_percent.pak
+usr/local/chromium-browser/resources/inspector/webGLProfiler.css
 usr/local/chromium-browser/xdg-settings
 usr/local/share/applications/chromium-browser.desktop
 usr/local/share/doc/chromium-browser/AUTHORS
