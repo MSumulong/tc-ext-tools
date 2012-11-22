@@ -1,0 +1,16 @@
+usr/local/include/edbus-1/EDBus.h
+usr/local/include/edbus-1/edbus_connection.h
+usr/local/include/edbus-1/edbus_freedesktop.h
+usr/local/include/edbus-1/edbus_message.h
+usr/local/include/edbus-1/edbus_message_eina_value.h
+usr/local/include/edbus-1/edbus_message_helper.h
+usr/local/include/edbus-1/edbus_object.h
+usr/local/include/edbus-1/edbus_pending.h
+usr/local/include/edbus-1/edbus_proxy.h
+usr/local/include/edbus-1/edbus_service.h
+usr/local/include/edbus-1/edbus_signal_handler.h
+usr/local/lib/libedbus2.la
+usr/local/lib/libedbus2.so
+usr/local/lib/libedbus2.so.0
+usr/local/lib/libedbus2.so.0.0.0
+usr/local/lib/pkgconfig/edbus2.pc

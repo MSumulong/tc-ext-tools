@@ -1,0 +1,56 @@
+
+############################################################################################
+#                                                                                          #
+#    package build functions: configure, compile, install, rules, and custom functions     #
+#                                                                                          #
+############################################################################################
+
+## configure
+build_configure() {
+
+   ./autogen.sh	--disable-doc || return 1
+#   ./configure	--disable-doc || return 1
+#	--build=i686-pc-linux-gnu \
+#	--host=i686-pc-linux-gnu || return 1
+#
+#	--disable-edbus-performance-test 
+#	--enable-eofono \
+#	--enable-eukit \
+#	--enable-enotify \
+#	--enable-ebluez \
+
+}
+
+## compile
+build_compile() {
+
+   make || return 1
+}
+
+## install
+build_install() {
+
+   make DESTDIR="$I_ROOT" install || return 1
+}
+
+## rules
+build_rules() {
+
+   tet_load
+   tet_download
+   tet_convert
+   tet_unpack
+   tet_patch
+   tet_configure
+   tet_compile
+   tet_install
+   tet_split
+   tet_strip
+   tet_create
+   tet_generate
+   tet_check
+   tet_test
+   tet_package
+
+}
+
