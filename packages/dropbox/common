@@ -1,5 +1,5 @@
 PACKAGE="dropbox"
-VERSION="1.4.17"
+VERSION="1.6.0"
 SOURCE="https://dl-web.dropbox.com/u/17/dropbox-lnx.x86-${VERSION}.tar.gz"
 SOURCE_TOPDIR=".dropbox-dist"
 BUILD_DEPENDS=""
