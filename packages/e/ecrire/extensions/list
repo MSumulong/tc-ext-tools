@@ -1,5 +1,7 @@
 usr/local/bin/ecrire
+usr/local/locale/es/LC_MESSAGES/ecrire.mo
 usr/local/locale/fr/LC_MESSAGES/ecrire.mo
+usr/local/locale/gl/LC_MESSAGES/ecrire.mo
 usr/local/locale/he/LC_MESSAGES/ecrire.mo
 usr/local/locale/it/LC_MESSAGES/ecrire.mo
 usr/local/locale/ko_KR/LC_MESSAGES/ecrire.mo

@@ -1,7 +1,7 @@
 PACKAGE="elementary"
-#VERSION="svn~r76255"
+#VERSION="svn~r79833"
 #SOURCE="http://download.enlightenment.org/releases/$PACKAGE-$VERSION.tar.bz2"
-VERSION="svn~r76255"
+VERSION="svn~r79833"
 SOURCE="svn::http://svn.enlightenment.org/svn/e/trunk/${PACKAGE}"
 BUILD_DEPENDS="ethumb-dev
 	efreet-dev

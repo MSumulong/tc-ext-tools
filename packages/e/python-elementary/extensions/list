@@ -8,7 +8,6 @@ usr/local/lib/python2.7/site-packages/elementary/cursors.py
 usr/local/lib/python2.7/site-packages/elementary/cursors.pyc
 usr/local/lib/python2.7/site-packages/elementary/cursors.pyo
 usr/local/share/python-elementary/examples/cursors.edj
-usr/local/share/python-elementary/examples/external.edj
 usr/local/share/python-elementary/examples/images/clo.png
 usr/local/share/python-elementary/examples/images/icon_00.png
 usr/local/share/python-elementary/examples/images/icon_01.png
@@ -68,6 +67,7 @@ usr/local/share/python-elementary/examples/test_datetime.py
 usr/local/share/python-elementary/examples/test_dayselector.py
 usr/local/share/python-elementary/examples/test_diskselector.py
 usr/local/share/python-elementary/examples/test_entry.py
+usr/local/share/python-elementary/examples/test_external.edj
 usr/local/share/python-elementary/examples/test_external.py
 usr/local/share/python-elementary/examples/test_fileselector.py
 usr/local/share/python-elementary/examples/test_flip.py

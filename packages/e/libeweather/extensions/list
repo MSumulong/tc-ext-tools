@@ -2,8 +2,6 @@ usr/local/bin/eweather_test
 usr/local/include/EWeather.h
 usr/local/include/EWeather_Plugins.h
 usr/local/include/EWeather_Smart.h
-usr/local/lib/eweather/plugins/google.la
-usr/local/lib/eweather/plugins/google.so
 usr/local/lib/eweather/plugins/test.la
 usr/local/lib/eweather/plugins/test.so
 usr/local/lib/eweather/plugins/yahoo.la
@@ -69,7 +67,6 @@ usr/local/share/default/images/sun_line.png
 usr/local/share/default/images/thunder.png
 usr/local/share/default/images/title_bar.png
 usr/local/share/eweather/default/theme.edj
-usr/local/share/eweather/google_logo.jpg
 usr/local/share/eweather/simple/theme.edj
 usr/local/share/eweather/yahoo_logo.jpg
 usr/local/share/simple/images/EWEATHER_TYPE_CLEAR_NIGHT.png

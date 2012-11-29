@@ -1,5 +1,5 @@
 PACKAGE="empower"
-VERSION="svn~r76260"
+VERSION="svn~r76664"
 SOURCE="svn::http://svn.enlightenment.org/svn/e/trunk/$PACKAGE"
 BUILD_DEPENDS="cvs
 		elementary-dev"

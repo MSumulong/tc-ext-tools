@@ -1,5 +1,5 @@
 PACKAGE="libeweather"
-VERSION="svn~r76255"
+VERSION="svn~r79506"
 SOURCE="svn::http://svn.enlightenment.org/svn/e/trunk/PROTO/${PACKAGE}"
 BUILD_DEPENDS="edje-dev.tcz"
 

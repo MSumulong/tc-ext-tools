@@ -13,6 +13,9 @@ build_configure() {
    ./autogen.sh \
 	--disable-emotion-test \
 	--disable-build-examples \
+	--enable-xine \
+	--enable-gstreamer \
+	--enable-generic-vlc \
 	--disable-install-examples || return 1
 }
 

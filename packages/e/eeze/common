@@ -1,13 +1,13 @@
 PACKAGE="eeze"
-#VERSION="svn~r76255"
+#VERSION="svn~r79833"
 #SOURCE="http://download.enlightenment.org/releases/$PACKAGE-$VERSION.tar.bz2"
-VERSION="svn~r76255"
+VERSION="svn~r79833"
 SOURCE="svn::http://svn.enlightenment.org/svn/e/trunk/${PACKAGE}"
 BUILD_DEPENDS="	ecore-dev
 		udev-dev
 		util-linux-dev
-		udev-extra"
-#		eject"
+		udev-extra
+		eject"
 DESCRIPTION="a library for manipulating devices through udev"
 AUTHOR="See http://enlightenment.org/p.php?p=contact&l=e"
 SITE="enlightenment.org"

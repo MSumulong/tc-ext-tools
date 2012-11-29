@@ -1,9 +1,9 @@
 PACKAGE="edje"
-#VERSION="svn~r76255"
+#VERSION="svn~r79832"
 #SOURCE="http://download.enlightenment.org/releases/$PACKAGE-$VERSION.tar.bz2"
-VERSION="svn~r76255"
+VERSION="svn~r79832"
 SOURCE="svn::http://svn.enlightenment.org/svn/e/trunk/${PACKAGE}"
-BUILD_DEPENDS="embryo-dev eio-dev lua-dev"
+BUILD_DEPENDS="efl-dev lua-dev ecore-dev"
 #	
 #	remix-dev
 #	alsa-dev

@@ -1,9 +1,9 @@
 PACKAGE="embryo"
-#VERSION="svn~r76251"
+#VERSION="1.7.1"
 #SOURCE="http://download.enlightenment.org/releases/$PACKAGE-$VERSION.tar.bz2"
-VERSION="svn~r76251"
+VERSION="svn~r76418"
 SOURCE="svn::http://svn.enlightenment.org/svn/e/trunk/${PACKAGE}"
-BUILD_DEPENDS="eina-dev"
+BUILD_DEPENDS=""
 DESCRIPTION="a tiny library designed to interpret limited Small programs compiled by the included compiler, embryo_cc"
 AUTHOR="The Rasterman (Carsten Haitzler) <raster@rasterman.com>,
 		Jérôme Pinot <ngc891@gmail.com>"

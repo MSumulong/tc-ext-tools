@@ -1,7 +1,7 @@
 PACKAGE="emotion"
-#VERSION="svn~r76255"
+#VERSION="svn~r79833"
 #SOURCE="http://download.enlightenment.org/releases/$PACKAGE-$VERSION.tar.bz2"
-VERSION="svn~r76255"
+VERSION="svn~r79833"
 SOURCE="svn::http://svn.enlightenment.org/svn/e/trunk/${PACKAGE}"
 BUILD_DEPENDS="eio-dev.tcz
 		edje-dev.tcz
@@ -10,7 +10,8 @@ BUILD_DEPENDS="eio-dev.tcz
 		gst-plugins-base-dev.tcz
 		liborc-dev.tcz
 		dbus-dev.tcz
-		vlc-dev.tcz"
+		vlc-dev.tcz
+		Xorg-7.6-dev"
 
 DESCRIPTION="Enlightenment's (Ecore/Evas?) audio and video integration"
 AUTHOR="Carsten Haitzler, Vincent Torri, Nicolas Aguirre, 

@@ -1,12 +1,12 @@
 PACKAGE="e_dbus"
-#VERSION="svn~r76255"
-#SOURCE="http://download.enlightenment.org/releases/$PACKAGE-$VERSION.tar.bz2"
-VERSION="svn~r76255"
-SOURCE="svn::http://svn.enlightenment.org/svn/e/trunk/${PACKAGE}"
+VERSION="1.7.1"
+SOURCE="http://download.enlightenment.org/releases/$PACKAGE-$VERSION.tar.bz2"
+#VERSION="svn~r77014"
+#SOURCE="svn::http://svn.enlightenment.org/svn/e/trunk/${PACKAGE}"
 BUILD_DEPENDS="dbus-dev
 	ecore-dev"
 
-DESCRIPTION="A brief description of package."
+DESCRIPTION=""
 AUTHOR="Brian Mattern <rephorm@rephorm.com>
 	Mathieu Taillefumier <mathieu.taillefumier@free.fr>
 	Mike Blumenkrantz (zmike/discomfitor)

@@ -1,3 +1,4 @@
+usr/local/bin/elementary_codegen
 usr/local/bin/elementary_config
 usr/local/bin/elementary_quicklaunch
 usr/local/bin/elementary_run
@@ -112,6 +113,7 @@ usr/local/include/elementary-1/elm_widget_diskselector.h
 usr/local/include/elementary-1/elm_widget_entry.h
 usr/local/include/elementary-1/elm_widget_fileselector.h
 usr/local/include/elementary-1/elm_widget_fileselector_button.h
+usr/local/include/elementary-1/elm_widget_fileselector_entry.h
 usr/local/include/elementary-1/elm_widget_flip.h
 usr/local/include/elementary-1/elm_widget_flipselector.h
 usr/local/include/elementary-1/elm_widget_frame.h
@@ -152,6 +154,7 @@ usr/local/include/elementary-1/elm_widget_slideshow.h
 usr/local/include/elementary-1/elm_widget_spinner.h
 usr/local/include/elementary-1/elm_widget_table.h
 usr/local/include/elementary-1/elm_widget_thumb.h
+usr/local/include/elementary-1/elm_widget_toolbar.h
 usr/local/include/elementary-1/elm_widget_video.h
 usr/local/include/elementary-1/elm_widget_web.h
 usr/local/include/elementary-1/elm_win.h
@@ -278,6 +281,7 @@ usr/local/share/elementary/objects/multibuttonentry.edj
 usr/local/share/elementary/objects/multip.edj
 usr/local/share/elementary/objects/postit_ent.edj
 usr/local/share/elementary/objects/test.edj
+usr/local/share/elementary/objects/test_external.edj
 usr/local/share/elementary/themes/default-desktop.edj
 usr/local/share/elementary/themes/default.edj
 usr/local/share/icons/elementary.png
@@ -285,13 +289,16 @@ usr/local/share/locale/ar/LC_MESSAGES/elementary.mo
 usr/local/share/locale/az_IR/LC_MESSAGES/elementary.mo
 usr/local/share/locale/cs/LC_MESSAGES/elementary.mo
 usr/local/share/locale/de/LC_MESSAGES/elementary.mo
+usr/local/share/locale/es/LC_MESSAGES/elementary.mo
 usr/local/share/locale/fa/LC_MESSAGES/elementary.mo
 usr/local/share/locale/fr/LC_MESSAGES/elementary.mo
+usr/local/share/locale/gl/LC_MESSAGES/elementary.mo
 usr/local/share/locale/he/LC_MESSAGES/elementary.mo
 usr/local/share/locale/it/LC_MESSAGES/elementary.mo
 usr/local/share/locale/ko_KR/LC_MESSAGES/elementary.mo
 usr/local/share/locale/nl/LC_MESSAGES/elementary.mo
 usr/local/share/locale/ps/LC_MESSAGES/elementary.mo
 usr/local/share/locale/pt/LC_MESSAGES/elementary.mo
+usr/local/share/locale/ru/LC_MESSAGES/elementary.mo
 usr/local/share/locale/ur/LC_MESSAGES/elementary.mo
 usr/local/share/locale/yi/LC_MESSAGES/elementary.mo

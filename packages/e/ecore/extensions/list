@@ -84,8 +84,12 @@ usr/local/lib/pkgconfig/ecore.pc
 usr/local/share/locale/cs/LC_MESSAGES/ecore.mo
 usr/local/share/locale/de/LC_MESSAGES/ecore.mo
 usr/local/share/locale/el/LC_MESSAGES/ecore.mo
+usr/local/share/locale/eo/LC_MESSAGES/ecore.mo
+usr/local/share/locale/es/LC_MESSAGES/ecore.mo
 usr/local/share/locale/fr/LC_MESSAGES/ecore.mo
+usr/local/share/locale/gl/LC_MESSAGES/ecore.mo
 usr/local/share/locale/it/LC_MESSAGES/ecore.mo
+usr/local/share/locale/ko/LC_MESSAGES/ecore.mo
 usr/local/share/locale/nl/LC_MESSAGES/ecore.mo
 usr/local/share/locale/pt/LC_MESSAGES/ecore.mo
 usr/local/share/locale/sl/LC_MESSAGES/ecore.mo

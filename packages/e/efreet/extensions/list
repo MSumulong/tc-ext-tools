@@ -4,6 +4,8 @@ usr/local/bin/efreet_icon_cache_dump
 usr/local/bin/efreet_menu_alloc
 usr/local/bin/efreet_spec_test
 usr/local/bin/efreet_test
+usr/local/bin/efreet_user_dir
+usr/local/bin/efreetd
 usr/local/include/efreet-1/Efreet.h
 usr/local/include/efreet-1/Efreet_Mime.h
 usr/local/include/efreet-1/Efreet_Trash.h
@@ -34,6 +36,7 @@ usr/local/lib/libefreet_trash.so.1.7.99
 usr/local/lib/pkgconfig/efreet-mime.pc
 usr/local/lib/pkgconfig/efreet-trash.pc
 usr/local/lib/pkgconfig/efreet.pc
+usr/local/share/dbus-1/services/org.enlightenment.Efreet.service
 usr/local/share/efreet/test/entry
 usr/local/share/efreet/test/entry.png
 usr/local/share/efreet/test/long.ini
@@ -50,6 +53,7 @@ usr/local/share/locale/de/LC_MESSAGES/efreet.mo
 usr/local/share/locale/el/LC_MESSAGES/efreet.mo
 usr/local/share/locale/es/LC_MESSAGES/efreet.mo
 usr/local/share/locale/fr/LC_MESSAGES/efreet.mo
+usr/local/share/locale/gl/LC_MESSAGES/efreet.mo
 usr/local/share/locale/it/LC_MESSAGES/efreet.mo
 usr/local/share/locale/ja/LC_MESSAGES/efreet.mo
 usr/local/share/locale/ko/LC_MESSAGES/efreet.mo

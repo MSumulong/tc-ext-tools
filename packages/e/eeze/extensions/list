@@ -1,11 +1,15 @@
 usr/local/bin/eeze_disk_ls
 usr/local/bin/eeze_mount
 usr/local/bin/eeze_scanner
+usr/local/bin/eeze_sensor_test
 usr/local/bin/eeze_umount
 usr/local/include/eeze-1/Eeze.h
 usr/local/include/eeze-1/Eeze_Disk.h
 usr/local/include/eeze-1/Eeze_Net.h
+usr/local/include/eeze-1/Eeze_Sensor.h
 usr/local/include/eeze-1/eeze_scanner.h
+usr/local/lib/eeze-sensor/eeze-sensor-fake.la
+usr/local/lib/eeze-sensor/eeze-sensor-fake.so
 usr/local/lib/libeeze.a
 usr/local/lib/libeeze.la
 usr/local/lib/libeeze.so

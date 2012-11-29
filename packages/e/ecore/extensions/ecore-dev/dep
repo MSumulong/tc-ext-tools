@@ -1,5 +1,4 @@
 ecore.tcz
-evas-dev.tcz
-curl-dev.tcz
+efl-dev.tcz
 glib2-dev.tcz
-curl.tcz
+curl-dev.tcz
