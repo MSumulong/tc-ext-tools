@@ -1,0 +1,9 @@
+lib/udev
+usr/local
+x-usr/local/include
+x-usr/local/lib/pkgconfig
+x-usr/local/lib/*.a
+x-usr/local/lib/*.la
+x-usr/local/lib/*.so
+x-usr/local/lib/libv4l/plugins/*.la
+x-usr/local/lib/libv4l/*.la

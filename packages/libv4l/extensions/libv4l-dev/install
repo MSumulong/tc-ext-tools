@@ -1,0 +1,7 @@
+usr/local/include
+usr/local/lib/pkgconfig
+usr/local/lib/*.a
+usr/local/lib/*.la
+usr/local/lib/*.so
+usr/local/lib/libv4l/plugins/*.la
+usr/local/lib/libv4l/*.la
