@@ -1,0 +1,4 @@
+usr/local
+x-usr/local/lib/enlightenment/modules/echievements/*/module.a
+x-usr/local/lib/enlightenment/modules/echievements/*/module.la
+x-usr/local/lib/enlightenment/modules/echievements/locale
