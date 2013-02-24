@@ -1,5 +1,5 @@
 PACKAGE="nss"
-VERSION="3.13.6"
+VERSION="3.14.3"
 SOURCE="ftp://ftp.mozilla.org/pub/security/nss/releases/NSS_${VERSION//./_}_RTM/src/nss-${VERSION}.tar.gz"
 BUILD_DEPENDS="bash
 nspr

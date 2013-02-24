@@ -3,6 +3,7 @@ usr/local/include/nss/alghmac.h
 usr/local/include/nss/base.h
 usr/local/include/nss/base64.h
 usr/local/include/nss/baset.h
+usr/local/include/nss/basicutil.h
 usr/local/include/nss/blapi.h
 usr/local/include/nss/blapit.h
 usr/local/include/nss/cert.h
@@ -42,6 +43,7 @@ usr/local/include/nss/ecl-exp.h
 usr/local/include/nss/ecl.h
 usr/local/include/nss/genname.h
 usr/local/include/nss/hasht.h
+usr/local/include/nss/hmacct.h
 usr/local/include/nss/jar-ds.h
 usr/local/include/nss/jar.h
 usr/local/include/nss/jarfile.h
@@ -87,8 +89,6 @@ usr/local/include/nss/p12.h
 usr/local/include/nss/p12plcy.h
 usr/local/include/nss/p12t.h
 usr/local/include/nss/pk11func.h
-usr/local/include/nss/pk11init.h
-usr/local/include/nss/pk11pars.h
 usr/local/include/nss/pk11pqg.h
 usr/local/include/nss/pk11priv.h
 usr/local/include/nss/pk11pub.h
@@ -235,6 +235,9 @@ usr/local/include/nss/sslerr.h
 usr/local/include/nss/sslproto.h
 usr/local/include/nss/sslt.h
 usr/local/include/nss/templates.c
+usr/local/include/nss/utilmodt.h
+usr/local/include/nss/utilpars.h
+usr/local/include/nss/utilparst.h
 usr/local/include/nss/utilrename.h
 usr/local/include/nss/xconst.h
 usr/local/lib/libcrmf.a
