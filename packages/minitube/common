@@ -1,5 +1,5 @@
 PACKAGE="minitube"
-VERSION="1.9"
+VERSION="2.0"
 SOURCE="http://flavio.tordini.org/files/minitube/minitube-${VERSION}.tar.gz"
 BUILD_DEPENDS="qt-4.x-base qt-4.x-xml qt-4.x-dbus qt-4.x-dev phonon phonon-dev"
 

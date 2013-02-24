@@ -1,24 +1,24 @@
 diff -Naur a/data/midori.desktop.in b/data/midori.desktop.in
---- a/data/midori.desktop.in	2011-11-10 23:21:06.000000000 +0000
-+++ b/data/midori.desktop.in	2011-11-11 11:09:00.546604914 +0000
-@@ -12,20 +12,3 @@
+--- a/data/midori.desktop.in	2013-02-05 23:28:05.000000000 +0000
++++ b/data/midori.desktop.in	2013-02-21 15:07:49.691320680 +0000
+@@ -15,20 +15,4 @@
  StartupNotify=true
  X-Osso-Type=application/x-executable
  X-Osso-Service=midori
 -X-Ayatana-Desktop-Shortcuts=TabNew;WindowNew;Private
 -
 -[TabNew Shortcut Group]
--Name=New _Tab
+-_Name=New Tab
 -Exec=midori -e TabNew
 -TargetEnvironment=Unity
 -
 -[WindowNew Shortcut Group]
--Name=New _Window
+-_Name=New Window
 -Exec=midori -e WindowNew
 -TargetEnvironment=Unity
 -
 -[Private Shortcut Group]
--Name=New P_rivate Browsing Window
+-_Name=New Private Browsing Window
 -Exec=midori --private
 -TargetEnvironment=Unity
--
+ 

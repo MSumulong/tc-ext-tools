@@ -1,10 +1,10 @@
 PACKAGE="midori"
-VERSION="0.4.6"
+VERSION="0.4.8"
 SOURCE="http://archive.xfce.org/src/apps/midori/${VERSION%.*}/midori-${VERSION}.tar.bz2"
 BUILD_DEPENDS="glib2 glib2-dev gtk2 gtk2-dev sqlite3 sqlite3-dev enchant enchant-dev
                libsoup libsoup-dev libunique libunique-dev libnotify libnotify-dev
                webkitgtk-1.0-0 webkitgtk-1.0-0-dev python-docutils libxml2-bin
-               gtk-doc librsvg librsvg-dev vala libxcb libxcb-dev"
+               gtk-doc librsvg librsvg-dev vala-midori libxcb libxcb-dev"
 
 DESCRIPTION="Midori is a lightweight web browser based on WebKit/GTK+."
 AUTHOR="Christian Dywan"

@@ -5,7 +5,7 @@
 ### Configure
 build_configure() {
 
-  ./configure --prefix=/usr/local --enable-addons --disable-hildon --disable-tests \
+  ./configure --prefix=/usr/local --enable-addons --disable-tests \
       --enable-unique --enable-libnotify \
       --enable-nls --enable-docs --enable-apidocs || return 1
 

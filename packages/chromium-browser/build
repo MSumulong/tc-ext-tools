@@ -2,6 +2,8 @@
 # tc-ext-tools build functions: configure, compile, install, rules
 #
 
+export CFLAGS="$CFLAGS -mmmx -msse"
+
 ### Configure
 build_configure() {
 
@@ -27,9 +29,14 @@ build_configure() {
     -Duse_system_libevent=0 \
     -Duse_system_ssl=0 \
     -Duse_system_ffmpeg=0 \
+    -Duse_system_yasm=0 \
     -Ddisable_nacl=1 \
+    -Ddisable_pnacl=1 \
     -Duse_gconf=0 \
     -Ddisable_glibc=1 || return 1
+
+  # Missing gyp files in tarball (http://crbug.com/144823)
+  sed -i '/nacl_test_data\.gyp/d' chrome/chrome_tests.gypi
 
 }
 ##
