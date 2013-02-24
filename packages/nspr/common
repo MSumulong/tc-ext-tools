@@ -1,5 +1,5 @@
 PACKAGE="nspr"
-VERSION="4.9.2"
+VERSION="4.9.5"
 SOURCE="ftp://ftp.mozilla.org/pub/mozilla.org/nspr/releases/v${VERSION}/src/nspr-${VERSION}.tar.gz"
 BUILD_DEPENDS=""
 
