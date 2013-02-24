@@ -1,5 +1,5 @@
 PACKAGE="eagle"
-VERSION="5.11.0"
+VERSION="6.4.0"
 SOURCE="ftp://ftp.cadsoft.de/eagle/program/${VERSION%.*}/eagle-lin-${VERSION}.run"
 BUILD_DEPENDS="fontconfig
 fontconfig-dev

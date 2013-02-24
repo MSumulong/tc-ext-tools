@@ -23,7 +23,7 @@ build_convert() {
 
    sh "$PACKAGE_SOURCE" . || return 1
 
-   tar -cJvf "$PACKAGE_SOURCE_CONVERTED" "$SOURCE_TOPDIR" || return 1
+   tar -cJvf "$PACKAGE_SOURCE_CONV" "$SOURCE_TOPDIR" || return 1
 
 }
 
@@ -33,7 +33,8 @@ build_convert() {
 
 build_install() {
 
-   sh "$PACKAGE_SOURCE" "$INSTALL_ROOT/usr/local" || return 1
+   install -d -m 755 "$INSTALL_ROOT/usr/local" || return 1
+   mv "$PACKAGE_SOURCE_TOPDIR" "$INSTALL_ROOT/usr/local" || return 1
    mv "$INSTALL_ROOT/usr/local/eagle-${VERSION}" "$INSTALL_ROOT/usr/local/eagle" || return 1
 
    install -D -m 755 "$PACKAGE_SRC/eagle.sh" "$INSTALL_ROOT/usr/local/bin/eagle" || return 1
