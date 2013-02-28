@@ -1,0 +1,22 @@
+PACKAGE="gupnp-igd"
+VERSION="0.2.2"
+SOURCE="http://ftp.gnome.org/pub/GNOME/sources/gupnp-igd/0.2/$PACKAGE-$VERSION.tar.xz"
+BUILD_DEPENDS="glib2-dev
+	libxml2-dev
+	libsoup-dev
+	glib2-dev
+	gssdp-dev
+	pygobject-2.7-dev
+	libproxy
+	gupnp-dev"
+
+DESCRIPTION="a library to handle UPnP IGD port mapping for GUPnP"
+AUTHOR="OpenedHand production, Zeeshan Al"
+SITE="http://gupnp.org"
+COPYING="LGPL-2"
+MAINTAINERS="jlslegalize@gmail.com"
+TAGS="library handle UPnP IGD port mapping GUPnP"
+COMMENTS="---"
+CHANGELOG="---"
+CURRENT="Updated to ${VERSION}"
+
