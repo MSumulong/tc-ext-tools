@@ -1,0 +1,4 @@
+#!/bin/sh
+
+[ -d /usr/lib/mozilla ] || mkdir -p /usr/lib/mozilla
+[ -e /usr/lib/mozilla/plugins ] || ln -s /usr/local/lib/mozilla/plugins /usr/lib/mozilla/plugins

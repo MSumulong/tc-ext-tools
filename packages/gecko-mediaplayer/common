@@ -1,0 +1,15 @@
+PACKAGE="gecko-mediaplayer"
+VERSION="1.0.8"
+SOURCE="http://gecko-mediaplayer.googlecode.com/files/gecko-mediaplayer-${VERSION}.tar.gz"
+BUILD_DEPENDS="libgmtk-dev
+xulrunner-dev"
+
+DESCRIPTION="A browser plugin that uses Gnome-MPlayer to play media in a browser."
+AUTHOR="Kevin DeKorte"
+SITE="http://code.google.com/p/gecko-mediaplayer/"
+COPYING="GPLv2"
+MAINTAINERS="AmatCoder"
+TAGS="browser plugin media player"
+COMMENTS="---"
+CHANGELOG="---"
+CURRENT="First Version ${VERSION}"
