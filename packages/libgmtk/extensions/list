@@ -1,6 +1,7 @@
 usr/local/include/gmtk/gm_audio.h
 usr/local/include/gmtk/gm_common.h
 usr/local/include/gmtk/gm_file.h
+usr/local/include/gmtk/gm_log.h
 usr/local/include/gmtk/gm_parse.h
 usr/local/include/gmtk/gm_pref_store.h
 usr/local/include/gmtk/gm_strfuncs.h
@@ -14,13 +15,13 @@ usr/local/include/gmtk/gmtk_output_combo_box.h
 usr/local/lib/libgmlib.a
 usr/local/lib/libgmlib.la
 usr/local/lib/libgmlib.so
-usr/local/lib/libgmlib.so.0
-usr/local/lib/libgmlib.so.0.0.0
+usr/local/lib/libgmlib.so.1
+usr/local/lib/libgmlib.so.1.0.8
 usr/local/lib/libgmtk.a
 usr/local/lib/libgmtk.la
 usr/local/lib/libgmtk.so
-usr/local/lib/libgmtk.so.0
-usr/local/lib/libgmtk.so.0.0.0
+usr/local/lib/libgmtk.so.1
+usr/local/lib/libgmtk.so.1.0.8
 usr/local/lib/pkgconfig/gmlib.pc
 usr/local/lib/pkgconfig/gmtk.pc
 usr/local/share/doc/gmtk/AUTHORS

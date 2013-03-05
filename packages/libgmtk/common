@@ -1,5 +1,5 @@
 PACKAGE="libgmtk"
-VERSION="1.0.6"
+VERSION="1.0.8"
 SOURCE="http://gmtk.googlecode.com/files/gmtk-${VERSION}.tar.gz"
 BUILD_DEPENDS="gtk2-dev"
 
@@ -10,6 +10,5 @@ COPYING="GPLv2"
 MAINTAINERS="AmatCoder"
 TAGS="library gnome-mplayer toolkit"
 COMMENTS="---"
-CHANGELOG="2012/02/26 First Version 1.0.5
-		2012/03/04 Rebuilt to avoid dconf storage"
+CHANGELOG="---"
 CURRENT="Update to ${VERSION}"
