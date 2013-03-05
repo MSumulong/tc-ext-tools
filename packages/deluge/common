@@ -1,5 +1,5 @@
 PACKAGE="deluge"
-VERSION="1.3.5"
+VERSION="1.3.6"
 SOURCE="http://download.deluge-torrent.org/source/deluge-${VERSION}.tar.bz2"
 BUILD_DEPENDS="python
 python_setuptools-2.7"
@@ -12,4 +12,4 @@ MAINTAINERS="AmatCoder"
 TAGS="python bittorrent P2P"
 COMMENTS="Install python_mako-2.7.tcz if you want Web UI access"
 CHANGELOG="---"
-CURRENT="First Version ${VERSION}"
+CURRENT="Updated to ${VERSION}"

@@ -1,7 +1,8 @@
-usr/local/lib/python2.7/site-packages/chardet-1.0.1-py2.7.egg-info/PKG-INFO
-usr/local/lib/python2.7/site-packages/chardet-1.0.1-py2.7.egg-info/SOURCES.txt
-usr/local/lib/python2.7/site-packages/chardet-1.0.1-py2.7.egg-info/dependency_links.txt
-usr/local/lib/python2.7/site-packages/chardet-1.0.1-py2.7.egg-info/top_level.txt
+usr/local/bin/chardetect.py
+usr/local/lib/python2.7/site-packages/chardet-2.1.1-py2.7.egg-info/PKG-INFO
+usr/local/lib/python2.7/site-packages/chardet-2.1.1-py2.7.egg-info/SOURCES.txt
+usr/local/lib/python2.7/site-packages/chardet-2.1.1-py2.7.egg-info/dependency_links.txt
+usr/local/lib/python2.7/site-packages/chardet-2.1.1-py2.7.egg-info/top_level.txt
 usr/local/lib/python2.7/site-packages/chardet/__init__.py
 usr/local/lib/python2.7/site-packages/chardet/__init__.pyc
 usr/local/lib/python2.7/site-packages/chardet/big5freq.py

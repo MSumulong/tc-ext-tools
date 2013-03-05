@@ -1,5 +1,5 @@
 PACKAGE="python-chardet"
-VERSION="1.0.1"
+VERSION="2.1.1"
 SOURCE="http://pypi.python.org/packages/source/c/chardet/chardet-${VERSION}.tar.gz"
 BUILD_DEPENDS="python
 python_setuptools-2.7"
@@ -12,4 +12,4 @@ MAINTAINERS="AmatCoder"
 TAGS="python encoding i18n xml"
 COMMENTS="---"
 CHANGELOG="---"
-CURRENT="First Version ${VERSION}"
+CURRENT="Updated to ${VERSION}"
