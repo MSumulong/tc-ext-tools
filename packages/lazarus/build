@@ -20,7 +20,7 @@ build_install() {
    rm -rf "$I_ROOT/usr/local/share/lazarus/debian"
    rm -rf "$I_ROOT/usr/local/share/lazarus/install"
 
-   ln -sf "/usr/local/share/lazarus/lazarus" "$I_ROOT/usr/local/bin/lazarus-ide"
+   ln -sf "/usr/local/share/lazarus/lazarus" "$I_ROOT/usr/local/bin/lazarus"
    ln -sf "/usr/local/share/lazarus/lazbuild" "$I_ROOT/usr/local/bin/lazbuild"
    ln -sf "/usr/local/share/lazarus/startlazarus" "$I_ROOT/usr/local/bin/startlazarus"
 
