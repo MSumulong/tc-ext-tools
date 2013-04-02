@@ -1,0 +1,15 @@
+PACKAGE="gtkdialog"
+VERSION="0.8.3"
+SOURCE="http://gtkdialog.googlecode.com/files/gtkdialog-${VERSION}.tar.gz"
+BUILD_DEPENDS="gtk2-dev
+libglade-dev"
+
+DESCRIPTION="A small utility for fast and easy GUI building."
+AUTHOR="Pere Laszlo, Thunor"
+SITE="http://code.google.com/p/gtkdialog"
+COPYING="GPLv2"
+MAINTAINERS="AmatCoder"
+TAGS="GUI dialog widget script"
+COMMENTS="---"
+CHANGELOG="---"
+CURRENT="First Version ${VERSION}"
