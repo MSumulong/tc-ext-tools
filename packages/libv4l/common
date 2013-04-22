@@ -1,5 +1,5 @@
 PACKAGE="libv4l"
-VERSION="0.9.2"
+VERSION="0.9.5"
 SOURCE="http://linuxtv.org/downloads/v4l-utils/v4l-utils-$VERSION.tar.bz2"
 BUILD_DEPENDS="v4l-dvb-$KERNEL.tcz" 
 
