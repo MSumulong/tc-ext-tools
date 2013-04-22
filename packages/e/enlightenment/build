@@ -8,11 +8,14 @@
 ## configure
 build_configure() {
 
-   ## autotools
-   ./autogen.sh --disable-doc  \
+#   ./autogen.sh --disable-doc  \
+   ./configure --disable-doc  \
 		--enable-mount-eeze \
 		--disable-mount-udisks \
+		--enable-connman  \
 		--disable-mount-hal || return 1
+#		--enable-physics \
+#		--disable-wizard \
 #		--enable-device-udev=yes \
 #		--enable-mount-eeze=no \
 #--disable-install-sysactions \
@@ -30,7 +33,6 @@ build_configure() {
 #--disable-ibox \
 #--disable-start \
 #--disable-winlist \
-#--disable-wizard \
 #--disable-conf-wallpaper2 \
 #--disable-conf-theme \
 #--disable-conf-intl \
@@ -59,7 +61,6 @@ build_configure() {
 #--disable-shot \
 #  --disable-mixer \
 #  --disable-everything \
-#  --disable-connman \
 #  --disable-systray \
 #--disable-bluez \
 #--disable-comp \
@@ -70,14 +71,15 @@ build_configure() {
 
 ## compile
 build_compile() {
-
    sudo ln -s /usr/lib/libblkid.la /usr/local/lib
    sudo ln -s /usr/lib/libuuid.la /usr/local/lib
+   sudo ln -s /usr/lib/libX11.la /usr/local/lib
    make || return 1
-
 }
 
 build_install() {
+   sudo ln -s /usr/lib/libblkid.la /usr/local/lib
+   sudo ln -s /usr/lib/libuuid.la /usr/local/lib
 
    make DESTDIR="$I_ROOT" install || return 1
 }
@@ -90,6 +92,8 @@ build_rules() {
    tet_convert
    tet_unpack
    tet_patch
+
+
    tet_configure
    tet_compile
    tet_install

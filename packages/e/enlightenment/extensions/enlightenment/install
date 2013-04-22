@@ -3,5 +3,4 @@ usr/local/etc
 usr/local/lib
 usr/local/share
 x-usr/local/lib/enlightenment/modules/*/*/*.la
-x-usr/local/lib/enlightenment/preload/*.la
 x-usr/local/lib/pkgconfig

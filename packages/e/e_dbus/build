@@ -8,8 +8,8 @@
 ## configure
 build_configure() {
 
-#   ./autogen.sh	--disable-doc || return 1
-   ./configure	--disable-doc || return 1
+   ./autogen.sh	--disable-doc || return 1
+#   ./configure	--disable-doc || return 1
 #	--build=i686-pc-linux-gnu \
 #	--host=i686-pc-linux-gnu || return 1
 #

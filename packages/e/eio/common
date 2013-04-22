@@ -1,8 +1,8 @@
 PACKAGE="eio"
-#VERSION="svn~r79832"
-#SOURCE="http://download.enlightenment.org/releases/$PACKAGE-$VERSION.tar.bz2"
-VERSION="svn~r79832"
-SOURCE="svn::http://svn.enlightenment.org/svn/e/trunk/${PACKAGE}"
+VERSION="1.7.6.1"
+SOURCE="http://download.enlightenment.org/releases/$PACKAGE-$VERSION.tar.bz2"
+#VERSION="svn~r79964"
+#SOURCE="svn::http://svn.enlightenment.org/svn/e/trunk/${PACKAGE}"
 BUILD_DEPENDS="ecore-dev"
 DESCRIPTION="Efficient I/O over file system (cp, mv, rm, stat, ls...)"
 AUTHOR="Cedric Bail <cedric.bail@free.fr>,

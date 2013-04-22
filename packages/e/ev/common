@@ -1,6 +1,8 @@
 PACKAGE="ev"
-VERSION="svn~r82573"
-SOURCE="svn::http://svn.enlightenment.org/svn/e/trunk/PROTO/${PACKAGE}"
+VERSION="git"
+SOURCE="git::http://git.enlightenment.org/devs/discomfitor/$PACKAGE.git/"
+#VERSION="svn~r82573"
+#SOURCE="svn::http://svn.enlightenment.org/svn/e/trunk/PROTO/${PACKAGE}"
 BUILD_DEPENDS="elementary-dev"
 
 DESCRIPTION="image viewer"

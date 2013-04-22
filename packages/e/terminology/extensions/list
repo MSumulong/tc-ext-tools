@@ -1,4 +1,10 @@
 usr/local/bin/terminology
+usr/local/bin/tyalpha
+usr/local/bin/tybg
+usr/local/bin/tycat
+usr/local/bin/tyls
+usr/local/bin/typop
+usr/local/bin/tyq
 usr/local/share/applications/terminology.desktop
 usr/local/share/icons/terminology.png
 usr/local/share/terminology/fonts/10x20.pcf
@@ -28,3 +34,6 @@ usr/local/share/terminology/images/terminology.png
 usr/local/share/terminology/themes/black.edj
 usr/local/share/terminology/themes/default.edj
 usr/local/share/terminology/themes/mild.edj
+usr/local/share/terminology/themes/mustang.edj
+usr/local/share/terminology/themes/solarized.edj
+usr/local/share/terminology/themes/solarized_light.edj

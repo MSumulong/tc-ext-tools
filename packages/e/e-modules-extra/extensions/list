@@ -91,6 +91,7 @@ usr/local/lib/enlightenment/modules/eektool/linux-gnu-i686-relname/module.a
 usr/local/lib/enlightenment/modules/eektool/linux-gnu-i686-relname/module.la
 usr/local/lib/enlightenment/modules/eektool/linux-gnu-i686-relname/module.so
 usr/local/lib/enlightenment/modules/eektool/locale/de/LC_MESSAGES/eektool.mo
+usr/local/lib/enlightenment/modules/eektool/locale/eo/LC_MESSAGES/eektool.mo
 usr/local/lib/enlightenment/modules/eektool/locale/es/LC_MESSAGES/eektool.mo
 usr/local/lib/enlightenment/modules/eektool/locale/fr/LC_MESSAGES/eektool.mo
 usr/local/lib/enlightenment/modules/eektool/locale/gl/LC_MESSAGES/eektool.mo
@@ -116,6 +117,7 @@ usr/local/lib/enlightenment/modules/engage/linux-gnu-i686-relname/module.so
 usr/local/lib/enlightenment/modules/engage/locale/ar/LC_MESSAGES/engage.mo
 usr/local/lib/enlightenment/modules/engage/locale/cs/LC_MESSAGES/engage.mo
 usr/local/lib/enlightenment/modules/engage/locale/de/LC_MESSAGES/engage.mo
+usr/local/lib/enlightenment/modules/engage/locale/eo/LC_MESSAGES/engage.mo
 usr/local/lib/enlightenment/modules/engage/locale/es/LC_MESSAGES/engage.mo
 usr/local/lib/enlightenment/modules/engage/locale/fr/LC_MESSAGES/engage.mo
 usr/local/lib/enlightenment/modules/engage/locale/gl/LC_MESSAGES/engage.mo
@@ -132,6 +134,7 @@ usr/local/lib/enlightenment/modules/eooorg/locale/ar/LC_MESSAGES/eooorg.mo
 usr/local/lib/enlightenment/modules/eooorg/locale/cs/LC_MESSAGES/eooorg.mo
 usr/local/lib/enlightenment/modules/eooorg/locale/de/LC_MESSAGES/eooorg.mo
 usr/local/lib/enlightenment/modules/eooorg/locale/el/LC_MESSAGES/eooorg.mo
+usr/local/lib/enlightenment/modules/eooorg/locale/eo/LC_MESSAGES/eooorg.mo
 usr/local/lib/enlightenment/modules/eooorg/locale/es/LC_MESSAGES/eooorg.mo
 usr/local/lib/enlightenment/modules/eooorg/locale/fr/LC_MESSAGES/eooorg.mo
 usr/local/lib/enlightenment/modules/eooorg/locale/gl/LC_MESSAGES/eooorg.mo
@@ -143,9 +146,11 @@ usr/local/lib/enlightenment/modules/everything-aspell/e-module.edj
 usr/local/lib/enlightenment/modules/everything-aspell/linux-gnu-i686-relname/module.a
 usr/local/lib/enlightenment/modules/everything-aspell/linux-gnu-i686-relname/module.la
 usr/local/lib/enlightenment/modules/everything-aspell/linux-gnu-i686-relname/module.so
+usr/local/lib/enlightenment/modules/everything-aspell/locale/eo/LC_MESSAGES/everything-aspell.mo
 usr/local/lib/enlightenment/modules/everything-aspell/locale/es/LC_MESSAGES/everything-aspell.mo
 usr/local/lib/enlightenment/modules/everything-aspell/locale/gl/LC_MESSAGES/everything-aspell.mo
 usr/local/lib/enlightenment/modules/everything-aspell/locale/it/LC_MESSAGES/everything-aspell.mo
+usr/local/lib/enlightenment/modules/everything-aspell/locale/pt/LC_MESSAGES/everything-aspell.mo
 usr/local/lib/enlightenment/modules/everything-aspell/module.desktop
 usr/local/lib/enlightenment/modules/everything-places/e-module.edj
 usr/local/lib/enlightenment/modules/everything-places/linux-gnu-i686-relname/module.a
@@ -154,6 +159,7 @@ usr/local/lib/enlightenment/modules/everything-places/linux-gnu-i686-relname/mod
 usr/local/lib/enlightenment/modules/everything-places/locale/ar/LC_MESSAGES/everything-places.mo
 usr/local/lib/enlightenment/modules/everything-places/locale/cs/LC_MESSAGES/everything-places.mo
 usr/local/lib/enlightenment/modules/everything-places/locale/el/LC_MESSAGES/everything-places.mo
+usr/local/lib/enlightenment/modules/everything-places/locale/eo/LC_MESSAGES/everything-places.mo
 usr/local/lib/enlightenment/modules/everything-places/locale/es/LC_MESSAGES/everything-places.mo
 usr/local/lib/enlightenment/modules/everything-places/locale/fr/LC_MESSAGES/everything-places.mo
 usr/local/lib/enlightenment/modules/everything-places/locale/gl/LC_MESSAGES/everything-places.mo
@@ -175,6 +181,7 @@ usr/local/lib/enlightenment/modules/everything-wallpaper/linux-gnu-i686-relname/
 usr/local/lib/enlightenment/modules/everything-wallpaper/locale/ar/LC_MESSAGES/everything-wallpaper.mo
 usr/local/lib/enlightenment/modules/everything-wallpaper/locale/cs/LC_MESSAGES/everything-wallpaper.mo
 usr/local/lib/enlightenment/modules/everything-wallpaper/locale/de/LC_MESSAGES/everything-wallpaper.mo
+usr/local/lib/enlightenment/modules/everything-wallpaper/locale/eo/LC_MESSAGES/everything-wallpaper.mo
 usr/local/lib/enlightenment/modules/everything-wallpaper/locale/es/LC_MESSAGES/everything-wallpaper.mo
 usr/local/lib/enlightenment/modules/everything-wallpaper/locale/fr/LC_MESSAGES/everything-wallpaper.mo
 usr/local/lib/enlightenment/modules/everything-wallpaper/locale/gl/LC_MESSAGES/everything-wallpaper.mo
@@ -182,7 +189,6 @@ usr/local/lib/enlightenment/modules/everything-wallpaper/locale/it/LC_MESSAGES/e
 usr/local/lib/enlightenment/modules/everything-wallpaper/locale/nl/LC_MESSAGES/everything-wallpaper.mo
 usr/local/lib/enlightenment/modules/everything-wallpaper/locale/pt/LC_MESSAGES/everything-wallpaper.mo
 usr/local/lib/enlightenment/modules/everything-wallpaper/locale/sl/LC_MESSAGES/everything-wallpaper.mo
-usr/local/lib/enlightenment/modules/everything-wallpaper/locale/zh_CN/LC_MESSAGES/everything-wallpaper.mo
 usr/local/lib/enlightenment/modules/everything-wallpaper/module.desktop
 usr/local/lib/enlightenment/modules/evry-mpris/e-module.edj
 usr/local/lib/enlightenment/modules/evry-mpris/linux-gnu-i686-relname/module.a
@@ -192,6 +198,7 @@ usr/local/lib/enlightenment/modules/evry-mpris/locale/ar/LC_MESSAGES/evry-mpris.
 usr/local/lib/enlightenment/modules/evry-mpris/locale/cs/LC_MESSAGES/evry-mpris.mo
 usr/local/lib/enlightenment/modules/evry-mpris/locale/de/LC_MESSAGES/evry-mpris.mo
 usr/local/lib/enlightenment/modules/evry-mpris/locale/el/LC_MESSAGES/evry-mpris.mo
+usr/local/lib/enlightenment/modules/evry-mpris/locale/eo/LC_MESSAGES/evry-mpris.mo
 usr/local/lib/enlightenment/modules/evry-mpris/locale/es/LC_MESSAGES/evry-mpris.mo
 usr/local/lib/enlightenment/modules/evry-mpris/locale/fr/LC_MESSAGES/evry-mpris.mo
 usr/local/lib/enlightenment/modules/evry-mpris/locale/gl/LC_MESSAGES/evry-mpris.mo
@@ -208,7 +215,9 @@ usr/local/lib/enlightenment/modules/evry-pidgin/locale/ar/LC_MESSAGES/evry-pidgi
 usr/local/lib/enlightenment/modules/evry-pidgin/locale/cs/LC_MESSAGES/evry-pidgin.mo
 usr/local/lib/enlightenment/modules/evry-pidgin/locale/de/LC_MESSAGES/evry-pidgin.mo
 usr/local/lib/enlightenment/modules/evry-pidgin/locale/el/LC_MESSAGES/evry-pidgin.mo
+usr/local/lib/enlightenment/modules/evry-pidgin/locale/eo/LC_MESSAGES/evry-pidgin.mo
 usr/local/lib/enlightenment/modules/evry-pidgin/locale/fr/LC_MESSAGES/evry-pidgin.mo
+usr/local/lib/enlightenment/modules/evry-pidgin/locale/gl/LC_MESSAGES/evry-pidgin.mo
 usr/local/lib/enlightenment/modules/evry-pidgin/locale/it/LC_MESSAGES/evry-pidgin.mo
 usr/local/lib/enlightenment/modules/evry-pidgin/locale/nl/LC_MESSAGES/evry-pidgin.mo
 usr/local/lib/enlightenment/modules/evry-pidgin/locale/pt/LC_MESSAGES/evry-pidgin.mo
@@ -228,6 +237,7 @@ usr/local/lib/enlightenment/modules/evry-tracker/locale/ar/LC_MESSAGES/evry-trac
 usr/local/lib/enlightenment/modules/evry-tracker/locale/cs/LC_MESSAGES/evry-tracker.mo
 usr/local/lib/enlightenment/modules/evry-tracker/locale/de/LC_MESSAGES/evry-tracker.mo
 usr/local/lib/enlightenment/modules/evry-tracker/locale/el/LC_MESSAGES/evry-tracker.mo
+usr/local/lib/enlightenment/modules/evry-tracker/locale/eo/LC_MESSAGES/evry-tracker.mo
 usr/local/lib/enlightenment/modules/evry-tracker/locale/fr/LC_MESSAGES/evry-tracker.mo
 usr/local/lib/enlightenment/modules/evry-tracker/locale/it/LC_MESSAGES/evry-tracker.mo
 usr/local/lib/enlightenment/modules/evry-tracker/locale/nl/LC_MESSAGES/evry-tracker.mo
@@ -242,6 +252,7 @@ usr/local/lib/enlightenment/modules/evry-websearch/locale/ar/LC_MESSAGES/evry-we
 usr/local/lib/enlightenment/modules/evry-websearch/locale/cs/LC_MESSAGES/evry-websearch.mo
 usr/local/lib/enlightenment/modules/evry-websearch/locale/de/LC_MESSAGES/evry-websearch.mo
 usr/local/lib/enlightenment/modules/evry-websearch/locale/el/LC_MESSAGES/evry-websearch.mo
+usr/local/lib/enlightenment/modules/evry-websearch/locale/eo/LC_MESSAGES/evry-websearch.mo
 usr/local/lib/enlightenment/modules/evry-websearch/locale/es/LC_MESSAGES/evry-websearch.mo
 usr/local/lib/enlightenment/modules/evry-websearch/locale/fr/LC_MESSAGES/evry-websearch.mo
 usr/local/lib/enlightenment/modules/evry-websearch/locale/gl/LC_MESSAGES/evry-websearch.mo
@@ -263,6 +274,7 @@ usr/local/lib/enlightenment/modules/exebuf/linux-gnu-i686-relname/module.la
 usr/local/lib/enlightenment/modules/exebuf/linux-gnu-i686-relname/module.so
 usr/local/lib/enlightenment/modules/exebuf/locale/ar/LC_MESSAGES/exebuf.mo
 usr/local/lib/enlightenment/modules/exebuf/locale/de/LC_MESSAGES/exebuf.mo
+usr/local/lib/enlightenment/modules/exebuf/locale/eo/LC_MESSAGES/exebuf.mo
 usr/local/lib/enlightenment/modules/exebuf/locale/es/LC_MESSAGES/exebuf.mo
 usr/local/lib/enlightenment/modules/exebuf/locale/gl/LC_MESSAGES/exebuf.mo
 usr/local/lib/enlightenment/modules/exebuf/locale/it/LC_MESSAGES/exebuf.mo
@@ -682,6 +694,7 @@ usr/local/lib/enlightenment/modules/scale/linux-gnu-i686-relname/module.a
 usr/local/lib/enlightenment/modules/scale/linux-gnu-i686-relname/module.la
 usr/local/lib/enlightenment/modules/scale/linux-gnu-i686-relname/module.so
 usr/local/lib/enlightenment/modules/scale/locale/cs/LC_MESSAGES/scale.mo
+usr/local/lib/enlightenment/modules/scale/locale/eo/LC_MESSAGES/scale.mo
 usr/local/lib/enlightenment/modules/scale/locale/es/LC_MESSAGES/scale.mo
 usr/local/lib/enlightenment/modules/scale/locale/fr/LC_MESSAGES/scale.mo
 usr/local/lib/enlightenment/modules/scale/locale/gl/LC_MESSAGES/scale.mo
@@ -1025,6 +1038,7 @@ usr/local/lib/enlightenment/modules/winlist-ng/linux-gnu-i686-relname/module.la
 usr/local/lib/enlightenment/modules/winlist-ng/linux-gnu-i686-relname/module.so
 usr/local/lib/enlightenment/modules/winlist-ng/locale/ar/LC_MESSAGES/winlist-ng.mo
 usr/local/lib/enlightenment/modules/winlist-ng/locale/de/LC_MESSAGES/winlist-ng.mo
+usr/local/lib/enlightenment/modules/winlist-ng/locale/eo/LC_MESSAGES/winlist-ng.mo
 usr/local/lib/enlightenment/modules/winlist-ng/locale/es/LC_MESSAGES/winlist-ng.mo
 usr/local/lib/enlightenment/modules/winlist-ng/locale/gl/LC_MESSAGES/winlist-ng.mo
 usr/local/lib/enlightenment/modules/winlist-ng/locale/it/LC_MESSAGES/winlist-ng.mo

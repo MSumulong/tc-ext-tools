@@ -1,7 +1,7 @@
 PACKAGE="exquisite"
-VERSION="svn~r75102"
+VERSION="svn~r84514"
 SOURCE="svn::http://svn.enlightenment.org/svn/e/trunk/$PACKAGE"
-BUILD_DEPENDS="edje-dev"
+BUILD_DEPENDS="edje-dev Xorg-7.6-dev"
 
 DESCRIPTION="psplash replacement"
 AUTHOR="Carsten Haitzler (Rasterman) <raster@rasterman.com>
@@ -11,6 +11,6 @@ SITE="enlightenment.org"
 COPYING="GPL-2"
 MAINTAINERS="jlslegalize@gmail.com"
 TAGS="psplash "
-COMMENTS="---"
+COMMENTS="Xorg lib is required"
 CHANGELOG="---"
 CURRENT="First Version"

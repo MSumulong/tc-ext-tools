@@ -1,6 +1,8 @@
 PACKAGE="ecrire"
-VERSION="svn~r79511"
-SOURCE="svn::http://svn.enlightenment.org/svn/e/trunk//$PACKAGE"
+VERSION="git"
+SOURCE="git::http://git.enlightenment.org/apps/$PACKAGE.git/"
+#VERSION="svn~r81314"
+#SOURCE="svn::http://svn.enlightenment.org/svn/e/trunk//$PACKAGE"
 BUILD_DEPENDS="cmake
 		elementary-dev"
 
@@ -12,4 +14,4 @@ MAINTAINERS="jls_legalize <jlslegalize@gmail.com>"
 TAGS="text editor"
 COMMENTS="---"
 CHANGELOG="---"
-CURRENT="First Version "
+CURRENT="Updated to ${VERSION}"

@@ -14,6 +14,7 @@ build_configure() {
 	--enable-edbus \
 	--enable-efreet \
 	--enable-eweather \
+	--disable-elementary-test \
 	--disable-doc || return 1
 }
 

@@ -1,5 +1,5 @@
 PACKAGE="darkness-e17-theme"
-VERSION="svn~r73911"
+VERSION="svn~r79150"
 SOURCE="svn::http://svn.enlightenment.org/svn/e/trunk/THEMES/darkness"
 BUILD_DEPENDS="bash edje-dev git"
 

@@ -1,7 +1,7 @@
 PACKAGE="enesim"
-VERSION="svn~r2280"
+VERSION="svn~r2695"
 SOURCE="svn::http://enesim.googlecode.com/svn/trunk/enesim"
-BUILD_DEPENDS="eina-dev"
+BUILD_DEPENDS="efl-dev efl"
 # Xorg-7.6-dev Xorg-7.6"
 
 DESCRIPTION="rendering libray"

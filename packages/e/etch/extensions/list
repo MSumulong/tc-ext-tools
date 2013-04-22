@@ -4,5 +4,5 @@ usr/local/lib/libetch.a
 usr/local/lib/libetch.la
 usr/local/lib/libetch.so
 usr/local/lib/libetch.so.0
-usr/local/lib/libetch.so.0.0.4
+usr/local/lib/libetch.so.0.0.6
 usr/local/lib/pkgconfig/etch.pc

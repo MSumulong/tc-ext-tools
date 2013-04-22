@@ -1,13 +1,14 @@
 PACKAGE="evas_generic_loaders"
-VERSION="1.7.0-alpha"
-#VERSION="svn~r74988"
+VERSION="1.7.6"
 SOURCE="http://download.enlightenment.org/releases/$PACKAGE-$VERSION.tar.bz2"
+#VERSION="svn~r81699"
 #SOURCE="svn::http://svn.enlightenment.org/svn/e/trunk/${PACKAGE}"
 BUILD_DEPENDS="eina-dev
 	gst-plugins-base-dev
 	libspectre-dev
 	libraw-dev
 	librsvg-dev
+	libgs_ps
 	poppler-dev"
 
 DESCRIPTION="Extra loaders for GPL loaders and unstable libraries"

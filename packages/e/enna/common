@@ -1,12 +1,12 @@
 PACKAGE="enna"
 VERSION="git20120731"
 SOURCE="git::git://github.com/naguirre/enna.git"
-BUILD_DEPENDS="	libvalhalla-dev 
-		elementary-dev 
+BUILD_DEPENDS="	elementary-dev 
 		cvs 
-		libssh2"
-#		libplayer-dev 
-
+		libplayer-dev 
+		libvalhalla-dev 
+		libxml2-dev
+		emotion-dev"
 DESCRIPTION="A brief description of package."
 AUTHOR="authors of package"
 SITE="http://www.package.com"

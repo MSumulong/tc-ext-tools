@@ -1,5 +1,5 @@
 PACKAGE="ender"
-VERSION="svn~r2281"
+VERSION="svn~r2695"
 SOURCE="svn::http://enesim.googlecode.com/svn/trunk/$PACKAGE"
 BUILD_DEPENDS="enesim-dev"
 
@@ -7,7 +7,7 @@ DESCRIPTION="a library where one can describe what properties define a
 		renderer and what properties are shared among different 
 		renderers."
 AUTHOR='Jorge Luis "turran" Zapata'
-SITE="http://www.package.com"
+SITE="https://code.google.com/p/enesim/"
 COPYING="GPL-2"
 MAINTAINERS="jlslegalize@gmail.com"
 TAGS="library render"

@@ -1,4 +1,8 @@
 usr/local/bin/elemines
+usr/local/bin/eleminesql
+usr/local/lib/eleminesql.a
+usr/local/lib/eleminesql.la
+usr/local/lib/eleminesql.so
 usr/local/share/applications/elemines.desktop
 usr/local/share/doc/elemines/AUTHORS
 usr/local/share/doc/elemines/COPYING
@@ -10,6 +14,15 @@ usr/local/share/doc/elemines/OFL.txt
 usr/local/share/doc/elemines/README
 usr/local/share/doc/elemines/README.artwork
 usr/local/share/doc/elemines/TODO
+usr/local/share/elemines/themes/default-big.edj
 usr/local/share/elemines/themes/default.edj
 usr/local/share/icons/elemines.png
+usr/local/share/locale/eo/LC_MESSAGES/elemines.mo
+usr/local/share/locale/fr/LC_MESSAGES/elemines.mo
+usr/local/share/locale/gl/LC_MESSAGES/elemines.mo
+usr/local/share/locale/it/LC_MESSAGES/elemines.mo
+usr/local/share/locale/ko/LC_MESSAGES/elemines.mo
+usr/local/share/locale/pl/LC_MESSAGES/elemines.mo
+usr/local/share/locale/pt_PT/LC_MESSAGES/elemines.mo
+usr/local/share/locale/ru/LC_MESSAGES/elemines.mo
 usr/local/share/man/man1/elemines.1

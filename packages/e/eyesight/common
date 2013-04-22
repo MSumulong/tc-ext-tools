@@ -1,6 +1,6 @@
 PACKAGE="eyesight"
-VERSION="svn~r74988"
-SOURCE="svn::http://svn.enlightenment.org/svn/e/trunk/PROTO/eyesight"
+VERSION="svn~r76862"
+SOURCE="svn::http://svn.enlightenment.org/svn/e/trunk/PROTO/$PACKAGE"
 BUILD_DEPENDS="	elementary-dev 
 		openjpeg-dev 
 		jbig2dec-dev

@@ -1,9 +1,10 @@
 PACKAGE="edbus"
-#VERSION="svn~r79504"
-#SOURCE="http://download.enlightenment.org/releases/$PACKAGE-$VERSION.tar.bz2"
-VERSION="svn~r79504"
-SOURCE="svn::http://svn.enlightenment.org/svn/e/trunk/${PACKAGE}"
-BUILD_DEPENDS="efl-dev.tcz dbus-dev"
+VERSION="git"
+SOURCE="git::http://git.enlightenment.org/legacy/$PACKAGE.git/"
+#VERSION="svn~r81699"
+#SOURCE="svn::http://svn.enlightenment.org/svn/e/trunk/${PACKAGE}"
+BUILD_DEPENDS="dbus-dev ecore-dev"
+#efl-dev.tcz 
 
 DESCRIPTION="EDBus provides easy access to D-Bus from EFL applications"
 AUTHOR="Gustavo Sverzut Barbieri <barbieri@profusion.mobi>
@@ -16,4 +17,4 @@ MAINTAINERS="jls_legalize (jlslegalize at gmail dot com)"
 TAGS="d-bus efl dbus"
 COMMENTS="---"
 CHANGELOG="---"
-CURRENT="First version ${VERSION}"
+CURRENT="Updated to ${VERSION}"

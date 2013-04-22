@@ -6,7 +6,8 @@
 ############################################################################################
 
 build_configure() {
-   ./autogen.sh || return 1
+   ./configure || return 1
+#   ./autogen.sh || return 1
 }
 build_compile() {
    make || return 1

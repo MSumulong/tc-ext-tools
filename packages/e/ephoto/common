@@ -1,9 +1,9 @@
 PACKAGE="ephoto"
-VERSION="svn~r79511"
-SOURCE="svn::http://svn.enlightenment.org/svn/e/trunk/$PACKAGE"
-BUILD_DEPENDS="cvs
-		elementary-dev"
-
+VERSION="git"
+SOURCE="git::http://git.enlightenment.org/apps/$PACKAGE.git/"
+#VERSION="svn~r81314"
+#SOURCE="svn::http://svn.enlightenment.org/svn/e/trunk/$PACKAGE"
+BUILD_DEPENDS="elementary-dev cvs"
 DESCRIPTION="a picture viewer"
 AUTHOR="Stephen "okra" Houston <UnixTitan@gmail.com>
 	Gustavo Sverzut Barbieri <barbieri@profusion.mobi>

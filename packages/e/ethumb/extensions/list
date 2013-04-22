@@ -13,12 +13,12 @@ usr/local/lib/libethumb.a
 usr/local/lib/libethumb.la
 usr/local/lib/libethumb.so
 usr/local/lib/libethumb.so.1
-usr/local/lib/libethumb.so.1.7.99
+usr/local/lib/libethumb.so.1.7.6
 usr/local/lib/libethumb_client.a
 usr/local/lib/libethumb_client.la
 usr/local/lib/libethumb_client.so
 usr/local/lib/libethumb_client.so.1
-usr/local/lib/libethumb_client.so.1.7.99
+usr/local/lib/libethumb_client.so.1.7.6
 usr/local/lib/pkgconfig/ethumb.pc
 usr/local/lib/pkgconfig/ethumb_client.pc
 usr/local/libexec/ethumbd_slave

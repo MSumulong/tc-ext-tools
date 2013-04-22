@@ -1,6 +1,8 @@
 PACKAGE="econnman"
-VERSION="svn~r79841"
-SOURCE="svn::http://svn.enlightenment.org/svn/e/trunk//$PACKAGE"
+VERSION="git"
+SOURCE="git::http://git.enlightenment.org/apps/econnman.git/"
+#VERSION="svn~r81324"
+#SOURCE="svn::http://svn.enlightenment.org/svn/e/trunk//$PACKAGE"
 BUILD_DEPENDS="python-elementary-dev python-e_dbus-dev"
 
 
@@ -23,4 +25,4 @@ COMMENTS="connmand needs to be running, please read connman1 info file.
 		Extensions build system is tc-ext-tools"
 TAGS="ConnMan EFL"
 CHANGELOG="---"
-CURRENT="First Version "
+CURRENT="Updated to ${VERSION}"

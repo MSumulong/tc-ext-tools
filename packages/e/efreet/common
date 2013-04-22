@@ -1,11 +1,11 @@
 PACKAGE="efreet"
-#VERSION="svn~r79833"
-#SOURCE="http://download.enlightenment.org/releases/$PACKAGE-$VERSION.tar.bz2"
-VERSION="svn~r79833"
-SOURCE="svn::http://svn.enlightenment.org/svn/e/trunk/${PACKAGE}"
-BUILD_DEPENDS="	ecore-dev
-		cvs
-		edbus-dev"
+VERSION="1.7.6"
+SOURCE="http://download.enlightenment.org/releases/$PACKAGE-$VERSION.tar.bz2"
+#VERSION="svn~r81699"
+#SOURCE="svn::http://svn.enlightenment.org/svn/e/trunk/${PACKAGE}"
+BUILD_DEPENDS=" ecore-dev"
+#		cvs
+#		edbus-dev"
 DESCRIPTION=" a library designed to help apps work several of the 
 		Freedesktop.org standards regarding Icons, Desktop files and Menu"
 AUTHOR="dan 'dj2' sinclaira, Brian 'rephorm' Mattern, Sebastian Dransfeld <sd@tango.flipp.net>,

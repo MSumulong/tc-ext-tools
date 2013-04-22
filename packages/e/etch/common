@@ -1,7 +1,7 @@
 PACKAGE="etch"
-VERSION="svn~r2281"
+VERSION="svn~r2695"
 SOURCE="svn::http://enesim.googlecode.com/svn/trunk/$PACKAGE"
-BUILD_DEPENDS="eina-dev"
+BUILD_DEPENDS="efl-dev"
 
 DESCRIPTION="a library needed for every animation system"
 AUTHOR='Hisham "CodeWarrior" Mardam Bey <hisham@hisham.cc>

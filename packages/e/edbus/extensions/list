@@ -1,3 +1,4 @@
+usr/local/bin/edbus-codegen
 usr/local/include/edbus-1/EDBus.h
 usr/local/include/edbus-1/edbus_connection.h
 usr/local/include/edbus-1/edbus_freedesktop.h

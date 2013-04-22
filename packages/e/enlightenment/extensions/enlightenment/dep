@@ -1,5 +1,10 @@
-edje.tcz
 efreet.tcz
-e_dbus.tcz
 eeze.tcz
+libxcb.tcz
 elementary.tcz
+Xorg-7.6-lib.tcz
+librsvg.tcz
+libspectre.tcz
+libraw.tcz
+poppler.tcz
+libxcb-util.tcz

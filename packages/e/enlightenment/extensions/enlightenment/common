@@ -1,15 +1,10 @@
-COMMENTS="For first time setup is necessary to disable wbar,
-		or at least move it from the bottom.
-		so boot with "noicons" cause the wbar is overlapping the 
-		"next" button in the wm wizard.
-		In order to have this package localized u have 3 options:
-		1- put this extension in the copy2fs.lst
-	        2- create copy2fs.flg
-		3- in the e17 configuration, advanced, directory,
-		   messages add /usr/local/share/locale.
-		Same story for "e" to see the extra modules, but the dir in 
-		configuration should be the one for the modules.
-		optional dep: ephysics for the physics module.
-		In case u use the e17 shutdown/restart instead of the exit 
-		tc gui the backup will be performed dipending on the global
-		BACKUP variable"
+COMMENTS="In case u use the wm shutdown/restart instead of the exit 
+		tc gui the backup will be performed depending on the global
+		tc BACKUP variable.
+		optional dep: 
+		   -ephysics for the physics module.
+		   -e-modules-extra
+		   -evas_generica_loaders
+		   -egueb or evas_generic_loaders+librsvg for svg
+		    (first way doesn't work for me)
+		For a cannection manager efl based u can try econnman"

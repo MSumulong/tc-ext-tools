@@ -1,6 +1,8 @@
 PACKAGE="etrophy"
-VERSION="svn~r76544"
-SOURCE="svn::http://svn.enlightenment.org/svn/e/trunk/PROTO/${PACKAGE}"
+VERSION="0.5.1"
+SOURCE="http://download.enlightenment.org/releases/$PACKAGE-$VERSION.tar.bz2"
+#VERSION="svn~r79534"
+#SOURCE="svn::http://svn.enlightenment.org/svn/e/trunk/PROTO/${PACKAGE}"
 BUILD_DEPENDS="elementary-dev"
 
 DESCRIPTION="add library to manage game scores"

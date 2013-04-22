@@ -5,69 +5,35 @@
 #                                                                                          #
 ############################################################################################
 
-## configure
-build_configure() {
-
-   ## autotools
-   ./configure --prefix=/usr/local || return 1
-
-   ## cmake
-   #mkdir build
-   #cd build
-   #cmake -DCMAKE_INSTALL_PREFIX=/usr/local -DCMAKE_BUILD_TYPE=Release .. || return 1
-
-   ## python
-   #python setup.py configure || return 1
-
-   ## waf
-   #./waf configure --prefix=/usr/local || return 1
-
-   ## qmake
-   #qmake PREFIX="/usr/local" || return 1
-
-}
-
-## compile
 build_compile() {
-
-   ## cmake
-   #cd build
+#	cd data/themes/default
+#	edje_cc -id ./images -fd ./fonts ./default.edc 
+#
    make || return 1
-
-   ## python
-   #python setup.py build || return 1
-
-   ## jam
-   #jam || return 1
-
-   ## waf
-   #./waf build || return 1
-
-   ## scons
-   #scons || return 1
-
 }
 
 ## install
 build_install() {
-
-   ## cmake
-   #cd build
-   make DESTDIR="$I_ROOT" install || return 1
-   #make INSTALL_ROOT="$I_ROOT" install || return 1
-
-   ## python
-   #python setup.py install --prefix=/usr/local --root="$I_ROOT" || return 1
-
-   ## jam
-   #DESTDIR="$I_ROOT" jam install || return 1
-
-   ## waf
-   #./waf install --destdir="$I_ROOT" || return 1
-
-   ## scons
-   #scons prefix="$I_ROOT/usr/local" install || return 1
-
+#   install -D -m 755 $PACKAGE.py 			$INSTALL_ROOT/usr/local/share/$PACKAGE/$PACKAGE.py 		|| return 1
+#   cd $PACKAGE
+#   for i in *.py; do
+#	   install -D -m 755 $i 			$INSTALL_ROOT/usr/local/share/$PACKAGE/$PACKAGE/$i 		|| return 1
+#   done
+#   cd ..
+#   install -D -m 644 data/themes/default/default.edj 	$INSTALL_ROOT/usr/local/share/$PACKAGE/themes/default.edj 	|| return 1
+#   install -D -m 644 $P_SRC/$PACKAGE.png 		$INSTALL_ROOT/usr/local/share/icons/$PACKAGE.png 		|| return 1
+#   install -D -m 755 $P_SRC/$PACKAGE.desktop		$INSTALL_ROOT/usr/local/share/applications/$PACKAGE.desktop	|| return 1
+   	install -D -m 755 $P_SRC/$PACKAGE 		$INSTALL_ROOT/usr/local/bin/$PACKAGE 				|| return 1
+	mkdir -p 					$INSTALL_ROOT/usr/local/share/applications/
+	cp data/desktop/epymc.desktop 			$INSTALL_ROOT/usr/local/share/applications/
+	mkdir -p 					$INSTALL_ROOT/usr/local/share/icons/
+	cp data/desktop/epymc.png 			$INSTALL_ROOT/usr/local/share/icons/
+	mkdir -p 					$INSTALL_ROOT/usr/local/share/epymc/themes
+	cp data/themes/default.edj 			$INSTALL_ROOT/usr/local/share/epymc/themes/
+	cp -a epymc.py					$INSTALL_ROOT/usr/local/share/epymc/
+	cp -a epymc					$INSTALL_ROOT/usr/local/share/epymc/
+	cp -a modules					$INSTALL_ROOT/usr/local/share/epymc/
+	cp -a doc					$INSTALL_ROOT/usr/local/share/epymc/
 }
 
 ## rules
@@ -78,7 +44,6 @@ build_rules() {
    tet_convert
    tet_unpack
    tet_patch
-   tet_configure
    tet_compile
    tet_install
    tet_split

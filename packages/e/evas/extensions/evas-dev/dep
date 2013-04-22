@@ -1,9 +1,6 @@
 evas.tcz
 eet-dev.tcz
 fontconfig-dev.tcz
-Xorg-7.6-dev.tcz
+jbigkit.tcz
 Xorg-7.6.tcz
-egueb-dev.tcz
-graphics-libs-1-dev.tcz
-fribidi.tcz
-pixman-dev.tcz
+Xorg-7.6-dev.tcz

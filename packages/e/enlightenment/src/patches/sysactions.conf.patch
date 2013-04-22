@@ -1,5 +1,5 @@
---- a/data/etc/sysactions.conf.in	2012-08-01 22:57:14.376740836 +0200
-+++ b/data/etc/sysactions.conf.in	2012-08-01 22:58:53.373417396 +0200
+--- a/data/etc/sysactions.conf.in	2012-11-03 21:20:53.000000000 +0000
++++ b/data/etc/sysactions.conf.in	2012-11-16 13:51:52.033310113 +0000
 @@ -43,13 +43,13 @@
  # user and group name can use glob matches (* == all for example) like the
  # shell. as can action names allowed or denied. 
@@ -16,6 +16,6 @@
 +action:   /usr/local/bin/mount /usr/local/bin/bin/mount
 +action:   /usr/local/bin/umount /usr/local/bin/umount
 +action:   /usr/local/usr/bin/eject /usr/local/usr/bin/eject
+ action:   gdb       gdb
  
  # on FreeBSD use this instead of the above.
- #action suspend  /usr/sbin/zzz 

@@ -1,1 +1,7 @@
-evas.tcz
+eina.tcz
+gst-plugins-base.tcz
+libspectre.tcz
+libraw.tcz
+librsvg.tcz
+libgs_ps.tcz
+poppler.tcz

@@ -1,37 +1,26 @@
 PACKAGE="evas"
-#VERSION="svn~r76250"
-#SOURCE="http://download.enlightenment.org/releases/$PACKAGE-$VERSION.tar.bz2"
-VERSION="svn~r76250"
-SOURCE="svn::http://svn.enlightenment.org/svn/e/trunk/${PACKAGE}"
-BUILD_DEPENDS="eet-dev
+VERSION="1.7.6.1"
+SOURCE="http://download.enlightenment.org/releases/evas-$VERSION.tar.bz2"
+BUILD_DEPENDS="	
+	eet-dev
 	fontconfig-dev
-	Xorg-7.6-dev
-	Xorg-7.6
-	egueb-dev
 	graphics-libs-1-dev
-	pixman-dev
-	fribidi"
+	jbigkit
+	Xorg-7.6
+	Xorg-7.6-dev"
+#	tiff3-dev
+#	fribidi
+#	glib2-dev 
+#	cairo-dev"
 #	libxcb-dev
-#	libxcb-util-dev
-#	libx11-xcb
-#	SDL-dev
-#	SDL
-#	libgsf-dev
-#	librsvg-dev
-#	glew
-#	libgdiplus
-#	ftgl-dev
-#	libnsfb
-#	libtool-dev
-#	evas_generic_loaders
-#	SDL_gfx-dev
-#	directfb-dev
+#	pixman-dev
 DESCRIPTION="a clean display canvas API"
-AUTHOR="See http://enlightenment.org/p.php?p=contact&l=e"
+AUTHOR="See http://enlightenment.org/p.php?p=contact&l=en"
 SITE="enlightenment.org"
 COPYING="BSD"
-MAINTAINERS="Althalus (nomore), jls_legalize (jlslegalize at gmail dot com)"
+MAINTAINERS="jlslegalize@gmail.com"
 TAGS="clean display canvas API"
-COMMENTS="-----"
+COMMENTS="one of the libraries that make up the EFL
+		Extension made using http://code.google.com/p/tc-ext-tools"
 CHANGELOG="---"
-CURRENT="Updated to ${VERSION}, added SDL, aopenssl-1.0.0 & graphics-libs-1"
+CURRENT="Updated to ${VERSION}"

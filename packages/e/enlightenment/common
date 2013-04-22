@@ -1,21 +1,25 @@
 PACKAGE="enlightenment"
-VERSION="svn~r75111"
-SOURCE="svn::http://svn.enlightenment.org/svn/e/trunk/e"
+VERSION="0.17.2.1"
+SOURCE="http://download.enlightenment.org/releases/enlightenment-$VERSION.tar.bz2"
+#VERSION="svn~r82021"
+#SOURCE="svn::http://svn.enlightenment.org/svn/e/trunk/e"
 BUILD_DEPENDS="alsa-dev
 	edje-dev
 	efreet-dev
-	e_dbus-dev
-	cvs
-	eio-dev
 	eeze-dev
+	libxcb-dev
+	libxcb-util
+	libxcb-util-dev
 	elementary-dev
-	ephysics-dev"
+	connman1-dev.tcz"
+#	ephysics-dev
+#	cvs
 DESCRIPTION="The Enlightenment DR17 Desktop Environment"
 AUTHOR="See http://enlightenment.org/p.php?p=contact&l=e"
 SITE="enlightenment.org"
 COPYING="BSD"
-MAINTAINERS="Althalus, jls_legalize (jlslegalize at gmail dot com)"
+MAINTAINERS="Althalus (nomore), jls_legalize (jlslegalize at gmail dot com)"
 TAGS="Enlightenment DR17 Desktop Environment"
 COMMENTS="---"
 CHANGELOG="---"
-CURRENT="Updated to ${VERSION}. New module: physics"
+CURRENT="Updated to ${VERSION}"

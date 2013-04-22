@@ -1,5 +1,5 @@
 PACKAGE="e-modules-extra"
-VERSION="svn~r79507"
+VERSION="svn~r81324"
 SOURCE="svn::http://svn.enlightenment.org/svn/e/trunk/E-MODULES-EXTRA"
 BUILD_DEPENDS="cvs.tcz
 	enlightenment-dev.tcz

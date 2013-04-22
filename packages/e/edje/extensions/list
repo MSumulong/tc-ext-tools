@@ -1,12 +1,10 @@
 usr/local/bin/edje_cc
-usr/local/bin/edje_codegen
 usr/local/bin/edje_decc
 usr/local/bin/edje_external_inspector
 usr/local/bin/edje_inspector
-usr/local/bin/edje_pick
 usr/local/bin/edje_player
 usr/local/bin/edje_recc
-usr/local/bin/inkscape2edc
+usr/local/bin/edje_watch
 usr/local/include/edje-1/Edje.h
 usr/local/include/edje-1/Edje_Edit.h
 usr/local/lib/edje/utils/epp
@@ -14,7 +12,7 @@ usr/local/lib/libedje.a
 usr/local/lib/libedje.la
 usr/local/lib/libedje.so
 usr/local/lib/libedje.so.1
-usr/local/lib/libedje.so.1.7.99
+usr/local/lib/libedje.so.1.7.6
 usr/local/lib/pkgconfig/edje.pc
 usr/local/share/edje/examples/Vera.ttf
 usr/local/share/edje/examples/animations.edc
@@ -23,9 +21,7 @@ usr/local/share/edje/examples/animations2.edc
 usr/local/share/edje/examples/basic.edc
 usr/local/share/edje/examples/basic2.edc
 usr/local/share/edje/examples/box.edc
-usr/local/share/edje/examples/bubble-blue.png
 usr/local/share/edje/examples/bubble.png
-usr/local/share/edje/examples/codegen.edc
 usr/local/share/edje/examples/color-class.edc
 usr/local/share/edje/examples/drag.edc
 usr/local/share/edje/examples/duck.wav
@@ -34,10 +30,8 @@ usr/local/share/edje/examples/edje-basic.c
 usr/local/share/edje/examples/edje-basic2.c
 usr/local/share/edje/examples/edje-box.c
 usr/local/share/edje/examples/edje-box2.c
-usr/local/share/edje/examples/edje-codegen-example.c
 usr/local/share/edje/examples/edje-color-class.c
 usr/local/share/edje/examples/edje-drag.c
-usr/local/share/edje/examples/edje-nested.edc
 usr/local/share/edje/examples/edje-perspective.c
 usr/local/share/edje/examples/edje-signals-messages.c
 usr/local/share/edje/examples/edje-swallow.c
@@ -58,7 +52,6 @@ usr/local/share/edje/examples/external_elm_check.edc
 usr/local/share/edje/examples/external_elm_panes.edc
 usr/local/share/edje/examples/external_emotion_elm.edc
 usr/local/share/edje/examples/lua_script.edc
-usr/local/share/edje/examples/messages_echo.edc
 usr/local/share/edje/examples/perspective.edc
 usr/local/share/edje/examples/red.png
 usr/local/share/edje/examples/signals-messages.edc
