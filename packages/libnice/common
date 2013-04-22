@@ -1,7 +1,11 @@
 PACKAGE="libnice"
-VERSION="0.1.3"
+VERSION="0.1.4"
 SOURCE="http://nice.freedesktop.org/releases/$PACKAGE-$VERSION.tar.gz"
-BUILD_DEPENDS="glib2-dev gstreamer-dev gupnp-dev gupnp-igd-dev"
+BUILD_DEPENDS="glib2-dev 
+	gstreamer-dev 
+	gupnp-dev 
+	gupnp-igd-dev"
+#	gstreamer1.0-dev 
 
 DESCRIPTION="an implementation of the IETF's draft Interactice Connectivity Establishment standard (ICE)"
 AUTHOR="Dafydd Harries <dafydd.harries@collabora.co.uk>,

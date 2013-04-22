@@ -1,5 +1,8 @@
+usr/local/bin/sdp-example
+usr/local/bin/simple-example
 usr/local/bin/stunbdc
 usr/local/bin/stund
+usr/local/bin/threaded-example
 usr/local/include/nice/address.h
 usr/local/include/nice/agent.h
 usr/local/include/nice/candidate.h
@@ -16,14 +19,11 @@ usr/local/include/stun/usages/ice.h
 usr/local/include/stun/usages/timer.h
 usr/local/include/stun/usages/turn.h
 usr/local/include/stun/win32_common.h
-usr/local/lib/gstreamer-0.10/libgstnice010.a
-usr/local/lib/gstreamer-0.10/libgstnice010.la
-usr/local/lib/gstreamer-0.10/libgstnice010.so
 usr/local/lib/libnice.a
 usr/local/lib/libnice.la
 usr/local/lib/libnice.so
 usr/local/lib/libnice.so.10
-usr/local/lib/libnice.so.10.1.0
+usr/local/lib/libnice.so.10.2.0
 usr/local/lib/pkgconfig/nice.pc
 usr/local/share/gtk-doc/html/libnice/NiceAgent.html
 usr/local/share/gtk-doc/html/libnice/ch01.html

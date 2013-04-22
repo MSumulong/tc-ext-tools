@@ -6,7 +6,9 @@
 ############################################################################################
 
 build_configure() {
-   ./configure --prefix=/usr/local --disable-gtk-doc-html || return 1
+   ./configure --prefix=/usr/local \
+	--without-gstreamer-0.10 \
+	--disable-gtk-doc-html || return 1
 }
 build_compile() {
    make || return 1

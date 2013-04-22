@@ -1,1 +1,5 @@
 libnice.tcz
+glib2-dev.tcz 
+gstreamer-dev.tcz 
+gupnp-dev.tcz 
+gupnp-igd-dev.tcz
