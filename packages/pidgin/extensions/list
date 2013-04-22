@@ -117,7 +117,7 @@ usr/local/include/pidgin/pidgintooltip.h
 usr/local/lib/libpurple.la
 usr/local/lib/libpurple.so
 usr/local/lib/libpurple.so.0
-usr/local/lib/libpurple.so.0.10.6
+usr/local/lib/libpurple.so.0.10.7
 usr/local/lib/perl5/i686-linux/perllocal.pod
 usr/local/lib/pidgin/convcolors.la
 usr/local/lib/pidgin/convcolors.so
@@ -910,6 +910,7 @@ usr/local/share/pixmaps/pidgin/tray/hicolor/index.theme
 usr/local/share/purple/ca-certs/AOL_Member_CA.pem
 usr/local/share/purple/ca-certs/AddTrust_External_Root.pem
 usr/local/share/purple/ca-certs/America_Online_Root_Certification_Authority_1.pem
+usr/local/share/purple/ca-certs/Baltimore_CyberTrust_Root.pem
 usr/local/share/purple/ca-certs/CAcert_Class3.pem
 usr/local/share/purple/ca-certs/CAcert_Root.pem
 usr/local/share/purple/ca-certs/Deutsche_Telekom_Root_CA_2.pem

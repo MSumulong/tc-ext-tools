@@ -1,7 +1,6 @@
 farstream.tcz
 Xorg-7.6-lib.tcz
 gtk2.tcz
-Xlibs.tcz
-libxcb.tcz
 libidn.tcz
 libiconv.tcz
+dbus-glib.tcz
