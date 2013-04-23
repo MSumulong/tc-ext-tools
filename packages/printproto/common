@@ -1,0 +1,15 @@
+PACKAGE="printproto"
+VERSION="1.0.5"
+SOURCE="http://xorg.freedesktop.org/releases/individual/proto/$PACKAGE-$VERSION.tar.bz2"
+BUILD_DEPENDS=""
+
+DESCRIPTION="Xprint extension to the X11 protocol - a portable, network-transparent
+ printing system"
+AUTHOR="?"
+SITE="http://xorg.freedesktop.org/"
+COPYING=""
+MAINTAINERS="jlslegalize@gmail.com"
+TAGS=""
+COMMENTS="---"
+CHANGELOG="---"
+CURRENT="First Version"
