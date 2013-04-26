@@ -1,5 +1,5 @@
 PACKAGE="liborc"
-VERSION="0.4.16"
+VERSION="0.4.17"
 SOURCE="http://code.entropywave.com/download/orc/orc-${VERSION}.tar.gz"
 BUILD_DEPENDS=""
 
