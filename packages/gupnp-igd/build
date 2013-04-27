@@ -21,7 +21,6 @@ build_compile() {
 ## install
 build_install() {
    make DESTDIR="$I_ROOT" install || return 1
-   scons prefix="$I_ROOT/usr/local" install || return 1
 
 }
 
