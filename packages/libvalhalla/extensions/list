@@ -1,0 +1,8 @@
+usr/local/bin/libvalhalla-test
+usr/local/include/valhalla.h
+usr/local/lib/libvalhalla.a
+usr/local/lib/libvalhalla.so
+usr/local/lib/libvalhalla.so.2
+usr/local/lib/libvalhalla.so.2.1.0
+usr/local/lib/pkgconfig/libvalhalla.pc
+usr/local/share/man/man1/libvalhalla-test.1
