@@ -1,5 +1,5 @@
 PACKAGE="bullet"
-VERSION="2.80-rev2531"
+VERSION="2.81-rev2613"
 SOURCE="http://bullet.googlecode.com/files/bullet-${VERSION}.tgz"
 BUILD_DEPENDS="cmake
 freeglut
@@ -12,7 +12,7 @@ DESCRIPTION="A 3D Collision Detection and Rigid Body Dynamics Library."
 AUTHOR="---"
 SITE="http://www.bulletphysics.com/Bullet"
 COPYING="zlib"
-MAINTAINERS="Arslan S."
+MAINTAINERS="Arslan S. jlslegalize@gmail.com"
 COMMENTS="---"
 CHANGELOG="2010/12/12 First Version 2.77"
 CURRENT="Updated to $VERSION"
