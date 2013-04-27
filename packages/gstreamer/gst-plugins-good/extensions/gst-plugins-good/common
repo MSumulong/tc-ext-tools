@@ -1,3 +1,8 @@
-COMMENTS="Optional plugins' dependencies: libdv, libshout, pulseaudio, speex, wavpack, libv4l, aalib, esound, libsamplerate, libsndfile, hal
-		Important note: If the optional plugins are blacklisted then you need to remove ~/.gstreamer-0.10/registry.i686.bin
+NAME="${PACKAGE}1.0"
+COMMENTS="Optional plugins' dependencies: libdv, libshout, pulseaudio, 
+		speex, wavpack, libv4l, aalib, esound, libsamplerate, 
+		libsndfile, hal, gtk2, GConf, flac, taglib,
+		libsoup-gnome.
+		Important note: If the optional plugins are blacklisted 
+		then you need to remove ~/.gstreamer-0.10/registry.i686.bin
 		To see the list of blacklisted plugins: gst-inspect -b"

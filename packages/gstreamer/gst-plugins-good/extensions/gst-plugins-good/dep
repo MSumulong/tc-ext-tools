@@ -1,6 +1,7 @@
-gst-plugins-base.tcz
-gtk2.tcz
-GConf.tcz
+gst-plugins-base1.0.tcz
 flac.tcz
-taglib.tcz
-libsoup-gnome.tcz
+gdk-pixbuf2.tcz
+libsoup.tcz
+libvpx.tcz
+cairo.tcz 
+libjpeg-turbo.tcz

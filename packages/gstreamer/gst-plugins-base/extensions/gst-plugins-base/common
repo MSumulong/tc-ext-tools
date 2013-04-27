@@ -1,3 +1,7 @@
-COMMENTS="Optional dependencies: libv4l, perl5
-		If the optional plugins are blacklisted then you need to remove ~/.gstreamer-0.10/registry.i686.bin
+NAME="${PACKAGE}1.0"
+COMMENTS="Optional dependencies: libv4l, perl5i, libasound, liboil, 
+		 udev-lib, iso-codes, pango,
+		liborc, Xorg-7.6-lib, libvisual, tremor
+		If the optional plugins are blacklisted then you need to 
+		remove ~/.gstreamer-0.10/registry.i686.bin
 		To see the list of blacklisted plugins: gst-inspect -b"

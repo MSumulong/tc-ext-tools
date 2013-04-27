@@ -6,17 +6,17 @@
 build_configure() {
 
   ./configure --prefix=/usr/local --localstatedir=/var \
-      --enable-iso-codes --enable-experimental --disable-gnome_vfs \
+      --enable-iso-codes --enable-experimental \
       --disable-examples --disable-static --disable-introspection \
       --with-package-name="GStreamer Base Plugins (Tiny Core Linux)" \
-      --with-package-origin="www.tinycorelinux.com" || return 1
+      --with-package-origin="https://code.google.com/p/tc-ext-tools/source/browse/packages/gstreamer" || return 1
 
 }
 
 # Compile
 build_compile() {
 
-  ln -s /usr/lib/libX11.la /usr/local/lib/libX11.la
+#  ln -s /usr/lib/libX11.la /usr/local/lib/libX11.la
   make || return 1
 
 }

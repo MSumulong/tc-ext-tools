@@ -1,4 +1,4 @@
 #!/bin/sh
 
-[ $(which update-gconf-database) ] && update-gconf-database register gstreamer-0.10 > /dev/null 2>&1
+[ $(which update-gconf-database) ] && update-gconf-database register gstreamer-1.0 > /dev/null 2>&1
 

@@ -1,11 +1,5 @@
-gstreamer.tcz
-libasound.tcz
-liboil.tcz
-libtheora.tcz
-libvorbis.tcz
-udev-lib.tcz
-iso-codes.tcz
-cairo.tcz
+gstreamer1.0.tcz
 pango.tcz
-liborc.tcz
-Xorg-7.6-lib.tcz
+libtheora.tcz
+libvorbis.tcz 
+iso-codes.tcz

@@ -1,5 +1,5 @@
 PACKAGE="gstreamer"
-VERSION="1.0.1"
+VERSION="1.0.7"
 SOURCE="http://gstreamer.freedesktop.org/src/gstreamer/gstreamer-$VERSION.tar.xz"
 BUILD_DEPENDS="glib2-dev.tcz libxml2-dev.tcz"
 
@@ -10,12 +10,5 @@ COPYING="LGPL"
 MAINTAINERS="Roberto A. Foglietta, juanito, jlslegalize@gmail.com"
 TAGS="library graphs media-handling"
 COMMENTS="---"
-CHANGELOG="2009/05/04 [juanito] updated 0.10.22 -> 0.10.25 & renamed tczl
-		2009/11/08
-		2010/05/22 Updated 2 0.10.29
-		2010/07/17 Updated 2 0.10.30
-		2011/01/24 Updated 2 0.10.32
-		2011/06/05 Updated to 0.10.34
-		2011/10/26 Updated to 0.10.35
-		2012/03/01 Updated to 0.10.36"
-CURRENT="Updated to $VERSION"
+CHANGELOG="---"
+CURRENT="First version $VERSION (jls_legalize)"

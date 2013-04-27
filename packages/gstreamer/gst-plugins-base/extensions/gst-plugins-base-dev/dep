@@ -1,4 +1,2 @@
-gst-plugins-base.tcz
-gstreamer-dev.tcz
-libvorbis-dev.tcz
-liborc-dev.tcz
+gst-plugins-base1.0.tcz
+gstreamer1.0-dev.tcz
