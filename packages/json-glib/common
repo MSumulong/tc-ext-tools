@@ -1,0 +1,16 @@
+PACKAGE="json-glib"
+SUPVERSION="0.14"
+VERSION="${SUPVERSION}.2"
+SOURCE="http://ftp.gnome.org/pub/GNOME/sources/json-glib/$SUPVERSION/json-glib-$VERSION.tar.xz"
+BUILD_DEPENDS="glib2-dev perl5"
+
+DESCRIPTION="A library providing serialization and deserialization support 
+		for the JavaScript Object Notation"
+AUTHOR="EmmanueleBassi"
+SITE="http://live.gnome.org/JsonGlib"
+COPYING="GPL-2.1"
+MAINTAINERS="jlslegalize@gmail.com"
+TAGS="library serialization deserialization"
+COMMENTS="---"
+CHANGELOG="---"
+CURRENT="Updated to ${VERSION}"
