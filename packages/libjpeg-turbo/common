@@ -1,0 +1,18 @@
+PACKAGE="libjpeg-turbo"
+VERSION="1.2.90"
+SOURCE="http://downloads.sourceforge.net/libjpeg-turbo/libjpeg-turbo-$VERSION.tar.gz"
+BUILD_DEPENDS="nasm"
+
+DESCRIPTION="a fork of the original IJG libjpeg which uses SIMD to 
+		accelerate baseline JPEG compression and decompression. 
+		libjpeg is a library that implements JPEG image encoding, 
+		decoding and transcoding. "
+AUTHOR="authors of package"
+SITE="http://www.libjpeg-turbo.org/"
+COPYING="GPL-2"
+MAINTAINERS="jlslegalize@gmail.com"
+TAGS="IJG libjpeg JPEG compression and decompression. image encoding, decoding 
+		transcoding."
+COMMENTS="---"
+CHANGELOG="---"
+CURRENT="First Version"

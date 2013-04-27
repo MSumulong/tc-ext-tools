@@ -1,0 +1,6 @@
+usr/local
+x-usr/local/include
+x-usr/local/lib/*.la
+x-usr/local/lib/*.so
+x-usr/local/man
+x-usr/local/share
