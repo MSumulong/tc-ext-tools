@@ -1,7 +1,6 @@
 pidgin.tcz
 gtk2-dev.tcz
-gstreamer-dev.tcz
-farstream-dev.tcz
+farstream0.1-dev.tcz
 libidn-dev.tcz
 gnutls2-dev.tcz
 libiconv-dev.tcz

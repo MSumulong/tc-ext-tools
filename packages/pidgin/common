@@ -2,8 +2,7 @@ PACKAGE="pidgin"
 VERSION="2.10.7"
 SOURCE="http://sourceforge.net/projects/pidgin/files/Pidgin/$VERSION/${PACKAGE}-${VERSION}.tar.bz2"
 BUILD_DEPENDS="gtk2-dev
-	gstreamer-dev
-	farstream-dev
+	farstream0.1-dev
 	libtasn1-dev
 	libidn-dev
 	gnutls2-dev
@@ -21,4 +20,4 @@ COMMENTS="Optional deps:
 		   gst-plugins-ugly
 		   gst-ffmpeg"
 CHANGELOG="---"
-CURRENT="Updated to ${VERSION}, added dbus"
+CURRENT="Updated to ${VERSION}, Rebuilt against farstream 0.1"
