@@ -1,0 +1,17 @@
+PACKAGE="farstream0.1"
+VERSION="0.1.2"
+SOURCE="http://freedesktop.org/software/farstream/releases/farstream/farstream-$VERSION.tar.gz"
+BUILD_DEPENDS="libnice-dev.tcz 
+	gst-plugins-base-dev.tcz
+	glib2-dev
+	gupnp-igd-dev" 
+
+DESCRIPTION="A collection of GStreamer modules and libraries used for videoconferencing"
+AUTHOR="Olivier Cr..te, Philippe Kalaf, Youness Alaoui"
+SITE="http://www.freedesktop.org/wiki/Software/Farstream"
+COPYING="GPL-2"
+MAINTAINERS="jls_legalize (jlslegalize@gmail.com)"
+TAGS="GStreamer videoconferencing"
+COMMENTS="---"
+CHANGELOG="---"
+CURRENT="First version $VERSION"
