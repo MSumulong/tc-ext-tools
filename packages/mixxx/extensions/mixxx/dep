@@ -1,0 +1,15 @@
+qt-4.x-opengl.tcz
+qt-4.x-xml.tcz
+qt-4.x-extended.tcz
+qt-4.x-sql.tcz
+qt-4.x-script.tcz
+qt-4.x-webkit.tcz
+libsndfile.tcz
+flac.tcz
+libvorbis.tcz
+libogg.tcz
+libid3tag.tcz
+libmad.tcz
+libportaudio.tcz
+libportmidi.tcz
+taglib.tcz

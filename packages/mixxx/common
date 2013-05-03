@@ -1,0 +1,23 @@
+PACKAGE="mixxx"
+VERSION="1.10.1"
+SOURCE="http://downloads.mixxx.org/mixxx-$VERSION/mixxx-$VERSION-src.tar.gz"
+BUILD_DEPENDS="scons libid3tag-dev libmad-dev libmad libportaudio-dev 
+		qt-4.x-opengl
+		qt-4.x-extended qt-4.x-dev.tcz libogg-dev libvorbis-dev 
+		libsndfile-dev
+		libportmidi taglib-dev protobuf-dev libvamp-sdk
+		freeglut-dev flac-dev qt-4.x-xml qt-4.x-webkit 
+		qt-4.x-script
+		qt-4.x-sql Xorg-7.6-dev Xorg-7.6"
+#libshout-dev
+
+DESCRIPTION="Digital Disc Jockey Interface"
+AUTHOR="Mixxx 1.10.1 Development Team"
+SITE="http://www.mixxx.org/"
+COPYING="GPL-2"
+MAINTAINERS="jlslegalize@gmail.com"
+TAGS="Digital Disc Jockey"
+COMMENTS="Xorg is needed
+		Optional deps: protobuf libvamp-sdk freeglut"
+CHANGELOG="---"
+CURRENT="First Version"
