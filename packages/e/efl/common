@@ -1,0 +1,49 @@
+PACKAGE="efl"
+VERSION="git"
+SOURCE="git::http://git.enlightenment.org/core/$PACKAGE.git/"
+#VERSION="svn~r82160"
+#SOURCE="svn::http://svn.enlightenment.org/svn/e/trunk/${PACKAGE}"
+BUILD_DEPENDS="openssl-1.0.0-dev 
+	glib2-dev 
+	check
+	Xorg-7.6-dev
+	Xorg-7.6
+	libxcb-dev
+	pixman-dev
+	fontconfig-dev
+	tiff3-dev
+	graphics-libs-1-dev.tcz
+	libiconv
+	cvs
+	inotify-tools-dev.tcz
+	curl-dev
+	curl
+	libssh2
+	libxp-dev
+	libxp
+	valgrind
+	pulseaudio-dev
+	libsndfile-dev
+	dbus-dev
+	udev-dev
+	util-linux-dev
+	udev-extra
+	eject
+	bullet-dev 
+	lua-dev
+	jbigkit
+	printproto
+	gstreamer-dev
+	gst-plugins-base-dev
+	flac-dev"
+#	egueb-dev
+
+DESCRIPTION="a collection of libraries"
+AUTHOR="Various"
+SITE="http://www.enlightenment.org"
+COPYING="GPL-2"
+MAINTAINERS="jlslegalize@gmail.com"
+TAGS=""
+COMMENTS="---"
+CHANGELOG="---"
+CURRENT="Updated to ${VERSION}"
