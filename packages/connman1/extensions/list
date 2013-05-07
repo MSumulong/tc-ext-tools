@@ -53,3 +53,5 @@ usr/local/lib/connman/test/vpn-get
 usr/local/lib/connman/test/vpn-property
 usr/local/lib/pkgconfig/connman.pc
 usr/local/sbin/connmand
+usr/local/share/man/man5/connman.conf.5
+usr/local/share/man/man8/connman.8

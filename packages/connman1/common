@@ -1,5 +1,5 @@
 PACKAGE="connman1"
-VERSION="1.13"
+VERSION="1.14"
 SOURCE="http://www.kernel.org/pub/linux/network/connman/connman-${VERSION}.tar.xz"
 BUILD_DEPENDS="dbus-dev
 	wpa_supplicant-dbus
@@ -24,5 +24,4 @@ COMMENTS=" Add to /opt/bootlocal.sh :
                 ---
                 optional dep: wpa_supplicant-dbus.tcz"
 CHANGELOG="---"
-CURRENT="rebuilt fixing configure options, modified dbus config to enable 
-		user to control the program"
+CURRENT="Updated to ${VERSION}"
