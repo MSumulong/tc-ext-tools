@@ -1,7 +1,9 @@
 PACKAGE="geneet"
-VERSION="svn~r76548"
-SOURCE="svn::http://svn.enlightenment.org/svn/e/trunk/${PACKAGE}"
-BUILD_DEPENDS="python"
+#VERSION="svn~r76548"
+#SOURCE="svn::http://svn.enlightenment.org/svn/e/trunk/${PACKAGE}"
+VERSION="git"
+SOURCE="git::http://git.enlightenment.org/tools/$PACKAGE.git/"
+BUILD_DEPENDS="curl python"
 
 DESCRIPTION="Generates eet boilerplate using a simple DSL"
 AUTHOR="Bruno Dilly, Flavio Ceolin, Eduardo Lima, Leandro Pereira"
