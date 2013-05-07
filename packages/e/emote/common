@@ -1,0 +1,15 @@
+PACKAGE="emote"
+VERSION="git20130507"
+SOURCE="git::http://git.enlightenment.org/devs/devilhorns/$PACKAGE.git/"
+BUILD_DEPENDS="curl cvs elementary-dev"
+
+DESCRIPTION="EFL Irc Client"
+AUTHOR="Christopher 'devilhorns' Michael, Stephen 'okra' Houston,
+		Nick 'mekius' Hughart"
+SITE="http://git.enlightenment.org/devs/devilhorns/emote.git/tree/"
+COPYING="GPL-2"
+MAINTAINERS="jlslegalize@gmail.com"
+TAGS="EFL Irc Client"
+COMMENTS="---"
+CHANGELOG="---"
+CURRENT="First Version"
