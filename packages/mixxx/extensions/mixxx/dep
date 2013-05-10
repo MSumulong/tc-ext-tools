@@ -13,3 +13,8 @@ libmad.tcz
 libportaudio.tcz
 libportmidi.tcz
 taglib.tcz
+soundtouch.tcz
+protobuf.tcz
+libusb.tcz
+libvamp-sdk.tcz
+pulseaudio.tcz
