@@ -10,7 +10,10 @@ build_compile() {
 }
 build_install() {
    mkdir -p "$I_ROOT"/usr/local
-   scons prefix="$I_ROOT/usr/local" qtdir=/usr/local install || return 1
+#   scons prefix="$I_ROOT/usr/local" qtdir=/usr/local install || return 1
+#   scons prefix="/usr/local" qtdir=/usr/local install || return 1
+   scons prefix="/usr/local" qtdir=/usr/local \
+	 install_root="$I_ROOT/usr/local" install || return 1
 
 }
 
