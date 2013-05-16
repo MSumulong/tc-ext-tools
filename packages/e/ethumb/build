@@ -9,8 +9,8 @@
 build_configure() {
 
    ## autotools
-   ./autogen.sh --with-internal-maximum-log-level=2 || return 1
-#   ./configure --with-internal-maximum-log-level=2 || return 1
+#   ./autogen.sh --with-internal-maximum-log-level=2 || return 1
+   ./configure || return 1
 }
 
 ## compile

@@ -1,5 +1,5 @@
 PACKAGE="evas_generic_loaders"
-VERSION="1.7.6"
+VERSION="1.7.7"
 SOURCE="http://download.enlightenment.org/releases/$PACKAGE-$VERSION.tar.bz2"
 #VERSION="svn~r81699"
 #SOURCE="svn::http://svn.enlightenment.org/svn/e/trunk/${PACKAGE}"
@@ -26,8 +26,6 @@ COMMENTS="Optional deps:
 			gst-plugins-ugly
 			gst-ffmpeg
 			libspectre
-			libraw
-			librsvg
-			poppler"
+		Extension made using http://code.google.com/p/tc-ext-tools"
 CHANGELOG="---"
 CURRENT="Updated to ${VERSION}"

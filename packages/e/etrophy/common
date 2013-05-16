@@ -18,4 +18,4 @@ COMMENTS="a library that manages scores, trophies and unlockables. It will
 
 		Right now it just stores on EET, but a remote backend is planned."
 CHANGELOG="---"
-CURRENT="First Version"
+CURRENT="Updated to ${VERSION}"

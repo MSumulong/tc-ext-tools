@@ -1,5 +1,5 @@
 PACKAGE="epymc"
-VERSION="svn~r696"
+VERSION="svn~r697"
 SOURCE="svn::http://e17mods.googlecode.com/svn/trunk/APPS/epymc"
 BUILD_DEPENDS="edje-dev"
 

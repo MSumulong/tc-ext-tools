@@ -1,7 +1,9 @@
 PACKAGE="emprint"
-VERSION="svn~r81699"
-SOURCE="svn::http://svn.enlightenment.org/svn/e/trunk/$PACKAGE"
-BUILD_DEPENDS="efl-dev.tcz"
+#VERSION="svn~r81699"
+#SOURCE="svn::http://svn.enlightenment.org/svn/e/trunk/$PACKAGE"
+VERSION="git"
+SOURCE="git::http://git.enlightenment.org/apps/$PACKAGE.git/"
+BUILD_DEPENDS="ecore-dev"
 
 DESCRIPTION="A utility for taking screenshots of the entire screen, a specific window, or a specific region"
 AUTHOR="Christopher 'devilhorns' Michael <devilhorns@comcast.net> Hisham 'CodeWarrior' Mardambey <hisham.mardambey@gmail.com> Eric 'Ravenlock' Schuele <e.schuele@computer.org>"

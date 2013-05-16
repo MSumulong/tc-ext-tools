@@ -11,7 +11,9 @@ build_configure() {
 #   rm -rf eektool
    rm -rf itask-ng
    rm -rf tiling
-   rm -rf iiirk
+   rm -rf elev8
+   rm -rf share
+#   rm -rf iiirk
 
    ## autotools
    ./autogen.sh --prefix=/usr/local || return 1

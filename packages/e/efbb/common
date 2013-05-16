@@ -3,7 +3,7 @@ VERSION="git"
 SOURCE="git::http://git.enlightenment.org/games/$PACKAGE.git/"
 #VERSION="svn~r79534"
 #SOURCE="svn::http://svn.enlightenment.org/svn/e/trunk/GAMES/${PACKAGE}"
-BUILD_DEPENDS="ephysics-dev libcanberra-dev etrophy-dev geneet pyparsing"
+BUILD_DEPENDS="efl-dev libcanberra-dev etrophy-dev geneet pyparsing"
 
 DESCRIPTION="a physics game"
 AUTHOR="Bruno Dilly <bdilly@profusion.mobi>, 

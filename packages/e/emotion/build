@@ -9,8 +9,8 @@
 build_configure() {
 
    ## autotools
-#   ./configure \
-   ./autogen.sh \
+#   ./autogen.sh \
+   ./configure \
 	--disable-emotion-test \
 	--disable-build-examples \
 	--enable-xine \

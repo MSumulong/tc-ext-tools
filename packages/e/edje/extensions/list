@@ -5,6 +5,7 @@ usr/local/bin/edje_inspector
 usr/local/bin/edje_player
 usr/local/bin/edje_recc
 usr/local/bin/edje_watch
+usr/local/bin/inkscape2edc
 usr/local/include/edje-1/Edje.h
 usr/local/include/edje-1/Edje_Edit.h
 usr/local/lib/edje/utils/epp
@@ -12,7 +13,7 @@ usr/local/lib/libedje.a
 usr/local/lib/libedje.la
 usr/local/lib/libedje.so
 usr/local/lib/libedje.so.1
-usr/local/lib/libedje.so.1.7.6
+usr/local/lib/libedje.so.1.7.7
 usr/local/lib/pkgconfig/edje.pc
 usr/local/share/edje/examples/Vera.ttf
 usr/local/share/edje/examples/animations.edc

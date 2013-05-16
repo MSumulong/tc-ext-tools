@@ -9,8 +9,8 @@
 build_configure() {
 
    ## autotools
-#   ./configure --disable-tests || return 1
-   ./autogen.sh --disable-tests || return 1
+   ./configure --disable-tests || return 1
+#   ./autogen.sh --disable-tests || return 1
 
 }
 
