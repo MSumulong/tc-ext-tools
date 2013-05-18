@@ -1,5 +1,5 @@
 PACKAGE="exquisite"
-VERSION="svn~r84514"
+VERSION="svn~r84550"
 SOURCE="svn::http://svn.enlightenment.org/svn/e/trunk/$PACKAGE"
 BUILD_DEPENDS="edje-dev Xorg-7.6-dev"
 
@@ -13,4 +13,4 @@ MAINTAINERS="jlslegalize@gmail.com"
 TAGS="psplash "
 COMMENTS="Xorg lib is required"
 CHANGELOG="---"
-CURRENT="First Version"
+CURRENT="Updated to ${VERSION}"
