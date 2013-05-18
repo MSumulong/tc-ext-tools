@@ -1,5 +1,5 @@
 PACKAGE="pyparsing"
-VERSION="1.5.6"
+VERSION="1.5.7"
 SOURCE="http://downloads.sourceforge.net/project/pyparsing/pyparsing/pyparsing-$VERSION/pyparsing-$VERSION.zip"
 BUILD_DEPENDS="python"
 
@@ -11,4 +11,4 @@ MAINTAINERS="jlslegalize@gmail.com"
 TAGS=""
 COMMENTS="---"
 CHANGELOG="---"
-CURRENT="First Version"
+CURRENT="Updated to ${VERSION}"
