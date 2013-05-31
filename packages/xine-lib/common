@@ -1,0 +1,70 @@
+PACKAGE="xine-lib"
+VERSION="1.2.3"
+SOURCE="http://downloads.sourceforge.net/project/xine/$PACKAGE/$VERSION/${PACKAGE}-${VERSION}.tar.xz"
+BUILD_DEPENDS="perl5
+	libpostproc
+	libpostproc-dev
+	ffmpeg
+	vcdimager-dev
+	libxcb-dev
+	Xorg-7.6-dev
+	aalib-dev
+	GraphicsMagick-dev
+	linux-headers-$KERNEL
+	libdca-dev
+	libdca
+	ImageMagick-dev
+	liba52-dev
+	libbluray-dev
+	esound-dev
+	esound
+	faad-dev
+	faad
+	flac-dev
+	flac
+	gdk-pixbuf-dev
+	gdk-pixbuf
+	gettext
+	graphics-libs-1
+	graphics-libs-1-dev
+	libcdio-dev
+	libcdio
+	libmpeg2-dev
+	libmpeg2
+	libmad-dev
+	libmad
+	libxcb-dev
+	libxcb
+	jack
+	samba3
+	linux-3.0.1_api_headers
+	jack-dev
+	libtool-dev
+	vcdimager-dev
+	librsvg-dev
+	libavcodec-dev
+	lcms2-dev"
+DESCRIPTION="a free (gpl-licensed) high-performance, portable and reusable 
+		multimedia playback engine"
+AUTHOR="Xine Project Team"
+SITE=" http://www.xine-project.org/home"
+COPYING="GPL-2"
+MAINTAINERS="jlslegalize@gmail.com"
+TAGS="multimedia playback engine"
+COMMENTS="configured with:
+		--without-pulseaudio 
+		--disable-gnomevfs 
+		--disable-vaapi
+		
+		Optional deps:
+                        libxcb
+                        SDL
+                        ImageMagick
+                        jack
+                        samba3
+                        libv4l
+			lcms2
+
+		extension made using http://code.google.com/p/tc-ext-tools/"
+CHANGELOG="---"
+CURRENT="Updated to ${VERSION}"
