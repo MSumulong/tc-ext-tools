@@ -30,6 +30,7 @@ usr/local/lib/connman/test/monitor-services
 usr/local/lib/connman/test/monitor-vpn
 usr/local/lib/connman/test/remove-provider
 usr/local/lib/connman/test/service-move-before
+usr/local/lib/connman/test/set-clock
 usr/local/lib/connman/test/set-domains
 usr/local/lib/connman/test/set-global-timeservers
 usr/local/lib/connman/test/set-ipv4-method
