@@ -1,5 +1,5 @@
 PACKAGE="connman1"
-VERSION="1.15"
+VERSION="1.16"
 SOURCE="http://www.kernel.org/pub/linux/network/connman/connman-${VERSION}.tar.xz"
 BUILD_DEPENDS="dbus-dev
 	wpa_supplicant-dbus
@@ -22,6 +22,8 @@ COMMENTS=" Add to /opt/bootlocal.sh :
 		For persistency add var/lib/connman/ to 
 		/opt/.filetool.lst
                 ---
-                optional dep: wpa_supplicant-dbus.tcz"
+                optional dep: wpa_supplicant-dbus.tcz
+		
+		Extension made using http://code.google.com/p/tc-ext-tools"
 CHANGELOG="---"
 CURRENT="Updated to ${VERSION}"
