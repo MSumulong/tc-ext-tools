@@ -11,12 +11,12 @@ build_configure() {
    ## autotools
 #   ./autogen.sh \
    ./configure \
-	--disable-emotion-test \
 	--disable-build-examples \
 	--enable-xine \
 	--enable-gstreamer \
 	--enable-generic-vlc \
 	--disable-install-examples || return 1
+#	--disable-emotion-test \
 }
 
 ## compile

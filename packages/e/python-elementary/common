@@ -8,7 +8,14 @@ BUILD_DEPENDS="elementary-dev
 #	cython"
 
 DESCRIPTION="Python bindings for the Elementary widget set library"
-AUTHOR="authors of package"
+AUTHOR="Simon Busch <morphis@gravedo.de>
+		Boris 'billiob' Faure <billiob@gmail.com>
+		Davide 'DaveMDS' Andreoli <dave@gurumeditation.it>
+		Fabiano Fid?ncio <fidencio@profusion.mobi>
+		Bruno Dilly <bdilly@profusion.mobi>
+		Tiago Falc?o <tiago@profusion.mobi>
+		Joost Albers <joost.albers@nomadrail.com>
+		Kai Huuhko <kai.huuhko@gmail.com>"
 SITE="enlightenment.org"
 COPYING="GPL-2"
 MAINTAINERS="jls_legalize <jlslegalize@gmail.com>"

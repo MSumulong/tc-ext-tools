@@ -1,3 +1,4 @@
+usr/local/bin/emotion_test
 usr/local/include/emotion-1/Emotion.h
 usr/local/include/emotion-1/Emotion_Generic_Plugin.h
 usr/local/lib/edje/modules/emotion/linux-gnu-i686-1.0.0/module.la
@@ -13,6 +14,7 @@ usr/local/lib/libemotion.a
 usr/local/lib/libemotion.la
 usr/local/lib/libemotion.so
 usr/local/lib/libemotion.so.1
-usr/local/lib/libemotion.so.1.7.7
+usr/local/lib/libemotion.so.1.7.8
 usr/local/lib/pkgconfig/emotion.pc
 usr/local/share/emotion/data/icon.edj
+usr/local/share/emotion/data/theme.edj

@@ -1,5 +1,5 @@
 PACKAGE="enlightenment"
-VERSION="0.17.3"
+VERSION="0.17.4"
 SOURCE="http://download.enlightenment.org/releases/enlightenment-$VERSION.tar.bz2"
 #VERSION="svn~r82021"
 #SOURCE="svn::http://svn.enlightenment.org/svn/e/trunk/e"
