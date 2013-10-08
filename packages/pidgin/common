@@ -5,7 +5,7 @@ BUILD_DEPENDS="gtk2-dev
 	farstream0.1-dev
 	libtasn1-dev
 	libidn-dev
-	gnutls2-dev
+	gnutls-dev
 	libiconv-dev"
 
 DESCRIPTION="A multi-protocol instant messaging (IM) client"
@@ -14,10 +14,6 @@ SITE="http://pidgin.im/"
 COPYING="GPL-2"
 MAINTAINERS="Róbinson J. Araújo (nomore), jls_legalize <jlslegalize@gmail.com>"
 TAGS="messaging IM client"
-COMMENTS="Optional deps: 
-		   gst-plugins-good (for sounds & xmpp calls)
-		   gst-plugins-bad (for xmpp calls)
-		   gst-plugins-ugly
-		   gst-ffmpeg"
+COMMENTS="---"
 CHANGELOG="---"
-CURRENT="Updated to ${VERSION}, Rebuilt against farstream 0.1"
+CURRENT="Rebuilt in tc 5.0.1"

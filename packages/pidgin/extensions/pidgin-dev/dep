@@ -2,7 +2,7 @@ pidgin.tcz
 gtk2-dev.tcz
 farstream0.1-dev.tcz
 libidn-dev.tcz
-gnutls2-dev.tcz
+gnutls-dev.tcz
 libiconv-dev.tcz
 dbus-glib.tcz
 libtasn1-dev.tcz

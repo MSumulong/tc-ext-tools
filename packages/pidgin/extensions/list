@@ -118,7 +118,7 @@ usr/local/lib/libpurple.la
 usr/local/lib/libpurple.so
 usr/local/lib/libpurple.so.0
 usr/local/lib/libpurple.so.0.10.7
-usr/local/lib/perl5/i686-linux/perllocal.pod
+usr/local/lib/perl5/i486-linux-thread-multi/perllocal.pod
 usr/local/lib/pidgin/convcolors.la
 usr/local/lib/pidgin/convcolors.so
 usr/local/lib/pidgin/extplacement.la
@@ -230,8 +230,6 @@ usr/local/lib/purple-2/ssl.la
 usr/local/lib/purple-2/ssl.so
 usr/local/lib/purple-2/statenotify.la
 usr/local/lib/purple-2/statenotify.so
-usr/local/lib/purple-2/tcl.la
-usr/local/lib/purple-2/tcl.so
 usr/local/share/aclocal/purple.m4
 usr/local/share/applications/pidgin.desktop
 usr/local/share/icons/hicolor/16x16/apps/pidgin.png

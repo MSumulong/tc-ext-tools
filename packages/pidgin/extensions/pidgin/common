@@ -1,1 +1,6 @@
 ICON="/usr/local/share/icons/hicolor/32x32/apps/${PACKAGE}.png"
+COMMENTS="Optional deps: 
+		   gst-plugins-good0.10 (sounds & xmpp calls)
+		   gst-plugins-bad0.10 (xmpp calls)
+		   gst-plugins-ugly0.10
+		   gst-ffmpeg"
