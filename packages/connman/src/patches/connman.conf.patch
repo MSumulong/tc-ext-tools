@@ -1,0 +1,14 @@
+--- a/src/connman-dbus.conf
++++ b/src/connman-dbus.conf
+@@ -14,4 +14,11 @@
+     <policy context="default">
+         <deny send_destination="net.connman"/>
+     </policy>
++    <policy group="staff">
++        <allow own="net.connman"/>
++        <allow send_destination="net.connman"/>
++        <allow send_interface="net.connman.Agent"/>
++        <allow send_interface="net.connman.Counter"/>
++        <allow send_interface="net.connman.Notification"/>
++    </policy>
+ </busconfig>
