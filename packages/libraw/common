@@ -1,8 +1,9 @@
 PACKAGE="libraw"
-VERSION="0.14.7"
+VERSION="0.15.4"
 SOURCE="http://www.libraw.org/data/LibRaw-$VERSION.tar.gz"
 BUILD_DEPENDS="jasper-dev
-		lcms2-dev"
+		lcms2-dev
+		libjpeg-turbo-dev.tcz"
 
 DESCRIPTION="a library for reading RAW files obtained from 
 		digital photo cameras (CRW/CR2, NEF, RAF, DNG, and others)."
