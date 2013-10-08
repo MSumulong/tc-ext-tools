@@ -1,4 +1,14 @@
-gst-plugins-base1.0.tcz
+gst-plugins-base0.10.tcz
+bzip2-lib.tcz
+libdca.tcz
+faad.tcz
+openssl-1.0.0.tcz
+SDL.tcz
+librsvg.tcz
 libdvdread.tcz
 libdvdnav.tcz
 soundtouch.tcz
+libvdpau.tcz
+libschroedinger.tcz
+libofa.tcz
+libmms.tcz

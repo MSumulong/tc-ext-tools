@@ -1,2 +1,2 @@
-usr/local/lib/gstreamer-1.0/*.so
+usr/local/lib/gstreamer-0.10/*.so
 usr/local/lib/*.so.*

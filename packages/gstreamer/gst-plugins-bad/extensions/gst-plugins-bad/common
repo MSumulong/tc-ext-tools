@@ -1,8 +1,8 @@
-NAME="${PACKAGE}1.0"
-COMMENTS="Optional dependencies: bzip2-lib, libdca, faad, openssl-1.0.0,
-		SDL, librsvg, libdvdnava, libcdaudio, libexempi, libexif, 
+NAME="${PACKAGE}0.10"
+COMMENTS="Optional dependencies: 
+		 libexif, 
 		libmimic, libsndfile, libmusicbrainz, libdc1394, libvdpau,
-		libass, libvpx, libgme-svn, libschroedinger, celt, curl
-		libmms"
+		libass, libvpx, libschroedinger, celt, curl
+		libmms
 		Important note: If the optional plugins are blacklisted then you need to remove ~/.gstreamer-0.10/registry.i686.bin
 		To see the list of blacklisted plugins run the command: gst-inspect -b"

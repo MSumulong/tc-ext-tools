@@ -1,3 +1,7 @@
+usr/local/include/gstreamer-0.10/gst/pygst.h
+usr/local/include/gstreamer-0.10/gst/pygstexception.h
+usr/local/include/gstreamer-0.10/gst/pygstminiobject.h
+usr/local/include/gstreamer-0.10/gst/pygstvalue.h
 usr/local/lib/gstreamer-0.10/libgstpython.la
 usr/local/lib/gstreamer-0.10/libgstpython.so
 usr/local/lib/pkgconfig/gst-python-0.10.pc

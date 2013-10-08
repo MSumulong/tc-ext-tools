@@ -1,13 +1,14 @@
-PACKAGE="gst-python"
-VERSION="0.10.21"
+PACKAGE="gst-python0.10"
+VERSION="0.10.22"
 SOURCE="http://gstreamer.freedesktop.org/src/gst-python/gst-python-${VERSION}.tar.bz2"
-BUILD_DEPENDS="gstreamer gstreamer-dev python python-dev pygobject-2.7 pygobject-2.7-dev"
+BUILD_DEPENDS="gstreamer0.10 gstreamer0.10-dev python python-dev 
+		pygobject pygobject-dev"
 
 DESCRIPTION="GStreamer python bindings."
 AUTHOR="---"
 SITE="http://gstreamer.freedesktop.org"
 COPYING="LGPL"
-MAINTAINERS="juanito, Arslan S."
+MAINTAINERS="juanito, Arslan S., jlslegalize@gmail.com"
 COMMENTS="---"
 CHANGELOG="2009/11/08 First version 0.10.17 by Juanito
 		2010/03/16 Updated to 0.10.18 by Arslan S.
@@ -15,4 +16,4 @@ CHANGELOG="2009/11/08 First version 0.10.17 by Juanito
 		2010/12/08 Updated to 0.10.20 & renamed by Arslan S.
 		2011/02/08 Updated to 0.10.21 by Arslan S.
 		2011/06/12 Rebuilt by Arslan S."
-CURRENT="Rebuilt by Arslan S."
+CURRENT="Rebuilt for tc 5"

@@ -1,3 +1,9 @@
-gst-plugins-base1.0.tcz
-lame.tcz
+gst-plugins-base0.10.tcz
+libid3tag.tcz
+liba52.tcz
+libcdio.tcz
 libdvdread.tcz
+libmpeg2.tcz
+libmad.tcz
+x264.tcz
+lame.tcz

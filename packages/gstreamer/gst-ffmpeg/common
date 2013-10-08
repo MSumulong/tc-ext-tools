@@ -1,18 +1,20 @@
 PACKAGE="gst-ffmpeg"
-VERSION="0.11.2"
-SOURCE="http://gstreamer.freedesktop.org/src/${PACKAGE}/${PACKAGE}-${VERSION}.tar.bz2"
-BUILD_DEPENDS="gstreamer0.11 gstreamer0.11-dev gst-plugins-base gst-plugins-base-dev
-               bzip2-lib bzip2-dev SDL SDL-dev coreutils liborc liborc-dev yasm"
+VERSION="0.10.13"
+SOURCE="http://gstreamer.freedesktop.org/src/gst-ffmpeg/gst-ffmpeg-${VERSION}.tar.bz2"
+BUILD_DEPENDS="gstreamer0.10 gstreamer0.10-dev gst-plugins-base0.10 
+		gst-plugins-base0.10-dev
+               bzip2-lib bzip2-dev SDL SDL-dev coreutils liborc 
+		liborc-dev yasm"
 
 DESCRIPTION="GStreamer ffmpeg plugin."
 AUTHOR="---"
 SITE="http://gstreamer.freedesktop.org"
 COPYING="GPL"
-MAINTAINERS="Arslan S."
-COMMENTS="---"
+MAINTAINERS="Arslan S., jlslegalize@gmail.com"
+COMMENTS="Extension made using http://code.google.com/p/tc-ext-tools"
 CHANGELOG="2009/12/28 Original 0.10.9
 		2010/03/16 Updated to 0.10.10
 		2010/07/19 Updated to 0.10.11
 		2011/02/09 Rebuilt
 		2011/06/12 Rebuilt"
-CURRENT="Updated to $VERSION"
+CURRENT="Rebuilt for tc 5.x"
