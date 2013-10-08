@@ -1,8 +1,8 @@
 PACKAGE="elementary"
-VERSION="1.7.8"
-SOURCE="http://download.enlightenment.org/releases/$PACKAGE-$VERSION.tar.bz2"
-#VERSION="svn~r81699"
-#SOURCE="svn::http://svn.enlightenment.org/svn/e/trunk/${PACKAGE}"
+VERSION="1.7.9-pre"
+SOURCE="http://download.enlightenment.org/pre-releases/efl-1.7.9/$PACKAGE-1.7.9.tar.bz2"
+#VERSION="1.7.8"
+#SOURCE="http://download.enlightenment.org/releases/$PACKAGE-$VERSION.tar.bz2"
 BUILD_DEPENDS="ethumb-dev
 	efreet-dev
 	libeweather-dev
@@ -20,4 +20,5 @@ MAINTAINERS="jls_legalize (jlslegalize at gmail dot com)"
 TAGS="Enlightenment's widget set, EFL mobile touch-screen devices"
 COMMENTS="Extension made using http://code.google.com/p/tc-ext-tools"
 CHANGELOG=""
-CURRENT="Updated to ${VERSION}"
+#CURRENT="Rebuilt for tinycore 5.x"
+CURRENT="Updated to $VERSION"

@@ -1,17 +1,16 @@
 PACKAGE="emotion"
-VERSION="1.7.8"
-SOURCE="http://download.enlightenment.org/releases/$PACKAGE-$VERSION.tar.bz2"
-#VERSION="svn~r81699"
-#SOURCE="svn::http://svn.enlightenment.org/svn/e/trunk/${PACKAGE}"
+VERSION="1.7.9-pre"
+SOURCE="http://download.enlightenment.org/pre-releases/efl-1.7.9/$PACKAGE-1.7.9.tar.bz2"
+#VERSION="1.7.8"
+#SOURCE="http://download.enlightenment.org/releases/$PACKAGE-$VERSION.tar.bz2"
 BUILD_DEPENDS="eio-dev.tcz
 		edje-dev.tcz
 		eeze-dev.tcz
 		xine-lib-dev.tcz
-		gst-plugins-base-dev.tcz
+		gst-plugins-base0.10-dev.tcz
 		liborc-dev.tcz
 		dbus-dev.tcz
-		vlc-dev.tcz
-		Xorg-7.6-dev"
+		Xorg-7.7-dev"
 
 DESCRIPTION="Enlightenment's (Ecore/Evas?) audio and video integration"
 AUTHOR="Carsten Haitzler, Vincent Torri, Nicolas Aguirre, 
@@ -20,7 +19,8 @@ SITE="http://docs.enlightenment.org/auto/emotion/"
 COPYING="GPL-2"
 MAINTAINERS="jls_legalize (jlslegalize at gmail dot com)"
 TAGS="Enlightenment audio video"
-COMMENTS="optional deps: gst-plugins-base, xine-lib or vlc.
+COMMENTS="optional deps: gst-plugins-base, xine-lib.
 		Extension made using http://code.google.com/p/tc-ext-tools"
 CHANGELOG="---"
-CURRENT="Updated to ${VERSION}"
+#CURRENT="Rebuilt for tinycore 5.x"
+CURRENT="Updated to $VERSION"

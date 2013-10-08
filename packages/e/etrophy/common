@@ -16,6 +16,8 @@ COMMENTS="a library that manages scores, trophies and unlockables. It will
 		store them and provide views to display them. Could be used by games based
 		on EFL.
 
-		Right now it just stores on EET, but a remote backend is planned."
+		Right now it just stores on EET, but a remote backend is planned.
+
+		Extension made using http://code.google.com/p/tc-ext-tools"
 CHANGELOG="---"
-CURRENT="Updated to ${VERSION}"
+CURRENT="Rebuilt in tc 5.x"

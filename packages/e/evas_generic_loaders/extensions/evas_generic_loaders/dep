@@ -1,7 +1,5 @@
 eina.tcz
-gst-plugins-base.tcz
-libspectre.tcz
+gst-plugins-base0.10.tcz
 libraw.tcz
 librsvg.tcz
-libgs_ps.tcz
 poppler.tcz

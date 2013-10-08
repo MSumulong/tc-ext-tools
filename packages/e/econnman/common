@@ -25,4 +25,4 @@ COMMENTS="connmand needs to be running, please read connman1 info file.
 		Extensions build system is tc-ext-tools"
 TAGS="ConnMan EFL"
 CHANGELOG="---"
-CURRENT="Updated to ${VERSION}"
+CURRENT="Updated" 

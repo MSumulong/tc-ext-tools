@@ -1,14 +1,16 @@
 PACKAGE="ecore"
-VERSION="1.7.8"
-SOURCE="http://download.enlightenment.org/releases/$PACKAGE-$VERSION.tar.bz2"
+VERSION="1.7.9-pre"
+SOURCE="http://download.enlightenment.org/pre-releases/efl-1.7.9/$PACKAGE-1.7.9.tar.bz2"
+#VERSION="1.7.8"
+#SOURCE="http://download.enlightenment.org/releases/$PACKAGE-$VERSION.tar.bz2"
 #VERSION="svn~r79964"
 #SOURCE="svn::http://svn.enlightenment.org/svn/e/trunk/${PACKAGE}"
 BUILD_DEPENDS="evas-dev.tcz
-	cvs
 	curl-dev
 	glib2-dev
 	libssh2
 	curl"
+#	cvs
 #	libcares-dev
 #	libxcb-util-dev
 DESCRIPTION="a clean and tiny event loop library with many modules"
@@ -19,4 +21,5 @@ MAINTAINERS="Althalus, jls_legalize (jlslegalize at gmail dot com)"
 TAGS="clean tiny event loop library many modules"
 COMMENTS="Extension made using http://code.google.com/p/tc-ext-tools"
 CHANGELOG=""
-CURRENT="Updated to ${VERSION}"
+#CURRENT="Rebuilt for tinycore 5.x"
+CURRENT="Updated to $VERSION"

@@ -1,6 +1,8 @@
 PACKAGE="enlightenment"
-VERSION="0.17.4"
-SOURCE="http://download.enlightenment.org/releases/enlightenment-$VERSION.tar.bz2"
+VERSION="0.17.5-pre"
+SOURCE="http://download.enlightenment.org/pre-releases/enlightenment-0.17.5/$PACKAGE-0.17.5.tar.bz2"
+#VERSION="0.17.4"
+#SOURCE="http://download.enlightenment.org/releases/enlightenment-$VERSION.tar.bz2"
 #VERSION="svn~r82021"
 #SOURCE="svn::http://svn.enlightenment.org/svn/e/trunk/e"
 BUILD_DEPENDS="alsa-dev
@@ -11,7 +13,7 @@ BUILD_DEPENDS="alsa-dev
 	libxcb-util
 	libxcb-util-dev
 	elementary-dev
-	connman1-dev.tcz"
+	connman-dev.tcz"
 #	ephysics-dev
 #	cvs
 DESCRIPTION="The Enlightenment DR17 Desktop Environment"
@@ -22,4 +24,5 @@ MAINTAINERS="Althalus (nomore), jls_legalize (jlslegalize at gmail dot com)"
 TAGS="Enlightenment DR17 Desktop Environment"
 COMMENTS="Extension made using http://code.google.com/p/tc-ext-tools"
 CHANGELOG="---"
-CURRENT="Updated to ${VERSION}"
+#CURRENT="Rebuilt in tc 5.x"
+CURRENT="Updated to $VERSION"

@@ -1,18 +1,24 @@
 PACKAGE="evas"
-VERSION="1.7.8"
-SOURCE="http://download.enlightenment.org/releases/evas-$VERSION.tar.bz2"
+VERSION="1.7.9-pre"
+SOURCE="http://download.enlightenment.org/pre-releases/efl-1.7.9/$PACKAGE-1.7.9.tar.bz2"
+#VERSION="1.7.8"
+#SOURCE="http://download.enlightenment.org/releases/evas-$VERSION.tar.bz2"
 BUILD_DEPENDS="	
 	eet-dev
 	fontconfig-dev
-	graphics-libs-1-dev
-	jbigkit
-	Xorg-7.6
-	Xorg-7.6-dev"
+	Xorg-7.7
+	Xorg-7.7-dev
+	harfbuzz-dev.tcz
+	fribidi-dev.tcz
+	giflib-dev.tcz
+	libpng-dev.tcz
+	libtiff-dev.tcz"
+#	libxcb-dev
+#	jbigkit
+#	graphic-libs-1-dev
 #	tiff3-dev
-#	fribidi
 #	glib2-dev 
 #	cairo-dev"
-#	libxcb-dev
 #	pixman-dev
 DESCRIPTION="a clean display canvas API"
 AUTHOR="See http://enlightenment.org/p.php?p=contact&l=en"
@@ -23,4 +29,4 @@ TAGS="clean display canvas API"
 COMMENTS="one of the libraries that make up the EFL
 		Extension made using http://code.google.com/p/tc-ext-tools"
 CHANGELOG="---"
-CURRENT="Updated to ${VERSION}"
+CURRENT="Updated to $VERSION"

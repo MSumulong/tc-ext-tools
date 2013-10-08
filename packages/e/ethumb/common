@@ -1,8 +1,8 @@
 PACKAGE="ethumb"
-VERSION="1.7.8"
-SOURCE="http://download.enlightenment.org/releases/$PACKAGE-$VERSION.tar.bz2"
-#VERSION="svn~r81699"
-#SOURCE="svn::http://svn.enlightenment.org/svn/e/trunk/${PACKAGE}"
+VERSION="1.7.9-pre"
+SOURCE="http://download.enlightenment.org/pre-releases/efl-1.7.9/$PACKAGE-1.7.9.tar.bz2"
+#VERSION="1.7.8"
+#SOURCE="http://download.enlightenment.org/releases/$PACKAGE-$VERSION.tar.bz2"
 BUILD_DEPENDS="libexif-dev.tcz
 		libexif.tcz
 		emotion-dev.tcz
@@ -13,7 +13,6 @@ BUILD_DEPENDS="libexif-dev.tcz
 
 DESCRIPTION="Enlightenment's thumbnailing library and dbus service"
 AUTHOR="Rafael Antognolli, Cedric Bail, Mikael SANS, Jérôme Pinot"
-
 SITE="http://trac.enlightenment.org/e/wiki/Ethumb"
 COPYING="GPL-2"
 MAINTAINERS="jls_legalize (jlslegalize at gmail dot com)"
@@ -21,4 +20,4 @@ TAGS="Enlightenment's thumbnailing library dbus service"
 COMMENTS="optional deps: emotion, epdf
 		Extension made using http://code.google.com/p/tc-ext-tools"
 CHANGELOG=""
-CURRENT="Updated to ${VERSION}"
+CURRENT="Updated to $VERSION"

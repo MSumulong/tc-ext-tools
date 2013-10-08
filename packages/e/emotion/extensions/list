@@ -7,14 +7,13 @@ usr/local/lib/emotion/em_generic.la
 usr/local/lib/emotion/em_generic.so
 usr/local/lib/emotion/gstreamer.la
 usr/local/lib/emotion/gstreamer.so
-usr/local/lib/emotion/utils/em_generic_vlc
 usr/local/lib/emotion/xine.la
 usr/local/lib/emotion/xine.so
 usr/local/lib/libemotion.a
 usr/local/lib/libemotion.la
 usr/local/lib/libemotion.so
 usr/local/lib/libemotion.so.1
-usr/local/lib/libemotion.so.1.7.8
+usr/local/lib/libemotion.so.1.7.9
 usr/local/lib/pkgconfig/emotion.pc
 usr/local/share/emotion/data/icon.edj
 usr/local/share/emotion/data/theme.edj

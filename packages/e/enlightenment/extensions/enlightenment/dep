@@ -1,10 +1,10 @@
 efreet.tcz
 eeze.tcz
-libxcb.tcz
 elementary.tcz
-Xorg-7.6-lib.tcz
+Xorg-7.7-lib.tcz
 librsvg.tcz
 libspectre.tcz
 libraw.tcz
 poppler.tcz
+libxcb.tcz
 libxcb-util.tcz

@@ -6,7 +6,7 @@ SOURCE="http://download.enlightenment.org/releases/BINDINGS/python/$PACKAGE-$VER
 BUILD_DEPENDS="e_dbus-dev
 		python-dev
 		ecore-dev
-		dbus-python-2.7"
+		dbus-python"
 #		cython.tcz"
 
 DESCRIPTION="DBUS PYTHON INTEGRATION FOR ECORE"
@@ -15,6 +15,6 @@ SITE="enlightenment.org"
 COPYING="GPL-2"
 MAINTAINERS="jls_legalize <jlslegalize@gmail.com>"
 TAGS="DBUS PYTHON INTEGRATION ECORE"
-COMMENTS="---"
+COMMENTS="Extension made using http://code.google.com/p/tc-ext-tools"
 CHANGELOG="---"
-CURRENT="Rebuilt"
+CURRENT="Rebuilt in tc 5.0.1"

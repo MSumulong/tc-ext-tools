@@ -1,4 +1,7 @@
 eet.tcz
 fontconfig.tcz
-jbigkit.tcz
-graphics-libs-1.tcz
+harfbuzz.tcz
+fribidi.tcz
+giflib.tcz
+libpng.tcz
+libtiff.tcz

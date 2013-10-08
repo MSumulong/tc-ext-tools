@@ -11,5 +11,5 @@ COMMENTS="In case e doesn't start, delete ~/.e and restart X, then make
 		   -evas_generica_loaders
 		   -evas_generic_loaders+librsvg for svg
 		    (first way doesn't work for me)
-		For a cannection manager load connman1 and optionally
+		For a cannection manager load connman and optionally
 		econnman"

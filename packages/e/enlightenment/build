@@ -74,6 +74,8 @@ build_compile() {
    sudo ln -s /usr/lib/libblkid.la /usr/local/lib
    sudo ln -s /usr/lib/libuuid.la /usr/local/lib
    sudo ln -s /usr/lib/libX11.la /usr/local/lib
+   sudo ln -s /usr/local/lib/libXau.la /usr/lib
+   sudo ln -s /usr/local/lib/libXdmcp.la /usr/lib
    make || return 1
 }
 

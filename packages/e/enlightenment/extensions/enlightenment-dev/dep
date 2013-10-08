@@ -2,7 +2,8 @@ enlightenment.tcz
 alsa-dev.tcz
 edje-dev.tcz
 efreet-dev.tcz
-connman1-dev.tcz
+connman-dev.tcz
 libxcb-dev.tcz
-elementary-dev.tcz
 libxcb-util-dev.tcz
+libxcb-util.tcz
+elementary-dev.tcz
