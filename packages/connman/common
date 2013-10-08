@@ -1,11 +1,13 @@
 PACKAGE="connman"
-VERSION="0.77"
-SOURCE="http://www.kernel.org/pub/linux/network/connman/${PACKAGE}-${VERSION}.tar.xz"
+VERSION="1.18"
+SOURCE="http://www.kernel.org/pub/linux/network/connman/connman-${VERSION}.tar.xz"
 BUILD_DEPENDS="dbus-dev
 	wpa_supplicant-dbus
 	glib2-dev
-	gnutls2-dev
-	iptables"
+	gnutls-dev
+	libtasn1-dev
+	iptables
+	readline-dev"
 
 DESCRIPTION="a daemon for managing internet connections"
 AUTHOR="Marcel Holtmann and Samuel Ortiz"
@@ -13,7 +15,15 @@ SITE="http://connman.net"
 COPYING="GPL-2"
 MAINTAINERS="jls_legalize <jlslegalize@gmail.com>"
 TAGS="daemon internet connections"
-COMMENTS="---"
+COMMENTS=" Add to /opt/bootlocal.sh :
+                        /usr/local/etc/init.d/dbus start
+                        connmand
+                or connmand -r as in my case.
+		For persistency add var/lib/connman/ to 
+		/opt/.filetool.lst
+                ---
+                optional dep: wpa_supplicant-dbus.tcz
+		
+		Extension made using http://code.google.com/p/tc-ext-tools"
 CHANGELOG="---"
-CURRENT="rebuilt fixed configure options, modified dbus config to enable 
-		normal user to control the program"
+CURRENT="Updated to ${VERSION}"

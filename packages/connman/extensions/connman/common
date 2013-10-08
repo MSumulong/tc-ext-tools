@@ -4,4 +4,4 @@ COMMENTS="Add to /opt/bootlocal.sh :
 		In case u need a wifi connection load 
 			wpa_supplicant-dbus.tcz
 		To save settings add /var/lib/connman to /opt/.filetool.lst
-		This extension confilcts with connman1.tcz"
+		This extension confilcts with connman.tcz"

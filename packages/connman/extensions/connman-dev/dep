@@ -1,5 +1,8 @@
 connman.tcz
 dbus-dev.tcz
-wpa_supplicant.tcz
+wpa_supplicant-dbus.tcz
 glib2-dev.tcz
-gnutls2-dev.tcz
+gnutls-dev.tcz
+libtasn1-dev.tcz
+iptables.tcz
+readline-dev.tcz
