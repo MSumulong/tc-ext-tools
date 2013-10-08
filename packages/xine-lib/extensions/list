@@ -45,7 +45,7 @@ usr/local/lib/libxine-interface.la
 usr/local/lib/libxine.la
 usr/local/lib/libxine.so
 usr/local/lib/libxine.so.2
-usr/local/lib/libxine.so.2.3.0
+usr/local/lib/libxine.so.2.3.1
 usr/local/lib/pkgconfig/libxine.pc
 usr/local/lib/xine/plugins/2.3/mime.types
 usr/local/lib/xine/plugins/2.3/post/xineplug_post_audio_filters.so
@@ -68,9 +68,7 @@ usr/local/lib/xine/plugins/2.3/vidix/savage_vid.so
 usr/local/lib/xine/plugins/2.3/vidix/sis_vid.so
 usr/local/lib/xine/plugins/2.3/vidix/unichrome_vid.so
 usr/local/lib/xine/plugins/2.3/xineplug_ao_out_alsa.so
-usr/local/lib/xine/plugins/2.3/xineplug_ao_out_esd.so
 usr/local/lib/xine/plugins/2.3/xineplug_ao_out_file.so
-usr/local/lib/xine/plugins/2.3/xineplug_ao_out_jack.so
 usr/local/lib/xine/plugins/2.3/xineplug_ao_out_none.so
 usr/local/lib/xine/plugins/2.3/xineplug_ao_out_oss.so
 usr/local/lib/xine/plugins/2.3/xineplug_decode_a52.so
@@ -83,7 +81,6 @@ usr/local/lib/xine/plugins/2.3/xineplug_decode_faad.so
 usr/local/lib/xine/plugins/2.3/xineplug_decode_ff.so
 usr/local/lib/xine/plugins/2.3/xineplug_decode_gdk_pixbuf.so
 usr/local/lib/xine/plugins/2.3/xineplug_decode_gsm610.so
-usr/local/lib/xine/plugins/2.3/xineplug_decode_image.so
 usr/local/lib/xine/plugins/2.3/xineplug_decode_libjpeg.so
 usr/local/lib/xine/plugins/2.3/xineplug_decode_lpcm.so
 usr/local/lib/xine/plugins/2.3/xineplug_decode_mad.so
@@ -108,7 +105,6 @@ usr/local/lib/xine/plugins/2.3/xineplug_dmx_games.so
 usr/local/lib/xine/plugins/2.3/xineplug_dmx_iff.so
 usr/local/lib/xine/plugins/2.3/xineplug_dmx_image.so
 usr/local/lib/xine/plugins/2.3/xineplug_dmx_matroska.so
-usr/local/lib/xine/plugins/2.3/xineplug_dmx_mng.so
 usr/local/lib/xine/plugins/2.3/xineplug_dmx_mpeg.so
 usr/local/lib/xine/plugins/2.3/xineplug_dmx_mpeg_block.so
 usr/local/lib/xine/plugins/2.3/xineplug_dmx_mpeg_elem.so
@@ -137,7 +133,6 @@ usr/local/lib/xine/plugins/2.3/xineplug_inp_pnm.so
 usr/local/lib/xine/plugins/2.3/xineplug_inp_pvr.so
 usr/local/lib/xine/plugins/2.3/xineplug_inp_rtp.so
 usr/local/lib/xine/plugins/2.3/xineplug_inp_rtsp.so
-usr/local/lib/xine/plugins/2.3/xineplug_inp_smb.so
 usr/local/lib/xine/plugins/2.3/xineplug_inp_stdin_fifo.so
 usr/local/lib/xine/plugins/2.3/xineplug_inp_test.so
 usr/local/lib/xine/plugins/2.3/xineplug_inp_v4l2.so
@@ -150,6 +145,8 @@ usr/local/lib/xine/plugins/2.3/xineplug_vo_out_aa.so
 usr/local/lib/xine/plugins/2.3/xineplug_vo_out_dxr3.so
 usr/local/lib/xine/plugins/2.3/xineplug_vo_out_fb.so
 usr/local/lib/xine/plugins/2.3/xineplug_vo_out_none.so
+usr/local/lib/xine/plugins/2.3/xineplug_vo_out_opengl.so
+usr/local/lib/xine/plugins/2.3/xineplug_vo_out_opengl2.so
 usr/local/lib/xine/plugins/2.3/xineplug_vo_out_raw.so
 usr/local/lib/xine/plugins/2.3/xineplug_vo_out_vidix.so
 usr/local/lib/xine/plugins/2.3/xineplug_vo_out_xcbshm.so

@@ -1,23 +1,17 @@
 PACKAGE="xine-lib"
-VERSION="1.2.3"
+VERSION="1.2.4"
 SOURCE="http://downloads.sourceforge.net/project/xine/$PACKAGE/$VERSION/${PACKAGE}-${VERSION}.tar.xz"
 BUILD_DEPENDS="perl5
 	libpostproc
-	libpostproc-dev
 	ffmpeg
-	vcdimager-dev
 	libxcb-dev
-	Xorg-7.6-dev
+	Xorg-7.7-dev
 	aalib-dev
 	GraphicsMagick-dev
-	linux-headers-$KERNEL
 	libdca-dev
 	libdca
-	ImageMagick-dev
 	liba52-dev
 	libbluray-dev
-	esound-dev
-	esound
 	faad-dev
 	faad
 	flac-dev
@@ -25,8 +19,6 @@ BUILD_DEPENDS="perl5
 	gdk-pixbuf-dev
 	gdk-pixbuf
 	gettext
-	graphics-libs-1
-	graphics-libs-1-dev
 	libcdio-dev
 	libcdio
 	libmpeg2-dev
@@ -35,15 +27,23 @@ BUILD_DEPENDS="perl5
 	libmad
 	libxcb-dev
 	libxcb
-	jack
 	samba3
-	linux-3.0.1_api_headers
-	jack-dev
+	linux-3.8.3_api_headers
 	libtool-dev
-	vcdimager-dev
 	librsvg-dev
-	libavcodec-dev
-	lcms2-dev"
+	lcms2-dev
+	vcdimager-dev
+	ffmpeg-dev"
+#	libavcodec-dev
+#	jack-dev
+#	jack
+#	ImageMagick-dev
+#	linux-headers-$KERNEL
+#	graphics-libs-1
+#	graphics-libs-1-dev
+#	libpostproc-dev
+#	esound-dev
+#	esound
 DESCRIPTION="a free (gpl-licensed) high-performance, portable and reusable 
 		multimedia playback engine"
 AUTHOR="Xine Project Team"
@@ -53,14 +53,13 @@ MAINTAINERS="jlslegalize@gmail.com"
 TAGS="multimedia playback engine"
 COMMENTS="configured with:
 		--without-pulseaudio 
+		--without-imagemagick
 		--disable-gnomevfs 
 		--disable-vaapi
 		
 		Optional deps:
                         libxcb
                         SDL
-                        ImageMagick
-                        jack
                         samba3
                         libv4l
 			lcms2

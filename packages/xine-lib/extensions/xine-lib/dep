@@ -4,8 +4,8 @@ libdca.tcz
 libmad.tcz
 libbluray.tcz
 libcdio.tcz
-vcdimager.tcz
 flac.tcz
 libavcodec.tcz
 libpostproc.tcz
 openssl-1.0.0.tcz
+vcdimager.tcz
