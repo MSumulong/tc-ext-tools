@@ -1,5 +1,5 @@
 PACKAGE="tremor"
-VERSION="svn~r18729"
+VERSION="svn~r19005"
 SOURCE="svn::http://svn.xiph.org/trunk/Tremor"
 BUILD_DEPENDS="libogg-dev"
 
@@ -11,4 +11,4 @@ MAINTAINERS="jlslegalize@gmail.com"
 TAGS="fixed-point Ogg Vorbis decoder"
 COMMENTS="---"
 CHANGELOG="---"
-CURRENT="First Version"
+CURRENT="Rebuilt in tc 5.0.1"
