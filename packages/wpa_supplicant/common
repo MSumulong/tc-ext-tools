@@ -1,8 +1,8 @@
 PACKAGE="wpa_supplicant"
-VERSION="1.0"
+VERSION="2.0"
 SOURCE="http://hostap.epitest.fi/releases/wpa_supplicant-${VERSION}.tar.gz"
 BUILD_DEPENDS="openssl-1.0.0 openssl-1.0.0-dev dbus dbus-dev
-               dbus-glib dbus-glib-dev libnl1 libnl1-dev
+               dbus-glib dbus-glib-dev libnl libnl-dev
                readline readline-dev"
 
 DESCRIPTION="WPA Supplicant with dbus support."
@@ -14,5 +14,5 @@ COMMENTS="This extension conflicts with wpa_supplicant.tcz"
 CHANGELOG="2010/07/05 First Version 0.6.10
 		2010/11/18 Updated to 0.7.3
 		2011/10/08 Rebuilt for TCL 4.x"
-CURRENT="Rebuilt with openssl-1.0.0-dev"
+CURRENT="Updated to $VERSION"
 

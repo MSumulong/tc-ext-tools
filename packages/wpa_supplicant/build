@@ -12,7 +12,7 @@ build_configure() {
 
 # Compile
 build_compile() {
-
+   sudo ln -s /usr/local/include/libnl3/netlink/ /usr/local/include
    cd wpa_supplicant
    make || return 1
 
