@@ -6,7 +6,7 @@ BUILD_DEPENDS="glib2-dev
 	libsoup-dev
 	glib2-dev
 	gssdp-dev
-	pygobject-2.7-dev
+	pygobject-dev
 	libproxy
 	gupnp-dev"
 
@@ -18,5 +18,5 @@ MAINTAINERS="jlslegalize@gmail.com"
 TAGS="library handle UPnP IGD port mapping GUPnP"
 COMMENTS="---"
 CHANGELOG="---"
-CURRENT="Updated to ${VERSION}"
+CURRENT="Rebuilt in tc 5.x"
 
