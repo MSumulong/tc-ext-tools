@@ -13,4 +13,4 @@ COMMENTS="---"
 CHANGELOG="2010/07/01 First version 0.99.6
                 2012/04/07 Rebuilt
 		2012/04/07 Rebuilt"
-CURRENT="Updated to ${Version}"
+CURRENT="rebuilt in tc 5.0.1"
