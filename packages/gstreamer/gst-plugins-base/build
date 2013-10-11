@@ -8,9 +8,9 @@ build_configure() {
   ./configure --prefix=/usr/local --localstatedir=/var \
       --enable-iso-codes --enable-experimental \
       --disable-examples --disable-static --disable-introspection \
+	--disable-ivorbis \
       --with-package-name="GStreamer Base Plugins (Tiny Core Linux)" \
       --with-package-origin="https://code.google.com/p/tc-ext-tools/source/browse/packages/gstreamer" || return 1
-
 }
 
 # Compile

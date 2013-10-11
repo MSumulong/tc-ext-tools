@@ -106,6 +106,8 @@ usr/local/lib/gstreamer-0.10/libgstgdp.la
 usr/local/lib/gstreamer-0.10/libgstgdp.so
 usr/local/lib/gstreamer-0.10/libgstgio.la
 usr/local/lib/gstreamer-0.10/libgstgio.so
+usr/local/lib/gstreamer-0.10/libgstlibvisual.la
+usr/local/lib/gstreamer-0.10/libgstlibvisual.so
 usr/local/lib/gstreamer-0.10/libgstogg.la
 usr/local/lib/gstreamer-0.10/libgstogg.so
 usr/local/lib/gstreamer-0.10/libgstpango.la

@@ -94,6 +94,8 @@ usr/local/lib/gstreamer-0.10/libgstshapewipe.la
 usr/local/lib/gstreamer-0.10/libgstshapewipe.so
 usr/local/lib/gstreamer-0.10/libgstsmpte.la
 usr/local/lib/gstreamer-0.10/libgstsmpte.so
+usr/local/lib/gstreamer-0.10/libgstsouphttpsrc.la
+usr/local/lib/gstreamer-0.10/libgstsouphttpsrc.so
 usr/local/lib/gstreamer-0.10/libgstspectrum.la
 usr/local/lib/gstreamer-0.10/libgstspectrum.so
 usr/local/lib/gstreamer-0.10/libgstspeex.la

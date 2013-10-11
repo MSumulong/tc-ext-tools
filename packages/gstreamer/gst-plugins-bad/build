@@ -7,6 +7,7 @@ build_configure() {
 
   ./configure --prefix=/usr/local --localstatedir=/var \
       --disable-static --enable-experimental \
+	--disable-jp2k \
       --with-package-name="GStreamer Good Plugins (Tiny Core Linux)" \
       --with-package-origin="www.tinycorelinux.com" || return 1
 
@@ -18,6 +19,7 @@ build_compile() {
   sudo ln -s /usr/local/lib/libX11.la 	/usr/lib
   sudo ln -s /usr/local/lib/libXau.la 	/usr/lib
   sudo ln -s /usr/local/lib/libXdmcp.la /usr/lib
+  sudo ln -s /usr/local/lib/libjpeg.la /usr/lib
 
   make || return 1
 

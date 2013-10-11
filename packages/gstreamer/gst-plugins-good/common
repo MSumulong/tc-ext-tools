@@ -12,10 +12,10 @@ BUILD_DEPENDS="gstreamer0.10 gstreamer0.10-dev gst-plugins-base0.10-dev
                libdv libdv-dev 
                libtheora libtheora-dev sqlite3 sqlite3-dev libgnome-keyring libgnome-keyring-dev
                libxcb libxcb-dev dbus dbus-dev dbus-glib dbus-glib-dev
-               liborc liborc-dev
+               liborc liborc-dev libv4l libv4l-dev libsoup-gnome-dev 
 	       libiec61883-dev libvpx-dev libjpeg-turbo-dev"
-#libv4l libv4l-dev GConf GConf-dev esound esound-dev wavpack wavpack-dev libsoup-gnome 
-#libsoup-gnome-dev liboil libsamplerate libsamplerate-dev libshout libshout-dev 
+# GConf GConf-dev esound esound-dev wavpack wavpack-dev libsoup-gnome 
+#liboil libsamplerate libsamplerate-dev libshout libshout-dev 
 #libxcb-util libxcb-util-dev libgdbm libgdbm-dev  hal hal-dev jack-dev 
 DESCRIPTION="GStreamer Good Plugins."
 AUTHOR="various"

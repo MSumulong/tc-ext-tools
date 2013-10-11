@@ -1,2 +1,3 @@
 usr/local
 x-usr/local/share/locale
+x-usr/local/lib/gstreamer-0.10/*.la

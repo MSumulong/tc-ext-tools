@@ -5,7 +5,7 @@ BUILD_DEPENDS="	gst-plugins-base0.10-dev
                libasound alsa-dev bzip2-lib bzip2-dev
                cairo cairo-dev libdca libdca-dev libdvdnav libdvdnav-dev
                libexif libexif-dev faad faad-dev
-               glib2 glib2-dev gtk2 gtk2-dev jasper libmimic libmimic-dev
+               glib2 glib2-dev gtk2 gtk2-dev jasper-dev libmimic libmimic-dev
                librsvg librsvg-dev libsndfile libsndfile-dev
                libdc1394 libdc1394-dev libusb libusb-dev faac faac-dev
                SDL SDL-dev libmusicbrainz libmusicbrainz-dev libvdpau 
@@ -16,7 +16,8 @@ BUILD_DEPENDS="	gst-plugins-base0.10-dev
 		flac-dev
 		celt-dev curl-dev soundtouch soundtouch-dev libmms-dev 
 		libmpeg2-dev mpg123
-		libofa-dev libmms"
+		libofa-dev libmms
+		libopenal-dev"
 #libcdaudio libcdaudio-dev libexempi libexempi-dev libmpcdec libmpcdec-dev 
 #libgme-svn libgme-svn-dev
 DESCRIPTION="GStreamer Bad Plugins."
@@ -27,4 +28,4 @@ MAINTAINERS="juanito, Arslan S., jlslegalize@gmail.com"
 TAGS="GStreamer Bad Plugins."
 COMMENTS="Extension made using http://code.google.com/p/tc-ext-tools"
 CHANGELOG=""
-CURRENT="Rebuilt for tc 5.x"
+CURRENT="Rebuilt" 

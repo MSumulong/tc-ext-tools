@@ -11,3 +11,6 @@ libpulseaudio.tcz
 libdv.tcz
 aalib.tcz
 cdparanoia.tcz
+bzip2-lib.tcz 
+libv4l.tcz
+libsoup-gnome.tcz
