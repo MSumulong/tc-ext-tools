@@ -1,0 +1,15 @@
+PACKAGE="eldbus"
+VERSION="1.7.9"
+SOURCE="http://download.enlightenment.org/releases/$PACKAGE-$VERSION.tar.bz2"
+BUILD_DEPENDS="ecore-dev
+	dbus-dev"
+
+DESCRIPTION=""
+AUTHOR=""
+SITE="enlightenment.org"
+COPYING="LGPL-2.1"
+MAINTAINERS="jlslegalize@gmail.com"
+TAGS="library data types tools projects"
+COMMENTS="extension build scripts: https://code.google.com/p/tc-ext-tools/"
+CHANGELOG="---"
+CURRENT="First version $VERSION"

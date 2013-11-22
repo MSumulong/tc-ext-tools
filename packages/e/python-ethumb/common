@@ -1,0 +1,18 @@
+PACKAGE="python-ethumb"
+VERSION="1.7.0"
+SOURCE="http://download.enlightenment.org/releases/BINDINGS/python/$PACKAGE-$VERSION.tar.bz2"
+#VERSION="svn~r75273"
+#SOURCE="svn::http://svn.enlightenment.org/svn/e/trunk/BINDINGS/python/$PACKAGE"
+BUILD_DEPENDS="ethumb-dev
+		python-dev"
+#		cython"
+
+DESCRIPTION="python bindings for ethumb"
+AUTHOR="Rafael Antognolli <antognolli@profusion.mobi>"
+SITE="enlightenment.org"
+COPYING="GPL-2"
+MAINTAINERS="jls_legalize <jlslegalize@gmail.com>"
+TAGS="python bindings ethumb"
+COMMENTS="Extension made using http://code.google.com/p/tc-ext-tools"
+CHANGELOG="---"
+CURRENT="Rebuilt in tc 5.0.1"

@@ -1,0 +1,15 @@
+PACKAGE="entrance"
+VERSION="git"
+SOURCE="git::http://git.enlightenment.org/misc/$PACKAGE.git/"
+BUILD_DEPENDS="elementary-dev libxcb-dev"
+
+DESCRIPTION="Login manager"
+AUTHOR="Michael Bouchaud alias yoz <michael.bouchaud@gmail.com>
+		Carsten Haitzler <raster@rasterman.com>"
+SITE="enlightenment.org"
+COPYING="GPL-2"
+MAINTAINERS="jlslegalize@gmail.com"
+TAGS="Login manager"
+COMMENTS="---"
+CHANGELOG="---"
+CURRENT="Updated to ${VERSION}"

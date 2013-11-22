@@ -1,0 +1,7 @@
+usr/local/etc/entrance.conf
+usr/local/etc/pam.d/entrance
+usr/local/lib/entrance/entrance_client
+usr/local/lib/entrance/entrance_wait
+usr/local/sbin/entrance
+usr/local/share/entrance/themes/default.edj
+usr/local/share/entrance/themes/old/old.edj

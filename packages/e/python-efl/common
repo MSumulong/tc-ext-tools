@@ -1,0 +1,25 @@
+PACKAGE="python-efl"
+VERSION="git20130524"
+SOURCE="git::http://git.enlightenment.org/bindings/python/$PACKAGE.git/"
+BUILD_DEPENDS="python-dev cython elementary-git-dev dbus-python-2.7.tcz"
+
+
+DESCRIPTION="Python bindings for the EFL"
+AUTHOR="Gustavo Sverzut Barbieri <barbieri@gmail.com>
+		Ulisses Furquim <ulissesf@gmail.com>
+		Davide 'DaveMDS' Andreoli <dave@gurumeditation.it>
+		Fabiano Fid?ncio <fidencio@profusion.mobi>
+		Tiago Falc?o <tiago@profusion.mobi>
+		Simon Busch <morphis@gravedo.de>
+		Boris 'billiob' Faure <billiob@gmail.com>
+		Bruno Dilly <bdilly@profusion.mobi>
+		Joost Albers <joost.albers@nomadrail.com>
+		Kai Huuhko <kai.huuhko@gmail.com>"
+
+SITE="http://git.enlightenment.org/bindings/python/python-efl.git/"
+COPYING="GPL-2"
+MAINTAINERS="jlslegalize@gmail.com"
+TAGS="Python bindings EFL"
+COMMENTS="extension made using http://code.google.com/p/tc-ext-tools/"
+CHANGELOG="---"
+CURRENT="First Version $VERSION"

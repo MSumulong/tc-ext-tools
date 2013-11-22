@@ -1,0 +1,23 @@
+PACKAGE="python-elementary-git"
+VERSION="git"
+SOURCE="git::http://git.enlightenment.org/legacy/bindings/python/python-elementary.git"
+BUILD_DEPENDS="elementary-git-dev
+	cython"
+#	python-efl commentata xche' non nel repo
+
+DESCRIPTION="Python bindings for the Elementary widget set library"
+AUTHOR="Simon Busch <morphis@gravedo.de>
+		Boris 'billiob' Faure <billiob@gmail.com>
+		Davide 'DaveMDS' Andreoli <dave@gurumeditation.it>
+		Fabiano Fid?ncio <fidencio@profusion.mobi>
+		Bruno Dilly <bdilly@profusion.mobi>
+		Tiago Falc?o <tiago@profusion.mobi>
+		Joost Albers <joost.albers@nomadrail.com>
+		Kai Huuhko <kai.huuhko@gmail.com>"
+SITE="enlightenment.org"
+COPYING="GPL-2"
+MAINTAINERS="jls_legalize <jlslegalize@gmail.com>"
+TAGS="Python bindings Elementary widget library"
+COMMENTS="---"
+CHANGELOG="---"
+CURRENT="First version ${VERSION}"

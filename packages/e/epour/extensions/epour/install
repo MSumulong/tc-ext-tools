@@ -1,0 +1,3 @@
+usr/local
+x-usr/local/lib/*/site-packages/*/*.pyc
+x-usr/local/lib/*/site-packages/*/*/*.pyc

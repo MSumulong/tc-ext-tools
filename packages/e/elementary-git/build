@@ -1,0 +1,57 @@
+
+############################################################################################
+#                                                                                          #
+#    package build functions: configure, compile, install, rules, and custom functions     #
+#                                                                                          #
+############################################################################################
+
+## configure
+build_configure() {
+
+   ## autotools
+#   ./configure \
+   ./autogen.sh || return 1
+#	--enable-edbus \
+#	--enable-efreet \
+#	--enable-eweather \
+#	--disable-elementary-test \
+#	--disable-doc 
+}
+
+## compile
+build_compile() {
+
+   sudo ln -s /usr/lib/libblkid.la /usr/local/lib
+   sudo ln -s /usr/lib/libuuid.la /usr/local/lib
+   ## cmake
+   make || return 1
+}
+
+## install
+build_install() {
+
+   ## cmake
+   make DESTDIR="$I_ROOT" install || return 1
+}
+
+## rules
+build_rules() {
+
+   tet_load
+   tet_download
+   tet_convert
+   tet_unpack
+   tet_patch
+   tet_configure
+   tet_compile
+   tet_install
+   tet_split
+   tet_strip
+   tet_create
+   tet_generate
+   tet_check
+   tet_test
+   tet_package
+
+}
+

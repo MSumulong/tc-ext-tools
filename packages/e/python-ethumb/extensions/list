@@ -1,0 +1,10 @@
+usr/local/lib/pkgconfig/python-ethumb.pc
+usr/local/lib/pkgconfig/python-ethumb_client.pc
+usr/local/lib/python2.7/site-packages/ethumb/__init__.py
+usr/local/lib/python2.7/site-packages/ethumb/__init__.pyc
+usr/local/lib/python2.7/site-packages/ethumb/__init__.pyo
+usr/local/lib/python2.7/site-packages/ethumb/c_ethumb.la
+usr/local/lib/python2.7/site-packages/ethumb/c_ethumb.so
+usr/local/lib/python2.7/site-packages/ethumb/client.la
+usr/local/lib/python2.7/site-packages/ethumb/client.so
+usr/local/share/python-ethumb/examples/ethumb-client/01-simple.py

@@ -1,0 +1,19 @@
+PACKAGE="eet"
+VERSION="1.7.9"
+SOURCE="http://download.enlightenment.org/releases/$PACKAGE-$VERSION.tar.bz2"
+#VERSION="1.7.8"
+#SOURCE="http://download.enlightenment.org/releases/eet-$VERSION.tar.bz2"
+BUILD_DEPENDS="eina-dev
+	openssl-1.0.0-dev
+	libjpeg-turbo-dev"
+
+DESCRIPTION="a tiny library designed to write an arbitary set of chunks of data to a file"
+AUTHOR="See http://enlightenment.org/p.php?p=contact&l=en"
+SITE="enlightenment.org"
+COPYING="BSD"
+MAINTAINERS="jlslegalize@gmail.com"
+TAGS="library arbitary chunks data file"
+COMMENTS="one of the libraries that make up the EFL
+		Extension made using http://code.google.com/p/tc-ext-tools"
+CHANGELOG="---"
+CURRENT="Rebuilt in core 5.1rc1"

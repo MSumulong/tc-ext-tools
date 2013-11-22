@@ -1,0 +1,16 @@
+PACKAGE="elementary-git"
+VERSION="git"
+SOURCE="git::http://git.enlightenment.org/core/elementary.git/"
+BUILD_DEPENDS="libssh2-dev cvs" 
+#elf-dev commentata xchè non ancora nel repo******************
+#	eobj-dev
+#libeweather-dev 
+DESCRIPTION="Enlightenment's basic widget set, based on EFL with focus mobile touch-screen devices"
+AUTHOR="See http://enlightenment.org/p.php?p=contact&l=en"
+SITE="http://trac.enlightenment.org/e/wiki/Elementary"
+COPYING="GPL-2"
+MAINTAINERS="jls_legalize (jlslegalize at gmail dot com)"
+TAGS="Enlightenment's widget set, EFL mobile touch-screen devices"
+COMMENTS="Extension made using http://code.google.com/p/tc-ext-tools"
+CHANGELOG=""
+CURRENT="First version ${VERSION}"

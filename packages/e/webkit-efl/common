@@ -1,0 +1,29 @@
+PACKAGE="webkit-efl"
+VERSION="svn-r127150"
+SOURCE="http://packages.profusion.mobi/webkit-efl/$PACKAGE-$VERSION.tar.bz2"
+BUILD_DEPENDS="icu49-dev.tcz
+libxslt.tcz
+sqlite3-dev 
+gperf 
+bison 
+flex 
+Xorg-7.6-dev
+gstreamer-dev 
+gst-plugins-base-dev
+gnutls2-dev 
+dbus-dev
+udev-dev 
+lua-dev 
+freetype_base-dev.tcz
+libffi-dev 
+tiff3-dev.tcz"
+
+DESCRIPTION="A brief description of package."
+AUTHOR="authors of package"
+SITE="http://www.package.com"
+COPYING="GPL-2"
+MAINTAINERS="jlslegalize@gmail.com"
+TAGS=""
+COMMENTS="---"
+CHANGELOG="---"
+CURRENT="First Version"

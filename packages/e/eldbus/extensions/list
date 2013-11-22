@@ -1,0 +1,17 @@
+usr/local/bin/eldbus-codegen
+usr/local/include/eldbus-1/Eldbus.h
+usr/local/include/eldbus-1/eldbus_connection.h
+usr/local/include/eldbus-1/eldbus_freedesktop.h
+usr/local/include/eldbus-1/eldbus_message.h
+usr/local/include/eldbus-1/eldbus_message_eina_value.h
+usr/local/include/eldbus-1/eldbus_message_helper.h
+usr/local/include/eldbus-1/eldbus_object.h
+usr/local/include/eldbus-1/eldbus_pending.h
+usr/local/include/eldbus-1/eldbus_proxy.h
+usr/local/include/eldbus-1/eldbus_service.h
+usr/local/include/eldbus-1/eldbus_signal_handler.h
+usr/local/lib/libeldbus.la
+usr/local/lib/libeldbus.so
+usr/local/lib/libeldbus.so.1
+usr/local/lib/libeldbus.so.1.7.9
+usr/local/lib/pkgconfig/eldbus.pc
