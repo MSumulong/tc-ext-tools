@@ -1,11 +1,9 @@
 PACKAGE="efreet"
-VERSION="1.7.9-pre"
-SOURCE="http://download.enlightenment.org/pre-releases/efl-1.7.9/$PACKAGE-1.7.9.tar.bz2"
-#VERSION="1.7.8"
-#SOURCE="http://download.enlightenment.org/releases/$PACKAGE-$VERSION.tar.bz2"
-BUILD_DEPENDS=" ecore-dev"
+VERSION="1.7.9"
+SOURCE="http://download.enlightenment.org/releases/$PACKAGE-$VERSION.tar.bz2"
+BUILD_DEPENDS=" ecore-dev
+		e_dbus-dev"
 #		cvs
-#		edbus-dev"
 DESCRIPTION=" a library designed to help apps work several of the 
 		Freedesktop.org standards regarding Icons, Desktop files and Menu"
 AUTHOR="dan 'dj2' sinclaira, Brian 'rephorm' Mattern, Sebastian Dransfeld <sd@tango.flipp.net>,
@@ -18,5 +16,4 @@ TAGS="library Freedesktop.org Icons Desktop files Menu"
 COMMENTS="One of the core libraries forming the EFL
 		extension made using http://code.google.com/p/tc-ext-tools/"
 CHANGELOG=""
-#CURRENT="Rebuilt for tinycore 5.x"
-CURRENT="Updated to $VERSION"
+CURRENT="Rebuilt in core 5.1rc1, changed deps"

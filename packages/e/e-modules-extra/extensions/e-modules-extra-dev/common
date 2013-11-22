@@ -1,0 +1,15 @@
+COMMENTS="optional deps:
+	                libeweather for eweather
+	                emprint for screenshot
+	                libmpd & mpd or mpd-minimal for mpdule
+	                hal for places
+	                elementary for elfe
+			libbsd for share
+			nodejs for elev8
+		modules left out: exalt-client 	(exalt.tcz doesn't exist)
+				  itask-ng 	(replaced by engage)
+				  tiling 	(already in e17)
+				  elev8
+				  share		(compile error)		
+
+		Extension made using http://code.google.com/p/tc-ext-tools"

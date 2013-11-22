@@ -8,3 +8,8 @@ libraw.tcz
 poppler.tcz
 libxcb.tcz
 libxcb-util.tcz
+desktop-file-utils.tcz
+hicolor-icon-theme.tcz
+shared-mime-info.tcz
+dejavu-fonts-ttf.tcz
+liberation-fonts-ttf.tcz

@@ -1,8 +1,6 @@
 PACKAGE="terminology"
-VERSION="0.3.0"
-SOURCE="http://download.enlightenment.fr/releases/$PACKAGE-$VERSION.tar.bz2"
-#VERSION="svn~r79511"
-#SOURCE="svn::http://svn.enlightenment.org/svn/e/trunk/$PACKAGE"
+VERSION="0.4.0-alpha1"
+SOURCE="http://download.enlightenment.org/releases/$PACKAGE-$VERSION.tar.bz2"
 BUILD_DEPENDS="elementary-dev"
 
 DESCRIPTION="This is an EFL terminal emulator with some extra bells and whistles."

@@ -1,10 +1,7 @@
 PACKAGE="ethumb"
-VERSION="1.7.9-pre"
-SOURCE="http://download.enlightenment.org/pre-releases/efl-1.7.9/$PACKAGE-1.7.9.tar.bz2"
-#VERSION="1.7.8"
-#SOURCE="http://download.enlightenment.org/releases/$PACKAGE-$VERSION.tar.bz2"
+VERSION="1.7.9"
+SOURCE="http://download.enlightenment.org/releases/$PACKAGE-$VERSION.tar.bz2"
 BUILD_DEPENDS="libexif-dev.tcz
-		libexif.tcz
 		emotion-dev.tcz
 		epdf-dev.tcz
 		e_dbus-dev.tcz
@@ -20,4 +17,4 @@ TAGS="Enlightenment's thumbnailing library dbus service"
 COMMENTS="optional deps: emotion, epdf
 		Extension made using http://code.google.com/p/tc-ext-tools"
 CHANGELOG=""
-CURRENT="Updated to $VERSION"
+CURRENT="Rebuilt in core 5.1rc1"

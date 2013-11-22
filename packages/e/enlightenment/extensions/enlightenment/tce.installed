@@ -3,4 +3,5 @@
 THIS=`basename $0`
 [ -e /usr/local/tce.installed/ecomp ] || echo "enlightenment_start" > /etc/sysconfig/desktop
 [ -d "/tmp/tcloop/$THIS" ] && cp "/tmp/tcloop/$THIS/usr/local/bin/enlightenment_start" /usr/local/bin
-
+update-mime-database usr/local/share/mime > /dev/null
+update-desktop-database -q

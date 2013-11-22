@@ -1,7 +1,7 @@
 python-elementary.tcz
 python-emotion.tcz
 python-ethumb.tcz
-gst-plugins-good.tcz
-gst-plugins-ugly.tcz
+gst-plugins-good0.10.tcz
+gst-plugins-ugly0.10.tcz
 gst-ffmpeg.tcz
 mutagen.tcz

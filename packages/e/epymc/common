@@ -1,7 +1,7 @@
 PACKAGE="epymc"
-VERSION="svn~r697"
+VERSION="svn~r756"
 SOURCE="svn::http://e17mods.googlecode.com/svn/trunk/APPS/epymc"
-BUILD_DEPENDS="edje-dev"
+BUILD_DEPENDS="edje-dev python"
 
 DESCRIPTION="Media Center application"
 AUTHOR="dave@gurumeditation.it"

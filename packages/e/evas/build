@@ -7,7 +7,7 @@
 
 ## configure
 build_configure() {
-   ./configure	--enable-fb || return 1
+   ./configure	--enable-fb --disable-wayland-shm  --disable-install-examples || return 1
 }
 
 ## compile

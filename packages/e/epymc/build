@@ -5,15 +5,18 @@
 #                                                                                          #
 ############################################################################################
 
-build_compile() {
+#build_compile() {
 #	cd data/themes/default
 #	edje_cc -id ./images -fd ./fonts ./default.edc 
 #
-   make || return 1
-}
+#	make || return 1
+#}
 
-## install
 build_install() {
+   python setup.py install --prefix=/usr/local --root="$I_ROOT" || return 1
+}
+## install
+#build_install() {
 #   install -D -m 755 $PACKAGE.py 			$INSTALL_ROOT/usr/local/share/$PACKAGE/$PACKAGE.py 		|| return 1
 #   cd $PACKAGE
 #   for i in *.py; do
@@ -23,18 +26,19 @@ build_install() {
 #   install -D -m 644 data/themes/default/default.edj 	$INSTALL_ROOT/usr/local/share/$PACKAGE/themes/default.edj 	|| return 1
 #   install -D -m 644 $P_SRC/$PACKAGE.png 		$INSTALL_ROOT/usr/local/share/icons/$PACKAGE.png 		|| return 1
 #   install -D -m 755 $P_SRC/$PACKAGE.desktop		$INSTALL_ROOT/usr/local/share/applications/$PACKAGE.desktop	|| return 1
-   	install -D -m 755 $P_SRC/$PACKAGE 		$INSTALL_ROOT/usr/local/bin/$PACKAGE 				|| return 1
-	mkdir -p 					$INSTALL_ROOT/usr/local/share/applications/
-	cp data/desktop/epymc.desktop 			$INSTALL_ROOT/usr/local/share/applications/
-	mkdir -p 					$INSTALL_ROOT/usr/local/share/icons/
-	cp data/desktop/epymc.png 			$INSTALL_ROOT/usr/local/share/icons/
-	mkdir -p 					$INSTALL_ROOT/usr/local/share/epymc/themes
-	cp data/themes/default.edj 			$INSTALL_ROOT/usr/local/share/epymc/themes/
-	cp -a epymc.py					$INSTALL_ROOT/usr/local/share/epymc/
-	cp -a epymc					$INSTALL_ROOT/usr/local/share/epymc/
-	cp -a modules					$INSTALL_ROOT/usr/local/share/epymc/
-	cp -a doc					$INSTALL_ROOT/usr/local/share/epymc/
-}
+
+#   	install -D -m 755 $P_SRC/$PACKAGE 		$INSTALL_ROOT/usr/local/bin/$PACKAGE 				|| return 1
+#	mkdir -p 					$INSTALL_ROOT/usr/local/share/applications/
+#	cp data/desktop/epymc.desktop 			$INSTALL_ROOT/usr/local/share/applications/
+#	mkdir -p 					$INSTALL_ROOT/usr/local/share/icons/
+#	cp data/desktop/epymc.png 			$INSTALL_ROOT/usr/local/share/icons/
+#	mkdir -p 					$INSTALL_ROOT/usr/local/share/epymc/themes
+#	cp data/themes/default.edj 			$INSTALL_ROOT/usr/local/share/epymc/themes/
+#	cp -a epymc.py					$INSTALL_ROOT/usr/local/share/epymc/
+#	cp -a epymc					$INSTALL_ROOT/usr/local/share/epymc/
+#	cp -a modules					$INSTALL_ROOT/usr/local/share/epymc/
+#	cp -a doc					$INSTALL_ROOT/usr/local/share/epymc/
+#}
 
 ## rules
 build_rules() {
@@ -44,7 +48,8 @@ build_rules() {
    tet_convert
    tet_unpack
    tet_patch
-   tet_compile
+#   tet_configure
+#   tet_compile
    tet_install
    tet_split
    tet_strip

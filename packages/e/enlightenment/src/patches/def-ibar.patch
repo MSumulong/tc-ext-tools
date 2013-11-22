@@ -1,14 +1,13 @@
---- a/src/modules/wizard/data/def-ibar.txt	2012-08-21 11:21:42.016748919 +0200
-+++ b/src/modules/wizard/data/def-ibar.txt	2012-08-21 11:30:31.470133910 +0200
-@@ -10,3 +10,11 @@
+--- a/a/src/modules/wizard/data/def-ibar.txt	2013-11-22 15:47:58.376632167 +0100
++++ b/src/modules/wizard/data/def-ibar.txt 	2013-11-22 15:48:38.673295793 +0100
+@@ -10,3 +10,10 @@
  gimp
  inkscape
  libreoffice-startcenter openoffice.org-startcenter koffice
-+tinycore-cpanel
-+tinycore-apps
-+tinycore-scmapps
++tinycore-cpanel                                           
++tinycore-apps  
 +tinycore-mnttool
-+tc-install
-+ecrire
++tc-install      
++ecrire    
 +envision
-+ephoto
++ephoto 

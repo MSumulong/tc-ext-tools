@@ -1,11 +1,7 @@
 PACKAGE="edje"
-VERSION="1.7.9-pre"
-SOURCE="http://download.enlightenment.org/pre-releases/efl-1.7.9/$PACKAGE-1.7.9.tar.bz2"
-#VERSION="1.7.8"
-#SOURCE="http://download.enlightenment.org/releases/$PACKAGE-$VERSION.tar.bz2"
-#VERSION="svn~r81699"
-#SOURCE="svn::http://svn.enlightenment.org/svn/e/trunk/${PACKAGE}"
-BUILD_DEPENDS="embryo-dev eio-dev lua-dev"
+VERSION="1.7.9"
+SOURCE="http://download.enlightenment.org/releases/$PACKAGE-$VERSION.tar.bz2"
+BUILD_DEPENDS="embryo-dev eio-dev lua-dev shared-mime-info"
 #	
 #	remix-dev
 #	alsa-dev
@@ -27,5 +23,4 @@ TAGS="graphical design layout library Evas"
 COMMENTS="One of the core libraries forming the EFL
 		extension made using http://code.google.com/p/tc-ext-tools/"
 CHANGELOG=""
-#CURRENT="Rebuilt for tinycore 5.x"
-CURRENT="Updated to $VERSION"
+CURRENT="Rebuilt in core 5.1rc1"

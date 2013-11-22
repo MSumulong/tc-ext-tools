@@ -1,0 +1,81 @@
+#CONF = --prefix=/opt/e
+all: e17.done elementary.done expedite.done evas_generic_loaders.done
+#all: e17.done enjoy.done ephoto.done expedite.done exquisite.done emotion.done
+#all: e17.done
+
+lean: e17.done elementary.done
+
+clean:
+	rm *.done
+
+############################################################################
+
+efl.done:
+	./b.sh efl $(CONF)
+
+# --enable-gl-flavor-gles --enable-gles-variety-sgx --disable-gl-xlib --disable-gl-xcb --enable-wayland-egl --enable-wayland-shm
+ 
+ecore.done: efl.done
+	./b.sh ecore $(CONF)
+
+edje.done: efl.done ecore.done eio.done
+	./b.sh edje $(CONF)
+
+efreet.done: efl.done ecore.done edbus.done
+	./b.sh efreet $(CONF)
+
+edbus.done: efl.done ecore.done
+	./b.sh edbus $(CONF)
+
+e_dbus.done: efl.done ecore.done
+	./b.sh e_dbus $(CONF)
+
+ethumb.done: efl.done ecore.done e_dbus.done edje.done
+	./b.sh ethumb $(CONF)
+
+eeze.done: efl.done ecore.done
+	./b.sh eeze $(CONF)
+
+eio.done: efl.done ecore.done
+	./b.sh eio $(CONF)
+
+emotion.done: efl.done ecore.done edje.done
+	./b.sh emotion $(CONF)
+
+elementary.done: efl.done ecore.done edje.done e_dbus.done efreet.done ethumb.done emotion.done
+	./b.sh elementary $(CONF)
+
+##
+
+e17.done: efl.done ecore.done edje.done e_dbus.done eeze.done efreet.done elementary.done
+	./b.sh e17 $(CONF)
+
+expedite.done: efl.done
+	./b.sh expedite $(CONF)
+
+evas_generic_loaders.done: efl.done
+	./b.sh evas_generic_loaders $(CONF)
+
+
+
+
+
+
+
+
+
+
+
+
+lightmeadiascanner.done:
+	./b.sh lightmediascanner $(CONF)
+
+exquisite.done: efl.done ecore.done edje.done
+	./b.sh exquisite $(CONF)
+
+enjoy.done: emotion.done elementary.done lightmeadiascanner.done
+	./b.sh enjoy $(CONF)
+
+ephoto.done: elementary.done
+	./b.sh ephoto $(CONF)
+

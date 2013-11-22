@@ -2,3 +2,10 @@ evas.tcz
 curl.tcz
 glib2.tcz
 libssh2.tcz
+libXcomposite.tcz
+libXcursor.tcz
+libXinerama.tcz
+libxp.tcz
+libXrandr-dev.tcz
+libXss.tcz
+libXtst.tcz

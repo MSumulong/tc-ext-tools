@@ -1,0 +1,8 @@
+#!/bin/sh
+
+TCUSER=$(cat /etc/sysconfig/tcuser)
+if [ ! -d "/home/${TCUSER}/.config/epymc/themes" ]; then
+	mkdir -p "/home/${TCUSER}/.config/epymc/themes"
+	cp /usr/local/share/epymc/themes/default.edj "/home/${TCUSER}/.config/epymc/themes"
+	chown -R "${TCUSER}":staff "/home/${TCUSER}/.config"
+fi

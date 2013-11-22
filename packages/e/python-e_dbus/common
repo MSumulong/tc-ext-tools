@@ -3,7 +3,7 @@ VERSION="1.7.0"
 SOURCE="http://download.enlightenment.org/releases/BINDINGS/python/$PACKAGE-$VERSION.tar.bz2"
 #VERSION="svn~r75273"
 #SOURCE="svn::http://svn.enlightenment.org/svn/e/trunk/BINDINGS/python/$PACKAGE"
-BUILD_DEPENDS="e_dbus-dev
+BUILD_DEPENDS="eldbus-dev
 		python-dev
 		ecore-dev
 		dbus-python"
