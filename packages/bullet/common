@@ -1,12 +1,14 @@
 PACKAGE="bullet"
-VERSION="2.81-rev2613"
+VERSION="2.82-r2704"
 SOURCE="http://bullet.googlecode.com/files/bullet-${VERSION}.tgz"
 BUILD_DEPENDS="cmake
 freeglut
 freeglut-dev
 doxygen
 graphviz
-dejavu-fonts-ttf"
+dejavu-fonts-ttf
+libGL-dev
+Xorg-7.7-3d-dev"
 
 DESCRIPTION="A 3D Collision Detection and Rigid Body Dynamics Library."
 AUTHOR="---"
