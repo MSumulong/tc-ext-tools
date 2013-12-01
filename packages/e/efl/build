@@ -5,17 +5,30 @@
 #                                                                                          #
 ############################################################################################
 build_configure() {
-#   ./configure	\
-   ./autogen.sh	--enable-fb --disable-fribidi  --disable-tslib || return 1
+   sudo ln -s /usr/local/include/openjpeg-1.5/openjpeg.h /usr/local/include/
+   ./configure 	--enable-xinput22 \
+		--enable-multisense \
+		--enable-systemd \
+		--enable-image-loader-webp \
+		--enable-harfbuzz \
+		--enable-fb \
+		--disable-tslib \
+		--disable-systemd || return 1
+#   ./autogen.sh	--enable-fb --disable-tslib || return 1
 }
 build_compile() {
-   sudo ln -s /usr/lib/libblkid.la /usr/local/lib
-   sudo ln -s /usr/lib/libuuid.la /usr/local/lib
+   sudo ln -s /usr/lib/libblkid.la		/usr/local/lib
+   sudo ln -s /usr/lib/libuuid.la		/usr/local/lib
+   sudo ln -s /usr/local/lib/libXext.la		/usr/lib/
+   sudo ln -s /usr/local/lib/libXext.la		/usr/lib/
+   sudo ln -s /usr/local/lib/libXdmcp.la	/usr/lib/
+   sudo ln -s /usr/local/lib/libXau.la		/usr/lib/
+   sudo ln -s /usr/local/lib/libX11.la 		/usr/lib/
    make || return 1
 }
 build_install() {
-   sudo ln -s /usr/lib/libblkid.la /usr/local/lib
-   sudo ln -s /usr/lib/libuuid.la /usr/local/lib
+   sudo ln -s /usr/lib/libblkid.la	/usr/local/lib
+   sudo ln -s /usr/lib/libuuid.la	/usr/local/lib
    make DESTDIR="$I_ROOT" install || return 1
 }
 build_rules() {
