@@ -1,2 +1,3 @@
 usr/local/include
-usr/local/lib/*.a
+usr/local/lib/*.so
+usr/local/lib/openjpeg*

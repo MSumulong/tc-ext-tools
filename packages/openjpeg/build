@@ -4,8 +4,7 @@
 
 ### Configure
 build_configure() {
-
-  return 0
+  cmake . || return 1
 
 }
 ##
@@ -23,7 +22,7 @@ build_install() {
 
   sudo make DESTDIR=${INSTALL_ROOT} install || return 1
 
-  sudo ln -s libopenjpeg.so.2 "${INSTALL_ROOT}/usr/local/lib/libopenjpeg.so" || return 1
+#  sudo ln -s libopenjpeg.so.2 "${INSTALL_ROOT}/usr/local/lib/libopenjpeg.so" || return 1
 
 }
 ##
