@@ -1,1 +1,2 @@
 usr/local/lib/*.so*
+x-usr/local/lib/*.so
