@@ -1,5 +1,5 @@
 PACKAGE="usb-modeswitch-data"
-VERSION="20130807"
+VERSION="20131113"
 SOURCE="http://www.draisberghof.de/usb_modeswitch/usb-modeswitch-data-$VERSION.tar.bz2"
 BUILD_DEPENDS="coreutils.tcz"
 
@@ -11,4 +11,4 @@ MAINTAINERS="jls_legalize <jlslegalize@gmail.com>"
 TAGS="Device database rules file usb-modeswitch"
 COMMENTS="extension made using tc-ext-tools"
 CHANGELOG="---"
-CURRENT="Rebuilt in tc 5.0.1"
+CURRENT="Updated to $VERSION"
