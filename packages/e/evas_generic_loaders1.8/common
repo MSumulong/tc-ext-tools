@@ -1,0 +1,28 @@
+PACKAGE="evas_generic_loaders1.8"
+VERSION="1.8.0"
+SOURCE="http://download.enlightenment.org/rel/libs/evas_generic_loaders/evas_generic_loaders-$VERSION.tar.bz2"
+BUILD_DEPENDS="efl-dev
+	gstreamer0.10-dev
+	librsvg-dev
+	poppler-dev
+	libraw-dev"
+#	libspectre-dev
+#	libgs_ps
+
+DESCRIPTION="Extra loaders for GPL loaders and unstable libraries"
+AUTHOR="The Rasterman (Carsten Haitzler) <raster@rasterman.com>,
+		Christian Kreibich <cK@whoop.org>,
+		Vincent Torri <vtorri at univ-evry dot fr>,
+		Michael Bouchaud <michael.bouchaud@gmail.com>"
+SITE="http://trac.enlightenment.org/e/wiki/Evas_Generic_Loaders"
+COPYING="BSD"
+MAINTAINERS="jls_legalize <jlslegalize@gmail.com>"
+TAGS="Extra loaders GPL loaders unstable libraries"
+COMMENTS="Optional deps for video thumbnails:
+			gst-plugins-good0.10
+			gst-plugins-bad0.10
+			gst-plugins-ugly0.10
+			gst-ffmpeg
+		Extension made using http://code.google.com/p/tc-ext-tools"
+CHANGELOG="---"
+CURRENT="Rebuilt in core 5.1rc1"
