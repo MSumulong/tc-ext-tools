@@ -1,0 +1,10 @@
+usr/local
+x-usr/local/lib/cmake
+x-usr/local/share/locale
+x-usr/local/include/
+x-usr/local/lib/edje/modules/elm/*/*.la
+x-usr/local/lib/elementary/modules/*/*/*.la
+x-usr/local/lib/*.a
+x-usr/local/lib/*.la
+x-usr/local/lib/*.so
+x-usr/local/lib/pkgconfig/

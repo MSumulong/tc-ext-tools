@@ -1,0 +1,8 @@
+usr/local/include/
+usr/local/lib/edje/modules/elm/*/*.la
+usr/local/lib/elementary/modules/*/*/*.la
+usr/local/lib/*.a
+usr/local/lib/*.la
+usr/local/lib/*.so
+usr/local/lib/pkgconfig/
+usr/local/lib/cmake
