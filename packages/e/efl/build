@@ -8,7 +8,6 @@ build_configure() {
    sudo ln -s /usr/local/include/openjpeg-1.5/openjpeg.h /usr/local/include/
    ./configure 	--enable-xinput22 \
 		--enable-multisense \
-		--enable-systemd \
 		--enable-image-loader-webp \
 		--enable-harfbuzz \
 		--enable-fb \

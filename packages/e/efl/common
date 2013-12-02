@@ -1,5 +1,5 @@
 PACKAGE="efl"
-VERSION="1.8.0"
+VERSION="1.8.1"
 SOURCE="http://download.enlightenment.org/rel/libs/efl/efl-$VERSION.tar.gz"
 BUILD_DEPENDS="
 	bullet-dev
