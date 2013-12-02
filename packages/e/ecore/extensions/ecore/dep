@@ -6,6 +6,6 @@ libXcomposite.tcz
 libXcursor.tcz
 libXinerama.tcz
 libxp.tcz
-libXrandr-dev.tcz
+libXrandr.tcz
 libXss.tcz
 libXtst.tcz
