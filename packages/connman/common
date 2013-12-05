@@ -1,5 +1,5 @@
 PACKAGE="connman"
-VERSION="1.18"
+VERSION="1.20"
 SOURCE="http://www.kernel.org/pub/linux/network/connman/connman-${VERSION}.tar.xz"
 BUILD_DEPENDS="dbus-dev
 	wpa_supplicant-dbus
@@ -15,15 +15,6 @@ SITE="http://connman.net"
 COPYING="GPL-2"
 MAINTAINERS="jls_legalize <jlslegalize@gmail.com>"
 TAGS="daemon internet connections"
-COMMENTS=" Add to /opt/bootlocal.sh :
-                        /usr/local/etc/init.d/dbus start
-                        connmand
-                or connmand -r as in my case.
-		For persistency add var/lib/connman/ to 
-		/opt/.filetool.lst
-                ---
-                optional dep: wpa_supplicant-dbus.tcz
-		
-		Extension made using http://code.google.com/p/tc-ext-tools"
+COMMENTS="---"
 CHANGELOG="---"
-CURRENT="Updated to ${VERSION}"
+CURRENT="Updated to ${VERSION}, fixed dbus permissions"
