@@ -1,5 +1,5 @@
 PACKAGE="libv4l"
-VERSION="0.9.5"
+VERSION="1.0.1"
 SOURCE="http://linuxtv.org/downloads/v4l-utils/v4l-utils-$VERSION.tar.bz2"
 BUILD_DEPENDS="v4l-dvb-$KERNEL.tcz libjpeg-turbo-dev.tcz" 
 
@@ -11,4 +11,4 @@ MAINTAINERS="jlslegalize@gmail.com"
 TAGS="video4linux"
 COMMENTS="---"
 CHANGELOG="---"
-CURRENT="Rebuilt in tc 5.0.1"
+CURRENT="dated to $VERSION"

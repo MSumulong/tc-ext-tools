@@ -24,6 +24,7 @@ lib/udev/rc_keymaps/cinergy
 lib/udev/rc_keymaps/cinergy_1400
 lib/udev/rc_keymaps/cinergyt2
 lib/udev/rc_keymaps/d680_dmb
+lib/udev/rc_keymaps/delock_61959
 lib/udev/rc_keymaps/dib0700_nec
 lib/udev/rc_keymaps/dib0700_rc5
 lib/udev/rc_keymaps/dibusb
@@ -91,6 +92,7 @@ lib/udev/rc_keymaps/purpletv
 lib/udev/rc_keymaps/pv951
 lib/udev/rc_keymaps/rc6_mce
 lib/udev/rc_keymaps/real_audio_220_32_keys
+lib/udev/rc_keymaps/reddo
 lib/udev/rc_keymaps/snapstream_firefly
 lib/udev/rc_keymaps/streamzap
 lib/udev/rc_keymaps/su3000
@@ -104,6 +106,7 @@ lib/udev/rc_keymaps/tevii
 lib/udev/rc_keymaps/tevii_nec
 lib/udev/rc_keymaps/tivo
 lib/udev/rc_keymaps/total_media_in_hand
+lib/udev/rc_keymaps/total_media_in_hand_02
 lib/udev/rc_keymaps/trekstor
 lib/udev/rc_keymaps/tt_1500
 lib/udev/rc_keymaps/tvwalkertwin
@@ -129,24 +132,12 @@ usr/local/bin/v4l2-compliance
 usr/local/bin/v4l2-ctl
 usr/local/bin/v4l2-sysfs-path
 usr/local/etc/rc_maps.cfg
-usr/local/include/dvb-demux.h
-usr/local/include/dvb-fe.h
-usr/local/include/dvb-file.h
-usr/local/include/dvb-frontend.h
-usr/local/include/dvb-sat.h
-usr/local/include/dvb-scan.h
-usr/local/include/dvb-v5-std.h
 usr/local/include/libv4l-plugin.h
 usr/local/include/libv4l1-videodev.h
 usr/local/include/libv4l1.h
 usr/local/include/libv4l2.h
 usr/local/include/libv4l2rds.h
 usr/local/include/libv4lconvert.h
-usr/local/lib/libdvbv5.a
-usr/local/lib/libdvbv5.la
-usr/local/lib/libdvbv5.so
-usr/local/lib/libdvbv5.so.0
-usr/local/lib/libdvbv5.so.0.0.0
 usr/local/lib/libv4l/ov511-decomp
 usr/local/lib/libv4l/ov518-decomp
 usr/local/lib/libv4l/plugins/libv4l-mplane.la
@@ -175,7 +166,6 @@ usr/local/lib/libv4lconvert.la
 usr/local/lib/libv4lconvert.so
 usr/local/lib/libv4lconvert.so.0
 usr/local/lib/libv4lconvert.so.0.0.0
-usr/local/lib/pkgconfig/libdvbv5.pc
 usr/local/lib/pkgconfig/libv4l1.pc
 usr/local/lib/pkgconfig/libv4l2.pc
 usr/local/lib/pkgconfig/libv4l2rds.pc
