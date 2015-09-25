@@ -39,7 +39,7 @@ cp config.sample .config
   * It is easy to build a package
 ```
 git clone https://github.com/MSumulong/tc-ext-tools-packages.git
-cd packages/asterisk-1.8
+cd packages/libjansson
 buildit
 ```
 
