@@ -27,7 +27,7 @@ tc-ext-tools is a package build system developed for Tiny Core Linux. The main a
 Check out the latest source code from the svn repository and follow the instructions in INSTALL file.
 
 ```
-svn checkout http://tc-ext-tools.googlecode.com/svn/trunk tc-ext-tools
+git clone https://github.com/MSumulong/tc-ext-tools.git
 cd tc-ext-tools
 cp config.sample .config
 ./install.sh
@@ -38,8 +38,8 @@ cp config.sample .config
 ## Hello World ##
   * It is easy to build a package
 ```
-svn checkout http://tc-ext-tools.googlecode.com/svn/packages/libdvbpsi
-cd libdvbpsi
+git clone https://github.com/MSumulong/tc-ext-tools-packages.git
+cd packages/asterisk-1.8
 buildit
 ```
 
@@ -81,7 +81,7 @@ buildit --print message
 
 ### See other available packages for more. ###
 ```
-svn checkout http://tc-ext-tools.googlecode.com/svn/packages/ tc-ext-tools/packages
+git clone https://github.com/MSumulong/tc-ext-tools-packages.git
 ```
 
 ## tc-ext-tools shell environment ##
