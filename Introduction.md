@@ -24,7 +24,7 @@ tc-ext-tools is a package build system developed for Tiny Core Linux. The main a
 
 # Installation #
 
-Check out the latest source code from the svn repository and follow the instructions in INSTALL file.
+Check out the latest source code from the GitHub repository and follow the instructions in INSTALL file.
 
 ```
 git clone https://github.com/MSumulong/tc-ext-tools.git
